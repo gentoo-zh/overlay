@@ -1,0 +1,20 @@
+[Unit]
+Description=Nix Daemon
+Documentation=man:nix-daemon(8) https://flox.dev/docs
+RequiresMountsFor=/nix/store
+RequiresMountsFor=/nix/var
+RequiresMountsFor=/nix/var/nix/db
+ConditionPathIsReadWrite=/nix/var/nix/daemon-socket
+
+[Service]
+ExecStart=/usr/sbin/nix-daemon --daemon
+KillMode=process
+Environment="NIX_SSL_CERT_FILE=@NIX_SSL_CERT_FILE@"
+# User shells use NIX_REMOTE=daemon; the daemon must not inherit it.
+UnsetEnvironment=NIX_REMOTE
+LimitNOFILE=1048576
+TasksMax=1048576
+Delegate=yes
+
+[Install]
+WantedBy=multi-user.target

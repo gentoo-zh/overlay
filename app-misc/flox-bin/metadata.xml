@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zdanevich.vitaly@ya.ru</email>
+		<name>Vitaly Zdanevich</name>
+	</maintainer>
+	<longdescription lang="en">Flox creates portable, project-local development environments using Nix packages and the Nix store. It can be thought of as an additional project-level package manager, similar in role to pip or npm, but for general command-line tools, language runtimes, libraries, GUI applications, and other applications. Flox can provide different versions of software already installed through Portage without replacing the system package. It uses Nix to resolve and realize packages reproducibly while exposing the selected tools through an activated shell environment.</longdescription>
+	<upstream>
+		<remote-id type="github">flox/flox</remote-id>
+	</upstream>
+</pkgmetadata>

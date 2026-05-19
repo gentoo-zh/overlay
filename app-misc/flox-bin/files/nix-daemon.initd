@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+description="Nix package manager daemon"
+command="/usr/sbin/nix-daemon"
+command_args="--daemon"
+command_background="yes"
+pidfile="/run/nix/nix-daemon.pid"
+export NIX_SSL_CERT_FILE="@NIX_SSL_CERT_FILE@"
+
+depend() {
+	need localmount
+	use net
+}
+
+start_pre() {
+	# User shells use NIX_REMOTE=daemon; the daemon must not inherit it.
+	unset NIX_REMOTE
+	checkpath -d -m 0755 /run/nix /nix/var/nix/daemon-socket
+}
