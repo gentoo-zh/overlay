@@ -21,6 +21,8 @@ IUSE="systemd"
 
 RESTRICT="strip mirror bindist" # mirror as explained at bug #547372
 
+BDEPEND="dev-util/patchelf"
+
 # Deps are based on direct NEEDED entries from the 12.x core binaries, Qt plugins,
 # and CEF libraries, excluding bundled libraries under office6.
 RDEPEND="
@@ -29,6 +31,7 @@ RDEPEND="
 	app-arch/xz-utils
 	dev-libs/expat
 	dev-libs/glib:2
+	dev-libs/libltdl
 	dev-libs/nspr
 	dev-libs/wayland
 	media-libs/alsa-lib
@@ -57,6 +60,7 @@ RDEPEND="
 	x11-libs/libXrandr
 	x11-libs/libXrender
 	x11-libs/libXtst
+	x11-libs/libXv
 	x11-libs/libxkbcommon[X]
 	x11-libs/pango
 	loong? (
@@ -80,7 +84,14 @@ src_install() {
 
 	insinto /opt/kingsoft/wps-office
 	use systemd || { rm "${S}"/opt/kingsoft/wps-office/office6/libdbus-1.so* || die ; }
+	if [[ -f "${S}"/opt/kingsoft/wps-office/office6/addons/wpscompress/libwpscompress.so ]]; then
+		patchelf --replace-needed libbz2.so.1.0 libbz2.so.1 \
+			"${S}"/opt/kingsoft/wps-office/office6/addons/wpscompress/libwpscompress.so || die
+	fi
 	rm "${S}"/opt/kingsoft/wps-office/office6/libstdc++.so* || die
+	rm -f "${S}"/opt/kingsoft/wps-office/office6/libFontWatermark.so || die
+	rm -f "${S}"/opt/kingsoft/wps-office/office6/libpeony-wpsprint-menu-plugin.so || die
+	rm -f "${S}"/opt/kingsoft/wps-office/office6/lib{et,wpp,wps}uofrw.so || die
 	doins -r "${S}"/opt/kingsoft/wps-office/{office6,templates}
 
 	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,promecefpluginhost,transerr,ksolaunch,wpscloudsvr}
