@@ -21,48 +21,44 @@ IUSE="systemd"
 
 RESTRICT="strip mirror bindist" # mirror as explained at bug #547372
 
-# Deps got from this (listed in order):
-# rpm -qpR wps-office-10.1.0.5707-1.a21.x86_64.rpm
-# ldd /opt/kingsoft/wps-office/office6/wps
-# ldd /opt/kingsoft/wps-office/office6/wpp
+# Deps are based on direct NEEDED entries from the 12.x core binaries, Qt plugins,
+# and CEF libraries, excluding bundled libraries under office6.
 RDEPEND="
+	app-accessibility/at-spi2-core:2
 	app-arch/bzip2:0
-	app-arch/lz4
 	app-arch/xz-utils
 	dev-libs/expat
 	dev-libs/glib:2
-	dev-libs/libbsd
-	dev-libs/libffi
-	dev-libs/libgcrypt:0
-	dev-libs/libgpg-error
-	dev-libs/libpcre:3
-	media-libs/flac
+	dev-libs/nspr
+	dev-libs/wayland
+	media-libs/alsa-lib
 	media-libs/fontconfig:1.0
 	media-libs/freetype:2
-	media-libs/libogg
-	media-libs/libsndfile
-	media-libs/libvorbis
-	media-libs/tiff-compat:4
-	media-libs/libpulse
-	net-libs/libasyncns
+	media-libs/libglvnd
+	media-libs/mesa[gbm(+)]
 	net-print/cups
-	sys-apps/attr
 	sys-apps/dbus
-	sys-apps/tcp-wrappers
 	sys-apps/util-linux
-	sys-libs/libcap
+	sys-libs/glibc
+	systemd? ( || ( sys-apps/systemd sys-apps/systemd-utils ) )
 	virtual/zlib:0
-	virtual/glu
-	x11-libs/gtk+:2
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
+	x11-libs/gtk+:3[X]
+	x11-libs/libdrm
 	x11-libs/libICE
 	x11-libs/libSM
 	x11-libs/libX11
-	x11-libs/libXau
+	x11-libs/libXcomposite
+	x11-libs/libXdamage
 	x11-libs/libxcb
-	x11-libs/libXdmcp
 	x11-libs/libXext
+	x11-libs/libXfixes
+	x11-libs/libXrandr
 	x11-libs/libXrender
 	x11-libs/libXtst
+	x11-libs/libxkbcommon[X]
+	x11-libs/pango
 	loong? (
 		virtual/loong-ow-compat
 	)
