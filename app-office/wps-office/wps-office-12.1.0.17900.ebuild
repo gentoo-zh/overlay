@@ -76,6 +76,9 @@ pkg_nofetch() {
 }
 
 src_install() {
+	local entry file new_rpath rpath
+	local -a rpath_entries
+
 	exeinto /usr/bin
 	exeopts -m0755
 	doexe "${S}"/usr/bin/*
@@ -95,6 +98,18 @@ src_install() {
 	rm -f "${S}"/opt/kingsoft/wps-office/office6/KPacketInstall || die
 	rm -f "${S}"/opt/kingsoft/wps-office/office6/libpeony-wpsprint-menu-plugin.so || die
 	rm -f "${S}"/opt/kingsoft/wps-office/office6/lib{et,wpp,wps}uofrw.so || die
+	# Drop unsafe current-directory RPATH entries while keeping bundled $ORIGIN paths.
+	while IFS= read -r -d '' file; do
+		rpath=$(patchelf --print-rpath "${file}" 2>/dev/null) || continue
+		new_rpath=""
+		IFS=: read -r -a rpath_entries <<< "${rpath}"
+		for entry in "${rpath_entries[@]}"; do
+			[[ -z ${entry} || ${entry} == "." ]] && continue
+			new_rpath+="${new_rpath:+:}${entry}"
+		done
+		[[ ${new_rpath} == "${rpath}" ]] && continue
+		patchelf --force-rpath --set-rpath "${new_rpath:-\$ORIGIN}" "${file}" || die
+	done < <(find "${S}"/opt/kingsoft/wps-office/office6 -type f -print0)
 	doins -r "${S}"/opt/kingsoft/wps-office/{office6,templates}
 
 	fperms 0755 /opt/kingsoft/wps-office/office6/{wps,wpp,et,wpspdf,wpsoffice,promecefpluginhost,transerr,ksolaunch,wpscloudsvr}
