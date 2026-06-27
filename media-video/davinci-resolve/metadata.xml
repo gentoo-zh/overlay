@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zdanevich.vitaly@ya.ru</email>
+		<name>Vitaly Zdanevich</name>
+	</maintainer>
+	<longdescription lang="en">
+		DaVinci Resolve is Blackmagic Design's proprietary video editing,
+		color grading, visual effects, motion graphics and audio
+		post-production suite.
+	</longdescription>
+	<use>
+		<flag name="rocm">Install ROCm OpenCL runtime for AMD GPU compute support</flag>
+	</use>
+</pkgmetadata>

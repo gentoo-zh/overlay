@@ -1,0 +1,108 @@
+#!/usr/bin/env bash
+#
+# Blackmagic Design does not publish a stable direct URL for DaVinci Resolve
+# distfiles. The support site first exposes release metadata, then requires a
+# registration POST and returns a short-lived signed CDN URL for the zip.
+# Gentoo SRC_URI cannot model that dynamic POST flow, so this helper performs
+# the same request sequence and saves the expected distfile into DISTDIR.
+
+set -euo pipefail
+
+version="${1:-}"
+distdir="${2:-${DISTDIR:-}}"
+
+if [[ -z ${version} || -z ${distdir} ]] ; then
+	printf 'Usage: %s <version> <distdir>\n' "${0##*/}" >&2
+	exit 2
+fi
+
+api_downloads='https://www.blackmagicdesign.com/api/support/us/downloads.json'
+register_base='https://www.blackmagicdesign.com/api/register/us/download'
+archive="DaVinci_Resolve_${version/_beta/b}_Linux.zip"
+
+command -v curl >/dev/null || {
+	printf 'curl is required\n' >&2
+	exit 1
+}
+
+command -v python3 >/dev/null || {
+	printf 'python3 is required\n' >&2
+	exit 1
+}
+
+mkdir -p "${distdir}"
+
+read -r release_id download_id < <(
+	curl -fsSL --compressed "${api_downloads}" |
+		python3 -c '
+import json
+import sys
+
+version = sys.argv[1].replace("_beta", " Beta ")
+titles = {
+	f"DaVinci Resolve {version}",
+	f"DaVinci Resolve {version} Update",
+}
+data = json.load(sys.stdin)
+
+for release in data.get("downloads", []):
+	for item in release.get("urls", {}).get("Linux", []):
+		if item.get("product") == "davinci-resolve" and item.get("downloadTitle") in titles:
+			print(item["releaseId"], item["downloadId"])
+			raise SystemExit(0)
+
+raise SystemExit(f"Could not find Linux DaVinci Resolve {sys.argv[1]} in Blackmagic downloads")
+' "${version}"
+)
+
+request_json="$(
+	python3 -c '
+import json
+
+print(json.dumps({
+	"firstname": "Gentoo",
+	"lastname": "Linux",
+	"email": "user@example.com",
+	"phone": "202-555-0194",
+	"country": "us",
+	"street": "-",
+	"state": "New York",
+	"city": "Gentoo",
+	"product": "DaVinci Resolve",
+}, separators=(",", ":")))
+'
+)"
+
+user_agent='User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.75 Safari/537.36'
+signed_url="$(
+	curl -fsSL \
+		-H 'Host: www.blackmagicdesign.com' \
+		-H 'Accept: application/json, text/plain, */*' \
+		-H 'Origin: https://www.blackmagicdesign.com' \
+		-H "${user_agent}" \
+		-H 'Content-Type: application/json;charset=UTF-8' \
+		-H "Referer: https://www.blackmagicdesign.com/support/download/${release_id}/Linux" \
+		-H 'Accept-Encoding: gzip, deflate, br' \
+		-H 'Accept-Language: en-US,en;q=0.9' \
+		-H 'Authority: www.blackmagicdesign.com' \
+		-H 'Cookie: _ga=GA1.2.1849503966.1518103294; _gid=GA1.2.953840595.1518103294' \
+		--data-ascii "${request_json}" \
+		--compressed \
+		"${register_base}/${download_id}"
+)"
+
+if [[ ${signed_url} != https://* ]] ; then
+	printf 'Blackmagic registration API did not return a download URL:\n%s\n' "${signed_url}" >&2
+	exit 1
+fi
+
+curl -fL --retry 3 --retry-delay 3 \
+	-H 'Upgrade-Insecure-Requests: 1' \
+	-H "${user_agent}" \
+	-H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' \
+	-H 'Accept-Language: en-US,en;q=0.9' \
+	--compressed \
+	-o "${distdir}/${archive}" \
+	"${signed_url}"
+
+printf 'Saved %s\n' "${distdir}/${archive}"
