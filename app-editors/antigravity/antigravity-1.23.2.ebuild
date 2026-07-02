@@ -119,7 +119,8 @@ src_install() {
 	cp -a . "${ED}/opt/${PN}" || die
 	fperms 4711 /opt/${PN}/chrome-sandbox
 
-	dosym -r "/opt/${PN}/antigravity" "usr/bin/antigravity"
+	dosym -r "/opt/${PN}/bin/antigravity" "usr/bin/antigravity"
+	dosym -r "/opt/${PN}/bin/antigravity" "usr/bin/agy"
 
 	local EXEC_EXTRA_FLAGS=()
 	if use wayland; then
