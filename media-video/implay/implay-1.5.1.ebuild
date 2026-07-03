@@ -21,6 +21,23 @@ DEPEND="
 	media-video/mpv
 	x11-libs/gtk+
 "
+
+src_prepare() {
+	sed -i \
+		-e 's/cmake_minimum_required(VERSION 3\.13)/cmake_minimum_required(VERSION 3.16)/' \
+		CMakeLists.txt \
+		third_party/fmt/CMakeLists.txt \
+		third_party/glad/CMakeLists.txt \
+		third_party/imgui/CMakeLists.txt \
+		third_party/inipp/CMakeLists.txt \
+		third_party/json/CMakeLists.txt \
+		third_party/natsort/CMakeLists.txt \
+		third_party/nativefiledialog/CMakeLists.txt \
+		|| die
+
+	cmake_src_prepare
+}
+
 src_configure() {
 	CMAKE_BUILD_TYPE="Release"
 	cmake_src_configure
