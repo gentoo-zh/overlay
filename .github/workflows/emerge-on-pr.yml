@@ -83,12 +83,27 @@ jobs:
             packages=($(printf '%s\n' "${packages[@]}" | grep -v "^$i" || true))
         done
 
-        declare -a fetch_restricted_packages=(
-            games-misc/oh-my-git-bin
-        )
-        for i in "${fetch_restricted_packages[@]}"; do
-            packages=($(printf '%s\n' "${packages[@]}" | grep -v -E "^(=)?${i}($|-[0-9])" || true))
+        declare -a filtered_packages=()
+        shopt -s nullglob
+        for package in "${packages[@]}"; do
+            declare -a ebuilds=()
+            if [[ "${package}" == =* ]]; then
+                atom=${package#=}
+                category=${atom%%/*}
+                pf=${atom#*/}
+                ebuilds=( "${category}"/*/"${pf}.ebuild" )
+            else
+                ebuilds=( "${package}"/*.ebuild )
+            fi
+
+            if [[ ${#ebuilds[@]} -gt 0 ]] && grep -Eq '^[[:space:]]*RESTRICT[+?]?=([^#]*[[:space:]"])?fetch([[:space:]"$]|$)' "${ebuilds[@]}"; then
+                echo "skip fetch-restricted package: ${package}"
+                continue
+            fi
+            filtered_packages+=("${package}")
         done
+        packages=("${filtered_packages[@]}")
+        shopt -u nullglob
 
         echo "scan all files: $(printf '%s\n' "${packages[@]}" | sort -u | jq -R . | jq -s .)"
 
