@@ -19,19 +19,23 @@ SLOT="0"
 DEPEND="net-libs/zeromq
 	>=virtual/jre-1.7:*"
 RDEPEND="${DEPEND}"
+
 src_prepare() {
 	default
+	if [[ -e configure.in ]]; then
+		mv configure.in configure.ac || die
+	fi
 	eautoreconf
 }
 
 src_configure() {
 	PATH=/etc/java-config-2/current-system-vm/bin:$PATH
 	PKG_CONFIG=/usr/lib64/pkgconfig/
-	eautomake
 	econf
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die "emake install failed"
-	dodoc README ChangeLog || die "dodoc failed"
+	rm -f "${ED}"/usr/share/doc/${PF}/{README,ChangeLog} || die
+	dodoc ../README.md ../Changelog.md || die "dodoc failed"
 }
