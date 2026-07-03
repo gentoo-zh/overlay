@@ -26,6 +26,18 @@ DEPEND="dev-libs/libfmt:0/11.2.0"
 RDEPEND="${DEPEND}"
 BDEPEND="dev-util/cmakerc"
 
+src_prepare() {
+	sed -i \
+		-e 's/cmake_minimum_required(VERSION 3\.7\.2)/cmake_minimum_required(VERSION 3.10)/' \
+		azure-pipelines/e2e-ports/broken-symlink/src/CMakeLists.txt \
+		azure-pipelines/e2e-ports/vcpkg-cmake-config-many-targets/src/CMakeLists.txt \
+		azure-pipelines/e2e-ports/vcpkg-hello-world-1/src/CMakeLists.txt \
+		azure-pipelines/e2e-ports/vcpkg-hello-world-2/src/CMakeLists.txt \
+		|| die
+
+	cmake_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
 		"-DBUILD_TESTING=$(usex test)"
