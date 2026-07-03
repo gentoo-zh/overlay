@@ -39,8 +39,6 @@ KEYWORDS="-* ~amd64 ~arm ~arm64 ~mips ~riscv ~x86"
 IUSE="abi_mips_n64 abi_mips_o32 big-endian"
 REQUIRED_USE="mips? ( !big-endian || ( abi_mips_n64 abi_mips_o32 ) )"
 
-RDEPEND="!net-proxy/naiveproxy"
-
 QA_PREBUILT="
 	/opt/naiveproxy/naive
 "
