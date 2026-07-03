@@ -83,6 +83,13 @@ jobs:
             packages=($(printf '%s\n' "${packages[@]}" | grep -v "^$i" || true))
         done
 
+        declare -a fetch_restricted_packages=(
+            games-misc/oh-my-git-bin
+        )
+        for i in "${fetch_restricted_packages[@]}"; do
+            packages=($(printf '%s\n' "${packages[@]}" | grep -v -E "^(=)?${i}($|-[0-9])" || true))
+        done
+
         echo "scan all files: $(printf '%s\n' "${packages[@]}" | sort -u | jq -R . | jq -s .)"
 
         json_output=$(printf '%s\n' "${packages[@]}" | sort -u | jq -R . | jq -s . | tr -d '\n')
