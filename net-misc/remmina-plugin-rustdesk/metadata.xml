@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE
-pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
-  <maintainer type="person">
-    <name>ston</name>
-    <email>ston.jia@qq.com</email>
-  </maintainer>
-  <upstream>
-    <remote-id type="github">
-    muflone/remmina-plugin-rustdesk</remote-id>
-  </upstream>
+	<maintainer type="person">
+		<name>ston</name>
+		<email>ston.jia@qq.com</email>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">muflone/remmina-plugin-rustdesk</remote-id>
+	</upstream>
 </pkgmetadata>
