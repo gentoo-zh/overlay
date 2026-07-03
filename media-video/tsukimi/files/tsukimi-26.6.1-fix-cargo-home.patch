@@ -1,0 +1,20 @@
+diff --git a/src/meson.build b/src/meson.build
+index be75e7f..49807c1 100644
+--- a/src/meson.build
++++ b/src/meson.build
+@@ -13,14 +13,7 @@ endif
+ 
+ cargo_bin = cargo_target_dir / rust_target / meson.project_name()
+ 
+-if get_option('sandboxed-build')
+-    # This is the path used by flatpak-cargo-generator in flatpak-builder-tools
+-    cargo_env = ['CARGO_HOME=' + meson.project_source_root() / 'cargo']
+-else
+-    cargo_env = ['CARGO_HOME=' + meson.project_build_root() / 'cargo-home']
+-endif
+-
+-rust_env = cargo_env + [
++rust_env = [
+     'TSUKIMI_VERSION=' + version,
+     'TSUKIMI_LOCALEDIR=' + localedir,
+     'TSUKIMI_PKGDATADIR=' + pkgdatadir,
