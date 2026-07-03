@@ -32,3 +32,11 @@ src_unpack() {
 	cp -r "remmina-plugin-builder-${_BUILDERVER}" build || die
 	cp -r "${P}"/* "build/remmina-plugin-to-build" || die
 }
+
+src_prepare() {
+	sed -i \
+		-e 's/cmake_minimum_required(VERSION 3\.0\.0)/cmake_minimum_required(VERSION 3.10)/' \
+		CMakeLists.txt || die
+
+	cmake_src_prepare
+}
