@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-04 03:00:58 CST)
+(The last generation time: 2026-07-04 03:44:19 CST)
 
 ### Packages
 
@@ -431,7 +431,7 @@
  dev-util/tailspin                                     | 5.5.0              |            | https://github.com/bensadeh/tailspin                                                    | A log file highlighter
                                                        | 6.1.0              |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-util/trae-ide                                     | 2.3.30127          |            | https://trae.com.cn/                                                                    | Trae IDE (binary package)
+ dev-util/trae-ide                                     | 2.3.30127          |            | https://www.trae.cn/                                                                    | Trae IDE (binary package)
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-util/vcpkg-tool                                   | 2025.12.16         |            | https://github.com/microsoft/vcpkg-tool                                                 | Library manager for C/C++ (tool only).
    dev-util/cmakerc                                    | 2.0.1              | BD         | https://github.com/vector-of-bool/cmrc                                                  | A Resource Compiler in a Single CMake Script
