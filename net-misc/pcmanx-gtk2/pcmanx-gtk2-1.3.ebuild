@@ -35,6 +35,9 @@ DOCS=( TODO README NEWS ChangeLog AUTHORS )
 
 src_prepare() {
 	eautoreconf
+	pushd libltdl > /dev/null || die
+	eautoreconf
+	popd > /dev/null || die
 
 	# this flag crashes CTermData::memset16()
 	filter-flags -ftree-vectorize
