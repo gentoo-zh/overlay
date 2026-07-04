@@ -38,6 +38,15 @@ src_unpack(){
 	unpack_deb ${PN}-amd64-${PV}.deb
 }
 src_install(){
+	# Drop bundled arm64 optional dependencies from the amd64 package.
+	rm -r \
+		"${S}"/opt/unityhub/resources/app.asar.unpacked/node_modules/@napi-rs/canvas-linux-arm64-gnu \
+		"${S}"/opt/unityhub/resources/app.asar.unpacked/node_modules/@napi-rs/keyring-linux-arm64-gnu \
+		"${S}"/opt/unityhub/resources/app.asar.unpacked/node_modules/@vscode/ripgrep-linux-arm64 \
+		"${S}"/opt/unityhub/resources/app.asar.unpacked/node_modules/@unity/hub-fs-linux-arm64-gnu \
+		"${S}"/opt/unityhub/resources/app.asar.unpacked/node_modules/@unity/hub-proxy-linux-arm64-gnu \
+		|| die
+
 	insinto "/opt"
 	doins -r "${S}/opt/unityhub"
 	dosym -r /opt/unityhub/unityhub /usr/bin/unityhub
