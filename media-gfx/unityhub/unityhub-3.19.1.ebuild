@@ -6,7 +6,7 @@ EAPI=8
 inherit xdg desktop unpacker
 
 DESCRIPTION="The official unity tool for manager Unity Engines and projects"
-HOMEPAGE="https://unity.com/"
+HOMEPAGE="https://docs.unity.com/en-us/hub"
 SRC_URI="https://hub.unity3d.com/linux/repos/deb/pool/main/u/unity/unityhub_amd64/UnityHubSetup-${PV}-amd64.deb -> ${PN}-amd64-${PV}.deb"
 S=${WORKDIR}
 
