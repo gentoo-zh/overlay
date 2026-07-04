@@ -1,3 +1,16 @@
+> [!NOTE]
+> gentoo-zh overlay has moved to https://github.com/gentoo-zh/overlay. Old GitHub URLs continue to redirect. If you manually configured a remote, update it when convenient.
+
+## Repository migration
+
+This repository was transferred from `microcai/gentoo-zh` to the `gentoo-zh` organization through GitHub repository transfer, and later renamed to `gentoo-zh/overlay`.
+
+The current repository is:
+
+https://github.com/gentoo-zh/overlay
+
+See [MIGRATION.md](./MIGRATION.md) for details.
+
 # How to add this overlay to your Gentoo system
 
 ```
@@ -19,7 +32,7 @@ follow rule no.1 and no.2
 
 # the dependencies table
 
-https://github.com/Gentoo-zh/gentoo-zh/blob/deps-table/relation.md
+https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
 # commit message
 

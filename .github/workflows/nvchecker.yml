@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   eix:
-    if: github.repository == 'Gentoo-zh/gentoo-zh'
+    if: github.repository == 'gentoo-zh/overlay'
     runs-on: ubuntu-latest
     container:
       image: gentoo/stage3
@@ -135,6 +135,6 @@ jobs:
         name: ${{ matrix.name }}
         newver: ${{ matrix.newver }}
         oldver: ${{ matrix.oldver }}
-        GITHUB_TOKEN: ${{ secrets.GENTOO_ZH_NVCHECKER_PAT }} # https://github.com/Gentoo-zh/gentoo-zh/pull/3130
+        GITHUB_TOKEN: ${{ secrets.GENTOO_ZH_NVCHECKER_PAT }} # https://github.com/gentoo-zh/overlay/pull/3130
       run: |
         go run . --file gentoo-zh/.github/workflows/overlay.toml --name "$name" --newver "$newver" --oldver "$oldver"

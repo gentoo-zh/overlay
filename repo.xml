@@ -4,11 +4,11 @@
   <repo quality="experimental" status="unofficial">
     <name>gentoo-zh</name>
     <description>merged overlay of Gentoo-{China,Taiwan}</description>
-    <homepage>http://gentoo-zh.googlecode.com/</homepage>
+    <homepage>https://gentoozh.org</homepage>
     <owner type="project">
-      <email>microcaicai@gmail.com, robert.zhangle@gmail.com</email>
+      <email>overlay@gentoozh.org</email>
       <name>gentoo-zh</name>
     </owner>
-    <source type="git">https://github.com/Gentoo-zh/gentoo-zh.git</source>
+    <source type="git">https://github.com/gentoo-zh/overlay.git</source>
   </repo>
 </repositories>

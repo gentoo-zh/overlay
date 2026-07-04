@@ -1,0 +1,46 @@
+Title: gentoo-zh overlay moved to gentoo-zh/overlay
+Author: zakkaus <zakk@gentoozh.org>
+Content-Type: text/plain
+Posted: 2026-07-05
+Revision: 1
+News-Item-Format: 1.0
+
+The gentoo-zh overlay was transferred from the personal account:
+
+https://github.com/microcai/gentoo-zh
+
+to the gentoo-zh organization through GitHub repository transfer, and
+then renamed to its current location:
+
+https://github.com/gentoo-zh/overlay
+
+Both old addresses (microcai/gentoo-zh and gentoo-zh/gentoo-zh)
+301-redirect to the new repository in a single hop, for both the web and
+Git, so existing setups keep working. The gentoo-zh overlay is now
+maintained in the new repository.
+
+Please use the new repository for future issues, pull requests, and
+maintenance discussions.
+
+For more details, see MIGRATION.md in the repository.
+
+Users who configured the gentoo-zh overlay manually can update to the new
+address when convenient.
+
+Re-add the overlay:
+
+sudo eselect repository remove gentoo-zh
+sudo eselect repository add gentoo-zh git https://github.com/gentoo-zh/overlay.git
+sudo emaint sync -r gentoo-zh
+
+Or edit whichever file under /etc/portage/repos.conf/ contains the [gentoo-zh]
+section (eselect-repo.conf if you added it with eselect) and set its sync-uri to
+the new address:
+
+[gentoo-zh]
+location = /var/db/repos/gentoo-zh
+sync-type = git
+sync-uri = https://github.com/gentoo-zh/overlay.git
+auto-sync = yes
+
+Then run emerge --sync gentoo-zh.
