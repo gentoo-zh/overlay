@@ -1,13 +1,27 @@
-# Copyright 2024-2025 Gentoo Authors
+# Copyright 2024-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-DOTNET_PKG_COMPAT="9.0"
+DOTNET_PKG_COMPAT="10.0"
 NUGETS="
+	microsoft.codeanalysis.analyzers@3.3.4
+	microsoft.codeanalysis.common@4.12.0
+	microsoft.codeanalysis.csharp@4.12.0
+	microsoft.extensions.dependencyinjection.abstractions@10.0.7
+	microsoft.extensions.dependencyinjection@10.0.7
+	minver@6.0.0
 	sharpziplib@1.4.2
+	system.buffers@4.5.1
+	system.collections.immutable@8.0.0
+	system.commandline@2.0.0-beta4.22272.1
+	system.memory@4.5.5
+	system.numerics.vectors@4.5.0
+	system.reflection.metadata@8.0.0
+	system.runtime.compilerservices.unsafe@6.0.0
+	system.text.encoding.codepages@7.0.0
+	system.threading.tasks.extensions@4.5.4
 	utf.unknown@2.5.1
-	minver@5.0.0
 "
 
 inherit dotnet-pkg
@@ -38,15 +52,6 @@ src_unpack() {
 	if [[ "${PV}" == 9999 ]] ; then
 		git-r3_src_unpack
 	fi
-}
-
-src_prepare() {
-	# not working, see https://github.com/studyzy/imewlconverter/issues/371
-	sed -i -E "s|<MinVerMinimumVersion>.+</MinVerMinimumVersion>|<MinVerMinimumVersion>${PV}</MinVerMinimumVersion>|" \
-		src/Directory.Build.props || die
-	sed -i -e 's/dotnet ImeWlConverterCmd.dll/ImeWlConverterCmd/g' src/ImeWlConverterCmd/Program.cs || die
-
-	dotnet-pkg_src_prepare
 }
 
 src_install() {
