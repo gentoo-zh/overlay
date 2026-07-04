@@ -52,7 +52,7 @@ src_prepare() {
 pkg_setup() {
 	ewarn
 	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
-	ewarn "If you need support, please contact https://github.com/microcai/gentoo-zh and ${HOMEPAGE} directly."
+	ewarn "If you need support, please contact https://github.com/gentoo-zh/overlay and ${HOMEPAGE} directly."
 	ewarn "Do *not* open bugs in Gentoo's bugzilla unless you have issues with"
 	ewarn "the ebuilds. Thank you."
 	ewarn
