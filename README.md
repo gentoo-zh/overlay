@@ -1,3 +1,5 @@
+English | [简体中文](./README.zh-CN.md)
+
 > [!NOTE]
 > gentoo-zh overlay has moved to https://github.com/gentoo-zh/overlay. Old GitHub URLs continue to redirect. If you manually configured a remote, update it when convenient.
 
@@ -54,6 +56,15 @@ It is recommended to run `pkgdev commit` to quickly generate commit messages.
 
 * I trust contributors that have commit rights, therefore commitors
   should think carefully before committing.
+
+* Generative AI may be used to assist ebuild maintenance, but contributors must
+  ensure the quality of related ebuild changes. In particular, verify functional
+  correctness after modifications; applications, including CLI and GUI
+  applications, should receive appropriate smoke testing through actual use
+  before submission. Even when generative AI is used, the contributor remains
+  the primary person responsible for every commit. The contributor, submitter,
+  and commit author must be a human, not an AI tool or model identity such as
+  Codex, GPT, Claude, Gemini, or similar systems.
 
 * If you are sending a new pull request, make sure it contains all necessary commits
   for a single contribution, e.g. don't send two pull requests for an ebuild and its
