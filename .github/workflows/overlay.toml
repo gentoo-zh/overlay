@@ -1021,6 +1021,13 @@ use_latest_release = true
 prefix = "v"
 github_account = ["vowstar", "gouwazi"]
 
+["media-gfx/open-wallpaper-engine"]
+source = "github"
+github = "waywallen/open-wallpaper-engine"
+use_latest_release = true
+prefix = "v"
+github_account = "Puqns67"
+
 # TODO: very old package
 #["media-gfx/scangearmp"]
 
