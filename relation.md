@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-05 22:26:29 CST)
+(The last generation time: 2026-07-05 23:54:11 CST)
 
 ### Packages
 
@@ -172,6 +172,11 @@
                                                        | 4.4.7.28397        |            |                                                                                         |
                                                        | 5.2.3.32296        |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
+ app-misc/bilihud                                      | 9999               |            | https://github.com/locez/bilihud                                                        | Bilibili danmaku overlay for fullscreen games
+   dev-python/browser-cookie3                          | 0.20.1             | RD         | https://github.com/borisbabic/browser_cookie3                                           | Loads cookies from your browser into a cookiejar object
+   dev-python/pure-protobuf                            | 3.1.5              | RD         | https://github.com/eigenein/protobuf                                                    | A pure python implementation of google protobuf
+   dev-python/qasync                                   | 0.28.0             | RD         | https://github.com/CabbageDevelopment/qasync                                            | Implementation of the asyncio (PEP 3156) event-loop with Qt
+-------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  app-misc/ccal                                         | 2.5.3              |            | http://ccal.chinesebay.com/ccal/ccal.htm                                                | A simple command line calendar for Chinese lunar
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  app-misc/cc-switch                                    | 3.14.1             |            | https://github.com/farion1231/cc-switch                                                 | All-in-One Assistant for Claude Code, Codex & Gemini CLI
@@ -320,8 +325,6 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/archspec                                   | 0.2.6              |            | https://github.com/archspec/archspec                                                    | A library for detecting, labeling, and reasoning about microarchitectures
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                                           | Loads cookies from your browser into a cookiejar object
--------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/conda                                      | 26.5.3             |            | https://docs.conda.io/                                                                  | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0             |  D, RD     | https://github.com/conda/conda-libmamba-solver                                          | The libmamba based solver for conda
      dev-util/mamba                                    | 2.5.0              | RD         | https://github.com/mamba-org/mamba                                                      | The Fast Cross-Platform Package Manager
@@ -370,8 +373,6 @@
  dev-python/nudatus                                    | 0.0.5              |            | https://github.com/ZanderBrown/nudatus                                                  | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/nvchecker                                  | 2.20               |            | https://pypi.org/project/nvchecker/                                                     | nvchecker is for checking if a new version of some software has been released
--------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-python/pure-protobuf                              | 3.1.5              |            | https://github.com/eigenein/protobuf                                                    | A pure python implementation of google protobuf
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/pycosat                                    | 0.6.6              |            | https://github.com/conda/pycosat                                                        | Python bindings to picosat (a SAT solver)
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
@@ -598,7 +599,6 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-sound/feeluown                                  | 5.0.2              |            | https://github.com/feeluown/FeelUOwn                                                    | A user-friendly and hackable music player
    dev-python/janus                                    | 2.0.0              | RD         | https://github.com/aio-libs/janus                                                       | Implementation of the asyncio (PEP 3156) event-loop with Qt
-   dev-python/qasync                                   | 0.28.0             | RD         | https://github.com/CabbageDevelopment/qasync                                            | Implementation of the asyncio (PEP 3156) event-loop with Qt
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-sound/go-musicfox                               | 4.8.5              |            | https://github.com/go-musicfox/go-musicfox                                              | Command-line Netease Cloud Music written in Go
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
