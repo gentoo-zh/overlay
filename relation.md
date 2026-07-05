@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-05 15:32:27 CST)
+(The last generation time: 2026-07-05 21:28:43 CST)
 
 ### Packages
 
@@ -516,7 +516,7 @@
                                                        | 9999               |            |                                                                                         |
    dev-qt/qtgrpc                                       | 6.10.3             |  D, RD     |                                                                                         | Qt GRPC and Protobuf generator and bindings
                                                        | 6.11.1             |            |                                                                                         |
-   media-plugins/waywallen-display                     | 0.2.7              |  D, RD     | https://github.com/waywallen/waywallen-display                                          | Desktop integration for the waywallen wallpaper daemon
+   media-plugins/waywallen-display                     | 0.2.8              |  D, RD     | https://github.com/waywallen/waywallen-display                                          | Desktop integration for the waywallen wallpaper daemon
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  kde-misc/plasma-applet-netspeed-widget                | 3.1                |            | https://www.kde-look.org/p/998895/                                                      | Plasma 5 widget that displays the currently used network bandwidth.
                                                        | 9999               |            |                                                                                         |
