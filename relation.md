@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-05 21:51:43 CST)
+(The last generation time: 2026-07-05 22:26:29 CST)
 
 ### Packages
 
@@ -370,6 +370,8 @@
  dev-python/nudatus                                    | 0.0.5              |            | https://github.com/ZanderBrown/nudatus                                                  | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/nvchecker                                  | 2.20               |            | https://pypi.org/project/nvchecker/                                                     | nvchecker is for checking if a new version of some software has been released
+-------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
+ dev-python/pure-protobuf                              | 3.1.5              |            | https://github.com/eigenein/protobuf                                                    | A pure python implementation of google protobuf
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/pycosat                                    | 0.6.6              |            | https://github.com/conda/pycosat                                                        | Python bindings to picosat (a SAT solver)
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
