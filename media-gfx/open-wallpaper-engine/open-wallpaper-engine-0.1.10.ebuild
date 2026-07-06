@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/waywallen/open-wallpaper-engine"
 
 SPIRV_REFLECT_TAG="1.4.321.0"
 RSTD_COMMIT="ebdd90d1e770b63f89be24204b17038fe412db81"
-WAVSEN_COMMIT="7513365c75c33c3aa1840c5b7cfeb3642e8db5c7"
+WAVSEN_COMMIT="aab112235e4da7e03c233793a9d612507f0e6355"
 CEF_FILENAME="cef_binary_149.0.4+g2f1bfd8+chromium-149.0.7827.156_linux64_minimal"
 
 SRC_URI="
