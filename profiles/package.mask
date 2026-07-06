@@ -13,11 +13,3 @@ dev-python/numba
 dev-python/onnxruntime
 dev-python/sounddevice
 dev-python/soxr
-
-# jinqiang zhang <peeweep@0x0.ee> (2026-05-16)
-# Xray provided official tun inbound since v26.4.13.
-# I packaged tun2socks as Xray's tun inbound solution,
-# but I had never use tun2socks either I never figure out how to use it.
-# Removal on 2026-06-16.
-net-proxy/tun2socks
-
