@@ -1,4 +1,4 @@
-[English](./README.md) | 简体中文
+[English](./README.md) | 简体中文 | [正體中文](./README.zh-TW.md)
 
 > [!NOTE]
 > gentoo-zh overlay 已迁移至 https://github.com/gentoo-zh/overlay 。旧的 GitHub URL 会继续重定向。如果你手动配置过 remote，可以在方便时更新。
