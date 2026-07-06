@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-05 23:54:11 CST)
+(The last generation time: 2026-07-06 08:48:11 CST)
 
 ### Packages
 
@@ -516,13 +516,6 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  gui-apps/tux-manager                                  | 1.0.7              |            | https://github.com/benapetr/TuxManager                                                  | A Linux Task Manager alternative built with Qt6
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- gui-apps/waywallen                                    | 0.2.3              |            | https://github.com/waywallen/waywallen                                                  | A dynamic wallpaper solution for Linux desktops
-   dev-libs/qml-material                               | 0.1.6_p20260703    |  D, RD     | https://github.com/hypengw/QmlMaterial                                                  | A library of Qml implementing Google's Material Design
-                                                       | 9999               |            |                                                                                         |
-   dev-qt/qtgrpc                                       | 6.10.3             |  D, RD     |                                                                                         | Qt GRPC and Protobuf generator and bindings
-                                                       | 6.11.1             |            |                                                                                         |
-   media-plugins/waywallen-display                     | 0.2.8              |  D, RD     | https://github.com/waywallen/waywallen-display                                          | Desktop integration for the waywallen wallpaper daemon
--------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  kde-misc/plasma-applet-netspeed-widget                | 3.1                |            | https://www.kde-look.org/p/998895/                                                      | Plasma 5 widget that displays the currently used network bandwidth.
                                                        | 9999               |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
@@ -572,6 +565,14 @@
  media-fonts/zhudou                                    | 2.000              |            | https://github.com/Buernia/Zhudou-Sans                                                  | A font family for CJK symbols and punctuation, derived from Noto Sans.
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-gfx/bambustudio-bin                             | 02.07.01.62        |            | https://bambulab.com                                                                    | Bambu Studio is a cutting-edge, feature-rich slicing software
+-------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
+ media-gfx/open-wallpaper-engine                       | 0.1.9              |            | https://github.com/waywallen/open-wallpaper-engine                                      | A dynamic wallpaper solution for Linux desktops
+   gui-apps/waywallen                                  | 0.2.3-r1           |  D, RD     | https://github.com/waywallen/waywallen                                                  | A dynamic wallpaper solution for Linux desktops
+     dev-libs/qml-material                             | 0.1.6_p20260703    |  D, RD     | https://github.com/hypengw/QmlMaterial                                                  | A library of Qml implementing Google's Material Design
+                                                       | 9999               |            |                                                                                         |
+     dev-qt/qtgrpc                                     | 6.10.3             |  D, RD     |                                                                                         | Qt GRPC and Protobuf generator and bindings
+                                                       | 6.11.1             |            |                                                                                         |
+     media-plugins/waywallen-display                   | 0.2.8              |  D, RD     | https://github.com/waywallen/waywallen-display                                          | Desktop integration for the waywallen wallpaper daemon
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-gfx/scangearmp                                  | 2.4.10             |            | https://www.canon.com                                                                   | Driver and utility package for Canon scanners
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
