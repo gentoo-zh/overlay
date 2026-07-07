@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<name>Zakkaus</name>
+		<email>zakk@gentoozh.org</email>
+	</maintainer>
+	<upstream>
+		<bugs-to>https://github.com/gentoo-zh/gzpaste/issues</bugs-to>
+		<remote-id type="github">gentoo-zh/gzpaste</remote-id>
+	</upstream>
+</pkgmetadata>
