@@ -69,12 +69,6 @@ RDEPEND="
 	)
 "
 
-pkg_nofetch() {
-	einfo "Please download WPS Office 2019 For Linux version ${PV} from"
-	einfo "    ${HOMEPAGE}"
-	einfo "The archive should then be placed into your distfiles directory."
-}
-
 src_install() {
 	local entry file new_rpath rpath
 	local -a rpath_entries
