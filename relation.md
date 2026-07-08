@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-08 13:23:52 CST)
+(The last generation time: 2026-07-08 14:40:44 CST)
 
 ### Packages
 
@@ -794,7 +794,7 @@
                                                        | 9999               |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-proxy/clash-verge-rev                             | 2.5.1              |            | https://www.clashverge.dev                                                              | GUI client based on Tauri for tailored proxy experience
-   net-proxy/mihomo                                    | 1.19.27            | BD, RD     | https://wiki.metacubex.one/                                                             | Another Clash Kernel, formerly Clash.Meta
+   net-proxy/mihomo                                    | 1.19.28            | BD, RD     | https://wiki.metacubex.one/                                                             | Another Clash Kernel, formerly Clash.Meta
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-proxy/dae                                         | 1.0.0              |            | https://github.com/daeuniverse/dae                                                      | A lightweight and high-performance transparent proxy solution based on eBPF
                                                        | 1.1.0              |            |                                                                                         |
