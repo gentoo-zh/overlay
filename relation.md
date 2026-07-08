@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-08 17:21:58 CST)
+(The last generation time: 2026-07-09 01:27:46 CST)
 
 ### Packages
 
@@ -568,7 +568,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-gfx/bambustudio-bin                             | 02.07.01.62        |            | https://bambulab.com                                                                    | Bambu Studio is a cutting-edge, feature-rich slicing software
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- media-gfx/open-wallpaper-engine                       | 0.1.10             |            | https://github.com/waywallen/open-wallpaper-engine                                      | A dynamic wallpaper solution for Linux desktops
+ media-gfx/open-wallpaper-engine                       | 0.1.11             |            | https://github.com/waywallen/open-wallpaper-engine                                      | A dynamic wallpaper solution for Linux desktops
    gui-apps/waywallen                                  | 0.2.4              |  D, RD     | https://github.com/waywallen/waywallen                                                  | A dynamic wallpaper solution for Linux desktops
      dev-libs/qml-material                             | 0.1.6_p20260705    |  D, RD     | https://github.com/hypengw/QmlMaterial                                                  | A library of Qml implementing Google's Material Design
                                                        | 9999               |            |                                                                                         |
