@@ -1,25 +1,27 @@
-# Copyright 2023-2025 Gentoo Authors
+# Copyright 2023-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
 inherit go-module systemd
 
-DESCRIPTION="Automatically obtain your public IP address and set to your domain name service."
+DESCRIPTION="Automatically obtain your public IP address and set to your domain name service"
 HOMEPAGE="https://github.com/jeessy2/ddns-go"
 SRC_URI="
 	https://github.com/jeessy2/ddns-go/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/Puqns67/gentoo-deps/releases/download/${P}/${P}-vendor.tar.xz
+	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-vendor.tar.xz
 "
 
 LICENSE="MIT BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~riscv"
 
+BDEPEND=">=dev-lang/go-1.25.0"
+
 PATCHES=(
 	"${FILESDIR}/${PN}-6.13.2-remove_update_support.patch"
 	"${FILESDIR}/${PN}-6.13.2-remove_service_management_support.patch"
-	"${FILESDIR}/${PN}-6.16.2-build_deps_tidy.patch"
+	"${FILESDIR}/${PN}-6.17.1-build_deps_tidy.patch"
 )
 
 src_compile() {

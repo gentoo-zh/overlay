@@ -1,0 +1,43 @@
+From 303e540acb68fde921e2b9dc8d9f894ca5719e9d Mon Sep 17 00:00:00 2001
+From: Puqns67 <me@puqns67.icu>
+Date: Thu, 20 Nov 2025 19:49:28 +0800
+Subject: [PATCH 3/3] build(deps): tidy
+
+---
+ go.mod | 6 +-----
+ go.sum | 2 --
+ 2 files changed, 1 insertion(+), 7 deletions(-)
+
+diff --git a/go.mod b/go.mod
+index c90b882..6f211c9 100644
+--- a/go.mod
++++ b/go.mod
+@@ -3,14 +3,10 @@ module github.com/jeessy2/ddns-go/v6
+ go 1.25.0
+ 
+ require (
+-	github.com/kardianos/service v1.2.4
+ 	github.com/wagslane/go-password-validator v0.3.0
+ 	golang.org/x/crypto v0.52.0
+ 	golang.org/x/net v0.55.0
+-	gopkg.in/yaml.v3 v3.0.1
+-)
+-
+-require (
+ 	golang.org/x/sys v0.45.0
+ 	golang.org/x/text v0.37.0
++	gopkg.in/yaml.v3 v3.0.1
+ )
+diff --git a/go.sum b/go.sum
+index 24db4e2..46ca20b 100644
+--- a/go.sum
++++ b/go.sum
+@@ -1,5 +1,3 @@
+-github.com/kardianos/service v1.2.4 h1:XNlGtZOYNx2u91urOdg/Kfmc+gfmuIo1Dd3rEi2OgBk=
+-github.com/kardianos/service v1.2.4/go.mod h1:E4V9ufUuY82F7Ztlu1eN9VXWIQxg8NoLQlmFe0MtrXc=
+ github.com/wagslane/go-password-validator v0.3.0 h1:vfxOPzGHkz5S146HDpavl0cw1DSVP061Ry2PX0/ON6I=
+ github.com/wagslane/go-password-validator v0.3.0/go.mod h1:TI1XJ6T5fRdRnHqHt14pvy1tNVnrwe7m3/f1f2fDphQ=
+ golang.org/x/crypto v0.52.0 h1:RMs7fP2rXdep0CftQlK8Uf+kibLm7qkCcradZWYz988=
+-- 
+2.55.0
+
