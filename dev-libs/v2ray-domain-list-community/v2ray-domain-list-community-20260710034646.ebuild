@@ -20,7 +20,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="!dev-libs/v2ray-domain-list-community-bin"
-BDEPEND=">=dev-lang/go-1.24"
+BDEPEND=">=dev-lang/go-1.25.12"
 
 src_compile() {
 	ego run ./
