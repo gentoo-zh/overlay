@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-10 22:19:21 CST)
+(The last generation time: 2026-07-10 23:15:05 CST)
 
 ### Packages
 
@@ -944,8 +944,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  www-client/brave-bin                                  | 1.92.139           |            | https://brave.com/                                                                      | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- www-client/zen-browser-bin                            | 1.18.4_beta        |            | https://zen-browser.app/                                                                | Experience tranquillity while browsing the web without people tracking you!
-                                                       | 1.21.5_beta        |            |                                                                                         |
+ www-client/zen-browser-bin                            | 1.21.6b            |            | https://zen-browser.app/                                                                | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  www-servers/darkhttpd                                 | 1.17               |            | http://unix4lyfe.org/darkhttpd/                                                         | A small, static webserver
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
