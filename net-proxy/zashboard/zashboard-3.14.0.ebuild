@@ -7,14 +7,17 @@ DESCRIPTION="The Official Mihomo Dashboard"
 HOMEPAGE="https://github.com/Zephyruso/zashboard"
 SRC_URI="
 	https://github.com/Zephyruso/zashboard/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/liangyongxiang/gentoo-deps/releases/download/${P}/${P}-node_modules.tar.xz
+	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-node_modules.tar.xz
 "
 
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-BDEPEND="net-libs/nodejs[npm]"
+BDEPEND="
+	net-libs/nodejs[npm]
+	dev-vcs/git
+"
 
 src_compile() {
 	npm run build || die
