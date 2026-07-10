@@ -1786,6 +1786,12 @@ include_regex = "desktop/v.*"
 prefix = "desktop/v"
 github_account = "gouwazi"
 
+["www-client/adspower-global"]
+source = "regex"
+url = "https://www.adspower.com/tc/download"
+regex = 'linux-x64-global/([\d.]+)/AdsPower'
+github_account = "zakkaus"
+
 ["www-client/brave-bin"]
 source = "aur"
 aur = "brave-bin"
