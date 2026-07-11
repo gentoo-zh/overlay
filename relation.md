@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-11 16:46:53 CST)
+(The last generation time: 2026-07-11 21:02:51 CST)
 
 ### Packages
 
@@ -399,8 +399,7 @@
        app-crypt/archlinux-keyring                     | 20251116           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                                | GnuPG keyring of Archlinux developer keys
                                                        | 20260612           |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-util/asdf-vm                                      | 0.15.0             |            | https://github.com/asdf-vm/asdf                                                         | Manage all your runtime versions with one tool
-                                                       | 0.19.0             |            |                                                                                         |
+ dev-util/asdf-vm                                      | 0.20.0             |            | https://github.com/asdf-vm/asdf                                                         | Manage all your runtime versions with one tool
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-util/binsider                                     | 0.3.2              |            | https://binsider.dev                                                                    | Analyze ELF binaries like a boss
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
