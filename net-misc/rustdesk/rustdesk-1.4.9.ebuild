@@ -78,7 +78,7 @@ _VCPKG_TAG="2025.08.27"
 _HWCODEC_EXTERNALS_COMMIT="8903740a1f47884906a6e347ad3d8d56304d9771"
 # fix: libs/hbb_common is a empty directory
 # git ls-tree HEAD libs/hbb_common
-_HBB_COMMON_COMMIT="387603f47cbb15c0d3dc3d67ae3396d3eb707daf"
+_HBB_COMMON_COMMIT="7e1c392c62d39c364127307cd408421dd5f8cfb0"
 # fix: kcp-sys-*/kcp is a empty directory
 # git clone https://github.com/rustdesk-org/kcp-sys
 # git ls-tree HEAD kcp
@@ -145,8 +145,8 @@ QA_PRESTRIPPED="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${P}-fix-llvm22-bindgen.patch
-	"${FILESDIR}"/${P}-disable-check-x11.patch
+	"${FILESDIR}"/${PN}-1.4.8-fix-llvm22-bindgen.patch
+	"${FILESDIR}"/${PN}-1.4.8-disable-check-x11.patch
 )
 
 pkg_setup() {
