@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-11 21:50:46 CST)
+(The last generation time: 2026-07-11 22:07:12 CST)
 
 ### Packages
 
@@ -761,7 +761,7 @@
    acct-user/reframe                                   | 0                  |  D, RD     |                                                                                         | user for reframe
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-misc/remmina-plugin-rustdesk                      | 1.0.0.0-r1         |            | https://www.muflone.com/remmina-plugin-rustdesk/                                        | A protocol plugin for Remmina to launch a Rustdesk connection.
-   net-misc/rustdesk                                   | 1.4.8              |  D, RD     | https://rustdesk.com/                                                                   | An open-source remote desktop, and alternative to TeamViewer
+   net-misc/rustdesk                                   | 1.4.9              |  D, RD     | https://rustdesk.com/                                                                   | An open-source remote desktop, and alternative to TeamViewer
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-misc/reqable                                      | 3.2.4              |            | https://reqable.com/en-US/                                                              | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
@@ -806,7 +806,7 @@
                                                        | 9999               |            |                                                                                         |
    sys-apps/pnpm                                       | 11.9.0             | BD         | https://pnpm.io                                                                         | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- net-proxy/flclash-bin                                 | 0.8.93             |            | https://github.com/chen08209/FlClash                                                    | A multi-platform proxy client based on ClashMeta
+ net-proxy/flclash-bin                                 | 0.8.94             |            | https://github.com/chen08209/FlClash                                                    | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-proxy/hysteria                                    | 2.9.1              |            | https://github.com/apernet/hysteria                                                     | A powerful, lightning fast and censorship resistant proxy.
                                                        | 2.9.3              |            |                                                                                         |
