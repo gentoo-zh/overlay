@@ -1,8 +1,4 @@
-commit a864a19c2135830d22a7837bfbe9291d0ca642b7
-Author: jinqiang zhang <peeweep@0x0.ee>
-Date:   Wed Jun 24 13:44:55 2026 +0800
-
-    fix llvm 22 build
+https://github.com/rustdesk/rustdesk/pull/15565
 
 diff --git a/Cargo.lock b/Cargo.lock
 index 8ec2d4a53..1dcf488d0 100644
