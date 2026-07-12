@@ -11,7 +11,7 @@ DESCRIPTION="A dynamic wallpaper solution for Linux desktops"
 HOMEPAGE="https://github.com/waywallen/open-wallpaper-engine"
 
 SPIRV_REFLECT_TAG="1.4.321.0"
-RSTD_COMMIT="ebdd90d1e770b63f89be24204b17038fe412db81"
+RSTD_COMMIT="f30b9edc43734b88c0ec9afe90604c1f54cc4e8d"
 WAVSEN_COMMIT="aab112235e4da7e03c233793a9d612507f0e6355"
 CEF_FILENAME="cef_binary_149.0.4+g2f1bfd8+chromium-149.0.7827.156_linux64_minimal"
 
@@ -54,7 +54,6 @@ DEPEND="
 	${RDEPEND}
 	dev-cpp/argparse
 	dev-cpp/eigen
-	dev-cpp/nlohmann_json
 	dev-util/vulkan-headers
 "
 BDEPEND="
@@ -66,17 +65,13 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}/${PN}-0.1.9-use-system-depends.patch"
+	"${FILESDIR}/${PN}-0.1.12-use-system-depends.patch"
 	"${FILESDIR}/${PN}-0.1.9-fix-waywallen-plugin-install-path.patch"
 	"${FILESDIR}/${PN}-0.1.9-disable-viewer-default.patch"
 )
 
 src_prepare() {
 	default_src_prepare
-
-	pushd "${WORKDIR}/rstd-${RSTD_COMMIT}" || die
-	eapply "${FILESDIR}/${PN}-0.1.9-rstd-fixes.patch"
-	popd || die
 
 	pushd "${WORKDIR}/wavsen-${WAVSEN_COMMIT}" || die
 	eapply "${FILESDIR}/${PN}-0.1.9-wavsen-optional-vaapi.patch"

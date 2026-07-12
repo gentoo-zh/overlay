@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 64ecf6a..47a97f9 100644
+index 6efb1a5..0174dd9 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -29,6 +29,11 @@ if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT WAYWALLEN_ALLOW_NONCLANG)
+@@ -32,6 +32,11 @@ if(NOT CMAKE_CXX_COMPILER_ID MATCHES "Clang" AND NOT WAYWALLEN_ALLOW_NONCLANG)
          "or pass -DWAYWALLEN_ALLOW_NONCLANG=ON to bypass this check.")
  endif()
  
@@ -14,7 +14,7 @@ index 64ecf6a..47a97f9 100644
  
  find_package(PkgConfig REQUIRED)
  find_package(Threads REQUIRED)
-@@ -42,12 +47,6 @@ endif()
+@@ -45,12 +50,6 @@ endif()
  include_directories(SYSTEM third_party)
  add_subdirectory(third_party)
  
@@ -28,7 +28,7 @@ index 64ecf6a..47a97f9 100644
      include(${CMAKE_SOURCE_DIR}/cmake/CEF.cmake)
  endif()
 diff --git a/src/Scene/CMakeLists.txt b/src/Scene/CMakeLists.txt
-index 2210086..3441bbf 100644
+index 915eff3..d44f788 100644
 --- a/src/Scene/CMakeLists.txt
 +++ b/src/Scene/CMakeLists.txt
 @@ -66,12 +66,13 @@ set_property(TARGET owe-base PROPERTY CXX_SCAN_FOR_MODULES ON)
@@ -41,8 +41,8 @@ index 2210086..3441bbf 100644
    PUBLIC FILE_SET cxx_modules TYPE CXX_MODULES FILES Script/Script.cppm)
  target_link_libraries(owe-script
    PUBLIC  owe-base
--  PRIVATE qjs nlohmann_json)
-+  PRIVATE PkgConfig::quickjs-ng nlohmann_json)
+-  PRIVATE qjs)
++  PRIVATE PkgConfig::quickjs-ng)
  target_include_directories(owe-script
    PUBLIC  .. . Utils/include
    PRIVATE Utils Utils/include/Utils Script)
@@ -60,10 +60,10 @@ index 17a7069..ab1f9e6 100644
  #include "Utils/Sha.hpp"
  module wescene.shader_compile;
 diff --git a/third_party/CMakeLists.txt b/third_party/CMakeLists.txt
-index aa15331..0f65bc7 100644
+index b80147e..eab5c62 100644
 --- a/third_party/CMakeLists.txt
 +++ b/third_party/CMakeLists.txt
-@@ -46,12 +46,16 @@ set(BUILD_EXTERNAL          OFF CACHE INTERNAL "")
+@@ -44,12 +44,16 @@ set(BUILD_EXTERNAL          OFF CACHE INTERNAL "")
  set(GLSLANG_TESTS           OFF CACHE INTERNAL "")
  set(BUILD_TESTING           OFF CACHE INTERNAL "")
  
