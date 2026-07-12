@@ -3,9 +3,9 @@
 
 EAPI="8"
 ETYPE="sources"
-K_WANT_GENPATCHES=""
-# Note: to bump xanmod, check PATCHSET in sys-kernel/gentoo-kernel
-PATCHSET=linux-gentoo-patches-${PV}
+K_WANT_GENPATCHES="base extras"
+# Note: to bump xanmod, check K_GENPATCHES_VER in sys-kernel/gentoo-sources
+K_GENPATCHES_VER="5"
 
 inherit check-reqs kernel-2
 detect_version
@@ -20,7 +20,7 @@ XANMOD_URI="https://downloads.sourceforge.net/project/xanmod/releases/main"
 OKV="${OKV}-xanmod"
 SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
-	https://distfiles.gentoo.org/pub/proj/dist-kernel/patchsets/$(ver_cut 1-2)/${PATCHSET}.tar.xz
+	${GENPATCHES_URI}
 	${XANMOD_URI}/${PV}-xanmod${XANMOD_VERSION}/patch-${PV}-xanmod${XANMOD_VERSION}.xz
 "
 S="${WORKDIR}/linux-${OKV}${XANMOD_VERSION}"
@@ -41,12 +41,14 @@ src_unpack() {
 src_prepare() {
 	kernel-2_src_prepare
 	rm "${S}/tools/testing/selftests/tc-testing/action-ebpf"
+	# delete linux version patches (xanmod already includes stable bump)
+	rm "${WORKDIR}"/*"${MY_P}"*.patch 2>/dev/null || :
 
 	local PATCHES=(
 		# xanmod patches
 		"${WORKDIR}"/patch-${PV}-xanmod${XANMOD_VERSION}
 		# genpatches
-		"${WORKDIR}/${PATCHSET}"/*.patch
+		"${WORKDIR}"/*.patch
 	)
 	default
 }
