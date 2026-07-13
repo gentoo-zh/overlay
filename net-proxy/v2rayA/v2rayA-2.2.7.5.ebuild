@@ -13,9 +13,9 @@ SRC_URI="
 	https://github.com/v2rayA/v2rayA/releases/download/v${PV}/web.tar.gz -> ${P}-web.tar.gz
 "
 # maintainer generated deps pack
-# generated with liuyujielol/gentoo-go-deps/.github/workflows/generator.yml
+# generated with gentoo-zh/gentoo-deps/.github/workflows/generator.yml
 SRC_URI+="
-	https://github.com/liuyujielol/gentoo-go-deps/releases/download/${P}/${P}-deps.tar.xz
+	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-deps.tar.xz
 "
 
 LICENSE="AGPL-3"
