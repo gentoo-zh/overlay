@@ -19,7 +19,7 @@ HOMEPAGE="https://github.com/gmg137/netease-cloud-music-gtk"
 
 SRC_URI="
 	https://github.com/gmg137/netease-cloud-music-gtk/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/liuyujielol/gentoo-go-deps/releases/download/${P}/${P}-crates.tar.xz
+	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-crates.tar.xz
 	https://github.com/gmg137/netease-cloud-music-api/archive/refs/tags/${NCM_API_TAG}.tar.gz ->
 	netease-cloud-music-api-${NCM_API_TAG}.tar.gz
 "
