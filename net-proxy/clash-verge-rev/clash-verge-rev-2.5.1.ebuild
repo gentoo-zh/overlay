@@ -24,8 +24,8 @@ HOMEPAGE="
 	https://www.clashverge.dev
 	https://github.com/clash-verge-rev/clash-verge-rev
 "
-# Web dist tarball generared from liuyujielol/gentoo-go-deps/blob/cvr/.github/workflows/generator.yml
-DEPS_URI="https://github.com/liuyujielol/gentoo-go-deps/releases/download"
+# Web dist tarball generared from gentoo-zh/gentoo-deps/blob/cvr/.github/workflows/generator.yml
+DEPS_URI="https://github.com/gentoo-zh/gentoo-deps/releases/download"
 SRC_URI="
 	https://github.com/clash-verge-rev/clash-verge-rev/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	${DEPS_URI}/${P}/${P/-rev/}-crates.tar.xz
