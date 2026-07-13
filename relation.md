@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-14 04:09:47 CST)
+(The last generation time: 2026-07-14 04:31:05 CST)
 
 ### Packages
 
@@ -810,8 +810,8 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.8.94             |            | https://github.com/chen08209/FlClash                                                    | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- net-proxy/hysteria                                    | 2.9.1              |            | https://github.com/apernet/hysteria                                                     | A powerful, lightning fast and censorship resistant proxy
-                                                       | 2.9.3              |            |                                                                                         |
+ net-proxy/hysteria                                    | 2.10.0             |            | https://github.com/apernet/hysteria                                                     | A powerful, lightning fast and censorship resistant proxy
+                                                       | 2.9.1              |            |                                                                                         |
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                                         | A powerful, lightning fast and censorship resistant proxy
    acct-user/hysteria                                  | 0                  |  D, RD     |                                                                                         | A powerful, lightning fast and censorship resistant proxy
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
