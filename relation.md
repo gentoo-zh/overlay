@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-13 02:10:38 CST)
+(The last generation time: 2026-07-13 14:44:58 CST)
 
 ### Packages
 
@@ -189,6 +189,8 @@
  app-misc/cc-switch-cli                                | 5.4.0              |            | https://github.com/SaladDay/cc-switch-cli                                               | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
                                                        | 5.5.0              |            |                                                                                         |
                                                        | 5.8.7              |            |                                                                                         |
+-------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
+ app-misc/claude-desktop                               | 1.19367.0          |            | https://claude.com/download                                                             | Desktop application for Claude.ai
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.2.8              |            | https://github.com/Loongphy/codex-auth                                                  | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
