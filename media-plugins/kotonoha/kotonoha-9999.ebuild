@@ -7,7 +7,7 @@ DISTUTILS_USE_PEP517=hatchling
 DISTUTILS_EXT=1
 PYTHON_COMPAT=( python3_{13..14} )
 
-inherit desktop distutils-r1 git-r3
+inherit cmake desktop distutils-r1 git-r3
 
 DESCRIPTION="Wayland lyrics overlay for MPRIS-compatible media players"
 HOMEPAGE="https://github.com/locez/kotonoha"
@@ -17,15 +17,20 @@ EGIT_SUBMODULES=( '*' )
 LICENSE="MIT"
 SLOT="0"
 
+DEPEND="
+	dev-libs/wayland
+	dev-qt/qtbase:6
+	kde-plasma/layer-shell-qt
+"
 RDEPEND="
+	${DEPEND}
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/dbus-fast[${PYTHON_USEDEP}]
 	dev-python/pyqt6[svg,${PYTHON_USEDEP}]
 	dev-python/qasync[${PYTHON_USEDEP}]
-	dev-qt/qtbase:6
 	dev-qt/qtwayland:6
-	kde-plasma/layer-shell-qt
 "
+BDEPEND="virtual/pkgconfig"
 
 EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
@@ -39,8 +44,31 @@ python_prepare_all() {
 	distutils-r1_python_prepare_all
 }
 
+src_prepare() {
+	cmake_src_prepare
+	distutils-r1_src_prepare
+}
+
+src_configure() {
+	python_setup
+
+	local mycmakeargs=(
+		-DPython3_EXECUTABLE="${PYTHON}"
+		-DKOTONOHA_INSTALL_DIR=src/kotonoha
+	)
+
+	cmake_src_configure
+	distutils-r1_src_configure
+}
+
 src_compile() {
-	./src/kotonoha/build_bridge.sh || die
+	cmake_src_compile
+	cmake --install "${BUILD_DIR}" \
+		--config "${CMAKE_BUILD_TYPE}" \
+		--prefix "${S}" \
+		--component KotonohaBridge \
+		|| die
+
 	distutils-r1_src_compile
 }
 
