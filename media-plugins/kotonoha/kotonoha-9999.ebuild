@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DISTUTILS_USE_PEP517=hatchling
+DISTUTILS_USE_PEP517=scikit-build-core
 DISTUTILS_EXT=1
 PYTHON_COMPAT=( python3_{13..14} )
 
@@ -36,41 +36,10 @@ BDEPEND="virtual/pkgconfig"
 EPYTEST_PLUGINS=( pytest-asyncio )
 distutils_enable_tests pytest
 
-python_prepare_all() {
-	sed -i \
-		-e '/hatch-build-scripts/d' \
-		-e '/\[tool.hatch.build.hooks.build-scripts\]/,/artifacts =/d' \
-		pyproject.toml || die
-
-	distutils-r1_python_prepare_all
-}
-
-src_prepare() {
-	cmake_src_prepare
-	distutils-r1_src_prepare
-}
-
-src_configure() {
-	python_setup
-
-	local mycmakeargs=(
-		-DPython3_EXECUTABLE="${PYTHON}"
-		-DKOTONOHA_INSTALL_DIR=src/kotonoha
+python_configure_all() {
+	DISTUTILS_ARGS=(
+		-DKOTONOHA_INSTALL_DIR=kotonoha
 	)
-
-	cmake_src_configure
-	distutils-r1_src_configure
-}
-
-src_compile() {
-	cmake_src_compile
-	cmake --install "${BUILD_DIR}" \
-		--config "${CMAKE_BUILD_TYPE}" \
-		--prefix "${S}" \
-		--component KotonohaBridge \
-		|| die
-
-	distutils-r1_src_compile
 }
 
 python_install_all() {
