@@ -5,7 +5,7 @@
 		<email>3117086599@qq.com</email>
 		<name>huaji2369</name>
 	</maintainer>
-    <upstream>
-        <remote-id type="github">replydev/cotp</remote-id>
-    </upstream>
+	<upstream>
+		<remote-id type="github">replydev/cotp</remote-id>
+	</upstream>
 </pkgmetadata>
