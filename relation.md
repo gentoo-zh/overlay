@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-14 16:11:16 CST)
+(The last generation time: 2026-07-14 16:17:52 CST)
 
 ### Packages
 
@@ -976,8 +976,6 @@
  x11-terms/wezterm-bin                                 | 20240203           |            | https://wezfurlong.org/wezterm                                                          | A terminal emulator and multiplexer implemented in Rust
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  x11-themes/bibata-cursor                              | 2.0.7              |            | https://www.bibata.live                                                                 | Open source, compact, and material designed cursor set
--------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- x11-themes/fcitx-breeze                               | 3.1.0              |            | https://gitlab.com/scratch-er/fcitx5-breeze                                             | Fcitx5 theme to match KDE's Breeze style
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  x11-themes/kora-icon-theme                            | 2.0.4              |            | https://github.com/bikass/kora                                                          | An SVG icon theme with lots of new icons for GNU/Linux operating systems
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
