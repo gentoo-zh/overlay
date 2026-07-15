@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-15 11:07:39 CST)
+(The last generation time: 2026-07-15 12:17:58 CST)
 
 ### Packages
 
@@ -683,7 +683,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.31_p260710     |            | https://im.qq.com/index/#/linux                                                         | The new version of the official linux-qq
    media-libs/openslide                                | 4.0.0              | RD         | https://openslide.org/                                                                  | A C library that provides a simple interface to read whole-slide images
-     media-libs/libdicom                               | 1.2.0              |  D, RD     | https://libdicom.readthedocs.io/                                                        | A C library and a set of command-line tools for reading DICOM WSI files
+     media-libs/libdicom                               | 1.3.0              |  D, RD     | https://libdicom.readthedocs.io/                                                        | A C library and a set of command-line tools for reading DICOM WSI files
    virtual/loong-ow-compat                             | 0                  | RD         |                                                                                         | Virtual for LoongArch old-world compatibility
      app-emulation/liblol                              | 0.1.10             | RD         | https://liblol.aosc.io                                                                  | LoongArch old-world ABI compatibility layer from AOSC OS
    x11-misc/flatpak-xdg-utils                          | 1.0.6              | RD         | https://github.com/flatpak/flatpak-xdg-utils                                            | Utilities for containerized apps to launch programs outside the container
