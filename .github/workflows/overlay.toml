@@ -399,7 +399,7 @@ github_account = ["zozx", "gouwazi"]
 source = "regex"
 url = "https://linux.wps.cn/wpslinuxlog"
 regex = "wps-office_([\\d.]+)_amd64.deb"
-github_account = ["Universebenzene", "gouwazi"]
+github_account = ["Universebenzene", "gouwazi", "zakkaus"]
 
 # live package only
 #["app-pda/ipadcharge"]
