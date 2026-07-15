@@ -140,6 +140,7 @@ jobs:
         mkdir -p /etc/portage/package.use
         cat >> /etc/portage/package.use/ci-binhost << EOF
         dev-qt/qtwebengine bindist
+        net-libs/webkit-gtk keyring
         EOF
         cat /etc/portage/make.conf
 
