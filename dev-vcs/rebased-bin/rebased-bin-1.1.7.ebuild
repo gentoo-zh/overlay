@@ -62,9 +62,9 @@ src_install() {
 	mkdir -p "${ED}${dir}" || die
 	cp -a . "${ED}${dir}" || die
 
-	make_wrapper rebased "${dir}/bin/idea.sh" || die
-	newicon -s 128 bin/idea.png rebased.png
-	newicon -s scalable bin/idea.svg rebased.svg
+	make_wrapper rebased "${dir}/bin/rebased.sh" || die
+	newicon -s 128 bin/rebased.png rebased.png
+	newicon -s scalable bin/rebased.svg rebased.svg
 	make_desktop_entry "rebased %f" "Rebased" rebased "Development;IDE;RevisionControl;" \
 		"StartupWMClass=jetbrains-rebased"
 }
