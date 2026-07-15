@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-15 10:31:02 CST)
+(The last generation time: 2026-07-15 10:40:51 CST)
 
 ### Packages
 
@@ -303,7 +303,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-embedded/at32workbench                            | 1.2.03             |            | https://www.arterytek.com/cn/support/tools.jsp                                          | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-go/gotests                                        | 1.8.0              |            | https://github.com/cweill/gotests                                                       | Automatically generate Go test boilerplate from your source code
+ dev-go/gotests                                        | 1.9.0              |            | https://github.com/cweill/gotests                                                       | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-go/staticcheck                                    | 2025.1.1           |            | https://staticcheck.dev                                                                 | Go static analysis, detecting bugs, performance issues, and much more
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
