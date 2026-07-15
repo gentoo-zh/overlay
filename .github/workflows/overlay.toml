@@ -1811,8 +1811,6 @@ github_account = ["irort", "Zakkaus", "gouwazi"]
 source = "github"
 github = "zen-browser/desktop"
 use_latest_release = true
-from_pattern = "(.*)b"
-to_pattern = "\\1_beta"
 github_account = ["zakkaus", "gouwazi"]
 
 ["www-servers/darkhttpd"]
