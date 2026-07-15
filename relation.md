@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 04:48:46 CST)
+(The last generation time: 2026-07-16 04:54:20 CST)
 
 ### Packages
 
@@ -743,7 +743,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-misc/localsend-bin                                | 1.17.0             |            | https://localsend.org                                                                   | An open-source cross-platform alternative to AirDrop
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- net-misc/motrix-next-bin                              | 3.9.5              |            | https://motrix-next.pages.dev                                                           | A full-featured download manager
+ net-misc/motrix-next-bin                              | 3.9.6              |            | https://motrix-next.pages.dev                                                           | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-misc/ntpd-rs                                      | 1.9.0              |            | https://github.com/pendulum-project/ntpd-rs                                             | Full-featured implementation of NTP with NTS support
    acct-group/ntpd-rs                                  | 0                  | RD         |                                                                                         | Full-featured implementation of NTP with NTS support
