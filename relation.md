@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 04:21:06 CST)
+(The last generation time: 2026-07-16 04:39:46 CST)
 
 ### Packages
 
@@ -944,6 +944,7 @@
  www-client/adspower-global                            | 8.6.3              |            | https://www.adspower.com/                                                               | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  www-client/brave-bin                                  | 1.92.139           |            | https://brave.com/                                                                      | Web browser that blocks ads and trackers by default
+                                                       | 1.92.140           |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  www-client/zen-browser-bin                            | 1.21.6b            |            | https://zen-browser.app/                                                                | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
