@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 11:26:49 CST)
+(The last generation time: 2026-07-16 11:41:46 CST)
 
 ### Packages
 
@@ -26,7 +26,7 @@
                                                        | 6.11.13.1957       |            |                                                                                         |
                                                        | 6.11.6.1833        |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- app-admin/proton-authenticator-bin                    | 1.0.0              |            | https://proton.me/authenticator                                                         | Official open-source two-factor authentication app by Proton
+ app-admin/proton-authenticator-bin                    | 1.1.6              |            | https://proton.me/authenticator                                                         | Official open-source two-factor authentication app by Proton
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  app-admin/rbw                                         | 1.15.0             |            | https://github.com/doy/rbw                                                              | Unofficial Bitwarden CLI
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
