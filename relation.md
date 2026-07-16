@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 16:20:28 CST)
+(The last generation time: 2026-07-16 18:09:15 CST)
 
 ### Packages
 
@@ -377,7 +377,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/nudatus                                    | 0.0.5              |            | https://github.com/ZanderBrown/nudatus                                                  | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-python/nvchecker                                  | 2.20               |            | https://pypi.org/project/nvchecker/                                                     | nvchecker is for checking if a new version of some software has been released
+ dev-python/nvchecker                                  | 2.21               |            | https://pypi.org/project/nvchecker/                                                     | nvchecker is for checking if a new version of some software has been released
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/pycosat                                    | 0.6.6              |            | https://github.com/conda/pycosat                                                        | Python bindings to picosat (a SAT solver)
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
