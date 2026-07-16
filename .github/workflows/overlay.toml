@@ -276,12 +276,14 @@ use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
 
-["app-misc/cc-switch-bin"]
-source = "github"
-github = "farion1231/cc-switch"
-use_latest_release = true
-prefix = "v"
-github_account = ["liangyongxiang", "gouwazi"]
+# FIXME: github graphql api confuses cc-switch and cc-switch-bin (same repo
+# farion1231/cc-switch), so track only the source cc-switch.
+# ["app-misc/cc-switch-bin"]
+# source = "github"
+# github = "farion1231/cc-switch"
+# use_latest_release = true
+# prefix = "v"
+# github_account = ["liangyongxiang", "gouwazi"]
 
 ["app-misc/claude-desktop"]
 source = "apt"
@@ -1326,26 +1328,29 @@ use_latest_release = true
 prefix = "v"
 github_account = "123485k"
 
-["net-misc/bbdown-bin"]
-source = "github"
-github = "nilaoda/BBDown"
-use_latest_release = true
-prefix = "v"
-github_account = "gouwazi"
+# upstream archived, no new releases
+# ["net-misc/bbdown-bin"]
+# source = "github"
+# github = "nilaoda/BBDown"
+# use_latest_release = true
+# prefix = "v"
+# github_account = "gouwazi"
 
-["net-misc/biliup-app-bin"]
-source = "github"
-github = "ForgQi/biliup-app"
-use_latest_release = true
-prefix = "app-v"
-github_account = "123485k"
+# upstream archived, no new releases
+# ["net-misc/biliup-app-bin"]
+# source = "github"
+# github = "ForgQi/biliup-app"
+# use_latest_release = true
+# prefix = "app-v"
+# github_account = "123485k"
 
-["net-misc/biliup-rs"]
-source = "github"
-github = "ForgQi/biliup-rs"
-use_latest_release = true
-prefix = "v"
-github_account = ["123485k", "gouwazi"]
+# upstream archived, no new releases
+# ["net-misc/biliup-rs"]
+# source = "github"
+# github = "ForgQi/biliup-rs"
+# use_latest_release = true
+# prefix = "v"
+# github_account = ["123485k", "gouwazi"]
 
 ["net-misc/bruno-bin"]
 source = "github"
