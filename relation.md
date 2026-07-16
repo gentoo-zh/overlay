@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-17 04:33:38 CST)
+(The last generation time: 2026-07-17 05:42:41 CST)
 
 ### Packages
 
@@ -597,6 +597,7 @@
  media-plugins/kotonoha                                | 9999               |            | https://github.com/locez/kotonoha                                                       | Wayland lyrics overlay for MPRIS-compatible media players
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-plugins/osdlyrics                               | 0.5.15             |            | https://github.com/osdlyrics/osdlyrics                                                  | Standalone lyrics fetcher/displayer (windowed and OSD mode)
+                                                       | 0.5.16             |            |                                                                                         |
                                                        | 9999               |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-plugins/waylyrics                               | 0.3.21             |            | https://waylyrics.github.io/waylyrics/waylyrics                                         | Simple On Screen lyrics Display for linux/unix
