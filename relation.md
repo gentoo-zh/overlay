@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 20:01:31 CST)
+(The last generation time: 2026-07-16 20:39:42 CST)
 
 ### Packages
 
@@ -438,7 +438,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.80.7             |            | https://github.com/badlogic/pi-mono                                                     | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.17.13            |            | https://github.com/esengine/DeepSeek-Reasonix                                           | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.17.14            |            | https://github.com/esengine/DeepSeek-Reasonix                                           | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                                           | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
