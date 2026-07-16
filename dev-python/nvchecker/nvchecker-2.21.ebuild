@@ -1,4 +1,4 @@
-# Copyright 2022-2025 Gentoo Authors
+# Copyright 2022-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -31,7 +31,7 @@ RDEPEND="
 	)
 "
 
-PATCHES=("${FILESDIR}/${P}-license-classifier-warns.patch")
+PATCHES=("${FILESDIR}/${PN}-2.20-license-classifier-warns.patch")
 
 python_install_all() {
 	distutils-r1_python_install_all
