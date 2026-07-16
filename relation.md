@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 16:19:51 CST)
+(The last generation time: 2026-07-16 16:20:28 CST)
 
 ### Packages
 
@@ -243,10 +243,8 @@
                                                        | 1220               |            |                                                                                         |
                                                        | 1234               |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- app-office/wps-office                                 | 11.1.0.11719-r1    |            | https://www.wps.cn/product/wpslinux/                                                    | WPS Office is an office productivity suite, Here is the Chinese version
-                                                       | 12.1.0.17900       |            |                                                                                         |
-                                                       | 12.1.2.22571       |            |                                                                                         |
-                                                       | 12.1.2.25882       |            |                                                                                         |
+ app-office/wps-office                                 | 11.1.0.11719-r2    |            | https://www.wps.cn/product/wpslinux/                                                    | WPS Office is an office productivity suite, Here is the Chinese version
+                                                       | 12.1.2.26885       |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  app-office/wps-office365                              | 12.1.2.26885       |            | https://www.wps.cn/product/wpslinux/                                                    | WPS Office (WPS 365 edition), the Chinese office productivity suite
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
