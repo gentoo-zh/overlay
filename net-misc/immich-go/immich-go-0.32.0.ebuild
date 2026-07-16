@@ -15,6 +15,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64"
 
+BDEPEND=">=dev-lang/go-1.25"
+
 src_compile() {
 	ego build -ldflags "-X github.com/simulot/immich-go/app.Version=${PV}"
 }
