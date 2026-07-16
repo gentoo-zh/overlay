@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 08:04:45 CST)
+(The last generation time: 2026-07-16 11:26:49 CST)
 
 ### Packages
 
@@ -303,7 +303,7 @@
  dev-debug/lldb-mi                                     | 0.0.1              |            | https://github.com/lldb-tools/lldb-mi                                                   | LLDB Machine Interface Driver
                                                        | 9999               |            |                                                                                         |
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-embedded/at32workbench                            | 1.2.03             |            | https://www.arterytek.com/cn/support/tools.jsp                                          | at32 workbench is a GUI tool for AT32 MCU startup code generation
+ dev-embedded/at32workbench                            | 1.2.04             |            | https://www.arterytek.com/cn/support/tools.jsp                                          | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-go/gotests                                        | 1.9.0              |            | https://github.com/cweill/gotests                                                       | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
@@ -504,6 +504,7 @@
  games-server/vintagestory-server                      | 1.19.8             |            | https://www.vintagestory.at/                                                            | Dedicated game server for Vintage Story
                                                        | 1.20.12            |            |                                                                                         |
                                                        | 1.21.0             |            |                                                                                         |
+                                                       | 1.22.3             |            |                                                                                         |
    acct-group/vintagestory                             | 0                  | RD         |                                                                                         | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                                         | User for Vintage Story Server
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
