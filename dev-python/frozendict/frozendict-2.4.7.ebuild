@@ -26,6 +26,10 @@ EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
 
 python_prepare_all() {
-	sed -i '/License :: OSI Approved :: GNU Lesser General Public License v3/d' setup.py || die
+	# upstream declares the license as a multi-line concatenated classifier;
+	# current setuptools flags "License ::" classifiers as deprecated and the
+	# resulting QA elog fails CI. Drop the whole parenthesized License :: block
+	# (SLOT/LICENSE metadata already carries the licensing).
+	sed -i '/^[[:space:]]*($/{:x;N;/),/!bx;/License ::/d}' setup.py || die
 	distutils-r1_python_prepare_all
 }
