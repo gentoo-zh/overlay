@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 21:54:13 CST)
+(The last generation time: 2026-07-17 02:45:49 CST)
 
 ### Packages
 
@@ -590,6 +590,8 @@
  media-gfx/zw3d                                        | 2026.0.1.1         |            | https://www.zwsoft.cn/product/zw3d/linux                                                | CAD/CAM software for 3D design and processing
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-gfx/zwcad                                       | 2026.26.1.3.4      |            | https://www.zwsoft.cn/product/zwcad/linux                                               | CAD software for 2D drawing, reviewing and printing work
+-------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
+ media-plugins/kotonoha                                | 9999               |            | https://github.com/locez/kotonoha                                                       | Wayland lyrics overlay for MPRIS-compatible media players
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  media-plugins/osdlyrics                               | 0.5.15             |            | https://github.com/osdlyrics/osdlyrics                                                  | Standalone lyrics fetcher/displayer (windowed and OSD mode)
                                                        | 9999               |            |                                                                                         |
