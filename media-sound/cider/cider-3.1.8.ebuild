@@ -84,7 +84,7 @@ src_install() {
 	insinto /opt
 	doins -r usr/lib/cider
 
-	dosym /opt/cider/Cider /usr/bin/cider
+	dosym ../../opt/cider/Cider /usr/bin/cider
 
 	fperms +x /opt/cider/Cider
 
