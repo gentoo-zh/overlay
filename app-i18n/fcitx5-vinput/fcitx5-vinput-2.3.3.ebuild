@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cmake xdg
+inherit cmake optfeature xdg
 
 # Prebuilt sherpa-onnx runtime shared libraries bundled by upstream. The
 # project links against these and installs them privately under
@@ -55,7 +55,7 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${P}-sdbus-provider.patch
+	"${FILESDIR}"/${PN}-2.3.2-sdbus-provider.patch
 )
 
 src_configure() {
@@ -81,4 +81,9 @@ src_configure() {
 	)
 
 	cmake_src_configure
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+	optfeature "output volume reduction while recording" media-video/wireplumber
 }

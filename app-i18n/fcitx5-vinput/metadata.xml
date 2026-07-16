@@ -1,21 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
-
 <pkgmetadata>
-  <maintainer type="person">
-    <email>liangyongxiang@hotmail.com</email>
-    <name>Yongxiang Liang</name>
-  </maintainer>
-  <maintainer type="person">
-    <email>vowstar@gmail.com</email>
-    <name>Huang Rui</name>
-  </maintainer>
-  <longdescription>
-    fcitx5-vinput is a voice input addon for Fcitx5, supporting local
-    and cloud ASR (Automatic Speech Recognition), LLM rewriting,
-    and powered by sherpa-onnx for on-device speech recognition.
-  </longdescription>
-  <upstream>
-    <remote-id type="github">xifan2333/fcitx5-vinput</remote-id>
-  </upstream>
+	<maintainer type="person">
+		<email>liangyongxiang@hotmail.com</email>
+		<name>Yongxiang Liang</name>
+	</maintainer>
+	<maintainer type="person">
+		<email>vowstar@gmail.com</email>
+		<name>Huang Rui</name>
+	</maintainer>
+	<longdescription lang="en">
+		fcitx5-vinput is a voice input addon for the Fcitx5 input method
+		framework. It performs on-device speech recognition with offline
+		sherpa-onnx models and can optionally route the recognized text
+		through any OpenAI-compatible LLM endpoint for error correction,
+		formatting and translation. Cloud ASR providers can also be added
+		at runtime through a downloadable registry. The package ships the
+		fcitx5 addon, a background daemon, a command line client and a Qt6
+		graphical configuration tool. The prebuilt sherpa-onnx and ONNX
+		Runtime shared libraries are bundled privately.
+	</longdescription>
+	<longdescription lang="zh">
+		fcitx5-vinput 是 Fcitx5 输入法框架的语音输入插件。它使用离线的
+		sherpa-onnx 模型在本地完成语音识别，并可选择把识别结果发送到任意
+		兼容 OpenAI 接口的大语言模型端点，用于纠错、格式化和翻译。云端 ASR
+		服务也可以通过可下载的注册表在运行时添加。本软件包包含 fcitx5 插件、
+		后台守护进程、命令行客户端以及基于 Qt6 的图形配置工具，并私有打包了
+		预编译的 sherpa-onnx 与 ONNX Runtime 共享库。
+	</longdescription>
+	<upstream>
+		<remote-id type="github">xifan2333/fcitx5-vinput</remote-id>
+	</upstream>
 </pkgmetadata>
