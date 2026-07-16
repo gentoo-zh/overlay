@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-17 03:48:17 CST)
+(The last generation time: 2026-07-17 03:58:09 CST)
 
 ### Packages
 
@@ -778,7 +778,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.8              |            | https://github.com/trzsz/tsshd                                                          | UDP-based SSH server with roaming support
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- net-misc/yaak-bin                                     | 2026.3.1           |            | https://yaak.app/                                                                       | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
+ net-misc/yaak-bin                                     | 2026.4.0           |            | https://yaak.app/                                                                       | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  net-p2p/amule-dlp-antileech                           | 9999               |            | https://github.com/persmule/amule-dlp.antileech                                         | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999               | RD         | https://github.com/persmule/amule-dlp                                                   | aMule with DLP patch, the all-platform eMule p2p client
