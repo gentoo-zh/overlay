@@ -23,13 +23,13 @@ RESTRICT="strip"
 RDEPEND="net-libs/webkit-gtk:4.1"
 
 src_install() {
-	dobin usr/bin/yaak-app
+	dobin usr/bin/yaak-app-client
 	insinto /usr/lib/yaak
 	doins -r usr/lib/yaak/*
 	fperms +x /usr/lib/yaak/vendored/node/yaaknode
 	domenu usr/share/applications/yaak.desktop
 	for icon in 32 128; do
-		doicon -s ${icon} usr/share/icons/hicolor/${icon}x${icon}/apps/yaak-app.png
+		doicon -s ${icon} usr/share/icons/hicolor/${icon}x${icon}/apps/yaak-app-client.png
 	done
-	doicon -s 256 usr/share/icons/hicolor/256x256@2/apps/yaak-app.png
+	doicon -s 256 usr/share/icons/hicolor/256x256@2/apps/yaak-app-client.png
 }
