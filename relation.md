@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-16 11:42:36 CST)
+(The last generation time: 2026-07-16 11:43:08 CST)
 
 ### Packages
 
@@ -367,7 +367,7 @@
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/iptcinfo3                                  | 2.3.0              |            | https://github.com/james-see/iptcinfo3                                                  | To read/write image metadata
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
- dev-python/menuinst                                   | 2.5.1              |            | https://github.com/conda/menuinst                                                       | Cross platform menu item installation
+ dev-python/menuinst                                   | 2.5.2              |            | https://github.com/conda/menuinst                                                       | Cross platform menu item installation
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
  dev-python/microfs2                                   | 2.1.1              |            | https://github.com/blackteahamburger/microfs                                            | A module and utility to work with the simple filesystem on the BBC micro:bit
 -------------------------------------------------------|--------------------|------------|-----------------------------------------------------------------------------------------|--------------------
