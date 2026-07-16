@@ -3,6 +3,11 @@
 
 EAPI=8
 
+# The rpm payload is gzip/uncompressed (no PayloadIs* marker), which rpm.eclass
+# reports as 'none'; declare it so rpm_unpack uses a supported extractor without
+# a QA notice.
+RPM_COMPRESS_TYPE="none"
+
 inherit rpm xdg desktop
 
 DESCRIPTION="Official open-source two-factor authentication app by Proton"
