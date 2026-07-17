@@ -67,9 +67,6 @@ github_account = "liangyongxiang"
 # live package only
 #["app-backup/snapper-gui"]
 
-# live package only
-#["app-containers/distrobox-boost"]
-
 ["app-crypt/archlinux-keyring"]
 source = "gitlab"
 host = "gitlab.archlinux.org"
