@@ -9,8 +9,8 @@ DESCRIPTION="A cross-platform music player"
 MY_PN="SPlayer"
 HOMEPAGE="https://splayer.imsyy.top/"
 SRC_URI="
-	amd64? ( https://github.com/imsyy/${MY_PN}/releases/download/v${PV}/${P}-amd64.deb )
-	arm64? ( https://github.com/imsyy/${MY_PN}/releases/download/v${PV}/${P}-arm64.deb )
+	amd64? ( https://github.com/SPlayer-Dev/${MY_PN}/releases/download/v${PV}/${P}-amd64.deb )
+	arm64? ( https://github.com/SPlayer-Dev/${MY_PN}/releases/download/v${PV}/${P}-arm64.deb )
 "
 
 S="${WORKDIR}"

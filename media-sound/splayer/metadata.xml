@@ -5,6 +5,6 @@
     <email>flying-balloon-cat@protonmail.com</email>
   </maintainer>
   <upstream>
-    <remote-id type="github">imsyy/SPlayer</remote-id>
+    <remote-id type="github">SPlayer-Dev/SPlayer</remote-id>
   </upstream>
 </pkgmetadata>

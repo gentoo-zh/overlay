@@ -7,7 +7,7 @@ inherit desktop wrapper
 
 DESCRIPTION="Online multiplayer remake of the 1996 RTS game Z"
 HOMEPAGE="https://sourceforge.net/projects/zedonline/"
-SRC_URI="https://master.dl.sourceforge.net/project/zedonline/releases/ZED%20Online%20v${PV}%20Linux.zip"
+SRC_URI="https://downloads.sourceforge.net/zedonline/releases/ZED%20Online%20v${PV}%20Linux.zip"
 
 S="${WORKDIR}"
 

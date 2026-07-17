@@ -6,6 +6,6 @@
 		<email>dev@wangxianggang.com</email>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">isd-project/isd</remote-id>
+		<remote-id type="github">kainctl/isd</remote-id>
 	</upstream>
 </pkgmetadata>

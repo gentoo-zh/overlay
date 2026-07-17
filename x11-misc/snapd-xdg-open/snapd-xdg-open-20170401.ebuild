@@ -6,9 +6,9 @@ EAPI=8
 inherit autotools
 
 DESCRIPTION="Software for opening links from snaps in desktop"
-HOMEPAGE="https://github.com/snapcore/snapd-xdg-open"
+HOMEPAGE="https://github.com/canonical/snapd-xdg-open"
 EGIT_COMMIT="6fed3570066ea93598e8091bf749352a02d482ad"
-SRC_URI="https://github.com/snapcore/snapd-xdg-open/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/canonical/snapd-xdg-open/archive/${EGIT_COMMIT}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/${PN}-${EGIT_COMMIT}"
 

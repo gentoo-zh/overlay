@@ -6,6 +6,6 @@
 		<email>iamoatiz@gmail.com</email>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">wez/wezterm</remote-id>
+		<remote-id type="github">wezterm/wezterm</remote-id>
 	</upstream>
 </pkgmetadata>

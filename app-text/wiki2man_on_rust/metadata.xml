@@ -2,6 +2,6 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<upstream>
-		<remote-id type="gitlab">vitaly-zdanevich/wiki2man_on_rust</remote-id>
+		<remote-id type="gitlab">vitaly_zdanevich_wikimedia/wiki2man_on_rust</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -7,8 +7,8 @@ MY_PV=${PV//./_}
 MY_P="${PN}-${MY_PV}"
 
 DESCRIPTION="The kbd keymap for Programmer Dvorak"
-HOMEPAGE="http://kaufmann.no/roland/dvorak/index.html"
-SRC_URI="http://kaufmann.no/downloads/linux/${MY_P}.map.gz"
+HOMEPAGE="https://www.kaufmann.no/roland/dvorak/index.html"
+SRC_URI="https://www.kaufmann.no/downloads/linux/${MY_P}.map.gz"
 
 S="${WORKDIR}"
 LICENSE="BSD"

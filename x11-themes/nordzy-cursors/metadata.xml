@@ -6,7 +6,7 @@
                 <name>Jaus Hwang</name>    
         </maintainer>    
         <upstream>    
-                <remote-id type="github">alvatip/Nordzy-cursors</remote-id>    
+                <remote-id type="github">guillaumeboehm/Nordzy-cursors</remote-id>    
         </upstream>    
         <use>    
                 <flag name="nord-white">Install ${PN}-white cursors theme</flag>    

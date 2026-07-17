@@ -4,8 +4,8 @@
 EAPI=8
 
 DESCRIPTION="Cursor theme using the Nord color palette and based on Vimix and cz-Viator"
-HOMEPAGE="https://github.com/alvatip/Nordzy-cursors"
-SRC_URI="https://github.com/alvatip/Nordzy-cursors/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+HOMEPAGE="https://github.com/guillaumeboehm/Nordzy-cursors"
+SRC_URI="https://github.com/guillaumeboehm/Nordzy-cursors/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 S="${WORKDIR}/Nordzy-cursors-${PV}"
 LICENSE="GPL-3"

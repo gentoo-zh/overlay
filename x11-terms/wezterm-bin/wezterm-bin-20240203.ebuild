@@ -11,9 +11,9 @@ MY_PN="${PN/-bin/}"
 MY_P="${MY_PN}-${MY_PV}"
 
 DESCRIPTION="A terminal emulator and multiplexer implemented in Rust"
-HOMEPAGE="https://wezfurlong.org/wezterm"
+HOMEPAGE="https://wezfurlong.org/wezterm/"
 
-SRC_URI="https://github.com/wez/wezterm/releases/download/${MY_PV}/${MY_PN}-${MY_PV}.Ubuntu20.04.tar.xz"
+SRC_URI="https://github.com/wezterm/wezterm/releases/download/${MY_PV}/${MY_PN}-${MY_PV}.Ubuntu20.04.tar.xz"
 
 S="${WORKDIR}/${MY_PN}"
 LICENSE="MIT"

@@ -44,9 +44,9 @@ RUST_MIN_VER="1.85.0"
 inherit cargo
 
 DESCRIPTION="Convert MediaWiki XML dumps into man(7) pages - so you can read Wikipedia in man"
-HOMEPAGE="https://gitlab.com/vitaly_zdanevich_wikimedia_commons/wiki2man_on_rust"
+HOMEPAGE="https://gitlab.com/vitaly_zdanevich_wikimedia/wiki2man_on_rust"
 SRC_URI="
-	https://gitlab.com/vitaly_zdanevich_wikimedia_commons/wiki2man_on_rust/-/archive/${PV}/${P}.tar.bz2
+	https://gitlab.com/vitaly_zdanevich_wikimedia/wiki2man_on_rust/-/archive/${PV}/${P}.tar.bz2
 	${CARGO_CRATE_URIS}
 "
 
