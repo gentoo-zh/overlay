@@ -2,9 +2,9 @@ EAPI=8
 inherit desktop unpacker
 
 DESCRIPTION="A violent, sexy, multiplayer first person shooter based on the ioquake3 engine"
-HOMEPAGE="http://openarena.ws https://en.wikipedia.org/wiki/OpenArena"
+HOMEPAGE="https://openarena.ws https://en.wikipedia.org/wiki/OpenArena"
 SRC_URI="
-	https://psychz.dl.sourceforge.net/project/oarena/${P}.zip?viasf=1 -> ${P}.zip
+	https://downloads.sourceforge.net/oarena/${P}.zip
 	https://github.com/OpenArena/legacy/archive/3db79b091ce1d950d9cdcac0445a2134f49a6fc7.tar.gz -> ${P}-engine.tar.gz
 	https://upload.wikimedia.org/wikipedia/commons/2/2c/Openarena.png
 	https://upload.wikimedia.org/wikipedia/commons/7/7b/Openarena-server.png
