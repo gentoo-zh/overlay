@@ -8,7 +8,7 @@ MY_PGK_NAME="com.zwsoft.zw3d${MY_PV_YEAR}"
 inherit unpacker xdg
 
 DESCRIPTION="CAD/CAM software for 3D design and processing"
-HOMEPAGE="https://www.zwsoft.cn/product/zw3d/linux"
+HOMEPAGE="https://www.zwsoft.cn/product/zw3d"
 SRC_URI="signed_com.zwsoft.zw3d${MY_PV_YEAR}_${PV}_amd64.deb"
 
 S="${WORKDIR}"

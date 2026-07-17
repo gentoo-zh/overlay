@@ -19,6 +19,6 @@
 		可用于其他项目。
 	</longdescription>
 	<upstream>
-		<remote-id type="github">ForgQi/biliup-rs</remote-id>
+		<remote-id type="github">biliup/biliup-rs</remote-id>
 	</upstream>
 </pkgmetadata>

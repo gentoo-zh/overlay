@@ -6,7 +6,7 @@ EAPI=8
 inherit java-vm-2
 
 DESCRIPTION="Oracle's Java SE Development Kit"
-HOMEPAGE="https://www.oracle.com/java"
+HOMEPAGE="https://www.oracle.com/java/"
 SRC_URI="https://download.oracle.com/java/21/archive/jdk-${PV}_linux-x64_bin.tar.gz"
 S="${WORKDIR}/jdk-${PV}"
 LICENSE="NFTC"

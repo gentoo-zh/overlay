@@ -5,6 +5,9 @@
 		<email>3117086599@qq.com</email>
 		<name>huaji2369</name>
 	</maintainer>
+	<use>
+		<flag name="converter">Install converter scripts to import secrets from other authenticator apps (Authy, FreeOTP, Google Authenticator, MAuth)</flag>
+	</use>
 	<upstream>
 		<remote-id type="github">replydev/cotp</remote-id>
 	</upstream>

@@ -11,7 +11,7 @@ inherit distutils-r1 pypi
 DESCRIPTION="CircuitPython board identification and information"
 HOMEPAGE="
 	https://github.com/adafruit/Adafruit_Board_Toolkit/
-	https://pypi.org/adafruit-board-toolkit//
+	https://pypi.org/project/adafruit-board-toolkit/
 "
 
 LICENSE="MIT"

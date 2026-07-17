@@ -6,7 +6,7 @@ EAPI=8
 inherit desktop unpacker xdg
 
 DESCRIPTION="MaixVision - AIoT development platform"
-HOMEPAGE="https://www.sipeed.com/maixvision"
+HOMEPAGE="https://sipeed.com/maixvision"
 SRC_URI="https://cdn.sipeed.com/maixvision/${PV}/maixvision_${PV}_amd64.deb"
 
 S="${WORKDIR}"

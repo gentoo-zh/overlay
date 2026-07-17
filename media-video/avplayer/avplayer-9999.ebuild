@@ -5,7 +5,7 @@ EAPI=8
 inherit cmake git-r3
 
 DESCRIPTION="avplayer is a p2p video downloader and player"
-HOMEPAGE="http://avplayer.avplayer.org"
+HOMEPAGE="https://github.com/avplayer/avplayer"
 
 EGIT_REPO_URI="https://github.com/avplayer/avplayer.git"
 

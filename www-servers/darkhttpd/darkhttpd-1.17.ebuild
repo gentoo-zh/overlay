@@ -4,7 +4,7 @@
 EAPI=8
 
 DESCRIPTION="A small, static webserver"
-HOMEPAGE="http://unix4lyfe.org/darkhttpd/"
+HOMEPAGE="https://unix4lyfe.org/darkhttpd/"
 SRC_URI="https://github.com/emikulic/darkhttpd/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="ISC"
 SLOT="0"

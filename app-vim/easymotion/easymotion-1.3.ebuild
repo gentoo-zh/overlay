@@ -7,7 +7,7 @@ EAPI=7
 inherit vim-plugin vcs-snapshot
 
 DESCRIPTION="vim plugin: Vim motions on speed!"
-HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=3526"
+HOMEPAGE="https://www.vim.org/scripts/script.php?script_id=3526"
 SRC_URI="https://github.com/${PN}/vim-${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 KEYWORDS="~amd64"

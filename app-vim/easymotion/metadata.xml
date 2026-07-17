@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<!-- maintainer-needed -->
 	<upstream>
-		<remote-id type="github">Lokaltog/vim-easymotion</remote-id>
+		<remote-id type="github">easymotion/vim-easymotion</remote-id>
 	</upstream>
 </pkgmetadata>

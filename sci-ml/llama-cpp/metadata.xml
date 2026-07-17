@@ -15,7 +15,6 @@
 		<flag name="rpc">Build with rpc-server</flag>
 		<flag name="server">Build with example server</flag>
 		<flag name="webui">Build server with embedded WebUI</flag>
-		<flag name="spacemit">Build with SpacemiT IME instruction support</flag>
 	</use>
 	<upstream>
 		<remote-id type="github">ggml-org/llama.cpp</remote-id>

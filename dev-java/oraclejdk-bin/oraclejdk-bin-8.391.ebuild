@@ -8,7 +8,7 @@ inherit java-vm-2
 MY_PV=${PV/./u}
 
 DESCRIPTION="Oracle's Java SE Development Kit"
-HOMEPAGE="http://www.oracle.com/technetwork/java/javase/"
+HOMEPAGE="https://www.oracle.com/java/technologies/java-se-glance.html"
 SRC_URI="jdk-${MY_PV}-linux-x64.tar.gz"
 S="${WORKDIR}/jdk1.8.0_${PV/8./}"
 LICENSE="OTN"

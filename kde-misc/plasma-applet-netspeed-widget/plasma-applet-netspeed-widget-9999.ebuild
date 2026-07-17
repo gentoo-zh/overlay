@@ -14,7 +14,7 @@ else
 fi
 
 DESCRIPTION="Plasma 5 widget that displays the currently used network bandwidth"
-HOMEPAGE="https://www.kde-look.org/p/998895/
+HOMEPAGE="https://store.kde.org/p/998895/
 https://github.com/dfaust/plasma-applet-netspeed-widget"
 
 LICENSE="GPL-2+"

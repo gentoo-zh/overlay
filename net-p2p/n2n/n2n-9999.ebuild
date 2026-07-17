@@ -7,7 +7,7 @@ DESCRIPTION="A Layer Two Peer-to-Peer VPN"
 
 inherit systemd cmake git-r3
 
-HOMEPAGE="http://www.ntop.org/n2n/"
+HOMEPAGE="https://github.com/ntop/n2n"
 LICENSE="GPL-3"
 SLOT="0"
 IUSE="

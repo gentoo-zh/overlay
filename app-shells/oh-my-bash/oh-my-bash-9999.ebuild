@@ -6,7 +6,7 @@ EAPI=8
 inherit git-r3
 
 DESCRIPTION="An open source, community-driven framework for managing your bash configuration"
-HOMEPAGE="https://ohmybash.github.io"
+HOMEPAGE="https://ohmybash.nntoan.com/"
 
 EGIT_REPO_URI="https://github.com/ohmybash/oh-my-bash.git"
 

@@ -5,7 +5,7 @@ EAPI="7"
 inherit font
 
 DESCRIPTION="Free Chinese TrueType fonts donated by Prof. Hann-Tzong Wang"
-HOMEPAGE="https://code.google.com/p/wangfonts/"
+HOMEPAGE="https://code.google.com/archive/p/wangfonts"
 SRC_URI="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/wangfonts/${P}.tar.gz"
 
 S="${WORKDIR}/${PN}"

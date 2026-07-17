@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<upstream>
 		<remote-id type="github">ianare/exif-py</remote-id>
-		<remote-id type="pypi">exifread</remote-id>
+		<remote-id type="pypi">ExifRead</remote-id>
 	</upstream>
 </pkgmetadata>

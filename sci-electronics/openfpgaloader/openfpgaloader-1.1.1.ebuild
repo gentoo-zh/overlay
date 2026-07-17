@@ -6,7 +6,7 @@ EAPI=8
 inherit cmake
 
 DESCRIPTION="Universal utility for programming FPGAs"
-HOMEPAGE="https://trabucayre.github.io/openFPGALoader"
+HOMEPAGE="https://trabucayre.github.io/openFPGALoader/"
 SRC_URI="https://github.com/trabucayre/openFPGALoader/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 MY_PN="openFPGALoader"
 S="${WORKDIR}/${MY_PN}-${PV}"

@@ -22,6 +22,6 @@
 		<flag name="server">Build a fcitx as server, disable this option if you want to use fcitx as an embedded library</flag>
 	</use>
 	<upstream>
-		<remote-id type="github">fcitx/fcitx</remote-id>
+		<remote-id type="github">fcitx/fcitx5</remote-id>
 	</upstream>
 </pkgmetadata>

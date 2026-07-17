@@ -6,7 +6,7 @@ inherit cmake flag-o-matic xdg
 
 DESCRIPTION="跨平台第三方B站客户端"
 HOMEPAGE="
-	https://xfangfang.github.io/wiliwili
+	https://www.xfangfang.cn/wiliwili/
 	https://github.com/xfangfang/wiliwili
 "
 SRC_URI="

@@ -5,7 +5,7 @@ EAPI=8
 
 MY_PN=circuitjs1
 DESCRIPTION="Electronic Circuit Simulator in the Browser"
-HOMEPAGE="https://www.falstad.com/circuit https://github.com/sharpie7/circuitjs1"
+HOMEPAGE="https://www.falstad.com/circuit/ https://github.com/sharpie7/circuitjs1"
 SRC_URI="https://www.falstad.com/circuit/offline/${MY_PN}-linux64.tgz -> ${P}.tar.gz"
 
 S="${WORKDIR}/${MY_PN}"

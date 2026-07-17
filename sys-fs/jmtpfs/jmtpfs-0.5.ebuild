@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="A FUSE and libmtp based filesystem for accessing MTP devices"
-HOMEPAGE="http://research.jacquette.com/jmtpfs-exchanging-files-between-android-devices-and-linux"
+HOMEPAGE="https://github.com/JasonFerrara/jmtpfs"
 SRC_URI="https://github.com/JasonFerrara/jmtpfs/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"

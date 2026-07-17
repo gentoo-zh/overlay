@@ -4,7 +4,7 @@
 EAPI=7
 
 DESCRIPTION="▁▂▃▅▂▇ in your shell"
-HOMEPAGE="http://zachholman.com/spark/"
+HOMEPAGE="https://zachholman.com/spark/"
 SRC_URI="https://github.com/holman/spark/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"

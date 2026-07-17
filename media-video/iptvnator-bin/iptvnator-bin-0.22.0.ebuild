@@ -6,7 +6,7 @@ EAPI=8
 inherit unpacker desktop xdg
 
 DESCRIPTION="Cross-platform IPTV player application with multiple features"
-HOMEPAGE="https://iptvnator.vercel.app/"
+HOMEPAGE="https://4gray.github.io/iptvnator/"
 SRC_URI="https://github.com/4gray/iptvnator/releases/download/v${PV}/iptvnator-${PV}-linux-amd64.deb"
 
 S="${WORKDIR}"

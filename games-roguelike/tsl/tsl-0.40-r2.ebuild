@@ -6,7 +6,7 @@ EAPI=8
 inherit readme.gentoo-r1
 
 DESCRIPTION="The Slimy Lichmummy, an adventure game similar in style to the classic Rogue"
-HOMEPAGE="http://www.happyponyland.net/roguelike.php"
+HOMEPAGE="https://gitlab.com/vitaly-zdanevich/the-slimy-lichmummy"
 SRC_URI="https://gitlab.com/vitaly-zdanevich/the-slimy-lichmummy/-/archive/698f45f25c72f172434fe3ca5fce8e5df7f1e189/the-slimy-lichmummy-698f45f25c72f172434fe3ca5fce8e5df7f1e189.tar.bz2"
 
 S="${WORKDIR}/the-slimy-lichmummy-698f45f25c72f172434fe3ca5fce8e5df7f1e189"

@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<!-- maintainer-needed -->
 	<upstream>
-		<doc>https://xtls.github.io/config</doc>
+		<doc>https://xtls.github.io/config/</doc>
 		<bugs-to>https://github.com/XTLS/Xray-core/issues</bugs-to>
 		<remote-id type="github">XTLS/Xray-core</remote-id>
 	</upstream>

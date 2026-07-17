@@ -6,6 +6,6 @@
 		<name>Linerre</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">arnoldrobins/9menu</remote-id>
+		<remote-id type="github">arnoldrobbins/9menu</remote-id>
 	</upstream>	
 </pkgmetadata>

@@ -10,6 +10,6 @@
         </use>
         <upstream>
                 <remote-id type="pypi">pyrime</remote-id>
-                <remote-id type="github">Freed-Wu/pyrime</remote-id>
+                <remote-id type="github">rimeinn/pyrime</remote-id>
         </upstream>
 </pkgmetadata>

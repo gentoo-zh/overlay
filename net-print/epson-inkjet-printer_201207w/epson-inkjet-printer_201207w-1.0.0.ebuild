@@ -9,7 +9,7 @@ MY_PN=${PN%_*}-${PN##*_}
 
 DESCRIPTION="Epson printer driver (L110, L210, L300, L350, L355, L550, L555)"
 HOMEPAGE="http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX
-	http://www.openprinting.org/driver/epson-201207w"
+	https://openprinting.github.io/foomatic/driver/epson-201207w"
 SRC_URI="https://web.archive.org/web/20150803102803if_/http://download.ebz.epson.net/dsc/op/stable/SRPMS/epson-inkjet-printer-201207w-1.0.0-1lsb3.2.src.rpm"
 
 S="${WORKDIR}/epson-inkjet-printer-filter-${PV}"

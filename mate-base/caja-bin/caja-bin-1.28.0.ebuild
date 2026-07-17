@@ -6,7 +6,7 @@ EAPI=8
 inherit desktop
 
 DESCRIPTION="GUI file manager, fork of GNOME Files (Nautilus); supports SSH, FTP, WebDav"
-HOMEPAGE="https://wiki.mate-desktop.org/mate-desktop/applications/caja"
+HOMEPAGE="https://wiki.mate-desktop.org/mate-desktop/applications/caja/"
 SRC_URI="https://github.com/Samueru-sama/caja-appimage-test/releases/download/${PV}-3/Caja-${PV}-3-anylinux-x86_64.AppImage"
 
 S="${WORKDIR}"

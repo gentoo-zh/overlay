@@ -6,7 +6,7 @@ EAPI="8"
 inherit meson
 
 DESCRIPTION="Archlinux's binary package manager"
-HOMEPAGE="https://archlinux.org/pacman/ https://wiki.archlinux.org/title/Pacman"
+HOMEPAGE="https://pacman.archlinux.page/ https://wiki.archlinux.org/title/Pacman"
 
 if [[ "${PV}" == *9999 ]]; then
 	inherit git-r3

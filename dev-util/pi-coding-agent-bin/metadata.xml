@@ -9,6 +9,6 @@
 		<flag name="system-fd">Use system fd instead of the pi's downloaded one</flag>
 	</use>
 	<upstream>
-		<remote-id type="github">badlogic/pi-mono</remote-id>
+		<remote-id type="github">earendil-works/pi</remote-id>
 	</upstream>
 </pkgmetadata>

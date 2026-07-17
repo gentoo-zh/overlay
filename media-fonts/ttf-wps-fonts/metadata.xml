@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<!-- maintainer-needed -->
 	<upstream>
-		<remote-id type="github">iamdh4/ttf-wps-fonts</remote-id>
+		<remote-id type="github">dv-anomaly/ttf-wps-fonts</remote-id>
 	</upstream>
 </pkgmetadata>

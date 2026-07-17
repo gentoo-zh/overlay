@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<longdescription>Copy from https://git.plan9.rocks/cat/overlay-from-plan9/src/branch/master/games-fps</longdescription>
 	<upstream>
-		<remote-id type='sourceforge'>psychz.dl</remote-id>
+		<remote-id type='sourceforge'>oarena</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE 
-pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
     <maintainer type="person">
         <name>ston</name>
@@ -10,7 +9,6 @@ pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
         <flag name="clang">Use sys-devel/clang</flag>
     </use>
     <upstream>
-        <remote-id type="github">
-        go-musicfox/go-musicfox</remote-id>
+        <remote-id type="github">go-musicfox/go-musicfox</remote-id>
     </upstream>
 </pkgmetadata>

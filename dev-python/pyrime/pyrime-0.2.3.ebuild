@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="rime for python"
 HOMEPAGE="
-	https://github.com/Freed-Wu/pyrime
+	https://github.com/rimeinn/pyrime
 	https://pypi.org/project/pyrime
 "
 

@@ -7,9 +7,8 @@ pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
     <name>xz-dev</name>
   </maintainer>
   <upstream>
-    <bugs-to>https://community.anytype.io/c/bug-reports</bugs-to>
-    <changelog>
-    https://community.anytype.io/c/news-announcements/release-notes</changelog>
+    <bugs-to>https://community.anytype.io/c/bug-report/7</bugs-to>
+    <changelog>https://community.anytype.io/tag/release-notes/153</changelog>
     <remote-id type="github">anyproto/anytype-ts</remote-id>
   </upstream>
 </pkgmetadata>

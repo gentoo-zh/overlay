@@ -8,7 +8,7 @@ EAPI=8
 inherit desktop unpacker
 
 DESCRIPTION="Telegram Desktop fork with wide messages, local folders, square avatars"
-HOMEPAGE="https://thatcat.space/kotatogram"
+HOMEPAGE="https://thatcat.space/kotatogram/"
 
 SRC_URI="https://github.com/kotatogram/kotatogram-desktop/releases/download/k${PV}/${PV}-linux.tar.xz -> ${P}.tar.xz"
 

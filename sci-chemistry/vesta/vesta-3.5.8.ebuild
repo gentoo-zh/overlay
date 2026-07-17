@@ -6,7 +6,7 @@ EAPI=7
 inherit desktop xdg
 
 DESCRIPTION="Visualization for Electronic and STructural Analysis"
-HOMEPAGE="https://jp-minerals.org/vesta"
+HOMEPAGE="https://jp-minerals.org/vesta/"
 SRC_URI="https://jp-minerals.org/vesta/archives/${PV}/VESTA-gtk3.tar.bz2 -> ${PN}-${PV}.tar.bz2"
 
 S="${WORKDIR}/VESTA-gtk3"

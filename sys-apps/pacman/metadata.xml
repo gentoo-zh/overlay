@@ -3,8 +3,8 @@
 <pkgmetadata>
 	<upstream>
 		<bugs-to>mailto:pacman-dev@archlinux.org</bugs-to>
-		<changelog>https://git.archlinux.org/pacman.git/tree/NEWS</changelog>
-		<doc>https://archlinux.org/pacman/</doc>
+		<changelog>https://gitlab.archlinux.org/pacman/pacman/-/blob/master/NEWS</changelog>
+		<doc>https://pacman.archlinux.page/</doc>
 	</upstream>
 	<maintainer type="person">
 		<email>holgersson@posteo.de</email>

@@ -3,6 +3,6 @@
 <pkgmetadata>
 	<!-- maintainer-needed -->
 	<upstream>
-		<remote-id type="github">tools/lldb-mi</remote-id>
+		<remote-id type="github">lldb-tools/lldb-mi</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -12,7 +12,7 @@ PKG_NAME="${PN}${MY_PV_YEAR}"
 inherit desktop unpacker xdg
 
 DESCRIPTION="CAD software for 2D drawing, reviewing and printing work"
-HOMEPAGE="https://www.zwsoft.cn/product/zwcad/linux"
+HOMEPAGE="https://www.zwsoft.cn/product/zwcad"
 
 URI_ANACONDA="https://anaconda.org/anaconda"
 SRC_URI="

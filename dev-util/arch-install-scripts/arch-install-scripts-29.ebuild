@@ -4,7 +4,7 @@
 EAPI=8
 
 DESCRIPTION="Arch Linux install tools (pacstrap, genfstab, arch-chroot)"
-HOMEPAGE="https://projects.archlinux.org/arch-install-scripts.git/"
+HOMEPAGE="https://gitlab.archlinux.org/archlinux/arch-install-scripts"
 
 LICENSE="GPL-2"
 SLOT="0"
