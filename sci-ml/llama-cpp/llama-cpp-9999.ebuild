@@ -8,6 +8,9 @@ ROCM_VERSION="6.3"
 inherit cmake cuda rocm linux-info
 
 TINY_LLAMAS_COMMIT="99dd1a73db5a37100bd4ae633f4cfce6560e1567"
+# Pinned prebuilt web UI for the live ebuild: upstream publishes no per-commit UI
+# artifact with a stable URL, so track a recent release build and bump as needed.
+LLAMA_WEBUI_PV="b10054"
 
 DESCRIPTION="LLM inference in C/C++"
 HOMEPAGE="https://github.com/ggml-org/llama.cpp"
@@ -15,6 +18,11 @@ HOMEPAGE="https://github.com/ggml-org/llama.cpp"
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/ggml-org/llama.cpp.git"
+	SRC_URI="
+		webui? (
+			https://github.com/ggml-org/llama.cpp/releases/download/${LLAMA_WEBUI_PV}/llama-${LLAMA_WEBUI_PV}-ui.tar.gz
+		)
+	"
 else
 	MY_PV="b${PV#0_pre}"
 	SRC_URI="
@@ -113,14 +121,12 @@ src_unpack() {
 
 	if use webui; then
 		if [[ ${PV} == *9999* ]]; then
-			mkdir -p "${S}/tools/ui/dist"
-			einfo Downloading webui dist from huggingface bucket...
-			wget -qO - "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/latest/dist.tar.gz" \
-				| tar -xzf - -C "${S}/tools/ui/dist"
+			unpack "llama-${LLAMA_WEBUI_PV}-ui.tar.gz"
+			ln -s "${WORKDIR}/llama-${LLAMA_WEBUI_PV}" "${S}/tools/ui/dist" || die
 		else
 			ln -s "${WORKDIR}/llama-${MY_PV}" "${S}/tools/ui/dist" || die
 		fi
-		echo "{\"version\":\"${MY_PV}\"}" > "${S}/tools/ui/dist/build.json"
+		echo "{\"version\":\"${MY_PV:-${LLAMA_WEBUI_PV}}\"}" > "${S}/tools/ui/dist/build.json"
 	fi
 }
 
