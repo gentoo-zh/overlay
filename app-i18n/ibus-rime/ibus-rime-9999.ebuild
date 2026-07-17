@@ -1,4 +1,4 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -6,8 +6,8 @@ EAPI=7
 inherit git-r3
 
 DESCRIPTION="Rime Input Method Engine for IBus Framework"
-HOMEPAGE="http://code.google.com/p/rimeime/"
-EGIT_REPO_URI="https://github.com/lotem/${PN}.git"
+HOMEPAGE="https://rime.im/ https://github.com/rime/ibus-rime"
+EGIT_REPO_URI="https://github.com/rime/${PN}.git"
 
 LICENSE="GPL-3"
 SLOT="0"
