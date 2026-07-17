@@ -62,8 +62,8 @@ This repository is a Gentoo overlay fork. Prefer generic Gentoo ebuild workflow 
 ## Ebuild Policy
 
 - Do not break people's systems.
-- Every ebuild change must avoid compile-time errors before commit.
-- Test ebuilds for every `KEYWORDS` arch claimed. If an arch was not tested, do not claim support for it.
+- Every ebuild change must install cleanly before commit. A clean compile is not the bar: the emerge-on-PR CI fails on any qa/warn/error Portage elog, not only compile errors. Clear it locally, or document a benign elog in the PR body for a human to merge.
+- Test ebuilds for every `KEYWORDS` arch claimed; CI builds only amd64, so verify the others yourself and never claim an arch you did not build.
 - Use unstable keywords only, such as `~amd64`; do not add stable keywords.
 - Preserve existing package style unless a change is needed for correctness or QA.
 - Avoid broad refactors while doing package maintenance.
@@ -72,7 +72,11 @@ This repository is a Gentoo overlay fork. Prefer generic Gentoo ebuild workflow 
 - Use package-local and ecosystem-local precedent before generic templates.
 - Keep live `9999` ebuild behavior separate from release ebuild behavior.
 - Do not invent licenses. Verify upstream license files and Gentoo license names.
-- For bundled binaries, verify architecture, redistribution constraints, install paths, and whether QA exceptions are needed.
+
+## Bundled and Prebuilt Binaries
+
+- Keyword a per-arch prebuilt blob only for the arches upstream ships, with `KEYWORDS="-* <those arches>"` and a per-arch `SRC_URI`; declare it prebuilt and set `RESTRICT` for stripping and redistribution as the blob requires.
+- Treat an `Unresolved soname dependencies` QA notice as a real defect: no QA variable legitimately gags it, so make the bundled libraries resolve and declare the genuine system `RDEPEND` rather than mask it.
 
 ## New Packages
 
@@ -85,12 +89,15 @@ This repository is a Gentoo overlay fork. Prefer generic Gentoo ebuild workflow 
 ## Version Bumps
 
 - Before bumping, read existing ebuilds and package history.
-- Normalize upstream version strings according to Gentoo version rules, such as `v1.2.3` to `1.2.3` and `rc`/`beta`/`pre` to `_rc`/`_beta`/`_pre`.
-- Compare upstream release notes, build files, dependency changes, and license changes.
-- Check whether patches, files, services, wrappers, desktop assets, and source archive layout still apply.
+- Normalize upstream version strings according to Gentoo version rules: strip a leading `v`; map `alpha`/`beta`/`pre`/`rc` to `_alpha`/`_beta`/`_pre`/`_rc`; map a trailing packaging/patch number to `_pN`; keep date versions numeric and monotonic (a date going backwards is suspect). When the tag is not a legal Gentoo version, derive it with a `MY_PV`-style variable rather than renaming the release.
+- A version-tracking tool's reported string (for example an nvchecker bump reminder) may already be normalized by its own rules and differ from the real upstream tag and `SRC_URI`; verify the real tag before naming the ebuild.
+- Compare upstream release notes, build files, dependency changes, and license changes. Check whether patches, files, services, wrappers, desktop assets, and source archive layout still apply.
 - Add new ebuilds and update `SRC_URI`, checksums, and version-specific variables together.
-- Drop old versions only when requested or when repository policy makes it appropriate; preserve old revisions when they are still needed for compatibility.
-- For routine version bumps, default to add-only; dropping old versions is a separate decision.
+- Not every bump is mechanical: a changed dependency/USE flag, a version-scheme change, a prerelease target on release-only history, a pinned commit/crate var, an applied patch, or a per-version bundled-deps artifact must be decided against upstream evidence. Never guess `RDEPEND`/`IUSE` to force a green build; escalate when the data is not available offline.
+- A truncated download still produces a valid-looking Manifest that installs locally but fails CI `VERIFY` on the full bytes. For a large distfile, cross-check its manifested size against the upstream asset before trusting the Manifest.
+- A per-version bundled dependency artifact (a `*-deps`/`*-vendor`/`*-crates`/`node_modules` tarball, matched by filename and hosted on GitHub releases, not a Gentoo mirror) must be published upstream for the new version before the bump, or the fetch 404s.
+- Drop old versions only when requested or when repository policy makes it appropriate; preserve old revisions still needed for compatibility. For routine bumps, default to add-only.
+- pkgcheck `PotentialStable` is informational only and does not gate CI; this overlay uses unstable keywords only.
 
 ## Eclass Discovery
 
@@ -111,22 +118,22 @@ This repository is a Gentoo overlay fork. Prefer generic Gentoo ebuild workflow 
   pkgcheck scan --commits --net
   ```
 
+- A rate-limited `--net` scan over-reports `DeadUrl`/`RedirectedUrl` on GitHub. Re-verify a flagged `SRC_URI` before acting, and note that a dead `HOMEPAGE` does not block installation. Overlay distfiles are not mirrored on `distfiles.gentoo.org`, so a genuinely dead `SRC_URI` here is unfetchable.
 - Commit with `pkgdev commit --scan false --signoff --gpg-sign` by default.
 - If GPG signing is unavailable in the current environment, fall back to `pkgdev commit --scan false --signoff`.
 
 ## QA
 
-- Fix root causes, not only warnings.
-- Do not silence QA unless the package type genuinely requires it.
-- If adding QA exceptions, explain why they are correct for this package.
+- Fix the real QA problem at its root; never edit an ebuild just to make a check pass. Do not ignore QA either: fix what is genuine, and keep only a benign or unavoidable notice, with its rationale and risk stated.
+- If adding a QA exception, explain why it is correct for this package, not merely convenient.
 - Re-run the command that exposed a QA problem after each fix.
-- When a warning is intentionally left, include the rationale and risk.
 - Final reports must include commands run, pass/fail result, checks skipped and why, and any remaining warnings or known limitations.
 - Retry at most three times. If the same error repeats twice for the same package, stop, report the failed phase and attempts, and ask before continuing.
 
 ## Commit Messages
 
-- Prefer `pkgdev commit` over raw `git commit` so package commit subjects are generated consistently.
+- Commit with `pkgdev commit`, not raw `git commit`, so the subject follows the repository's `category/package: ...` convention; do not hand-write a divergent subject.
+- Land a new package (or one logical change) as a single clean commit; squash incremental fixups before the PR instead of a chain of `fix ...` / `use ...` / `update ...` follow-ups. Keep the history simple.
 - Do not include AI-generated signatures or attribution in commits, including `Co-Authored-By` or generated-by lines.
 - Non-version-bump commits:
 
@@ -147,4 +154,5 @@ This repository is a Gentoo overlay fork. Prefer generic Gentoo ebuild workflow 
 
 - Fill the PR description with the reason for the change and notable testing.
 - Check the PR template box only after `pkgcheck scan --commits --net` has been run.
+- After opening the PR, watch its CI checks; if one fails, read the CI log and fix the actual cause, never guess.
 - Keep generated or mechanical churn out of the PR unless it is directly required by the package change.
