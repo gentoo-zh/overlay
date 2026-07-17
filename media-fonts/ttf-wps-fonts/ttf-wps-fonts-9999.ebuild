@@ -6,12 +6,12 @@ DISABLE_AUTOFORMATTING=true
 inherit font unpacker git-r3
 
 DESCRIPTION="Symbol fonts required by wps-office"
-HOMEPAGE="https://github.com/iamdh4/ttf-wps-fonts"
+HOMEPAGE="https://github.com/dv-anomaly/ttf-wps-fonts"
 
 LICENSE="all-rights-reserved"
 SLOT="0"
 
-EGIT_REPO_URI="https://github.com/iamdh4/ttf-wps-fonts.git"
+EGIT_REPO_URI="https://github.com/dv-anomaly/ttf-wps-fonts.git"
 
 FONT_SUFFIX="ttf"
 
