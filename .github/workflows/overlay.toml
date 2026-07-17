@@ -1054,11 +1054,17 @@ github_account = "semes1"
 # TODO: need filter mamba- prefix
 #["dev-util/mamba"]
 
+["dev-util/obs-build"]
+source = "github"
+github = "openSUSE/obs-build"
+use_latest_tag = true
+github_account = ["peeweep"]
+
 ["dev-util/osc"]
 source = "github"
 github = "openSUSE/osc"
 use_latest_tag = true
-github_account = ["douglarek", "gouwazi"]
+github_account = ["douglarek", "gouwazi", "peeweep"]
 
 ["dev-util/pack-cli"]
 source = "github"
