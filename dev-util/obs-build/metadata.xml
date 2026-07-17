@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>peeweep@0x0.ee</email>
+		<name>jinqiang zhang</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">openSUSE/obs-build</remote-id>
+	</upstream>
+</pkgmetadata>
