@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-18 20:22:11 CST)
+(The last generation time: 2026-07-18 21:04:30 CST)
 
 ### Packages
 
@@ -533,6 +533,8 @@
  mate-base/caja-bin                                    | 1.28.0             |            | https://wiki.mate-desktop.org/mate-desktop/applications/caja/              | GUI file manager, fork of GNOME Files (Nautilus); supports SSH, FTP, WebDav
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/Plangothic                                | 2.9.5795           |            | https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project     | 遍黑体项目（Plangothic Project）
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ media-fonts/chocolate-classical                       | 1.005              |            | https://github.com/MoonlitOwen/ChocolateSans                               | Traditional Chinese font based on Source Han Sans with classical glyphs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/iansui                                    | 1.020              |            | https://github.com/ButTaiwan/iansui                                        | An open-source Chinese font derived from Klee One (Fontworks)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
