@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-18 20:20:17 CST)
+(The last generation time: 2026-07-18 20:22:11 CST)
 
 ### Packages
 
@@ -497,7 +497,7 @@
  games-fps/openarena                                   | 0.8.8              |            | https://openarena.ws                                                       | A violent, sexy, multiplayer first person shooter based on the ioquake3 engine
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-fps/openarena-bin                               | 0.8.8              |            | https://openarena.ws                                                       | A violent, sexy, multiplayer first person shooter based on the ioquake3 engine
+ games-fps/openarena-bin                               | 0.8.8-r1           |            | https://openarena.ws                                                       | A violent, sexy, multiplayer first person shooter based on the ioquake3 engine
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-fps/source-engine                               | 9999               |            | https://github.com/nillerusr/source-engine                                 | A 3D game engine developed by Valve
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
