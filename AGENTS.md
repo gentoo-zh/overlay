@@ -153,6 +153,8 @@ This repository is a Gentoo overlay fork. Prefer generic Gentoo ebuild workflow 
 ## Pull Requests
 
 - Fill the PR description with the reason for the change and notable testing.
-- Check the PR template box only after `pkgcheck scan --commits --net` has been run.
+- Write it in the opener's own language (do not default to English or force one language); keep it short, precise, and in plain common words, with no diff restatement or padding.
+- A tool may draft or summarize it, but a human confirms before it is sent, and the exact text to be posted and the files it changes are shown for editing first. You own every word; never auto-post a machine-translated or dual-language wall.
+- Keep the repository PR template: put the description above its marker, leave the checklist in place, and tick a box only after its check has run (e.g. `pkgcheck scan --commits --net`).
 - After opening the PR, watch its CI checks; if one fails, read the CI log and fix the actual cause, never guess.
 - Keep generated or mechanical churn out of the PR unless it is directly required by the package change.
