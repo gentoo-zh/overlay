@@ -8,16 +8,16 @@ function command_exists() {
 }
 
 function show_error_dialog() {
-    title="linuxqq-nt-bwrap"
+    title="Tencent QQ Dialog"
     if command_exists kdialog; then
         kdialog --error "$1" --title "$title" --icon qq
     elif command_exists zenity; then
         zenity --error --title "$title" --icon-name qq --text "$1"
     else
-        all_off="$(tput sgr0)"
-        bold="${all_off}$(tput bold)"
-        blue="${bold}$(tput setaf 4)"
-        yellow="${bold}$(tput setaf 3)"
+        local all_off="$(tput sgr0)"
+        local bold="${all_off}$(tput bold)"
+        local blue="${bold}$(tput setaf 4)"
+        local yellow="${bold}$(tput setaf 3)"
         printf "${blue}==>${yellow} ${bold} $1${all_off}\n"
     fi
 }
@@ -28,11 +28,24 @@ if [ ! -e "/etc/localtime" ]; then
     exit 1
 fi
 
-USER_RUN_DIR="/run/user/$(id -u)"
-XAUTHORITY="${XAUTHORITY:-$HOME/.Xauthority}"
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-FONTCONFIG_HOME="${XDG_CONFIG_HOME}/fontconfig"
 QQ_APP_DIR="${XDG_CONFIG_HOME}/QQ"
+QQ_HOTUPDATE_DIR="${QQ_APP_DIR}/versions"
+
+# 从 flags 文件中加载用户参数
+declare -a USER_BWRAP_FLAGS
+if [[ -f "${XDG_CONFIG_HOME}/qq-bwrap-flags.conf" ]]; then
+    mapfile -t USER_BWRAP_FLAGS <<<"$(grep -v '^#' "${XDG_CONFIG_HOME}/qq-bwrap-flags.conf")"
+    echo "User bubblewrap flags:" "${USER_BWRAP_FLAGS[@]}"
+fi
+
+declare -a USER_QQ_FLAGS
+if [[ -f "${XDG_CONFIG_HOME}/qq-flags.conf" ]]; then
+    mapfile -t USER_QQ_FLAGS <<<"$(grep -v '^#' "${XDG_CONFIG_HOME}/qq-flags.conf")"
+    echo "User QQ flags:" "${USER_QQ_FLAGS[@]}"
+fi
+
+# 设置下载文件夹
 if [ -z "${QQ_DOWNLOAD_DIR}" ]; then
     if [ -z "${XDG_DOWNLOAD_DIR}" ]; then
         XDG_DOWNLOAD_DIR="$(xdg-user-dir DOWNLOAD)"
@@ -40,40 +53,7 @@ if [ -z "${QQ_DOWNLOAD_DIR}" ]; then
     QQ_DOWNLOAD_DIR="${XDG_DOWNLOAD_DIR:-$HOME/Downloads}"
 fi
 
-# 从 flags 文件中加载参数
-
-set -euo pipefail
-electron_flags_file="${XDG_CONFIG_HOME}/qq-flags.conf"
-declare -a electron_flags
-
-if [[ -f "${electron_flags_file}" ]]; then
-    mapfile -t ELECTRON_FLAGS_MAPFILE <"${electron_flags_file}"
-fi
-
-for line in "${ELECTRON_FLAGS_MAPFILE[@]}"; do
-    if [[ ! "${line}" =~ ^[[:space:]]*#.* ]]; then
-        electron_flags+=("${line}")
-    fi
-done
-
-bwrap_flags_file="${XDG_CONFIG_HOME}/qq-bwrap-flags.conf"
-declare -a bwrap_flags
-if [[ -f "${bwrap_flags_file}" ]]; then
-    while IFS= read -r line; do
-        if [[ ! "${line}" =~ ^[[:space:]]*# ]] && [[ -n "${line}" ]]; then
-            eval "expanded_line=\"$line\""
-            read -ra parts <<< "$expanded_line"
-            for part in "${parts[@]}"; do
-                bwrap_flags+=("$part")
-            done
-        fi
-    done < "${bwrap_flags_file}"
-fi
-
-QQ_HOTUPDATE_DIR="${QQ_APP_DIR}/versions"
-
-# 在「下载」目录不存在的时候，自动使用 ~/Downloads
-# 避免挂载整个 home
+# 当下载目录为 ~ 时，自动使用 ~/Downloads
 if [ "${QQ_DOWNLOAD_DIR%*/}" == "${HOME}" ]; then
     QQ_DOWNLOAD_DIR="${HOME}/Downloads"
 fi
@@ -104,61 +84,54 @@ if [ "$is_hotupdated_version" == "0" ]; then
     cp "/opt/QQ/workarounds/config.json" "${QQ_HOTUPDATE_DIR}/config.json"
 fi
 
-bwrap --new-session --cap-drop ALL --unshare-user-try --unshare-pid --unshare-cgroup-try \
+# 移除无用崩溃报告和日志
+if [[ -f "${QQ_APP_DIR}/crash_files" ]]; then
+    rm "${QQ_APP_DIR}/crash_files"
+fi
+
+rm -rf "${QQ_APP_DIR}"/crash_files/* "${QQ_APP_DIR}"/Crashpad/* "${QQ_APP_DIR}"/log/*
+
+for nt_qq_userdata in "${QQ_APP_DIR}"/nt_qq_*/nt_data; do
+    rm -rf "${nt_qq_userdata}"/log/* "${nt_qq_userdata}"/log-cache/*
+done
+
+exec bwrap \
+    --new-session \
+    --cap-drop ALL \
+    --unshare-user-try \
+    --unshare-ipc \
+    --unshare-pid \
+    --unshare-cgroup-try \
+    --dev-bind /dev /dev \
+    --dev-bind /run/dbus /run/dbus \
+    --ro-bind /bin /bin \
     --ro-bind /lib /lib \
     --ro-bind /lib64 /lib64 \
-    --ro-bind /bin /bin \
     --ro-bind /usr /usr \
     --ro-bind /opt /opt \
-    --ro-bind /opt/QQ/workarounds/xdg-open.sh /usr/bin/xdg-open \
-    --ro-bind /usr/lib/snapd-xdg-open/xdg-open /snapd-xdg-open \
-    --ro-bind /usr/lib/flatpak-xdg-utils/xdg-open /flatpak-xdg-open \
-    --ro-bind /etc/machine-id /etc/machine-id \
-    --ro-bind /etc/ld.so.cache /etc/ld.so.cache \
-    --dev-bind /dev /dev \
     --ro-bind /sys /sys \
-    --ro-bind /etc/passwd /etc/passwd \
-    --ro-bind /etc/nsswitch.conf /etc/nsswitch.conf \
-    --ro-bind-try /run/systemd/userdb /run/systemd/userdb \
-    --ro-bind /etc/resolv.conf /etc/resolv.conf \
+    --ro-bind /etc/ld.so.cache /etc/ld.so.cache \
     --ro-bind /etc/localtime /etc/localtime \
-    --proc /proc \
-    --tmpfs "/sys/devices/virtual" \
-    --dev-bind /run/dbus /run/dbus \
-    --bind "${USER_RUN_DIR}" "${USER_RUN_DIR}" \
+    --ro-bind /etc/passwd /etc/passwd \
+    --ro-bind /etc/machine-id /etc/machine-id \
+    --ro-bind /etc/nsswitch.conf /etc/nsswitch.conf \
+    --ro-bind /etc/resolv.conf /etc/resolv.conf \
     --ro-bind-try /etc/fonts /etc/fonts \
-    --dev-bind /tmp /tmp \
-    --bind-try "${HOME}/.pki" "${HOME}/.pki" \
-    --ro-bind-try "${XAUTHORITY}" "${XAUTHORITY}" \
-    --bind-try "${QQ_DOWNLOAD_DIR}" "${QQ_DOWNLOAD_DIR}" \
+    --ro-bind-try /run/systemd/userdb /run/systemd/userdb \
+    --proc /proc \
+    --tmpfs /tmp \
+    --tmpfs /sys/devices/virtual \
+    --ro-bind /usr/lib/flatpak-xdg-utils/xdg-open /usr/bin/xdg-open \
     --bind "${QQ_APP_DIR}" "${QQ_APP_DIR}" \
-    --ro-bind-try "${FONTCONFIG_HOME}" "${FONTCONFIG_HOME}" \
+    --bind "/run/user/$(id -u)" "/run/user/$(id -u)" \
+    --bind-try "${QQ_DOWNLOAD_DIR}" "${QQ_DOWNLOAD_DIR}" \
+    --bind-try "${HOME}/.pki" "${HOME}/.pki" \
     --ro-bind-try "${HOME}/.icons" "${HOME}/.icons" \
     --ro-bind-try "${HOME}/.local/share/.icons" "${HOME}/.local/share/.icons" \
+    --ro-bind-try "${XAUTHORITY:-$HOME/.Xauthority}" "${XAUTHORITY:-$HOME/.Xauthority}" \
     --ro-bind-try "${XDG_CONFIG_HOME}/gtk-3.0" "${XDG_CONFIG_HOME}/gtk-3.0" \
     --ro-bind-try "${XDG_CONFIG_HOME}/dconf" "${XDG_CONFIG_HOME}/dconf" \
-    --ro-bind /etc/nsswitch.conf /etc/nsswitch.conf \
-    --ro-bind-try /run/systemd/userdb/ /run/systemd/userdb/ \
+    --ro-bind-try "${XDG_CONFIG_HOME}/fontconfig" "${XDG_CONFIG_HOME}/fontconfig" \
     --setenv IBUS_USE_PORTAL 1 \
-    --setenv QQNTIM_HOME "${QQ_APP_DIR}/QQNTim" \
-    "${bwrap_flags[@]}" \
-    /opt/QQ/qq "${electron_flags[@]}" "$@"
-
-# 移除无用崩溃报告和日志
-# 如果需要向腾讯反馈 bug，请注释掉如下几行
-rm -rf ${QQ_APP_DIR}/crash_files
-touch ${QQ_APP_DIR}/crash_files
-if [ -d "${QQ_APP_DIR}/log" ]; then
-    rm -rf "${QQ_APP_DIR}/log"
-fi
-for nt_qq_userdata in "${QQ_APP_DIR}/nt_qq_"*; do
-    if [ -d "${nt_qq_userdata}/log" ]; then
-        rm -rf "${nt_qq_userdata}/log"
-    fi
-    if [ -d "${nt_qq_userdata}/log-cache" ]; then
-        rm -rf "${nt_qq_userdata}/log-cache"
-    fi
-done
-if [ -d "${QQ_APP_DIR}/Crashpad" ]; then
-    rm -rf "${QQ_APP_DIR}/Crashpad"
-fi
+    "${USER_BWRAP_FLAGS[@]}" \
+    /opt/QQ/qq "${USER_QQ_FLAGS[@]}" "$@"

@@ -5,14 +5,15 @@ EAPI=8
 
 inherit unpacker xdg
 
+MY_PV="${PV/_p/-}"
 QQ_DOWNLOAD_URL_PREFIX="https://qqdl.gtimg.cn/qqfile/QQNT/9.9.32/patch/c390e792"
 
 DESCRIPTION="The new version of the official linux-qq"
 HOMEPAGE="https://im.qq.com/index/#/linux"
 SRC_URI="
-	amd64? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${PV/_*/}-51102_amd64.deb -> ${P}_amd64.deb )
-	arm64? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${PV/_*/}-51102_arm64.deb -> ${P}_arm64.deb )
-	loong? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${PV/_*/}-51102_loongarch64.deb -> ${P}_loong.deb )
+	amd64? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${MY_PV}_amd64.deb -> ${P}_amd64.deb )
+	arm64? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${MY_PV}_arm64.deb -> ${P}_arm64.deb )
+	loong? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${MY_PV}_loongarch64.deb -> ${P}_loong.deb )
 "
 
 S="${WORKDIR}"
@@ -31,7 +32,6 @@ RDEPEND="
 	bwrap? (
 		sys-apps/bubblewrap
 		x11-misc/flatpak-xdg-utils
-		x11-misc/snapd-xdg-open
 	)
 	dev-libs/nss
 	gnome? ( dev-libs/gjs )
@@ -87,15 +87,10 @@ src_install() {
 		newbin "${FILESDIR}/bwrap.sh" qq
 
 		insinto /opt/QQ/workarounds
-		doins "${FILESDIR}"/{config.json,xdg-open.sh,vercmp.sh}
-		fperms +x /opt/QQ/workarounds/{xdg-open.sh,vercmp.sh}
+		doins "${FILESDIR}"/{config.json,vercmp.sh}
+		fperms +x /opt/QQ/workarounds/vercmp.sh
 
-		local _base_pkgver=${PV/_p/-} || die
-		local _update_pkgver=${_base_pkgver} || die
-		local cur_ver=${_update_pkgver:-${base_ver}} || die
-		local build_ver=${cur_ver#*-} || die
-
-		sed -i "s|__BASE_VER__|${base_ver}|g;s|__CURRENT_VER__|${cur_ver}|g;s|__BUILD_VER__|${build_ver}|g" \
+		sed -i "s|__BASE_VER__|${MY_PV}|g;s|__CURRENT_VER__|${MY_PV}|g;s|__BUILD_VER__|${MY_PV#*-}|g" \
 			"${D}/opt/QQ/workarounds/config.json" \
 			"${D}/usr/bin/qq" || die
 	else
@@ -112,11 +107,13 @@ pkg_postinst() {
 		elog "Enabled Bubblewrap support."
 		elog "If you want to download files to system download folder in QQ,"
 		elog "please set the download folder to the system download folder in the QQ settings."
+		elog "You can also define other bwrap parameters in \"~/.config/qq-bwrap-flags.conf\"."
 		elog "--------------------------------------------------------------------"
 		elog "-ZH-----------------------------------------------------------------"
 		elog "Bubblewrap 支持已启用。"
 		elog "如果需要在 QQ 中下载文件至系统下载文件夹，"
 		elog "请在「设置」->「存储管理」中把下载文件夹更改为系统的下载文件夹。"
+		elog "可在 \"~/.config/qq-bwrap-flags.conf\" 中设置其他 bwrap 参数。"
 		elog "--------------------------------------------------------------------"
 	fi
 }
