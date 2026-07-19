@@ -2064,7 +2064,7 @@ source = "github"
 github = "v2rayA/v2rayA"
 use_latest_release = true
 prefix = "v"
-github_account = "liuyujielol"
+github_account = ["liuyujielol", "Zakkaus"]
 
 ["net-proxy/Xray"]
 source = "github"
