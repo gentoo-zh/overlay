@@ -2,33 +2,19 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<name>blackteahamburger</name>
-		<email>blackteahamburger@outlook.com</email>
+		<name>locez</name>
+		<email>locez@locez.com</email>
 	</maintainer>
 	<use>
-		<flag name="amd-pstate">AMD P-State CPU performance scaling</flag>
-		<flag name="asus">ASUS patchset</flag>
-		<flag name="autofdo">AutoFDO profile-guided optimization</flag>
-		<flag name="bbr3">BBR v3</flag>
-		<flag name="cachy">CachyOS patchset</flag>
-		<flag name="crypto">kernel crypto patches</flag>
-		<flag name="fixes">CachyOS fixes</flag>
-		<flag name="hdmi">HDMI patches</flag>
-		<flag name="intel-pstate">Intel P-State P/E core handling</flag>
-		<flag name="sched-ext">sched-ext scheduler framework</flag>
-		<flag name="t2">T2 Macbook support</flag>
 		<flag name="bore">BORE CPU scheduler</flag>
 		<flag name="prjc">Project C CPU scheduler (BMQ/PDS)</flag>
 		<flag name="prjc-lfbmq">Project C CPU scheduler (BMQ/PDS) with Lock Free Run Queue</flag>
-		<flag name="polly">Support for Clang's polyhedral loop optimizer</flag>
-		<flag name="rt-i915">RT i915 patches</flag>
-		<flag name="dkms-clang">Remove some Werror CFLAGS to increase compatibility with some DKMS
-			modules in clang-built kernels</flag>
-		<flag name="aufs">Support for Aufs</flag>
-		<flag name="deckify">Support for handhelds</flag>
+		<flag name="rt">RT i915 patches</flag>
+		<flag name="thin">Install a ThinLTO config fragment and require the LLVM toolchain used to build it</flag>
 	</use>
 	<upstream>
 		<remote-id type="cpe">cpe:/o:linux:linux_kernel</remote-id>
+		<remote-id type="github">CachyOS/linux</remote-id>
 		<remote-id type="github">CachyOS/kernel-patches</remote-id>
 	</upstream>
 </pkgmetadata>
