@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-19 11:06:53 CST)
+(The last generation time: 2026-07-19 14:48:20 CST)
 
 ### Packages
 
@@ -283,9 +283,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/wik                                          | 2.0.1              |            | https://github.com/yashsinghcodes/wik                                      | Wikipedia like a man - in the terminal, without images, with caching
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/wiki2man_on_rust                             | 0.1.10             |            | https://gitlab.com/vitaly_zdanevich_wikimedia/wiki2man_on_rust             | Convert MediaWiki XML dumps into man(7) pages - so you can read Wikipedia in man
-                                                       | 0.2.1              |            |                                                                            |
-                                                       | 0.5.1              |            |                                                                            |
+ app-text/wiki2man_on_rust                             | 0.1.10-r1          |            | https://gitlab.com/vitaly_zdanevich_wikimedia/wiki2man_on_rust             | Convert MediaWiki XML dumps into man(7) pages - so you can read Wikipedia in man
+                                                       | 0.2.1-r1           |            |                                                                            |
+                                                       | 0.5.1-r1           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/easymotion                                    | 1.3                |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
                                                        | 3.0.1              |            |                                                                            |
@@ -448,7 +448,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/trae-ide                                     | 2.3.53679          |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/vcpkg-tool                                   | 2025.12.16         |            | https://github.com/microsoft/vcpkg-tool                                    | Library manager for C/C++ (tool only)
+ dev-util/vcpkg-tool                                   | 2025.12.16-r1      |            | https://github.com/microsoft/vcpkg-tool                                    | Library manager for C/C++ (tool only)
    dev-util/cmakerc                                    | 2.0.1              | BD         | https://github.com/vector-of-bool/cmrc                                     | A Resource Compiler in a Single CMake Script
                                                        | 2.0.1_p20230725    |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -665,7 +665,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/tsukimi                                   | 0.21.0-r1          |            | https://github.com/tsukinaha/tsukimi                                       | A simple Emby Client written by GTK4-RS
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/wiliwili                                  | 1.6.0              |            | https://www.xfangfang.cn/wiliwili/                                         | 跨平台第三方B站客户端
+ media-video/wiliwili                                  | 1.6.0-r1           |            | https://www.xfangfang.cn/wiliwili/                                         | 跨平台第三方B站客户端
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/cfspeedtest-bin                          | 2.2.1              |            | https://github.com/code-inflation/cfspeedtest                              | Unofficial CLI for speed.cloudflare.com
                                                        | 2.2.2              |            |                                                                            |
