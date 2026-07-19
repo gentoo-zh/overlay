@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-19 18:34:09 CST)
+(The last generation time: 2026-07-19 22:39:54 CST)
 
 ### Packages
 
@@ -930,7 +930,7 @@
  virtual/dist-kernel                                   | 7.1.3-r100         |            |                                                                            | Virtual to depend on any Distribution Kernel
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
-   sys-kernel/cachyos-sources                          | 6.18.6             | RD         | https://cachyos.org                                                        | Full Cachyos sources including the Gentoo patchset for the . kernel tree
+   sys-kernel/cachyos-sources                          | 7.1.4              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches
    sys-kernel/liquorix-sources                         | 6.4.12             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 6.6.8              |            |                                                                            |
                                                        | 7.0.14-r2          |            |                                                                            |
