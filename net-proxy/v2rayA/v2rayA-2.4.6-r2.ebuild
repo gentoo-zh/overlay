@@ -12,23 +12,22 @@ SRC_URI="
 	https://github.com/v2rayA/v2rayA/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/v2rayA/v2rayA/releases/download/v${PV}/web.tar.gz -> ${P}-web.tar.gz
 "
-# maintainer generated deps pack
+# maintainer generated vendor tarballs (service and core have different go.mod)
 # generated with gentoo-zh/gentoo-deps/.github/workflows/generator.yml
 SRC_URI+="
-	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-deps.tar.xz
+	https://github.com/gentoo-zh/gentoo-deps/releases/download/v2rayA-service-${PV}/v2rayA-service-${PV}-vendor.tar.xz
+	https://github.com/gentoo-zh/gentoo-deps/releases/download/v2rayA-core-${PV}/v2rayA-core-${PV}-vendor.tar.xz
 "
 
 LICENSE="AGPL-3"
+# statically linked Go deps; core is a fork of xtls/xray-core (MPL-2.0)
+LICENSE+=" Apache-2.0 BSD BSD-2 GPL-3+ LGPL-3 MIT MPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~loong"
-IUSE="xray"
 
 RDEPEND="
-	|| (
-		>=net-proxy/v2ray-5
-		>=net-proxy/v2ray-bin-5
-	)
-	xray? ( net-proxy/Xray )
+	app-alternatives/v2ray-geoip
+	app-alternatives/v2ray-geosite
 "
 BDEPEND="
 	>=dev-lang/go-1.26:*
@@ -37,14 +36,33 @@ BDEPEND="
 src_compile() {
 	mv -v "${WORKDIR}/web" "${S}/service/server/router/web" || die
 
+	# v2rayA 2.4.6 ships its own core (a fork of xray-core with the
+	# MultiObservatory patches) instead of calling an external v2ray/xray.
+	# The core is a separate Go module; build it from its own vendored deps.
+	cd "${S}/core" || die
+	ego build -mod=vendor -trimpath \
+		-ldflags "-X main.Version=${PV}" \
+		-o v2raya_core ./main
+
 	cd "${S}/service" || die
-	ego build -tags "with_gvisor" \
+	ego build -mod=vendor -tags "with_gvisor" \
 		-ldflags "-X github.com/v2rayA/v2rayA/conf.Version=${PV}" \
 		-o v2raya -trimpath
 }
 
 src_install() {
 	dobin "${S}"/service/v2raya
+	dobin "${S}"/core/v2raya_core
+
+	# v2rayA looks for geodata in /usr/share/v2raya/ and symlinks it into the
+	# core's runtime asset dir from there. Point it at /usr/share/v2ray/, where
+	# app-alternatives/v2ray-geoip and v2ray-geosite install the actual
+	# geoip.dat/geosite.dat. The core's own /usr/share/xray/ path is installed
+	# by net-proxy/Xray and is unused here, so it is not linked (avoids a file
+	# collision when both packages are installed).
+	dosym -r /usr/share/v2ray/geoip.dat /usr/share/v2raya/geoip.dat
+	dosym -r /usr/share/v2ray/geosite.dat /usr/share/v2raya/geosite.dat
+
 	# directory for runtime use
 	keepdir "/etc/v2raya"
 
@@ -85,5 +103,13 @@ pkg_postinst() {
 		elog "net-proxy/v2rayA-2.2.7.5 is kept if you need the old version."
 		elog ">> 2.4.0 起数据改用 SQLite，从旧版升级会做一次迁移，部分用户"
 		elog ">> 遇到过服务器/订阅丢失（2.4.1 已修空订阅）。升级前请先备份。旧版 2.2.7.5 保留。"
+	fi
+
+	if has_version '<net-proxy/v2rayA-2.4.6' ; then
+		elog "2.4.6 bundles its own v2raya_core binary (a fork of xray-core)."
+		elog "net-proxy/v2ray and net-proxy/v2ray-bin are no longer required"
+		elog "by v2rayA. You may remove them if not needed by other packages."
+		elog ">> 2.4.6 起使用自带的 v2raya_core 内核（基于 xray-core），"
+		elog ">> 不再依赖独立的 v2ray/v2ray-bin 包，可以按需清理。"
 	fi
 }
