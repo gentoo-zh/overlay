@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-20 10:28:59 CST)
+(The last generation time: 2026-07-20 11:51:16 CST)
 
 ### Packages
 
@@ -442,7 +442,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.80.10            |            | https://github.com/badlogic/pi-mono                                        | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.17.15            |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.17.16            |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                              | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -818,7 +818,7 @@
  net-proxy/daed                                        | 1.21.1             |            | https://github.com/daeuniverse/daed                                        | A Modern Dashboard For dae
                                                        | 1.27.0-r1          |            |                                                                            |
                                                        | 9999               |            |                                                                            |
-   sys-apps/pnpm                                       | 11.15.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
+   sys-apps/pnpm                                       | 11.15.1            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.8.94             |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
