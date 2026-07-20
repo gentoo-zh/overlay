@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-20 09:43:12 CST)
+(The last generation time: 2026-07-20 09:44:01 CST)
 
 ### Packages
 
@@ -468,7 +468,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/git-remote-mediawiki                          | 9999               |            | https://github.com/Git-Mediawiki/Git-Mediawiki                             | Gate between Git and Mediawiki: pull and push Wikipedia articles
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/rebased-bin                                   | 1.1.7              |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
+ dev-vcs/rebased-bin                                   | 1.1.8              |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/sourcegit-bin                                 | 2026.07            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.09            |            |                                                                            |
