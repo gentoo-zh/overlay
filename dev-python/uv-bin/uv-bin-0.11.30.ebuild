@@ -14,16 +14,20 @@ SRC_URI="
 "
 
 S="${WORKDIR}"
-LICENSE="Apache-2.0 MIT"
+LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64"
 RESTRICT="strip"
-DEPEND="
+RDEPEND="
 	!dev-python/uv
-	elibc_glibc? ( sys-libs/glibc )
+	elibc_glibc? (
+		sys-devel/gcc:*
+		sys-libs/glibc
+	)
 	elibc_musl? ( sys-libs/musl )
 "
-RDEPEND="${DEPEND}"
+
+QA_PREBUILT="usr/bin/uv usr/bin/uvx"
 
 src_install() {
 	if use elibc_glibc ; then
