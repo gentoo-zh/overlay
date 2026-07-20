@@ -27,7 +27,7 @@ else
 			elibc_musl? ( ${GITHUB_BASE}/opencode-linux-arm64-musl.tar.gz -> ${P}-arm64-musl.tar.gz )
 		)
 	"
-	KEYWORDS="~amd64 ~arm64"
+	KEYWORDS="-* ~amd64 ~arm64"
 fi
 
 S="${WORKDIR}"
@@ -35,6 +35,8 @@ LICENSE="MIT"
 SLOT="0"
 IUSE="cpu_flags_x86_avx2"
 RESTRICT="mirror strip"
+
+RDEPEND="elibc_musl? ( sys-devel/gcc:* )"
 
 [[ ${PV} == 9999 ]] && BDEPEND+=" net-misc/curl"
 
