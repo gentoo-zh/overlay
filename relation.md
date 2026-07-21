@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-21 17:48:24 CST)
+(The last generation time: 2026-07-21 18:01:40 CST)
 
 ### Packages
 
@@ -44,6 +44,7 @@
  app-dicts/fcitx-pinyin-moegirl                        | 20260315           |            | https://github.com/outloudvi/mw2fcitx                                      | Fcitx 5 Pinyin Dictionary from zh.moegirl.org.cn
                                                        | 20260412           |            |                                                                            |
                                                        | 20260511           |            |                                                                            |
+                                                       | 20260713           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-sougou-dict                    | 20260319           |            | https://github.com/blackteahamburger/fcitx5-pinyin-sougou-dict             | Sougou Pinyin dictionary for Fcitx5 and RIME
    app-i18n/ibus-rime                                  | 9999               | RD         | https://rime.im/                                                           | Rime Input Method Engine for IBus Framework
