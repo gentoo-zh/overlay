@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-21 15:26:13 CST)
+(The last generation time: 2026-07-21 15:26:48 CST)
 
 ### Packages
 
@@ -447,7 +447,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.80.10            |            | https://github.com/badlogic/pi-mono                                        | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.17.16            |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.17.17            |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                              | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -515,7 +515,7 @@
  games-server/vintagestory-server                      | 1.19.8             |            | https://www.vintagestory.at/                                               | Dedicated game server for Vintage Story
                                                        | 1.20.12            |            |                                                                            |
                                                        | 1.21.0             |            |                                                                            |
-                                                       | 1.22.3             |            |                                                                            |
+                                                       | 1.22.4             |            |                                                                            |
    acct-group/vintagestory                             | 0                  | RD         |                                                                            | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                            | User for Vintage Story Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
