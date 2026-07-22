@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-22 18:13:10 CST)
+(The last generation time: 2026-07-22 18:13:45 CST)
 
 ### Packages
 
@@ -488,7 +488,7 @@
  games-action/vintagestory                             | 1.19.8             |            | https://www.vintagestory.at/                                               | Uncompromising wilderness survival sandbox game (requires paid account)
                                                        | 1.20.12            |            |                                                                            |
                                                        | 1.21.6             |            |                                                                            |
-                                                       | 1.22.4             |            |                                                                            |
+                                                       | 1.22.5             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-arcade/osu-lazer-bin                            | 2026.624.0         |            | https://osu.ppy.sh/                                                        | A free-to-win rhythm game. Rhythm is just a click away!
                                                        | 2026.711.0         |            |                                                                            |
@@ -521,7 +521,7 @@
  games-server/vintagestory-server                      | 1.19.8             |            | https://www.vintagestory.at/                                               | Dedicated game server for Vintage Story
                                                        | 1.20.12            |            |                                                                            |
                                                        | 1.21.0             |            |                                                                            |
-                                                       | 1.22.4             |            |                                                                            |
+                                                       | 1.22.5             |            |                                                                            |
    acct-group/vintagestory                             | 0                  | RD         |                                                                            | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                            | User for Vintage Story Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
