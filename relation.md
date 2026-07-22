@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-22 15:28:56 CST)
+(The last generation time: 2026-07-22 15:45:01 CST)
 
 ### Packages
 
@@ -369,6 +369,7 @@
                                                        | 1.0.5              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/fuo-ytmusic                                | 0.4.14             |            | https://github.com/feeluown/feeluown-ytmusic                               | youtube music support for feeluown
+                                                       | 0.4.18             |            |                                                                            |
                                                        | 0.4.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/fusesoc                                    | 2.4.4              |            | https://github.com/olofk/fusesoc/                                          | Award-winnning package manager and build abstraction tool for HDL code
