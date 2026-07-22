@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-22 18:15:53 CST)
+(The last generation time: 2026-07-22 19:55:00 CST)
 
 ### Packages
 
@@ -401,6 +401,7 @@
  dev-python/pywikibot                                  | 10.3.0             |            | https://www.mediawiki.org/wiki/Manual:Pywikibot                            | To interact with MediaWiki API (for example Wikipedia, Wikimedia Commons)
                                                        | 10.7.4             |            |                                                                            |
                                                        | 11.5.0             |            |                                                                            |
+                                                       | 11.6.0             |            |                                                                            |
    dev-python/mwparserfromhell                         | 0.7.2              | RD         | https://github.com/earwig/mwparserfromhell                                 | A Python parser for MediaWiki wikicode
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/uv-bin                                     | 0.11.31            |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
