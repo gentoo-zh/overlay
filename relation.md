@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-22 19:55:00 CST)
+(The last generation time: 2026-07-22 20:40:36 CST)
 
 ### Packages
 
@@ -186,6 +186,7 @@
                                                        | 3.15.0             |            |                                                                            |
                                                        | 3.16.1             |            |                                                                            |
                                                        | 3.17.0             |            |                                                                            |
+                                                       | 3.18.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.14.1             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
                                                        | 3.16.5             |            |                                                                            |
@@ -663,7 +664,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/bilibili                                  | 1.17.9_p1          |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/davinci-resolve                           | 21.0.2             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
+ media-video/davinci-resolve                           | 21.0.3             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/implay                                    | 1.5.1              |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
