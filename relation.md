@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-22 06:05:46 CST)
+(The last generation time: 2026-07-22 09:26:11 CST)
 
 ### Packages
 
@@ -221,7 +221,7 @@
  app-misc/openclaude                                   | 0.13.0             |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
                                                        | 0.25.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.20.0             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.20.1             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.14               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
                                                        | 1.15               |            |                                                                            |
@@ -430,7 +430,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gitea-cli                                    | 0.14.2             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/herdr-bin                                    | 0.7.4              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
+ dev-util/herdr-bin                                    | 0.7.5              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.6.2.85969        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
