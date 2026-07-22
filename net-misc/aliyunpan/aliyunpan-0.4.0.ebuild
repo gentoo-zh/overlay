@@ -10,7 +10,6 @@ HOMEPAGE="https://github.com/tickstep/aliyunpan"
 
 SRC_URI="https://github.com/tickstep/aliyunpan/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/gentoo-zh-drafts/aliyunpan/releases/download/v${PV}/${P}-vendor.tar.xz
-		-> ${P}-vendor.golang-dist-mirror-action.tar.xz
 "
 LICENSE="Apache-2.0 BSD BSD-2 ISC MIT"
 SLOT="0"
