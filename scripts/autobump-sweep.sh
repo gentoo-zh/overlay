@@ -248,6 +248,9 @@ for n in "${ISSUES[@]}"; do
         if grep -qE 'already at|already exists|would downgrade|newer than target' <<<"$out"; then
             echo "$pkg $ver done-precondition $(date +%F)" >> "$DONE"
             RESULT[$n]="done (precondition: overlay already at/ahead of $ver)"
+            # overlay already has this version or newer (a stale nvchecker issue); replace the
+            # "is bumping…" comment with a terminal note so it does not read as stuck forever.
+            status_comment "$n" "**autobump**: \`$pkg\` is already at (or ahead of) \`$ver\` in the overlay — nothing to bump.$(run_link)"
         else
             # genuine transient (dirty tree, fetch flake, emerge timeout, dep-resolution gap):
             # retry next sweep, but CAP retries so it eventually reaches a human.

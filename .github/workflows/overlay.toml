@@ -122,7 +122,7 @@ source = "github"
 github = "vitaly-zdanevich/reeknote"
 use_latest_release = true
 github_account = "vitaly-zdanevich"
-autobump = true
+# autobump off: the per-version vendor bundle must be regenerated first -- not a mechanical bump.
 
 ["app-editors/antigravity"]
 source = "regex"
@@ -1054,7 +1054,8 @@ github = "openai/codex"
 use_latest_release = true
 prefix = "rust-v"
 github_account = "vowstar"
-autobump = true
+# autobump off: Rust crates + GIT_CRATES + rusty_v8 vendor bundles are regenerated per version
+# (gentoo-zh-drafts/codex crates.yml) and the ebuild changes each bump -- not a mechanical bump.
 
 ["dev-util/gitea-cli"]
 source = "gitea"
@@ -1957,7 +1958,7 @@ github = "trzsz/tsshd"
 use_latest_release = true
 prefix = "v"
 github_account = "locez"
-autobump = true
+# autobump off: the per-version vendor bundle must be regenerated first -- not a mechanical bump.
 
 ["net-misc/yaak-bin"]
 source = "github"
