@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-23 07:38:26 CST)
+(The last generation time: 2026-07-23 08:10:34 CST)
 
 ### Packages
 
@@ -36,7 +36,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-containers/bubblejail                             | 0.10.3             |            | https://github.com/igo95862/bubblejail                                     | Bubblewrap-based application sandbox with resource isolation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-crypt/cotp                                        | 1.9.10             |            | https://github.com/replydev/cotp                                           | command-line TOTP/HOTP authenticator app
+ app-crypt/cotp                                        | 1.10.0             |            | https://github.com/replydev/cotp                                           | command-line TOTP/HOTP authenticator app
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-custom-pinyin-dictionary       | 20260101           |            | https://github.com/wuhgit/CustomPinyinDictionary                           | Fcitx5 自建拼音输入法词库，百万常用词汇量。
