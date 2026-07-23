@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-23 20:35:17 CST)
+(The last generation time: 2026-07-24 05:30:43 CST)
 
 ### Packages
 
@@ -58,7 +58,9 @@
                                                        | 0.9.1              |            |                                                                            |
                                                        | 0.9.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 1.23.2             |            | https://antigravity.google/                                                | Google Antigravity - AI-powered code editor
+ app-editors/antigravity                               | 2.3.1              |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-editors/antigravity-ide                           | 2.1.1              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/appflowy-bin                              | 0.12.5             |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -411,6 +413,8 @@
  dev-python/uv-bin                                     | 0.11.31            |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-util/antigravity-cli                              | 1.1.5              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 29                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
                                                        | 31                 |            |                                                                            |
