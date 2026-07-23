@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-24 06:39:55 CST)
+(The last generation time: 2026-07-24 06:48:38 CST)
 
 ### Packages
 
@@ -109,7 +109,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/dvp                                          | 1.2.1-r1           |            | https://www.kaufmann.no/roland/dvorak/index.html                           | The kbd keymap for Programmer Dvorak
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx5-vinput                                | 2.3.4              |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
+ app-i18n/fcitx5-vinput                                | 2.3.5              |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-cskk                                   | 1.2.0-r1           |            | https://github.com/fcitx/fcitx5-cskk                                       | SKK input method plugin for fcitx5 that uses LibCSKK
    app-i18n/cskk                                       | 3.3.0              |  D, RD     | https://github.com/naokiri/cskk                                            | SKK (Simple Kana Kanji henkan) library
