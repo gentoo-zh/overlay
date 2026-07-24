@@ -138,3 +138,32 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GENTOO_ZH_NVCHECKER_PAT }} # https://github.com/gentoo-zh/overlay/pull/3130
       run: |
         go run . --file gentoo-zh/.github/workflows/overlay.toml --name "$name" --newver "$newver" --oldver "$oldver"
+
+  # For packages whose vendor/deps bundle is generated on demand (see
+  # gentoo-zh/deps-dispatcher/config.toml), fire the gentoo-deps generator
+  # as soon as a new version is detected, so the bundle is ready before autobump.
+  deps-dispatch:
+    needs: nvchecker
+    if: needs.nvchecker.outputs.nvcmp != '[]'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout deps-dispatcher
+      uses: actions/checkout@v7
+      with:
+        repository: 'gentoo-zh/deps-dispatcher'
+
+    - name: Get a token that can dispatch gentoo-deps
+      uses: actions/create-github-app-token@v3
+      id: app-token
+      with:
+        client-id: ${{ secrets.DRAFTS_BOT_CLIENT_ID }}
+        private-key: ${{ secrets.DRAFTS_BOT_PRIVATE_KEY }}
+        owner: gentoo-zh
+        repositories: gentoo-deps
+
+    - name: Dispatch generators for new versions
+      timeout-minutes: 5
+      env:
+        GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        NVCMP: ${{ needs.nvchecker.outputs.nvcmp }}
+      run: echo "$NVCMP" | python3 dispatch.py --run
