@@ -6,14 +6,17 @@ EAPI=8
 inherit unpacker xdg
 
 MY_PV="${PV/_p/-}"
-QQ_DOWNLOAD_URL_PREFIX="https://qqdl.gtimg.cn/qqfile/QQNT/9.9.32/patch/c390e792"
+
+qq_src_uri() {
+	echo "${1}? ( https://qqdl.gtimg.cn/qqfile/QQNT/9.9.32/release/c390e792/QQ_${PV%_p*}_260710_${2:-$1}_01.deb -> ${P}_${1}.deb )"
+}
 
 DESCRIPTION="The new version of the official linux-qq"
 HOMEPAGE="https://im.qq.com/index/#/linux"
 SRC_URI="
-	amd64? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${MY_PV}_amd64.deb -> ${P}_amd64.deb )
-	arm64? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${MY_PV}_arm64.deb -> ${P}_arm64.deb )
-	loong? ( ${QQ_DOWNLOAD_URL_PREFIX}/linuxqq_${MY_PV}_loongarch64.deb -> ${P}_loong.deb )
+	$(qq_src_uri amd64)
+	$(qq_src_uri arm64)
+	$(qq_src_uri loong loongarch64)
 "
 
 S="${WORKDIR}"
