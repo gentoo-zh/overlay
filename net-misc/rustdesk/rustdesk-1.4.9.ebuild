@@ -61,8 +61,7 @@ LLVM_COMPAT=( 18 19 20 21 22 )
 # set RUST_MAX_VER to a max version now
 RUST_MAX_VER="1.95.0"
 RUST_MIN_VER="1.81.0"
-RUST_NEEDS_LLVM=1
-inherit cargo desktop llvm-r1 systemd xdg
+inherit cargo desktop llvm-r2 multiprocessing systemd xdg
 
 DESCRIPTION="An open-source remote desktop, and alternative to TeamViewer"
 HOMEPAGE="https://rustdesk.com/"
@@ -70,6 +69,8 @@ HOMEPAGE="https://rustdesk.com/"
 # 1. rust-webm-*/src/sys/libwebm is a empty directory
 # 2. gcc15 build: https://github.com/microcai/gentoo-zh/issues/7234
 _LIBWEBM_COMMIT="3b630045052e1e4d563207ab9e3be8d137c26067"
+# grep -i flutter-version .github/workflows/flutter-build.yml
+_FLUTTER_VERSION="3.24.5"
 # grep -i vcpkg .github/workflows/flutter-build.yml
 _VCPKG_TAG="2025.08.27"
 # fix: hwcodec-${_HWCODEC_COMMIT}"/externals is a empty directory
@@ -95,69 +96,110 @@ SRC_URI="
 		-> hbb_common-${_HBB_COMMON_COMMIT}.tar.gz
 	https://github.com/rustdesk-org/externals/archive/${_HWCODEC_EXTERNALS_COMMIT}.tar.gz
 		-> hwcodec-externals-${_HWCODEC_EXTERNALS_COMMIT}.tar.gz
-	https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
-		-> ${PN}-libsciter-gtk.so
 	https://github.com/gentoo-zh-drafts/${PN}/releases/download/${PV}/${P}-crates.tar.xz
+	https://github.com/gentoo-zh-drafts/${PN}/releases/download/${PV}/${P}-flutter-deps.tar.xz
 	${CARGO_CRATE_URIS}
 "
 
 LICENSE="AGPL-3"
 # Dependent crate licenses
 LICENSE+="
-	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 BSD Boost-1.0
-	CC0-1.0 CDLA-Permissive-2.0 GPL-3+ IJG ISC MIT MIT-0 MPL-2.0
-	Unicode-DFS-2016 Unlicense WTFPL-2 ZLIB
+	Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD BSD-2 Boost-1.0
+	CC-BY-SA-2.5 CC0-1.0 CDLA-Permissive-2.0 EUPL-1.2 GPL-3+ IJG ISC
+	MIT MIT-0 MPL-2.0 Unicode-DFS-2016 Unlicense W3C WTFPL-2 ZLIB
+	public-domain
 "
 SLOT="0"
 KEYWORDS="~amd64"
 
 IUSE="wayland +hwaccel"
 
-RDEPEND="
+DEPEND="
+	app-accessibility/at-spi2-core
+	dev-libs/glib:2
+	dev-libs/libayatana-appindicator
+	dev-libs/wayland
 	media-libs/alsa-lib
+	media-libs/fontconfig
+	media-libs/gst-plugins-base
+	media-libs/gstreamer
+	media-libs/harfbuzz
+	media-libs/libepoxy
+	media-libs/libpulse
+	media-libs/libva[X]
+	sys-apps/dbus
+	sys-libs/pam
+	virtual/zlib:=
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
 	x11-libs/gtk+:3
+	x11-libs/libdrm
+	x11-libs/libX11
 	x11-libs/libxcb
 	x11-libs/libXfixes
-	media-libs/libpulse
-	x11-misc/xdotool
-	media-libs/libva[X]
-	wayland? ( media-video/pipewire[gstreamer] )
+	x11-libs/libxkbcommon
+	x11-libs/libXtst
+	x11-libs/pango
 	hwaccel? ( x11-libs/libvdpau )
 "
+RDEPEND="
+	${DEPEND}
+	x11-misc/xdotool
+	wayland? ( media-video/pipewire[gstreamer] )
+"
 BDEPEND="
-	dev-lang/nasm
-	dev-lang/yasm
-	media-libs/alsa-lib
-	media-libs/libpulse
 	dev-build/cmake
 	dev-build/ninja
-	media-libs/gstreamer
-	media-libs/gst-plugins-base
+	dev-libs/wayland-protocols
+	dev-lang/nasm
+	dev-lang/yasm
+	~dev-util/flutter-bin-${_FLUTTER_VERSION}
+	dev-util/patchelf
+	dev-vcs/git
+	virtual/pkgconfig
 	$(llvm_gen_dep '
 		llvm-core/clang:${LLVM_SLOT}
 		llvm-core/llvm:${LLVM_SLOT}
 	')
 "
 
+QA_PREBUILT="usr/share/${PN}/lib/libflutter_linux_gtk.so"
 QA_PRESTRIPPED="
-	/usr/share/${PN}/${PN}
-	/usr/share/${PN}/libsciter-gtk.so
+	usr/share/${PN}/lib/libapp.so
+	usr/share/${PN}/lib/libflutter_linux_gtk.so
+	usr/share/${PN}/lib/librustdesk.so
 "
 
 PATCHES=(
 	"${FILESDIR}"/${PN}-1.4.8-fix-llvm22-bindgen.patch
 	"${FILESDIR}"/${PN}-1.4.8-disable-check-x11.patch
+	"${FILESDIR}"/${P}-drop-gpu-renderer-plugin.patch
 )
 
 pkg_setup() {
-	llvm-r1_pkg_setup
+	llvm-r2_pkg_setup
 	rust_pkg_setup
+}
+
+src_unpack() {
+	# cargo_src_unpack (not plain default) so cargo_gen_config runs; cargo_env dies without it.
+	cargo_src_unpack
+	# The flutter tool locks bin/cache even to print its version, so it needs a writable SDK; copy
+	# in the shared dev-util/flutter-bin tree instead of unpacking a bundled SDK tarball here.
+	cp -a "${EPREFIX}"/opt/flutter "${WORKDIR}"/flutter || die
+	chmod -R u+w "${WORKDIR}"/flutter || die
 }
 
 src_prepare() {
 	default
-	cd "${S}"/.. || die
-	eapply "${FILESDIR}"/rust-sciter.patch
+
+	pushd "${WORKDIR}" >/dev/null || die
+	eapply "${FILESDIR}/rust-sciter.patch"
+	popd >/dev/null || die
+
+	pushd "${WORKDIR}/flutter" >/dev/null || die
+	eapply "${S}/.github/patches/flutter_3.24.4_dropdown_menu_enableFilter.diff"
+	popd >/dev/null || die
 
 	rm -rf "${S}"/libs/hbb_common || die
 	ln -s "${WORKDIR}/hbb_common-${_HBB_COMMON_COMMIT}" "${S}"/libs/hbb_common || die
@@ -173,31 +215,66 @@ src_prepare() {
 	local _KCPSYS_COMMIT=`echo "${GIT_CRATES[kcp-sys]}" | awk -F';' '{print $2}'`
 	rm -rf "${WORKDIR}/kcp-sys-${_KCPSYS_COMMIT}"/kcp || die
 	ln -s "${WORKDIR}/kcp-${_KCP_COMMIT}" "${WORKDIR}/kcp-sys-${_KCPSYS_COMMIT}"/kcp || die
+
+	local flutter_deps="${WORKDIR}/${P}-flutter-deps"
+	cp "${flutter_deps}"/generated/bridge_generated{,.io}.rs src/ || die
+	cp "${flutter_deps}"/generated/generated_bridge{,.freezed}.dart flutter/lib/ || die
+	cp "${flutter_deps}/pubspec.lock" flutter/ || die
+
+	export HOME="${T}"
+	export PUB_CACHE="${flutter_deps}/pub-cache"
+	export FLUTTER_ALREADY_LOCKED=1
+	export FLUTTER_SUPPRESS_ANALYTICS=true
+
+	pushd "${WORKDIR}/flutter/packages/flutter_tools" >/dev/null || die
+	"${WORKDIR}/flutter/bin/cache/dart-sdk/bin/dart" pub get \
+		--offline --enforce-lockfile --example || die
+	popd >/dev/null || die
+
+	"${WORKDIR}/flutter/bin/flutter" --no-version-check config --no-analytics || die
+	pushd flutter >/dev/null || die
+	"${WORKDIR}/flutter/bin/flutter" --no-version-check pub get \
+		--offline --enforce-lockfile || die
+	popd >/dev/null || die
 }
 
 src_configure() {
-	if use hwaccel ;then
-		local myfeatures=(hwcodec)
-	fi
+	local myfeatures=( flutter unix-file-copy-paste )
+	use hwaccel && myfeatures+=( hwcodec )
 
 	cargo_src_configure
 }
 
 src_compile() {
-	VCPKG_ROOT="$WORKDIR"/vcpkg cargo_src_compile
+	VCPKG_ROOT="${WORKDIR}/vcpkg" cargo_src_compile --lib
+
+	export HOME="${T}"
+	export PUB_CACHE="${WORKDIR}/${P}-flutter-deps/pub-cache"
+	export FLUTTER_ALREADY_LOCKED=1
+	export FLUTTER_SUPPRESS_ANALYTICS=true
+
+	pushd flutter >/dev/null || die
+	"${WORKDIR}/flutter/bin/flutter" --no-version-check build linux \
+		--release --no-pub || die
+	popd >/dev/null || die
 }
 
 src_install() {
+	local bundle="flutter/build/linux/x64/release/bundle"
+	local plugin
 	local rustdesk_dir="/usr/share/${PN}"
 
 	exeinto "${rustdesk_dir}"
+	doexe "${bundle}/${PN}"
 	insinto "${rustdesk_dir}"
-	doexe $(cargo_target_dir)/rustdesk
-	newins "${DISTDIR}/${PN}-libsciter-gtk.so" libsciter-gtk.so
-	rm src/ui/*.rs || die
+	doins -r "${bundle}"/{data,lib}
 	newbin "${FILESDIR}/rustdesk.sh" rustdesk
-	insinto "${rustdesk_dir}/src"
-	doins -r src/ui
+
+	patchelf --remove-rpath \
+		"${ED}${rustdesk_dir}/lib/librustdesk.so" || die
+	for plugin in "${ED}${rustdesk_dir}"/lib/lib*plugin.so; do
+		patchelf --remove-rpath "${plugin}" || die
+	done
 
 	newicon -s 32 res/32x32.png rustdesk.png
 	newicon -s 128 res/128x128.png rustdesk.png

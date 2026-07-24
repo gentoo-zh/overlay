@@ -1,0 +1,17 @@
+Flutter's APPLY_STANDARD_SETTINGS forces -Werror on the runner and every plugin.
+When building against the system libraries, a newer libayatana-appindicator marks
+app_indicator_new() deprecated, which -Werror turns into a fatal error in the
+tray_manager plugin. Deprecation warnings from system libraries must not fail a
+distribution build, so drop -Werror.
+
+--- a/linux/CMakeLists.txt
++++ b/linux/CMakeLists.txt
+@@ -42,7 +42,7 @@
+ # of modifying this function.
+ function(APPLY_STANDARD_SETTINGS TARGET)
+   target_compile_features(${TARGET} PUBLIC cxx_std_14)
+-  target_compile_options(${TARGET} PRIVATE -Wall -Werror)
++  target_compile_options(${TARGET} PRIVATE -Wall)
+   target_compile_options(${TARGET} PRIVATE "$<$<NOT:$<CONFIG:Debug>>:-O3>")
+   target_compile_definitions(${TARGET} PRIVATE "$<$<NOT:$<CONFIG:Debug>>:NDEBUG>")
+ endfunction()

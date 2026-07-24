@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription lang="en">
+		The prebuilt Flutter SDK, packaged so Flutter applications can be built from
+		source against a shared SDK instead of each bundling their own copy. The flutter
+		tool needs write access under bin/cache, so a consumer copies /opt/flutter into
+		its writable build tree before invoking it.
+	</longdescription>
+	<upstream>
+		<doc>https://docs.flutter.dev/</doc>
+	</upstream>
+</pkgmetadata>

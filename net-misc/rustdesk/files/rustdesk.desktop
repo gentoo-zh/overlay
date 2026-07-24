@@ -2,7 +2,7 @@
 Version=1.5
 Name=RustDesk
 GenericName=Remote Desktop
-Comment=Remote Desktop
+Comment=Control remote computers or share your screen
 Exec=rustdesk %u
 Icon=rustdesk
 Terminal=false
