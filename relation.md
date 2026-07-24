@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-24 19:03:58 CST)
+(The last generation time: 2026-07-24 20:03:03 CST)
 
 ### Packages
 
@@ -509,7 +509,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-arcade/osu-lazer-bin                            | 2026.624.0         |            | https://osu.ppy.sh/                                                        | A free-to-win rhythm game. Rhythm is just a click away!
                                                        | 2026.711.0         |            |                                                                            |
-                                                       | 2026.716.0         |            |                                                                            |
+                                                       | 2026.724.0         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-emulation/conty                                 | 1.27.1             |            | https://github.com/Kron4ek/Conty                                           | SquashFS image of Arch Linux with: Lutris, Steam, Bottles, Wine...
                                                        | 1.28               |            |                                                                            |
