@@ -60,3 +60,12 @@ src_install() {
 	fperms +x "/opt/apps/${FPN}/files/bin/bin/bilibili"
 	fperms +x "/opt/apps/${FPN}/files/bin/electron/"{electron,chrome_crashpad_handler,chrome-sandbox}
 }
+
+pkg_postinst() {
+	xdg_pkg_postinst
+
+	if use arm64; then
+		elog "arm64 包内的 clipboardy（xsel）、@nut-tree（libnut）、cursor-tool 是"
+		elog "amd64 二进制，在 arm64 上无法运行，相关功能（剪贴板、部分输入）不可用。"
+	fi
+}
