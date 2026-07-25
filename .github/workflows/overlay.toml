@@ -293,6 +293,10 @@ github_account = "zakkaus"
 #["app-i18n/fcitx-meta"]
 
 # live package only
+
+#["app-i18n/fcitx-openbangla"]
+
+# develop-branch snapshot; the tagged releases still ship only the Qt5 GUI
 #["app-i18n/fcitx-qt"]
 
 # upstream has no release, 9999 only

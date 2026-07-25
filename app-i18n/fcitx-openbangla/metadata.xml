@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription lang="en">
+		OpenBangla Keyboard's Fcitx5 input method engine, providing Bengali
+		layouts including Avro Phonetic. The Qt5 settings GUI is not built.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">OpenBangla/OpenBangla-Keyboard</remote-id>
+	</upstream>
+</pkgmetadata>

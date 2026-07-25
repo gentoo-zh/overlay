@@ -1,0 +1,25 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 49c8e83..fd548f1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -28,9 +28,7 @@ if(APPLE)
+     include(AddSwift)
+ endif()
+ 
+-find_package(Qt5 COMPONENTS Widgets Network REQUIRED)
+-
+-message(STATUS "Qt5 framework version: ${Qt5Core_VERSION}")
++# Qt5 GUI stripped downstream: build only the Fcitx5 engine.
+ 
+ # Get system information. WIN32 and APPLE are defined by CMake
+ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+@@ -146,9 +144,6 @@ if(APPLE)
+ endif()
+ 
+ add_subdirectory(src/engine)
+-add_subdirectory(src/platform)
+-add_subdirectory(src/frontend)
+-add_subdirectory(src/shared)
+ 
+ # uninstall target
+ if(NOT TARGET uninstall)
