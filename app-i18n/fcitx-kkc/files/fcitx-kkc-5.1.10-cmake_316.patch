@@ -1,0 +1,11 @@
+Raise the minimum CMake version to 3.16 to silence the deprecation QA
+warning emitted by extra-cmake-modules (Gentoo bug #964407).
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,4 @@
+-cmake_minimum_required(VERSION 3.6)
++cmake_minimum_required(VERSION 3.16)
+
+ # The Project Name
+ project(fcitx5-kkc VERSION 5.1.10)
