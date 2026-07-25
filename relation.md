@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 17:09:36 CST)
+(The last generation time: 2026-07-25 17:10:16 CST)
 
 ### Packages
 
@@ -115,6 +115,8 @@
    app-i18n/cskk                                       | 3.3.0              |  D, RD     | https://github.com/naokiri/cskk                                            | SKK (Simple Kana Kanji henkan) library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-fbterm                                 | 9999               |            | https://github.com/fcitx/fcitx5-fbterm                                     | Fcitx5 input method frontend for fbterm
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-i18n/fcitx-hallelujah                             | 9999               |            | https://github.com/fcitx-contrib/fcitx5-hallelujah                         | English word-completion (prediction) input method for Fcitx5
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-hazkey                                 | 0.2.1              |            | https://hazkey.hiira.dev/                                                  | Japanese input method for Fcitx5, powered by azooKey engine
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
