@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 11:05:41 CST)
+(The last generation time: 2026-07-25 11:19:03 CST)
 
 ### Packages
 
@@ -453,7 +453,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-cli-bin                                 | 1.49.0             |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kiro-cli                                     | 2.14.1             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
+ dev-util/kiro-cli                                     | 2.14.2             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.2-r1           |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
