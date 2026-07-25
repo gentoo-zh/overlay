@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 14:15:37 CST)
+(The last generation time: 2026-07-25 14:26:03 CST)
 
 ### Packages
 
@@ -111,8 +111,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/dvp                                          | 1.2.1-r1           |            | https://www.kaufmann.no/roland/dvorak/index.html                           | The kbd keymap for Programmer Dvorak
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx5-vinput                                | 2.3.5              |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-cskk                                   | 1.2.0-r1           |            | https://github.com/fcitx/fcitx5-cskk                                       | SKK input method plugin for fcitx5 that uses LibCSKK
    app-i18n/cskk                                       | 3.3.0              |  D, RD     | https://github.com/naokiri/cskk                                            | SKK (Simple Kana Kanji henkan) library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -150,6 +148,8 @@
  app-i18n/fcitx-table-other                            | 9999               |            | https://github.com/fcitx/fcitx5-table-other                                | Provides some other tables for Fcitx, fork from ibus-table-others, scim-tables
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-unikey                                 | 9999               |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-i18n/fcitx-vinput                                 | 2.3.5              |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.8              |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
