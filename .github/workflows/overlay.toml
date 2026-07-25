@@ -516,6 +516,12 @@ github = "fcitx/fcitx5-skk"
 use_latest_tag = true
 github_account = "liuyujielol"
 
+["app-i18n/fcitx-zhuyin"]
+source = "github"
+github = "fcitx/fcitx5-zhuyin"
+use_latest_tag = true
+github_account = "zakkaus"
+
 # live package only
 #["app-i18n/ibus-rime"]
 
