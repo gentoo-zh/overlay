@@ -498,6 +498,9 @@ github_account = "Linerre"
 # live package only
 #["app-i18n/fcitx-gtk"]
 
+# upstream has no release, 9999 only
+#["app-i18n/fcitx-hallelujah"]
+
 # live package only
 #["app-i18n/fcitx-hangul"]
 
