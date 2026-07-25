@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 12:02:12 CST)
+(The last generation time: 2026-07-25 13:44:27 CST)
 
 ### Packages
 
@@ -148,6 +148,8 @@
  app-i18n/fcitx-table-other                            | 9999               |            | https://github.com/fcitx/fcitx5-table-other                                | Provides some other tables for Fcitx, fork from ibus-table-others, scim-tables
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-unikey                                 | 9999               |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-i18n/fcitx-zhuyin                                 | 5.1.8              |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/libime-jyutping                              | 1.0.14             |            | https://github.com/fcitx/libime-jyutping                                   | A library make use of libime to implement jyutping input method
                                                        | 1.0.17             |            |                                                                            |
