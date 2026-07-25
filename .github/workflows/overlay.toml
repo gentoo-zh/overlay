@@ -339,6 +339,10 @@ github = "fcitx/libime-jyutping"
 use_latest_tag = true
 github_account = ["liuyujielol", "gouwazi"]
 
+#["app-i18n/libkkc-data"]
+
+# no independent tag; the data version ships inside the libkkc release assets
+
 ["app-i18n/lunar"]
 source = "debianpkg"
 debianpkg = "lunar"
