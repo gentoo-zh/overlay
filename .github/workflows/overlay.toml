@@ -810,14 +810,6 @@ prefix = "v"
 # live package only
 #["app-vim/powerline"]
 
-["media-fonts/lxgw-wenkai-tc"]
-source = "github"
-github = "lxgw/LxgwWenkaiTC"
-use_latest_release = true
-prefix = "v"
-github_account = "zakkaus"
-autobump = true
-
 # TODO: upstream no tags
 #["dev-cpp/cppcoro"]
 
@@ -1395,12 +1387,16 @@ use_latest_tag = true
 prefix = "v"
 github_account = "liuyujielol"
 
+# upstream is a Huawei CDN download with no version feed
+#["media-fonts/harmonyos-sans"]
+
 ["media-fonts/iansui"]
 source = "github"
 github = "ButTaiwan/iansui"
 use_latest_release = true
 prefix = "v"
 github_account = "Linerre"
+autobump = true
 
 ["media-fonts/ipamj"]
 source = "regex"
@@ -1413,6 +1409,7 @@ source = "github"
 github = "justfont/open-huninn-font"
 use_latest_release = true
 prefix = "v"
+autobump = true
 
 ["media-fonts/kose-font"]
 source = "github"
@@ -1420,6 +1417,23 @@ github = "lxgw/kose-font"
 use_latest_release = true
 prefix = "v"
 github_account = "vowstar"
+autobump = true
+
+["media-fonts/lxgw-bright"]
+source = "github"
+github = "lxgw/LxgwBright"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
+["media-fonts/lxgw-marker-gothic"]
+source = "github"
+github = "lxgw/LxgwMarkerGothic"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
 
 ["media-fonts/lxgw-neo-xihei"]
 source = "github"
@@ -1438,6 +1452,38 @@ prefix = "v"
 github_account = "vowstar"
 autobump = true
 
+["media-fonts/lxgw-wenkai-gb"]
+source = "github"
+github = "lxgw/LxgwWenkaiGB"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
+["media-fonts/lxgw-wenkai-screen"]
+source = "github"
+github = "lxgw/LxgwWenKai-Screen"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
+["media-fonts/lxgw-wenkai-tc"]
+source = "github"
+github = "lxgw/LxgwWenkaiTC"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
+["media-fonts/maple-mono"]
+source = "github"
+github = "subframe7536/maple-font"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
 # TODO: upstream no tags
 #["media-fonts/misans"]
 
@@ -1446,6 +1492,7 @@ source = "github"
 github = "ryanoasis/nerd-fonts"
 use_latest_release = true
 prefix = "v"
+autobump = true
 
 ["media-fonts/Plangothic"]
 source = "github"
@@ -1453,6 +1500,7 @@ github = "Fitzgerald-Porthmouth-Koenigsegg/Plangothic"
 use_latest_release = true
 prefix = "V"
 github_account = "st0nie"
+autobump = true
 
 ["media-fonts/sarasa-gothic"]
 source = "github"
@@ -1469,12 +1517,14 @@ github = "laishulu/Sarasa-Term-SC-Nerd"
 use_latest_release = true
 prefix = "v"
 github_account = "oatiz"
+autobump = true
 
 ["media-fonts/shanggu"]
 source = "github"
 github = "GuiWonder/Shanggu"
 use_latest_release = true
 github_account = "Linerre"
+autobump = true
 
 ["media-fonts/smiley-sans"]
 source = "github"
@@ -1482,6 +1532,14 @@ github = "atelier-anchor/smiley-sans"
 use_latest_release = true
 prefix = "v"
 github_account = "Linerre"
+autobump = true
+
+["media-fonts/source-han-mono"]
+source = "github"
+github = "adobe-fonts/source-han-mono"
+use_latest_release = true
+github_account = "zakkaus"
+autobump = true
 
 # TODO: version not found: https://sites.google.com/view/jtfoundry/zh-tw/downloads
 #["media-fonts/taipei-sans-tc"]
@@ -1492,6 +1550,7 @@ github = "Buernia/Tiejili"
 use_latest_release = true
 prefix = "v"
 github_account = "Linerre"
+autobump = true
 
 # no release and no tag
 #["media-fonts/ttf-wps-fonts"]
@@ -1508,6 +1567,7 @@ github = "lxgw/yozai-font"
 use_latest_release = true
 prefix = "v"
 github_account = "vowstar"
+autobump = true
 
 ["media-fonts/zhudou"]
 source = "github"
@@ -1515,6 +1575,7 @@ github = "Buernia/Zhudou-Sans"
 use_latest_release = true
 prefix = "v"
 github_account = "Linerre"
+autobump = true
 
 ["media-gfx/bambustudio-bin"]
 source = "github"
