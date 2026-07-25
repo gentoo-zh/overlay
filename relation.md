@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 11:19:03 CST)
+(The last generation time: 2026-07-25 11:28:18 CST)
 
 ### Packages
 
@@ -210,7 +210,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/copilot                                      | 1.0.75             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush                                        | 0.86.0             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
+ app-misc/crush                                        | 0.87.0             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.52.5             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.53.3             |            |                                                                            |
@@ -445,7 +445,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gitea-cli                                    | 0.14.2             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/grok-build-bin                               | 0.2.111            |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
+ dev-util/grok-build-bin                               | 0.2.112            |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr-bin                                    | 0.7.5              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
