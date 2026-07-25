@@ -5,6 +5,11 @@ EAPI=8
 
 inherit cmake optfeature xdg
 
+# Upstream project (and thus the release tarball and install path) is named
+# fcitx5-vinput; the package is fcitx-vinput to match the other fcitx addons.
+MY_PN="fcitx5-vinput"
+MY_P="${MY_PN}-${PV}"
+
 # Prebuilt sherpa-onnx runtime shared libraries bundled by upstream. The
 # project links against these and installs them privately under
 # /usr/lib*/fcitx5-vinput. Keep in sync with scripts/sherpa-onnx-vars.sh.
@@ -13,10 +18,11 @@ SHERPA_PV=1.13.4
 DESCRIPTION="Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess"
 HOMEPAGE="https://github.com/xifan2333/fcitx5-vinput"
 SRC_URI="
-	https://github.com/xifan2333/fcitx5-vinput/archive/v${PV}/${P}.tar.gz
+	https://github.com/xifan2333/${MY_PN}/archive/v${PV}/${MY_P}.tar.gz
 	amd64? ( https://github.com/k2-fsa/sherpa-onnx/releases/download/v${SHERPA_PV}/sherpa-onnx-v${SHERPA_PV}-linux-x64-shared-no-tts.tar.bz2 )
 	arm64? ( https://github.com/k2-fsa/sherpa-onnx/releases/download/v${SHERPA_PV}/sherpa-onnx-v${SHERPA_PV}-linux-aarch64-shared-cpu.tar.bz2 )
 "
+S="${WORKDIR}/${MY_P}"
 
 # fcitx5-vinput: GPL-3; bundled sherpa-onnx: Apache-2.0; bundled onnxruntime
 # and the silero VAD model (data/vad/silero_vad.onnx): MIT.

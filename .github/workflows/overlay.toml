@@ -184,7 +184,7 @@ use_latest_release = true
 prefix = "v"
 github_account = "xen0n"
 
-["app-i18n/fcitx5-vinput"]
+["app-i18n/fcitx-vinput"]
 source = "github"
 github = "xifan2333/fcitx5-vinput"
 use_latest_release = true
