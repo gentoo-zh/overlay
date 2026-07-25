@@ -482,6 +482,12 @@ github = "7ka-Hiira/hazkey"
 use_latest_release = true
 github_account = "gouwazi"
 
+["app-i18n/fcitx-libthai"]
+source = "github"
+github = "fcitx/fcitx5-libthai"
+use_latest_tag = true
+github_account = "zakkaus"
+
 ["app-i18n/fcitx-skin-material"]
 source = "github"
 github = "hrko/fcitx-skin-material"
