@@ -163,11 +163,33 @@ regex = 'signed/([\d.]+)/tar'
 github_account = "zakkaus"
 autobump = true
 
+["app-editors/marktext-bin"]
+source = "github"
+github = "marktext/marktext"
+use_latest_release = true
+prefix = "v"
+github_account = ["Schroedingersdoraemon", "gouwazi"]
+
+["app-editors/typora"]
+source = "regex"
+url = "https://typora.io/#linu://typora.io/releases/stable.html"
+regex = "typora_([\\d.]+)_amd64.deb"
+github_account = ["CHN-beta", "gouwazi"]
+
 ["app-editors/void-editor"]
 source = "github"
 github = "voideditor/binaries"
 use_latest_release = true
 github_account = "AmarBego"
+
+# TODO:
+#["app-emulation/deepin-udis86"]
+
+# TODO:
+#["app-emulation/deepin-wine-helper"]
+
+# TODO:
+#["app-emulation/deepin-wine-plugin"]
 
 ["app-emulation/la-ow-syscall"]
 source = "github"
@@ -183,251 +205,6 @@ github = "AOSC-Dev/liblol"
 use_latest_release = true
 prefix = "v"
 github_account = "xen0n"
-
-["app-i18n/fcitx-vinput"]
-source = "github"
-github = "xifan2333/fcitx5-vinput"
-use_latest_release = true
-prefix = "v"
-github_account = ["liangyongxiang", "vowstar"]
-
-["app-misc/copilot"]
-source = "github"
-github = "github/copilot-cli"
-use_latest_release = true
-prefix = "v"
-github_account = "douglarek"
-autobump = true
-
-["app-misc/crush"]
-source = "github"
-github = "charmbracelet/crush"
-use_latest_release = true
-prefix = "v"
-github_account = "douglarek"
-
-["app-misc/openclaude"]
-source = "github"
-github = "Gitlawb/openclaude"
-use_latest_release = true
-prefix = "v"
-github_account = "liangyongxiang"
-
-["app-misc/qwen-code"]
-source = "github"
-github = "QwenLM/qwen-code"
-use_max_tag = true
-include_regex = "^v\\d+\\.\\d+\\.\\d+$"
-prefix = "v"
-github_account = "douglarek"
-autobump = true
-
-["app-office/evernote-repack"]
-source = "github"
-github = "vitaly-zdanevich/evernote-linux-repackage"
-use_latest_release = true
-prefix = "v"
-from_pattern = "(.*)-(.*)"
-to_pattern = '\1_p\2'
-github_account = "vitaly-zdanevich"
-
-["app-shells/gentoo-fish-completion"]
-source = "github"
-github = "douglarek/gentoo-fish-completion"
-use_latest_tag = true
-prefix = "v"
-github_account = "douglarek"
-
-["app-text/gzpaste"]
-source = "github"
-github = "gentoo-zh/gzpaste"
-use_latest_release = true
-prefix = "v"
-github_account = "Zakkaus"
-
-["app-text/lektra"]
-source = "github"
-github = "dheerajshenoy/lektra"
-use_latest_release = true
-prefix = "v"
-github_account = "douglarek"
-
-["app-text/tre"]
-source = "github"
-github = "dduan/tre"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
-["app-text/wik"]
-source = "github"
-github = "yashsinghcodes/wik"
-use_latest_tag = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
-["app-text/wiki2man_on_rust"]
-source = "gitlab"
-gitlab = "vitaly_zdanevich_wikimedia/wiki2man_on_rust"
-use_max_tag = true
-github_account = "vitaly-zdanevich"
-
-["dev-embedded/at32workbench"]
-source = "regex"
-url = "https://www.arterytek.com/json/Document.json"
-regex = 'AT32_Work_Bench_Linux-x86_64_V([\d.]+)\.zip'
-github_account = "microcai"
-
-["dev-go/gotests"]
-source = "github"
-github = "cweill/gotests"
-use_latest_release = true
-prefix = "v"
-github_account = "douglarek"
-
-["dev-go/staticcheck"]
-source = "github"
-github = "dominikh/go-tools"
-use_latest_release = true
-github_account = "douglarek"
-
-["dev-lang/dart"]
-source = "apt"
-pkg = "dart"
-mirror = "https://storage.googleapis.com/download.dartlang.org/linux/debian"
-suite = "stable"
-strip_release = true
-github_account = "peeweep"
-
-# Version follows dev-lang/dart.
-#["dev-lang/dart-bootstrap"]
-
-["dev-python/autopxd2"]
-source = "github"
-github = "elijahr/python-autopxd2"
-use_latest_release = true
-prefix = "v"
-github_account = "vowstar"
-
-["dev-python/browser-cookie3"]
-source = "github"
-github = "borisbabic/browser_cookie3"
-use_latest_tag = true
-github_account = "locez"
-
-["dev-python/exifread"]
-source = "github"
-github = "ianare/exif-py"
-use_latest_release = true
-github_account = "vitaly-zdanevich"
-
-["dev-python/frozendict"]
-source = "github"
-github = "Marco-Sulla/python-frozendict"
-use_latest_release = true
-prefix = "v"
-github_account = "OriPoin"
-
-["dev-python/iptcinfo3"]
-source = "github"
-github = "james-see/iptcinfo3"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
-["dev-python/menuinst"]
-source = "github"
-github = "conda/menuinst"
-use_latest_release = true
-github_account = "OriPoin"
-autobump = true
-
-["dev-python/microfs2"]
-source = "github"
-github = "blackteahamburger/microfs"
-use_latest_release = true
-prefix = "v"
-github_account = "blackteahamburger"
-
-["dev-python/mwparserfromhell"]
-source = "github"
-github = "earwig/mwparserfromhell"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
-["dev-python/pure-protobuf"]
-source = "github"
-github = "eigenein/protobuf"
-use_latest_release = true
-github_account = "locez"
-
-["dev-python/pyrime"]
-source = "github"
-github = "Freed-Wu/pyrime"
-use_latest_release = true
-github_account = "Freed-Wu"
-
-["dev-python/pywikibot"]
-source = "pypi"
-pypi = "pywikibot"
-github_account = "vitaly-zdanevich"
-
-# dev-qt/qtgrpc: kept in sync with the main tree qt, no nvchecker needed
-
-["dev-ruby/filelock"]
-source = "github"
-github = "sheerun/filelock"
-use_latest_tag = true
-prefix = "v"
-github_account = "peeweep"
-
-["dev-util/antigravity-cli"]
-source = "github"
-github = "google-antigravity/antigravity-cli"
-use_latest_release = true
-github_account = "zakkaus"
-autobump = true
-
-["dev-util/cmakerc"]
-source = "github"
-github = "vector-of-bool/cmrc"
-use_latest_release = true
-github_account = "peeweep"
-
-["dev-util/fvm"]
-source = "github"
-github = "leoafarias/fvm"
-use_latest_release = true
-github_account = "peeweep"
-
-["dev-util/gemini-cli"]
-source = "regex"
-url = "https://registry.npmjs.org/@google/gemini-cli"
-regex = '"latest":"([\d.]+)"'
-autobump = true
-
-["app-editors/marktext-bin"]
-source = "github"
-github = "marktext/marktext"
-use_latest_release = true
-prefix = "v"
-github_account = ["Schroedingersdoraemon", "gouwazi"]
-
-["app-editors/typora"]
-source = "regex"
-url = "https://typora.io/#linu://typora.io/releases/stable.html"
-regex = "typora_([\\d.]+)_amd64.deb"
-github_account = ["CHN-beta", "gouwazi"]
-
-# TODO:
-#["app-emulation/deepin-udis86"]
-
-# TODO:
-#["app-emulation/deepin-wine-helper"]
-
-# TODO:
-#["app-emulation/deepin-wine-plugin"]
 
 # TODO: PV mismatching tags
 #["app-emulation/looking-glass"]
@@ -476,25 +253,6 @@ use_latest_release = true
 prefix = "v"
 github_account = ["yamader", "gouwazi"]
 
-["app-i18n/fcitx-hazkey"]
-source = "github"
-github = "7ka-Hiira/hazkey"
-use_latest_release = true
-github_account = "gouwazi"
-
-["app-i18n/fcitx-libthai"]
-source = "github"
-github = "fcitx/fcitx5-libthai"
-use_latest_tag = true
-github_account = "zakkaus"
-
-["app-i18n/fcitx-skin-material"]
-source = "github"
-github = "hrko/fcitx-skin-material"
-use_latest_release = true
-prefix = "v"
-github_account = "Linerre"
-
 # upstream has no release, 9999 only
 #["app-i18n/fcitx-fbterm"]
 
@@ -506,6 +264,18 @@ github_account = "Linerre"
 
 # live package only
 #["app-i18n/fcitx-hangul"]
+
+["app-i18n/fcitx-hazkey"]
+source = "github"
+github = "7ka-Hiira/hazkey"
+use_latest_release = true
+github_account = "gouwazi"
+
+["app-i18n/fcitx-libthai"]
+source = "github"
+github = "fcitx/fcitx5-libthai"
+use_latest_tag = true
+github_account = "zakkaus"
 
 # live package only
 #["app-i18n/fcitx-lua"]
@@ -531,11 +301,25 @@ github_account = "zakkaus"
 # live package only
 #["app-i18n/fcitx-rime"]
 
+["app-i18n/fcitx-skin-material"]
+source = "github"
+github = "hrko/fcitx-skin-material"
+use_latest_release = true
+prefix = "v"
+github_account = "Linerre"
+
 ["app-i18n/fcitx-skk"]
 source = "github"
 github = "fcitx/fcitx5-skk"
 use_latest_tag = true
 github_account = "liuyujielol"
+
+["app-i18n/fcitx-vinput"]
+source = "github"
+github = "xifan2333/fcitx5-vinput"
+use_latest_release = true
+prefix = "v"
+github_account = ["liangyongxiang", "vowstar"]
 
 ["app-i18n/fcitx-zhuyin"]
 source = "github"
@@ -598,6 +382,20 @@ github_account = "liangyongxiang"
 # prefix = "v"
 # github_account = ["liangyongxiang", "gouwazi"]
 
+["app-misc/cc-switch-cli"]
+source = "github"
+github = "SaladDay/cc-switch-cli"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+
+# dead website, http status code 599
+# ["app-misc/ccal"]
+# source = "regex"
+# url = "https://ccal.chinesebay.com/ccal/ccal.htm"
+# regex = "<title>ccal-([\\d.]+)</title>"
+# github_account = "aieu"
+
 ["app-misc/claude-desktop"]
 source = "apt"
 mirror = "https://downloads.claude.ai/claude-desktop/apt/stable"
@@ -615,19 +413,20 @@ prefix = "v"
 github_account = "liangyongxiang"
 autobump = true
 
-["app-misc/cc-switch-cli"]
+["app-misc/copilot"]
 source = "github"
-github = "SaladDay/cc-switch-cli"
+github = "github/copilot-cli"
 use_latest_release = true
 prefix = "v"
-github_account = "liangyongxiang"
+github_account = "douglarek"
+autobump = true
 
-# dead website, http status code 599
-# ["app-misc/ccal"]
-# source = "regex"
-# url = "https://ccal.chinesebay.com/ccal/ccal.htm"
-# regex = "<title>ccal-([\\d.]+)</title>"
-# github_account = "aieu"
+["app-misc/crush"]
+source = "github"
+github = "charmbracelet/crush"
+use_latest_release = true
+prefix = "v"
+github_account = "douglarek"
 
 ["app-misc/go-yq-bin"]
 source = "github"
@@ -664,6 +463,22 @@ github = "rvaiya/keyd"
 use_latest_tag = true
 prefix = "v"
 github_account = "st0nie"
+
+["app-misc/openclaude"]
+source = "github"
+github = "Gitlawb/openclaude"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+
+["app-misc/qwen-code"]
+source = "github"
+github = "QwenLM/qwen-code"
+use_max_tag = true
+include_regex = "^v\\d+\\.\\d+\\.\\d+$"
+prefix = "v"
+github_account = "douglarek"
+autobump = true
 
 ["app-misc/rmtrash"]
 source = "github"
@@ -709,6 +524,15 @@ filter = '.versions.Linux_deb_x64.version_number'
 prefix = "Linux-x64-deb@V"
 github_account = "gouwazi"
 
+["app-office/evernote-repack"]
+source = "github"
+github = "vitaly-zdanevich/evernote-linux-repackage"
+use_latest_release = true
+prefix = "v"
+from_pattern = "(.*)-(.*)"
+to_pattern = '\1_p\2'
+github_account = "vitaly-zdanevich"
+
 ["app-office/freeoffice"]
 source = "regex"
 url = "https://www.freeoffice.com/de/support/installation/linux"
@@ -752,6 +576,13 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
+["app-shells/gentoo-fish-completion"]
+source = "github"
+github = "douglarek/gentoo-fish-completion"
+use_latest_tag = true
+prefix = "v"
+github_account = "douglarek"
+
 ["app-shells/gitstatus"]
 source = "github"
 github = "romkatv/gitstatus"
@@ -786,12 +617,29 @@ from_pattern = "^v?([^-]+)(?:-.*)?$"
 to_pattern = "\\1"
 github_account = ["liangyongxiang", "gouwazi"]
 
+# dead upstream
+#["app-text/groff-utf8"]
+
+["app-text/gzpaste"]
+source = "github"
+github = "gentoo-zh/gzpaste"
+use_latest_release = true
+prefix = "v"
+github_account = "Zakkaus"
+
 ["app-text/imewlconverter"]
 source = "github"
 github = "studyzy/imewlconverter"
 use_latest_release = true
 prefix = "v"
 github_account = ["blackteahamburger", "gouwazi"]
+
+["app-text/lektra"]
+source = "github"
+github = "dheerajshenoy/lektra"
+use_latest_release = true
+prefix = "v"
+github_account = "douglarek"
 
 ["app-text/lemminx-bin"]
 source = "github"
@@ -807,8 +655,25 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
-# dead upstream
-#["app-text/groff-utf8"]
+["app-text/tre"]
+source = "github"
+github = "dduan/tre"
+use_latest_release = true
+prefix = "v"
+github_account = "vitaly-zdanevich"
+
+["app-text/wik"]
+source = "github"
+github = "yashsinghcodes/wik"
+use_latest_tag = true
+prefix = "v"
+github_account = "vitaly-zdanevich"
+
+["app-text/wiki2man_on_rust"]
+source = "gitlab"
+gitlab = "vitaly_zdanevich_wikimedia/wiki2man_on_rust"
+use_max_tag = true
+github_account = "vitaly-zdanevich"
 
 ["app-vim/easymotion"]
 source = "github"
@@ -858,6 +723,25 @@ source = "github"
 github = "lldb-tools/lldb-mi"
 use_latest_tag = true
 
+["dev-embedded/at32workbench"]
+source = "regex"
+url = "https://www.arterytek.com/json/Document.json"
+regex = 'AT32_Work_Bench_Linux-x86_64_V([\d.]+)\.zip'
+github_account = "microcai"
+
+["dev-go/gotests"]
+source = "github"
+github = "cweill/gotests"
+use_latest_release = true
+prefix = "v"
+github_account = "douglarek"
+
+["dev-go/staticcheck"]
+source = "github"
+github = "dominikh/go-tools"
+use_latest_release = true
+github_account = "douglarek"
+
 ["dev-java/google-java-format"]
 source = "github"
 github = "google/google-java-format"
@@ -868,8 +752,16 @@ github_account = ["oatiz", "gouwazi"]
 # TODO: multiple slot
 #["dev-java/oraclejdk-bin"]
 
-# TODO: no way check
-#["dev-lang/quickjs"]
+["dev-lang/dart"]
+source = "apt"
+pkg = "dart"
+mirror = "https://storage.googleapis.com/download.dartlang.org/linux/debian"
+suite = "stable"
+strip_release = true
+github_account = "peeweep"
+
+# Version follows dev-lang/dart.
+#["dev-lang/dart-bootstrap"]
 
 ["dev-lang/koka-bin"]
 source = "github"
@@ -877,6 +769,9 @@ github = "koka-lang/koka"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
+
+# TODO: no way check
+#["dev-lang/quickjs"]
 
 ["dev-libs/libdatrie"]
 source = "github"
@@ -911,6 +806,13 @@ use_latest_release = true
 prefix = "v"
 github_account = ["microcai", "gouwazi"]
 
+["dev-libs/singleapplication"]
+source = "github"
+github = "itay-grudev/SingleApplication"
+use_latest_tag = true
+prefix = "v"
+github_account = ["blackteahamburger", "gouwazi"]
+
 # high update frequency
 #["dev-libs/v2ray-domain-list-community"]
 
@@ -937,6 +839,19 @@ github = "archspec/archspec"
 use_latest_release = true
 prefix = "v"
 github_account = ["OriPoin", "gouwazi"]
+
+["dev-python/autopxd2"]
+source = "github"
+github = "elijahr/python-autopxd2"
+use_latest_release = true
+prefix = "v"
+github_account = "vowstar"
+
+["dev-python/browser-cookie3"]
+source = "github"
+github = "borisbabic/browser_cookie3"
+use_latest_tag = true
+github_account = "locez"
 
 ["dev-python/conda"]
 source = "github"
@@ -975,6 +890,12 @@ source = "pypi"
 pypi = "edalize"
 github_account = ["f3rmata", "gouwazi"]
 
+["dev-python/exifread"]
+source = "github"
+github = "ianare/exif-py"
+use_latest_release = true
+github_account = "vitaly-zdanevich"
+
 ["dev-python/feeluown-bilibili"]
 source = "pypi"
 pypi = "feeluown-bilibili"
@@ -987,6 +908,13 @@ pypi = "fluent.runtime"
 ["dev-python/fluent-syntax"]
 source = "pypi"
 pypi = "fluent.syntax"
+
+["dev-python/frozendict"]
+source = "github"
+github = "Marco-Sulla/python-frozendict"
+use_latest_release = true
+prefix = "v"
+github_account = "OriPoin"
 
 ["dev-python/fuo-netease"]
 source = "pypi"
@@ -1008,12 +936,33 @@ source = "pypi"
 pypi = "fusesoc"
 github_account = ["f3rmata", "gouwazi"]
 
+["dev-python/iptcinfo3"]
+source = "github"
+github = "james-see/iptcinfo3"
+use_latest_release = true
+prefix = "v"
+github_account = "vitaly-zdanevich"
+
 ["dev-python/janus"]
 source = "github"
 github = "aio-libs/janus"
 use_latest_release = true
 prefix = "v"
 github_account = "wgjak47"
+
+["dev-python/menuinst"]
+source = "github"
+github = "conda/menuinst"
+use_latest_release = true
+github_account = "OriPoin"
+autobump = true
+
+["dev-python/microfs2"]
+source = "github"
+github = "blackteahamburger/microfs"
+use_latest_release = true
+prefix = "v"
+github_account = "blackteahamburger"
 
 ["dev-python/microrepl"]
 source = "pypi"
@@ -1024,6 +973,13 @@ github_account = "blackteahamburger"
 source = "pypi"
 pypi = "mw2fcitx"
 github_account = "blackteahamburger"
+
+["dev-python/mwparserfromhell"]
+source = "github"
+github = "earwig/mwparserfromhell"
+use_latest_release = true
+prefix = "v"
+github_account = "vitaly-zdanevich"
 
 ["dev-python/nudatus"]
 source = "pypi"
@@ -1041,6 +997,12 @@ github_account = "liangyongxiang"
 source = "pypi"
 pypi = "okonomiyaki"
 github_account = "f3rmata"
+
+["dev-python/pure-protobuf"]
+source = "github"
+github = "eigenein/protobuf"
+use_latest_release = true
+github_account = "locez"
 
 ["dev-python/pycosat"]
 source = "github"
@@ -1060,12 +1022,23 @@ source = "pypi"
 pypi = "PyQt6-Charts"
 github_account = ["blackteahamburger", "gouwazi"]
 
+["dev-python/pyrime"]
+source = "github"
+github = "Freed-Wu/pyrime"
+use_latest_release = true
+github_account = "Freed-Wu"
+
 ["dev-python/pytube"]
 source = "github"
 github = "pytube/pytube"
 use_latest_tag = true
 prefix = "v"
 github_account = "wgjak47"
+
+["dev-python/pywikibot"]
+source = "pypi"
+pypi = "pywikibot"
+github_account = "vitaly-zdanevich"
 
 ["dev-python/qasync"]
 source = "pypi"
@@ -1085,12 +1058,21 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
-["dev-libs/singleapplication"]
+# dev-qt/qtgrpc: kept in sync with the main tree qt, no nvchecker needed
+
+["dev-ruby/filelock"]
 source = "github"
-github = "itay-grudev/SingleApplication"
+github = "sheerun/filelock"
 use_latest_tag = true
 prefix = "v"
-github_account = ["blackteahamburger", "gouwazi"]
+github_account = "peeweep"
+
+["dev-util/antigravity-cli"]
+source = "github"
+github = "google-antigravity/antigravity-cli"
+use_latest_release = true
+github_account = "zakkaus"
+autobump = true
 
 ["dev-util/arch-install-scripts"]
 source = "gitlab"
@@ -1113,6 +1095,12 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
+["dev-util/cmakerc"]
+source = "github"
+github = "vector-of-bool/cmrc"
+use_latest_release = true
+github_account = "peeweep"
+
 ["dev-util/codex"]
 source = "github"
 github = "openai/codex"
@@ -1121,6 +1109,18 @@ prefix = "rust-v"
 github_account = "vowstar"
 # autobump off: Rust crates + GIT_CRATES + rusty_v8 vendor bundles are regenerated per version
 # (gentoo-zh-drafts/codex crates.yml) and the ebuild changes each bump -- not a mechanical bump.
+
+["dev-util/fvm"]
+source = "github"
+github = "leoafarias/fvm"
+use_latest_release = true
+github_account = "peeweep"
+
+["dev-util/gemini-cli"]
+source = "regex"
+url = "https://registry.npmjs.org/@google/gemini-cli"
+regex = '"latest":"([\d.]+)"'
+autobump = true
 
 ["dev-util/gitea-cli"]
 source = "gitea"
@@ -1182,6 +1182,14 @@ source = "github"
 github = "openSUSE/obs-build"
 use_latest_tag = true
 github_account = ["peeweep"]
+autobump = true
+
+["dev-util/opencode-bin"]
+source = "github"
+github = "anomalyco/opencode"
+use_latest_release = true
+prefix = "v"
+github_account = ["xz-dev", "gouwazi", "peeweep" ]
 autobump = true
 
 ["dev-util/osc"]
@@ -1368,16 +1376,16 @@ prefix = "v"
 use_latest_release = true
 github_account = "liuyujielol"
 
-["gui-apps/waywallen"]
+["gui-apps/tux-manager"]
 source = "github"
-github = "waywallen/waywallen"
+github = "benapetr/TuxManager"
 prefix = "v"
 use_latest_release = true
 github_account = "Puqns67"
 
-["gui-apps/tux-manager"]
+["gui-apps/waywallen"]
 source = "github"
-github = "benapetr/TuxManager"
+github = "waywallen/waywallen"
 prefix = "v"
 use_latest_release = true
 github_account = "Puqns67"
@@ -1833,15 +1841,15 @@ use_latest_release = true
 prefix = "v"
 github_account = "liuyujielol"
 
-# dead upstream
-# ["net-analyzer/nali"]
-
 ["net-analyzer/cfspeedtest-bin"]
 source = "github"
 github = "code-inflation/cfspeedtest"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
+
+# dead upstream
+# ["net-analyzer/nali"]
 
 ["net-analyzer/pwru-bin"]
 source = "github"
@@ -2370,15 +2378,15 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
-# live package only
-#["sys-apps/mdp"]
-
 ["sys-apps/isd"]
 source = "github"
 github = "isd-project/isd"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
+
+# live package only
+#["sys-apps/mdp"]
 
 ["sys-apps/pacman"]
 source = "gitlab"
@@ -2682,11 +2690,3 @@ source = "github"
 github = "hyprwm/Hypr"
 use_latest_release = true
 github_account = ["Goldsrc233", "gouwazi"]
-
-["dev-util/opencode-bin"]
-source = "github"
-github = "anomalyco/opencode"
-use_latest_release = true
-prefix = "v"
-github_account = ["xz-dev", "gouwazi", "peeweep" ]
-autobump = true
