@@ -810,6 +810,14 @@ prefix = "v"
 # live package only
 #["app-vim/powerline"]
 
+["media-fonts/lxgw-wenkai-tc"]
+source = "github"
+github = "lxgw/LxgwWenkaiTC"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
 # TODO: upstream no tags
 #["dev-cpp/cppcoro"]
 
