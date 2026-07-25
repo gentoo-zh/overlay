@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 17:10:59 CST)
+(The last generation time: 2026-07-25 17:11:31 CST)
 
 ### Packages
 
@@ -579,6 +579,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/chocolate-classical                       | 1.005              |            | https://github.com/MoonlitOwen/ChocolateSans                               | Traditional Chinese font based on Source Han Sans with classical glyphs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ media-fonts/harmonyos-sans                            | 5.0.1              |            | https://developer.huawei.com/consumer/cn/design/resource/                  | HarmonyOS Sans: Huawei's sans-serif typeface with CJK support
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/iansui                                    | 1.020              |            | https://github.com/ButTaiwan/iansui                                        | An open-source Chinese font derived from Klee One (Fontworks)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/ipamj                                     | 006.01             |            | https://moji.or.jp/mojikiban/font/                                         | IPAmj 明朝 (IPAmj Mincho) font
@@ -586,6 +588,10 @@
  media-fonts/jf-openhuninn                             | 2.1                |            | https://justfont.com/huninn/                                               | An opensource Chinese font by justfont, based on Kosugi Maru and Varela Round
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/kose-font                                 | 3.126              |            | https://github.com/lxgw/kose-font                                          | Kose Font (小赖字体) - An open-source Chinese font
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ media-fonts/lxgw-bright                               | 5.528              |            | https://github.com/lxgw/LxgwBright                                         | LXGW Bright: a Ming/serif-style Chinese font by LXGW
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ media-fonts/lxgw-marker-gothic                        | 1.003              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-neo-xihei                            | 1.242              |            | https://github.com/lxgw/LxgwNeoXiHei                                       | A Simplified Chinese sans-serif font derived from IPAex Gothic
                                                        | 1.304              |            |                                                                            |
