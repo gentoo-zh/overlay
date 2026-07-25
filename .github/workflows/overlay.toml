@@ -339,6 +339,14 @@ github = "fcitx/libime-jyutping"
 use_latest_tag = true
 github_account = ["liuyujielol", "gouwazi"]
 
+["app-i18n/libkkc"]
+source = "github"
+github = "ueno/libkkc"
+use_latest_tag = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
 #["app-i18n/libkkc-data"]
 
 # no independent tag; the data version ships inside the libkkc release assets
