@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 17:11:31 CST)
+(The last generation time: 2026-07-25 17:12:49 CST)
 
 ### Packages
 
@@ -599,6 +599,8 @@
  media-fonts/lxgw-neo-zhisong                          | 1.066              |            | https://github.com/lxgw/LxgwNeoZhiSong                                     | A Chinese serif font derived from IPAex Mincho and IPAmj Mincho
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-wenkai-gb                            | 1.522              |            | https://github.com/lxgw/LxgwWenkaiGB                                       | LXGW WenKai following the GB 18030 (national standard) glyph forms
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ media-fonts/lxgw-wenkai-screen                        | 1.522              |            | https://github.com/lxgw/LxgwWenKai-Screen                                  | Screen-reading optimized variant of LXGW WenKai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-wenkai-tc                            | 1.522              |            | https://github.com/lxgw/LxgwWenkaiTC                                       | Traditional Chinese variant of LXGW WenKai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
