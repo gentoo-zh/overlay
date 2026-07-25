@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">subframe7536/maple-font</remote-id>
+	</upstream>
+	<use>
+		<flag name="cjk">Install the CN variant with Chinese glyphs</flag>
+		<flag name="nerdfont">Install the Nerd Font variant with extra icon glyphs</flag>
+	</use>
+</pkgmetadata>
