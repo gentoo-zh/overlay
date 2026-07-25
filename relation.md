@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 16:45:36 CST)
+(The last generation time: 2026-07-25 17:09:36 CST)
 
 ### Packages
 
@@ -119,6 +119,8 @@
  app-i18n/fcitx-hazkey                                 | 0.2.1              |            | https://hazkey.hiira.dev/                                                  | Japanese input method for Fcitx5, powered by azooKey engine
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-libthai                                | 5.1.10             |            | https://github.com/fcitx/fcitx5-libthai                                    | Thai input method for Fcitx5 based on libthai
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-i18n/fcitx-mcbopomofo                             | 3.0                |            | https://github.com/openvanilla/fcitx5-mcbopomofo                           | McBopomofo (Traditional Chinese phonetic) input method for Fcitx5
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-meta                                   | 5.0.12-r3          |            | https://fcitx-im.org                                                       | Merge this to pull in Fcitx packages
    app-i18n/fcitx-anthy                                | 9999               | RD         | https://fcitx-im.org/                                                      | Japanese Anthy input methods for Fcitx5
