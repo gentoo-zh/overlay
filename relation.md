@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 14:26:03 CST)
+(The last generation time: 2026-07-25 15:34:03 CST)
 
 ### Packages
 
@@ -114,6 +114,8 @@
  app-i18n/fcitx-cskk                                   | 1.2.0-r1           |            | https://github.com/fcitx/fcitx5-cskk                                       | SKK input method plugin for fcitx5 that uses LibCSKK
    app-i18n/cskk                                       | 3.3.0              |  D, RD     | https://github.com/naokiri/cskk                                            | SKK (Simple Kana Kanji henkan) library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-i18n/fcitx-fbterm                                 | 9999               |            | https://github.com/fcitx/fcitx5-fbterm                                     | Fcitx5 input method frontend for fbterm
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-hazkey                                 | 0.2.1              |            | https://hazkey.hiira.dev/                                                  | Japanese input method for Fcitx5, powered by azooKey engine
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-libthai                                | 5.1.10             |            | https://github.com/fcitx/fcitx5-libthai                                    | Thai input method for Fcitx5 based on libthai
@@ -129,7 +131,7 @@
      app-i18n/fcitx-qt                                 | 9999               |  D, RD     | https://github.com/fcitx/fcitx5-qt                                         | Qt library and IM module for fcitx5
      app-i18n/libime                                   | 9999               |  D, BD, RD | https://fcitx-im.org/                                                      | Fcitx5 Next generation of fcitx
    app-i18n/fcitx-configtool                           | 9999               | RD         | https://fcitx-im.org/                                                      | Configuration module for Fcitx
-   app-i18n/fcitx-gtk                                  | 9999               | RD         | https://github.com/fcitx/fcitx5-gtk                                        | Gtk im module for fcitx5 and glib based dbus client library
+   app-i18n/fcitx-gtk                                  | 9999               |  D, RD     | https://github.com/fcitx/fcitx5-gtk                                        | Gtk im module for fcitx5 and glib based dbus client library
    app-i18n/fcitx-hangul                               | 9999               | RD         | https://fcitx-im.org/                                                      | Korean Hangul input method for Fcitx
    app-i18n/fcitx-m17n                                 | 9999               | RD         | https://github.com/fcitx/fcitx5-m17n                                       | m17n-provided input methods for Fcitx5
    app-i18n/fcitx-rime                                 | 9999               | RD         | https://fcitx-im.org/                                                      | Chinese RIME input methods for Fcitx
@@ -137,6 +139,8 @@
    app-i18n/fcitx-skk                                  | 5.1.10             | RD         | https://fcitx-im.org/                                                      | Japanese SKK input engine for Fcitx5
                                                        | 5.1.7-r2           |            |                                                                            |
                                                        | 9999               |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-i18n/fcitx-quwei                                  | 9999               |            | https://github.com/fcitx/fcitx5-quwei                                      | Quwei (区位) input method for Fcitx5
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-sayura                                 | 9999               |            | https://github.com/fcitx/fcitx5-sayura                                     | Fcitx-Sayura is a Sinhala input method for Fcitx input method framework
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
