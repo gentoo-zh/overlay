@@ -510,6 +510,12 @@ github_account = "Linerre"
 # live package only
 #["app-i18n/fcitx-m17n"]
 
+["app-i18n/fcitx-mcbopomofo"]
+source = "github"
+github = "openvanilla/fcitx5-mcbopomofo"
+use_latest_tag = true
+github_account = "zakkaus"
+
 # virtual package
 #["app-i18n/fcitx-meta"]
 
