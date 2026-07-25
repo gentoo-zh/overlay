@@ -314,6 +314,10 @@ github = "fcitx/fcitx5-skk"
 use_latest_tag = true
 github_account = "liuyujielol"
 
+#["app-i18n/fcitx-table-dayi"]
+
+# live package only
+
 ["app-i18n/fcitx-vinput"]
 source = "github"
 github = "xifan2333/fcitx5-vinput"
