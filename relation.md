@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-25 23:44:24 CST)
+(The last generation time: 2026-07-26 11:23:26 CST)
 
 ### Packages
 
@@ -439,7 +439,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.1.6              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.1.7              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 29                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
                                                        | 31                 |            |                                                                            |
