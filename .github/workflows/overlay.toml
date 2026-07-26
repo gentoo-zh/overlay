@@ -566,6 +566,14 @@ url = "https://www.freeoffice.com/de/support/installation/linux"
 regex = "softmaker-freeoffice-[\\d.]{4}-([\\d.]+)-amd64.tgz"
 github_account = ["zozx", "gouwazi"]
 
+["app-office/siyuan-bin"]
+source = "github"
+github = "siyuan-note/siyuan"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
 ["app-office/wps-office"]
 source = "regex"
 url = "https://linux.wps.cn/wpslinuxlog"
