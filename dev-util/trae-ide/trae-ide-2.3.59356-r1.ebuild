@@ -76,6 +76,7 @@ src_install() {
 	rm -f \
 		"${ED}"/usr/share/trae-cn/resources/app/extensions/byted-icube.integrations-extended/dist/skia.linux-x64-musl.node \
 		"${ED}"/usr/share/trae-cn/resources/app/node_modules/@aha-kit/ipc-linux-x64/dist/zeromq/prebuild/linux/x64/node/musl-127-Release/addon.node \
+		"${ED}"/usr/share/trae-cn/resources/app/extensions/byted-solo.builtin-mcp/node_modules/@koromix/koffi-linux-x64/musl_x64/koffi.node \
 		|| die
 	if [[ -d ${ED}/usr/share/appdata ]]; then
 		mv "${ED}"/usr/share/{appdata,metainfo} || die
