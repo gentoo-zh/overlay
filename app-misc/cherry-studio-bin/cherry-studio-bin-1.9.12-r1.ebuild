@@ -19,7 +19,12 @@ LICENSE="Cherry-Studio"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
-RDEPEND="sys-fs/fuse:0"
+RDEPEND="
+	sys-fs/fuse:0
+	virtual/zlib
+"
+
+BDEPEND="arm64? ( dev-util/patchelf )"
 
 RESTRICT="strip"
 
@@ -28,6 +33,18 @@ src_unpack() {
 		cp "${DISTDIR}/${P}-x86_64.AppImage" cherry-studio || die
 	elif use arm64; then
 		cp "${DISTDIR}/${P}-arm64.AppImage" cherry-studio || die
+	fi
+}
+
+src_prepare() {
+	default
+
+	# The arm64 AppImage runtime is linked against the libz.so linker symlink
+	# rather than the libz.so.1 SONAME, so its dependency never resolves.
+	# The squashfs payload sits after the ELF headers and patchelf keeps it
+	# there, so rewriting the entry leaves the image itself untouched.
+	if use arm64; then
+		patchelf --replace-needed libz.so libz.so.1 cherry-studio || die
 	fi
 }
 
