@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-27 23:10:33 CST)
+(The last generation time: 2026-07-27 23:14:24 CST)
 
 ### Packages
 
@@ -1026,9 +1026,6 @@
    dev-libs/v2ray-geoip                                | 202607050337       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
    dev-libs/v2ray-geoip-bin                            | 202607050337       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-apps/dufs                                         | 0.45.0             |            | https://github.com/sigoden/dufs                                            | A distinctive utility file server
-                                                       | 0.46.0             |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-apps/folo-bin                                     | 1.11.0             |            | https://folo.is/                                                           | Next generation information browser
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.6.3              |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
@@ -1039,6 +1036,8 @@
  www-client/zen-browser-bin                            | 1.21.9b            |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/darkhttpd                                 | 1.17               |            | https://unix4lyfe.org/darkhttpd/                                           | A small, static webserver
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ www-servers/dufs                                      | 0.46.0             |            | https://github.com/sigoden/dufs                                            | A distinctive utility file server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/miniserve                                 | 0.35.0             |            | https://github.com/svenstaro/miniserve                                     | a CLI tool to serve files and dirs over HTTP
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
