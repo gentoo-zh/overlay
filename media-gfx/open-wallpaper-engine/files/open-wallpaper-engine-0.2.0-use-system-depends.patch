@@ -1,0 +1,51 @@
+diff --git a/src/Scene/CMakeLists.txt b/src/Scene/CMakeLists.txt
+index 78c8205..0d7a0b7 100644
+--- a/src/Scene/CMakeLists.txt
++++ b/src/Scene/CMakeLists.txt
+@@ -75,12 +75,13 @@ set_property(TARGET owe-base PROPERTY CXX_SCAN_FOR_MODULES ON)
+ # ---------------------------------------------------------------------------
+ # owe-script (QuickJS-NG runtime for the WE scenescript surface)
+ # ---------------------------------------------------------------------------
++pkg_check_modules(quickjs-ng REQUIRED IMPORTED_TARGET quickjs-ng)
+ add_library(owe-script STATIC Script/Script.cpp)
+ target_sources(owe-script
+   PUBLIC FILE_SET cxx_modules TYPE CXX_MODULES FILES Script/Script.cppm)
+ target_link_libraries(owe-script
+   PUBLIC  owe-base
+-  PRIVATE qjs)
++  PRIVATE PkgConfig::quickjs-ng)
+ target_include_directories(owe-script
+   PUBLIC  .. . Utils/include
+   PRIVATE Utils Utils/include/Utils Script)
+diff --git a/src/Vulkan/Shader.cpp b/src/Vulkan/Shader.cpp
+index 0905863..b377d04 100644
+--- a/src/Vulkan/Shader.cpp
++++ b/src/Vulkan/Shader.cpp
+@@ -5,7 +5,7 @@ module;
+ 
+ #include <glslang/Public/ShaderLang.h>
+ #include <glslang/Public/ResourceLimits.h>
+-#include <SPIRV/GlslangToSpv.h>
++#include <glslang/SPIRV/GlslangToSpv.h>
+ 
+ #include "Utils/Sha.hpp"
+ module wescene.shader_compile;
+diff --git a/third_party/CMakeLists.txt b/third_party/CMakeLists.txt
+index 01f5711..f25857c 100644
+--- a/third_party/CMakeLists.txt
++++ b/third_party/CMakeLists.txt
+@@ -52,12 +52,11 @@ set(BUILD_TESTING           OFF CACHE INTERNAL "")
+ fetchdeps(${CMAKE_SOURCE_DIR}/deps.json NAMES
+     eigen
+     spirv_reflect
+-    glslang
+     vma
+     rstd
+     vvk
+-    wavsen
+-    quickjs)
++    wavsen)
++find_package(glslang REQUIRED GLOBAL)
+ 
+ # Post-fetch setup for eigen (header-only, source_subdir=cmake-noop).
+ add_library(eigen INTERFACE)
