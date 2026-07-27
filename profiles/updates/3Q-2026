@@ -1,1 +1,2 @@
 move app-i18n/fcitx5-vinput app-i18n/fcitx-vinput
+move www-apps/cherry-studio-bin app-misc/cherry-studio-bin

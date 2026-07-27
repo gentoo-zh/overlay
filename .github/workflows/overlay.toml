@@ -423,6 +423,14 @@ github_account = "liangyongxiang"
 # regex = "<title>ccal-([\\d.]+)</title>"
 # github_account = "aieu"
 
+["app-misc/cherry-studio-bin"]
+source = "github"
+github = "CherryHQ/cherry-studio"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+autobump = true
+
 ["app-misc/claude-desktop"]
 source = "apt"
 mirror = "https://downloads.claude.ai/claude-desktop/apt/stable"
@@ -2530,14 +2538,6 @@ github = "d4nj1/TLPUI"
 use_latest_tag = true
 prefix = "tlpui-"
 github_account = "xz-dev"
-
-["www-apps/cherry-studio-bin"]
-source = "github"
-github = "CherryHQ/cherry-studio"
-use_latest_release = true
-prefix = "v"
-github_account = "gouwazi"
-autobump = true
 
 ["www-apps/dufs"]
 source = "github"
