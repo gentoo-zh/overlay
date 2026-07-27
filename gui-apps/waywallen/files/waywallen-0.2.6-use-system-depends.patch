@@ -1,8 +1,8 @@
 diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 213f12d..a7d2602 100644
+index 55555ad..a2b41fc 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -32,8 +32,7 @@ option(WAYWALLEN_BUILD_PLUGINS "Build renderer plugins (image, video)" ON)
+@@ -45,8 +45,7 @@ option(WAYWALLEN_BUILD_PLUGINS "Build renderer plugins (image, video)" ON)
  option(WAYWALLEN_CARGO_OFFLINE "Pass --frozen to cargo (offline + locked, for flatpak)" OFF)
  
  if(WAYWALLEN_BUILD_DAEMON)
@@ -12,25 +12,11 @@ index 213f12d..a7d2602 100644
      # FROZEN = --locked --offline; requires a committed/staged Cargo.lock
      # and a vendored CARGO_HOME (set by the flatpak manifest).
      set(_waywallen_corrosion_extra "")
-diff --git a/plugins/CMakeLists.txt b/plugins/CMakeLists.txt
-index b0c4770..c316dcc 100644
---- a/plugins/CMakeLists.txt
-+++ b/plugins/CMakeLists.txt
-@@ -7,7 +7,8 @@ set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
- include(${CMAKE_SOURCE_DIR}/cmake/FetchDeps.cmake)
- set(JSON_BuildTests OFF CACHE INTERNAL "")
- set(JSON_Install    OFF CACHE INTERNAL "")
--fetchdeps(${CMAKE_SOURCE_DIR}/deps.json NAMES rstd wavsen nlohmann_json)
-+fetchdeps(${CMAKE_SOURCE_DIR}/deps.json NAMES rstd wavsen)
-+find_package(nlohmann_json REQUIRED)
- 
- add_subdirectory(../bridge waywallen-bridge-build)
- 
 diff --git a/ui/CMakeLists.txt b/ui/CMakeLists.txt
-index ba189e0..2afd514 100644
+index 0c9780e..6ef24ec 100644
 --- a/ui/CMakeLists.txt
 +++ b/ui/CMakeLists.txt
-@@ -34,7 +34,8 @@ endif()
+@@ -43,7 +43,8 @@ endif()
  
  set(CMAKE_POLICY_DEFAULT_CMP0077 NEW)
  include(${CMAKE_SOURCE_DIR}/cmake/FetchDeps.cmake)
