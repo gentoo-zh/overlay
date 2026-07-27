@@ -2411,6 +2411,9 @@ use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
 
+# key issued by this project, no upstream version to track
+#["sec-keys/openpgp-keys-gentoozh"]
+
 # virtual package
 #["sec-policy/apparmor-profile-deepinwine"]
 

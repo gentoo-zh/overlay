@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription lang="en">
+		The OpenPGP public key that signs the binary packages published at
+		mirrors.gentoozh.org. Installing it delivers the key over the overlay
+		sync that is already trusted, rather than a separate download, and
+		turns key rotation into an ordinary version bump.
+
+		Portage does not read /usr/share/openpgp-keys on its own. Import the
+		key into /etc/portage/gnupg to have binary packages verified against
+		it; the steps are printed after installation.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">gentoo-zh/binhost</remote-id>
+	</upstream>
+</pkgmetadata>
