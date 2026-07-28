@@ -682,13 +682,6 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
-["app-text/tre"]
-source = "github"
-github = "dduan/tre"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
 ["app-vim/easymotion"]
 source = "github"
 github = "easymotion/vim-easymotion"
