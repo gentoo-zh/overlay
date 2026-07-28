@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-28 15:44:35 CST)
+(The last generation time: 2026-07-28 15:46:07 CST)
 
 ### Packages
 
@@ -327,9 +327,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/wik                                          | 2.0.1              |            | https://github.com/yashsinghcodes/wik                                      | Wikipedia like a man - in the terminal, without images, with caching
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/wiki2man_on_rust                             | 0.1.10-r1          |            | https://gitlab.com/vitaly_zdanevich_wikimedia/wiki2man_on_rust             | Convert MediaWiki XML dumps into man(7) pages - so you can read Wikipedia in man
-                                                       | 0.2.1-r1           |            |                                                                            |
-                                                       | 0.5.1-r1           |            |                                                                            |
+ app-text/wiki2man_on_rust                             | 0.5.1-r2           |            | https://gitlab.com/vitaly_zdanevich_wikimedia/wiki2man_on_rust             | Convert MediaWiki XML dumps into man(7) pages - so you can read Wikipedia in man
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/easymotion                                    | 1.3                |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
                                                        | 3.0.1              |            |                                                                            |
