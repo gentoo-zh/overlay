@@ -1,8 +1,0 @@
-[Desktop Entry]
-Name=Kotatogram
-Comment=Telegram Desktop fork with wide messages, local folders, square avatars
-Exec=kotatogram
-Terminal=false
-Type=Application
-StartupNotify=true
-Categories=Qt;Network;InstantMessaging;
