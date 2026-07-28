@@ -1071,13 +1071,6 @@ github = "Freed-Wu/pyrime"
 use_latest_release = true
 github_account = "Freed-Wu"
 
-["dev-python/pytube"]
-source = "github"
-github = "pytube/pytube"
-use_latest_tag = true
-prefix = "v"
-github_account = "wgjak47"
-
 ["dev-python/pywikibot"]
 source = "pypi"
 pypi = "pywikibot"
