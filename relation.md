@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-28 13:15:55 CST)
+(The last generation time: 2026-07-28 15:03:13 CST)
 
 ### Packages
 
@@ -1045,8 +1045,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/picom-jonaburg                               | 8                  |            | https://github.com/jonaburg/picom                                          | jonaburg's picom fork with dual_kawase blur and rounded corners
                                                        | 9999               |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-misc/snapd-xdg-open                               | 20170401           |            | https://github.com/canonical/snapd-xdg-open                                | Software for opening links from snaps in desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/blackbox-terminal                           | 0.15.2             |            | https://gitlab.gnome.org/raggesilver/blackbox                              | A beautiful GTK 4 terminal
    dev-libs/libpqmarble                                | 2.0.0_p20250109    |  D, RD     | https://gitlab.gnome.org/raggesilver/marble                                | Utility library for GNOME apps
