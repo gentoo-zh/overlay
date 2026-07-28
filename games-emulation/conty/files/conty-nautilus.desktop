@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=conty-nautilus
-Exec=env ADW_DEBUG_COLOR_SCHEME=prefer-dark conty nautilus
-Type=Application
-Terminal=false

@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=conty-lutris
-Exec=conty --ro-bind /usr/share/themes /usr/share/themes lutris
-Type=Application
-Terminal=false
