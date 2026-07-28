@@ -1995,6 +1995,14 @@ use_latest_release = true
 prefix = "app-v"
 github_account = "123485k"
 
+["net-misc/biliup-bin"]
+source = "github"
+github = "biliup/biliup"
+use_latest_release = true
+prefix = "v"
+github_account = "Zakkaus"
+autobump = true
+
 # upstream archived, no new releases
 # ["net-misc/biliup-rs"]
 # source = "github"

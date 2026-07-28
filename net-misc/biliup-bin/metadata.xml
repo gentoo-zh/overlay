@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription lang="en">
+		Prebuilt biliup command line tool. It records live streams from bilibili,
+		douyu, huya, twitch and youtube, uploads videos to bilibili with multi-part
+		and line selection support, and can run a web interface with the server
+		subcommand. Successor of net-misc/biliup-rs, which upstream archived.
+	</longdescription>
+	<longdescription lang="zh">
+		biliup 命令行工具的预编译版本。支持录制 bilibili、斗鱼、虎牙、twitch、
+		youtube 的直播，投稿到 B 站时支持多 p 和上传线路选择，server 子命令可以
+		启动网页界面。上游已封存的 net-misc/biliup-rs 的后继者。
+	</longdescription>
+	<upstream>
+		<remote-id type="github">biliup/biliup</remote-id>
+	</upstream>
+</pkgmetadata>
