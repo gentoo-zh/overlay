@@ -705,13 +705,6 @@ use_latest_release = true
 prefix = "v"
 github_account = "vitaly-zdanevich"
 
-["app-text/wik"]
-source = "github"
-github = "yashsinghcodes/wik"
-use_latest_tag = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
 ["app-vim/easymotion"]
 source = "github"
 github = "easymotion/vim-easymotion"
