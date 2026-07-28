@@ -2544,13 +2544,6 @@ use_latest_release = true
 prefix = "v"
 github_account = ["Nuralii1i", "gouwazi"]
 
-["x11-themes/kvantum-black"]
-source = "github"
-github = "vitaly-zdanevich/kvantum-black"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
 ["x11-themes/mint-themes"]
 source = "github"
 github = "linuxmint/mint-themes"
