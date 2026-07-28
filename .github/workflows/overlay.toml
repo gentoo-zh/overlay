@@ -2421,12 +2421,6 @@ prefix = "v"
 github_account = ["st0nie", "gouwazi"]
 autobump = true
 
-["sys-fs/jmtpfs"]
-source = "github"
-github = "JasonFerrara/jmtpfs"
-use_latest_tag = true
-prefix = "v"
-
 # live package only
 #["sys-fs/ltfs"]
 
