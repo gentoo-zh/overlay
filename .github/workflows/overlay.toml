@@ -1284,12 +1284,6 @@ to_pattern = '\1'
 github_account = "Puqns67"
 autobump = true
 
-["games-emulation/conty"]
-source = "github"
-github = "Kron4ek/Conty"
-use_latest_release = true
-github_account = "vitaly-zdanevich"
-
 ["games-emulation/onscripter-yuri"]
 source = "github"
 github = "YuriSizuku/OnscripterYuri"
