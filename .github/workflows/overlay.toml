@@ -823,13 +823,6 @@ use_latest_tag = true
 prefix = "v"
 github_account = "microcai"
 
-["dev-libs/libthai"]
-source = "github"
-github = "tlwg/libthai"
-use_latest_release = true
-prefix = "v"
-github_account = "vowstar"
-
 ["dev-libs/lunar-calendar"]
 source = "github"
 github = "yetist/lunar-calendar"
