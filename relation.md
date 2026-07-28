@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-28 08:10:22 CST)
+(The last generation time: 2026-07-28 13:04:17 CST)
 
 ### Packages
 
@@ -877,11 +877,11 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/clash-rs                                    | 0.10.8             |            | https://watfaq.gitbook.io/clashrs-user-manual/                             | Custom protocol, rule based network proxy
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/clash-verge-bin                             | 2.5.2              |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
-                                                       | 9999               |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/clash-verge-rev                             | 2.5.1              |            | https://www.clashverge.dev                                                 | GUI client based on Tauri for tailored proxy experience
    net-proxy/mihomo                                    | 1.19.29            | BD, RD     | https://wiki.metacubex.one/                                                | Another Clash Kernel, formerly Clash.Meta
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-proxy/clash-verge-rev-bin                         | 2.5.2              |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
+                                                       | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/dae                                         | 1.0.0              |            | https://github.com/daeuniverse/dae                                         | A lightweight and high-performance transparent proxy solution based on eBPF
                                                        | 1.1.0              |            |                                                                            |
