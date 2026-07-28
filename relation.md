@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-28 07:13:22 CST)
+(The last generation time: 2026-07-28 08:10:22 CST)
 
 ### Packages
 
@@ -454,7 +454,7 @@
      sys-apps/pacman                                   | 7.0.0              |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
                                                        | 7.1.0              |            |                                                                            |
        app-crypt/archlinux-keyring                     | 20251116           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
-                                                       | 20260707.1         |            |                                                                            |
+                                                       | 20260727           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/asdf-vm                                      | 0.20.0             |            | https://github.com/asdf-vm/asdf                                            | Manage all your runtime versions with one tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -573,7 +573,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/gnome-shell-extension-clipboard-indicator | 49                 |            | https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator       | The most popular clipboard manager for GNOME, with over 1M downloads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- gnome-extra/nautilus-open-any-terminal                | 0.8.2              |            | https://github.com/Stunkymonkey/nautilus-open-any-terminal                 | context-menu entry for opening other terminal in nautilus
+ gnome-extra/nautilus-open-any-terminal                | 0.8.3              |            | https://github.com/Stunkymonkey/nautilus-open-any-terminal                 | context-menu entry for opening other terminal in nautilus
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/resources                                 | 1.10.2             |            | https://github.com/nokyan/resources                                        | Keep an eye on system resources
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -849,7 +849,7 @@
  net-misc/remmina-plugin-rustdesk                      | 1.0.0.0-r1         |            | https://www.muflone.com/remmina-plugin-rustdesk/                           | A protocol plugin for Remmina to launch a Rustdesk connection
    net-misc/rustdesk                                   | 1.4.9              |  D, RD     | https://rustdesk.com/                                                      | An open-source remote desktop, and alternative to TeamViewer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/reqable                                      | 3.2.15             |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
+ net-misc/reqable                                      | 3.2.16             |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/todesk                                       | 4.8.6.2            |            | https://www.todesk.com/                                                    | Remote control and team work
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
