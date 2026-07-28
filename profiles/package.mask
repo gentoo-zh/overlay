@@ -1,4 +1,10 @@
 # Zakk <zakk@gentoozh.org> (2026-07-28)
+# The live ebuild builds a HEAD that has not moved since 2015, and the repository
+# it forks from is archived as well. Nothing depends on it.
+# Masked for removal in 2026-08-28
+media-video/avplayer
+
+# Zakk <zakk@gentoozh.org> (2026-07-28)
 # Upstream archived in 2021-01, so the live ebuild builds a frozen HEAD. There is
 # no released version, it is still EAPI 7, and nothing depends on it.
 # Masked for removal in 2026-08-28
