@@ -816,13 +816,6 @@ github_account = "gouwazi"
 # TODO: no way check
 #["dev-lang/quickjs"]
 
-["dev-libs/libratbag"]
-source = "github"
-github = "libratbag/libratbag"
-use_latest_tag = true
-prefix = "v"
-github_account = "microcai"
-
 ["dev-libs/lunar-calendar"]
 source = "github"
 github = "yetist/lunar-calendar"
