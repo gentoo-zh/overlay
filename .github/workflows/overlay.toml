@@ -1413,13 +1413,6 @@ prefix = "v"
 use_latest_release = true
 github_account = "Puqns67"
 
-["gui-libs/libdecor"]
-source = "gitlab"
-host = "gitlab.freedesktop.org"
-gitlab = "libdecor/libdecor"
-use_max_tag = true
-github_account = "gouwazi"
-
 ["kde-misc/plasma-applet-netspeed-widget"]
 source = "github"
 github = "dfaust/plasma-applet-netspeed-widget"
