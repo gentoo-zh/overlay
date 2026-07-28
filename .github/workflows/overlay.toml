@@ -1775,9 +1775,6 @@ use_latest_release = true
 prefix = "v"
 github_account = ["oatiz", "gouwazi"]
 
-# TODO:
-#["media-video/amdgpu-pro-amf"]
-
 # live package only
 #["media-video/avplayer"]
 
