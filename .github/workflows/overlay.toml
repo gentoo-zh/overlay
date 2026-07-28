@@ -948,13 +948,6 @@ source = "pypi"
 pypi = "mw2fcitx"
 github_account = "blackteahamburger"
 
-["dev-python/mwparserfromhell"]
-source = "github"
-github = "earwig/mwparserfromhell"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
 ["dev-python/nudatus"]
 source = "pypi"
 pypi = "nudatus"
