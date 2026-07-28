@@ -552,15 +552,6 @@ filter = '.versions.Linux_deb_x64.version_number'
 prefix = "Linux-x64-deb@V"
 github_account = "gouwazi"
 
-["app-office/evernote-repack"]
-source = "github"
-github = "vitaly-zdanevich/evernote-linux-repackage"
-use_latest_release = true
-prefix = "v"
-from_pattern = "(.*)-(.*)"
-to_pattern = '\1_p\2'
-github_account = "vitaly-zdanevich"
-
 ["app-office/freeoffice"]
 source = "regex"
 url = "https://www.freeoffice.com/de/support/installation/linux"
