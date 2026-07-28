@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-28 16:24:04 CST)
+(The last generation time: 2026-07-28 16:40:06 CST)
 
 ### Packages
 
@@ -801,8 +801,6 @@
  net-misc/biliup-app-bin                               | 1.2.3              |            | https://github.com/biliup/biliup-app-new                                   | A Tool for Upload video to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/biliup-bin                                   | 1.2.2              |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/biliup-rs                                    | 0.2.4              |            | https://github.com/biliup/biliup-rs                                        | Upload video to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/bruno-bin                                    | 3.5.3              |            | https://www.usebruno.com/                                                  | Opensource IDE For Exploring and Testing Api's
                                                        | 4.0.0              |            |                                                                            |
