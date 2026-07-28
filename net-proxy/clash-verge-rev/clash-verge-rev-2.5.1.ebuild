@@ -50,7 +50,7 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 COMMON_DEPEND="
-	!net-proxy/clash-verge-bin
+	!net-proxy/clash-verge-rev-bin
 	dev-libs/openssl:0/3
 	gnome-base/librsvg:2
 	net-proxy/mihomo

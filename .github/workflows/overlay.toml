@@ -2201,7 +2201,7 @@ use_latest_release = true
 prefix = "v"
 github_account = "liuyujielol"
 
-["net-proxy/clash-verge-bin"]
+["net-proxy/clash-verge-rev-bin"]
 source = "github"
 github = "clash-verge-rev/clash-verge-rev"
 use_latest_release = true

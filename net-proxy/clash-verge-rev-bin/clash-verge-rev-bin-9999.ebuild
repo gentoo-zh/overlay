@@ -75,8 +75,8 @@ src_install() {
 	insinto /usr/lib/clash-verge
 	doins -r "${S}"/usr/lib/Clash\ Verge/resources
 	domenu "${FILESDIR}"/clash-verge.desktop
-	doicon -s 128 usr/share/icons/hicolor/128x128/apps/${PN/-bin}.png
-	doicon -s 256 usr/share/icons/hicolor/256x256@2/apps/${PN/-bin}.png
-	doicon -s 32 usr/share/icons/hicolor/32x32/apps/${PN/-bin}.png
+	doicon -s 128 usr/share/icons/hicolor/128x128/apps/clash-verge.png
+	doicon -s 256 usr/share/icons/hicolor/256x256@2/apps/clash-verge.png
+	doicon -s 32 usr/share/icons/hicolor/32x32/apps/clash-verge.png
 	newinitd "${FILESDIR}"/clash-verge.initd clash-verge
 }
