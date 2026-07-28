@@ -1681,13 +1681,6 @@ use_latest_release = true
 prefix = "v"
 github_account = "liuyujielol"
 
-["media-sound/yamusic-tui-bin"]
-source = "github"
-github = "DECE2183/yamusic-tui"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
 ["media-sound/yesplaymusic-bin"]
 source = "github"
 github = "qier222/YesPlayMusic"
