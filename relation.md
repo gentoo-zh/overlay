@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-28 16:40:06 CST)
+(The last generation time: 2026-07-28 19:10:08 CST)
 
 ### Packages
 
@@ -54,10 +54,6 @@
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.0.20251223     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
                                                        | 0.3.0.20260416     |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-doc/reeknote                                      | 0.8.6              |            | https://github.com/vitaly-zdanevich/reeknote                               | Command-line Evernote client, with ability to play audio and see images
-                                                       | 0.9.1              |            |                                                                            |
-                                                       | 0.9.2              |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity                               | 2.3.1              |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.1.1              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
@@ -67,9 +63,6 @@
  app-editors/cursor                                    | 3.13.25            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/edit                                      | 2.0.0              |            | https://github.com/microsoft/edit                                          | Microsoft edit
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/flowblade                                 | 2.24.2             |            | https://github.com/jliljebl/flowblade                                      | Multitrack non-linear video editor
-                                                       | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/kiro                                      | 1.0.212            |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -269,10 +262,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/bytedance-feishu                           | 7.66.11            |            | https://www.feishu.cn/download                                             | 飞书（Feishu） 飞书整合即时消息、日历、音视频会议、云文档、工作台等功能于一体，成就团队和个人，更高效、更愉悦。
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/evernote-repack                            | 11.20.2_p7         |            | https://github.com/vitaly-zdanevich/evernote-linux-repackage               | Unofficial repackaging of the Evernote Electron desktop client, with black theme
-                                                       | 11.21.5_p1         |            |                                                                            |
-                                                       | 11.22.4_p1         |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/freeoffice                                 | 1062               |            | https://www.freeoffice.com                                                 | A complete, free Microsoft Office-compatible alternative office suite
                                                        | 1064               |            |                                                                            |
                                                        | 1068               |            |                                                                            |
@@ -322,12 +311,6 @@
  app-text/lemminx-bin                                  | 0.31.2             |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/readest-bin                                  | 0.11.20            |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/tre                                          | 0.4.0              |            | https://github.com/dduan/tre                                               | Modern alternative to the tree command
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/wik                                          | 2.0.1              |            | https://github.com/yashsinghcodes/wik                                      | Wikipedia like a man - in the terminal, without images, with caching
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/wiki2man_on_rust                             | 0.5.1-r2           |            | https://gitlab.com/vitaly_zdanevich_wikimedia/wiki2man_on_rust             | Convert MediaWiki XML dumps into man(7) pages - so you can read Wikipedia in man
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/easymotion                                    | 1.3                |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
                                                        | 3.0.1              |            |                                                                            |
@@ -384,11 +367,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/daff                                       | 1.4.2              |            | https://github.com/paulfitz/daff                                           | The daff can produce and apply tabular diffs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/exifread                                   | 2.3.1              |            | https://github.com/ianare/exif-py                                          | Read Exif metadata from tiff and jpeg files
-                                                       | 2.3.2              |            |                                                                            |
-                                                       | 3.3.2              |            |                                                                            |
-                                                       | 3.5.1              |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/feeluown-bilibili                          | 0.4.1              |            | https://github.com/feeluown/feeluown-bilibili                              | bilibili support for feeluown
                                                        | 0.5.5              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -410,8 +388,6 @@
    dev-python/simplesat                                | 0.9.2              | RD         | https://github.com/enthought/sat-solver                                    | Prototype for SAT-based dependency handling
      dev-python/okonomiyaki                            | 3.0.0              | RD         | https://github.com/enthought/okonomiyaki                                   | Self-contained library to deal with metadata in egg and runtime archives
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/iptcinfo3                                  | 2.3.0              |            | https://github.com/james-see/iptcinfo3                                     | To read/write image metadata
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/menuinst                                   | 2.5.2              |            | https://github.com/conda/menuinst                                          | Cross platform menu item installation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/microfs2                                   | 2.1.1              |            | https://github.com/blackteahamburger/microfs                               | A module and utility to work with the simple filesystem on the BBC micro:bit
@@ -429,12 +405,6 @@
  dev-python/pypinyin                                   | 0.55.0             |            | https://github.com/mozillazg/python-pinyin                                 | Tool for converting Chinese characters to pinyin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/pyqt6-charts                               | 6.11.0             |            | https://www.riverbankcomputing.com/software/pyqtchart/                     | Python bindings for QtChart
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/pywikibot                                  | 10.3.0             |            | https://www.mediawiki.org/wiki/Manual:Pywikibot                            | To interact with MediaWiki API (for example Wikipedia, Wikimedia Commons)
-                                                       | 10.7.4             |            |                                                                            |
-                                                       | 11.5.0             |            |                                                                            |
-                                                       | 11.6.0             |            |                                                                            |
-   dev-python/mwparserfromhell                         | 0.7.2              | RD         | https://github.com/earwig/mwparserfromhell                                 | A Python parser for MediaWiki wikicode
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/uv-bin                                     | 0.11.32            |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -516,8 +486,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/gitoxide                                      | 0.56.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/git-remote-mediawiki                          | 9999               |            | https://github.com/Git-Mediawiki/Git-Mediawiki                             | Gate between Git and Mediawiki: pull and push Wikipedia articles
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/rebased-bin                                   | 1.1.9              |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/sourcegit-bin                                 | 2026.09            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
@@ -533,29 +501,11 @@
                                                        | 2026.724.0         |            |                                                                            |
                                                        | 2026.726.0         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-emulation/conty                                 | 1.27.1             |            | https://github.com/Kron4ek/Conty                                           | SquashFS image of Arch Linux with: Lutris, Steam, Bottles, Wine...
-                                                       | 1.28               |            |                                                                            |
-                                                       | 1.28.1             |            |                                                                            |
-                                                       | 1.28.2             |            |                                                                            |
-                                                       | 1.28.3             |            |                                                                            |
-                                                       | 1.29-r1            |            |                                                                            |
-                                                       | 1.29.1             |            |                                                                            |
-                                                       | 1.29.1-r1          |            |                                                                            |
-                                                       | 1.29.1-r2          |            |                                                                            |
-                                                       | 1.29.2             |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-emulation/onscripter-yuri                       | 0.7.6              |            | https://github.com/YuriSizuku/OnscripterYuri                               | An enhancement ONScripter project porting to many platforms, especially web
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-fps/openarena                                   | 0.8.8              |            | https://openarena.ws                                                       | A violent, sexy, multiplayer first person shooter based on the ioquake3 engine
-                                                       | 9999               |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-fps/openarena-bin                               | 0.8.8-r1           |            | https://openarena.ws                                                       | A violent, sexy, multiplayer first person shooter based on the ioquake3 engine
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-fps/source-engine                               | 9999               |            | https://github.com/nillerusr/source-engine                                 | A 3D game engine developed by Valve
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-misc/oh-my-git-bin                              | 0.6.5              |            | https://ohmygit.org/                                                       | An interactive Git learning game!
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-roguelike/tsl                                   | 0.40-r3            |            | https://gitlab.com/vitaly-zdanevich/the-slimy-lichmummy                    | The Slimy Lichmummy, an adventure game similar in style to the classic Rogue
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-server/vintagestory-server                      | 1.19.8             |            | https://www.vintagestory.at/                                               | Dedicated game server for Vintage Story
                                                        | 1.20.12            |            |                                                                            |
@@ -563,8 +513,6 @@
                                                        | 1.22.5             |            |                                                                            |
    acct-group/vintagestory                             | 0                  | RD         |                                                                            | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                            | User for Vintage Story Server
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-strategy/zedonline-bin                          | 0.3.2              |            | https://sourceforge.net/projects/zedonline/                                | Online multiplayer remake of the 1996 RTS game Z
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/gnome-shell-extension-clipboard-indicator | 49                 |            | https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator       | The most popular clipboard manager for GNOME, with over 1M downloads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -581,8 +529,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  kde-misc/plasma-ions-china                            | 0.1.0              |            | https://github.com/arenekosreal/plasma-ions-china                          | A collection of plasma weather ions for Chinese users
                                                        | 9999               |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- mate-base/caja-bin                                    | 1.28.0             |            | https://wiki.mate-desktop.org/mate-desktop/applications/caja/              | GUI file manager, fork of GNOME Files (Nautilus); supports SSH, FTP, WebDav
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/Plangothic                                | 2.9.5795           |            | https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project     | 遍黑体项目（Plangothic Project）
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -694,16 +640,12 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/qqmusic                                   | 1.1.8              |            | https://y.qq.com/                                                          | Tencent QQ Music, converted from .deb package
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/rew                                       | 5.31.3             |            | https://www.roomeqwizard.com/                                              | Room acoustics, loudspeaker and audio device measurement software
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/splayer                                   | 3.1.1              |            | https://splayer.imsyy.top/                                                 | A cross-platform music player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/spotube-bin                               | 5.1.1              |            | https://github.com/KRTirtho/spotube                                        | A lightweight Spotify client using YouTube as audio source
                                                        | 5.1.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/termusic                                  | 0.13.2             |            | https://github.com/tramhao/termusic                                        | Terminal Music and Podcast Player written in Rust
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/yamusic-tui-bin                           | 0.7.1              |            | https://github.com/DECE2183/yamusic-tui                                    | An unofficial Yandex Music terminal client, with offline mode and My Wave
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/yesplaymusic-bin                          | 0.4.10             |            | https://github.com/qier222/YesPlayMusic                                    | A third party music player for Netease Music
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -754,8 +696,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/dingtalk                                       | 8.1.0.6021101-r1   |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503      | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/kotatogram-bin                                 | 1.4.9              |            | https://thatcat.space/kotatogram/                                          | Telegram Desktop fork with wide messages, local folders, square avatars
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.31_p51102-r1   |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
    media-libs/openslide                                | 4.0.1              | RD         | https://openslide.org/                                                     | A C library that provides a simple interface to read whole-slide images
@@ -1054,8 +994,6 @@
  x11-themes/bibata-cursor                              | 2.0.7              |            | https://www.bibata.live                                                    | Open source, compact, and material designed cursor set
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/kora-icon-theme                            | 2.0.4              |            | https://github.com/bikass/kora                                             | An SVG icon theme with lots of new icons for GNU/Linux operating systems
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/kvantum-black                              | 0.2.0              |            | https://github.com/vitaly-zdanevich/kvantum-black                          | Black Catppuccin themes for Kvantum
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-themes                                | 2.4.0              |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
