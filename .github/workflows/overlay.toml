@@ -2586,11 +2586,6 @@ github = "jonaburg/picom"
 use_latest_tag = true
 prefix = "v"
 
-# dead upstream
-#["x11-misc/snapd-xdg-open"]
-#source = "github"
-#github = "snapcore/snapd-xdg-open"
-
 ["x11-terms/blackbox-terminal"]
 source = "gitlab"
 gitlab = "raggesilver/blackbox"
