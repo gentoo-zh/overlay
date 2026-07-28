@@ -39,7 +39,7 @@ src_unpack() {
 	if [[ ${PV} == 9999 ]]; then
 		local arch_suffix
 		case ${ARCH} in
-			amd64) arch_suffix="amd64_linux" ;;
+			amd64) arch_suffix="amd64" ;;
 			arm64) arch_suffix="arm64" ;;
 			*) die "Unsupported architecture: ${ARCH}" ;;
 		esac
