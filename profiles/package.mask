@@ -1,4 +1,10 @@
 # Zakk <zakk@gentoozh.org> (2026-07-28)
+# Upstream archived in 2026-02 and the ebuild is live only. It has not been
+# touched here since 2023-11 and nothing depends on it.
+# Masked for removal in 2026-08-28
+media-sound/barva
+
+# Zakk <zakk@gentoozh.org> (2026-07-28)
 # The live ebuild builds a HEAD that has not moved since 2015, and the repository
 # it forks from is archived as well. Nothing depends on it.
 # Masked for removal in 2026-08-28
