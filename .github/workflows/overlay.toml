@@ -995,11 +995,6 @@ github = "Freed-Wu/pyrime"
 use_latest_release = true
 github_account = "Freed-Wu"
 
-["dev-python/pywikibot"]
-source = "pypi"
-pypi = "pywikibot"
-github_account = "vitaly-zdanevich"
-
 ["dev-python/qasync"]
 source = "pypi"
 pypi = "qasync"
