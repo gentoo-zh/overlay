@@ -2003,14 +2003,6 @@ prefix = "v"
 github_account = "Zakkaus"
 autobump = true
 
-# upstream archived, no new releases
-# ["net-misc/biliup-rs"]
-# source = "github"
-# github = "ForgQi/biliup-rs"
-# use_latest_release = true
-# prefix = "v"
-# github_account = ["123485k", "gouwazi"]
-
 ["net-misc/bruno-bin"]
 source = "github"
 github = "usebruno/bruno"
