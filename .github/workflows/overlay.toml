@@ -816,12 +816,6 @@ github_account = "gouwazi"
 # TODO: no way check
 #["dev-lang/quickjs"]
 
-["dev-libs/libdatrie"]
-source = "github"
-github = "tlwg/libdatrie"
-use_latest_release = true
-prefix = "v"
-
 ["dev-libs/libratbag"]
 source = "github"
 github = "libratbag/libratbag"
