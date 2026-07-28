@@ -1652,14 +1652,6 @@ url = "https://y.qq.com/download/download.js"
 regex = "qqmusic_([\\d.]+)_amd64.deb"
 github_account = "st0nie"
 
-["media-sound/rew"]
-source = "regex"
-url = "https://www.roomeqwizard.com/"
-regex = 'REW_linux_no_jre_([\d_]+)\.sh'
-from_pattern = '_'
-to_pattern = '.'
-github_account = "vitaly-zdanevich"
-
 ["media-sound/splayer"]
 source = "github"
 github = "imsyy/SPlayer"
