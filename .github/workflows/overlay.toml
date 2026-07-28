@@ -712,12 +712,6 @@ use_latest_tag = true
 prefix = "v"
 github_account = "vitaly-zdanevich"
 
-["app-text/wiki2man_on_rust"]
-source = "gitlab"
-gitlab = "vitaly_zdanevich_wikimedia/wiki2man_on_rust"
-use_max_tag = true
-github_account = "vitaly-zdanevich"
-
 ["app-vim/easymotion"]
 source = "github"
 github = "easymotion/vim-easymotion"
