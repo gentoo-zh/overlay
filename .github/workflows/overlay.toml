@@ -1552,14 +1552,6 @@ use_latest_release = true
 github_account = "Linerre"
 autobump = true
 
-["media-fonts/smiley-sans"]
-source = "github"
-github = "atelier-anchor/smiley-sans"
-use_latest_release = true
-prefix = "v"
-github_account = "Linerre"
-autobump = true
-
 ["media-fonts/source-han-mono"]
 source = "github"
 github = "adobe-fonts/source-han-mono"
