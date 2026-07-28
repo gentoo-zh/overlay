@@ -1306,12 +1306,6 @@ url = "https://api.vintagestory.at/lateststable.txt"
 regex = "([\\d.]+)"
 github_account = "liuyujielol"
 
-["games-strategy/zedonline-bin"]
-source = "regex"
-url = "https://sourceforge.net/projects/zedonline/rss?path=/releases"
-regex = 'v(\d+(?:\.\d+)+)'
-github_account = "vitaly-zdanevich"
-
 ["gnome-extra/nautilus-open-any-terminal"]
 source = "github"
 github = "Stunkymonkey/nautilus-open-any-terminal"
