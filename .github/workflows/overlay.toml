@@ -917,13 +917,6 @@ source = "pypi"
 pypi = "fusesoc"
 github_account = ["f3rmata", "gouwazi"]
 
-["dev-python/iptcinfo3"]
-source = "github"
-github = "james-see/iptcinfo3"
-use_latest_release = true
-prefix = "v"
-github_account = "vitaly-zdanevich"
-
 ["dev-python/janus"]
 source = "github"
 github = "aio-libs/janus"
