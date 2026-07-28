@@ -117,13 +117,6 @@ archpkg = "fcitx5-pinyin-zhwiki"
 strip_release = true
 github_account = "blackteahamburger"
 
-["app-doc/reeknote"]
-source = "github"
-github = "vitaly-zdanevich/reeknote"
-use_latest_release = true
-github_account = "vitaly-zdanevich"
-# autobump off: the per-version vendor bundle must be regenerated first -- not a mechanical bump.
-
 ["app-editors/antigravity"]
 source = "regex"
 url = "https://antigravity-hub-auto-updater-974169037036.us-central1.run.app/releases"
