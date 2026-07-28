@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-28 13:04:17 CST)
+(The last generation time: 2026-07-28 13:15:55 CST)
 
 ### Packages
 
@@ -102,7 +102,6 @@
  app-emulation/liblol-libxcrypt                        | 0.1.10             |            | https://github.com/besser82/libxcrypt                                      | libxcrypt for liblol
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/looking-glass                           | 0_beta7_rc1-r2     |            | https://looking-glass.io                                                   | A low latency KVMFR application for guests with VGA PCI Passthrough
-   gui-libs/libdecor                                   | 0.2.5              |  D, RD     | https://gitlab.freedesktop.org/libdecor/libdecor                           | A client-side decorations library for Wayland clients
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/winboat-bin                             | 0.9.0              |            | https://www.winboat.app/                                                   | Run Windows apps on Linux with seamless integration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -365,8 +364,6 @@
  dev-lang/koka-bin                                     | 3.2.3              |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-lang/quickjs                                      | 2024.01.13         |            | https://bellard.org/quickjs/                                               | Small embeddable Javascript engine
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-libs/libratbag                                    | 0.18               |            | https://github.com/libratbag/libratbag                                     | Library to configure gaming mice
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/lunar-calendar                               | 3.0.1              |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0              |  D         | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
@@ -631,8 +628,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/shanggu                                   | 1.028              |            | https://github.com/GuiWonder/Shanggu                                       | A Noto-based font for traditional Chinese characters
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/smiley-sans                               | 2.0.1              |            | https://github.com/atelier-anchor/smiley-sans                              | An open-source font for Chinese
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/source-han-mono                           | 1.002              |            | https://github.com/adobe-fonts/source-han-mono                             | Adobe Source Han Mono: a Pan-CJK monospaced typeface
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/taipei-sans-tc                            | 1.0                |            | https://sites.google.com/view/jtfoundry/                                   | JT Foundry - Taipei Sans TC Beta font
@@ -716,8 +711,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/ytmdesktop-bin                            | 2.0.11             |            | https://github.com/ytmdesktop/ytmdesktop                                   | A Desktop App for YouTube Music
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/amdgpu-pro-amf                            | 1.4.29.1538781     |            | https://www.amd.com/en/support                                             | AMD's closed source Advanced Media Framework (AMF) driver
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/avplayer                                  | 9999               |            | https://github.com/avplayer/avplayer                                       | avplayer is a p2p video downloader and player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/bilibili                                  | 1.17.9_p2          |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
@@ -762,8 +755,6 @@
  net-dns/q                                             | 0.19.12            |            | https://github.com/natesales/q                                             | A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/dingtalk                                       | 8.1.0.6021101-r1   |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
-   dev-libs/libthai                                    | 0.1.30             |  D, RD     | https://github.com/tlwg/libthai                                            | A a set of Thai language support routines
-     dev-libs/libdatrie                                | 0.2.14             |  D, RD     | https://github.com/tlwg/libdatrie                                          | Double-Array Trie Library
    dev-util/execstack                                  | 0_pre20130503      | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/kotatogram-bin                                 | 1.4.9              |            | https://thatcat.space/kotatogram/                                          | Telegram Desktop fork with wide messages, local folders, square avatars
@@ -986,8 +977,6 @@
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-boot/ventoy-bin                                   | 1.1.17             |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-fs/jmtpfs                                         | 0.5                |            | https://github.com/JasonFerrara/jmtpfs                                     | A FUSE and libmtp based filesystem for accessing MTP devices
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/ltfs                                           | 9999               |            | https://github.com/LinearTapeFileSystem/ltfs                               | LTFS for LTO tapes
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
