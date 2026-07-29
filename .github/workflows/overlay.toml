@@ -1205,7 +1205,10 @@ github_account = "liangyongxiang"
 ["dev-util/trae-ide"]
 source = "regex"
 url = "https://api.trae.cn/icube/api/v1/native/version/trae/cn/latest"
-regex = 'releases/stable/([\d.]+)/'
+# The response also carries a separate product (data.solo, TRAE_Work_CN) that is
+# released for darwin and win32 only. Match the linux path so its version cannot
+# be reported as an update we have no download for.
+regex = 'releases/stable/([\d.]+)/linux/'
 github_account = "microcai"
 autobump = true
 
