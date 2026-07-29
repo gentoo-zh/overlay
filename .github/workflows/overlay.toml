@@ -1109,13 +1109,6 @@ strip_release = true
 github_account = "gouwazi"
 autobump = true
 
-["dev-util/kimi-cli-bin"]
-source = "github"
-github = "MoonshotAI/kimi-cli"
-use_latest_release = true
-github_account = "liangyongxiang"
-autobump = true
-
 ["dev-util/kimi-code-bin"]
 source = "github"
 github = "MoonshotAI/kimi-code"
