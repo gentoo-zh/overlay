@@ -1116,6 +1116,14 @@ use_latest_release = true
 github_account = "liangyongxiang"
 autobump = true
 
+["dev-util/kimi-code-bin"]
+source = "github"
+github = "MoonshotAI/kimi-code"
+use_latest_release = true
+prefix = "@moonshot-ai/kimi-code@"
+github_account = "vowstar"
+autobump = true
+
 ["dev-util/kiro-cli"]
 source = "regex"
 url = "https://prod.download.cli.kiro.dev/stable/latest/manifest.json"
