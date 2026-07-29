@@ -1,3 +1,10 @@
+# Huang Rui <vowstar@gmail.com> (2026-07-29)
+# Upstream is winding down and directs users to Kimi Code CLI
+# (dev-util/kimi-code-bin), which migrates existing configuration and
+# sessions on first run.
+# Masked for removal in 2026-08-28
+dev-util/kimi-cli-bin
+
 # Zakk <zakk@gentoozh.org> (2026-07-28)
 # Upstream archived in 2026-02 and the ebuild is live only. It has not been
 # touched here since 2023-11 and nothing depends on it.
