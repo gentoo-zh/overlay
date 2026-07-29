@@ -63,7 +63,12 @@ jobs:
         echo "::endgroup::"
         # eix
         echo "::group::eix search packages"
-        pkgs=$(ACCEPT_LICENSE="*" ACCEPT_KEYWORDS="~amd64 ~arm64 ~loong ~riscv" EIX_LIMIT=0 NAMEVERSION="<category>/<name>-<version>\n" eix --pure-packages --in-overlay "$repo_name" --format '<bestversion:NAMEVERSION>')
+        # availableversions minus live: bestversion picks 9999, which nothing upstream beats
+        pkgs=$(
+          ACCEPT_LICENSE="*" ACCEPT_KEYWORDS="~amd64 ~arm64 ~loong ~riscv" EIX_LIMIT=0 \
+          NONLIVE='{first}{!*nv}{}{!plainversion=9999}{!ishardmasked}{isstable}{*nv=<version>}{}{}{}{last}{$nv}<category>/<name>-<$nv>\n{}{}' \
+            eix --pure-packages --in-overlay "$repo_name" --format '<availableversions:NONLIVE>'
+        )
         pkgs=$(qatom -F "\"%{CATEGORY}/%{PN}\": \"%{PV}\"," $pkgs) # remove revision
         pkgs="{ ${pkgs::-1} }"
         echo $pkgs
@@ -106,11 +111,18 @@ jobs:
         echo "::endgroup::"
 
         echo "::group::nvcmp"
-        echo "nvcmp=$(nvcmp --file overlay.toml --json --newer | jq 'map({name, newver, oldver})' | jq -c .)" >> $GITHUB_OUTPUT
+        # without this a failure anywhere in the pipe below is swallowed by the
+        # command substitution, leaving nvcmp= empty and failing later in the matrix
+        set -o pipefail
+        echo "nvcmp=$(nvcmp --file overlay.toml --json --newer \
+          | jq 'map({name, newver, oldver})' | jq -c .)" >> $GITHUB_OUTPUT
         echo "::endgroup::"
 
   issues-bumper:
     needs: nvchecker
+    # an empty include is not a valid matrix and fails the whole run, so skip
+    # the job on a day when nothing is left to report
+    if: needs.nvchecker.outputs.nvcmp != '[]'
     runs-on: ubuntu-latest
     strategy:
       matrix:
