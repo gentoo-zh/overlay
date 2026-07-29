@@ -74,6 +74,11 @@ https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
 * 在開啟 pull request 前，請先在本機執行 `pkgcheck scan --commits --net`。
 
+# 二進位套件
+
+overlay 的一部分套件提供預先編譯的二進位套件，每晚重新建置並簽名。
+設定方式（含簽章公鑰匯入）見 https://distfiles.gentoozh.org
+
 # Distfiles 鏡像
 
 我們提供 distfiles 鏡像，用於快取 gentoo-zh 的 distfiles。

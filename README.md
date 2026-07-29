@@ -79,6 +79,11 @@ It is recommended to run `pkgdev commit` to quickly generate commit messages.
 
 * Run `pkgcheck scan --commits --net` locally before you open pull request.
 
+# Binary packages
+
+Part of the overlay ships as prebuilt binary packages, rebuilt and signed nightly.
+Setup, including the signing key import, is at https://distfiles.gentoozh.org
+
 # Distfiles mirror
 
 We provide a distfiles mirror that caches the distfiles in gentoo-zh.

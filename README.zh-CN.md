@@ -74,6 +74,11 @@ https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
 * 在打开 pull request 前，请先在本地运行 `pkgcheck scan --commits --net`。
 
+# 二进制包
+
+overlay 的一部分包提供预编译的二进制包，每晚重新构建并签名。
+配置方式（含签名公钥导入）见 https://distfiles.gentoozh.org
+
 # Distfiles 镜像
 
 我们提供 distfiles 镜像，用于缓存 gentoo-zh 的 distfiles。
