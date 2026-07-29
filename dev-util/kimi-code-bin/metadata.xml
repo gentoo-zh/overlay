@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>vowstar@gmail.com</email>
+		<name>Huang Rui</name>
+	</maintainer>
+	<longdescription lang="en">
+		Kimi Code CLI is Moonshot AI's command-line coding agent, the
+		starting point for next-generation agents. It provides an
+		interactive terminal UI for AI-assisted software development,
+		powered by Kimi models. This package installs the prebuilt
+		upstream binary.
+	</longdescription>
+	<longdescription lang="zh">
+		Kimi Code CLI 是 Moonshot AI 推出的命令行编程智能体,
+		是新一代智能体的起点。它在终端中提供交互式界面,
+		由 Kimi 模型驱动, 辅助完成软件开发任务。
+		本软件包安装上游预编译的二进制文件。
+	</longdescription>
+	<upstream>
+		<remote-id type="github">MoonshotAI/kimi-code</remote-id>
+	</upstream>
+</pkgmetadata>
