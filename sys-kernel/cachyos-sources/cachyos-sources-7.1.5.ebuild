@@ -5,7 +5,7 @@ EAPI="8"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="7"
+K_GENPATCHES_VER="8"
 K_SECURITY_UNSUPPORTED="1"
 
 inherit check-reqs kernel-2
@@ -77,8 +77,12 @@ apply_gentoo_genpatches() {
 	[[ -n ${version_patch} ]] ||
 		die "genpatches-${CACHYOS_SERIES}-${K_GENPATCHES_VER} is missing linux-${PV}.patch"
 
-	find "${WORKDIR}" -maxdepth 1 -type f -name '10*linux*patch' -delete ||
-		die "Failed to delete vanilla Linux update patches from genpatches"
+	# CachyOS 7.1.5 already contains this fix, so do not apply it twice.
+	find "${WORKDIR}" -maxdepth 1 -type f \
+		\( -name '10*linux*patch' \
+		-o -name '2700_drm-amdgpu-fix-check-in-amdgpu-hmm-invalidate-gfx.patch' \) \
+		-delete ||
+		die "Failed to delete obsolete genpatches"
 
 	local gentoo_patches=( "${WORKDIR}"/*.patch )
 	[[ -e ${gentoo_patches[0]} ]] ||
