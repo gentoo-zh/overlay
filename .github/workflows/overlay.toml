@@ -1,6 +1,49 @@
+# acct-group, acct-user, virtual and app-alternatives carry no upstream version
+# of their own, so they are listed without an individual reason.
+
 [__config__]
 oldver = "old_ver.json"
 newver = "new_ver.json"
+
+#["acct-group/aptly"]
+
+#["acct-group/dufs"]
+
+#["acct-group/hysteria"]
+
+#["acct-group/keyd"]
+
+#["acct-group/n2n"]
+
+#["acct-group/ntpd-rs"]
+
+#["acct-group/ntpd-rs-observe"]
+
+#["acct-group/onepassword"]
+
+#["acct-group/reframe"]
+
+#["acct-group/sing-box"]
+
+#["acct-group/vintagestory"]
+
+#["acct-user/aptly"]
+
+#["acct-user/dufs"]
+
+#["acct-user/hysteria"]
+
+#["acct-user/n2n"]
+
+#["acct-user/ntpd-rs"]
+
+#["acct-user/ntpd-rs-observe"]
+
+#["acct-user/reframe"]
+
+#["acct-user/sing-box"]
+
+#["acct-user/vintagestory"]
 
 ["app-admin/1password"]
 source = "apt"
@@ -51,6 +94,10 @@ github_account = "liangyongxiang"
 # git = "https://git.exozy.me/a/zenmonitor3"
 # prefix = "v"
 # github_account = "liuyujielol"
+
+#["app-alternatives/v2ray-geoip"]
+
+#["app-alternatives/v2ray-geosite"]
 
 ["app-arch/libzim"]
 source = "github"
@@ -163,6 +210,12 @@ use_latest_release = true
 prefix = "v"
 github_account = ["Schroedingersdoraemon", "gouwazi"]
 
+# live package only
+#["app-editors/neomacs"]
+
+# live package only
+#["app-editors/neovim-bin"]
+
 ["app-editors/typora"]
 source = "regex"
 url = "https://typora.io/#linu://typora.io/releases/stable.html"
@@ -174,6 +227,9 @@ source = "github"
 github = "voideditor/binaries"
 use_latest_release = true
 github_account = "AmarBego"
+
+# vendor download, no published version index
+#["app-editors/windsurf"]
 
 # TODO:
 #["app-emulation/deepin-udis86"]
@@ -198,6 +254,12 @@ github = "AOSC-Dev/liblol"
 use_latest_release = true
 prefix = "v"
 github_account = "xen0n"
+
+# same source as app-emulation/liblol
+#["app-emulation/liblol-glibc"]
+
+# same source as app-emulation/liblol
+#["app-emulation/liblol-libxcrypt"]
 
 # TODO: PV mismatching tags
 #["app-emulation/looking-glass"]
@@ -227,11 +289,17 @@ github_account = "yamader"
 # live package only
 #["app-i18n/fcitx"]
 
+# live package only
+#["app-i18n/fcitx-anthy"]
+
 ["app-i18n/fcitx-bamboo"]
 source = "github"
 github = "fcitx/fcitx5-bamboo"
 use_latest_tag = true
 github_account = "liangyongxiang"
+
+# live package only
+#["app-i18n/fcitx-chewing"]
 
 # live package only
 #["app-i18n/fcitx-chinese-addons"]
@@ -305,6 +373,9 @@ github_account = "zakkaus"
 # live package only
 #["app-i18n/fcitx-rime"]
 
+# live package only
+#["app-i18n/fcitx-sayura"]
+
 ["app-i18n/fcitx-skin-material"]
 source = "github"
 github = "hrko/fcitx-skin-material"
@@ -321,6 +392,15 @@ github_account = "liuyujielol"
 #["app-i18n/fcitx-table-dayi"]
 
 # live package only
+
+# live package only
+#["app-i18n/fcitx-table-extra"]
+
+# live package only
+#["app-i18n/fcitx-table-other"]
+
+# live package only
+#["app-i18n/fcitx-unikey"]
 
 ["app-i18n/fcitx-vinput"]
 source = "github"
@@ -359,12 +439,24 @@ autobump = true
 
 # no independent tag; the data version ships inside the libkkc release assets
 
+# live package only
+#["app-i18n/librime"]
+
 ["app-i18n/lunar"]
 source = "debianpkg"
 debianpkg = "lunar"
 from_pattern = "^(\\d+\\.\\d+)-(\\d+)$"
 to_pattern = "\\1_p\\2"
 github_account = ["liangyongxiang", "gouwazi"]
+
+# live package only
+#["app-i18n/rime-data"]
+
+# live package only
+#["app-i18n/rime-ice"]
+
+# no tracking entry yet
+#["app-i18n/vocotype"]
 
 ["app-i18n/zh-autoconvert"]
 source = "debianpkg"
@@ -385,6 +477,9 @@ source = "regex"
 url = "https://www.scootersoftware.com/kb/linux_install"
 regex = "bcompare-([\\d.]+).x86_64.tar.gz"
 github_account = "gouwazi"
+
+# live package only
+#["app-misc/bilihud"]
 
 ["app-misc/cc-switch"]
 source = "github"
@@ -492,6 +587,9 @@ use_latest_tag = true
 prefix = "v"
 github_account = "st0nie"
 
+# packaged from a pinned commit, no tag to compare
+#["app-misc/mdx_util"]
+
 ["app-misc/openclaude"]
 source = "github"
 github = "Gitlawb/openclaude"
@@ -533,6 +631,9 @@ github = "sxyazi/yazi"
 use_latest_release = true
 prefix = "v"
 github_account = "Nuralii1i"
+
+# vendor download, no published version index
+#["app-misc/z-library"]
 
 ["app-office/anytype-bin"]
 source = "github"
@@ -780,6 +881,9 @@ github_account = "gouwazi"
 # TODO: no way check
 #["dev-lang/quickjs"]
 
+# packaged from a pinned commit, no tag to compare
+#["dev-libs/libpqmarble"]
+
 ["dev-libs/lunar-calendar"]
 source = "github"
 github = "yetist/lunar-calendar"
@@ -792,6 +896,12 @@ github = "yetist/lunar-date"
 use_latest_release = true
 prefix = "v"
 github_account = ["microcai", "gouwazi"]
+
+# no tracking entry yet
+#["dev-libs/qml-material"]
+
+# packaged from a pinned commit, no tag to compare
+#["dev-libs/qnodeeditor"]
 
 ["dev-libs/singleapplication"]
 source = "github"
@@ -897,6 +1007,9 @@ use_latest_release = true
 prefix = "v"
 github_account = "OriPoin"
 
+# no tracking entry yet
+#["dev-python/funasr-onnx"]
+
 ["dev-python/fuo-netease"]
 source = "pypi"
 pypi = "fuo-netease"
@@ -923,6 +1036,18 @@ github = "aio-libs/janus"
 use_latest_release = true
 prefix = "v"
 github_account = "wgjak47"
+
+# no tracking entry yet
+#["dev-python/jieba"]
+
+# no tracking entry yet
+#["dev-python/kaldi-native-fbank"]
+
+# no tracking entry yet
+#["dev-python/librosa"]
+
+# no tracking entry yet
+#["dev-python/llvmlite"]
 
 ["dev-python/menuinst"]
 source = "github"
@@ -953,6 +1078,9 @@ source = "pypi"
 pypi = "nudatus"
 github_account = "blackteahamburger"
 
+# no tracking entry yet
+#["dev-python/numba"]
+
 ["dev-python/nvchecker"]
 source = "github"
 github = "lilydjwg/nvchecker"
@@ -964,6 +1092,9 @@ github_account = "liangyongxiang"
 source = "pypi"
 pypi = "okonomiyaki"
 github_account = "f3rmata"
+
+# no tracking entry yet
+#["dev-python/onnxruntime"]
 
 ["dev-python/pure-protobuf"]
 source = "github"
@@ -1005,6 +1136,12 @@ source = "pypi"
 pypi = "simplesat"
 github_account = "f3rmata"
 
+# no tracking entry yet
+#["dev-python/sounddevice"]
+
+# no tracking entry yet
+#["dev-python/soxr"]
+
 ["dev-python/uv-bin"]
 source = "github"
 github = "astral-sh/uv"
@@ -1013,7 +1150,8 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
-# dev-qt/qtgrpc: kept in sync with the main tree qt, no nvchecker needed
+# kept in sync with the main tree qt, no nvchecker needed
+#["dev-qt/qtgrpc"]
 
 ["dev-ruby/filelock"]
 source = "github"
@@ -1056,6 +1194,9 @@ github = "vector-of-bool/cmrc"
 use_latest_release = true
 github_account = "peeweep"
 
+# live package only
+#["dev-util/codewhale-bin"]
+
 ["dev-util/codex"]
 source = "github"
 github = "openai/codex"
@@ -1064,6 +1205,9 @@ prefix = "rust-v"
 github_account = "vowstar"
 # autobump off: Rust crates + GIT_CRATES + rusty_v8 vendor bundles are regenerated per version
 # (gentoo-zh-drafts/codex crates.yml) and the ebuild changes each bump -- not a mechanical bump.
+
+# shipped inside the prelink tarball, upstream dead
+#["dev-util/execstack"]
 
 ["dev-util/fvm"]
 source = "github"
@@ -1108,6 +1252,9 @@ aur = "jetbrains-toolbox"
 strip_release = true
 github_account = "gouwazi"
 autobump = true
+
+# vendor download, no published version index
+#["dev-util/kimi-cli-bin"]
 
 ["dev-util/kimi-code-bin"]
 source = "github"
@@ -1162,6 +1309,9 @@ use_latest_release = true
 prefix = "v"
 github_account = "tsln1998"
 
+# same source as dev-util/pack-cli
+#["dev-util/pack-cli-bin"]
+
 ["dev-util/pacstrap"]
 source = "gitlab"
 host = "gitlab.archlinux.org"
@@ -1205,9 +1355,6 @@ github_account = "liangyongxiang"
 ["dev-util/trae-ide"]
 source = "regex"
 url = "https://api.trae.cn/icube/api/v1/native/version/trae/cn/latest"
-# The response also carries a separate product (data.solo, TRAE_Work_CN) that is
-# released for darwin and win32 only. Match the linux path so its version cannot
-# be reported as an update we have no download for.
 regex = 'releases/stable/([\d.]+)/linux/'
 github_account = "microcai"
 autobump = true
@@ -1311,11 +1458,17 @@ url = "https://api.vintagestory.at/lateststable.txt"
 regex = "([\\d.]+)"
 github_account = "liuyujielol"
 
+# ebuild version tracks the GNOME Shell series, not the extension release
+#["gnome-extra/gnome-shell-extension-clipboard-indicator"]
+
 ["gnome-extra/nautilus-open-any-terminal"]
 source = "github"
 github = "Stunkymonkey/nautilus-open-any-terminal"
 use_latest_release = true
 github_account = "Jack77793"
+
+# no tracking entry yet
+#["gnome-extra/resources"]
 
 ["gui-apps/crystal-dock"]
 source = "github"
@@ -1344,6 +1497,12 @@ github = "dfaust/plasma-applet-netspeed-widget"
 use_latest_tag = true
 prefix = "v"
 github_account = "liuyujielol"
+
+# no tracking entry yet
+#["kde-misc/plasma-ions-china"]
+
+# packaged from a pinned commit, no tag to compare
+#["media-fonts/chocolate-classical"]
 
 # upstream is a Huawei CDN download with no version feed
 #["media-fonts/harmonyos-sans"]
@@ -1579,6 +1738,9 @@ use_latest_release = true
 prefix = "v"
 github_account = "st0nie"
 
+# live package only
+#["media-plugins/kotonoha"]
+
 ["media-plugins/osdlyrics"]
 source = "github"
 github = "osdlyrics/osdlyrics"
@@ -1600,6 +1762,9 @@ github_account = "Puqns67"
 
 # live package only
 #["media-sound/barva"]
+
+# vendor download, no published version index
+#["media-sound/cider"]
 
 ["media-sound/euphonica"]
 source = "github"
@@ -1765,6 +1930,9 @@ github_account = "gouwazi"
 
 # dead upstream
 # ["net-analyzer/nali"]
+
+# no tracking entry yet
+#["net-analyzer/pwru"]
 
 ["net-analyzer/pwru-bin"]
 source = "github"
@@ -2080,6 +2248,9 @@ use_latest_release = true
 prefix = "v"
 github_account = "liuyujielol"
 
+# same source as net-proxy/clash-verge-rev-bin
+#["net-proxy/clash-verge-rev"]
+
 ["net-proxy/clash-verge-rev-bin"]
 source = "github"
 github = "clash-verge-rev/clash-verge-rev"
@@ -2144,6 +2315,21 @@ github_account = ["blackteahamburger", "gouwazi"]
 #use_latest_tag = true
 #prefix = "v"
 #github_account = "Jackarain"
+
+# packaged from a pinned commit, no tag to compare
+#["net-proxy/qv2ray"]
+
+# no tracking entry yet
+#["net-proxy/qvplugin-command"]
+
+# no tracking entry yet
+#["net-proxy/qvplugin-ss"]
+
+# no tracking entry yet
+#["net-proxy/qvplugin-trojan"]
+
+# no tracking entry yet
+#["net-proxy/qvplugin-trojan-go"]
 
 ["net-proxy/serenity"]
 source = "github"
@@ -2283,6 +2469,12 @@ use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
 
+# vendor download, no published version index
+#["sci-mathematics/rstudio-desktop-bin"]
+
+# packaged as a snapshot, upstream has no release
+#["sci-ml/llama-cpp"]
+
 # key issued by this project, no upstream version to track
 #["sec-keys/openpgp-keys-gentoozh"]
 
@@ -2408,6 +2600,16 @@ use_latest_tag = true
 prefix = "tlpui-"
 github_account = "xz-dev"
 
+#["virtual/dist-kernel"]
+
+#["virtual/linux-sources"]
+
+#["virtual/loong-ow-compat"]
+
+#["virtual/v2ray-domain-list-community"]
+
+#["virtual/v2ray-geoip"]
+
 ["www-apps/folo-bin"]
 source = "github"
 github = "RSSNext/Folo"
@@ -2475,6 +2677,9 @@ github = "cginternals/glbinding"
 use_latest_release = true
 prefix = "v"
 github_account = ["microcai", "gouwazi"]
+
+# live package only
+#["x11-libs/xcb-imdkit"]
 
 ["x11-misc/9menu"]
 source = "debianpkg"
@@ -2575,6 +2780,9 @@ use_latest_release = true
 github_account = ["hertz-hwang", "gouwazi"]
 
 # live package only
+#["x11-themes/ori-fcitx5"]
+
+# live package only
 #["x11-wm/chamferwm"]
 
 ["x11-wm/hypr"]
@@ -2582,3 +2790,4 @@ source = "github"
 github = "hyprwm/Hypr"
 use_latest_release = true
 github_account = ["Goldsrc233", "gouwazi"]
+
