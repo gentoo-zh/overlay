@@ -10,7 +10,7 @@ ETYPE="sources"
 K_EXP_GENPATCHES_NOUSE="1"
 
 # Just get basic genpatches, -lqx patch set already includes main updates
-K_GENPATCHES_VER="5"
+K_GENPATCHES_VER="8"
 
 # -lqx already sets EXTRAVERSION to kernel Makefile
 K_NOSETEXTRAVERSION="1"
@@ -40,7 +40,7 @@ SRC_URI="
 	https://github.com/zen-kernel/zen-kernel/releases/download/v${PV}-lqx1/v${PV}-lqx1.patch.xz
 	https://github.com/bigshans/cjktty-patches/raw/master/v${KV_MAJOR}.x/cjktty-${KV_MAJOR}.${KV_MINOR}.patch"
 
-S="${WORKDIR}/linux-${PV}-liquorix-r1"
+S="${WORKDIR}/linux-${PV}-liquorix"
 
 KEYWORDS="~amd64"
 # To use CJKTTY, Please enable this USE
