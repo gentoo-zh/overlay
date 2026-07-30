@@ -122,6 +122,15 @@ Treat `master` only as an upstream-sync branch.
 - Each USE state must control every applicable option, dependency, source selection, and install cleanup consistently. Disable automagic.
 - Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`.
 
+## Code Style
+
+- Keep code concise. Prefer clear naming, established helpers, direct control flow, and simple structure over explanatory comments or complex shell code.
+- Implement logic near the relevant code rather than adding a separate script. Use functions only when they materially reduce local complexity or duplication.
+- Keep comments only when they explain non-obvious intent, constraints, trade-offs, or workarounds that the code cannot express and a future maintainer needs to preserve.
+- Do not add comments that restate eclass-documented variable assignments, configuration, declarations, option values, function calls, commands, or standard settings.
+- Do not add comments to justify QA suppressions, including `QA_PREBUILT`, and `QA_SONAME`.
+- Preserve existing useful comments unless they are outdated or incorrect.
+
 ## Version Bumps
 
 - Compare existing ebuilds and history with upstream notes and build metadata for dependency, toolchain, option, license, layout, and installed-file changes.
