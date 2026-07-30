@@ -1,0 +1,6 @@
+# Eternal Terminal server configuration file.
+cfgfile="/etc/et.cfg"
+
+# Standard output and error from the foreground server are captured here.
+output_log="/var/log/etserver.log"
+error_log="/var/log/etserver.log"

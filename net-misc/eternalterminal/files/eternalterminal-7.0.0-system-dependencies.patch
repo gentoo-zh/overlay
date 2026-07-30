@@ -1,0 +1,75 @@
+From: Xiangzhe <xiangzhedev@gmail.com>
+Subject: [PATCH] build: use system copies of packaged dependencies
+
+Gentoo provides compatible CMake packages for Catch2, cpp-httplib,
+cxxopts, nlohmann_json, and SimpleIni. Use their imported targets in the
+DISABLE_VCPKG build instead of compiling the bundled snapshots.
+
+SimpleIni is consumed by TerminalCommon and directly by etserver, so link its
+header-only imported target through those targets rather than relying on a
+global include directory.
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -140,27 +140,20 @@
+
+ if(DISABLE_VCPKG)
+   if(BUILD_TESTING)
+-    add_subdirectory(${EXTERNAL_DIR}/Catch2)
+-  endif()
+-  add_subdirectory(${EXTERNAL_DIR}/cxxopts)
+-  add_subdirectory(${EXTERNAL_DIR}/cpp-httplib)
+-  add_subdirectory(${EXTERNAL_DIR}/json)
+-  include_directories(
+-    SYSTEM ${EXTERNAL_DIR}/cpp-httplib
+-  )
+-  include_directories(
+-    ${EXTERNAL_DIR}/simpleini
+-    ${EXTERNAL_DIR}/json/include
+-    ${EXTERNAL_DIR}/cxxopts/include
+-  )
+-else()
+-  if(BUILD_TESTING)
+-    find_package(Catch2 CONFIG REQUIRED)
++    find_package(Catch2 3 CONFIG REQUIRED)
+   endif()
+   find_package(httplib CONFIG REQUIRED)
+   find_package(cxxopts CONFIG REQUIRED)
+   find_package(nlohmann_json CONFIG REQUIRED)
+-  find_path(SIMPLEINI_INCLUDE_DIRS "ConvertUTF.c")
++  find_package(SimpleIni CONFIG REQUIRED)
++else()
++  if(BUILD_TESTING)
++    find_package(Catch2 3 CONFIG REQUIRED)
++  endif()
++  find_package(httplib CONFIG REQUIRED)
++  find_package(cxxopts CONFIG REQUIRED)
++  find_package(nlohmann_json CONFIG REQUIRED)
++  find_package(SimpleIni CONFIG REQUIRED)
+ endif()
+
+ # Optional packages
+@@ -388,7 +381,6 @@
+   ${UTEMPTER_INCLUDE_DIR}
+   ${Boost_INCLUDE_DIR}
+   ${OPENSSL_INCLUDE_DIR}
+-  ${SIMPLEINI_INCLUDE_DIRS}
+ )
+
+ if(NOT ANDROID)
+@@ -471,6 +463,7 @@
+   ${ETERMINAL_SRCS}
+   ${ETERMINAL_HDRS})
+ add_dependencies(TerminalCommon generated-code et-lib)
++target_link_libraries(TerminalCommon PUBLIC SimpleIni::SimpleIni)
+ decorate_target(TerminalCommon)
+
+ add_executable(et src/terminal/TerminalClientMain.cpp)
+@@ -501,6 +494,7 @@
+   target_link_libraries(
+     etserver
+     LINK_PUBLIC
++    SimpleIni::SimpleIni
+     TerminalCommon
+     et-lib
+     ${CMAKE_THREAD_LIBS_INIT}

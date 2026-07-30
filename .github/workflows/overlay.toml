@@ -1928,6 +1928,13 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
+["net-misc/eternalterminal"]
+source = "github"
+github = "MisterTea/EternalTerminal"
+use_latest_release = true
+prefix = "et-v"
+github_account = "xz-dev"
+
 ["net-misc/flyctl-bin"]
 source = "github"
 github = "superfly/flyctl"

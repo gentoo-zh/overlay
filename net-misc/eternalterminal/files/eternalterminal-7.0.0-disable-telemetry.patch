@@ -1,0 +1,14 @@
+From: Xiangzhe <xiangzhedev@gmail.com>
+Subject: [PATCH] config: disable telemetry by default
+
+The Gentoo package is built with DISABLE_TELEMETRY, so keep the installed
+configuration consistent with the compiled feature set.
+
+--- a/etc/et.cfg
++++ b/etc/et.cfg
+@@ -10,4 +10,4 @@ verbose = 0
+ silent = 0
+ logsize = 20971520
+-telemetry = true
++telemetry = false
+ logdirectory = /tmp

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>xiangzhedev@gmail.com</email>
+		<name>xz-dev</name>
+	</maintainer>
+	<use>
+		<flag name="utempter">Record terminal sessions through <pkg>sys-libs/libutempter</pkg></flag>
+	</use>
+	<upstream>
+		<remote-id type="github">MisterTea/EternalTerminal</remote-id>
+		<bugs-to>https://github.com/MisterTea/EternalTerminal/issues</bugs-to>
+		<changelog>https://github.com/MisterTea/EternalTerminal/releases</changelog>
+	</upstream>
+</pkgmetadata>

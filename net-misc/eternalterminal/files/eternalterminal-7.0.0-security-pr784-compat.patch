@@ -1,0 +1,15 @@
+From: Xiangzhe <xiangzhedev@gmail.com>
+Subject: [PATCH] security: prepare 7.0.0 for upstream PR 784
+
+Upstream PR 784 is based on master, where PortForwardHandler.cpp includes
+cstdint.  The 7.0.0 release branch lacks this behavior-neutral include, so
+add it before applying the three immutable upstream security commits.
+
+Upstream PR: https://github.com/MisterTea/EternalTerminal/pull/784
+Applies to: et-v7.0.0 (7656a32a5bc15c6746726a27a5a4ba1e468fab6e)
+
+--- a/src/terminal/forwarding/PortForwardHandler.cpp
++++ b/src/terminal/forwarding/PortForwardHandler.cpp
+@@ -2,0 +3,2 @@
++#include <cstdint>
++

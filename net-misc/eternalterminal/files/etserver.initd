@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+
+name="Eternal Terminal server"
+description="Eternal Terminal network router"
+
+: "${cfgfile:=/etc/et.cfg}"
+: "${output_log:=/var/log/etserver.log}"
+: "${error_log:=/var/log/etserver.log}"
+
+command="/usr/bin/etserver"
+command_args="--cfgfile=${cfgfile} --logtostdout"
+command_background="yes"
+pidfile="/run/${RC_SVCNAME}.pid"
+output_log="${output_log}"
+error_log="${error_log}"
+
+depend() {
+	need net
+}

@@ -1,0 +1,28 @@
+From: Xiangzhe <xiangzhedev@gmail.com>
+Subject: [PATCH] build: make libunwind detection authoritative
+
+UniversalStacktrace probes for libunwind headers independently of CMake.  If
+CMake has deliberately disabled or failed to find libunwind, this compiles
+calls to libunwind without linking it.  Pass the CMake result to the header so
+libunwind can be controlled without automagic linkage.
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -134,0 +135,6 @@ find_package(Unwind)
++if(Unwind_FOUND)
++  add_compile_definitions(USE_UNWIND=1)
++else()
++  add_compile_definitions(USE_UNWIND=0)
++endif()
++
+--- a/external_imported/UniversalStacktrace/ust/ust.hpp
++++ b/external_imported/UniversalStacktrace/ust/ust.hpp
+@@ -9,0 +10 @@
++#ifndef USE_UNWIND
+@@ -19,0 +21,6 @@
++#elif USE_UNWIND
++#define UNW_LOCAL_ONLY
++#include <libunwind.h>
++#else
++#include <execinfo.h>
++#endif

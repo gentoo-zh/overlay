@@ -1,0 +1,19 @@
+From: Xiangzhe <xiangzhedev@gmail.com>
+Subject: [PATCH] build: use C++20 for current protobuf and abseil-cpp
+
+Abseil 20260107 and newer require C++20.  EternalTerminal links against
+Abseil through protobuf, so compiling the generated protobuf sources as
+C++17 fails with missing std::{partial,strong,weak}_ordering types.
+
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -249,7 +249,7 @@ if(UNIX)
+ endif()
+
+-# Enable C++-17
+-set(CMAKE_CXX_STANDARD 17)
++# Enable C++-20
++set(CMAKE_CXX_STANDARD 20)
+ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+ # Enable compile commands export for vscode
