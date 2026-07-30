@@ -21,7 +21,6 @@ BDEPEND=">=dev-lang/go-1.25.0"
 PATCHES=(
 	"${FILESDIR}/${PN}-6.13.2-remove_update_support.patch"
 	"${FILESDIR}/${PN}-6.13.2-remove_service_management_support.patch"
-	"${FILESDIR}/${PN}-6.17.1-build_deps_tidy.patch"
 )
 
 src_compile() {
