@@ -6,6 +6,6 @@
 		<email>dev@wangxianggang.com</email>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">qishibo/AnotherRedisDesktopManagero</remote-id>
+		<remote-id type="github">qishibo/AnotherRedisDesktopManager</remote-id>
 	</upstream>
 </pkgmetadata>
