@@ -15,6 +15,7 @@ permissions:
 
 jobs:
   comment:
+    if: github.event.workflow_run.event == 'pull_request'  # a push has no artifact
     runs-on: ubuntu-latest
     steps:
     - name: Download the report
@@ -35,10 +36,12 @@ jobs:
         set -euo pipefail
         MARKER='<!-- pkgcheck-report -->'
 
-        # the artifact is written by a job running pull request code, so resolve the PR
-        # from the head commit instead of trusting anything inside it
-        pr=$(gh api "repos/${REPO}/commits/${HEAD_SHA}/pulls" --jq '.[0].number // empty')
-        [ -n "${pr}" ] || { echo 'no pull request for this run'; exit 0; }
+        # commits/{sha}/pulls returns nothing for a fork PR; the artifact is not trusted
+        matches=$(gh api "repos/${REPO}/pulls?state=open&per_page=100" --paginate \
+                  --jq ".[]|select(.head.sha==\"${HEAD_SHA}\")|.number")
+        pr=${matches%%$'\n'*}  # not `| head -1`: pipefail turns the early close into a failure
+        [ -n "${pr}" ] || { echo 'no open pull request at this commit'; exit 0; }
+        echo "pull request #${pr}"
 
         count=$(wc -l < pkgcheck-report/packages)
         [ "${count}" -gt 0 ] || { echo 'no packages touched'; exit 0; }
