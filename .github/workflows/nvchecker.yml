@@ -111,17 +111,16 @@ jobs:
         echo "::endgroup::"
 
         echo "::group::nvcmp"
-        # without this a failure anywhere in the pipe below is swallowed by the
-        # command substitution, leaving nvcmp= empty and failing later in the matrix
+        # assign on its own line: inside echo "$(...)" the exit status is echo's,
+        # so a failing pipe would go unnoticed until the matrix expands
         set -o pipefail
-        echo "nvcmp=$(nvcmp --file overlay.toml --json --newer \
-          | jq 'map({name, newver, oldver})' | jq -c .)" >> $GITHUB_OUTPUT
+        nvcmp=$(nvcmp --file overlay.toml --json --newer \
+          | jq 'map({name, newver, oldver})' | jq -c .)
+        echo "nvcmp=${nvcmp}" >> $GITHUB_OUTPUT
         echo "::endgroup::"
 
   issues-bumper:
     needs: nvchecker
-    # an empty include is not a valid matrix and fails the whole run, so skip
-    # the job on a day when nothing is left to report
     if: needs.nvchecker.outputs.nvcmp != '[]'
     runs-on: ubuntu-latest
     strategy:
