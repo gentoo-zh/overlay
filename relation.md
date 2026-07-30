@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-30 15:23:28 CST)
+(The last generation time: 2026-07-30 16:04:34 CST)
 
 ### Packages
 
@@ -222,7 +222,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.2.10             |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/copilot                                      | 1.0.75             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
+ app-misc/copilot                                      | 1.0.76             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.87.0             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
