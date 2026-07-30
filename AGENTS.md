@@ -93,9 +93,9 @@ Treat `master` only as an upstream-sync branch.
 - Use one topic branch per logical PR. Create new work from local `master` freshly synced with `<canonical>/master`; prefer `category-package-version` for bumps.
 - When resuming, reuse the correct topic branch. Before preparing a PR, fetch the canonical remote and rebase the topic branch onto `<canonical>/master`; a stale base makes GitHub report the PR out of date.
 - Multiple packages may share a PR only for one dependency chain, coordinated bump, or shared fix. Keep unrelated work separate and never split an ebuild from its `Manifest`.
-- When fresh state is needed, find the existing remote for `git@github.com:gentoo-zh/overlay.git` or `https://github.com/gentoo-zh/overlay.git`. Match the GitHub owner and repository case-insensitively.
+- When fresh state is needed, find an existing remote for `git@github.com:gentoo-zh/overlay.git`, `https://github.com/gentoo-zh/overlay.git`, `git@github.com:microcai/gentoo-zh.git`, or `https://github.com/microcai/gentoo-zh.git`. Match the GitHub owner and repository case-insensitively.
 - Support both fork clones (`origin` is personal) and direct clones (`origin` is canonical). Use the existing canonical remote, whatever its name is.
-- If none exists, add `upstream` as `git@github.com:gentoo-zh/overlay.git`.
+- If neither remote exists, add `upstream` as `https://github.com/gentoo-zh/overlay.git`.
 - Fetch the canonical remote before using its state, and ensure `<canonical>/HEAD` resolves (`git remote set-head <canonical> master` if not)—pkgcheck's git checks depend on it independently of any explicit commit range.
 - If the fetch fails, stop and report the current URL and error; do not rewrite or bypass it.
 - Push only topic branches to an unambiguous personal fork, never `master` or the canonical remote. Use `--force-with-lease` after a rebase. A missing or ambiguous personal fork blocks publishing, not local editing.
