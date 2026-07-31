@@ -17,7 +17,7 @@ IUSE="clang"
 DEPEND="
 	media-libs/flac
 	media-libs/alsa-lib
-	>=dev-lang/go-1.22.0
+	>=dev-lang/go-1.26.0
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
@@ -36,7 +36,7 @@ src_compile() {
 		ego env -w "CC=clang"
 		ego env -w "CXX=clang++"
 	fi
-	sed -i "s/0.0.0-\${GIT_REVISION}/v$PV/g" hack/version.sh || die
+	local -x GIT_TAG="v${PV}" GIT_REVISION="v${PV}"
 	emake build
 }
 
