@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-31 10:24:56 CST)
+(The last generation time: 2026-07-31 10:25:34 CST)
 
 ### Packages
 
@@ -241,8 +241,7 @@
  app-misc/mdx_util                                     | 20251029           |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.13.0             |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
-                                                       | 0.25.0             |            |                                                                            |
-                                                       | 0.26.0             |            |                                                                            |
+                                                       | 0.27.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/qwen-code                                    | 0.21.1             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
