@@ -3,26 +3,25 @@
 
 EAPI=8
 
-inherit unpacker xdg
+inherit desktop unpacker xdg
 
-DESCRIPTION="A cross-platform Apple Music experience built on Vue.js (Proprietary V3)"
+DESCRIPTION="A cross-platform Apple Music experience built on Vue.js (Proprietary V4)"
 HOMEPAGE="https://cider.sh/"
 
 # Map the downloaded filename to a standard versioned name.
 # ${A} will refer to the renamed file (${P}.deb).
 _FILENAME="cider-v${PV}-linux-x64.deb"
-SRC_URI="${_FILENAME} -> ${P}.deb"
+SRC_URI="https://repo.cider.sh/apt/pool/main/${_FILENAME} -> ${P}.deb"
 S="${WORKDIR}"
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64"
 IUSE="trash-cli wayland"
 
 # RESTRICT:
 # - bindist: License forbids redistribution.
-# - fetch: Manual download required.
 # - strip: Do not strip bundled libraries (breaks integrity/DRM).
-RESTRICT="bindist mirror fetch strip"
+RESTRICT="bindist mirror strip"
 
 # RDEPEND:
 # - gtk+:3[X,wayland?]: Ensure GTK supports X11 (required by binary) and optionally Wayland.
@@ -34,12 +33,12 @@ RDEPEND="
 	dev-libs/glib:2
 	dev-libs/nspr
 	dev-libs/nss
-	dev-libs/wayland
+	wayland? ( dev-libs/wayland )
 	media-libs/alsa-lib
-	media-libs/mesa
+	media-libs/mesa[gbm(+)]
 	net-print/cups
 	sys-apps/dbus
-	virtual/libudev
+	virtual/libudev:=
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
 	x11-libs/gtk+:3[X,wayland?]
@@ -60,16 +59,17 @@ RDEPEND="
 	trash-cli? ( app-misc/trash-cli )
 "
 
-# Silence QA warnings about bundled libraries (libffmpeg, libEGL, etc.)
-QA_PREBUILT="*"
-
-pkg_nofetch() {
-	einfo "Please purchase and download ${_FILENAME} from:"
-	einfo "  ${HOMEPAGE}"
-	einfo ""
-	einfo "Rename and place it in DISTDIR:"
-	einfo "  mv ${_FILENAME} /var/cache/distfiles/${P}.deb"
-}
+# Silence QA warnings about the bundled ELF files.
+QA_PREBUILT="
+	/opt/cider/Cider
+	/opt/cider/chrome-sandbox
+	/opt/cider/chrome_crashpad_handler
+	/opt/cider/libEGL.so
+	/opt/cider/libGLESv2.so
+	/opt/cider/libffmpeg.so
+	/opt/cider/libvk_swiftshader.so
+	/opt/cider/libvulkan.so.1
+"
 
 src_unpack() {
 	# Unpack the deb file defined in SRC_URI.
@@ -78,8 +78,8 @@ src_unpack() {
 }
 
 src_install() {
-	insinto /usr
-	doins -r usr/share
+	domenu usr/share/applications/cider.desktop
+	doicon usr/share/pixmaps/cider.png
 
 	insinto /opt
 	doins -r usr/lib/cider
