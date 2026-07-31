@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-31 23:21:10 CST)
+(The last generation time: 2026-07-31 23:25:17 CST)
 
 ### Packages
 
@@ -609,7 +609,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/barva                                     | 9999               |            | https://github.com/Kharacternyk/barva                                      | a modular audio visualizer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/cider                                     | 3.1.8              |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V3)
+ media-sound/cider                                     | 4.0.9.1            |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V4)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/euphonica                                 | 0.99.5             |            | https://github.com/htkhiem/euphonica                                       | An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
