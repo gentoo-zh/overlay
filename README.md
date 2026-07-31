@@ -1,99 +1,98 @@
+<div align="right">
+
 English | [简体中文](./README.zh-CN.md) | [正體中文](./README.zh-TW.md)
+
+</div>
+
+# gentoo-zh
+
+Overlay for Gentoo Users.\
+gentoo-zh is an inclusive overlay.
 
 > [!NOTE]
 > gentoo-zh overlay has moved to https://github.com/gentoo-zh/overlay. Old GitHub URLs continue to redirect. If you manually configured a remote, update it when convenient.
+> See [MIGRATION.md](./MIGRATION.md) for details.
 
-## Repository migration
+## Community
 
-This repository was transferred from `microcai/gentoo-zh` to the `gentoo-zh` organization through GitHub repository transfer, and later renamed to `gentoo-zh/overlay`.
+[![Website](https://img.shields.io/badge/Website-gentoozh.org-54487A?logo=gentoo&logoColor=white)](https://gentoozh.org/en/)
+[![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-181717?logo=github)](https://github.com/gentoo-zh/overlay/issues)
+[![Email](https://img.shields.io/badge/Email-overlay%40gentoozh.org-EA4335?logo=maildotcom&logoColor=white)](mailto:overlay@gentoozh.org)
+[![Forum](https://img.shields.io/badge/Forum-forum.gentoozh.org-000000?logo=discourse&logoColor=white)](https://forum.gentoozh.org/)
+[![Wiki](https://img.shields.io/badge/Wiki-Gentoo--zh-54487A?logo=gentoo&logoColor=white)](https://wiki.gentoo.org/wiki/Gentoo-zh)
+[![Telegram group](https://img.shields.io/badge/Telegram%20group-gentoo__zh-26A5E4?logo=telegram&logoColor=white)](https://t.me/gentoo_zh)
+[![Announcements](https://img.shields.io/badge/Announcements-gentoocn-26A5E4?logo=telegram&logoColor=white)](https://t.me/gentoocn)
+[![Matrix](https://img.shields.io/badge/Matrix-%23gentoo--zh-000000?logo=matrix&logoColor=white)](https://matrix.to/#/%23gentoo-zh:matrix.gentoozh.org)
+[![IRC](https://img.shields.io/badge/IRC-%23gentoo--zh-5A5A5A?logo=liberadotchat&logoColor=white)](https://web.libera.chat/#gentoo-zh)
 
-The current repository is:
+For overlay problems, GitHub Issues is preferred.
 
-https://github.com/gentoo-zh/overlay
-
-See [MIGRATION.md](./MIGRATION.md) for details.
-
-# How to add this overlay to your Gentoo system
+## How to add this overlay to Gentoo Linux
 
 ```
 eselect repository enable gentoo-zh
 emaint sync
 ```
 
-# rule no.1
+Mirrors for mainland China: https://gentoozh.org/en/overlay/
 
-DO NOT BREAK PEOPLE'S SYSTEM
+## Distfiles and binary packages
 
-# rule no.2
+Part of the overlay ships distfiles and prebuilt binary packages, built nightly.
+Setup and mirrors: https://distfiles.gentoozh.org
 
-DO NOT BREAK PEOPLE'S SYSTEM
-
-# rule no.3
-
-follow rule no.1 and no.2
-
-# the dependencies table
+## the dependencies table
 
 https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
-# commit message
+## Contributions
 
-It is recommended to run `pkgdev commit` to quickly generate commit messages.
+**DO NOT BREAK PEOPLE'S SYSTEM.**
 
-* for non-version bump commit, commit message should be like this:
-
-        $category/$package: one line short description message
-        {empty line}
-        multiple lines of description about why you change this.
-        if you change to fix the bug, and if there is an GitHub
-        issue entry for that bug, then point the bug link here.
-
-* for version bump commit, commit message should be like this:
-
-        $category/$package: add $new_version, drop $old_version
-
-# Contributions
-
-* We trust contributors that have commit rights, therefore commitors
-  should think carefully before committing.
-
-* Generative AI may be used to assist ebuild maintenance, but contributors must
-  ensure the quality of related ebuild changes. In particular, verify functional
-  correctness after modifications; applications, including CLI and GUI
-  applications, should receive appropriate smoke testing through actual use
-  before submission. Even when generative AI is used, the contributor remains
-  the primary person responsible for every commit. The contributor, submitter,
-  and commit author must be a human, not an AI tool or model identity such as
-  Codex, GPT, Claude, Gemini, or similar systems.
-
-* If you are sending a new pull request, make sure it contains all necessary commits
-  for a single contribution, e.g. don't send two pull requests for an ebuild and its
-  `Manifest`.
-
-* Every ebuild change should not produce compile error before committing.
-
-* Every ebuild should be tested in every ARCH that it KEYWORDS for.
-  if not, don't claim that you support that keyword.
-
-* Every ebuild is to have ~arch keywords. Stable keywords must not be used.
-
+* Everyone is welcome to contribute, but commiters should think carefully before
+  committing.
+* Every commit in a pull request must carry all the changes it needs; do not split
+  them without reason, e.g. an ebuild and its `Manifest` belong in the same commit.
+* Every ebuild change must compile before committing.
+* A new package must be added to
+  [`.github/workflows/overlay.toml`](./.github/workflows/overlay.toml), inserted in
+  alphabetical order by `category/package`; if it is not suitable for nvchecker to
+  check for new versions, add a comment in that position explaining why; if it can be
+  bumped automatically, see [scripts/autobump.md](./scripts/autobump.md).
 * Run `pkgcheck scan --commits --net` locally before you open pull request.
+* After opening the pull request, fix what the pkgcheck report and CI report, QA
+  warnings included.
+* CI builds on amd64 and arm64. If an arch you do not have hits a problem you cannot
+  solve, remove that keyword.
+* Keep maintaining the packages you add, and use the
+  [pull request template](./.github/pull_request_template.md).
+* When you stop maintaining a package, look for a new maintainer in the issues, or
+  mask it in [`profiles/package.mask`](./profiles/package.mask) and drop it when the
+  mask expires.
 
-# Binary packages
+### Commit messages
 
-Part of the overlay ships as prebuilt binary packages, rebuilt and signed nightly.
-Setup, including the signing key import, is at https://distfiles.gentoozh.org
+We recommend generating them with `pkgdev commit`. Version bump:
 
-# Distfiles mirror
-
-We provide a distfiles mirror that caches the distfiles in gentoo-zh.
-
-Our server, hosted on USA:
 ```
-GENTOO_MIRRORS="${GENTOO_MIRRORS} https://distfiles.gentoozh.org"
+$category/$package: add $new_version, drop $old_version
 ```
 
-Nanjing University mirror:
+Anything else:
+
 ```
-GENTOO_MIRRORS="${GENTOO_MIRRORS} https://mirrors.nju.edu.cn/gentoo-zh"
+$category/$package: one line short description message
+
+multiple lines of description about why you change this.
+if you change to fix the bug, and if there is an GitHub
+issue entry for that bug, then point the bug link here.
 ```
+
+## AI policy
+
+Generative AI may assist, but it must follow [AGENTS.md](./AGENTS.md) and the
+contributor is responsible for every commit: ensure the quality of the ebuild and
+verify that it works, smoke-test it before submitting, and keep the pull request
+description short, precise and professional, written from tested results, not
+guesses. The contributor, submitter, and commit author must be a human, not an AI
+tool or model identity.
