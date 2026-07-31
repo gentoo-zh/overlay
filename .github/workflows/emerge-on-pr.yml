@@ -72,7 +72,7 @@ jobs:
             COPYING
             MIGRATION.md
             README.md
-            README.zh-CN.md
+            README.en.md
             README.zh-TW.md
             repo.xml
             skel.ChangeLog
