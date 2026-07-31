@@ -10,15 +10,6 @@
 		and Electron, written from the ground up with performance in mind. 🚀 
 		This package installs the proprietary version (Cider 4).
 	</longdescription>
-	<use>
-		<flag name="trash-cli">
-			Pull in app-misc/trash-cli to support file deletion features
-			if your Desktop Environment (DE) does not provide a native trash mechanism.
-		</flag>
-		<flag name="wayland">
-			Enable Wayland support through GTK+ 3.
-		</flag>
-	</use>
 	<upstream>
 		<remote-id type="github">ciderapp/Cider</remote-id>
 		<bugs-to>https://github.com/ciderapp/Cider/issues</bugs-to>

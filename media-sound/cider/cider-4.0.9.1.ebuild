@@ -3,20 +3,16 @@
 
 EAPI=8
 
-inherit desktop unpacker xdg
+inherit desktop optfeature unpacker xdg
 
 DESCRIPTION="A cross-platform Apple Music experience built on Vue.js (Proprietary V4)"
 HOMEPAGE="https://cider.sh/"
 
-# Map the downloaded filename to a standard versioned name.
-# ${A} will refer to the renamed file (${P}.deb).
-_FILENAME="cider-v${PV}-linux-x64.deb"
-SRC_URI="https://repo.cider.sh/apt/pool/main/${_FILENAME} -> ${P}.deb"
+SRC_URI="https://repo.cider.sh/apt/pool/main/cider-v${PV}-linux-x64.deb"
 S="${WORKDIR}"
 LICENSE="all-rights-reserved"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-IUSE="trash-cli wayland"
 
 # RESTRICT:
 # - bindist: License forbids redistribution.
@@ -24,7 +20,7 @@ IUSE="trash-cli wayland"
 RESTRICT="bindist mirror strip"
 
 # RDEPEND:
-# - gtk+:3[X,wayland?]: Ensure GTK supports X11 (required by binary) and optionally Wayland.
+# - gtk+:3[X]: Ensure GTK supports X11 (required by the binary).
 # - virtual/libudev: Required by Electron for device detection.
 RDEPEND="
 	app-accessibility/at-spi2-core
@@ -33,7 +29,6 @@ RDEPEND="
 	dev-libs/glib:2
 	dev-libs/nspr
 	dev-libs/nss
-	wayland? ( dev-libs/wayland )
 	media-libs/alsa-lib
 	media-libs/mesa[gbm(+)]
 	net-print/cups
@@ -41,7 +36,7 @@ RDEPEND="
 	virtual/libudev:=
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
-	x11-libs/gtk+:3[X,wayland?]
+	x11-libs/gtk+:3[X]
 	x11-libs/libX11
 	x11-libs/libXcomposite
 	x11-libs/libXdamage
@@ -56,7 +51,6 @@ RDEPEND="
 	x11-libs/pango
 	x11-libs/libnotify
 	x11-misc/xdg-utils
-	trash-cli? ( app-misc/trash-cli )
 "
 
 # Silence QA warnings about the bundled ELF files.
@@ -96,8 +90,6 @@ src_install() {
 
 pkg_postinst() {
 	xdg_pkg_postinst
-
-	if use trash-cli; then
-		elog "Trash support enabled via trash-cli."
-	fi
+	optfeature "Wayland support" "x11-libs/gtk+:3[wayland]"
+	optfeature "Trash support" app-misc/trash-cli
 }
