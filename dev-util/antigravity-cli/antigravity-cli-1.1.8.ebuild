@@ -24,7 +24,6 @@ RESTRICT="bindist mirror strip"
 
 RDEPEND="
 	sys-libs/glibc
-	!<app-editors/antigravity-2
 "
 
 QA_PREBUILT="usr/bin/agy"
