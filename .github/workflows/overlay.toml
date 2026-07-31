@@ -465,13 +465,6 @@ github_account = "liangyongxiang"
 from_pattern = "(.*)-(.*)"
 to_pattern = '\1_p\2'
 
-["app-misc/aichat"]
-source = "github"
-github = "sigoden/aichat"
-use_latest_release = true
-prefix = "v"
-github_account = "peeweep"
-
 ["app-misc/bcompare"]
 source = "regex"
 url = "https://www.scootersoftware.com/kb/linux_install"

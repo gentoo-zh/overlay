@@ -1,3 +1,9 @@
+# jinqiang zhang <peeweep@0x0.ee> (2026-07-31)
+# Now we have more popular agent like codex claude-code gemini-cli
+# as cli chat tool, no longer need aichat
+# Masked for removal in 2026-08-30
+app-misc/aichat
+
 # Huang Rui <vowstar@gmail.com> (2026-07-29)
 # Upstream is winding down and directs users to Kimi Code CLI
 # (dev-util/kimi-code-bin), which migrates existing configuration and
