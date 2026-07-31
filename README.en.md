@@ -1,6 +1,6 @@
 <div align="right">
 
-English | [简体中文](./README.md) | [正體中文](./README.zh-TW.md)
+English | [简体中文](./README.md) | [正體中文](./README.zh-TW.md) | [廣東話](./README.zh-HK.md)
 
 </div>
 
@@ -25,7 +25,7 @@ gentoo-zh is an inclusive overlay.
 [![Matrix](https://img.shields.io/badge/Matrix-%23gentoo--zh-000000?logo=matrix&logoColor=white)](https://matrix.to/#/%23gentoo-zh:matrix.gentoozh.org)
 [![IRC](https://img.shields.io/badge/IRC-%23gentoo--zh-5A5A5A?logo=liberadotchat&logoColor=white)](https://web.libera.chat/#gentoo-zh)
 
-For overlay problems, GitHub Issues is preferred.
+For anything about the overlay, GitHub Issues is preferred.
 
 ## How to add this overlay to Gentoo Linux
 
@@ -38,10 +38,10 @@ Mirrors for mainland China: https://gentoozh.org/en/overlay/
 
 ## Distfiles and binary packages
 
-Part of the overlay ships distfiles and prebuilt binary packages, built nightly.
+Some packages come with distfiles and prebuilt binary packages, built nightly.
 Setup and mirrors: https://distfiles.gentoozh.org
 
-## the dependencies table
+## Dependency table
 
 https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
@@ -49,21 +49,22 @@ https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
 **DO NOT BREAK PEOPLE'S SYSTEM.**
 
-* Everyone is welcome to contribute, but commiters should think carefully before
-  committing.
-* Every commit in a pull request must carry all the changes it needs; do not split
-  them without reason, e.g. an ebuild and its `Manifest` belong in the same commit.
+* Everyone is welcome to contribute, but committers should check their work
+  carefully before committing.
+* Every commit in a pull request must carry all the changes it needs; do not split a
+  change across commits without reason, e.g. an ebuild and its `Manifest` belong in
+  the same commit.
 * Every ebuild change must compile before committing.
 * A new package must be added to
   [`.github/workflows/overlay.toml`](./.github/workflows/overlay.toml), inserted in
   alphabetical order by `category/package`; if it is not suitable for nvchecker to
   check for new versions, add a comment in that position explaining why; if it can be
   bumped automatically, see [scripts/autobump.md](./scripts/autobump.md).
-* Run `pkgcheck scan --commits --net` locally before you open pull request.
-* After opening the pull request, fix what the pkgcheck report and CI report, QA
+* Run `pkgcheck scan --commits --net` locally before you open a pull request.
+* After opening the pull request, fix whatever the pkgcheck report and CI flag, QA
   warnings included.
-* CI builds on amd64 and arm64. If an arch you do not have hits a problem you cannot
-  solve, remove that keyword.
+* CI builds on amd64 and arm64. If a problem shows up on an arch you do not have and
+  you cannot solve it, remove that keyword.
 * Keep maintaining the packages you add, and use the
   [pull request template](./.github/pull_request_template.md).
 * When you stop maintaining a package, look for a new maintainer in the issues, or

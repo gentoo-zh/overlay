@@ -1,6 +1,6 @@
 <div align="right">
 
-[English](./README.en.md) | [简体中文](./README.md) | 正體中文
+[English](./README.en.md) | [简体中文](./README.md) | 正體中文 | [廣東話](./README.zh-HK.md)
 
 </div>
 
@@ -25,7 +25,7 @@ gentoo-zh 是一個包容的 overlay。
 [![Matrix](https://img.shields.io/badge/Matrix-%23gentoo--zh-000000?logo=matrix&logoColor=white)](https://matrix.to/#/%23gentoo-zh:matrix.gentoozh.org)
 [![IRC](https://img.shields.io/badge/IRC-%23gentoo--zh-5A5A5A?logo=liberadotchat&logoColor=white)](https://web.libera.chat/#gentoo-zh)
 
-overlay 的問題優先走 GitHub Issues。
+overlay 相關問題優先使用 GitHub Issues。
 
 ## 如何將此 overlay 加入 Gentoo Linux
 
