@@ -24,6 +24,7 @@ QA_PREBUILT="
 
 DEPEND="
 	dev-vcs/git
+	media-libs/fontconfig
 "
 
 RDEPEND="${DEPEND}"
