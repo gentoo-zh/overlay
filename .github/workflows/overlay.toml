@@ -1234,7 +1234,6 @@ source = "regex"
 url = "https://x.ai/cli/stable"
 regex = '^([\d.]+)$'
 github_account = "zakkaus"
-autobump = true
 
 ["dev-util/herdr-bin"]
 source = "github"
