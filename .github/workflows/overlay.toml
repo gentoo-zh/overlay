@@ -1183,6 +1183,13 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
+["dev-util/hunk-bin"]
+source = "github"
+github = "modem-dev/hunk"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 # TODO:
 # https://data.services.jetbrains.com/products/releases?code=TBA&latest=true&type=release
 ["dev-util/jetbrains-toolbox"]
