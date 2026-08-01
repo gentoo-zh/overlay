@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-07-31 23:25:17 CST)
+(The last generation time: 2026-08-01 11:39:59 CST)
 
 ### Packages
 
@@ -395,7 +395,7 @@
    app-i18n/librime                                    | 9999               |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
    dev-python/autopxd2                                 | 3.2.3              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/uv-bin                                     | 0.12.0             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
+ dev-python/uv-bin                                     | 0.12.1             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -421,7 +421,7 @@
  dev-util/fvm                                          | 4.1.2              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
    dev-lang/dart                                       | 3.12.2             |  D, RD     | https://dart.dev                                                           | The Dart SDK
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/gemini-cli                                   | 0.53.0             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
+ dev-util/gemini-cli                                   | 0.53.1             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gitea-cli                                    | 0.15.0             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
