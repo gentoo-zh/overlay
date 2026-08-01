@@ -5,10 +5,10 @@ EAPI=8
 
 inherit unpacker xdg
 
-MY_PV="${PV/_p/-}"
+PV_BUILD="51802"
 
 qq_src_uri() {
-	echo "${1}? ( https://qqdl.gtimg.cn/qqfile/QQNT/9.9.32/release/c390e792/QQ_${PV%_p*}_260710_${2:-$1}_01.deb -> ${P}_${1}.deb )"
+	echo "${1}? ( https://qqdl.gtimg.cn/qqfile/QQNT/9.9.33/release/c97651b2/QQ_${PV}_260730_${2:-$1}_01.deb -> ${P}_${1}.deb )"
 }
 
 DESCRIPTION="The new version of the official linux-qq"
@@ -93,7 +93,7 @@ src_install() {
 		doins "${FILESDIR}"/{config.json,vercmp.sh}
 		fperms +x /opt/QQ/workarounds/vercmp.sh
 
-		sed -i "s|__BASE_VER__|${MY_PV}|g;s|__CURRENT_VER__|${MY_PV}|g;s|__BUILD_VER__|${MY_PV#*-}|g" \
+		sed -i "s|__BASE_VER__|${PV}-${PV_BUILD}|g;s|__CURRENT_VER__|${PV}-${PV_BUILD}|g;s|__BUILD_VER__|${PV_BUILD}|g" \
 			"${D}/opt/QQ/workarounds/config.json" \
 			"${D}/usr/bin/qq" || die
 	else
