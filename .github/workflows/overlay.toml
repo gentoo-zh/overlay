@@ -1902,11 +1902,9 @@ regex = 'com.alibabainc.dingtalk_(.*)_amd64.deb'
 github_account = "gouwazi"
 
 ["net-im/tencent-qq"]
-# QQ doesn't publish the build number (e.g. 51102) anywhere fetchable, so track updates via AUR's linuxqq.
-source = "aur"
-aur = "linuxqq"
-from_pattern = '\d+:([\d.]+)_(\d+)-\d+'
-to_pattern = '\1_p\2'
+source = "jq"
+url = "https://qq-web.cdn-go.cn/im.qq.com_new/latest/rainbow/pcConfig.json"
+filter = ".Linux.version"
 github_account = ["Puqns67", "gouwazi"]
 
 ["net-im/vesktop-bin"]
