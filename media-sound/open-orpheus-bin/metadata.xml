@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>me@puqns67.icu</email>
+		<name>Puqns67</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">YUCLing/open-orpheus</remote-id>
+	</upstream>
+</pkgmetadata>
