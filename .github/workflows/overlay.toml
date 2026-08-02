@@ -1756,6 +1756,13 @@ github = "gmg137/netease-cloud-music-gtk"
 use_latest_release = true
 github_account = ["liuyujielol", "gouwazi"]
 
+["media-sound/open-orpheus-bin"]
+source = "github"
+github = "YUCLing/open-orpheus"
+use_latest_release = true
+prefix = "v"
+github_account = "Puqns67"
+
 ["media-sound/qqmusic"]
 source = "regex"
 url = "https://y.qq.com/download/download.js"
