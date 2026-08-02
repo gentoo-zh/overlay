@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-02 14:02:31 CST)
+(The last generation time: 2026-08-02 14:16:23 CST)
 
 ### Packages
 
@@ -622,7 +622,7 @@
      dev-python/fluent-syntax                          | 0.19.0             | RD         | https://github.com/projectfluent/python-fluent                             | Parser and serializer for Fluent localization files
    dev-python/janus                                    | 2.0.0              | RD         | https://github.com/aio-libs/janus                                          | Mixed sync-async queue to interoperate between asyncio tasks and classic threads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/go-musicfox                               | 5.0.0              |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
+ media-sound/go-musicfox                               | 5.0.1              |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/harmonoid                                 | 0.3.32             |            | https://harmonoid.com/                                                     | Plays & manages your music library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
