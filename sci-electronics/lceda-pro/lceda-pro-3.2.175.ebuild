@@ -13,7 +13,7 @@ SRC_URI="
 	arm64?	( https://image.lceda.cn/files/${PN}-linux-arm64-${PV}.zip )
 "
 S="${WORKDIR}/lceda-pro"
-LICENSE="LCEDA-EULA"
+LICENSE="LCEDA-Distribution-License"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 DEPEND="
@@ -50,7 +50,6 @@ DEPEND="
 	"
 RDEPEND="${DEPEND}"
 BDEPEND="app-arch/unzip"
-RESTRICT="mirror bindist"
 
 QA_PREBUILT="
 	/opt/lceda-pro/chrome-sandbox
