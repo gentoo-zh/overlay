@@ -511,7 +511,6 @@ source = "github"
 github = "github/copilot-cli"
 use_latest_release = true
 prefix = "v"
-github_account = "douglarek"
 autobump = true
 
 ["app-misc/crush"]
@@ -519,7 +518,6 @@ source = "github"
 github = "charmbracelet/crush"
 use_latest_release = true
 prefix = "v"
-github_account = "douglarek"
 
 ["app-misc/go-yq-bin"]
 source = "github"
@@ -573,7 +571,6 @@ github = "QwenLM/qwen-code"
 use_max_tag = true
 include_regex = "^v\\d+\\.\\d+\\.\\d+$"
 prefix = "v"
-github_account = "douglarek"
 autobump = true
 
 ["app-misc/rmtrash"]
@@ -682,7 +679,6 @@ source = "github"
 github = "douglarek/gentoo-fish-completion"
 use_latest_tag = true
 prefix = "v"
-github_account = "douglarek"
 
 ["app-shells/gitstatus"]
 source = "github"
@@ -740,7 +736,6 @@ source = "github"
 github = "dheerajshenoy/lektra"
 use_latest_release = true
 prefix = "v"
-github_account = "douglarek"
 
 ["app-text/lemminx-bin"]
 source = "github"
@@ -812,13 +807,11 @@ source = "github"
 github = "cweill/gotests"
 use_latest_release = true
 prefix = "v"
-github_account = "douglarek"
 
 ["dev-go/staticcheck"]
 source = "github"
 github = "dominikh/go-tools"
 use_latest_release = true
-github_account = "douglarek"
 
 ["dev-java/google-java-format"]
 source = "github"
@@ -1167,7 +1160,6 @@ gitea = "gitea/tea"
 host = "gitea.com"
 use_max_tag = true
 prefix = "v"
-github_account = "douglarek"
 
 ["dev-util/grok-build-bin"]
 source = "regex"
@@ -1242,7 +1234,7 @@ autobump = true
 source = "github"
 github = "openSUSE/osc"
 use_latest_tag = true
-github_account = ["douglarek", "gouwazi", "peeweep"]
+github_account = ["gouwazi", "peeweep"]
 autobump = true
 
 ["dev-util/pack-cli"]
@@ -1270,7 +1262,6 @@ source = "github"
 github = "badlogic/pi-mono"
 use_latest_release = true
 prefix = "v"
-github_account = "douglarek"
 autobump = true
 
 ["dev-util/reasonix-bin"]
@@ -1883,7 +1874,6 @@ source = "github"
 github = "cilium/pwru"
 use_latest_release = true
 prefix = "v"
-github_account = "douglarek"
 
 ["net-analyzer/realitlscanner"]
 source = "github"
@@ -1955,7 +1945,6 @@ source = "github"
 github = "oven-sh/bun"
 use_latest_release = true
 prefix = "bun-v"
-github_account = "douglarek"
 autobump = true
 
 # live package only
