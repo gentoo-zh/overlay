@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-03 11:41:40 CST)
+(The last generation time: 2026-08-03 11:45:30 CST)
 
 ### Packages
 
@@ -18,7 +18,7 @@
  app-admin/1password                                   | 8.12.30            |            | https://1password.com                                                      | Password manager and secure wallet
    acct-group/onepassword                              | 0-r1               |  D, RD     |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/chezmoi                                     | 2.71.1             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
+ app-admin/chezmoi                                     | 2.72.0             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi-bin                                 | 2.71.0             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -847,7 +847,7 @@
                                                        | 9999               |            |                                                                            |
        app-alternatives/v2ray-geoip                    | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geoip
        app-alternatives/v2ray-geosite                  | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geosite
-     net-proxy/v2ray                                   | 5.51.2             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
+     net-proxy/v2ray                                   | 5.52.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
      net-proxy/v2ray-bin                               | 5.47.0             | RD         | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
    net-proxy/trojan-go-fork                            | 2026.02.15         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
