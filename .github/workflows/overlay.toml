@@ -2226,6 +2226,7 @@ github = "MetaCubeX/mihomo"
 use_latest_release = true
 prefix = "v"
 github_account = ["st0nie", "peeweep"]
+autobump = true
 
 ["net-proxy/naiveproxy-bin"]
 source = "github"
