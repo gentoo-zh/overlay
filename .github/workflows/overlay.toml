@@ -1127,8 +1127,6 @@ github = "vector-of-bool/cmrc"
 use_latest_release = true
 github_account = "peeweep"
 
-# live package only
-#["dev-util/codewhale-bin"]
 
 ["dev-util/codex"]
 source = "github"
