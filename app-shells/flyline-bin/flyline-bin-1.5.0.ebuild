@@ -10,12 +10,16 @@ SRC_URI="
 		https://github.com/HalFrgrd/flyline/releases/download/v${PV}/libflyline-v${PV}-x86_64-unknown-linux-gnu.tar.gz
 			-> ${P}-amd64.tar.gz
 	)
+	arm64? (
+		https://github.com/HalFrgrd/flyline/releases/download/v${PV}/libflyline-v${PV}-aarch64-unknown-linux-gnu.tar.gz
+			-> ${P}-arm64.tar.gz
+	)
 "
 S="${WORKDIR}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 RDEPEND="
 	>=app-shells/bash-4.4:0[plugins]
