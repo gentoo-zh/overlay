@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-04 13:50:51 CST)
+(The last generation time: 2026-08-04 14:00:52 CST)
 
 ### Packages
 
@@ -269,8 +269,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/blesh                                      | 9999               |            | https://github.com/akinomyoga/ble.sh                                       | A line editor written in pure Bash with enhanced features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-shells/flyline-bin                                | 1.3.0              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
-                                                       | 1.4.0              |            |                                                                            |
+ app-shells/flyline-bin                                | 1.5.0              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/gentoo-fish-completion                     | 0.0.3              |            | https://github.com/douglarek/gentoo-fish-completion                        | Gentoo specific fish completion support (ported from gentoo-zsh-completions)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -726,7 +725,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/another-redis-desktop-manager-bin            | 1.7.2              |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/apifox                                       | 2.8.40             |            | https://apifox.com/                                                        | API 文档、API 调试、API Mock、API 自动化测试
+ net-misc/apifox                                       | 2.8.41             |            | https://apifox.com/                                                        | API 文档、API 调试、API Mock、API 自动化测试
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidunetdisk                                 | 8.5.2              |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
                                                        | 8.5.2-r1           |            |                                                                            |
