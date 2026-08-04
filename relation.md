@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-04 19:52:31 CST)
+(The last generation time: 2026-08-05 00:34:15 CST)
 
 ### Packages
 
@@ -490,9 +490,9 @@
                                                        | 1.21.6             |            |                                                                            |
                                                        | 1.22.6             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-arcade/osu-lazer-bin                            | 2026.711.0         |            | https://osu.ppy.sh/                                                        | A free-to-win rhythm game. Rhythm is just a click away!
-                                                       | 2026.726.0         |            |                                                                            |
+ games-arcade/osu-lazer-bin                            | 2026.726.0         |            | https://osu.ppy.sh/                                                        | A free-to-win rhythm game. Rhythm is just a click away!
                                                        | 2026.731.0         |            |                                                                            |
+                                                       | 2026.804.2         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-emulation/onscripter-yuri                       | 0.7.6              |            | https://github.com/YuriSizuku/OnscripterYuri                               | An enhancement ONScripter project porting to many platforms, especially web
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
