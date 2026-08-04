@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-04 19:30:23 CST)
+(The last generation time: 2026-08-04 19:31:31 CST)
 
 ### Packages
 
@@ -315,7 +315,7 @@
  dev-debug/lldb-mi                                     | 0.0.1              |            | https://github.com/lldb-tools/lldb-mi                                      | LLDB Machine Interface Driver
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-embedded/at32workbench                            | 1.2.04             |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
+ dev-embedded/at32workbench                            | 1.2.05             |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/gotests                                        | 1.9.0              |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
