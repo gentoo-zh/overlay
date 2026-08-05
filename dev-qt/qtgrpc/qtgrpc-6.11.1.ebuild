@@ -11,6 +11,8 @@ if [[ ${QT6_BUILD_TYPE} == release ]]; then
 	KEYWORDS="~amd64"
 fi
 
+RESTRICT="bindist"
+
 RDEPEND="
 	~dev-qt/qtbase-${PV}:6
 	~dev-qt/qtdeclarative-${PV}:6
