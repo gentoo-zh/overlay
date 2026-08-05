@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-05 07:03:15 CST)
+(The last generation time: 2026-08-05 10:08:37 CST)
 
 ### Packages
 
@@ -479,7 +479,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/gitoxide                                      | 0.56.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/rebased-bin                                   | 1.1.9              |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
+ dev-vcs/rebased-bin                                   | 1.1.10             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/sourcegit-bin                                 | 2026.15            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.16            |            |                                                                            |
@@ -620,7 +620,7 @@
      dev-python/fluent-syntax                          | 0.19.0             | RD         | https://github.com/projectfluent/python-fluent                             | Parser and serializer for Fluent localization files
    dev-python/janus                                    | 2.0.0              | RD         | https://github.com/aio-libs/janus                                          | Mixed sync-async queue to interoperate between asyncio tasks and classic threads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/go-musicfox                               | 5.0.1              |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
+ media-sound/go-musicfox                               | 5.0.2              |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/harmonoid                                 | 0.3.32             |            | https://harmonoid.com/                                                     | Plays & manages your music library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
