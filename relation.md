@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-05 21:05:50 CST)
+(The last generation time: 2026-08-05 21:33:42 CST)
 
 ### Packages
 
@@ -73,7 +73,7 @@
  app-editors/neovim-bin                                | 9999               |            | https://neovim.io                                                          | Vim-fork focused on extensibility and agility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/typora                                    | 0.11.18            |            | https://typora.io                                                          | Typora will give you a seamless experience as both a reader and a writer
-                                                       | 1.14.8             |            |                                                                            |
+                                                       | 1.14.9             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/void-editor                               | 1.2.1.25105        |            | https://voideditor.com                                                     | Void Editor - AI Code Editor
                                                        | 1.99.30034         |            |                                                                            |
@@ -311,6 +311,7 @@
  dev-cpp/nameof                                        | 0.10.6             |            | https://github.com/Neargye/nameof                                          | Nameof operator for modern C++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/tgbot-cpp                                     | 1.11               |            | https://github.com/reo7sp/tgbot-cpp                                        | C++ library for Telegram bot API
+                                                       | 1.12               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-debug/lldb-mi                                     | 0.0.1              |            | https://github.com/lldb-tools/lldb-mi                                      | LLDB Machine Interface Driver
                                                        | 9999               |            |                                                                            |
