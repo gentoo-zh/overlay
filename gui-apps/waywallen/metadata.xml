@@ -10,7 +10,6 @@
 	</upstream>
 	<use>
 		<flag name="ui">Build Qt QML UI</flag>
-		<flag name="mpv">Build the libmpv+EGL/GBM video plugin</flag>
 		<flag name="pipewire">Build plugins with pipewire (not pulse)</flag>
 		<flag name="wallhaven">Install the Wallhaven source plugin</flag>
 	</use>

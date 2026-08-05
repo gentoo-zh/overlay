@@ -16,11 +16,11 @@ DESCRIPTION="A dynamic wallpaper solution for Linux desktops"
 HOMEPAGE="https://github.com/waywallen/waywallen"
 
 VMA_TAG="3.4.0"
-RSTD_COMMIT="bf5f855ddb1b84390306e0913b89149ac72a3510"
-VVK_COMMIT="8fcfd34b43a13ade515f029b0b4209bd3684645f"
-WAVSEN_COMMIT="e49fc62fdc1b57abeabb643daa6ebab96fb3821f"
-NCREQUEST_COMMIT="37d3c588fb1307dd6c40fbc8681790b45eb5402a"
-QEXTRA_COMMIT="2106172c8c55693248661f5ddfc0623ff489285d"
+RSTD_COMMIT="c697a4b08cbb9183f78c18915f59c8f72dac5d14"
+VVK_COMMIT="27114b7e06cfb0c099ef38544d3f4c653f9e71a2"
+WAVSEN_COMMIT="91817a146b3b386809ae89b65533f6a57f0dcdf7"
+NCREQUEST_COMMIT="8d703215bc9154618bc84d2c8517ff7b264c93f3"
+QEXTRA_COMMIT="37724d1fd44fc013e938652e2fcb25897be10e63"
 
 SRC_URI="
 	https://github.com/waywallen/waywallen/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
@@ -41,7 +41,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64"
 
-IUSE="+ui mpv pipewire vaapi +wallhaven"
+IUSE="+ui pipewire vaapi +wallhaven"
 
 RDEPEND="
 	media-plugins/waywallen-display
@@ -62,7 +62,6 @@ RDEPEND="
 		dev-qt/qtgrpc:6
 		dev-qt/qtwebsockets:6
 	)
-	mpv? ( media-video/mpv )
 	pipewire? ( media-video/pipewire )
 	!pipewire? ( media-libs/libpulse )
 	vaapi? ( media-libs/libva )
@@ -119,7 +118,6 @@ src_configure() {
 		-DFETCHCONTENT_SOURCE_DIR_VVK="${WORKDIR}/vvk-${VVK_COMMIT}"
 		-DFETCHCONTENT_SOURCE_DIR_WAVSEN="${WORKDIR}/wavsen-${WAVSEN_COMMIT}"
 		-DWAYWALLEN_BUILD_UI="$(usex ui)"
-		-DWAYWALLEN_BUILD_MPV_PLUGIN="$(usex mpv)"
 		-DWAYWALLEN_INSTALL_WALLHAVEN_PLUGIN="$(usex wallhaven)"
 		-DWAVSEN_AUDIO_BACKEND="$(usex pipewire pipewire pulse)"
 		-DWAVSEM_USE_VAAPI="$(usex vaapi)"
