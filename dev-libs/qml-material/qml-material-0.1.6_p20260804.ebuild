@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake
 
-MY_PV="628f580b60f8e7195447ec9e27dae5cce5b0fcbc"
+MY_PV="00cef02036d6de4b8d7017e786bbe970c09e8441"
 
 DESCRIPTION="A library of Qml implementing Google's Material Design"
 HOMEPAGE="https://github.com/hypengw/QmlMaterial"
