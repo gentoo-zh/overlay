@@ -26,10 +26,11 @@ REQUIRED_USE="
 "
 
 RDEPEND="
-	dev-libs/icu
-	virtual/zlib
-	media-video/ffmpeg
 	dev-libs/glib
+	dev-libs/icu
+	media-video/ffmpeg
+	sys-devel/gettext
+	virtual/zlib
 	egl? (
 		media-libs/libglvnd
 		media-libs/mesa
