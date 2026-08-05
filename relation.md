@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-05 13:06:14 CST)
+(The last generation time: 2026-08-05 13:07:18 CST)
 
 ### Packages
 
@@ -914,6 +914,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-boot/ventoy-bin                                   | 1.1.17             |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ sys-boot/zfsbootmenu                                  | 3.1.0              |            | https://zfsbootmenu.org                                                    | ZFS bootloader for root-on-ZFS systems
+                                                       | 9999               |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/ltfs                                           | 9999               |            | https://github.com/LinearTapeFileSystem/ltfs                               | LTFS for LTO tapes
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/spadfs-utils                                   | 1.0.18             |            | http://www.jikos.cz/~mikulas/spadfs/                                       | Filesystem Tools for SpadFS
@@ -933,7 +936,7 @@
  virtual/dist-kernel                                   | 7.1.6-r100         |            |                                                                            | Virtual to depend on any Distribution Kernel
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
-   sys-kernel/cachyos-sources                          | 7.1.5              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches
+   sys-kernel/cachyos-sources                          | 7.1.6              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches
    sys-kernel/liquorix-sources                         | 6.4.12             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 6.6.8              |            |                                                                            |
                                                        | 7.0.14-r2          |            |                                                                            |
