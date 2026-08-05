@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-05 23:54:21 CST)
+(The last generation time: 2026-08-06 00:57:23 CST)
 
 ### Packages
 
@@ -633,7 +633,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/netease-cloud-music-gtk                   | 2.5.3              |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/open-orpheus-bin                          | 0.16.1             |            | https://github.com/YUCLing/open-orpheus                                    | An open-source implementation of Netease Cloud Music's Orpheus browser host
+ media-sound/open-orpheus-bin                          | 0.16.2             |            | https://github.com/YUCLing/open-orpheus                                    | An open-source implementation of Netease Cloud Music's Orpheus browser host
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/qqmusic                                   | 1.1.8              |            | https://y.qq.com/                                                          | Tencent QQ Music, converted from .deb package
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
