@@ -82,6 +82,13 @@ url = "https://proton.me/download/authenticator/linux/version.json"
 regex = '"Version": "([\d.]+)"'
 github_account = "xz-dev"
 
+["app-admin/qm"]
+source = "github"
+github = "yc-software/qm"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 ["app-admin/rbw"]
 source = "github"
 github = "doy/rbw"

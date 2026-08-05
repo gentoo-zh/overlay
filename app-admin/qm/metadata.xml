@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>dev@wangxianggang.com</email>
+		<name>Xianggang Wang</name>
+	</maintainer>
+	<longdescription>
+		QM provides isolated workspaces for teams using AI agents. This package
+		contains the CLI that creates and manages deployments on Docker, Fly.io,
+		and AWS.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">yc-software/qm</remote-id>
+	</upstream>
+</pkgmetadata>
