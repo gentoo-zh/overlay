@@ -1,0 +1,40 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 917e713..16016ef 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -390,9 +390,8 @@ if(WAYWALLEN_DISPLAY_PLUGIN_QML)
+             VERBATIM)
+         list(APPEND _ww_kde_mo_files "${_mo}")
+         install(FILES "${_mo}"
+-            DESTINATION "org.waywallen.kde/contents/locale/${_lang}/LC_MESSAGES"
+-            COMPONENT kde_extension
+-            EXCLUDE_FROM_ALL)
++            DESTINATION "${CMAKE_INSTALL_DATADIR}/plasma/wallpapers/org.waywallen.kde/contents/locale/${_lang}/LC_MESSAGES"
++            COMPONENT kde_extension)
+         install(FILES "${_mo}"
+             DESTINATION "${CMAKE_INSTALL_LOCALEDIR}/${_lang}/LC_MESSAGES")
+     endforeach()
+@@ -402,9 +401,8 @@ if(WAYWALLEN_DISPLAY_PLUGIN_QML)
+     # `org.waywallen.kde/{metadata.json,contents/...}` so it can be installed
+     # via `kpackagetool6 -i`.
+     install(DIRECTORY extensions/kde/package/
+-        DESTINATION org.waywallen.kde
++        DESTINATION "${CMAKE_INSTALL_DATADIR}/plasma/wallpapers/org.waywallen.kde"
+         COMPONENT kde_extension
+-        EXCLUDE_FROM_ALL
+         PATTERN "Wrapper" EXCLUDE)
+ 
+     if(WAYWALLEN_DISPLAY_QML_URI MATCHES "Embed")
+@@ -415,10 +413,9 @@ if(WAYWALLEN_DISPLAY_PLUGIN_QML)
+     foreach(_ww_kde_wrapper IN ITEMS PluginDisplay PluginInfo)
+         install(FILES
+             "${CMAKE_CURRENT_SOURCE_DIR}/extensions/kde/package/contents/ui/Wrapper/${_ww_kde_wrapper}${_ww_kde_wrapper_suffix}.qml"
+-            DESTINATION org.waywallen.kde/contents/ui/Plugin
++            DESTINATION "${CMAKE_INSTALL_DATADIR}/plasma/wallpapers/org.waywallen.kde/contents/ui/Plugin"
+             RENAME "${_ww_kde_wrapper}.qml"
+-            COMPONENT kde_extension
+-            EXCLUDE_FROM_ALL)
++            COMPONENT kde_extension)
+     endforeach()
+ 
+     list(APPEND CPACK_COMPONENTS_ALL kde_extension)

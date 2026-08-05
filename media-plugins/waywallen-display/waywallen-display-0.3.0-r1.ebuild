@@ -51,9 +51,13 @@ BDEPEND="
 	layer? ( ${RUST_DEPEND} )
 "
 
+PATCHES=(
+	"${FILESDIR}/${PN}-0.3.0-install-to-system.patch"
+)
+
 src_unpack() {
 	default
-	cargo_src_unpack
+	use layer && cargo_src_unpack
 }
 
 src_configure() {
@@ -84,8 +88,4 @@ src_compile() {
 src_install() {
 	cmake_src_install
 	use layer && cargo_src_install --bin waywallen-layer-shell
-	if use plasma; then
-		insinto /usr/share/plasma/wallpapers/org.waywallen.kde
-		doins -r extensions/kde/package/*
-	fi
 }
