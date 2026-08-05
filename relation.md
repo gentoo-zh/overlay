@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-05 13:07:18 CST)
+(The last generation time: 2026-08-05 15:47:47 CST)
 
 ### Packages
 
@@ -581,12 +581,12 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/bambustudio-bin                             | 02.07.01.62        |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/open-wallpaper-engine                       | 0.2.0_p1           |            | https://github.com/waywallen/open-wallpaper-engine                         | A dynamic wallpaper solution for Linux desktops
-   gui-apps/waywallen                                  | 0.2.6              |  D, RD     | https://github.com/waywallen/waywallen                                     | A dynamic wallpaper solution for Linux desktops
-     dev-libs/qml-material                             | 0.1.6_p20260725    |  D, RD     | https://github.com/hypengw/QmlMaterial                                     | A library of Qml implementing Google's Material Design
+ media-gfx/open-wallpaper-engine                       | 0.2.1              |            | https://github.com/waywallen/open-wallpaper-engine                         | A dynamic wallpaper solution for Linux desktops
+   gui-apps/waywallen                                  | 0.3.0              |  D, RD     | https://github.com/waywallen/waywallen                                     | A dynamic wallpaper solution for Linux desktops
+     dev-libs/qml-material                             | 0.1.6_p20260804    |  D, RD     | https://github.com/hypengw/QmlMaterial                                     | A library of Qml implementing Google's Material Design
                                                        | 9999               |            |                                                                            |
      dev-qt/qtgrpc                                     | 6.11.1             |  D, RD     |                                                                            | Qt GRPC and Protobuf generator and bindings
-     media-plugins/waywallen-display                   | 0.2.9              |  D, RD     | https://github.com/waywallen/waywallen-display                             | Desktop integration for the waywallen wallpaper daemon
+     media-plugins/waywallen-display                   | 0.3.0              |  D, RD     | https://github.com/waywallen/waywallen-display                             | Desktop integration for the waywallen wallpaper daemon
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/scangearmp                                  | 2.4.10-r1          |            | https://www.canon.com                                                      | Driver and utility package for Canon scanners
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
