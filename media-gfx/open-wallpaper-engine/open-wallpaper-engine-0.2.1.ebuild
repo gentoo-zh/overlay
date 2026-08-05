@@ -13,13 +13,13 @@ HOMEPAGE="https://github.com/waywallen/open-wallpaper-engine"
 EIGEN_TAG="5.0.1"
 SPIRV_REFLECT_TAG="1.4.321.0"
 VMA_TAG="3.4.0"
-RSTD_COMMIT="bf5f855ddb1b84390306e0913b89149ac72a3510"
-VVK_COMMIT="8fcfd34b43a13ade515f029b0b4209bd3684645f"
-WAVSEN_COMMIT="e49fc62fdc1b57abeabb643daa6ebab96fb3821f"
+RSTD_COMMIT="c697a4b08cbb9183f78c18915f59c8f72dac5d14"
+VVK_COMMIT="27114b7e06cfb0c099ef38544d3f4c653f9e71a2"
+WAVSEN_COMMIT="91817a146b3b386809ae89b65533f6a57f0dcdf7"
 CEF_FILENAME="cef_binary_149.0.4+g2f1bfd8+chromium-149.0.7827.156_linux64_minimal"
 
 SRC_URI="
-	https://github.com/waywallen/open-wallpaper-engine/archive/refs/tags/v${PV/_p1/-fix}.tar.gz -> ${P}.tar.gz
+	https://github.com/waywallen/open-wallpaper-engine/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 	https://gitlab.com/libeigen/eigen/-/archive/${EIGEN_TAG}/eigen-${EIGEN_TAG}.tar.bz2
 	https://github.com/KhronosGroup/SPIRV-Reflect/archive/vulkan-sdk-${SPIRV_REFLECT_TAG}.tar.gz
 		-> SPIRV-Reflect-${SPIRV_REFLECT_TAG}.tar.gz
@@ -30,8 +30,6 @@ SRC_URI="
 	https://github.com/hypengw/wavsen/archive/${WAVSEN_COMMIT}.tar.gz -> wavsen-${WAVSEN_COMMIT}.tar.gz
 	web? ( https://cef-builds.spotifycdn.com/${CEF_FILENAME}.tar.bz2 )
 "
-
-S="${WORKDIR}/${P/_p1/-fix}"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -72,7 +70,7 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}/${PN}-0.2.0-use-system-depends.patch"
+	"${FILESDIR}/${PN}-0.2.1-use-system-depends.patch"
 	"${FILESDIR}/${PN}-0.1.9-fix-waywallen-plugin-install-path.patch"
 	"${FILESDIR}/${PN}-0.1.9-disable-viewer-default.patch"
 )
