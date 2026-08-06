@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-06 22:33:40 CST)
+(The last generation time: 2026-08-07 07:18:44 CST)
 
 ### Packages
 
@@ -441,9 +441,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-cli-bin                                 | 1.49.0             |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kimi-code-bin                                | 0.33.0             |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
+ dev-util/kimi-code-bin                                | 0.34.0             |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kiro-cli                                     | 2.16.1             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
+ dev-util/kiro-cli                                     | 2.16.2             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.2-r1           |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -969,7 +969,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/brave-bin                                  | 1.93.129           |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/zen-browser-bin                            | 1.21.10b           |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
+ www-client/zen-browser-bin                            | 1.21.11b           |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/darkhttpd                                 | 1.17               |            | https://unix4lyfe.org/darkhttpd/                                           | A small, static webserver
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
