@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-06 10:38:45 CST)
+(The last generation time: 2026-08-06 11:18:49 CST)
 
 ### Packages
 
@@ -286,6 +286,7 @@
                                                        | 26.5.2             |            |                                                                            |
                                                        | 26.6.1             |            |                                                                            |
                                                        | 26.6.2             |            |                                                                            |
+                                                       | 26.8.0             |            |                                                                            |
    app-arch/libzim                                     | 9.5.1              |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
                                                        | 9.8.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
