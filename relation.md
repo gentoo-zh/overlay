@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-06 20:11:16 CST)
+(The last generation time: 2026-08-06 20:44:06 CST)
 
 ### Packages
 
@@ -675,7 +675,7 @@
  net-analyzer/cfspeedtest-bin                          | 2.2.1              |            | https://github.com/code-inflation/cfspeedtest                              | Unofficial CLI for speed.cloudflare.com
                                                        | 2.2.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-analyzer/dstp                                     | 0.4.23             |            | https://github.com/ycd/dstp                                                | Run common networking tests against any site
+ net-analyzer/dstp                                     | 0.4.23-r1          |            | https://github.com/ycd/dstp                                                | Run common networking tests against any site
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/dstp-bin                                 | 0.4.23             |            | https://github.com/ycd/dstp                                                | Run common networking tests against any site
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
