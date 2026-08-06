@@ -1868,6 +1868,9 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
+# duplicate source/binary package
+# ["net-analyzer/dstp-bin"]
+
 # dead upstream
 # ["net-analyzer/nali"]
 
