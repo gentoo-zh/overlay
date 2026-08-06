@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-06 12:06:32 CST)
+(The last generation time: 2026-08-06 18:47:54 CST)
 
 ### Packages
 
@@ -60,7 +60,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/appflowy-bin                              | 0.13.0             |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/cursor                                    | 3.14.27            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
+ app-editors/cursor                                    | 3.15.6             |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/edit                                      | 2.0.0              |            | https://github.com/microsoft/edit                                          | Microsoft edit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -775,7 +775,7 @@
                                                        | 1.2.0              |            |                                                                            |
                                                        | 1.3.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/reframe                                      | 1.19.1             |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
+ net-misc/reframe                                      | 1.20.0             |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                  |  D, RD     |                                                                            | group for reframe
    acct-user/reframe                                   | 0                  |  D, RD     |                                                                            | user for reframe
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -828,7 +828,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.8.94             |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/hysteria                                    | 2.11.0             |            | https://github.com/apernet/hysteria                                        | A powerful, lightning fast and censorship resistant proxy
+ net-proxy/hysteria                                    | 2.12.0             |            | https://github.com/apernet/hysteria                                        | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
    acct-user/hysteria                                  | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
