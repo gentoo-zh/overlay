@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-06 19:01:09 CST)
+(The last generation time: 2026-08-06 20:11:16 CST)
 
 ### Packages
 
@@ -456,7 +456,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pack-cli-bin                                 | 0.37.0             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pi-coding-agent-bin                          | 0.83.0             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
+ dev-util/pi-coding-agent-bin                          | 0.84.0             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.20.0             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
