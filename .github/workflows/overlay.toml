@@ -1861,6 +1861,13 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
+["net-analyzer/dstp"]
+source = "github"
+github = "ycd/dstp"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 # dead upstream
 # ["net-analyzer/nali"]
 
@@ -2707,4 +2714,3 @@ source = "github"
 github = "hyprwm/Hypr"
 use_latest_release = true
 github_account = ["Goldsrc233", "gouwazi"]
-

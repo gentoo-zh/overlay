@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<name>Xianggang Wang</name>
+		<email>dev@wangxianggang.com</email>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">ycd/dstp</remote-id>
+	</upstream>
+</pkgmetadata>
