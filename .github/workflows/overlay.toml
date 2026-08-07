@@ -2516,6 +2516,11 @@ from_pattern = "cachyos-([0-9.]+)-[0-9]+"
 to_pattern = "\\1"
 github_account = ["blackteahamburger", "Zakkaus", "locez"]
 
+# gentoo-cjk-sources follows sys-kernel/gentoo-sources in ::gentoo, which carries
+# several kernel branches at the same time, so one tracked version cannot describe
+# it and nvchecker has nothing useful to report.
+# ["sys-kernel/gentoo-cjk-sources"]
+
 ["sys-kernel/liquorix-sources"]
 source = "github"
 github = "zen-kernel/zen-kernel"
