@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-07 14:09:54 CST)
+(The last generation time: 2026-08-07 14:39:04 CST)
 
 ### Packages
 
@@ -235,7 +235,7 @@
  app-misc/openclaude                                   | 0.13.0             |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
                                                        | 0.27.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.21.6             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.21.7             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.14               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
                                                        | 1.15               |            |                                                                            |
@@ -428,7 +428,7 @@
  dev-util/fvm                                          | 4.1.2              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
    dev-lang/dart                                       | 3.12.2             |  D, RD     | https://dart.dev                                                           | The Dart SDK
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/gemini-cli                                   | 0.54.0             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
+ dev-util/gemini-cli                                   | 0.54.4             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gitea-cli                                    | 0.15.1             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
