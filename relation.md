@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-07 19:16:28 CST)
+(The last generation time: 2026-08-07 23:26:26 CST)
 
 ### Packages
 
@@ -904,7 +904,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/openfpgaloader                        | 1.1.1              |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-mathematics/rstudio-desktop-bin                   | 2026.07.0_p139     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
+ sci-mathematics/rstudio-desktop-bin                   | 2026.07.1_p147     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-ml/llama-cpp                                      | 0_pre10054         |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
                                                        | 9999               |            |                                                                            |
