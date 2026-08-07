@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-07 15:13:50 CST)
+(The last generation time: 2026-08-07 15:29:01 CST)
 
 ### Packages
 
@@ -182,8 +182,7 @@
                                                        | 4.4.7.28397        |            |                                                                            |
                                                        | 5.2.5.32528        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/bilihud                                      | 9999               |            | https://github.com/locez/bilihud                                           | Bilibili danmaku overlay for fullscreen games
-   dev-python/browser-cookie3                          | 0.20.1             | RD         | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
+ app-misc/bilihud                                      | 9999               |            | https://github.com/locez/bilihud                                           | B站弹幕阅读器 - 一个可以在游戏全屏时显示弹幕的Qt应用程序
    dev-python/pure-protobuf                            | 3.1.5              | RD         | https://github.com/eigenein/protobuf                                       | A pure python implementation of google protobuf
    dev-python/qasync                                   | 0.28.0             | RD         | https://github.com/CabbageDevelopment/qasync                               | Implementation of the asyncio (PEP 3156) event-loop with Qt
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -350,6 +349,8 @@
  dev-python/adafruit-board-toolkit                     | 1.1.2              |            | https://github.com/adafruit/Adafruit_Board_Toolkit/                        | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/archspec                                   | 0.2.6              |            | https://github.com/archspec/archspec                                       | A library for detecting, labeling, and reasoning about microarchitectures
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/conda                                      | 26.7.0             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0             |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
