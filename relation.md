@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-08 00:17:34 CST)
+(The last generation time: 2026-08-08 02:18:27 CST)
 
 ### Packages
 
@@ -938,6 +938,9 @@
  sys-fs/ssdfs-tools                                    | 4.56               |            | https://github.com/dubeyko/ssdfs-tools                                     | userspace tools for SSDFS
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ sys-kernel/gentoo-cjk-sources                         | 6.18.43            |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 7.1.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 38                 |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
                                                        | 39.2               |            |                                                                            |
