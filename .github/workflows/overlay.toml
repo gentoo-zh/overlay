@@ -2423,8 +2423,14 @@ use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
 
-# vendor download, no published version index
-#["sci-mathematics/rstudio-desktop-bin"]
+# https://www.rstudio.org/links/check_for_update?version=1.0.0&os=linux
+["sci-mathematics/rstudio-desktop-bin"]
+source = "github"
+github = "rstudio/rstudio"
+use_latest_tag = true
+from_pattern = 'v(.*)\+(.*)'
+to_pattern = '\1_p\2'
+github_account = ["zakkaus", "peeweep"]
 
 # packaged as a snapshot, upstream has no release
 #["sci-ml/llama-cpp"]
