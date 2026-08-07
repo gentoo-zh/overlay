@@ -59,25 +59,6 @@ DESTDIR="/opt/${PN}"
 
 QA_PREBUILT="*"
 
-obsidian_desktop_entry() {
-	local file="${T}/$1.desktop" name="$2" exec="$3"
-
-	cat > "${file}" <<-EOF || die
-		[Desktop Entry]
-		Type=Application
-		Name=${name}
-		Comment=${DESCRIPTION}
-		Exec=${exec} %u
-		Icon=${PN}
-		Terminal=false
-		StartupWMClass=obsidian
-		Categories=Office;
-		MimeType=x-scheme-handler/obsidian;
-	EOF
-
-	domenu "${file}"
-}
-
 pkg_setup() {
 	# chromium-2 inherits linux-info, but this binary package does not need kernel probing.
 	:
@@ -122,13 +103,35 @@ src_install() {
 		dosym -r "/usr/$(get_libdir)/libayatana-appindicator3.so" "${DESTDIR}/libappindicator3.so"
 	fi
 
-	obsidian_desktop_entry "${PN}" Obsidian obsidian
-
 	# Electron runs natively under Wayland with the Ozone platform, but that
-	# crashes on some systems, so keep the XWayland entry above as the default
-	# and offer this one alongside it. See https://bugs.gentoo.org/915899
+	# crashes on some systems, so it stays opt-in. See https://bugs.gentoo.org/915899
+	local exec="obsidian"
 	if use wayland; then
-		obsidian_desktop_entry "${PN}-wayland" "Obsidian (Wayland)" \
-			"obsidian --ozone-platform-hint=auto --enable-features=UseOzonePlatform,WaylandWindowDecorations --enable-wayland-ime"
+		exec+=" --ozone-platform-hint=auto --enable-wayland-ime"
 	fi
+
+	# The window reports WM_CLASS "md.obsidian", "md.Obsidian"; a StartupWMClass
+	# that does not match leaves the running window without this entry's icon.
+	cat > "${T}/${PN}.desktop" <<-EOF || die
+		[Desktop Entry]
+		Type=Application
+		Name=Obsidian
+		Comment=${DESCRIPTION}
+		Exec=${exec} %u
+		Icon=${PN}
+		Terminal=false
+		StartupWMClass=md.Obsidian
+		Categories=Office;
+		MimeType=x-scheme-handler/obsidian;
+	EOF
+	domenu "${T}/${PN}.desktop"
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+
+	use wayland || return 0
+
+	elog "The desktop entry starts Obsidian under native Wayland. If it crashes,"
+	elog "run 'obsidian --ozone-platform=x11' to fall back to XWayland."
 }
