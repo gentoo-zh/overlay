@@ -14,7 +14,7 @@ S="${WORKDIR}"
 LICENSE="AGPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64"
-RESTRICT="strip mirror"
+RESTRICT="strip mirror bindist"
 
 RDEPEND="
 	app-accessibility/at-spi2-core
