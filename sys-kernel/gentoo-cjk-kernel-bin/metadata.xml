@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<upstream>
+		<remote-id type="github">gentoo-zh/cjktty-patches</remote-id>
+	</upstream>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<use>
+		<flag name="cjk">Apply the cjktty patch to the source tree so modules_prepare matches the published binary</flag>
+	</use>
+</pkgmetadata>
