@@ -19,7 +19,7 @@ Use one standard for commit messages, PRs, comments, notes, and replies: precise
 
 ## Commit and PR Text
 
-- Take `pkgdev`'s final English subject verbatim as the PR title—never translate or reword it. For a package, use `category/package: summary`; a bump is `category/package: add NEW`, with `, drop OLD` only when dropping.
+- Take `pkgdev`'s final English subject verbatim as the PR title—never translate or reword it. For a package, use `category/package: summary`; a bump is `category/package: add NEW`, with `, drop OLD` only when dropping. A package's first commit is `category/package: new package, add NEW`; later versions of it drop the `new package` clause.
 - A non-package change instead names an eclass (`name.eclass:`) or the affected path or filename (`profiles:`, `licenses:`, `package.mask:`, this overlay's own `AGENTS.md:`), whatever lets a reader identify what changed.
 - The subject is one unwrapped line, at most 69 characters (GLEP 66) where the prefix permits.
 - Add a body only when the subject cannot carry the reason; use subject / blank line / body.
@@ -52,6 +52,10 @@ Reference related bugs or issues when relevant.
 ```
 
 Version-bump subjects (choose one):
+
+```text
+category/package: new package, add new_version
+```
 
 ```text
 category/package: add new_version
