@@ -193,6 +193,7 @@ Treat `master` only as an upstream-sync branch.
 
 - Before drafting, search this overlay and the main tree for the same project, former names, forks, and truly comparable packages. Identify its fixed source artifact, license, build system, runtime files, and tested arches.
 - Update `.github/workflows/overlay.toml` in the same PR for a new package tied to an independent upstream project.
+- A dist-kernel package added at a version must appear in that version's `virtual/dist-kernel-*-r100` `||` list, and a new version needs that virtual created; leaving it out makes Portage satisfy the `PDEPEND` from a provider that is listed and install a second kernel. The virtual is its own commit and lands before the provider it lists, so `pkgcheck` reports `NonexistentDeps` against that commit alone until the next one adds the package.
 - Add an active version-check table when releases are trackable, otherwise a commented `#["category/package"]` block giving the reason (live-only, synced elsewhere, or a duplicate source/binary package).
 - Packages with no independent upstream version (`virtual/*`, `acct-*`, meta) need no entry.
 - Add `files/` assets only when phases cannot generate them cleanly.
