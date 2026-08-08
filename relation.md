@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-08 10:28:21 CST)
+(The last generation time: 2026-08-08 10:30:16 CST)
 
 ### Packages
 
@@ -215,7 +215,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/copilot                                      | 1.0.78             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush                                        | 0.88.0             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
+ app-misc/crush                                        | 0.88.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.52.5             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.53.3             |            |                                                                            |
