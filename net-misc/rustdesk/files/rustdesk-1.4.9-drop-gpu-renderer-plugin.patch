@@ -1,0 +1,141 @@
+The flutter_gpu_texture_renderer plugin ships only a placeholder upstream
+LICENSE, so avoid resolving and embedding it.  It is unused on Linux anyway:
+the GPU texture renderer supports only Windows, guarded by the vram Cargo
+feature that this ebuild does not enable.
+
+--- a/flutter/lib/models/desktop_render_texture.dart
++++ b/flutter/lib/models/desktop_render_texture.dart
+@@ -1,5 +1,4 @@
+ import 'package:flutter/material.dart';
+-import 'package:flutter_gpu_texture_renderer/flutter_gpu_texture_renderer.dart';
+ import 'package:flutter_hbb/common/shared_state.dart';
+ import 'package:flutter_hbb/consts.dart';
+ import 'package:flutter_hbb/models/model.dart';
+@@ -56,63 +55,6 @@
+   }
+ }
+ 
+-class _GpuTexture {
+-  int _textureId = -1;
+-  SessionID? _sessionId;
+-  final support = bind.mainHasGpuTextureRender();
+-  bool _destroying = false;
+-  int _display = 0;
+-  int? _id;
+-  int? _output;
+-
+-  int get display => _display;
+-
+-  final gpuTextureRenderer = FlutterGpuTextureRenderer();
+-
+-  _GpuTexture();
+-
+-  create(int d, SessionID sessionId, FFI ffi) {
+-    if (support) {
+-      _sessionId = sessionId;
+-      _display = d;
+-
+-      gpuTextureRenderer.registerTexture().then((id) async {
+-        _id = id;
+-        if (id != null) {
+-          _textureId = id;
+-          ffi.textureModel.setGpuTextureId(display: d, id: id);
+-          final output = await gpuTextureRenderer.output(id);
+-          _output = output;
+-          if (output != null) {
+-            platformFFI.registerGpuTexture(sessionId, d, output);
+-          }
+-          debugPrint(
+-              "create gpu texture: peerId: ${ffi.id} display:$_display, textureId:$id, output:$output");
+-        }
+-      }, onError: (err) {
+-        debugPrint("Failed to register gpu texture:$err");
+-      });
+-    }
+-  }
+-
+-  destroy(bool unregisterTexture, FFI ffi) async {
+-    // must stop texture render, render unregistered texture cause crash
+-    if (!_destroying && support && _sessionId != null && _textureId != -1) {
+-      _destroying = true;
+-      if (unregisterTexture) {
+-        platformFFI.registerGpuTexture(_sessionId!, _display, 0);
+-        // sleep for a while to avoid the texture is used after it's unregistered.
+-        await Future.delayed(Duration(milliseconds: 100));
+-      }
+-      await gpuTextureRenderer.unregisterTexture(_textureId);
+-      _textureId = -1;
+-      _destroying = false;
+-      debugPrint(
+-          "destroy gpu texture: peerId: ${ffi.id} display:$_display, textureId:$_id, output:$_output");
+-    }
+-  }
+-}
+-
+ class _Control {
+   RxInt textureID = (-1).obs;
+ 
+@@ -143,7 +85,6 @@
+   final WeakReference<FFI> parent;
+   final Map<int, _Control> _control = {};
+   final Map<int, _PixelbufferTexture> _pixelbufferRenderTextures = {};
+-  final Map<int, _GpuTexture> _gpuRenderTextures = {};
+ 
+   TextureModel(this.parent);
+ 
+@@ -190,11 +131,6 @@
+         _pixelbufferRenderTextures[idx] = renderTexture;
+         renderTexture.create(idx, ffi.sessionId, ffi);
+       }
+-      if (!_gpuRenderTextures.containsKey(idx)) {
+-        final renderTexture = _GpuTexture();
+-        _gpuRenderTextures[idx] = renderTexture;
+-        renderTexture.create(idx, ffi.sessionId, ffi);
+-      }
+     }
+ 
+     tryRemoveTexture(int idx) {
+@@ -203,10 +139,6 @@
+         _pixelbufferRenderTextures[idx]!.destroy(true, ffi);
+         _pixelbufferRenderTextures.remove(idx);
+       }
+-      if (_gpuRenderTextures.containsKey(idx)) {
+-        _gpuRenderTextures[idx]!.destroy(true, ffi);
+-        _gpuRenderTextures.remove(idx);
+-      }
+     }
+ 
+     if (curDisplay == kAllDisplayValue) {
+@@ -230,9 +162,6 @@
+     for (final texture in _pixelbufferRenderTextures.values) {
+       await texture.destroy(closeSession, ffi);
+     }
+-    for (final texture in _gpuRenderTextures.values) {
+-      await texture.destroy(closeSession, ffi);
+-    }
+   }
+ 
+   onViewCameraPageDispose(bool closeSession) async {
+@@ -241,9 +170,6 @@
+     for (final texture in _pixelbufferRenderTextures.values) {
+       await texture.destroy(closeSession, ffi);
+     }
+-    for (final texture in _gpuRenderTextures.values) {
+-      await texture.destroy(closeSession, ffi);
+-    }
+   }
+ 
+   ensureControl(int display) {
+--- a/flutter/pubspec.yaml
++++ b/flutter/pubspec.yaml
+@@ -91,10 +91,6 @@
+       ref: 42797e0f03141dc2b585f76c64a13974508058b4
+   percent_indicator: ^4.2.2
+   dropdown_button2: ^2.0.0
+-  flutter_gpu_texture_renderer:
+-    git:
+-      url: https://github.com/rustdesk-org/flutter_gpu_texture_renderer
+-      ref: 08a471bb8ceccdd50483c81cdfa8b81b07b14b87
+   uuid: ^3.0.7
+   auto_size_text_field: ^2.2.1
+   flex_color_picker: ^3.3.0
