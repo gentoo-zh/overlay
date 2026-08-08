@@ -138,10 +138,13 @@ src_compile() {
 
 	RUSTY_V8_ARCHIVE="${DISTDIR}/rusty_v8_${RUSTY_V8_TAG}_librusty_v8_release_${rusty_v8_triple}.a.gz" \
 	RUSTY_V8_SRC_BINDING_PATH="${DISTDIR}/rusty_v8_${RUSTY_V8_TAG}_src_binding_release_${rusty_v8_triple}.rs" \
-		cargo_src_compile --package codex-cli
+		cargo_src_compile \
+			--bin codex \
+			--bin codex-code-mode-host
 }
 
 src_install() {
 	dobin "$(cargo_target_dir)/codex"
+	dobin "$(cargo_target_dir)/codex-code-mode-host"
 	einstalldocs
 }
