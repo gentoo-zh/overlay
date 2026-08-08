@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-08 10:30:16 CST)
+(The last generation time: 2026-08-08 18:11:50 CST)
 
 ### Packages
 
@@ -939,6 +939,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ sys-kernel/gentoo-cjk-kernel                          | 6.18.43            |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 7.1.7              |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.18.43            |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 7.1.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -950,7 +953,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-power/tlpui                                       | 1.10.1             |            | https://github.com/d4nj1/TLPUI                                             | A GTK user interface for TLP written in Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/dist-kernel                                   | 7.1.6-r100         |            |                                                                            | Virtual to depend on any Distribution Kernel
+ virtual/dist-kernel                                   | 6.18.43-r100       |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 7.1.6-r100         |            |                                                                            |
+                                                       | 7.1.7-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 7.1.6              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches
