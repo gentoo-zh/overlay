@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-10 07:44:48 CST)
+(The last generation time: 2026-08-10 07:45:32 CST)
 
 ### Packages
 
@@ -837,7 +837,7 @@
  net-proxy/daed                                        | 1.21.1             |            | https://github.com/daeuniverse/daed                                        | A Modern Dashboard For dae
                                                        | 1.27.0-r1          |            |                                                                            |
                                                        | 9999               |            |                                                                            |
-   sys-apps/pnpm                                       | 11.20.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
+   sys-apps/pnpm                                       | 11.21.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.8.94             |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -998,7 +998,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/miniserve                                 | 0.35.0             |            | https://github.com/svenstaro/miniserve                                     | a CLI tool to serve files and dirs over HTTP
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-servers/s-ui-bin                                  | 1.5.4              |            | https://github.com/alireza0/s-ui                                           | An advanced Web Panel • Built for SagerNet/Sing-Box
+ www-servers/s-ui-bin                                  | 1.5.5              |            | https://github.com/alireza0/s-ui                                           | An advanced Web Panel • Built for SagerNet/Sing-Box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/woof                                      | 9999               |            | https://www.home.unix-ag.org/simon/woof.html                               | an ad-hoc single file webserver
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
