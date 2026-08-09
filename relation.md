@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-09 17:57:39 CST)
+(The last generation time: 2026-08-09 18:02:34 CST)
 
 ### Packages
 
@@ -599,7 +599,7 @@
      dev-libs/qml-material                             | 0.1.6_p20260804    |  D, RD     | https://github.com/hypengw/QmlMaterial                                     | A library of Qml implementing Google's Material Design
                                                        | 9999               |            |                                                                            |
      dev-qt/qtgrpc                                     | 6.11.1             |  D, RD     |                                                                            | Qt GRPC and Protobuf generator and bindings
-     media-plugins/waywallen-display                   | 0.3.0-r1           |  D, RD     | https://github.com/waywallen/waywallen-display                             | Desktop integration for the waywallen wallpaper daemon
+     media-plugins/waywallen-display                   | 0.3.1              |  D, RD     | https://github.com/waywallen/waywallen-display                             | Desktop integration for the waywallen wallpaper daemon
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/scangearmp                                  | 2.4.10-r1          |            | https://www.canon.com                                                      | Driver and utility package for Canon scanners
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
