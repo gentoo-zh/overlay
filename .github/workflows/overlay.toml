@@ -1286,6 +1286,7 @@ source = "jq"
 url = "https://dl.reasonix.io/latest/latest.json"
 filter = '.version | ltrimstr("v")'
 github_account = "peeweep"
+autobump = true
 
 ["dev-util/reasonix-bin"]
 source = "github"
