@@ -599,6 +599,9 @@ url = "https://www.xmind.app/zen/download/linux_deb/"
 regex = 'Xmind-for-Linux-amd64bit-(.+)-.*.deb'
 github_account = "gouwazi"
 
+# packaged from a pinned main commit; tags do not track the programs database
+#["app-misc/xdg-ninja"]
+
 ["app-misc/yazi"]
 source = "github"
 github = "sxyazi/yazi"
