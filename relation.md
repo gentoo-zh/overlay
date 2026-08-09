@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-10 07:43:06 CST)
+(The last generation time: 2026-08-10 07:44:48 CST)
 
 ### Packages
 
@@ -950,8 +950,8 @@
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.18.43            |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 7.1.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-sources                         | 6.18.43            |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
-                                                       | 7.1.7              |            |                                                                            |
+ sys-kernel/gentoo-cjk-sources                         | 6.18.44            |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 7.1.8              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 38                 |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
                                                        | 39.2               |            |                                                                            |
