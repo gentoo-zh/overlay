@@ -1,3 +1,9 @@
+# jinqiang zhang <peeweep@0x0.ee> (2026-08-09)
+# gentoo-zh's virtual/dist-kernel is incompatible with ::gentoo's
+# virtual/dist-kernel, only gentoo-zh's xanmod-kernel uses it.
+# Manually unmask it if you need xanmod-kernel.
+virtual/dist-kernel
+
 # jinqiang zhang <peeweep@0x0.ee> (2026-07-31)
 # Now we have more popular agent like codex claude-code gemini-cli
 # as cli chat tool, no longer need aichat
@@ -64,4 +70,3 @@ app-misc/ccal
 # no remaining target to protect
 # Removal on 2026-08-13
 sec-policy/apparmor-profile-deepinwine
-
