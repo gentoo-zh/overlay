@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-09 01:21:40 CST)
+(The last generation time: 2026-08-09 17:49:39 CST)
 
 ### Packages
 
@@ -304,7 +304,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lemminx-bin                                  | 0.31.2             |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/readest-bin                                  | 0.11.20            |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
+ app-text/readest-bin                                  | 0.12.1             |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/easymotion                                    | 1.3                |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
                                                        | 3.0.1              |            |                                                                            |
@@ -838,7 +838,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.8.94             |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/hysteria                                    | 2.12.0             |            | https://github.com/apernet/hysteria                                        | A powerful, lightning fast and censorship resistant proxy
+ net-proxy/hysteria                                    | 2.12.1             |            | https://github.com/apernet/hysteria                                        | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
    acct-user/hysteria                                  | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
