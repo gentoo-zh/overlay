@@ -16,15 +16,18 @@ CACHYOS_RELEASE="1"
 CACHYOS_SERIES="${KV_MAJOR}.${KV_MINOR}"
 CACHYOS_SRC="cachyos-${PV}-${CACHYOS_RELEASE}"
 CACHYOS_PATCH_URI="https://raw.githubusercontent.com/CachyOS/kernel-patches/master/${CACHYOS_SERIES}"
+# The cjktty patch is named after the kernel it was ported to, not after ${PV}.
+CJKTTY_PV="7.1.7"
 EXTRAVERSION="-cachyos${CACHYOS_RELEASE}"
 KV_FULL="${PV}${EXTRAVERSION}"
 KV="${KV_FULL}"
 
-DESCRIPTION="Linux kernel sources with CachyOS patches"
+DESCRIPTION="Linux kernel sources with CachyOS patches, optionally with cjktty"
 HOMEPAGE="
 	https://cachyos.org
 	https://github.com/CachyOS/linux
 	https://github.com/CachyOS/kernel-patches
+	https://github.com/gentoo-zh/cjktty-patches
 "
 SRC_URI="
 	https://github.com/CachyOS/linux/releases/download/${CACHYOS_SRC}/${CACHYOS_SRC}.tar.gz
@@ -56,12 +59,15 @@ SRC_URI="
 	)
 	${CACHYOS_PATCH_URI}/misc/dkms-clang.patch
 		-> ${P}-dkms-clang.patch
+	cjk? (
+		https://raw.githubusercontent.com/gentoo-zh/cjktty-patches/master/v${KV_MAJOR}.x/cjktty-${CJKTTY_PV}.patch
+	)
 "
 S="${WORKDIR}/linux-${KV_FULL}"
 
 LICENSE="GPL-2"
 KEYWORDS="~amd64"
-IUSE="+bore prjc prjc-lfbmq rt thin"
+IUSE="+bore cjk prjc prjc-lfbmq rt thin"
 REQUIRED_USE="?? ( bore prjc prjc-lfbmq )"
 RDEPEND="
 	thin? (
@@ -156,6 +162,7 @@ src_prepare() {
 
 	apply_gentoo_genpatches
 	apply_cachyos_patches
+	use cjk && eapply "${DISTDIR}/cjktty-${CJKTTY_PV}.patch"
 	eapply_user
 
 	sed -i -e "s:^\(EXTRAVERSION =\).*:\1 ${EXTRAVERSION}:" \
