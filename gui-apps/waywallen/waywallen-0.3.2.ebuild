@@ -16,9 +16,9 @@ DESCRIPTION="A dynamic wallpaper solution for Linux desktops"
 HOMEPAGE="https://github.com/waywallen/waywallen"
 
 VMA_TAG="3.4.0"
-RSTD_COMMIT="c697a4b08cbb9183f78c18915f59c8f72dac5d14"
-VVK_COMMIT="b6b1cc66e3cce61307f71c5479b3a774555d3c13"
-WAVSEN_COMMIT="610b135fafbdb817b28b5ca8c50ae61db70e290c"
+RSTD_COMMIT="03b022f37aa414c22a47021d58e054d55927c6c1"
+VVK_COMMIT="867852dea22504db27559df60b74fee4c66406c7"
+WAVSEN_COMMIT="a76c68e55e24c7e87fc5dbae28ee5d3b24139724"
 NCREQUEST_COMMIT="8d703215bc9154618bc84d2c8517ff7b264c93f3"
 QEXTRA_COMMIT="37724d1fd44fc013e938652e2fcb25897be10e63"
 
@@ -39,7 +39,7 @@ SRC_URI="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="+ui pipewire vaapi +wallhaven"
 
@@ -88,10 +88,6 @@ export ZSTD_SYS_USE_PKG_CONFIG=1
 
 src_prepare() {
 	default_src_prepare
-
-	pushd "${WORKDIR}/rstd-${RSTD_COMMIT}" || die
-	eapply "${FILESDIR}/${PN}-0.3.1-rstd-fixes.patch"
-	popd || die
 
 	pushd "${WORKDIR}/wavsen-${WAVSEN_COMMIT}" || die
 	eapply "${FILESDIR}/${PN}-0.2.2-wavsen-optional-vaapi.patch"
