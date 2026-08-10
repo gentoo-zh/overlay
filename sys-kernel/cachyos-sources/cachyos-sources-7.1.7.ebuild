@@ -5,7 +5,7 @@ EAPI="8"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="9"
+K_GENPATCHES_VER="10"
 K_SECURITY_UNSUPPORTED="1"
 
 inherit check-reqs kernel-2
