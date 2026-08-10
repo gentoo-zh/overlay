@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-10 08:11:46 CST)
+(The last generation time: 2026-08-10 08:35:20 CST)
 
 ### Packages
 
@@ -279,6 +279,7 @@
  app-shells/blesh                                      | 9999               |            | https://github.com/akinomyoga/ble.sh                                       | A line editor written in pure Bash with enhanced features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/flyline-bin                                | 1.5.0              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
+                                                       | 1.6.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/gentoo-fish-completion                     | 0.0.3              |            | https://github.com/douglarek/gentoo-fish-completion                        | Gentoo specific fish completion support (ported from gentoo-zsh-completions)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -463,7 +464,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.27.3             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pack-cli                                     | 0.40.8             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
+ dev-util/pack-cli                                     | 0.40.9             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pack-cli-bin                                 | 0.37.0             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
