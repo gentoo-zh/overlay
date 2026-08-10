@@ -13,10 +13,13 @@ HOMEPAGE="https://github.com/waywallen/open-wallpaper-engine"
 EIGEN_TAG="5.0.1"
 SPIRV_REFLECT_TAG="1.4.321.0"
 VMA_TAG="3.4.0"
-RSTD_COMMIT="c697a4b08cbb9183f78c18915f59c8f72dac5d14"
-VVK_COMMIT="27114b7e06cfb0c099ef38544d3f4c653f9e71a2"
-WAVSEN_COMMIT="610b135fafbdb817b28b5ca8c50ae61db70e290c"
-CEF_FILENAME="cef_binary_149.0.4+g2f1bfd8+chromium-149.0.7827.156_linux64_minimal"
+RSTD_COMMIT="03b022f37aa414c22a47021d58e054d55927c6c1"
+VVK_COMMIT="867852dea22504db27559df60b74fee4c66406c7"
+WAVSEN_COMMIT="a76c68e55e24c7e87fc5dbae28ee5d3b24139724"
+declare -A CEF_FILENAMES=(
+	[amd64]="cef_binary_149.0.4+g2f1bfd8+chromium-149.0.7827.156_linux64_minimal"
+	[arm64]="cef_binary_149.0.4+g2f1bfd8+chromium-149.0.7827.156_linuxarm64_minimal"
+)
 
 SRC_URI="
 	https://github.com/waywallen/open-wallpaper-engine/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
@@ -28,15 +31,21 @@ SRC_URI="
 	https://github.com/litocpp/rstd/archive/${RSTD_COMMIT}.tar.gz -> rstd-${RSTD_COMMIT}.tar.gz
 	https://github.com/litocpp/vvk/archive/${VVK_COMMIT}.tar.gz -> vvk-${VVK_COMMIT}.tar.gz
 	https://github.com/hypengw/wavsen/archive/${WAVSEN_COMMIT}.tar.gz -> wavsen-${WAVSEN_COMMIT}.tar.gz
-	web? ( https://cef-builds.spotifycdn.com/${CEF_FILENAME}.tar.bz2 )
+	web? (
+		amd64? ( https://cef-builds.spotifycdn.com/${CEF_FILENAMES[amd64]}.tar.bz2 )
+		arm64? ( https://cef-builds.spotifycdn.com/${CEF_FILENAMES[arm64]}.tar.bz2 )
+	)
 "
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="+scene +web +waywallen pipewire vaapi"
-REQUIRED_USE="|| ( scene web )"
+REQUIRED_USE="
+	|| ( scene web )
+	web? ( || ( amd64 arm64 ) )
+"
 
 RDEPEND="
 	dev-libs/icu
@@ -66,6 +75,7 @@ BDEPEND="
 		llvm-core/clang:${LLVM_SLOT}=
 		llvm-core/lld:${LLVM_SLOT}=
 	')
+	>=dev-build/cmake-4.3.1
 	virtual/pkgconfig
 "
 
@@ -83,7 +93,7 @@ src_prepare() {
 	popd || die
 
 	if use web; then
-		pushd "${WORKDIR}/${CEF_FILENAME}" || die
+		pushd "${WORKDIR}/${CEF_FILENAMES[${ARCH}]}" || die
 		eapply "${FILESDIR}/${PN}-0.1.9-cef-remove-march.patch"
 		eapply "${FILESDIR}/${PN}-0.1.9-let-libcef_dll_wrapper-static.patch"
 		popd || die
@@ -112,13 +122,14 @@ src_configure() {
 		-DFETCHCONTENT_SOURCE_DIR_RSTD="${WORKDIR}/rstd-${RSTD_COMMIT}"
 		-DFETCHCONTENT_SOURCE_DIR_VVK="${WORKDIR}/vvk-${VVK_COMMIT}"
 		-DFETCHCONTENT_SOURCE_DIR_WAVSEN="${WORKDIR}/wavsen-${WAVSEN_COMMIT}"
-		-DFETCHCONTENT_SOURCE_DIR_CEF="${WORKDIR}/${CEF_FILENAME}"
 		-DBUILD_WESCENE="$(usex scene)"
 		-DBUILD_WEWEB="$(usex web)"
 		-DBUILD_WAYWALLEN="$(usex waywallen)"
 		-DWAVSEN_AUDIO_BACKEND="$(usex pipewire pipewire pulse)"
 		-DWAVSEM_USE_VAAPI="$(usex vaapi)"
 	)
+
+	use web && mycmakeargs+=( -DFETCHCONTENT_SOURCE_DIR_CEF="${WORKDIR}/${CEF_FILENAMES[${ARCH}]}" )
 
 	cmake_src_configure
 }

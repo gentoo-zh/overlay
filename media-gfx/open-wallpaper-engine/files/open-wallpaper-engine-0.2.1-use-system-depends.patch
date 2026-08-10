@@ -17,19 +17,6 @@ index 0ccc6a0..64bd14d 100644
  target_include_directories(owe-script
    PUBLIC  .. . Utils/include
    PRIVATE Utils Utils/include/Utils Script)
-diff --git a/src/Vulkan/Shader.cpp b/src/Vulkan/Shader.cpp
-index 804a0e6..6a77a4e 100644
---- a/src/Vulkan/Shader.cpp
-+++ b/src/Vulkan/Shader.cpp
-@@ -5,7 +5,7 @@ module;
- 
- #include <glslang/Public/ShaderLang.h>
- #include <glslang/Public/ResourceLimits.h>
--#include <SPIRV/GlslangToSpv.h>
-+#include <glslang/SPIRV/GlslangToSpv.h>
- 
- #include "Utils/Sha.hpp"
- module wescene.shader_compile;
 diff --git a/third_party/CMakeLists.txt b/third_party/CMakeLists.txt
 index 01f5711..f25857c 100644
 --- a/third_party/CMakeLists.txt
