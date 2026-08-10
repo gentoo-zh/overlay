@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-10 07:45:32 CST)
+(The last generation time: 2026-08-10 08:11:46 CST)
 
 ### Packages
 
@@ -471,7 +471,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.21.5             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-desktop-bin                         | 1.21.3             |            | https://reasonix.io                                                        | Reasonix desktop client
+ dev-util/reasonix-desktop-bin                         | 1.21.5             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                              | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -966,7 +966,7 @@
                                                        | 7.1.7-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
-   sys-kernel/cachyos-sources                          | 7.1.6              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches
+   sys-kernel/cachyos-sources                          | 7.1.7              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches, optionally with cjktty
    sys-kernel/liquorix-sources                         | 6.4.12             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 6.6.8              |            |                                                                            |
                                                        | 7.0.14-r2          |            |                                                                            |
