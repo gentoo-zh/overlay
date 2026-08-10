@@ -5,7 +5,7 @@ EAPI="8"
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
 # Note: to bump xanmod, check K_GENPATCHES_VER in sys-kernel/gentoo-sources
-K_GENPATCHES_VER="9"
+K_GENPATCHES_VER="11"
 
 inherit check-reqs kernel-2
 detect_version
@@ -17,7 +17,7 @@ HOMEPAGE="https://xanmod.org"
 
 XANMOD_VERSION="1"
 # The cjktty patch is named after the kernel it was ported to, not after ${PV}.
-CJKTTY_PV="7.1"
+CJKTTY_PV="7.1.7"
 XANMOD_URI="https://downloads.sourceforge.net/project/xanmod/releases/main"
 OKV="${OKV}-xanmod"
 SRC_URI="
