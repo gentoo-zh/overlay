@@ -12,20 +12,24 @@ detect_version
 detect_arch
 
 MY_P=linux-${PV%.*}
-DESCRIPTION="Full XanMod source, including the Gentoo patchset and other patch options"
+DESCRIPTION="Full XanMod source, including the Gentoo patchset, cjktty and other patches"
 HOMEPAGE="https://xanmod.org"
 
 XANMOD_VERSION="1"
+# The cjktty patch is named after the kernel it was ported to, not after ${PV}.
+CJKTTY_PV="7.1"
 XANMOD_URI="https://downloads.sourceforge.net/project/xanmod/releases/main"
 OKV="${OKV}-xanmod"
 SRC_URI="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
 	${GENPATCHES_URI}
 	${XANMOD_URI}/${PV}-xanmod${XANMOD_VERSION}/patch-${PV}-xanmod${XANMOD_VERSION}.xz
+	cjk? ( https://raw.githubusercontent.com/gentoo-zh/cjktty-patches/master/v${KV_MAJOR}.x/cjktty-${CJKTTY_PV}.patch )
 "
 S="${WORKDIR}/linux-${OKV}${XANMOD_VERSION}"
 
 KEYWORDS="~amd64"
+IUSE="cjk"
 
 pkg_pretend() {
 	CHECKREQS_DISK_BUILD="4G"
@@ -59,6 +63,7 @@ src_prepare() {
 		# genpatches
 		"${WORKDIR}"/*.patch
 	)
+	use cjk && PATCHES+=( "${DISTDIR}/cjktty-${CJKTTY_PV}.patch" )
 	default
 }
 
