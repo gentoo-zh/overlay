@@ -1739,7 +1739,7 @@ github_account = "wgjak47"
 
 ["media-sound/go-musicfox"]
 source = "github"
-github = "anhoder/go-musicfox"
+github = "go-musicfox/go-musicfox"
 use_latest_release = true
 prefix = "v"
 github_account = ["st0nie", "gouwazi"]
