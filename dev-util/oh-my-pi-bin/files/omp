@@ -1,0 +1,31 @@
+#!/bin/sh
+
+is_update_command() {
+	while [ "$#" -gt 0 ]; do
+		case $1 in
+			--profile)
+				[ "$#" -ge 2 ] || return 1
+				shift 2
+				;;
+			--profile=*)
+				shift
+				;;
+			update)
+				return 0
+				;;
+			*)
+				return 1
+				;;
+		esac
+	done
+	return 1
+}
+
+if is_update_command "$@"; then
+	printf '%s\n' \
+		'Self-update is disabled for this Portage-managed installation.' \
+		'Run emerge --update dev-util/oh-my-pi-bin as root, or contact your system administrator.' >&2
+	exit 1
+fi
+
+exec @EPREFIX@/usr/libexec/oh-my-pi/omp "$@"

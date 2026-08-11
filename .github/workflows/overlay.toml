@@ -565,6 +565,13 @@ github_account = "st0nie"
 # packaged from a pinned commit, no tag to compare
 #["app-misc/mdx_util"]
 
+["dev-util/oh-my-pi-bin"]
+source = "github"
+github = "can1357/oh-my-pi"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 ["app-misc/openclaude"]
 source = "github"
 github = "Gitlawb/openclaude"

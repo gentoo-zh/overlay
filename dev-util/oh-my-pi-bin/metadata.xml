@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>dev@wangxianggang.com</email>
+		<name>Xianggang Wang</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">can1357/oh-my-pi</remote-id>
+	</upstream>
+</pkgmetadata>
