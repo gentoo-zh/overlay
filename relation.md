@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-10 19:05:31 CST)
+(The last generation time: 2026-08-11 08:35:31 CST)
 
 ### Packages
 
@@ -213,7 +213,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.2.10             |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/copilot                                      | 1.0.78             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
+ app-misc/copilot                                      | 1.0.79             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.88.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -263,7 +263,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/notesnook-bin                              | 3.4.5              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/obsidian                                   | 1.13.4-r1          |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
+ app-office/obsidian                                   | 1.13.6             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/siyuan-bin                                 | 3.7.3              |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
