@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-11 09:57:26 CST)
+(The last generation time: 2026-08-11 09:59:37 CST)
 
 ### Packages
 
@@ -770,7 +770,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/immich-go                                    | 0.32.0             |            | https://github.com/simulot/immich-go/                                      | A immich-CLI alternative
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/localsend-bin                                | 1.17.0             |            | https://localsend.org                                                      | An open-source cross-platform alternative to AirDrop
+ net-misc/localsend-bin                                | 1.18.0             |            | https://localsend.org                                                      | An open-source cross-platform alternative to AirDrop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/motrix-next-bin                              | 3.9.6              |            | https://motrix-next.pages.dev                                              | A full-featured download manager
                                                        | 3.9.7              |            |                                                                            |
