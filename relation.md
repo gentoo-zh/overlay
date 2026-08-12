@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-11 18:27:22 CST)
+(The last generation time: 2026-08-12 14:26:11 CST)
 
 ### Packages
 
@@ -67,7 +67,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/edit                                      | 2.0.0              |            | https://github.com/microsoft/edit                                          | Microsoft edit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/kiro                                      | 1.0.288            |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
+ app-editors/kiro                                      | 1.0.293            |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/marktext-bin                              | 0.19.1             |            | https://github.com/marktext/marktext                                       | A simple and elegant markdown editor, available for Linux, macOS and Windows
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -434,7 +434,7 @@
  dev-util/fvm                                          | 4.1.2              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
    dev-lang/dart                                       | 3.12.2             |  D, RD     | https://dart.dev                                                           | The Dart SDK
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/gemini-cli                                   | 0.54.4             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
+ dev-util/gemini-cli                                   | 0.55.1             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gitea-cli                                    | 0.15.1             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
