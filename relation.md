@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-12 14:40:07 CST)
+(The last generation time: 2026-08-12 14:43:43 CST)
 
 ### Packages
 
@@ -232,7 +232,7 @@
  app-misc/mdx_util                                     | 20251029           |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.13.0             |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
-                                                       | 0.27.0             |            |                                                                            |
+                                                       | 0.28.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/qwen-code                                    | 0.21.9             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -445,7 +445,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.18.1             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/jetbrains-toolbox                            | 3.6.3.86383        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
+ dev-util/jetbrains-toolbox                            | 3.6.4.86641        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-cli-bin                                 | 1.49.0             |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
