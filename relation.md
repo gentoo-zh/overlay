@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-12 15:29:33 CST)
+(The last generation time: 2026-08-12 15:52:53 CST)
 
 ### Packages
 
@@ -162,7 +162,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-unikey                                 | 9999               |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-vinput                                 | 2.3.5              |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
+ app-i18n/fcitx-vinput                                 | 2.3.6              |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.8              |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
