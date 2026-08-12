@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-12 15:52:53 CST)
+(The last generation time: 2026-08-12 17:31:15 CST)
 
 ### Packages
 
@@ -268,7 +268,7 @@
  app-office/siyuan-bin                                 | 3.7.3              |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office                                 | 11.1.0.11719-r2    |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office is an office productivity suite, Here is the Chinese version
-                                                       | 12.1.2.26885       |            |                                                                            |
+                                                       | 12.1.2.28080       |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office365                              | 12.1.2.26885       |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office (WPS 365 edition), the Chinese office productivity suite
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
