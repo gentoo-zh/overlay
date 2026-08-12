@@ -4,23 +4,21 @@
 EAPI=8
 
 KERNEL_IUSE_GENERIC_UKI=1
+CJKTTY_PV="7.1.7"
 
-inherit kernel-build toolchain-funcs verify-sig
+inherit kernel-build toolchain-funcs verify-sig cjktty
 
 BASE_P=linux-${PV%.*}
 PATCH_PV=${PV%_p*}
-PATCHSET=linux-gentoo-patches-6.18.42
+PATCHSET=linux-gentoo-patches-7.1.6
 # https://koji.fedoraproject.org/koji/packageinfo?packageID=8
 # forked to git.gentoo.org:fork/fedora/kernel
-CONFIG_VER=6.18.12-gentoo
+CONFIG_VER=7.1.4-gentoo
 GENTOO_CONFIG_P=gentoo-kernel-config-g19
-SHA256SUM_DATE=20260806
+SHA256SUM_DATE=20260809
 # Debian kconfig commit from:
 # https://salsa.debian.org/kernel-team/linux/-/tree/debian/latest/debian/
-DEBIAN_COMMIT=b19b382f183d421a407f5d708dde1eff5009274d
-# The patch is named after the kernel it was ported to, not after ${PV}.
-CJKTTY_PV="6.18"
-
+DEBIAN_COMMIT=2cba742ab58c8ee8ca715d02c0bdbf61ecbed1cc
 DESCRIPTION="Distribution kernel with the cjktty patch for CJK text on the console"
 HOMEPAGE="
 	https://github.com/gentoo-zh/cjktty-patches
@@ -38,14 +36,11 @@ SRC_URI+="
 		https://cdn.kernel.org/pub/linux/kernel/v$(ver_cut 1).x/sha256sums.asc
 			-> linux-$(ver_cut 1).x-sha256sums-${SHA256SUM_DATE}.asc
 	)
-	cjk? (
-		https://raw.githubusercontent.com/gentoo-zh/cjktty-patches/master/v$(ver_cut 1).x/cjktty-${CJKTTY_PV}.patch
-	)
 "
 S=${WORKDIR}/${BASE_P}
 
 KEYWORDS="~amd64"
-IUSE="+cjk debug hardened"
+IUSE+=" +cjk debug hardened"
 
 BDEPEND="
 	debug? ( dev-util/pahole )
@@ -79,7 +74,7 @@ src_prepare() {
 	local patch
 	eapply "${WORKDIR}/patch-${PATCH_PV}"
 	eapply "${WORKDIR}/${PATCHSET}"
-	use cjk && eapply "${DISTDIR}/cjktty-${CJKTTY_PV}.patch"
+	cjktty_apply_patches
 
 	default
 
@@ -91,7 +86,7 @@ src_prepare() {
 
 	# prepare the default config
 	case ${ARCH} in
-	hppa | mips)
+		hppa | mips)
 			> .config || die
 		;;
 		alpha)
@@ -170,12 +165,12 @@ src_prepare() {
 		"${dist_conf_path}"/6.12+.config
 	)
 	if use cjk; then
-		# The Fedora config disables CONFIG_FONTS, and CONFIG_FONT_CJK_32x32
-		# defaults on with the empty font the patch ships.
+		local cjk32_config='# CONFIG_FONT_CJK_32x32 is not set'
+		use cjk32 && cjk32_config='CONFIG_FONT_CJK_32x32=y'
 		cat > "${T}"/cjk.config <<-EOF || die
 			CONFIG_FONTS=y
 			CONFIG_FONT_CJK_16x16=y
-			# CONFIG_FONT_CJK_32x32 is not set
+			${cjk32_config}
 		EOF
 		merge_configs+=( "${T}"/cjk.config )
 	fi

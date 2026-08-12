@@ -10,5 +10,6 @@
 	</maintainer>
 	<use>
 		<flag name="cjk">Apply the cjktty patch so the framebuffer console can display CJK text</flag>
+		<flag name="cjk32">Include the 8 MiB 32x32 CJK font data for high-resolution framebuffer consoles</flag>
 	</use>
 </pkgmetadata>
