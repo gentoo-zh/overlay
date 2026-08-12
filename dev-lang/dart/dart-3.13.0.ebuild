@@ -47,6 +47,7 @@ PATCHES=(
 	"${FILESDIR}/${PN}-3.10.2-use_lld_when_using_clang.patch"
 	"${FILESDIR}/${PN}-3.10.2-custom_flags.patch"
 	"${FILESDIR}/${PN}-3.12.2-no-werror.patch"
+	"${FILESDIR}/${PN}-3.13.0-fix-gcc-linker-plugin.patch"
 )
 
 src_prepare() {

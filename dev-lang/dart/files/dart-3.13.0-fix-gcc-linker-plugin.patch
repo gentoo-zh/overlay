@@ -1,0 +1,15 @@
+diff --git a/build/config/gcc/BUILD.gn b/build/config/gcc/BUILD.gn
+index 299e89e2f47..c3edb9cdd69 100644
+--- a/build/config/gcc/BUILD.gn
++++ b/build/config/gcc/BUILD.gn
+@@ -61,7 +61,9 @@ config("relative_paths") {
+     # superfluous for purposes of the debugging information.
+     "-no-canonical-prefixes",
+   ]
+-  ldflags = [ "-no-canonical-prefixes" ]
++  if (is_clang) {
++    ldflags = [ "-no-canonical-prefixes" ]
++  }
+ 
+   # Remove absolute paths from the debug information.
+   if (is_clang) {
