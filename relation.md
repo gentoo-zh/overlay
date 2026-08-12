@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-12 14:43:43 CST)
+(The last generation time: 2026-08-12 14:45:50 CST)
 
 ### Packages
 
@@ -57,11 +57,11 @@
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.0.20251223     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
                                                        | 0.3.0.20260416     |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.6.0              |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.7.1              |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.1.1              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/appflowy-bin                              | 0.13.1             |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
+ app-editors/appflowy-bin                              | 0.13.2             |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/cursor                                    | 3.15.6             |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
