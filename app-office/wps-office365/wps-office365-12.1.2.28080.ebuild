@@ -13,9 +13,9 @@ DESCRIPTION="WPS Office (WPS 365 edition), the Chinese office productivity suite
 HOMEPAGE="https://www.wps.cn/product/wpslinux/"
 
 SRC_URI="
-	amd64? ( https://pubwps-wps365-obs.wpscdn.cn/download/Linux/${MY_PV}/wps-office_${PV}.AK.preread.sw.365_715978_amd64.deb -> ${PN}_${PV}_amd64.deb )
-	arm64? ( https://pubwps-wps365-obs.wpscdn.cn/download/Linux/${MY_PV}/wps-office_${PV}.AK.preread.sw.365_715982_arm64.deb -> ${PN}_${PV}_arm64.deb )
-	loong? ( https://pubwps-wps365-obs.wpscdn.cn/download/Linux/${MY_PV}/wps-office_${PV}.AK.preread.sw.365_715977_loongarch64.deb -> ${PN}_${PV}_loongarch64.deb )
+	amd64? ( https://pubwps-wps365-obs.wpscdn.cn/download/Linux/${MY_PV}/wps-office_${PV}.AK.preread.sw.indep365_763371_amd64.deb -> ${PN}_${PV}_amd64.deb )
+	arm64? ( https://pubwps-wps365-obs.wpscdn.cn/download/Linux/${MY_PV}/wps-office_${PV}.AK.preread.sw.indep365_763373_arm64.deb -> ${PN}_${PV}_arm64.deb )
+	loong? ( https://pubwps-wps365-obs.wpscdn.cn/download/Linux/${MY_PV}/wps-office_${PV}.AK.preread.sw.indep365_763378_loongarch64.deb -> ${PN}_${PV}_loongarch64.deb )
 "
 
 S="${WORKDIR}"
@@ -54,6 +54,7 @@ RDEPEND="
 	media-libs/libglvnd
 	media-libs/libpulse
 	media-libs/mesa[gbm(+)]
+	arm64? ( media-libs/libva:0[X] )
 	net-print/cups
 	sys-apps/dbus
 	sys-apps/util-linux
@@ -107,11 +108,6 @@ src_prepare() {
 	# Wayland apps on KDE (per the fcitx5 docs), so do it only in these launchers.
 	sed -i -e '1a export QT_IM_MODULE="${QT_IM_MODULE:-${XMODIFIERS#@im=}}"' \
 		"${S}"/usr/bin/{et,wpp,wps,wpspdf} || die
-
-	# xiezuo.desktop (the WPS Collaboration launcher) points Exec at
-	# /opt/xiezuo/xiezuo, a separate Electron app this .deb does not ship, so the
-	# menu entry is a dead launcher. Drop it.
-	rm "${S}"/usr/share/applications/xiezuo.desktop || die
 
 	# The .desktop files list only a sub-category (Spreadsheet, WordProcessor...)
 	# with no Office main category, so menus file them under "Uncategorized".
