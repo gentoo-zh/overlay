@@ -8,15 +8,17 @@ inherit unpacker xdg
 DESCRIPTION="WPS Office is an office productivity suite, Here is the Chinese version"
 HOMEPAGE="https://www.wps.cn/product/wpslinux/"
 
-SRC_URI="https://dogfood.gnupg.uk/wps302/${PV}/amd64 -> ${PN}_${PV}_amd64.deb"
+MY_BUILD_ID="763366"
+MY_URI="https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2023/${PV##*.}"
+SRC_URI="https://wps302.wcbing.top/${MY_URI}/${PN}_${PV}.AK.preread.sw.Personal_${MY_BUILD_ID}_amd64.deb
+	-> ${PN}_${PV}_amd64.deb"
 
 S="${WORKDIR}"
 
 LICENSE="WPS-EULA"
 SLOT="0"
-# This revision is amd64-only: upstream's dogfood.gnupg.uk mirror for
-# 12.1.2.26885 only publishes an amd64 build. The older 11.1.0.11719-r2
-# revision of this package still covers arm64/loong via a different source;
+# This revision is amd64-only because upstream only publishes an amd64 build.
+# The older 11.1.0.11719-r2 revision still covers arm64/loong via another source;
 # app-office/wps-office365[-edu] also cover arm64/loong on this release line.
 KEYWORDS="~amd64"
 IUSE="systemd"
