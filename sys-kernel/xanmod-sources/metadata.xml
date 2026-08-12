@@ -3,6 +3,7 @@
 <pkgmetadata>
 	<use>
 		<flag name="cjk">Apply the cjktty patch for CJK text on the framebuffer console</flag>
+		<flag name="cjk32">Include the 8 MiB 32x32 CJK font data for high-resolution framebuffer consoles</flag>
 	</use>
 	<upstream>
 		<remote-id type="sourceforge">xanmod</remote-id>

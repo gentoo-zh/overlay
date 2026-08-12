@@ -6,8 +6,9 @@ ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
 # Note: to bump xanmod, check K_GENPATCHES_VER in sys-kernel/gentoo-sources
 K_GENPATCHES_VER="11"
+CJKTTY_PV="7.1.7"
 
-inherit check-reqs kernel-2
+inherit check-reqs kernel-2 cjktty
 detect_version
 detect_arch
 
@@ -16,20 +17,17 @@ DESCRIPTION="Full XanMod source, including the Gentoo patchset, cjktty and other
 HOMEPAGE="https://xanmod.org"
 
 XANMOD_VERSION="1"
-# The cjktty patch is named after the kernel it was ported to, not after ${PV}.
-CJKTTY_PV="7.1.7"
 XANMOD_URI="https://downloads.sourceforge.net/project/xanmod/releases/main"
 OKV="${OKV}-xanmod"
-SRC_URI="
+SRC_URI+="
 	${KERNEL_BASE_URI}/linux-${KV_MAJOR}.${KV_MINOR}.tar.xz
 	${GENPATCHES_URI}
 	${XANMOD_URI}/${PV}-xanmod${XANMOD_VERSION}/patch-${PV}-xanmod${XANMOD_VERSION}.xz
-	cjk? ( https://raw.githubusercontent.com/gentoo-zh/cjktty-patches/master/v${KV_MAJOR}.x/cjktty-${CJKTTY_PV}.patch )
 "
 S="${WORKDIR}/linux-${OKV}${XANMOD_VERSION}"
 
 KEYWORDS="~amd64"
-IUSE="cjk"
+IUSE+=" cjk"
 
 pkg_pretend() {
 	CHECKREQS_DISK_BUILD="4G"
@@ -52,7 +50,6 @@ src_unpack() {
 }
 
 src_prepare() {
-	kernel-2_src_prepare
 	rm "${S}/tools/testing/selftests/tc-testing/action-ebpf"
 	# delete linux version patches (xanmod already includes stable bump)
 	rm "${WORKDIR}"/*"${MY_P}"*.patch 2>/dev/null || :
@@ -63,8 +60,9 @@ src_prepare() {
 		# genpatches
 		"${WORKDIR}"/*.patch
 	)
-	use cjk && PATCHES+=( "${DISTDIR}/cjktty-${CJKTTY_PV}.patch" )
-	default
+	eapply "${PATCHES[@]}"
+	cjktty_apply_patches
+	eapply_user
 }
 
 pkg_postinst() {
