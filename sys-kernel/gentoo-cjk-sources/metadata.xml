@@ -10,6 +10,7 @@
 	</maintainer>
 	<use>
 		<flag name="cjk">Apply the cjktty patch so the framebuffer console can display CJK text</flag>
+		<flag name="cjk32">Include the 8 MiB 32x32 CJK font data for high-resolution framebuffer consoles</flag>
 		<flag name="experimental">Apply experimental patches; for more information, see "https://wiki.gentoo.org/wiki/Project:Kernel/Experimental".</flag>
 	</use>
 </pkgmetadata>
