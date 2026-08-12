@@ -5,23 +5,8 @@ EAPI="8"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="10"
+K_GENPATCHES_VER="11"
 K_SECURITY_UNSUPPORTED="1"
-
-inherit check-reqs kernel-2
-detect_version
-detect_arch
-
-CACHYOS_RELEASE="1"
-CACHYOS_SERIES="${KV_MAJOR}.${KV_MINOR}"
-CACHYOS_SRC="cachyos-${PV}-${CACHYOS_RELEASE}"
-CACHYOS_PATCH_URI="https://raw.githubusercontent.com/CachyOS/kernel-patches/master/${CACHYOS_SERIES}"
-# The cjktty patch is named after the kernel it was ported to, not after ${PV}.
-CJKTTY_PV="7.1.7"
-EXTRAVERSION="-cachyos${CACHYOS_RELEASE}"
-KV_FULL="${PV}${EXTRAVERSION}"
-KV="${KV_FULL}"
-
 DESCRIPTION="Linux kernel sources with CachyOS patches, optionally with cjktty"
 HOMEPAGE="
 	https://cachyos.org
@@ -29,7 +14,21 @@ HOMEPAGE="
 	https://github.com/CachyOS/kernel-patches
 	https://github.com/gentoo-zh/cjktty-patches
 "
-SRC_URI="
+CJKTTY_PV="7.1.7"
+
+inherit check-reqs kernel-2 cjktty
+detect_version
+detect_arch
+
+CACHYOS_RELEASE="1"
+CACHYOS_SERIES="${KV_MAJOR}.${KV_MINOR}"
+CACHYOS_SRC="cachyos-${PV}-${CACHYOS_RELEASE}"
+CACHYOS_PATCH_URI="https://raw.githubusercontent.com/CachyOS/kernel-patches/master/${CACHYOS_SERIES}"
+EXTRAVERSION="-cachyos${CACHYOS_RELEASE}"
+KV_FULL="${PV}${EXTRAVERSION}"
+KV="${KV_FULL}"
+
+SRC_URI+="
 	https://github.com/CachyOS/linux/releases/download/${CACHYOS_SRC}/${CACHYOS_SRC}.tar.gz
 		-> ${P}.tar.gz
 	${GENPATCHES_URI}
@@ -59,16 +58,13 @@ SRC_URI="
 	)
 	${CACHYOS_PATCH_URI}/misc/dkms-clang.patch
 		-> ${P}-dkms-clang.patch
-	cjk? (
-		https://raw.githubusercontent.com/gentoo-zh/cjktty-patches/master/v${KV_MAJOR}.x/cjktty-${CJKTTY_PV}.patch
-	)
 "
 S="${WORKDIR}/linux-${KV_FULL}"
+LICENSE+=" GPL-2"
 
-LICENSE="GPL-2"
 KEYWORDS="~amd64"
-IUSE="+bore cjk prjc prjc-lfbmq rt thin"
-REQUIRED_USE="?? ( bore prjc prjc-lfbmq )"
+IUSE+=" +bore cjk prjc prjc-lfbmq rt thin"
+REQUIRED_USE+=" ?? ( bore prjc prjc-lfbmq )"
 RDEPEND="
 	thin? (
 		llvm-core/clang
@@ -77,11 +73,10 @@ RDEPEND="
 "
 
 apply_gentoo_genpatches() {
-	local version_patch
-	version_patch=$(find "${WORKDIR}" -maxdepth 1 -type f \
-		-name "10*linux-${PV}.patch" -print -quit) || die
-	[[ -n ${version_patch} ]] ||
-		die "genpatches-${CACHYOS_SERIES}-${K_GENPATCHES_VER} is missing linux-${PV}.patch"
+	# genpatches must be the series that carries this point release, or the
+	# Gentoo fixes below were written against a different tree.
+	[[ -n $(find "${WORKDIR}" -maxdepth 1 -type f -name "10*linux-${PV}.patch" -print -quit) ]] ||
+		die "genpatches-${CACHYOS_SERIES}-${K_GENPATCHES_VER} predates ${PV}; raise K_GENPATCHES_VER"
 
 	# CachyOS already ships the full ${PV} tree, so skip genpatches stable bumps
 	# (10*_linux-*.patch). Also drop any listed fix already present in CachyOS.
@@ -162,7 +157,7 @@ src_prepare() {
 
 	apply_gentoo_genpatches
 	apply_cachyos_patches
-	use cjk && eapply "${DISTDIR}/cjktty-${CJKTTY_PV}.patch"
+	cjktty_apply_patches
 	eapply_user
 
 	sed -i -e "s:^\(EXTRAVERSION =\).*:\1 ${EXTRAVERSION}:" \
