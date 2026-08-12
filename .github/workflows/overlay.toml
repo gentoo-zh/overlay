@@ -2548,11 +2548,9 @@ to_pattern = "\\1"
 github_account = ["zozx", "gouwazi"]
 
 ["sys-kernel/mkinitcpio"]
-source = "gitlab"
-host = "gitlab.archlinux.org"
-gitlab = "archlinux/mkinitcpio/mkinitcpio"
-use_max_tag = true
-prefix = "v"
+source = "archpkg"
+archpkg = "mkinitcpio"
+strip_release = true
 
 # xanmod-kernel and xanmod-sources track the same repo (xanmod/linux) and are
 # always bumped together, so track only the source xanmod-sources.
