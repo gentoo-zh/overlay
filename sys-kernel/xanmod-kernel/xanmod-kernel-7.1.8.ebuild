@@ -4,31 +4,30 @@
 EAPI=8
 
 LLVM_COMPAT=(19 20 21 22)
-
-inherit kernel-build toolchain-funcs llvm-r2
-
-MY_P=linux-${PV%.*}
-# Note: to bump xanmod, check PATCHSET in sys-kernel/gentoo-kernel
-PATCHSET=linux-gentoo-patches-${PV}
-XV="1"
-# The cjktty patch is named after the kernel it was ported to, not after ${PV}.
-CJKTTY_PV="7.1"
-
 DESCRIPTION="XanMod kernel built with Gentoo patches and cjktty"
 HOMEPAGE="
 	https://www.kernel.org/
 	https://xanmod.org/
 "
+CJKTTY_PV="7.1.7"
+
+inherit kernel-build toolchain-funcs llvm-r2 cjktty
+
+MY_P=linux-${PV%.*}
+# Note: to bump xanmod, check PATCHSET in sys-kernel/gentoo-kernel
+PATCHSET=linux-gentoo-patches-7.1.6
+XV="1"
+
 SRC_URI+="
 	https://cdn.kernel.org/pub/linux/kernel/v$(ver_cut 1).x/${MY_P}.tar.xz
 	https://distfiles.gentoo.org/pub/proj/dist-kernel/patchsets/$(ver_cut 1-2)/${PATCHSET}.tar.xz
 	https://downloads.sourceforge.net/project/xanmod/releases/main/${PV}-xanmod1/patch-${PV}-xanmod1.xz
-	cjk? ( https://raw.githubusercontent.com/gentoo-zh/cjktty-patches/master/v$(ver_cut 1).x/cjktty-${CJKTTY_PV}.patch )"
+"
 S=${WORKDIR}/${MY_P}
+LICENSE+=" GPL-2"
 
-LICENSE="GPL-2"
 KEYWORDS="~amd64"
-IUSE="cjk clang debug"
+IUSE+=" cjk clang debug"
 
 BDEPEND="
 	clang? (
@@ -80,8 +79,9 @@ src_prepare() {
 		# genpatches
 		"${WORKDIR}/${PATCHSET}"/*.patch
 	)
-	use cjk && PATCHES+=( "${DISTDIR}/cjktty-${CJKTTY_PV}.patch" )
-	default
+	eapply "${PATCHES[@]}"
+	cjktty_apply_patches
+	eapply_user
 
 	# prepare the default config
 	case ${ARCH} in
@@ -101,11 +101,12 @@ src_prepare() {
 	)
 
 	if use cjk; then
-		# CONFIG_FONT_CJK_32x32 defaults on with the empty font the patch ships.
+		local cjk32_config='# CONFIG_FONT_CJK_32x32 is not set'
+		use cjk32 && cjk32_config='CONFIG_FONT_CJK_32x32=y'
 		cat > "${T}"/cjk.config <<-EOF || die
 			CONFIG_FONTS=y
 			CONFIG_FONT_CJK_16x16=y
-			# CONFIG_FONT_CJK_32x32 is not set
+			${cjk32_config}
 		EOF
 		merge_configs+=( "${T}"/cjk.config )
 	fi
