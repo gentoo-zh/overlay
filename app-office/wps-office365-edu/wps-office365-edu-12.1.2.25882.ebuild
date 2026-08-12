@@ -195,23 +195,12 @@ src_install() {
 
 pkg_postinst() {
 	xdg_pkg_postinst
-	elog "WPS 365 opens a sign-in dialog on first launch that has no close"
-	elog "button; press Esc to dismiss it. Unlike the 365 edition, the"
-	elog "education edition works fully without signing in."
-	elog ""
-	elog "WPS 365 首次启动会弹出登入框且无关闭按钮，按 Esc 可关闭；"
-	elog "与 365 版不同，教育版无需登入即可正常使用。"
 
 	if [[ ${PV} == "12.1.2.25882" ]]; then
-		elog ""
-		elog "In this version, switching the display language in WPS's own"
-		elog "Settings has no effect even after using its in-app restart"
-		elog "prompt: the in-app restart does not actually respawn the wps"
-		elog "process or its CEF/cloud-sync helper processes. Fully kill and"
-		elog "relaunch WPS instead: pkill -9 -f /opt/kingsoft/wps-office/office6/"
-		elog ""
-		elog "此版本在 WPS 设置里切换显示语言，点内建的重启提示没有用；"
-		elog "内建重启不会真的重新启动 wps 主进程和 CEF/云端同步子进程。"
-		elog "请完整砍掉重开：pkill -9 -f /opt/kingsoft/wps-office/office6/"
+		elog "更改语言后需要手动杀死进程"
+		elog "pkill -9 -f /opt/kingsoft/wps-office/office6/"
+
+		elog "After changing the language, you need to manually kill the processes"
+		elog "pkill -9 -f /opt/kingsoft/wps-office/office6/"
 	fi
 }
