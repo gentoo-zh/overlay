@@ -505,6 +505,15 @@ pkg = "claude-desktop"
 github_account = "zakkaus"
 autobump = true
 
+["app-misc/chatgpt-desktop"]
+source = "apt"
+mirror = "https://persistent.oaistatic.com/codex-app-prod/linux/deb"
+suite = "stable"
+repo = "main"
+pkg = "chatgpt"
+github_account = "zakkaus"
+autobump = true
+
 ["app-misc/codex-auth"]
 source = "github"
 github = "Loongphy/codex-auth"

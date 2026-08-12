@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<use>
+		<flag name="apparmor">Install the AppArmor profile for unprivileged user namespaces</flag>
+		<flag name="qt6">Enable Qt 6 desktop integration</flag>
+		<flag name="wayland">Run under Wayland natively instead of XWayland</flag>
+	</use>
+	<upstream>
+		<doc>https://learn.chatgpt.com/docs/app</doc>
+	</upstream>
+</pkgmetadata>

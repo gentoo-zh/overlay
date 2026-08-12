@@ -1,0 +1,14 @@
+OpenAI Terms of Use
+
+The ChatGPT desktop application is proprietary software from OpenAI.
+Use of the application is governed by OpenAI's terms:
+
+- Terms of Use: https://openai.com/policies/terms-of-use
+- Usage Policies: https://openai.com/policies/usage-policies
+- Privacy Policy: https://openai.com/policies/privacy-policy
+
+The package redistributes the upstream binary unmodified from
+https://persistent.oaistatic.com/codex-app-prod/linux/deb/
+
+This is proprietary software with specific usage terms; no right to
+redistribute the application is granted.
