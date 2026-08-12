@@ -28,7 +28,7 @@ IUSE="clang"
 REQUIRED_USE="clang? ( ${LLVM_REQUIRED_USE} )"
 
 BDEPEND="
-	~dev-lang/dart-bootstrap-${PV}
+	>=dev-lang/dart-bootstrap-3.12.2
 	dev-build/gn
 	dev-build/ninja
 	dev-vcs/git
