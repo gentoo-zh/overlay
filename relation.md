@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 21:39:43 CST)
+(The last generation time: 2026-08-13 23:41:18 CST)
 
 ### Packages
 
@@ -532,7 +532,7 @@
  kde-misc/plasma-applet-netspeed-widget                | 3.1                |            | https://store.kde.org/p/998895/                                            | Plasma 5 widget that displays the currently used network bandwidth
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- kde-misc/plasma-ions-china                            | 0.1.0              |            | https://github.com/arenekosreal/plasma-ions-china                          | A collection of plasma weather ions for Chinese users
+ kde-misc/plasma-ions-china                            | 0.1.1              |            | https://github.com/arenekosreal/plasma-ions-china                          | A collection of plasma weather ions for Chinese users
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/Plangothic                                | 2.9.5795           |            | https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project     | 遍黑体项目（Plangothic Project）
