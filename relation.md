@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 13:49:02 CST)
+(The last generation time: 2026-08-13 15:19:57 CST)
 
 ### Packages
 
@@ -944,6 +944,10 @@
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel                          | 6.12.103           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.18.44            |            |                                                                            |
+                                                       | 7.1.8              |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.103           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.44            |            |                                                                            |
                                                        | 7.1.8              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
