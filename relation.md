@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-12 20:42:26 CST)
+(The last generation time: 2026-08-13 08:52:24 CST)
 
 ### Packages
 
@@ -340,8 +340,6 @@
  dev-java/oraclejdk-bin                                | 8.391              |            | https://www.oracle.com/java/                                               | Oracle's Java SE Development Kit
                                                        | 21.0.1             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-lang/dart-bootstrap                               | 3.12.2             |            | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-lang/koka-bin                                     | 3.2.3              |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-lang/quickjs                                      | 2024.01.13         |            | https://bellard.org/quickjs/                                               | Small embeddable Javascript engine
@@ -434,7 +432,8 @@
  dev-util/codex                                        | 0.147.0-r1         |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/fvm                                          | 4.1.2              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
-   dev-lang/dart                                       | 3.12.2             |  D, RD     | https://dart.dev                                                           | The Dart SDK
+   dev-lang/dart                                       | 3.13.0             |  D, RD     | https://dart.dev                                                           | The Dart SDK
+     dev-lang/dart-bootstrap                           | 3.13.0             | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gemini-cli                                   | 0.55.1             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
