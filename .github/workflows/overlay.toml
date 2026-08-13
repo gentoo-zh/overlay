@@ -495,6 +495,15 @@ use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
 
+["app-misc/chatgpt-desktop"]
+source = "apt"
+mirror = "https://persistent.oaistatic.com/codex-app-prod/linux/deb"
+suite = "stable"
+repo = "main"
+pkg = "chatgpt"
+github_account = "zakkaus"
+autobump = true
+
 ["app-misc/cherry-studio-bin"]
 source = "github"
 github = "CherryHQ/cherry-studio"
@@ -509,15 +518,6 @@ mirror = "https://downloads.claude.ai/claude-desktop/apt/stable"
 suite = "stable"
 repo = "main"
 pkg = "claude-desktop"
-github_account = "zakkaus"
-autobump = true
-
-["app-misc/chatgpt-desktop"]
-source = "apt"
-mirror = "https://persistent.oaistatic.com/codex-app-prod/linux/deb"
-suite = "stable"
-repo = "main"
-pkg = "chatgpt"
 github_account = "zakkaus"
 autobump = true
 
@@ -580,13 +580,6 @@ github_account = "st0nie"
 
 # packaged from a pinned commit, no tag to compare
 #["app-misc/mdx_util"]
-
-["dev-util/oh-my-pi-bin"]
-source = "github"
-github = "can1357/oh-my-pi"
-use_latest_release = true
-prefix = "v"
-github_account = "gouwazi"
 
 ["app-misc/openclaude"]
 source = "github"
@@ -659,14 +652,6 @@ url = "https://www.freeoffice.com/de/support/installation/linux"
 regex = "softmaker-freeoffice-[\\d.]{4}-([\\d.]+)-amd64.tgz"
 github_account = ["zozx", "gouwazi"]
 
-["app-office/obsidian"]
-source = "github"
-github = "obsidianmd/obsidian-releases"
-use_max_tag = true
-prefix = "v"
-github_account = ["peeweep", "zakkaus"]
-autobump = true
-
 ["app-office/notesnook-bin"]
 source = "github"
 github = "streetwriters/notesnook"
@@ -674,6 +659,14 @@ use_max_tag = true
 prefix = "v"
 include_regex = "v\\d+\\.\\d+\\.\\d+"
 github_account = "zakkaus"
+autobump = true
+
+["app-office/obsidian"]
+source = "github"
+github = "obsidianmd/obsidian-releases"
+use_max_tag = true
+prefix = "v"
+github_account = ["peeweep", "zakkaus"]
 autobump = true
 
 ["app-office/siyuan-bin"]
@@ -1262,6 +1255,13 @@ use_latest_tag = true
 github_account = ["peeweep"]
 autobump = true
 
+["dev-util/oh-my-pi-bin"]
+source = "github"
+github = "can1357/oh-my-pi"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 ["dev-util/opencode-bin"]
 source = "github"
 github = "anomalyco/opencode"
@@ -1304,13 +1304,6 @@ use_latest_release = true
 prefix = "v"
 autobump = true
 
-["dev-util/reasonix-desktop-bin"]
-source = "jq"
-url = "https://dl.reasonix.io/latest/latest.json"
-filter = '.version | ltrimstr("v")'
-github_account = "peeweep"
-autobump = true
-
 ["dev-util/reasonix-bin"]
 source = "github"
 github = "esengine/DeepSeek-Reasonix"
@@ -1318,6 +1311,13 @@ use_max_release = true
 include_regex = "v\\d+\\.\\d+\\.\\d+"
 prefix = "v"
 github_account = "wgjak47"
+autobump = true
+
+["dev-util/reasonix-desktop-bin"]
+source = "jq"
+url = "https://dl.reasonix.io/latest/latest.json"
+filter = '.version | ltrimstr("v")'
+github_account = "peeweep"
 autobump = true
 
 ["dev-util/redpanda-cpp"]
