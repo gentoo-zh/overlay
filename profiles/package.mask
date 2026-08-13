@@ -57,9 +57,3 @@ sys-kernel/xanmod-rt
 # I don't use this package for a long time, feel free to grab it
 # Masked for removal in 2026-08-14
 www-apps/folo-bin
-
-# Huang Rui <vowstar@gmail.com> (2026-07-13)
-# The deepin-wine base packages are last rited, so this AppArmor profile has
-# no remaining target to protect
-# Removal on 2026-08-13
-sec-policy/apparmor-profile-deepinwine
