@@ -72,9 +72,9 @@ REQUIRED_USE="
 CDEPEND="
 	dev-libs/openssl
 	openmp? ( llvm-runtimes/openmp:= )
-	openblas? ( sci-libs/openblas:= )
+	openblas? ( sci-libs/openblas )
 	blis? ( sci-libs/blis:= )
-	flexiblas? ( sci-libs/flexiblas:= )
+	flexiblas? ( sci-libs/flexiblas )
 	rocm? (
 		>=dev-util/hip-${ROCM_VERSION}
 		>=sci-libs/hipBLAS-${ROCM_VERSION}
