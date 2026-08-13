@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 12:26:13 CST)
+(The last generation time: 2026-08-13 13:06:02 CST)
 
 ### Packages
 
@@ -453,7 +453,7 @@
  dev-util/obs-build                                    | 20260623-r1        |            | https://github.com/openSUSE/obs-build                                      | OBS build script
                                                        | 20260721           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/oh-my-pi-bin                                 | 17.2.12            |            | https://omp.sh                                                             | AI coding agent for the terminal
+ dev-util/oh-my-pi-bin                                 | 17.2.15            |            | https://omp.sh                                                             | AI coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.18            |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
