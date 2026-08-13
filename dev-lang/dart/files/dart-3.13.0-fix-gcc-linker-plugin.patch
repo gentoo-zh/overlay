@@ -1,3 +1,5 @@
+Remove the lto USE flag requirement for sys-devel/gcc
+
 diff --git a/build/config/gcc/BUILD.gn b/build/config/gcc/BUILD.gn
 index 299e89e2f47..c3edb9cdd69 100644
 --- a/build/config/gcc/BUILD.gn
