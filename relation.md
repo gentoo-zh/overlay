@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 23:41:18 CST)
+(The last generation time: 2026-08-14 06:59:37 CST)
 
 ### Packages
 
@@ -964,8 +964,6 @@
    sys-kernel/cachyos-sources                          | 7.1.8              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches, optionally with cjktty
    sys-kernel/liquorix-sources                         | 7.1.8              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
    sys-kernel/xanmod-kernel                            | 7.1.8              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
-   sys-kernel/xanmod-rt                                | 6.0.11             | RD         | https://xanmod.org                                                         | XanMod RT sources and CJKTTY options
-                                                       | 6.12.31            |            |                                                                            |
    sys-kernel/xanmod-sources                           | 7.1.8-r1           | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
@@ -975,8 +973,6 @@
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
    dev-libs/v2ray-geoip                                | 202607050337       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
    dev-libs/v2ray-geoip-bin                            | 202607050337       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-apps/folo-bin                                     | 1.11.0             |            | https://folo.is/                                                           | Next generation information browser
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.7.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
