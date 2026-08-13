@@ -56,7 +56,7 @@ RDEPEND="
 	net-misc/curl
 	virtual/zlib
 	ui? (
-		dev-libs/qml-material:=
+		dev-libs/qml-material
 		dev-qt/qtbase:6[dbus]
 		dev-qt/qtdeclarative:6
 		dev-qt/qtgrpc:6
