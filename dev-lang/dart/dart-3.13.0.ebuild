@@ -6,7 +6,7 @@ EAPI=8
 LLVM_COMPAT=( {20..22} )
 LLVM_OPTIONAL=1
 
-inherit unpacker ninja-utils llvm-r1 toolchain-funcs check-reqs
+inherit unpacker ninja-utils llvm-r2 toolchain-funcs check-reqs
 
 DESCRIPTION="The Dart SDK"
 HOMEPAGE="https://dart.dev https://github.com/dart-lang/sdk"
@@ -50,6 +50,10 @@ PATCHES=(
 	"${FILESDIR}/${PN}-3.13.0-fix-gcc-linker-plugin.patch"
 )
 
+pkg_setup() {
+	use clang && llvm-r2_pkg_setup
+}
+
 src_prepare() {
 	# https://github.com/dart-lang/sdk/issues/52295
 	# needed by build.ninja.stamp
@@ -77,7 +81,7 @@ src_configure() {
 	mygnargs+=( 'is_release=true' )
 	mygnargs+=( 'dart_platform_sdk=false' )
 	mygnargs+=( 'verify_sdk_hash=false' )
-	use clang && mygnargs+=( "clang_toolchain_dir=\"$(get_llvm_prefix)/bin\"" )
+	use clang && mygnargs+=( "clang_toolchain_dir=\"$(get_llvm_prefix -b)/bin\"" )
 	gn gen --args="${mygnargs[*]}" out/Release
 }
 
