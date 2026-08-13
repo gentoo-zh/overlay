@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 18:09:39 CST)
+(The last generation time: 2026-08-13 18:46:07 CST)
 
 ### Packages
 
@@ -61,8 +61,7 @@
  app-editors/antigravity                               | 2.7.1              |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
                                                        | 2.8.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity-ide                           | 2.1.1              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
-                                                       | 2.5.2              |            |                                                                            |
+ app-editors/antigravity-ide                           | 2.5.4              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/appflowy-bin                              | 0.13.2             |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -455,7 +454,7 @@
  dev-util/obs-build                                    | 20260623-r1        |            | https://github.com/openSUSE/obs-build                                      | OBS build script
                                                        | 20260721           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/oh-my-pi-bin                                 | 17.2.15            |            | https://omp.sh                                                             | AI coding agent for the terminal
+ dev-util/oh-my-pi-bin                                 | 17.3.0             |            | https://omp.sh                                                             | AI coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.18            |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
