@@ -58,11 +58,6 @@ sys-kernel/xanmod-rt
 # Masked for removal in 2026-08-14
 www-apps/folo-bin
 
-# jinqiang zhang <peeweep@0x0.ee> (2026-07-12)
-# Upstream is deprecated and the git repository has been archived.
-# Masked for removal in 2026-08-12
-net-proxy/yass
-
 # Huang Rui <vowstar@gmail.com> (2026-07-13)
 # Upstream download is dead and overlay distfiles are not mirrored, so these
 # packages are uninstallable, re-home upstream or they will be removed
