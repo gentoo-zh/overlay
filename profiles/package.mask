@@ -49,11 +49,6 @@ app-pda/ipadcharge
 dev-lang/quickjs
 
 # jinqiang zhang <peeweep@0x0.ee> (2026-07-14)
-# Looks like no one use this package for a long time
-# Masked for removal in 2026-08-14
-sys-kernel/xanmod-rt
-
-# jinqiang zhang <peeweep@0x0.ee> (2026-07-14)
 # I don't use this package for a long time, feel free to grab it
 # Masked for removal in 2026-08-14
 www-apps/folo-bin
