@@ -90,4 +90,13 @@ src_install() {
 
 pkg_postinst() {
 	xdg_pkg_postinst
+
+	if use wayland; then
+		elog "Termius bundles Chromium 108 (Electron 22), so native Wayland may"
+		elog "not work in every environment. Build with USE=-wayland to stay on"
+		elog "XWayland."
+		elog
+		elog "Termius 內建的是 Chromium 108（Electron 22），原生 Wayland 在部分環境"
+		elog "可能無法正常運作，可改用 USE=-wayland 使用 XWayland。"
+	fi
 }
