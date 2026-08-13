@@ -45,7 +45,7 @@ COMMON_DEPEND="
 	media-video/pipewire
 	net-misc/curl
 	systemd? ( sys-apps/systemd:= )
-	!systemd? ( sys-auth/elogind:= )
+	!systemd? ( sys-auth/elogind )
 "
 RDEPEND="${COMMON_DEPEND}"
 DEPEND="
