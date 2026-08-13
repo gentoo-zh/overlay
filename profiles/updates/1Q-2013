@@ -1,2 +1,1 @@
 move dev-libs/liblunar dev-libs/lunar-date
-move x11-libs/qt-gui dev-qt/qtgui

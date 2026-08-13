@@ -3,8 +3,6 @@ slotmove sys-kernel/xanmod-sources stable 5.15.89
 slotmove sys-kernel/xanmod-sources edge 6.1.9
 slotmove sys-kernel/xanmod-kernel stable 5.15.89
 slotmove sys-kernel/xanmod-kernel edge 6.1.9
-move x11-themes/fcitx5-breeze x11-themes/fcitx-breeze
-slotmove x11-themes/fcitx-breeze 0 5
 move app-dicts/fcitx5-pinyin-moegirl app-dicts/fcitx-pinyin-moegirl
 slotmove app-dicts/fcitx-pinyin-moegirl 0 5
 move app-dicts/fcitx5-pinyin-zhwiki app-dicts/fcitx-pinyin-zhwiki
