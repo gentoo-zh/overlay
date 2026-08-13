@@ -9,7 +9,7 @@ CHROMIUM_LANGS="af am ar bg bn ca cs da de el en-GB es es-419 et fa fi fil fr gu
 
 inherit chromium-2 desktop optfeature pax-utils shell-completion xdg
 
-MY_BUILD="6665745933926400"
+MY_BUILD="4923483625488384"
 
 DESCRIPTION="Google Antigravity agent-first development environment"
 HOMEPAGE="https://antigravity.google/"
