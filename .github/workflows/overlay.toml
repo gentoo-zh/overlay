@@ -609,14 +609,14 @@ github = "holman/spark"
 use_latest_tag = true
 prefix = "v"
 
+# packaged from a pinned main commit; tags do not track the programs database
+#["app-misc/xdg-ninja"]
+
 ["app-misc/xmind"]
 source = "httpheader"
 url = "https://www.xmind.app/zen/download/linux_deb/"
 regex = 'Xmind-for-Linux-amd64bit-(.+)-.*.deb'
 github_account = "gouwazi"
-
-# packaged from a pinned main commit; tags do not track the programs database
-#["app-misc/xdg-ninja"]
 
 ["app-misc/yazi"]
 source = "github"
@@ -2549,10 +2549,6 @@ from_pattern = "cachyos-([0-9.]+)-[0-9]+"
 to_pattern = "\\1"
 github_account = ["blackteahamburger", "Zakkaus", "locez"]
 
-# Follows sys-kernel/gentoo-sources, which carries several branches at once, so
-# one tracked version cannot describe it.
-# ["sys-kernel/gentoo-cjk-sources"]
-
 # Follows sys-kernel/gentoo-kernel and its dist-kernel release schedule rather
 # than an upstream tag of its own.
 # ["sys-kernel/gentoo-cjk-kernel"]
@@ -2560,6 +2556,10 @@ github_account = ["blackteahamburger", "Zakkaus", "locez"]
 # Follows the source package: the archive publishes a gpkg for every version the
 # overlay carries.
 # ["sys-kernel/gentoo-cjk-kernel-bin"]
+
+# Follows sys-kernel/gentoo-sources, which carries several branches at once, so
+# one tracked version cannot describe it.
+# ["sys-kernel/gentoo-cjk-sources"]
 
 ["sys-kernel/liquorix-sources"]
 source = "github"
