@@ -22,9 +22,7 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="strip"
 
-# both install /usr/bin/biliup
 RDEPEND="
-	!net-misc/biliup-rs
 	elibc_glibc? (
 		sys-devel/gcc:*
 		sys-libs/glibc
