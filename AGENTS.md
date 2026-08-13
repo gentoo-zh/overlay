@@ -4,6 +4,8 @@ Reload this file at the start of a work item, and again whenever the conversatio
 
 This repository is a Gentoo overlay fork. Use skills and official Gentoo sources for generic ebuild knowledge; keep repository policy and non-obvious correctness gates here.
 
+These rules are the default, not a veto: an explicit instruction from the human directing the work overrides them for that item—carry it out and record the deviation. Stop only where this file says to, or where continuing would discard work or publish something unreviewed.
+
 Prefer the package and its history, a genuinely comparable current package, eclass and upstream source, then official Gentoo documentation and gentoo.git. Never substitute memory or superficial similarity for evidence.
 
 ## Writing
@@ -124,7 +126,10 @@ Treat `master` only as an upstream-sync branch.
 - Deterministic package-manager helpers and pure shell expansion are valid in global scope. Put work requiring declared build context in phases.
 - Declare external build and test inputs through `SRC_URI`/`Manifest` or an eclass vendor mechanism. Enforce offline operation without warm caches.
 - Each USE state must control every applicable option, dependency, source selection, and install cleanup consistently. Disable automagic.
+- Prune only what `src_install` would otherwise install. Deleting a path it never reaches is dead code, as is a branch that only removes files that USE state does not install.
+- `${ED}` and `${D}` already carry the offset; never append `${EPREFIX}`. Use a bare `${EPREFIX}` only in installed content read at runtime, and only where that consumer runs under Prefix.
 - Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`.
+- A license absent from `::gentoo` needs its full text in `licenses/`, an entry in the matching `profiles/license_groups` group, and `RESTRICT` set from its own distribution terms.
 
 ## Code Style
 
@@ -152,16 +157,29 @@ Treat `master` only as an upstream-sync branch.
 - For an in-place tarball replacement, verify provenance, contents, tag or commit, signatures, and licenses. Use a distinct distfile name and revbump.
 - A backport records its upstream commit, PR, or bug URL and applicable and tested versions.
 - A security fix covers every still-keyworded vulnerable branch and relevant sibling or fork. Revbump when installed content or behavior changes.
-- Follow the package's own consistent history, not a single recent commit: overlay packages variously roll the latest (`add X, drop Y`), keep everything, or keep an anchor and roll the rest. Reproduce the established pattern.
-- When that pattern is mixed, conflicts with the current tree, or the package has no bump history, default to add-only and flag the choice for the maintainer. If an old version loses its immutable source bytes or a replacement is unexplained, stop for direction.
-- For a major version jump, large rewrite, or build-system migration, add only—keep the prior version rather than dropping it, even when history rolls latest and even for a `-bin` package. The proven old version is the fallback until the new one is exercised.
-- Before dropping, search the overlay and main tree for reverse-dependency pins and verify per `SLOT` that survivors resolve on every retained arch; keep any old version still needed.
 - Remove or update only state made obsolete when a version, implementation, USE flag, provider, or package name is removed.
 - Scope cleanup to affected ebuild conditionals, assets, metadata and profile entries, reverse-dependency references, and live or twin variants. Preserve everything required by surviving ebuilds or providers.
 - A package move updates `profiles/updates` atomically with every affected reference.
 
+## Keeping Old Versions
+
+A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is the exception and needs one of the reasons below.
+
+- Keep the prior version across a major version jump, large rewrite, or build-system migration, even for a `-bin` package and even when history rolls the latest. Drop it once the new branch has held.
+- Keep any version a reverse-dependency pin, `SLOT`, or profile entry still resolves against. Check the overlay and the main tree per `SLOT` and per retained arch before dropping.
+- Keep a version whose replacement is unverified: an arch upstream skipped this release, or a security fix not yet on every keyworded branch.
+- Otherwise drop. A package with no cross-version state, no reverse dependencies, and nothing worth downgrading to keeps exactly one version. Being prebuilt is not a reason to keep the old one.
+- Follow the package's own history where it shows an explicit pattern; otherwise apply the rules above and state the choice. Never keep a version merely because the previous commit did.
+- Stop for direction when an old version loses its immutable source bytes, or when a replacement in place is unexplained.
+- `keep_old = N` in `.github/workflows/overlay.toml` applies the same policy to autobump: set it only for a package meeting a reason above, and remove it when the reason lapses.
+
 ## Dependencies and Revisions
 
+- Every atom traces to evidence here: a linked SONAME, a build-file `dependency()`, `find_package`, or `pkg-config` call, a `dlopen`ed library, or a program a phase runs. Another distro's control file is not evidence.
+- Do not declare what the environment provides: `@system` members, tools an inherited eclass pulls in, or a compiler or libc floor the profile guarantees.
+- One atom per package: fold the version bound, `SLOT`, and USE constraints into a single entry.
+- Carry the build system's own version floors into the atom, and do not invent floors it does not state.
+- A slot operator needs a real subslot on the provider; `:=` on a slot without one binds nothing.
 - Revbump when a Gentoo-side change can alter an existing installation or runtime dependency decision. This includes installed output or behavior, runtime dependencies, subslot binding, and default USE changes.
 - Also revbump for an affected non-free or soon-to-be-removed license and for a non-trivial EAPI change.
 - Skip the revbump when a descriptive, copyright, keyword, message, test, build-failure, or build-dependency-relaxation change cannot leave an installed result wrong.
@@ -189,10 +207,19 @@ Treat `master` only as an upstream-sync branch.
 - A retained private blob may use a verified literal `'$ORIGIN/...'` RPATH.
 - Replace a bundled component with a system one only after verifying ABI, functionality, and launcher or configuration integration; otherwise stop.
 
+## Desktop Integration
+
+- A window gets a default icon when its Wayland `app_id` or X11 `WM_CLASS` matches no installed desktop file's basename. Measure it on a running instance—KWin reports it through `workspace.windowList()`—then rename the file or add `StartupWMClass`.
+- Toolkits derive it differently: GTK3 sends `g_get_prgname()`, not the `GApplication` id, so `org.example.App.desktop` still reports `app`.
+- Measure before changing an ozone switch. `--ozone-platform-hint=auto` and `--ozone-platform=wayland` are not interchangeable and either can be the one that fails, so launch both ways and check which platform the build took.
+- A bundled Chromium silently ignores switches its version predates; confirm each one exists in the shipped binary.
+- `wayland` is a desktop-profile default, so a `wayland?`-guarded switch also reaches X11 users. Prefer a switch that resolves the platform at runtime over one that forces it.
+
 ## New Packages
 
 - Before drafting, search this overlay and the main tree for the same project, former names, forks, and truly comparable packages. Identify its fixed source artifact, license, build system, runtime files, and tested arches.
-- Update `.github/workflows/overlay.toml` in the same PR for a new package tied to an independent upstream project.
+- Take the shape from that precedent—metadata order, dependency layout, phase set, eclass stack. When upstream ships several packages, a sibling already in the main tree is the closest precedent.
+- Update `.github/workflows/overlay.toml` in the same PR for a new package tied to an independent upstream project, inserting the entry in `category/package` alphabetical order.
 - A dist-kernel package added at a version must appear in that version's `virtual/dist-kernel-*-r100` `||` list, and a new version needs that virtual created; leaving it out makes Portage satisfy the `PDEPEND` from a provider that is listed and install a second kernel. The virtual is its own commit and lands before the provider it lists, so `pkgcheck` reports `NonexistentDeps` against that commit alone until the next one adds the package.
 - Add an active version-check table when releases are trackable, otherwise a commented `#["category/package"]` block giving the reason (live-only, synced elsewhere, or a duplicate source/binary package).
 - Packages with no independent upstream version (`virtual/*`, `acct-*`, meta) need no entry.
@@ -223,6 +250,8 @@ Treat `master` only as an upstream-sync branch.
 - Use conditional `PROPERTIES="test? ( test_network )"` only with `IUSE=test`; otherwise use `PROPERTIES="test_network"`.
 - Fix genuine QA defects at the root cause. Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk; never rewrite working behavior merely to silence a checker.
 - GitHub rate limits can cause false `DeadUrl` or `RedirectedUrl` results; re-verify flagged URLs.
+- A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second network before calling a URL dead.
+- CI's `pkgcheck` runs without `--net`, so no network keyword fires there.
 - A dead `HOMEPAGE` does not block installation. A dead overlay `SRC_URI` is unfetchable because overlay distfiles are not mirrored on `distfiles.gentoo.org`.
 - Review the staged diff and diffstat. Reject unrelated hunks, debug output, missing `files/` assets, or unintended `Manifest` entries.
 - Verify patches, substitutions, generators, and manual or glob installs against the intended release source and final files, modes, and license notices—not command exit status alone.
