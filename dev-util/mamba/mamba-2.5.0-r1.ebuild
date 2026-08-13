@@ -34,7 +34,6 @@ DEPEND="app-arch/libarchive:=
 	mamba? (
 		app-crypt/mit-krb5
 		app-arch/bzip2
-		app-arch/libarchive
 		app-arch/lz4
 		app-arch/xz-utils
 		dev-libs/libunistring
@@ -44,7 +43,6 @@ DEPEND="app-arch/libarchive:=
 		net-libs/nghttp2
 		net-libs/nghttp3
 		net-dns/c-ares
-		net-misc/curl
 		sys-apps/acl
 		sys-fs/e2fsprogs
 		virtual/zlib
@@ -54,10 +52,7 @@ DEPEND="app-arch/libarchive:=
 	net-misc/curl
 	python? ( ${PYTHON_DEPS} )
 "
-# conflict to micromamba from benzene-overlay
-RDEPEND="${DEPEND}
-	!dev-util/micromamba
-"
+RDEPEND="${DEPEND}"
 BDEPEND="
 	python? (
 		${PYTHON_DEPS}
@@ -76,9 +71,6 @@ PATCHES=(
 src_prepare() {
 	cmake_src_prepare
 	use python && {
-		sed -i \
-			"s|\${CMAKE_CURRENT_BINARY_DIR}|${D}/\${CMAKE_INSTALL_PREFIX}\/$(python_get_sitedir | sed -e 's|/usr/||')|" \
-			libmambapy/CMakeLists.txt || die
 		pushd libmambapy || die
 		distutils-r1_src_prepare
 	}
