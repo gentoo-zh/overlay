@@ -59,12 +59,6 @@ sys-kernel/xanmod-rt
 www-apps/folo-bin
 
 # Huang Rui <vowstar@gmail.com> (2026-07-13)
-# Upstream download is dead and overlay distfiles are not mirrored, so these
-# packages are uninstallable, re-home upstream or they will be removed
-# Removal on 2026-08-13
-app-misc/ccal
-
-# Huang Rui <vowstar@gmail.com> (2026-07-13)
 # The deepin-wine base packages are last rited, so this AppArmor profile has
 # no remaining target to protect
 # Removal on 2026-08-13
