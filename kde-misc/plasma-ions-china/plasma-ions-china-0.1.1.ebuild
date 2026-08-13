@@ -13,11 +13,11 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_REPO_URI="https://github.com/arenekosreal/plasma-ions-china.git"
 else
 	SRC_URI="https://github.com/arenekosreal/plasma-ions-china/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
 fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-qt/qtbase:6
@@ -29,16 +29,10 @@ BDEPEND="
 	kde-frameworks/extra-cmake-modules
 "
 
-PATCHES=( "${FILESDIR}/${PN}-0.1.0-package-version.patch" )
-
 src_configure() {
-	if [[ ${PV} == *9999* ]]; then
-		local mycmakeargs=( -DPROJECT_VERSION="$(git rev-parse HEAD)" )
-	else
-		local mycmakeargs=( -DPROJECT_VERSION="${PV}" )
+	local mycmakeargs=( -DPLASMA_IONS_CHINA_USE_SYSTEM_HEADERS=ON )
+	if [[ ${PV} != *9999* ]]; then
+		mycmakeargs+=( -DPLASMA_IONS_CHINA_VERSION="${PV}" )
 	fi
-	mycmakeargs+=(
-		-DPLASMA_IONS_CHINA_USE_SYSTEM_HEADERS=ON
-	)
 	cmake_src_configure
 }
