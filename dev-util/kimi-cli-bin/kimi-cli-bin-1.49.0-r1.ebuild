@@ -29,7 +29,7 @@ RESTRICT="strip"
 
 RDEPEND="
 	sys-libs/glibc
-	sys-libs/zlib
+	virtual/zlib
 "
 
 src_install() {
