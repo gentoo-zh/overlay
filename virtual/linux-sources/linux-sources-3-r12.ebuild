@@ -21,7 +21,6 @@ RDEPEND="
 		sys-kernel/zen-sources
 		sys-kernel/raspberrypi-sources
 		sys-kernel/xanmod-kernel
-		sys-kernel/xanmod-rt
 		sys-kernel/xanmod-sources
 		sys-kernel/gentoo-kernel
 		sys-kernel/gentoo-kernel-bin
