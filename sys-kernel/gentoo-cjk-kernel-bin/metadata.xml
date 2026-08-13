@@ -10,5 +10,6 @@
 	</maintainer>
 	<use>
 		<flag name="cjk">Apply the cjktty patch to the source tree so modules_prepare matches the published binary</flag>
+		<flag name="cjk32">Install the build that carries the 8 MiB 32x32 CJK font data for high-resolution framebuffer consoles</flag>
 	</use>
 </pkgmetadata>
