@@ -62,7 +62,6 @@ www-apps/folo-bin
 # Upstream download is dead and overlay distfiles are not mirrored, so these
 # packages are uninstallable, re-home upstream or they will be removed
 # Removal on 2026-08-13
-app-emulation/deepin-wine-plugin
 app-misc/ccal
 
 # Huang Rui <vowstar@gmail.com> (2026-07-13)
