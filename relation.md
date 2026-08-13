@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 18:04:19 CST)
+(The last generation time: 2026-08-13 18:05:06 CST)
 
 ### Packages
 
@@ -450,7 +450,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.6.4.86641        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kimi-cli-bin                                 | 1.49.0             |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
+ dev-util/kimi-cli-bin                                 | 1.49.0-r1          |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-code-bin                                | 0.35.0             |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -758,7 +758,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/biliup-app-bin                               | 1.2.3              |            | https://github.com/biliup/biliup-app-new                                   | A Tool for Upload video to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/biliup-bin                                   | 1.2.2              |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
+ net-misc/biliup-bin                                   | 1.2.2-r1           |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/bruno-bin                                    | 3.5.3              |            | https://www.usebruno.com/                                                  | Opensource IDE For Exploring and Testing Api's
                                                        | 4.0.0              |            |                                                                            |
