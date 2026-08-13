@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 11:22:02 CST)
+(The last generation time: 2026-08-13 11:35:47 CST)
 
 ### Packages
 
@@ -947,37 +947,33 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel                          | 6.18.43            |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
-                                                       | 7.1.7              |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel-bin                      | 6.18.43            |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 7.1.7              |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-sources                         | 6.18.44            |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+ sys-kernel/gentoo-cjk-kernel                          | 6.12.103           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.18.44            |            |                                                                            |
                                                        | 7.1.8              |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ sys-kernel/gentoo-cjk-sources                         | 6.12.103           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 6.18.44-r1         |            |                                                                            |
+                                                       | 7.1.8-r1           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 38                 |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
                                                        | 39.2               |            |                                                                            |
                                                        | 41                 |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-libs/elog-functions                               | 0.0.2              |            | http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html         | Compatibility functions for the log e* functions of OpenRC
+ sys-libs/elog-functions                               | 0.0.2              |            | http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html         | Compatibility functions for the log eclass functions of OpenRC
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-power/tlpui                                       | 1.10.1             |            | https://github.com/d4nj1/TLPUI                                             | A GTK user interface for TLP written in Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/dist-kernel                                   | 6.18.43-r100       |            |                                                                            | Virtual to depend on any Distribution Kernel
-                                                       | 7.1.6-r100         |            |                                                                            |
-                                                       | 7.1.7-r100         |            |                                                                            |
+ virtual/dist-kernel                                   | 6.12.103-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 6.18.44-r100       |            |                                                                            |
+                                                       | 7.1.8-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
-   sys-kernel/cachyos-sources                          | 7.1.7              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches, optionally with cjktty
-   sys-kernel/liquorix-sources                         | 6.4.12             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-                                                       | 6.6.8              |            |                                                                            |
-                                                       | 7.0.14-r2          |            |                                                                            |
-                                                       | 7.1.6              |            |                                                                            |
-   sys-kernel/xanmod-kernel                            | 7.1.6              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+   sys-kernel/cachyos-sources                          | 7.1.8              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches, optionally with cjktty
+   sys-kernel/liquorix-sources                         | 7.1.8              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+   sys-kernel/xanmod-kernel                            | 7.1.8              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
    sys-kernel/xanmod-rt                                | 6.0.11             | RD         | https://xanmod.org                                                         | XanMod RT sources and CJKTTY options
                                                        | 6.12.31            |            |                                                                            |
-   sys-kernel/xanmod-sources                           | 7.1.8              | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+   sys-kernel/xanmod-sources                           | 7.1.8-r1           | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
