@@ -168,7 +168,7 @@ LICENSE="MIT
 		BitstreamVera
 		BSD
 		WTFPL-2
-		Vic-Fieger-License
+		heavydata? ( Vic-Fieger-License )
 		UbuntuFontLicense-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~loong ~x86"
@@ -180,6 +180,7 @@ CHECKREQS_DISK_USR="4G"
 
 IUSE_FLAGS=(${FONTS[*],,})
 IUSE="+nerdfontssymbolsonly ${IUSE_FLAGS[*]}"
+RESTRICT="heavydata? ( bindist mirror )"
 REQUIRED_USE="|| ( nerdfontssymbolsonly ${IUSE_FLAGS[*]} )"
 
 FONT_S=${S}
