@@ -231,6 +231,13 @@ github_account = "AmarBego"
 # vendor download, no published version index
 #["app-editors/windsurf"]
 
+["app-editors/xed"]
+source = "github"
+github = "linuxmint/xed"
+use_max_tag = true
+include_regex = "\\d+\\.\\d+\\.\\d+"
+autobump = true
+
 # TODO:
 #["app-emulation/deepin-udis86"]
 
