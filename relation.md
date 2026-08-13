@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 18:07:57 CST)
+(The last generation time: 2026-08-13 18:09:39 CST)
 
 ### Packages
 
@@ -198,13 +198,7 @@
                                                        | 3.16.5             |            |                                                                            |
                                                        | 3.17.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch-cli                                | 5.10.0             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
-                                                       | 5.10.1             |            |                                                                            |
-                                                       | 5.4.0              |            |                                                                            |
-                                                       | 5.5.0              |            |                                                                            |
-                                                       | 5.8.7              |            |                                                                            |
-                                                       | 5.9.2              |            |                                                                            |
-                                                       | 5.9.3              |            |                                                                            |
+ app-misc/cc-switch-cli                                | 5.10.1             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/chatgpt-desktop                              | 26.803.81509       |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
