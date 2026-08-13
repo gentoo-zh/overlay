@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 20:32:28 CST)
+(The last generation time: 2026-08-13 21:39:43 CST)
 
 ### Packages
 
@@ -568,7 +568,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/misans                                    | 4.003-r1           |            | https://hyperos.mi.com/font                                                | MiSans 是由小米主导,联合汉仪发布的可免费使用的字体
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/nerd-fonts                                | 3.5.0              |            | https://github.com/ryanoasis/nerd-fonts                                    | Nerd Fonts is a project that patches developer targeted fonts with glyphs
+ media-fonts/nerd-fonts                                | 3.5.0-r1           |            | https://github.com/ryanoasis/nerd-fonts                                    | Nerd Fonts is a project that patches developer targeted fonts with glyphs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/sarasa-gothic                             | 1.0.39             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
                                                        | 1.0.40             |            |                                                                            |
