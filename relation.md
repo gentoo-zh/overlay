@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-13 11:35:47 CST)
+(The last generation time: 2026-08-13 11:46:01 CST)
 
 ### Packages
 
@@ -85,10 +85,6 @@
  app-editors/windsurf                                  | 1.9.2              |            | https://devin.ai/desktop                                                   | AI-powered code editor maintaining flow state with instant assistance
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/deepin-udis86                           | 1.72-r4            |            | https://www.deepin.org                                                     | Disassembler library for x86 (32-bit shared library)
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-emulation/deepin-wine-helper                      | 5.1.45             |            | https://www.deepin.org                                                     | Deepin Wine Helper
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-emulation/deepin-wine-plugin                      | 5.1.13-r1          |            | https://www.deepin.org                                                     | Deepin Wine plugin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/la-ow-syscall                           | 0.1.1              |            | https://github.com/AOSC-Dev/la_ow_syscall                                  | Linux kernel module for compatibility with LoongArch's old-world ABI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -185,8 +181,6 @@
  app-misc/bilihud                                      | 9999               |            | https://github.com/locez/bilihud                                           | B站弹幕阅读器 - 一个可以在游戏全屏时显示弹幕的Qt应用程序
    dev-python/pure-protobuf                            | 3.1.5              | RD         | https://github.com/eigenein/protobuf                                       | A pure python implementation of google protobuf
    dev-python/qasync                                   | 0.28.0             | RD         | https://github.com/CabbageDevelopment/qasync                               | Implementation of the asyncio (PEP 3156) event-loop with Qt
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/ccal                                         | 2.5.3              |            | http://ccal.chinesebay.com/ccal/ccal.htm                                   | A simple command line calendar for Chinese lunar
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch                                    | 3.14.1             |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
                                                        | 3.15.0             |            |                                                                            |
@@ -890,8 +884,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/yacd-meta                                   | 0.3.8              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/yass                                        | 1.24.13            |            | https://github.com/hukeyue/yass                                            | lightweight and efficient, socks5/http forward proxy
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/zashboard                                   | 3.18.0             |            | https://github.com/Zephyruso/zashboard                                     | The Official Mihomo Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-vpn/rathole                                       | 0.5.0              |            | https://github.com/rathole-org/rathole                                     | A reverse proxy for NAT traversal
@@ -918,8 +910,6 @@
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sec-keys/openpgp-keys-gentoozh                        | 20260726           |            | https://distfiles.gentoozh.org/                                            | OpenPGP keys used to sign gentoo-zh binary packages
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sec-policy/apparmor-profile-deepinwine                | 1.0.0              |            | https://gitlab.com/apparmor/apparmor/wikis/home                            | A collection of AppArmor profiles for Deepinwine6
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/aptly                                        | 1.6.3              |            | https://github.com/aptly-dev/aptly                                         | A swiss army knife for Debian repository management
    acct-group/aptly                                    | 0                  | RD         |                                                                            | A swiss army knife for Debian repository management
