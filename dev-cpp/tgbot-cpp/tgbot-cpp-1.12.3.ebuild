@@ -28,6 +28,7 @@ src_configure() {
 		-DENABLE_TESTS=$(usex test ON OFF)
 		-DBUILD_SHARED_LIBS=$(usex shared-libs ON OFF)
 		-DBUILD_DOCUMENTATION=$(usex doc ON OFF)
+		-DCMAKE_POSITION_INDEPENDENT_CODE=ON
 	)
 	cmake_src_configure
 }
