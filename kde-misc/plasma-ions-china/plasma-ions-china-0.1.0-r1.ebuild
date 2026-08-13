@@ -21,7 +21,7 @@ KEYWORDS="~amd64"
 
 RDEPEND="
 	dev-qt/qtbase:6
-	>=kde-plasma/kdeplasma-addons-6.7:=
+	>=kde-plasma/kdeplasma-addons-6.7:6
 "
 DEPEND="${RDEPEND}"
 BDEPEND="
