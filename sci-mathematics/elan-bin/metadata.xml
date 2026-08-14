@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>xiangzhedev@gmail.com</email>
+		<name>xz-dev</name>
+	</maintainer>
+	<longdescription lang="en">
+		Elan manages Lean toolchains and selects the appropriate Lean version for
+		each project. This package installs upstream's prebuilt static executable
+		and command proxies for Lean, Lake, and legacy Lean tools.
+	</longdescription>
+	<upstream>
+		<bugs-to>https://github.com/leanprover/elan/issues</bugs-to>
+		<remote-id type="github">leanprover/elan</remote-id>
+	</upstream>
+</pkgmetadata>

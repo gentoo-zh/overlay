@@ -2456,6 +2456,13 @@ use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
 
+["sci-mathematics/elan-bin"]
+source = "github"
+github = "leanprover/elan"
+use_latest_release = true
+prefix = "v"
+github_account = "xz-dev"
+
 # https://www.rstudio.org/links/check_for_update?version=1.0.0&os=linux
 ["sci-mathematics/rstudio-desktop-bin"]
 source = "github"
