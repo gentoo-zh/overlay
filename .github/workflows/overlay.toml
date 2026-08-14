@@ -1439,6 +1439,14 @@ url = "https://api.vintagestory.at/lateststable.txt"
 regex = "([\\d.]+)"
 github_account = "liuyujielol"
 
+["games-util/sgdboop"]
+source = "github"
+github = "SteamGridDB/SGDBoop"
+use_latest_release = true
+prefix = "v"
+github_account = "xiaoxi654"
+autobump = true
+
 # ebuild version tracks the GNOME Shell series, not the extension release
 #["gnome-extra/gnome-shell-extension-clipboard-indicator"]
 
