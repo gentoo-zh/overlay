@@ -18,7 +18,7 @@ SHERPA_PV=1.13.4
 DESCRIPTION="Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess"
 HOMEPAGE="https://github.com/xifan2333/fcitx5-vinput"
 SRC_URI="
-	https://github.com/xifan2333/${MY_PN}/archive/v${PV}/${MY_P}.tar.gz
+	https://github.com/xifan2333/${MY_PN}/releases/download/v${PV}/${MY_P}.tar.gz
 	https://github.com/k2-fsa/sherpa-onnx/releases/download/v${SHERPA_PV}/sherpa-onnx-v${SHERPA_PV}-linux-x64-shared-no-tts.tar.bz2
 "
 S="${WORKDIR}/${MY_P}"
