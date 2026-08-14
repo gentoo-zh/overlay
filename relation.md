@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-14 08:18:31 CST)
+(The last generation time: 2026-08-14 08:33:02 CST)
 
 ### Packages
 
@@ -202,7 +202,7 @@
  app-misc/chatgpt-desktop                              | 26.803.81509       |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
-                                                       | 2.0.4              |            |                                                                            |
+                                                       | 2.0.5              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/claude-desktop                               | 1.28929.0          |            | https://claude.com/download                                                | Desktop application for Claude.ai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
