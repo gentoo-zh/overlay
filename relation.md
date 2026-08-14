@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-14 22:07:14 CST)
+(The last generation time: 2026-08-14 23:13:11 CST)
 
 ### Packages
 
@@ -905,6 +905,8 @@
  sci-electronics/lceda-pro                             | 3.2.175            |            | https://lceda.cn/                                                          | LCEDA Pro (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/openfpgaloader                        | 1.1.1              |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ sci-mathematics/elan-bin                              | 4.2.3              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/rstudio-desktop-bin                   | 2026.07.1_p147     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
                                                        | 2026.08.0_p187     |            |                                                                            |
