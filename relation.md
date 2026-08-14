@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-14 23:13:11 CST)
+(The last generation time: 2026-08-14 23:46:21 CST)
 
 ### Packages
 
@@ -520,6 +520,8 @@
                                                        | 1.22.6             |            |                                                                            |
    acct-group/vintagestory                             | 0                  | RD         |                                                                            | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                            | User for Vintage Story Server
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ games-util/sgdboop                                    | 1.4.3              |            | https://github.com/SteamGridDB/SGDBoop                                     | Apply SteamGridDB assets directly to your Steam library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/gnome-shell-extension-clipboard-indicator | 49                 |            | https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator       | The most popular clipboard manager for GNOME, with over 1M downloads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
