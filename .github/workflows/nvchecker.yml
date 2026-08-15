@@ -92,7 +92,7 @@ jobs:
 
     - name: install depends
       run: |
-        pip install nvchecker jq
+        pip install nvchecker jq portage
 
     - name: echo pkgs
       run: |
@@ -114,7 +114,9 @@ jobs:
         # assign on its own line: inside echo "$(...)" the exit status is echo's,
         # so a failing pipe would go unnoticed until the matrix expands
         set -o pipefail
-        nvcmp=$(nvcmp --file overlay.toml --json --newer \
+        # --sort portage: oldver comes from the tree, so PEP440 misreads _p and
+        # _rc and reports a downgrade as an update
+        nvcmp=$(nvcmp --file overlay.toml --json --newer --sort portage \
           | jq 'map({name, newver, oldver})' | jq -c .)
         echo "nvcmp=${nvcmp}" >> $GITHUB_OUTPUT
         echo "::endgroup::"
