@@ -5,9 +5,9 @@
 
 EAPI=8
 
-RUST_MIN_VER="1.92.0"
-NCM_API_TAG='1.5.2'
-NCM_API_COMMIT='d570248b325ee4558afbaa30ba282d11dff37cd3'
+RUST_MIN_VER="1.96.0"
+NCM_API_TAG='2.1.0'
+NCM_API_COMMIT='32b4043e83e6ec58543ef04fc1183a3ee496719f'
 declare -A GIT_CRATES=(
 	[netease-cloud-music-api]="https://github.com/gmg137/netease-cloud-music-api;${NCM_API_TAG};netease-cloud-music-api-%commit%"
 )
@@ -19,7 +19,7 @@ HOMEPAGE="https://github.com/gmg137/netease-cloud-music-gtk"
 
 SRC_URI="
 	https://github.com/gmg137/netease-cloud-music-gtk/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/liuyujielol/gentoo-go-deps/releases/download/${P}/${P}-crates.tar.xz
+	https://github.com/gentoo-zh-drafts/netease-cloud-music-gtk/releases/download/${PV}/${P}-crates.tar.xz
 	https://github.com/gmg137/netease-cloud-music-api/archive/refs/tags/${NCM_API_TAG}.tar.gz ->
 	netease-cloud-music-api-${NCM_API_TAG}.tar.gz
 "
@@ -64,14 +64,13 @@ src_prepare() {
 	# cargo will try to update crates online despite
 	# cargo_gen_config set [patch] table in cargo config
 	# modify Cargo.toml with unpacked git crate (ncm-api)
-	#local ncm_api_git="git = \"https://github.com/gmg137/netease-cloud-music-api.git\", tag = \"${NCM_API_TAG}\""
-	local ncm_api_git="git = \"https://gitee.com/gmg137/netease-cloud-music-api.git\", tag = \"${NCM_API_TAG}\""
+	local ncm_api_git="git = \"https://github.com/gmg137/netease-cloud-music-api.git\", tag = \"${NCM_API_TAG}\""
 	local ncm_api_path="path = \"${WORKDIR}/netease-cloud-music-api-${NCM_API_TAG}\""
 
 	sed -i -E "s#${ncm_api_git}#${ncm_api_path}#g" "${S}/Cargo.toml" || die "ncm-api workaround failed"
 
 	pushd "${WORKDIR}/netease-cloud-music-api-${NCM_API_TAG}" > /dev/null || die
-	eapply "${FILESDIR}/isahc-disable-static-curl.patch"
+	eapply "${FILESDIR}/isahc-api-2.1.0-disable-static-curl.patch"
 	popd > /dev/null || die
 
 	default
