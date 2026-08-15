@@ -21,6 +21,8 @@ newver = "new_ver.json"
 
 #["acct-group/onepassword"]
 
+#["acct-group/onepassword-mcp"]
+
 #["acct-group/reframe"]
 
 #["acct-group/sing-box"]
