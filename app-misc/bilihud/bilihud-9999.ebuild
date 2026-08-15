@@ -28,7 +28,7 @@ DEPEND="
 
 RDEPEND="${DEPEND}
 	dev-qt/qtwayland:6
-	dev-python/pyqt6[${PYTHON_USEDEP}]
+	dev-python/pyqt6[gui,multimedia,network,widgets,${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/qasync[${PYTHON_USEDEP}]
 	app-arch/brotli[python,${PYTHON_USEDEP}]
@@ -42,6 +42,7 @@ BDEPEND="
 	dev-build/cmake
 	dev-build/ninja
 	virtual/pkgconfig
+	test? ( dev-python/pyqt6[testlib,${PYTHON_USEDEP}] )
 "
 
 python_configure_all() {
