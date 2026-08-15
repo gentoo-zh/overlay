@@ -41,6 +41,7 @@ DOCS=(
 
 src_prepare() {
 	export YAZI_GEN_COMPLETIONS=true
+	export YAZI_NO_GITCL=true
 	sed -i -r 's/strip\s+= true/strip = false/' Cargo.toml || die "Sed failed!"
 	eapply_user
 }
