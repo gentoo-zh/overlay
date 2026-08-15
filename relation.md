@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-15 15:32:51 CST)
+(The last generation time: 2026-08-15 15:36:50 CST)
 
 ### Packages
 
@@ -394,7 +394,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/nudatus                                    | 0.0.5              |            | https://github.com/ZanderBrown/nudatus                                     | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/nvchecker                                  | 2.21-r1            |            | https://pypi.org/project/nvchecker/                                        | nvchecker is for checking if a new version of some software has been released
+ dev-python/nvchecker                                  | 2.22               |            | https://pypi.org/project/nvchecker/                                        | nvchecker is for checking if a new version of some software has been released
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/pycosat                                    | 0.6.6              |            | https://github.com/conda/pycosat                                           | Python bindings to picosat (a SAT solver)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -436,7 +436,7 @@
  dev-util/gitea-cli                                    | 0.15.1             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/grok-build-bin                               | 0.2.118            |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
-                                                       | 1.0.3              |            |                                                                            |
+                                                       | 1.0.4              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr-bin                                    | 0.8.0              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -802,7 +802,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.9              |            | https://github.com/trzsz/tsshd                                             | UDP-based SSH server with roaming support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/yaak-bin                                     | 2026.5.0           |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
+ net-misc/yaak-bin                                     | 2026.6.0           |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-p2p/amule-dlp-antileech                           | 9999               |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999               | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
