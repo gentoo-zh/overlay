@@ -9,8 +9,8 @@ DESCRIPTION="LCEDA Pro (binary package)"
 HOMEPAGE="https://lceda.cn/"
 
 SRC_URI="
-	amd64?	( https://image.lceda.cn/files/${PN}-linux-x64-${PV}.zip )
-	arm64?	( https://image.lceda.cn/files/${PN}-linux-arm64-${PV}.zip )
+	amd64? ( https://image.lceda.cn/files/${PN}-linux-x64-${PV}.zip )
+	arm64? ( https://image.lceda.cn/files/${PN}-linux-arm64-${PV}.zip )
 "
 S="${WORKDIR}/lceda-pro"
 LICENSE="LCEDA-Software-EULA LCEDA-Distribution-License"
