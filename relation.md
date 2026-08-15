@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-15 18:12:22 CST)
+(The last generation time: 2026-08-16 00:46:56 CST)
 
 ### Packages
 
@@ -645,7 +645,7 @@
  media-sound/lx-music-desktop-bin                      | 2.10.0             |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
                                                        | 2.12.2             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/netease-cloud-music-gtk                   | 2.5.3              |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
+ media-sound/netease-cloud-music-gtk                   | 2.5.4              |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/open-orpheus-bin                          | 0.16.2             |            | https://github.com/YUCLing/open-orpheus                                    | An open-source implementation of Netease Cloud Music's Orpheus browser host
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
