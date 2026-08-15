@@ -34,7 +34,7 @@ eselect repository enable gentoo-zh
 emaint sync
 ```
 
-Mirrors for mainland China: https://gentoozh.org/en/overlay
+Mirrors for mainland China and how to use the overlay: https://gentoozh.org/en/overlay
 
 ## Distfiles and binary packages
 

@@ -34,7 +34,7 @@ eselect repository enable gentoo-zh
 emaint sync
 ```
 
-中國大陸鏡像加速相關請睇：https://gentoozh.org/zh-tw/overlay
+中國大陸鏡像加速相關同 overlay 點樣用請睇：https://gentoozh.org/zh-tw/overlay
 
 ## distfiles 同二進制軟件包
 
