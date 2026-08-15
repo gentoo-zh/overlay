@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-15 15:02:32 CST)
+(The last generation time: 2026-08-15 15:32:21 CST)
 
 ### Packages
 
@@ -440,7 +440,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr-bin                                    | 0.8.0              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/hunk-bin                                     | 0.18.1             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
+ dev-util/hunk-bin                                     | 0.18.2             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.6.4.86641        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
