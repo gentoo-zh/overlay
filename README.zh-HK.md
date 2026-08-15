@@ -56,6 +56,7 @@ https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 * 如果軟件包唔適合用 nvchecker 檢查版本更新，就喺對應位置加返個註釋講清楚點解。當多個 nvchecker 條目指向同一個來源，亦請註釋其中一個；如果嗰個包可以啟用 autobump 就可以例外。
 * 開 pull request 之前，請先喺本地跑 `pkgcheck scan --commits --net`。
 * 開 pull request 之後，請檢查同修正 pkgcheck report 同 CI 報出嘅錯誤，QA 提示都要處理。
+* ebuild 淨係用 `~arch` keyword，唔用 stable keyword。
 * CI 會喺 amd64 同 arm64 上面構建。如果喺你冇嘅架構上面出現解決唔到嘅問題，就移除嗰個 keyword。
 * 自己加嘅軟件包請一直維護落去，並且用 [pull request 範本](./.github/pull_request_template.md)。
 * 唔再維護自己嘅軟件包嗰陣，請喺 issues 度搵新維護者，或者喺 [`profiles/package.mask`](./profiles/package.mask) 度 mask，到期之後再移除。

@@ -70,6 +70,7 @@ https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 * Run `pkgcheck scan --commits --net` locally before you open a pull request.
 * After opening the pull request, fix whatever the pkgcheck report and CI flag, QA
   warnings included.
+* Use `~arch` keywords only, never stable keywords.
 * CI builds on amd64 and arm64. If a problem shows up on an arch you do not have and
   you cannot solve it, remove that keyword.
 * Keep maintaining the packages you add, and use the
