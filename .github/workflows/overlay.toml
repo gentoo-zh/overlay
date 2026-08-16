@@ -2741,6 +2741,13 @@ filter = ".version"
 github_account = "zakkaus"
 autobump = true
 
+["x11-terms/tty7-bin"]
+source = "github"
+github = "l0ng-ai/tty7"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
 ["x11-terms/wezterm-bin"]
 source = "github"
 github = "wez/wezterm"
