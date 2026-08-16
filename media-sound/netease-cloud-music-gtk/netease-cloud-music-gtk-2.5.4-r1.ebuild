@@ -36,22 +36,25 @@ KEYWORDS="~amd64"
 DEPEND="
 	dev-libs/glib:2
 	dev-libs/openssl:*
+	gui-libs/gtk:4
+	gui-libs/libadwaita:1
 	media-libs/gst-plugins-bad:1.0
 	media-libs/gst-plugins-base:1.0
-	media-libs/gst-plugins-good
-	media-libs/gst-plugins-ugly
 	media-libs/gstreamer:1.0
-	media-plugins/gst-plugins-libav
-	media-plugins/gst-plugins-soup
+	net-misc/curl
 	sys-apps/dbus
 	virtual/zlib
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
-	gui-libs/gtk:4
-	gui-libs/libadwaita:1
 	x11-libs/pango
 "
-RDEPEND="${DEPEND}"
+RDEPEND="${DEPEND}
+	media-libs/gst-plugins-good
+	media-libs/gst-plugins-ugly
+	media-plugins/gst-plugins-libav
+	media-plugins/gst-plugins-pulse
+	media-plugins/gst-plugins-soup
+"
 BDEPEND="
 	sys-devel/gettext
 "
