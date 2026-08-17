@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-17 16:54:16 CST)
+(The last generation time: 2026-08-17 17:16:41 CST)
 
 ### Packages
 
@@ -276,7 +276,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/blesh                                      | 9999               |            | https://github.com/akinomyoga/ble.sh                                       | A line editor written in pure Bash with enhanced features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-shells/flyline-bin                                | 1.6.2              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
+ app-shells/flyline-bin                                | 1.7.0              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/gentoo-fish-completion                     | 0.0.3              |            | https://github.com/douglarek/gentoo-fish-completion                        | Gentoo specific fish completion support (ported from gentoo-zsh-completions)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -440,7 +440,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr-bin                                    | 0.8.0              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/hunk-bin                                     | 0.18.2             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
+ dev-util/hunk-bin                                     | 0.19.0             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.6.4.86641        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
