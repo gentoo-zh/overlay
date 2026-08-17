@@ -23,12 +23,12 @@ DEPEND="
 RDEPEND="
 	${DEPEND}
 	media-libs/openal
+	sys-libs/glibc
 	virtual/opengl
 "
 BDEPEND="
 	virtual/dotnet-sdk:${DOTNET_PKG_COMPAT}
 "
-REQUIRED_USE="elibc_glibc"
 # Do NOT Distribute!
 RESTRICT="bindist mirror strip"
 
