@@ -6,8 +6,7 @@ EAPI=8
 inherit shell-completion xdg
 
 MY_PN="${PN%-bin}"
-# The nightly release is one rolling tag whose assets are replaced in place, so
-# it has no fixed SRC_URI or Manifest entry and is fetched in src_unpack.
+# nightly is a rolling tag with in-place assets: no fixed SRC_URI or Manifest
 NIGHTLY_TARBALL="${MY_PN}-nightly.Ubuntu22.04.tar.xz"
 NIGHTLY_URI="https://github.com/wezterm/${MY_PN}/releases/download/nightly"
 
@@ -29,8 +28,7 @@ RESTRICT="strip"
 
 BDEPEND="net-misc/curl"
 
-# X and Wayland are both in DT_NEEDED, so neither can be a USE flag here.
-# libdbus-1, libEGL and libxcb-keysyms are dlopened by wezterm-gui.
+# X and Wayland are both in DT_NEEDED; dbus, EGL and xcb-keysyms are dlopened
 RDEPEND="
 	!x11-terms/wezterm
 	dev-libs/openssl:0/3

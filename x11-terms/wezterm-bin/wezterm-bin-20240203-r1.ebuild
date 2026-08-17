@@ -10,8 +10,7 @@ MY_PV="${PV}-110809-5046fc22"
 
 DESCRIPTION="A GPU-accelerated cross-platform terminal emulator and multiplexer"
 HOMEPAGE="https://wezterm.org/ https://github.com/wezterm/wezterm"
-# The Ubuntu 20.04 build links libssl.so.1.1; the 22.04 one links libssl.so.3,
-# which is the openssl the tree ships.
+# the 20.04 build links libssl.so.1.1, the 22.04 one libssl.so.3
 SRC_URI="https://github.com/wezterm/${MY_PN}/releases/download/${MY_PV}/${MY_PN}-${MY_PV}.Ubuntu22.04.tar.xz"
 S="${WORKDIR}/${MY_PN}"
 
@@ -26,8 +25,7 @@ KEYWORDS="-* ~amd64"
 
 RESTRICT="strip"
 
-# X and Wayland are both in DT_NEEDED, so neither can be a USE flag here.
-# libdbus-1, libEGL and libxcb-keysyms are dlopened by wezterm-gui.
+# X and Wayland are both in DT_NEEDED; dbus, EGL and xcb-keysyms are dlopened
 RDEPEND="
 	!x11-terms/wezterm
 	dev-libs/openssl:0/3
