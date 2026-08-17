@@ -6,6 +6,8 @@ EAPI=8
 inherit shell-completion xdg
 
 MY_PN="${PN%-bin}"
+# The nightly release is one rolling tag whose assets are replaced in place, so
+# it has no fixed SRC_URI or Manifest entry and is fetched in src_unpack.
 NIGHTLY_TARBALL="${MY_PN}-nightly.Ubuntu22.04.tar.xz"
 NIGHTLY_URI="https://github.com/wezterm/${MY_PN}/releases/download/nightly"
 
@@ -13,14 +15,17 @@ DESCRIPTION="A GPU-accelerated cross-platform terminal emulator and multiplexer"
 HOMEPAGE="https://wezterm.org/ https://github.com/wezterm/wezterm"
 S="${WORKDIR}/${MY_PN}"
 
-LICENSE="MIT"
+LICENSE="MIT OFL-1.1"
+# Dependent crate licenses
+LICENSE+="
+	Apache-2.0 BSD-2 BSD CC0-1.0 ISC LGPL-2.1 MIT MPL-2.0 UoI-NCSA
+	Unicode-3.0 Unicode-DFS-2016 WTFPL-2 ZLIB
+"
 SLOT="0"
 KEYWORDS=""
 PROPERTIES="live"
 
-# The nightly release is one rolling tag whose assets are replaced in place, so
-# it cannot be fetched through SRC_URI and carries no stable Manifest entry.
-RESTRICT="mirror strip"
+RESTRICT="strip"
 
 BDEPEND="net-misc/curl"
 
