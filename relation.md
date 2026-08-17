@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-17 16:25:23 CST)
+(The last generation time: 2026-08-17 16:54:16 CST)
 
 ### Packages
 
@@ -1017,8 +1017,10 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/tty7-bin                                    | 26.8.3             |            | https://tty7.io/                                                           | Terminal workbench with persistent sessions, SSH, and coding agent integration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-terms/wezterm-bin                                 | 9999               |            | https://wezterm.org/                                                       | A GPU-accelerated cross-platform terminal emulator and multiplexer
-                                                       | 20240203-r1        |            |                                                                            |
+ x11-terms/wezterm                                     | 99999999           |            | https://wezterm.org/                                                       | A GPU-accelerated cross-platform terminal emulator and multiplexer
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ x11-terms/wezterm-bin                                 | 20240203-r1        |            | https://wezterm.org/                                                       | A GPU-accelerated cross-platform terminal emulator and multiplexer
+                                                       | 99999999           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/bibata-cursor                              | 2.0.7              |            | https://www.bibata.live                                                    | Open source, compact, and material designed cursor set
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
