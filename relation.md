@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-17 17:24:39 CST)
+(The last generation time: 2026-08-17 18:02:18 CST)
 
 ### Packages
 
@@ -102,8 +102,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/winboat-bin                             | 0.9.0              |            | https://www.winboat.app/                                                   | Run Windows apps on Linux with seamless integration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-emulation/winetricks-zh                           | 9999               |            | https://github.com/hillwoodroc/winetricks-zh/                              | windows applications setup wizard for Chinese wine users
-                                                       | 20240105.1         |            |                                                                            |
+ app-emulation/winetricks-zh                           | 20240105.1         |            | https://github.com/hillwoodroc/winetricks-zh/                              | windows applications setup wizard for Chinese wine users
+                                                       | 99999999           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/dvp                                          | 1.2.1-r1           |            | https://www.kaufmann.no/roland/dvorak/index.html                           | The kbd keymap for Programmer Dvorak
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
