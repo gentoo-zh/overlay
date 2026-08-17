@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-17 17:16:41 CST)
+(The last generation time: 2026-08-17 17:22:10 CST)
 
 ### Packages
 
@@ -517,7 +517,7 @@
  games-server/vintagestory-server                      | 1.19.8             |            | https://www.vintagestory.at/                                               | Dedicated game server for Vintage Story
                                                        | 1.20.12            |            |                                                                            |
                                                        | 1.21.0             |            |                                                                            |
-                                                       | 1.22.6             |            |                                                                            |
+                                                       | 1.22.7             |            |                                                                            |
    acct-group/vintagestory                             | 0                  | RD         |                                                                            | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                            | User for Vintage Story Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
