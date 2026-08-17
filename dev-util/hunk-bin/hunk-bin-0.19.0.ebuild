@@ -26,7 +26,7 @@ LICENSE="
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 IUSE="
-	abi_x86_64
+	+abi_x86_64
 	cpu_flags_arm_asimd cpu_flags_arm_crc32
 	cpu_flags_x86_avx cpu_flags_x86_avx2 cpu_flags_x86_bmi1
 	cpu_flags_x86_bmi2 cpu_flags_x86_f16c cpu_flags_x86_fma3
@@ -34,7 +34,6 @@ IUSE="
 	cpu_flags_x86_sse4_2 cpu_flags_x86_ssse3
 "
 REQUIRED_USE="
-	elibc_glibc
 	amd64? (
 		abi_x86_64
 		cpu_flags_x86_avx cpu_flags_x86_avx2
