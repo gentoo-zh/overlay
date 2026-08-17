@@ -17,6 +17,8 @@ LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 
+BDEPEND="dev-util/patchelf"
+
 RDEPEND="
 	dev-libs/libayatana-appindicator
 	dev-libs/keybinder
@@ -33,8 +35,17 @@ QA_PRESTRIPPED="
 	/opt/FlClash/lib/libflutter_linux_gtk.so
 "
 
+src_prepare() {
+	default
+
+	# upstream builds libdartjni.so against a Debian JVM path
+	patchelf --set-rpath "${EPREFIX}/etc/java-config-2/current-system-vm/lib/server" \
+		usr/share/FlClash/lib/libdartjni.so || die
+
+	sed -i '/^Version=/d' usr/share/applications/FlClash.desktop || die
+}
+
 src_install() {
-	sed -i '/^Version=/d' usr/share/applications/FlClash.desktop
 	domenu usr/share/applications/FlClash.desktop
 	doicon -s 128 usr/share/icons/hicolor/128x128/apps/FlClash.png
 	doicon -s 256 usr/share/icons/hicolor/256x256/apps/FlClash.png
