@@ -98,6 +98,7 @@ Treat `master` only as an upstream-sync branch.
 - Start with `git status --short --branch`.
 - Use one topic branch per logical PR. Create new work from local `master` freshly synced with `<canonical>/master`; prefer `category-package-version` for bumps.
 - When resuming, reuse the correct topic branch. Before preparing a PR, fetch the canonical remote and rebase the topic branch onto `<canonical>/master`; a stale base makes GitHub report the PR out of date.
+- Re-fetch the canonical remote before stating that a commit or PR is merged, and before basing follow-up work on it; a stale ref reports the opposite. Compare and open against `<canonical>/master`, never the personal fork's `master`, which lags and inflates the diff with unrelated commits.
 - Multiple packages may share a PR only for one dependency chain, coordinated bump, or shared fix. Keep unrelated work separate and never split an ebuild from its `Manifest`.
 - When fresh state is needed, find an existing remote for `git@github.com:gentoo-zh/overlay.git`, `https://github.com/gentoo-zh/overlay.git`, `git@github.com:microcai/gentoo-zh.git`, or `https://github.com/microcai/gentoo-zh.git`. Match the GitHub owner and repository case-insensitively.
 - Support both fork clones (`origin` is personal) and direct clones (`origin` is canonical). Use the existing canonical remote, whatever its name is.
@@ -120,6 +121,7 @@ Treat `master` only as an upstream-sync branch.
 - Preserve package-local style and user/toolchain flags. Keep patches and refactors narrow; remove forced optimization, hardening, LTO, stripping, and blanket `-Werror`.
 - For non-trivial work, use precedent matching the source or prebuilt model, build system, eclass stack, and runtime layout. Re-verify it against the current release.
 - Keep release and `9999` behavior distinct. Port applicable dependency, QA, EAPI, and phase fixes to the live ebuild.
+- A live ebuild must sort above every release the package has. `9999` is lower than a date version, so a package versioned `20240203` needs `99999999`; confirm with `vercmp` before naming the file.
 - Every `${FILESDIR}` reference must name a committed file. If `PATCHES` coexists with a custom `src_prepare`, call `default` or apply the patches explicitly; `eapply_user` alone does not apply `PATCHES`.
 - Keep global scope metadata-invariant and side-effect-free. Do not run external programs, emit uncaptured output, modify system state, or depend on system, profile, repository, or phase data.
 - Do not use pipes, process substitution, heredocs, or herestrings there. Bash may back the latter two with temporary files that the metadata sandbox forbids.
