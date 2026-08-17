@@ -16,10 +16,10 @@ DESCRIPTION="A dynamic wallpaper solution for Linux desktops"
 HOMEPAGE="https://github.com/waywallen/waywallen"
 
 VMA_TAG="3.4.0"
-RSTD_COMMIT="669825255f7b4964932c7fee2646700698beb343"
-VVK_COMMIT="230f1b5f7f318847c8afed7ab1994a3b5fd20d2b"
-WAVSEN_COMMIT="9a8cf9249f369bdd4bc5b37d03350f270d625f53"
-NCREQUEST_COMMIT="8d703215bc9154618bc84d2c8517ff7b264c93f3"
+RSTD_COMMIT="99e7d045c8bd340ba942ca742a66b89ede02fa4c"
+VVK_COMMIT="5f1a0984e1023114d52b01d9b4967c8e52f16706"
+WAVSEN_COMMIT="3b1041ced39d5c156efa5777af122c1fc781c28f"
+NCREQUEST_COMMIT="0c0e1cc18d762551a0abe5fc38665116013be067"
 QEXTRA_COMMIT="37724d1fd44fc013e938652e2fcb25897be10e63"
 
 SRC_URI="
@@ -75,7 +75,7 @@ BDEPEND="
 		llvm-core/clang:${LLVM_SLOT}=
 		llvm-core/lld:${LLVM_SLOT}=
 	')
-	>=dev-build/corrosion-0.6.1
+	dev-build/corrosion
 	virtual/pkgconfig
 "
 
