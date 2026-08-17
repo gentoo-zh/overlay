@@ -16,7 +16,8 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 src_install() {
-	rm -fv im1.png im2.png korla_aps.jpg LICENSE README.md || die
+	rm -fv im1.jpg im2.jpg kora_aps.jpg LICENSE README.md \
+		'kora/mimetypes/scalable/Image application-x-drawy.svg' || die
 	find . -name '*.sh' -delete || die
 	find . -name '*.cache' -delete || die
 	insinto /usr/share/icons
