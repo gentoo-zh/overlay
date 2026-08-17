@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="project">
+		<email>overlay@gentoozh.org</email>
+		<name>gentoo-zh</name>
+	</maintainer>
+	<upstream>
+		<bugs-to>https://github.com/wezterm/wezterm/issues</bugs-to>
+		<changelog>https://wezterm.org/changelog.html</changelog>
+		<remote-id type="github">wezterm/wezterm</remote-id>
+	</upstream>
+</pkgmetadata>
