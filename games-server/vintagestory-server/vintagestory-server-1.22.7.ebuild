@@ -23,6 +23,7 @@ RDEPEND="
 	acct-user/vintagestory
 	app-misc/dtach
 	net-misc/curl
+	sys-libs/glibc
 	virtual/dotnet-sdk:${DOTNET_PKG_COMPAT}
 "
 BDEPEND="
