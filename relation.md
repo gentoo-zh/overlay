@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-17 15:47:19 CST)
+(The last generation time: 2026-08-17 15:47:52 CST)
 
 ### Packages
 
@@ -469,7 +469,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.84.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.25.3             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.26.0             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.26.0             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -495,9 +495,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/rebased-bin                                   | 1.1.13             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/sourcegit-bin                                 | 2026.15            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
-                                                       | 2026.16            |            |                                                                            |
+ dev-vcs/sourcegit-bin                                 | 2026.16            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.17            |            |                                                                            |
+                                                       | 2026.18            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-action/vintagestory                             | 1.19.8             |            | https://www.vintagestory.at/                                               | Uncompromising wilderness survival sandbox game (requires paid account)
                                                        | 1.20.12            |            |                                                                            |
