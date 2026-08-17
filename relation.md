@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-17 16:09:12 CST)
+(The last generation time: 2026-08-17 16:25:23 CST)
 
 ### Packages
 
@@ -1022,7 +1022,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/bibata-cursor                              | 2.0.7              |            | https://www.bibata.live                                                    | Open source, compact, and material designed cursor set
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/kora-icon-theme                            | 2.0.4              |            | https://github.com/bikass/kora                                             | An SVG icon theme with lots of new icons for GNU/Linux operating systems
+ x11-themes/kora-icon-theme                            | 2.0.5              |            | https://github.com/bikass/kora                                             | An SVG icon theme with lots of new icons for GNU/Linux operating systems
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-themes                                | 2.4.0              |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
