@@ -6,6 +6,8 @@ EAPI=8
 DISTUTILS_USE_PEP517=scikit-build-core
 DISTUTILS_EXT=1
 PYTHON_COMPAT=( python3_{13..14} )
+# the lyrics cache is a sqlite3 database
+PYTHON_REQ_USE="sqlite"
 
 inherit desktop distutils-r1 git-r3 xdg
 
@@ -15,6 +17,7 @@ EGIT_REPO_URI="https://github.com/locez/kotonoha.git"
 
 LICENSE="ISC LGPL-2.1+ MIT"
 SLOT="0"
+IUSE="embedded-lyrics"
 
 DEPEND="
 	dev-libs/wayland
@@ -29,6 +32,7 @@ RDEPEND="
 	dev-python/qasync[${PYTHON_USEDEP}]
 	dev-qt/qtwayland:6
 	dev-qt/qtsvg:6
+	embedded-lyrics? ( media-libs/mutagen[${PYTHON_USEDEP}] )
 "
 BDEPEND="
 	dev-util/wayland-scanner

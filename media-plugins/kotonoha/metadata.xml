@@ -5,6 +5,9 @@
 		<email>locez@locez.com</email>
 		<name>Locez</name>
 	</maintainer>
+	<use>
+		<flag name="embedded-lyrics">Read lyrics stored in local audio file tags via <pkg>media-libs/mutagen</pkg></flag>
+	</use>
 	<upstream>
 		<remote-id type="github">locez/kotonoha</remote-id>
 	</upstream>
