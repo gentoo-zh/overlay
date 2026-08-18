@@ -11,7 +11,11 @@ HOMEPAGE="https://www.trae.cn/"
 SRC_URI="
 	amd64? (
 		https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/${PV}/linux/TraeCode_CN-linux-x64.deb
-			-> ${P}.deb
+			-> ${P}-amd64.deb
+	)
+	arm64? (
+		https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/${PV}/linux/TraeCode_CN-linux-arm64.deb
+			-> ${P}-arm64.deb
 	)
 "
 
@@ -73,10 +77,14 @@ src_unpack() {
 
 src_install() {
 	tar -xvf data.tar.xz -C "${D}"
+
+	local myarch=x64
+	use arm64 && myarch=arm64
+
 	rm -f \
-		"${ED}"/usr/share/trae-cn/resources/app/extensions/byted-icube.integrations-extended/dist/skia.linux-x64-musl.node \
-		"${ED}"/usr/share/trae-cn/resources/app/node_modules/@aha-kit/ipc-linux-x64/dist/zeromq/prebuild/linux/x64/node/musl-127-Release/addon.node \
-		"${ED}"/usr/share/trae-cn/resources/app/extensions/byted-solo.builtin-mcp/node_modules/@koromix/koffi-linux-x64/musl_x64/koffi.node \
+		"${ED}"/usr/share/trae-cn/resources/app/extensions/byted-icube.integrations-extended/dist/skia.linux-${myarch}-musl.node \
+		"${ED}"/usr/share/trae-cn/resources/app/node_modules/@aha-kit/ipc-linux-${myarch}/dist/zeromq/prebuild/linux/${myarch}/node/musl-127-Release/addon.node \
+		"${ED}"/usr/share/trae-cn/resources/app/extensions/byted-solo.builtin-mcp/node_modules/@koromix/koffi-linux-${myarch}/musl_${myarch}/koffi.node \
 		|| die
 	if [[ -d ${ED}/usr/share/appdata ]]; then
 		mv "${ED}"/usr/share/{appdata,metainfo} || die
