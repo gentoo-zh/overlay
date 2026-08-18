@@ -9,7 +9,7 @@ CHROMIUM_LANGS="af am ar bg bn ca cs da de el en-GB es es-419 et fa fi fil fr gu
 
 inherit chromium-2 desktop optfeature pax-utils shell-completion unpacker xdg
 
-BUILD_ID="6b2afae0257df2bb5e1835f15165dc2f0de056b2"
+BUILD_ID="6246455961129c32969845e00aa25d87ae926ec9"
 
 DESCRIPTION="Cursor App - AI-first coding environment"
 HOMEPAGE="https://cursor.com/"
