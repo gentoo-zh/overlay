@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-18 14:42:53 CST)
+(The last generation time: 2026-08-18 15:04:54 CST)
 
 ### Packages
 
@@ -258,7 +258,7 @@
                                                        | 1220               |            |                                                                            |
                                                        | 1234               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/notesnook-bin                              | 3.4.5              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
+ app-office/notesnook-bin                              | 3.4.6              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/obsidian                                   | 1.13.7             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
