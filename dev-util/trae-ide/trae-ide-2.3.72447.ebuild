@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit xdg
+inherit unpacker xdg
 
 DESCRIPTION="Trae IDE (binary package)"
 HOMEPAGE="https://www.trae.cn/"
@@ -24,7 +24,7 @@ S="${WORKDIR}"
 LICENSE="trae"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
-DEPEND="
+RDEPEND="
 	>=app-accessibility/at-spi2-core-2.46.0:2
 	app-crypt/libsecret
 	dev-libs/expat
@@ -58,28 +58,32 @@ DEPEND="
 	x11-libs/libxshmfence
 	x11-libs/libXtst
 	x11-libs/pango
-	"
-RDEPEND="${DEPEND}"
-BDEPEND="app-arch/unzip"
+"
 
 RESTRICT="mirror bindist"
 
-QA_PREBUILT="/usr/share/trae-cn/*"
+QA_PREBUILT="usr/share/trae-cn/*"
 # prebuilt Electron/sandbox blobs (sbox.so, crashpad_handler, bwrap, bundled .so) ship
 # RWX segments we cannot rebuild; acknowledge so the execstack QA elog does not fail CI.
-# scanelf matches these paths WITHOUT a leading slash (unlike QA_PREBUILT above).
 QA_EXECSTACK="usr/share/trae-cn/*"
 
 src_unpack() {
-	export LANG=C.UTF-8
-	unpack ${A}
+	:
 }
 
 src_install() {
-	tar -xvf data.tar.xz -C "${D}"
+	local -x LANG=C.UTF-8
 
-	local myarch=x64
-	use arm64 && myarch=arm64
+	dodir /
+	cd "${ED}" || die
+	unpacker
+
+	local myarch
+	case ${ARCH} in
+		amd64) myarch=x64 ;;
+		arm64) myarch=arm64 ;;
+		*) die "unsupported ARCH=${ARCH}" ;;
+	esac
 
 	rm -f \
 		"${ED}"/usr/share/trae-cn/resources/app/extensions/byted-icube.integrations-extended/dist/skia.linux-${myarch}-musl.node \
