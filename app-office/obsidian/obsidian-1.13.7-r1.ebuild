@@ -110,8 +110,9 @@ src_install() {
 		exec+=" --ozone-platform-hint=auto --enable-wayland-ime"
 	fi
 
-	# The window reports WM_CLASS "md.obsidian", "md.Obsidian"; a StartupWMClass
-	# that does not match leaves the running window without this entry's icon.
+	# The window reports WM_CLASS "md.obsidian.obsidian", "md.obsidian.Obsidian";
+	# a StartupWMClass that does not match leaves the running window without this
+	# entry's icon.
 	cat > "${T}/${PN}.desktop" <<-EOF || die
 		[Desktop Entry]
 		Type=Application
@@ -120,7 +121,7 @@ src_install() {
 		Exec=${exec} %u
 		Icon=${PN}
 		Terminal=false
-		StartupWMClass=md.Obsidian
+		StartupWMClass=md.obsidian.Obsidian
 		Categories=Office;
 		MimeType=x-scheme-handler/obsidian;
 	EOF
