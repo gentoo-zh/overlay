@@ -20,7 +20,7 @@ CRATES="
 "
 
 declare -A GIT_CRATES=(
-	[crossterm]='https://github.com/openai-oss-forks/crossterm;f69a4a0499f2fdc7d5d222df32373ffffe9ba3f5;crossterm-%commit%'
+	[crossterm]='https://github.com/openai-oss-forks/crossterm;45fecb9508105988f42fe6ff0441783ed3717f92;crossterm-%commit%'
 	[nucleo-matcher]='https://github.com/helix-editor/nucleo;4253de9faabb4e5c6d81d946a5e35a90f87347ee;nucleo-%commit%/matcher'
 	[nucleo]='https://github.com/helix-editor/nucleo;4253de9faabb4e5c6d81d946a5e35a90f87347ee;nucleo-%commit%'
 	[runfiles]='https://github.com/dzbarsky/rules_rust;b56cbaa8465e74127f1ea216f813cd377295ad81;rules_rust-%commit%/rust/runfiles'
