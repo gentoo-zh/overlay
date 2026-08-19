@@ -212,7 +212,7 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 
 ## Commands and QA
 
-- Before treating a finding as yours, read the package's history and the previous version's result. A finding that predates your change is pre-existing, and the completion report says so.
+- Before treating a finding as yours, read the package's history, the previous version's result, and the pkgcheck bot's report on the PR. A finding that predates your change is pre-existing, and the completion report says so.
 - Iterate with the narrowest relevant package checks, and re-run the command exposing each failure.
 - Do not repeat a check that already passed on the same tree: no rebuilding what already built clean, no rerunning a scan that already passed. A rebase or a new commit makes a previous commit scan stale, and this never excuses a gate the Ebuild Policy requires.
 
@@ -241,7 +241,7 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 
 ### QA notices
 
-- The pkgcheck bot comments its own report on the PR, naming the commit and packages it scanned and the status. Read that instead of guessing what CI saw.
+- That report names the commit and packages the bot scanned and the status; read it instead of guessing what CI saw.
 - Fix genuine QA defects at the root cause.
 - Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk.
 - Never rewrite working behavior merely to silence a checker.
