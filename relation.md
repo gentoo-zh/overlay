@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-19 20:13:45 CST)
+(The last generation time: 2026-08-19 20:15:04 CST)
 
 ### Packages
 
@@ -215,7 +215,7 @@
                                                        | 0.89.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.52.5             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
-                                                       | 4.53.3             |            |                                                                            |
+                                                       | 4.53.4             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/gpick                                        | 0.4                |            | https://github.com/thezbyg/gpick                                           | Advanced color picker written in C++ using GTK+ toolkit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -263,7 +263,7 @@
  app-office/obsidian                                   | 1.13.7-r1          |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/siyuan-bin                                 | 3.7.3              |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
-                                                       | 3.8.0              |            |                                                                            |
+                                                       | 3.8.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office                                 | 11.1.0.11719-r2    |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office is an office productivity suite, Here is the Chinese version
                                                        | 12.1.2.28080       |            |                                                                            |
