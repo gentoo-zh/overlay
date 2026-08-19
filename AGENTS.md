@@ -21,7 +21,7 @@ Use one standard for commit messages, PRs, comments, notes, and replies: precise
 
 ## Commit and PR Text
 
-- Take `pkgdev`'s final English subject verbatim as the PR title—never translate or reword it. For a package, use `category/package: summary`; a bump is `category/package: add NEW`, with `, drop OLD` only when dropping. A package's first commit is `category/package: new package, add NEW`; later versions of it drop the `new package` clause.
+- Take `pkgdev`'s final English subject verbatim as the PR title—never translate or reword it. Where a PR carries more than one commit, use the subject of the commit carrying its main change. For a package, use `category/package: summary`; a bump is `category/package: add NEW`, with `, drop OLD` only when dropping. A package's first commit is `category/package: new package, add NEW`; later versions of it drop the `new package` clause.
 - A non-package change instead names an eclass (`name.eclass:`) or the affected path or filename (`profiles:`, `licenses:`, `package.mask:`, this overlay's own `AGENTS.md:`), whatever lets a reader identify what changed.
 - The subject is one unwrapped line, at most 69 characters (GLEP 66) where the prefix permits.
 - Add a body only when the subject cannot carry the reason; use subject / blank line / body.
@@ -42,6 +42,8 @@ Use one standard for commit messages, PRs, comments, notes, and replies: precise
 - Commit with `pkgdev commit --scan false --signoff --gpg-sign`; if GPG is unavailable, omit `--gpg-sign`. Never use raw `git commit`.
 - Keep the PR template: put the description above its marker, leave the checklist intact, and tick only checks that ran.
 - Before opening or updating a PR (`gh pr create`/`gh pr edit`), show the human the exact title, body, and files and get confirmation for that specific PR—a blanket or batch go-ahead is not per-PR confirmation; this holds even for a draft.
+- Open the PR yourself only for a routine bump: an ebuild rename plus `pkgdev manifest`, or a version variable such as a build id, with nothing else changed.
+- Any other change stops at the fork. Push the topic branch, hand the human the drafted subject and body with its compare link against `<canonical>/master` (`https://github.com/gentoo-zh/overlay/compare/master...<fork-owner>:<fork-repo>:<branch>`), and let them open the PR.
 - Watch CI and fix failures from their logs rather than guessing.
 
 Non-version-bump commit example:
@@ -99,7 +101,7 @@ Treat `master` only as an upstream-sync branch.
 - Use one topic branch per logical PR. Create new work from local `master` freshly synced with `<canonical>/master`; prefer `category-package-version` for bumps.
 - When resuming, reuse the correct topic branch. Before preparing a PR, fetch the canonical remote and rebase the topic branch onto `<canonical>/master`; a stale base makes GitHub report the PR out of date.
 - Re-fetch the canonical remote before stating that a commit or PR is merged, and before basing follow-up work on it; a stale ref reports the opposite. Compare and open against `<canonical>/master`, never the personal fork's `master`, which lags and inflates the diff with unrelated commits.
-- Multiple packages may share a PR only for one dependency chain, coordinated bump, or shared fix. Keep unrelated work separate and never split an ebuild from its `Manifest`.
+- One bump or one fix is one PR. Packages share a PR only when they must land together: one dependency chain, a coordinated bump, or a fix that spans them. A batch of unrelated bumps never does. Never split an ebuild from its `Manifest`.
 - When fresh state is needed, find an existing remote for `git@github.com:gentoo-zh/overlay.git`, `https://github.com/gentoo-zh/overlay.git`, `git@github.com:microcai/gentoo-zh.git`, or `https://github.com/microcai/gentoo-zh.git`. Match the GitHub owner and repository case-insensitively.
 - Support both fork clones (`origin` is personal) and direct clones (`origin` is canonical). Use the existing canonical remote, whatever its name is.
 - If neither remote exists, add `upstream` as `https://github.com/gentoo-zh/overlay.git`.
@@ -146,9 +148,11 @@ Treat `master` only as an upstream-sync branch.
 
 - Compare existing ebuilds and history with upstream notes and build metadata for dependency, toolchain, option, license, layout, and installed-file changes.
 - The `go.mod` `go` directive and `Cargo.toml` `rust-version` are real minimum versions; no eclass reads them for you. When one exceeds what the profile toolchain guarantees, raise the matching `>=dev-lang/go` `BDEPEND` or `RUST_MIN_VER`.
-- If the raised floor is not yet in the tree (e.g. `>=dev-lang/go-1.26.5` while the tree has 1.26.4), open the PR as a draft and cite the upstream `go.mod` and the tree state (packages.gentoo.org).
-- The `go.mod` `toolchain` line is only a suggestion under `GOTOOLCHAIN=local` and sets no floor. Use an upper bound only for a verified incompatibility with no available fix.
+- If the raised floor is not yet in the tree, hand over the compare link stating the PR must be opened as a draft. Cite the upstream `go.mod` and the tree state on packages.gentoo.org, for example `>=dev-lang/go-1.26.5` while the tree has 1.26.4.
+- The `go.mod` `toolchain` line is only a suggestion under `GOTOOLCHAIN=local` and sets no floor.
 - Re-check patches and assets. Update the ebuild, `SRC_URI`, version variables, checksums, and `Manifest` together; stop when required evidence is unavailable.
+- When a bump exposes a defect, fix it in the existing ebuild and change only what the new release invalidates. Rewrite it only when the release leaves it unusable, and say what made it so.
+- Before writing the fix, find how `::gentoo` or this overlay already solves the same problem and take that form. A construct with no precedent in either tree needs a stated reason.
 - Normalize the ebuild version by Gentoo rules. Preserve the literal upstream tag through `MY_PV` or an equivalent variable when needed.
 - Tracker output is only a hint: verify the real tag, artifact, and URL. `-rN` is a Gentoo revision; never derive upstream tags or filenames from `${PVR}` or `${PF}`.
 - Never guess `RDEPEND`, `IUSE`, pins, generated dependency sets, build options, or vendor artifacts merely to obtain a green build.
@@ -180,8 +184,8 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 - Every atom traces to evidence here: a linked SONAME, a build-file `dependency()`, `find_package`, or `pkg-config` call, a `dlopen`ed library, or a program a phase runs. Another distro's control file is not evidence.
 - Do not declare what the environment provides: `@system` members, tools an inherited eclass pulls in, or a compiler or libc floor the profile guarantees.
 - One atom per package: fold the version bound, `SLOT`, and USE constraints into a single entry.
-- Carry the build system's own version floors into the atom, and do not invent floors it does not state.
-- A slot operator needs a real subslot on the provider; `:=` on a slot without one binds nothing.
+- Carry the build system's own version floors into the atom, and do not invent floors it does not state. Add an upper bound only for a verified incompatibility with no available fix.
+- Before adding a slot operator (`:=` or `:slot=`), check that the provider declares a subslot. Without one it binds `slot/slot`, so consumers rebuild when the slot changes but never on an ABI break inside it.
 - Revbump when a Gentoo-side change can alter an existing installation or runtime dependency decision. This includes installed output or behavior, runtime dependencies, subslot binding, and default USE changes.
 - Also revbump for an affected non-free or soon-to-be-removed license and for a non-trivial EAPI change.
 - Skip the revbump when a descriptive, copyright, keyword, message, test, build-failure, or build-dependency-relaxation change cannot leave an installed result wrong.
@@ -239,6 +243,7 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 ## Commands and QA
 
 - Run `pkgdev manifest` when distfiles change; pass `--distdir <writable-dir>` if the system `DISTDIR` is not user-writable. Iterate with the narrowest relevant package checks and re-run the command exposing each failure.
+- Do not repeat a check that already passed on the same tree: no rebuilding what already built clean, no rerunning a scan that already passed. A rebase or a new commit makes a previous commit scan stale, and this never excuses a gate the Ebuild Policy requires.
 - Before the PR, complete required clean installs, then scope the commit scan to this branch with an explicit merge-base range (a bare `--commits` compares against the fork's lagging `origin` and drags in unrelated packages):
 
   ```bash
@@ -250,6 +255,8 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 - Tests use the build tree, not an installed or system copy. Gate and declare test-only inputs, dependencies, and resources.
 - Preserve the largest reliable subset and skip individual failures with reasons. Use `RESTRICT=test` only after proving no reliable subset can be retained, and record why.
 - Use conditional `PROPERTIES="test? ( test_network )"` only with `IUSE=test`; otherwise use `PROPERTIES="test_network"`.
+- Before treating a finding as yours, read the package's history and the previous version's result. A finding that predates your change is pre-existing, and the completion report says so.
+- The pkgcheck bot comments its own report on the PR, naming the commit and packages it scanned and the status. Read that instead of guessing what CI saw.
 - Fix genuine QA defects at the root cause. Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk; never rewrite working behavior merely to silence a checker.
 - GitHub rate limits can cause false `DeadUrl` or `RedirectedUrl` results; re-verify flagged URLs.
 - A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second network before calling a URL dead.
