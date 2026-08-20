@@ -9,13 +9,13 @@ HOMEPAGE="
 	https://www.kernel.org/
 	https://xanmod.org/
 "
-CJKTTY_PV="7.1.7"
+CJKTTY_PV="7.1.9"
 
 inherit kernel-build toolchain-funcs llvm-r2 cjktty
 
 MY_P=linux-${PV%.*}
 # Note: to bump xanmod, check PATCHSET in sys-kernel/gentoo-kernel
-PATCHSET=linux-gentoo-patches-7.1.6
+PATCHSET=linux-gentoo-patches-7.1.9
 XV="1"
 
 SRC_URI+="
