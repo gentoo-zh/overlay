@@ -19,7 +19,7 @@ SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 
 # go.mod go directive is 1.25.0, above the go-module eclass floor
-BDEPEND=">=dev-lang/go-1.25.0"
+BDEPEND=">=dev-lang/go-1.26.0"
 
 src_compile() {
 	ego build -o "bin/${PN}" "./cmd/${PN}"
