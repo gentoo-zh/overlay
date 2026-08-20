@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-20 14:32:11 CST)
+(The last generation time: 2026-08-20 14:48:43 CST)
 
 ### Packages
 
@@ -953,8 +953,11 @@
                                                        | 7.1.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.103           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
+                                                       | 6.12.104           |            |                                                                            |
                                                        | 6.18.44            |            |                                                                            |
+                                                       | 6.18.45            |            |                                                                            |
                                                        | 7.1.8              |            |                                                                            |
+                                                       | 7.1.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.104           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.18.45            |            |                                                                            |
