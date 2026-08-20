@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-21 07:24:09 CST)
+(The last generation time: 2026-08-21 07:28:22 CST)
 
 ### Packages
 
@@ -446,7 +446,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-cli-bin                                 | 1.49.0-r1          |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kimi-code-bin                                | 0.37.2             |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
+ dev-util/kimi-code-bin                                | 0.38.0             |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kiro-cli                                     | 2.19.0             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
