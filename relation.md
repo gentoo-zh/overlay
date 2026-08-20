@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-20 11:53:55 CST)
+(The last generation time: 2026-08-20 12:30:49 CST)
 
 ### Packages
 
@@ -946,8 +946,11 @@
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel                          | 6.12.103           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.12.104           |            |                                                                            |
                                                        | 6.18.44            |            |                                                                            |
+                                                       | 6.18.45            |            |                                                                            |
                                                        | 7.1.8              |            |                                                                            |
+                                                       | 7.1.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.103           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.44            |            |                                                                            |
@@ -968,8 +971,11 @@
  sys-power/tlpui                                       | 1.10.1             |            | https://github.com/d4nj1/TLPUI                                             | A GTK user interface for TLP written in Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/dist-kernel                                   | 6.12.103-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 6.12.104-r100      |            |                                                                            |
                                                        | 6.18.44-r100       |            |                                                                            |
+                                                       | 6.18.45-r100       |            |                                                                            |
                                                        | 7.1.8-r100         |            |                                                                            |
+                                                       | 7.1.9-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 7.1.8              | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches, optionally with cjktty
