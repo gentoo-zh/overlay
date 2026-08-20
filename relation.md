@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-21 07:12:42 CST)
+(The last generation time: 2026-08-21 07:15:36 CST)
 
 ### Packages
 
@@ -560,7 +560,7 @@
  media-fonts/lxgw-neo-xihei                            | 1.304              |            | https://github.com/lxgw/LxgwNeoXiHei                                       | A Simplified Chinese sans-serif font derived from IPAex Gothic
                                                        | 1.305              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/lxgw-neo-zhisong                          | 1.066              |            | https://github.com/lxgw/LxgwNeoZhiSong                                     | A Chinese serif font derived from IPAex Mincho and IPAmj Mincho
+ media-fonts/lxgw-neo-zhisong                          | 1.067              |            | https://github.com/lxgw/LxgwNeoZhiSong                                     | A Chinese serif font derived from IPAex Mincho and IPAmj Mincho
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-wenkai-gb                            | 1.522              |            | https://github.com/lxgw/LxgwWenkaiGB                                       | LXGW WenKai following the GB 18030 (national standard) glyph forms
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -759,7 +759,7 @@
  net-misc/biliup-bin                                   | 1.2.2-r1           |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/bruno-bin                                    | 3.5.3              |            | https://www.usebruno.com/                                                  | Opensource IDE For Exploring and Testing Api's
-                                                       | 4.0.0              |            |                                                                            |
+                                                       | 4.1.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.0.0              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
