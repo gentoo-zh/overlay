@@ -856,6 +856,7 @@ github = "google/google-java-format"
 use_latest_release = true
 prefix = "v"
 github_account = ["oatiz", "gouwazi"]
+autobump = true
 
 # TODO: multiple slot
 #["dev-java/oraclejdk-bin"]
@@ -1387,12 +1388,14 @@ github = "GitoxideLabs/gitoxide"
 use_max_tag = true
 prefix = "v"
 github_account = "peeweep"
+autobump = true
 
 ["dev-vcs/rebased-bin"]
 source = "github"
 github = "DetachHead/rebased"
 use_latest_release = true
 github_account = "gouwazi"
+autobump = true
 
 ["dev-vcs/sourcegit-bin"]
 source = "github"
@@ -1458,6 +1461,7 @@ source = "github"
 github = "Stunkymonkey/nautilus-open-any-terminal"
 use_latest_release = true
 github_account = "Jack77793"
+autobump = true
 
 # no tracking entry yet
 #["gnome-extra/resources"]
@@ -2042,6 +2046,7 @@ github_account = "123485k"
 source = "pypi"
 pypi = "ananta"
 github_account = "gouwazi"
+autobump = true
 
 ["net-misc/another-redis-desktop-manager-bin"]
 source = "github"
@@ -2106,6 +2111,7 @@ github = "superfly/flyctl"
 use_latest_release = true
 prefix = "v"
 github_account = "akira7095"
+autobump = true
 
 ["net-misc/geo"]
 source = "github"
@@ -2414,6 +2420,7 @@ source = "github"
 github = "Zephyruso/zashboard"
 use_latest_tag = true
 prefix = "v"
+autobump = true
 
 ["net-vpn/rathole"]
 source = "github"
