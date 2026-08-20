@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-21 07:28:22 CST)
+(The last generation time: 2026-08-21 07:29:20 CST)
 
 ### Packages
 
@@ -214,8 +214,8 @@
  app-misc/crush                                        | 0.88.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
                                                        | 0.90.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/go-yq-bin                                    | 4.52.5             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
-                                                       | 4.53.4             |            |                                                                            |
+ app-misc/go-yq-bin                                    | 4.53.4             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
+                                                       | 4.53.6             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/gpick                                        | 0.4                |            | https://github.com/thezbyg/gpick                                           | Advanced color picker written in C++ using GTK+ toolkit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
