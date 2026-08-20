@@ -18,7 +18,7 @@ LICENSE="FSL-1.1-MIT"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 
-BDEPEND=">=dev-lang/go-1.26.5"
+BDEPEND=">=dev-lang/go-1.26.6"
 
 src_compile() {
 	local ldflags="\
