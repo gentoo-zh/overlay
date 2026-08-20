@@ -10,7 +10,7 @@ ETYPE="sources"
 K_EXP_GENPATCHES_NOUSE="1"
 
 # Just get basic genpatches, -lqx patch set already includes main updates
-K_GENPATCHES_VER="11"
+K_GENPATCHES_VER="12"
 
 # -lqx already sets EXTRAVERSION to kernel Makefile
 K_NOSETEXTRAVERSION="1"
@@ -19,7 +19,7 @@ K_NOSETEXTRAVERSION="1"
 K_SECURITY_UNSUPPORTED="1"
 
 K_NODRYRUN="yes"
-CJKTTY_PV="7.1.7"
+CJKTTY_PV="7.1.9"
 
 # We want the very basic patches from gentoo-sources, experimental patch is
 # already included in liquorix-sources
