@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-20 14:15:21 CST)
+(The last generation time: 2026-08-20 14:19:04 CST)
 
 ### Packages
 
@@ -276,7 +276,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/blesh                                      | 9999               |            | https://github.com/akinomyoga/ble.sh                                       | A line editor written in pure Bash with enhanced features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-shells/flyline-bin                                | 1.7.0              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
+ app-shells/flyline-bin                                | 1.7.1              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/gentoo-fish-completion                     | 0.0.3              |            | https://github.com/douglarek/gentoo-fish-completion                        | Gentoo specific fish completion support (ported from gentoo-zsh-completions)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -427,7 +427,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex                                        | 0.148.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/fvm                                          | 4.1.2              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
+ dev-util/fvm                                          | 4.1.4              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
    dev-lang/dart                                       | 3.13.0             |  D, RD     | https://dart.dev                                                           | The Dart SDK
      dev-lang/dart-bootstrap                           | 3.13.0             | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
