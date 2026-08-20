@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-20 10:56:18 CST)
+(The last generation time: 2026-08-20 11:40:30 CST)
 
 ### Packages
 
@@ -956,6 +956,7 @@
  sys-kernel/gentoo-cjk-sources                         | 6.12.104           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.18.45            |            |                                                                            |
                                                        | 7.1.8-r1           |            |                                                                            |
+                                                       | 7.1.9              |            |                                                                            |
                                                        | 7.2.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 38                 |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
