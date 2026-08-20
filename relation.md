@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-20 12:30:49 CST)
+(The last generation time: 2026-08-20 14:03:27 CST)
 
 ### Packages
 
@@ -438,7 +438,7 @@
  dev-util/grok-build-bin                               | 0.2.118            |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
                                                        | 1.0.5              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/herdr-bin                                    | 0.8.0              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
+ dev-util/herdr-bin                                    | 0.8.2              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.19.0             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -469,7 +469,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.84.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.29.0             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.30.0             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.29.0             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
