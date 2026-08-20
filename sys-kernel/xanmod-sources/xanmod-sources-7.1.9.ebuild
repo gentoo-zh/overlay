@@ -5,8 +5,8 @@ EAPI="8"
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
 # Note: to bump xanmod, check K_GENPATCHES_VER in sys-kernel/gentoo-sources
-K_GENPATCHES_VER="11"
-CJKTTY_PV="7.1.7"
+K_GENPATCHES_VER="12"
+CJKTTY_PV="7.1.9"
 
 inherit check-reqs kernel-2 cjktty
 detect_version
