@@ -42,6 +42,7 @@ RDEPEND="
 	x11-libs/pango
 	x11-misc/xdg-user-dirs
 	x11-misc/xdg-utils
+	!net-misc/localsend
 "
 BDEPEND="dev-util/patchelf"
 

@@ -1178,6 +1178,10 @@ github_account = "vowstar"
 # shipped inside the prelink tarball, upstream dead
 #["dev-util/execstack"]
 
+# consumers pin the SDK with dev-util/flutter-bin:<version>, so a bump here
+# breaks them until they are bumped together
+#["dev-util/flutter-bin"]
+
 ["dev-util/fvm"]
 source = "github"
 github = "leoafarias/fvm"
@@ -2135,6 +2139,9 @@ github = "simulot/immich-go"
 use_latest_release = true
 prefix = "v"
 github_account = "peeweep"
+
+# same upstream as net-misc/localsend-bin below
+#["net-misc/localsend"]
 
 ["net-misc/localsend-bin"]
 source = "github"
