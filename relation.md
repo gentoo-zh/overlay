@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-21 14:05:58 CST)
+(The last generation time: 2026-08-21 19:16:35 CST)
 
 ### Packages
 
@@ -595,7 +595,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/zhudou                                    | 2.000              |            | https://github.com/Buernia/Zhudou-Sans                                     | A font family for CJK symbols and punctuation, derived from Noto Sans
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/bambustudio-bin                             | 02.08.02.60        |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
+ media-gfx/bambustudio-bin                             | 02.08.02.61        |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/open-wallpaper-engine                       | 0.2.3              |            | https://github.com/waywallen/open-wallpaper-engine                         | A dynamic wallpaper solution for Linux desktops
    gui-apps/waywallen                                  | 0.3.5              |  D, RD     | https://github.com/waywallen/waywallen                                     | A dynamic wallpaper solution for Linux desktops
