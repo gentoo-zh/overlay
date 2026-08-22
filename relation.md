@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-22 13:16:25 CST)
+(The last generation time: 2026-08-22 13:17:21 CST)
 
 ### Packages
 
@@ -493,7 +493,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/gitoxide                                      | 0.56.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/rebased-bin                                   | 1.1.13             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
+ dev-vcs/rebased-bin                                   | 1.1.14             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/sourcegit-bin                                 | 2026.16            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.17            |            |                                                                            |
