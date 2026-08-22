@@ -2603,11 +2603,9 @@ strip_release = true
 # to_pattern = "\\1"
 
 ["sys-kernel/xanmod-sources"]
-source = "gitlab"
-gitlab = "xanmod/linux"
-use_max_tag = true
-from_pattern = "(.*)-xanmod(.*)"
-to_pattern = "\\1"
+source = "regex"
+url = "https://sourceforge.net/projects/xanmod/rss?path=/releases/main"
+regex = 'patch-([\d.]+)-xanmod\d+\.xz'
 
 # FILESDIR only, upstream noneeded
 #["sys-libs/elog-functions"]
