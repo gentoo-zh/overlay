@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-22 13:10:33 CST)
+(The last generation time: 2026-08-22 13:11:21 CST)
 
 ### Packages
 
@@ -329,7 +329,7 @@
  dev-go/gotests                                        | 1.9.0              |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/staticcheck                                    | 2025.1.1           |            | https://staticcheck.dev                                                    | Go static analysis, detecting bugs, performance issues, and much more
-                                                       | 2026.2             |            |                                                                            |
+                                                       | 2026.2.1           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-java/google-java-format                           | 1.36.1             |            | https://github.com/google/google-java-format                               | Reformats Java source code to comply with Google Java Style
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -752,7 +752,7 @@
                                                        | 8.5.2-r1           |            |                                                                            |
                                                        | 8.7.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/baidupcs-go                                  | 4.0.1              |            | https://github.com/qjfoidnh/BaiduPCS-Go                                    | Terminal utility for Baidu Network Disk (Golang Version)
+ net-misc/baidupcs-go                                  | 4.0.2              |            | https://github.com/qjfoidnh/BaiduPCS-Go                                    | Terminal utility for Baidu Network Disk (Golang Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/biliup-app-bin                               | 1.2.3              |            | https://github.com/biliup/biliup-app-new                                   | A Tool for Upload video to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -867,7 +867,7 @@
                                                        | 9999               |            |                                                                            |
        app-alternatives/v2ray-geoip                    | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geoip
        app-alternatives/v2ray-geosite                  | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geosite
-     net-proxy/v2ray                                   | 5.52.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
+     net-proxy/v2ray                                   | 5.53.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
      net-proxy/v2ray-bin                               | 5.47.0             | RD         | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
    net-proxy/trojan-go-fork                            | 2026.02.15         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
