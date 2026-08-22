@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-22 13:17:21 CST)
+(The last generation time: 2026-08-22 13:22:44 CST)
 
 ### Packages
 
@@ -442,7 +442,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.19.0             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/jetbrains-toolbox                            | 3.7.0.87111        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
+ dev-util/jetbrains-toolbox                            | 3.7.2.87231        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-cli-bin                                 | 1.49.0-r1          |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -884,7 +884,7 @@
  net-proxy/smartproxy                                  | 0.9.5              |            | https://github.com/microcai/smartproxy                                     | A fast, proxy smart selector
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/v2rayA                                      | 2.2.7.5            |            | https://v2raya.org/                                                        | web GUI of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel
-                                                       | 2.4.11             |            |                                                                            |
+                                                       | 2.4.14             |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/yacd-meta                                   | 0.3.8              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
