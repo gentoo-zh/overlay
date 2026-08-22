@@ -41,7 +41,8 @@ src_install(){
 	insinto /opt
 	doins -r usr/lib/unityhub
 	dosym -r /opt/unityhub/unityhub /usr/bin/unityhub
-	doicon -s 1024 usr/share/pixmaps/${PN}.png
+	insinto /usr/share/icons
+	doins -r usr/share/icons/hicolor
 	domenu usr/share/applications/${PN}.desktop
 	fperms 0755 -R /opt/unityhub
 }
