@@ -7,7 +7,7 @@ CRATES="
 "
 
 declare -A GIT_CRATES=(
-	[mpd]='https://github.com/htkhiem/rust-mpd;e9f5ad589e0eaaeb1d9758cc3a6b5762bb67e4b5;rust-mpd-%commit%'
+	[mpd]='https://github.com/htkhiem/rust-mpd;218e1af6c44e08101b3c99f0df0fe1d10c3702b4;rust-mpd-%commit%'
 )
 
 RUST_MIN_VER="1.88.0"
@@ -33,11 +33,12 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	>=gui-libs/gtk-4.18
-	>=gui-libs/libadwaita-1.7
+	>=gui-libs/gtk-4.21:4=
+	>=gui-libs/libadwaita-1.9:1=
 	>=sys-devel/gettext-0.23
 	>=media-sound/mpd-0.24
 	dev-db/sqlite
+	>=app-crypt/libsecret-0.21.2:0=
 	sys-apps/xdg-desktop-portal
 "
 DEPEND="${RDEPEND}"
