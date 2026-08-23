@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-23 18:00:44 CST)
+(The last generation time: 2026-08-23 18:11:02 CST)
 
 ### Packages
 
@@ -455,8 +455,8 @@
  dev-util/obs-build                                    | 20260623-r1        |            | https://github.com/openSUSE/obs-build                                      | OBS build script
                                                        | 20260721           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/oh-my-pi-bin                                 | 17.3.0             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 17.4.2             |            |                                                                            |
+ dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
+                                                       | 18.0.3             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.21            |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
@@ -843,7 +843,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.8.96             |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/hysteria                                    | 2.12.1             |            | https://github.com/apernet/hysteria                                        | A powerful, lightning fast and censorship resistant proxy
+ net-proxy/hysteria                                    | 2.12.2             |            | https://github.com/apernet/hysteria                                        | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
    acct-user/hysteria                                  | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
