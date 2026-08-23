@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-23 17:57:32 CST)
+(The last generation time: 2026-08-23 18:00:44 CST)
 
 ### Packages
 
@@ -231,7 +231,7 @@
  app-misc/openclaude                                   | 0.13.0             |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
                                                        | 0.29.1             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.21.15            |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.22.0             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.14               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
                                                        | 1.15               |            |                                                                            |
@@ -574,8 +574,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/nerd-fonts                                | 3.5.1              |            | https://github.com/ryanoasis/nerd-fonts                                    | Nerd Fonts is a project that patches developer targeted fonts with glyphs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/sarasa-gothic                             | 1.0.39             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
-                                                       | 1.0.40             |            |                                                                            |
+ media-fonts/sarasa-gothic                             | 1.0.40             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
+                                                       | 1.0.41             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/sarasa-term-sc-nerd                       | 2.3.1              |            | https://github.com/laishulu/Sarasa-Term-SC-Nerd                            | Sarasa Mono SC font patched with Nerd fonts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -756,7 +756,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/biliup-app-bin                               | 1.2.3              |            | https://github.com/biliup/biliup-app-new                                   | A Tool for Upload video to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/biliup-bin                                   | 1.2.2-r1           |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
+ net-misc/biliup-bin                                   | 1.2.3              |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/bruno-bin                                    | 3.5.3              |            | https://www.usebruno.com/                                                  | Opensource IDE For Exploring and Testing Api's
                                                        | 4.1.0              |            |                                                                            |
