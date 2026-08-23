@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-23 18:11:02 CST)
+(The last generation time: 2026-08-23 18:23:48 CST)
 
 ### Packages
 
@@ -212,7 +212,7 @@
  app-misc/copilot                                      | 1.0.80             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.88.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
-                                                       | 0.90.0             |            |                                                                            |
+                                                       | 0.91.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.53.4             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.53.6             |            |                                                                            |
@@ -678,7 +678,7 @@
  media-video/piliplus-bin                              | 1.1.5              |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
                                                        | 1.1.6              |            |                                                                            |
                                                        | 2.0.9.2            |            |                                                                            |
-                                                       | 2.1.0              |            |                                                                            |
+                                                       | 2.1.1.2            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/tenvideo                                  | 1.0.10             |            | https://v.qq.com/download.html#linux                                       | Tencent videos
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
