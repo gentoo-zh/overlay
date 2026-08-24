@@ -1159,12 +1159,8 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
-["dev-util/cmakerc"]
-source = "github"
-github = "vector-of-bool/cmrc"
-use_latest_release = true
-github_account = "peeweep"
-
+# The snapshot we carry is above upstream 2.0.1, the last release.
+# ["dev-util/cmakerc"]
 
 ["dev-util/codex"]
 source = "github"
@@ -2751,6 +2747,9 @@ github = "l0ng-ai/tty7"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
+
+# Live-only here; the released versions are in ::gentoo.
+# ["x11-terms/wezterm"]
 
 ["x11-terms/wezterm-bin"]
 source = "github"
