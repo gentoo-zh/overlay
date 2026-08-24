@@ -1,0 +1,55 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: xz-dev <xz-dev@users.noreply.github.com>
+Date: Wed, 12 Feb 2026 00:00:00 +0800
+Subject: [PATCH] scripts: fix AutoFDO and Propeller support for
+ LTO_CLANG_THIN_DIST
+
+The distributed ThinLTO patch (CONFIG_LTO_CLANG_THIN_DIST) by Rong Xu
+(xur@google.com) did not update Makefile.autofdo and Makefile.propeller
+to support the new config option. These files only check
+CONFIG_LTO_CLANG_THIN, causing AutoFDO and Propeller linker flags to be
+missing when using LTO_CLANG_THIN_DIST.
+
+This patch adds support for CONFIG_LTO_CLANG_THIN_DIST alongside
+CONFIG_LTO_CLANG_THIN in both Makefiles.
+
+Link: https://discourse.llvm.org/t/rfc-distributed-thinlto-build-for-kernel/85934
+Link: https://discourse.llvm.org/t/rfc-distributed-thinlto-build-for-kernel/85934/5
+Link: https://github.com/xur-llvm/linux/commit/d970eaf7d90863e7f2ea7bd0c8fe44d4602c2e86
+Link: https://lore.kernel.org/linux-kbuild/20250420010214.1963979-1-xur@google.com/
+Fixes: https://github.com/Szowisz/CachyOS-kernels/issues/35
+Signed-off-by: xz-dev <xz-dev@users.noreply.github.com>
+---
+ scripts/Makefile.autofdo   | 2 +-
+ scripts/Makefile.propeller | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/scripts/Makefile.autofdo b/scripts/Makefile.autofdo
+index aff69db208cc..111111111111 100644
+--- a/scripts/Makefile.autofdo
++++ b/scripts/Makefile.autofdo
+@@ -13,7 +13,7 @@ ifdef CLANG_AUTOFDO_PROFILE
+   CFLAGS_AUTOFDO_CLANG += -fsplit-machine-functions
+ endif
+ 
+-ifdef CONFIG_LTO_CLANG_THIN
++ifneq ($(CONFIG_LTO_CLANG_THIN)$(CONFIG_LTO_CLANG_THIN_DIST),)
+   ifdef CLANG_AUTOFDO_PROFILE
+     KBUILD_LDFLAGS += --lto-sample-profile=$(CLANG_AUTOFDO_PROFILE)
+   endif
+diff --git a/scripts/Makefile.propeller b/scripts/Makefile.propeller
+index 41c247750498..222222222222 100644
+--- a/scripts/Makefile.propeller
++++ b/scripts/Makefile.propeller
+@@ -25,7 +25,7 @@ ifndef CONFIG_DEBUG_INFO
+   endif
+ endif
+ 
+-ifdef CONFIG_LTO_CLANG_THIN
++ifneq ($(CONFIG_LTO_CLANG_THIN)$(CONFIG_LTO_CLANG_THIN_DIST),)
+   ifdef CLANG_PROPELLER_PROFILE_PREFIX
+     KBUILD_LDFLAGS += --lto-basic-block-sections=$(CLANG_PROPELLER_PROFILE_PREFIX)_cc_profile.txt
+   else
+-- 
+2.47.0
+

@@ -6,17 +6,81 @@
 		<email>locez@locez.com</email>
 	</maintainer>
 	<use>
-		<flag name="bore">BORE CPU scheduler</flag>
-		<flag name="cjk">cjktty patch for CJK text on the framebuffer console</flag>
+		<!-- CPU schedulers -->
+		<flag name="bore">CachyOS BORE scheduler, optimized for desktop responsiveness</flag>
+		<flag name="bmq">Project C BMQ scheduler</flag>
+		<flag name="prjc">Project C BMQ/PDS CPU scheduler</flag>
+		<flag name="prjc-lfbmq">Project C BMQ/PDS CPU scheduler with the lock-free bitmap queue</flag>
+		<flag name="rt">Select PREEMPT_RT and apply the RT i915 patch where supported</flag>
+		<flag name="rt-bore">BORE scheduler with PREEMPT_RT</flag>
+		<flag name="eevdf">Linux EEVDF scheduler without an additional scheduler patch</flag>
+
+		<!-- Hardware-specific patches -->
+		<flag name="deckify">Apply the CachyOS handheld configuration and patches with the selected CPU scheduler</flag>
+
+		<!-- CJK framebuffer console -->
+		<flag name="cjk">Apply cjktty support for CJK text on the framebuffer console</flag>
 		<flag name="cjk32">Include the 8 MiB 32x32 CJK font data for high-resolution framebuffer consoles</flag>
-		<flag name="prjc">Project C CPU scheduler (BMQ/PDS)</flag>
-		<flag name="prjc-lfbmq">Project C CPU scheduler (BMQ/PDS) with Lock Free Run Queue</flag>
-		<flag name="rt">RT i915 patches</flag>
+
+		<!-- Security features -->
+		<flag name="kcfi">Enable Clang Kernel Control Flow Integrity</flag>
+
+		<!-- Optimization features -->
 		<flag name="thin">Install a ThinLTO config fragment and require the LLVM toolchain used to build it</flag>
+		<flag name="autofdo">Enable Clang AutoFDO support for profile-guided optimization</flag>
+		<flag name="propeller">Enable Clang Propeller support for basic-block reordering</flag>
+		<flag name="llvm-lto-thin">Enable LLVM ThinLTO</flag>
+		<flag name="llvm-lto-full">Enable LLVM full LTO</flag>
+		<flag name="llvm-lto-thin-dist">Enable distributed LLVM ThinLTO</flag>
+		<flag name="llvm-lto-none">Disable LLVM LTO</flag>
+
+		<!-- ZFS support -->
+		<flag name="kernel-builtin-zfs">Install pinned ZFS sources and a build helper in the kernel source tree</flag>
+
+		<!-- Timer frequency -->
+		<flag name="hz-ticks-100">Set the kernel timer frequency to 100 Hz</flag>
+		<flag name="hz-ticks-250">Set the kernel timer frequency to 250 Hz</flag>
+		<flag name="hz-ticks-300">Set the kernel timer frequency to 300 Hz</flag>
+		<flag name="hz-ticks-500">Set the kernel timer frequency to 500 Hz</flag>
+		<flag name="hz-ticks-600">Set the kernel timer frequency to 600 Hz</flag>
+		<flag name="hz-ticks-750">Set the kernel timer frequency to 750 Hz</flag>
+		<flag name="hz-ticks-1000">Set the kernel timer frequency to 1000 Hz</flag>
+
+		<!-- Governor and tick mode -->
+		<flag name="per-gov">Use the performance CPU frequency governor by default</flag>
+		<flag name="tickrate-periodic">Use periodic kernel ticks</flag>
+		<flag name="tickrate-idle">Use idle tickless mode</flag>
+		<flag name="tickrate-full">Use full tickless mode</flag>
+
+		<!-- Preemption models -->
+		<flag name="preempt-full">Use the full preemption model</flag>
+		<flag name="preempt-lazy">Use the lazy preemption model</flag>
+
+		<!-- Compiler optimization levels -->
+		<flag name="o3">Optimize the kernel with -O3</flag>
+		<flag name="os">Optimize the kernel for size</flag>
+		<flag name="debug">Use the CachyOS debug-oriented configuration profile</flag>
+
+		<!-- Network and memory -->
+		<flag name="bbr3">Use TCP BBR3 and the FQ packet scheduler by default</flag>
+		<flag name="hugepage-always">Always enable transparent huge pages</flag>
+		<flag name="hugepage-madvise">Enable transparent huge pages only when requested with madvise</flag>
+
+		<!-- CPU-specific optimizations -->
+		<flag name="mgeneric">Use the generic x86-64 CPU target</flag>
+		<flag name="mgeneric-v1">Use the x86-64-v1 CPU target</flag>
+		<flag name="mgeneric-v2">Use the x86-64-v2 CPU target</flag>
+		<flag name="mgeneric-v3">Use the x86-64-v3 CPU target</flag>
+		<flag name="mgeneric-v4">Use the x86-64-v4 CPU target</flag>
+		<flag name="mnative">Use compiler CPU autodetection for the build host</flag>
+		<flag name="mzen4">Use the AMD Zen 4 CPU target</flag>
 	</use>
 	<upstream>
 		<remote-id type="cpe">cpe:/o:linux:linux_kernel</remote-id>
+		<remote-id type="github">CachyOS/linux-cachyos</remote-id>
 		<remote-id type="github">CachyOS/linux</remote-id>
 		<remote-id type="github">CachyOS/kernel-patches</remote-id>
+		<remote-id type="github">gentoo-zh/cjktty-patches</remote-id>
+		<bugs-to>https://github.com/CachyOS/linux-cachyos/issues</bugs-to>
 	</upstream>
 </pkgmetadata>
