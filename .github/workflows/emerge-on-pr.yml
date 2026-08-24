@@ -74,7 +74,7 @@ jobs:
             README.md
             README.en.md
             README.zh-TW.md
-            README.zh-HK.md
+            README.yue.md
             repo.xml
             skel.ChangeLog
             skel.metadata.xml
