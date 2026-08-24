@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-24 22:52:54 CST)
+(The last generation time: 2026-08-24 23:13:07 CST)
 
 ### Packages
 
@@ -678,7 +678,7 @@
  media-video/piliplus-bin                              | 1.1.5              |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
                                                        | 1.1.6              |            |                                                                            |
                                                        | 2.0.9.2            |            |                                                                            |
-                                                       | 2.1.1.2            |            |                                                                            |
+                                                       | 2.1.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/tenvideo                                  | 1.0.10             |            | https://v.qq.com/download.html#linux                                       | Tencent videos
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
