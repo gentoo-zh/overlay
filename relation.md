@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-23 18:23:48 CST)
+(The last generation time: 2026-08-24 12:47:51 CST)
 
 ### Packages
 
@@ -713,7 +713,7 @@
  net-im/dingtalk                                       | 8.1.0.6021101-r1   |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503      | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/tencent-qq                                     | 3.2.32             |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
+ net-im/tencent-qq                                     | 3.2.32_p260812     |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
    media-libs/openslide                                | 4.0.1              | RD         | https://openslide.org/                                                     | A C library that provides a simple interface to read whole-slide images
      media-libs/libdicom                               | 1.3.0              |  D, RD     | https://libdicom.readthedocs.io/                                           | A C library and a set of command-line tools for reading DICOM WSI files
    virtual/loong-ow-compat                             | 0                  | RD         |                                                                            | Virtual for LoongArch old-world compatibility
