@@ -1992,9 +1992,9 @@ regex = 'com.alibabainc.dingtalk_(.*)_amd64.deb'
 github_account = "gouwazi"
 
 ["net-im/tencent-qq"]
-source = "regex"
+source = "jq"
 url = "https://qq-web.cdn-go.cn/im.qq.com_new/latest/rainbow/pcConfig.json"
-regex = '"Linux":\s*\{\s*"version":\s*"([\d.]+)"'
+filter = '"\(.Linux.version)_p\(.Linux.updateDate | strptime("%Y-%m-%d") | strftime("%y%m%d"))"'
 github_account = ["Puqns67", "gouwazi"]
 
 ["net-im/vesktop-bin"]
