@@ -1,0 +1,14 @@
+[Unit]
+Description=EasyTier Service
+Wants=network.target
+After=network.target network.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/easytier-core -c /etc/easytier/%i.conf
+Restart=always
+RestartSec=1s
+
+[Install]
+WantedBy=multi-user.target
