@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-25 12:50:30 CST)
+(The last generation time: 2026-08-25 13:02:10 CST)
 
 ### Packages
 
@@ -710,7 +710,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-dns/q                                             | 0.19.12            |            | https://github.com/natesales/q                                             | A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/dingtalk                                       | 8.1.0.6021101-r1   |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
+ net-im/dingtalk                                       | 8.2.8.260818002    |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503      | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.32_p260812     |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
