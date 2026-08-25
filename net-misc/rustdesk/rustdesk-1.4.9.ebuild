@@ -66,40 +66,37 @@ inherit cargo desktop llvm-r1 systemd xdg
 
 DESCRIPTION="An open-source remote desktop, and alternative to TeamViewer"
 HOMEPAGE="https://rustdesk.com/"
-# fix:
-# 1. rust-webm-*/src/sys/libwebm is a empty directory
-# 2. gcc15 build: https://github.com/microcai/gentoo-zh/issues/7234
-_LIBWEBM_COMMIT="3b630045052e1e4d563207ab9e3be8d137c26067"
-# grep -i vcpkg .github/workflows/flutter-build.yml
-_VCPKG_TAG="2025.08.27"
-# fix: hwcodec-${_HWCODEC_COMMIT}"/externals is a empty directory
-# git clone https://github.com/rustdesk-org/hwcodec
-# git ls-tree HEAD externals
-_HWCODEC_EXTERNALS_COMMIT="8903740a1f47884906a6e347ad3d8d56304d9771"
-# fix: libs/hbb_common is a empty directory
-# git ls-tree HEAD libs/hbb_common
-_HBB_COMMON_COMMIT="7e1c392c62d39c364127307cd408421dd5f8cfb0"
-# fix: kcp-sys-*/kcp is a empty directory
-# git clone https://github.com/rustdesk-org/kcp-sys
-# git ls-tree HEAD kcp
-_KCP_COMMIT="7f9805887b0909c52c825925f123e7a84da37167"
 SRC_URI="
-	https://github.com/rustdesk/rustdesk/archive/refs/tags/${PV}.tar.gz
-		-> ${P}.tar.gz
-	https://github.com/gentoo-zh-drafts/rustdesk-vcpkg/releases/download/${PV}/${P}-vcpkg-${_VCPKG_TAG}-lite.tar.gz
-	https://github.com/webmproject/libwebm/archive/${_LIBWEBM_COMMIT}.tar.gz
-		-> libwebm-${_LIBWEBM_COMMIT}.tar.gz
-	https://github.com/skywind3000/kcp/archive/${_KCP_COMMIT}.tar.gz
-		-> kcp-${_KCP_COMMIT}.tar.gz
-	https://github.com/rustdesk/hbb_common/archive/${_HBB_COMMON_COMMIT}.tar.gz
-		-> hbb_common-${_HBB_COMMON_COMMIT}.tar.gz
-	https://github.com/rustdesk-org/externals/archive/${_HWCODEC_EXTERNALS_COMMIT}.tar.gz
-		-> hwcodec-externals-${_HWCODEC_EXTERNALS_COMMIT}.tar.gz
-	https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so
-		-> ${PN}-libsciter-gtk.so
-	https://github.com/gentoo-zh-drafts/${PN}/releases/download/${PV}/${P}-crates.tar.xz
+	https://github.com/rustdesk/rustdesk/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
+	https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so -> ${PN}-libsciter-gtk.so
+	https://github.com/gentoo-zh-drafts/rustdesk/releases/download/${PV}/${P}-crates.tar.xz
 	${CARGO_CRATE_URIS}
 "
+
+# grep -i vcpkg .github/workflows/flutter-build.yml
+_VCPKG_TAG="2025.08.27"
+SRC_URI+=" https://github.com/gentoo-zh-drafts/rustdesk-vcpkg/releases/download/${PV}/${P}-vcpkg-${_VCPKG_TAG}-lite.tar.gz"
+
+# FIX:
+# 1. missing rust-webm-*/src/sys/libwebm
+# 2. gcc15 build: https://github.com/microcai/gentoo-zh/issues/7234
+_LIBWEBM_COMMIT="3b630045052e1e4d563207ab9e3be8d137c26067"
+SRC_URI+=" https://github.com/webmproject/libwebm/archive/${_LIBWEBM_COMMIT}.tar.gz -> libwebm-${_LIBWEBM_COMMIT}.tar.gz"
+
+# FIX: missing hwcodec-*/externals
+# curl https://api.github.com/repos/rustdesk-org/hwcodec/contents/externals | jq -r '.sha'
+_HWCODEC_EXTERNALS_COMMIT="8903740a1f47884906a6e347ad3d8d56304d9771"
+SRC_URI+=" https://github.com/rustdesk-org/externals/archive/${_HWCODEC_EXTERNALS_COMMIT}.tar.gz -> hwcodec-externals-${_HWCODEC_EXTERNALS_COMMIT}.tar.gz"
+
+# FIX: missing libs/hbb_common
+# curl https://api.github.com/repos/rustdesk/rustdesk/contents/libs/hbb_common | jq -r '.sha'
+_HBB_COMMON_COMMIT="7e1c392c62d39c364127307cd408421dd5f8cfb0"
+SRC_URI+=" https://github.com/rustdesk/hbb_common/archive/${_HBB_COMMON_COMMIT}.tar.gz -> hbb_common-${_HBB_COMMON_COMMIT}.tar.gz"
+
+# FIX: missing kcp-sys-*/kcp
+# curl https://api.github.com/repos/rustdesk-org/kcp-sys/contents/kcp | jq -r '.sha'
+_KCP_COMMIT="7f9805887b0909c52c825925f123e7a84da37167"
+SRC_URI+=" https://github.com/skywind3000/kcp/archive/${_KCP_COMMIT}.tar.gz -> kcp-${_KCP_COMMIT}.tar.gz"
 
 LICENSE="AGPL-3"
 # Dependent crate licenses
