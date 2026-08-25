@@ -10,13 +10,13 @@ CRATES="
 
 declare -A GIT_CRATES=(
 	[clash_verge_logger]='https://github.com/clash-verge-rev/clash-verge-logger;e4768e3852c4868ed86e7210df82c1178467820d;clash-verge-logger-%commit%'
-	[clash_verge_service_ipc]='https://github.com/clash-verge-rev/clash-verge-service-ipc;21e661fa141e5ad3c705ee4cdb86efff8df6f769;clash-verge-service-ipc-%commit%'
+	[clash_verge_service_ipc]='https://github.com/clash-verge-rev/clash-verge-service-ipc;b964ed2992599fadefd589425c1acdabcb875623;clash-verge-service-ipc-%commit%'
 	[dark-light]='https://github.com/rust-dark-light/dark-light;0f18d2fbcaa5d1c175db8aae7d53428988d7e961;dark-light-%commit%'
-	[sysproxy]='https://github.com/clash-verge-rev/sysproxy-rs;f0775f6f4173c9dd6228cd7c3d183019b9ba6a7b;sysproxy-rs-%commit%'
-	[tauri-plugin-mihomo]='https://github.com/clash-verge-rev/tauri-plugin-mihomo;1cc80bc0fbe1245315617f4cecd93710a152325b;tauri-plugin-mihomo-%commit%'
+	[sysproxy]='https://github.com/clash-verge-rev/sysproxy-rs;d214eba9f61d655d49a35f6ae17c359f7ad68d79;sysproxy-rs-%commit%'
+	[tauri-plugin-mihomo]='https://github.com/clash-verge-rev/tauri-plugin-mihomo;cf97ff99e390a9b437d5cf94c6f454f024fc8f69;tauri-plugin-mihomo-%commit%'
 )
 
-RUST_MIN_VER="1.91"
+RUST_MIN_VER="1.95"
 inherit cargo desktop dot-a xdg
 
 DESCRIPTION="GUI client based on Tauri for tailored proxy experience"
@@ -24,19 +24,20 @@ HOMEPAGE="
 	https://www.clashverge.dev
 	https://github.com/clash-verge-rev/clash-verge-rev
 "
-# Web dist tarball generared from liuyujielol/gentoo-go-deps/blob/cvr/.github/workflows/generator.yml
-DEPS_URI="https://github.com/liuyujielol/gentoo-go-deps/releases/download"
+# Web dist tarball generated from gentoo-zh-drafts/tauri-web-dist/blob/main/.github/workflows/generator.yml
+# Crates tarballs generated from gentoo-zh/gentoo-deps/blob/main/.github/workflows/generator.yml
+DEPS_URI="https://github.com/gentoo-zh/gentoo-deps/releases/download"
+WEB_URI="https://github.com/gentoo-zh-drafts/tauri-web-dist/releases/download"
 SRC_URI="
 	https://github.com/clash-verge-rev/clash-verge-rev/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	${DEPS_URI}/${P}/${P/-rev/}-crates.tar.xz
-	${DEPS_URI}/${P}/${P}-web.tar.xz
+	${DEPS_URI}/${P/-rev/}/${P/-rev/}-crates.tar.xz
+	${WEB_URI}/${P}/${P}-web.tar.xz
 "
 # Use macthing commit from git crates
-SERVICE_PV="2.3.0" # pycargoebuild use version from Cargo.toml in generated filename
-SERVICE_COMMIT="21e661fa141e5ad3c705ee4cdb86efff8df6f769"
+SERVICE_COMMIT="b964ed2992599fadefd589425c1acdabcb875623"
 SERVICE_P="clash-verge-service-ipc-${SERVICE_COMMIT}"
 SRC_URI+="
-	${DEPS_URI}/${SERVICE_P}/clash_verge_service_ipc-${SERVICE_PV}-crates.tar.xz -> ${SERVICE_P}-crates.tar.xz
+	${DEPS_URI}/${SERVICE_P}/${SERVICE_P}-crates.tar.xz
 "
 SRC_URI+=" ${CARGO_CRATE_URIS}"
 LICENSE="GPL-3"
