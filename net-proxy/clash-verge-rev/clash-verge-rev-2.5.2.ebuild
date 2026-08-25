@@ -48,7 +48,7 @@ LICENSE+="
 	Unicode-3.0 WTFPL-2 ZLIB BZIP2
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 COMMON_DEPEND="
 	!net-proxy/clash-verge-rev-bin
