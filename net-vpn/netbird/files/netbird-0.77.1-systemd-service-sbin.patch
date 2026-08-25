@@ -1,0 +1,39 @@
+diff --git a/release_files/systemd/netbird-management.service b/release_files/systemd/netbird-management.service
+index d9e485c73..63a90da04 100644
+--- a/release_files/systemd/netbird-management.service
++++ b/release_files/systemd/netbird-management.service
+@@ -7,7 +7,7 @@ Wants=network-online.target
+ [Service]
+ Type=simple
+ EnvironmentFile=-/etc/default/netbird-management
+-ExecStart=/usr/bin/netbird-mgmt management $FLAGS
++ExecStart=/usr/sbin/netbird-mgmt management $FLAGS
+ Restart=on-failure
+ RestartSec=5
+ TimeoutStopSec=10
+diff --git a/release_files/systemd/netbird-signal.service b/release_files/systemd/netbird-signal.service
+index 6333026eb..584ce3d26 100644
+--- a/release_files/systemd/netbird-signal.service
++++ b/release_files/systemd/netbird-signal.service
+@@ -7,7 +7,7 @@ Wants=network-online.target
+ [Service]
+ Type=simple
+ EnvironmentFile=-/etc/default/netbird-signal
+-ExecStart=/usr/bin/netbird-signal run $FLAGS
++ExecStart=/usr/sbin/netbird-signal run $FLAGS
+ Restart=on-failure
+ RestartSec=5
+ TimeoutStopSec=10
+diff --git a/release_files/systemd/netbird@.service b/release_files/systemd/netbird@.service
+index 48e8cc29d..b3599e324 100644
+--- a/release_files/systemd/netbird@.service
++++ b/release_files/systemd/netbird@.service
+@@ -7,7 +7,7 @@ Wants=network-online.target
+ [Service]
+ Type=simple
+ EnvironmentFile=-/etc/default/netbird
+-ExecStart=/usr/bin/netbird service run --log-file /var/log/netbird/client-%i.log --daemon-addr unix:///var/run/netbird/%i.sock $FLAGS
++ExecStart=/usr/sbin/netbird service run --log-file /var/log/netbird/client-%i.log --daemon-addr unix:///var/run/netbird/%i.sock $FLAGS
+ Restart=on-failure
+ RestartSec=5
+ TimeoutStopSec=10
