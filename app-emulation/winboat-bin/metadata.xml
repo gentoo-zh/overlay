@@ -2,7 +2,7 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<upstream>
-		<remote-id type="github">TibixDev/winboat</remote-id>
+		<remote-id type="github">winboat-org/winboat</remote-id>
 	</upstream>
 	<maintainer type="person">
 		<name>Xianggang Wang</name>

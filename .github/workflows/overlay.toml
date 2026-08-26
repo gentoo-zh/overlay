@@ -268,7 +268,7 @@ github_account = "xen0n"
 
 ["app-emulation/winboat-bin"]
 source = "github"
-github = "TibixDev/winboat"
+github = "winboat-org/winboat"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"

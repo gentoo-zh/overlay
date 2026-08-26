@@ -7,7 +7,7 @@ inherit desktop xdg unpacker
 
 DESCRIPTION="Run Windows apps on Linux with seamless integration"
 HOMEPAGE="https://www.winboat.app/"
-SRC_URI="https://github.com/TibixDev/winboat/releases/download/v${PV}/winboat-${PV}-amd64.deb"
+SRC_URI="https://github.com/winboat-org/winboat/releases/download/v${PV}/winboat-${PV}-amd64.deb"
 
 S="${WORKDIR}"
 LICENSE="MIT"
