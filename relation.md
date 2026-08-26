@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-25 23:07:00 CST)
+(The last generation time: 2026-08-26 15:31:04 CST)
 
 ### Packages
 
@@ -1013,6 +1013,8 @@
  www-client/adspower-global                            | 8.7.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/brave-bin                                  | 1.93.138           |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ www-client/ungoogled-chromium-bin                     | 151.0.7922.173_p1  |            | https://github.com/ungoogled-software/ungoogled-chromium                   | Chromium without Google integration, from the upstream portable build
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/zen-browser-bin                            | 1.21.15b           |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
