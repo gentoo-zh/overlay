@@ -2292,7 +2292,7 @@ github_account = ["yangmame", "peeweep"]
 
 ["net-proxy/hysteria"]
 source = "github"
-github = "apernet/hysteria"
+github = "HyNetworks/hysteria"
 use_latest_release = true
 prefix = "app/v"
 github_account = ["oatiz", "gouwazi"]

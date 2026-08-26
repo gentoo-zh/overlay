@@ -7,6 +7,6 @@ pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 		<email>iamoatiz@gmail.com</email>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">apernet/hysteria</remote-id>
+		<remote-id type="github">HyNetworks/hysteria</remote-id>
 	</upstream>
 </pkgmetadata>

@@ -7,10 +7,10 @@ inherit go-module systemd
 COMMIT_ID="14e9fff1d972ab0187ac7fcf75b9514dc8664065"
 
 DESCRIPTION="A powerful, lightning fast and censorship resistant proxy"
-HOMEPAGE="https://github.com/apernet/hysteria"
+HOMEPAGE="https://github.com/HyNetworks/hysteria"
 
 SRC_URI="
-	https://github.com/apernet/hysteria/archive/refs/tags/app/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/HyNetworks/hysteria/archive/refs/tags/app/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/gentoo-zh-drafts/hysteria/releases/download/app/v${PV}/hysteria-app-v${PV}-vendor.tar.xz
 		-> ${P}-vendor.tar.xz
 "
