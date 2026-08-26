@@ -2482,12 +2482,11 @@ use_latest_release = true
 prefix = "v"
 github_account = "xz-dev"
 
-# https://www.rstudio.org/links/check_for_update?version=1.0.0&os=linux
 ["sci-mathematics/rstudio-desktop-bin"]
-source = "github"
-github = "rstudio/rstudio"
-use_latest_tag = true
-from_pattern = 'v(.*)\+(.*)'
+source = "regex"
+url = "https://www.rstudio.org/links/check_for_update?version=1.0.0&os=linux"
+regex = 'update-version=([\d.]+%2B\d+)'
+from_pattern = '(.*)%2B(\d+)'
 to_pattern = '\1_p\2'
 github_account = ["zakkaus", "peeweep"]
 autobump = true
