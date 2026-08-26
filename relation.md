@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-26 17:34:04 CST)
+(The last generation time: 2026-08-26 17:34:42 CST)
 
 ### Packages
 
@@ -198,7 +198,7 @@
                                                        | 3.16.5             |            |                                                                            |
                                                        | 3.17.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch-cli                                | 5.10.2             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
+ app-misc/cc-switch-cli                                | 5.10.3             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/chatgpt-desktop                              | 26.818.61809       |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
