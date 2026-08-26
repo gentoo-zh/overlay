@@ -2656,6 +2656,15 @@ prefix = "1:"
 github_account = ["irort", "Zakkaus", "gouwazi"]
 autobump = true
 
+["www-client/ungoogled-chromium-bin"]
+source = "github"
+github = "ungoogled-software/ungoogled-chromium-portablelinux"
+use_latest_release = true
+from_pattern = '^(.+)-(\d+)$'
+to_pattern = '\1_p\2'
+github_account = "zakkaus"
+autobump = true
+
 ["www-client/zen-browser-bin"]
 source = "github"
 github = "zen-browser/desktop"

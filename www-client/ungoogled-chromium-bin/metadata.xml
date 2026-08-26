@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription lang="en">
+		Chromium with Google integration removed and privacy-affecting
+		defaults changed, packaged from the portable build the upstream
+		project publishes for x86_64 Linux.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">ungoogled-software/ungoogled-chromium</remote-id>
+		<bugs-to>https://github.com/ungoogled-software/ungoogled-chromium/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
