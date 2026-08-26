@@ -2815,7 +2815,7 @@ github_account = "hertz-hwang"
 
 ["x11-themes/nordzy-icon"]
 source = "github"
-github = "alvatip/Nordzy-icon"
+github = "MolassesLover/Nordzy-icon"
 use_latest_release = true
 github_account = ["hertz-hwang", "gouwazi"]
 
