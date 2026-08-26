@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/litocpp/lito"
 
 LIBSODIUM_TAG="1.0.22"
 LUA_TAG="5.5.1"
-RSTD_COMMIT="fdb99aaa894d76b04032cd301ac82b5ee6e3ec6d"
+RSTD_COMMIT="0ec1bc101ab9088f1e3b4ac7be5c1d5e415da8c1"
 LUATO_COMMIT="61dd40dca1e9aeda69eed208ddf0d10b34f59db7"
 
 SRC_URI="
