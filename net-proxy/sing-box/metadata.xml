@@ -15,9 +15,7 @@
 		<flag name="grpc">Build with standard gRPC support</flag>
 		<flag name="dhcp">Build with DHCP support</flag>
 		<flag name="wireguard">Build with WireGuard support</flag>
-		<flag name="ech">Build with TLS ECH extension support for TLS outbound</flag>
 		<flag name="utls">Build with uTLS support for TLS outbound</flag>
-		<flag name="reality">Build with reality TLS server support</flag>
 		<flag name="acme">Build with ACME TLS certificate issuer support</flag>
 		<flag name="clash-api">Build with Clash API support</flag>
 		<flag name="v2ray-api">Build with V2Ray API support</flag>
