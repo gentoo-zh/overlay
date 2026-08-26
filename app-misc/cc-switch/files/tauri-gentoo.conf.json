@@ -1,5 +1,0 @@
-{
-  "build": {
-    "beforeBuildCommand": "npm run build:renderer"
-  }
-}
