@@ -54,7 +54,6 @@ mirror = "https://downloads.1password.com/linux/debian/amd64"
 suite = "stable"
 # strip_release = true
 github_account = ["yangmame", "peeweep", "gouwazi"]
-autobump = true
 
 ["app-admin/chezmoi"]
 source = "github"
