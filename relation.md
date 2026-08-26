@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-26 17:41:45 CST)
+(The last generation time: 2026-08-26 17:59:23 CST)
 
 ### Packages
 
@@ -100,7 +100,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/looking-glass                           | 0_beta7_rc1-r2     |            | https://looking-glass.io                                                   | A low latency KVMFR application for guests with VGA PCI Passthrough
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-emulation/winboat-bin                             | 0.9.0              |            | https://www.winboat.app/                                                   | Run Windows apps on Linux with seamless integration
+ app-emulation/winboat-bin                             | 0.9.2              |            | https://www.winboat.app/                                                   | Run Windows apps on Linux with seamless integration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/winetricks-zh                           | 20240105.1         |            | https://github.com/hillwoodroc/winetricks-zh/                              | windows applications setup wizard for Chinese wine users
                                                        | 99999999           |            |                                                                            |
