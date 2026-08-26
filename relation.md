@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-26 17:39:14 CST)
+(The last generation time: 2026-08-26 17:39:47 CST)
 
 ### Packages
 
@@ -15,7 +15,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  acct-user/sing-box                                    | 0-r1               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/1password                                   | 8.12.32            |            | https://1password.com                                                      | Password manager and secure wallet
+ app-admin/1password                                   | 8.12.34            |            | https://1password.com                                                      | Password manager and secure wallet
    acct-group/onepassword                              | 0-r1               |  D, RD     |                                                                            | Password manager and secure wallet
    acct-group/onepassword-mcp                          | 0                  | RD         |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -205,7 +205,7 @@
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.0.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/claude-desktop                               | 1.34493.1          |            | https://claude.com/download                                                | Desktop application for Claude.ai
+ app-misc/claude-desktop                               | 1.37937.1          |            | https://claude.com/download                                                | Desktop application for Claude.ai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.2.10             |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
