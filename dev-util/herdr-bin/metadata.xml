@@ -6,6 +6,6 @@
 		<name>Xianggang Wang</name>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">ogulcancelik/herdr</remote-id>
+		<remote-id type="github">herdrdev/herdr</remote-id>
 	</upstream>
 </pkgmetadata>

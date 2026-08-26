@@ -1206,7 +1206,7 @@ github_account = "zakkaus"
 
 ["dev-util/herdr-bin"]
 source = "github"
-github = "ogulcancelik/herdr"
+github = "herdrdev/herdr"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"

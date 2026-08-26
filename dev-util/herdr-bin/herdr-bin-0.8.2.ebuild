@@ -4,10 +4,10 @@
 EAPI=8
 
 MY_PN="${PN%-bin}"
-URI_PREFIX="https://github.com/ogulcancelik/${MY_PN}/releases/download/v${PV}"
+URI_PREFIX="https://github.com/herdrdev/${MY_PN}/releases/download/v${PV}"
 
 DESCRIPTION="Terminal workspace manager for AI coding agents"
-HOMEPAGE="https://herdr.dev https://github.com/ogulcancelik/herdr"
+HOMEPAGE="https://herdr.dev https://github.com/herdrdev/herdr"
 SRC_URI="
 	amd64? ( ${URI_PREFIX}/${MY_PN}-linux-x86_64 -> ${P}-amd64 )
 	arm64? ( ${URI_PREFIX}/${MY_PN}-linux-aarch64 -> ${P}-arm64 )
