@@ -16,10 +16,7 @@ KEYWORDS="-* ~amd64"
 RESTRICT="strip"
 
 RDEPEND="
-	|| (
-		sys-apps/systemd
-		sys-apps/systemd-utils
-	)
+	sys-apps/systemd
 	sys-fs/fuse:0
 "
 
