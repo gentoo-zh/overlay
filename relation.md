@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-28 05:40:05 CST)
+(The last generation time: 2026-08-28 07:01:45 CST)
 
 ### Packages
 
@@ -856,7 +856,7 @@
    acct-group/aptly                                    | 0                    | RD         |                                                                            | A swiss army knife for Debian repository management
    acct-user/aptly                                     | 0                    | RD         |                                                                            | A swiss army knife for Debian repository management
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/isd                                          | 0.6.2                |            | https://github.com/kainctl/isd                                             | isd (interactive systemd) — a better way to work with systemd units
+ sys-apps/isd                                          | 0.6.2-r1             |            | https://github.com/kainctl/isd                                             | isd (interactive systemd) — a better way to work with systemd units
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/mdp                                          | 9999                 |            | https://github.com/visit1985/mdp                                           | A command-line based markdown presentation tool
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -907,8 +907,7 @@
                                                        | 7.1.9                |            |                                                                            |
                                                        | 7.2.0                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/mkinitcpio                                 | 39.2                 |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
-                                                       | 41                   |            |                                                                            |
+ sys-kernel/mkinitcpio                                 | 41-r1                |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-libs/elog-functions                               | 0.0.2                |            | http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html         | Compatibility functions for the log eclass functions of OpenRC
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
