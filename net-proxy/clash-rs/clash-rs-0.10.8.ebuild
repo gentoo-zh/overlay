@@ -119,5 +119,6 @@ src_install() {
 	dobin "$(cargo_target_dir)"/clash-rs
 	insinto "/etc/clash-rs"
 	doins "${FILESDIR}/config.example.yaml"
+	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 	systemd_dounit "${FILESDIR}/clash-rs.service"
 }

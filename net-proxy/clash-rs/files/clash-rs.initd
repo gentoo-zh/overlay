@@ -1,0 +1,19 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Another Clash kernel, written in Rust"
+
+CLASH_RS_CONF_DIR="${CLASH_RS_CONF_DIR:-/etc/clash-rs}"
+
+command="/usr/bin/clash-rs"
+command_args="-d ${CLASH_RS_CONF_DIR} ${CLASH_RS_ARGS}"
+command_background="true"
+capabilities="^cap_net_admin"
+pidfile="/run/${RC_SVCNAME}.pid"
+required_files="${CLASH_RS_CONF_DIR}/config.yaml"
+
+depend() {
+	need net
+	after local
+}
