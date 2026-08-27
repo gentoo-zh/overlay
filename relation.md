@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-26 18:19:40 CST)
+(The last generation time: 2026-08-27 14:20:38 CST)
 
 ### Packages
 
@@ -23,9 +23,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi-bin                                 | 2.71.0             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/enpass                                      | 6.10.1.1661        |            | https://www.enpass.io                                                      | A cross-platform, complete password management solution
-                                                       | 6.11.13.1957       |            |                                                                            |
-                                                       | 6.11.6.1833        |            |                                                                            |
+ app-admin/enpass                                      | 6.11.13.1957       |            | https://www.enpass.io                                                      | A cross-platform, complete password management solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/proton-authenticator-bin                    | 1.1.6              |            | https://proton.me/authenticator                                            | Official open-source two-factor authentication app by Proton
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -44,9 +42,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-custom-pinyin-dictionary       | 20260101           |            | https://github.com/wuhgit/CustomPinyinDictionary                           | Fcitx5 自建拼音输入法词库，百万常用词汇量。
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-dicts/fcitx-pinyin-moegirl                        | 20260315           |            | https://github.com/outloudvi/mw2fcitx                                      | Fcitx 5 Pinyin Dictionary from zh.moegirl.org.cn
-                                                       | 20260412           |            |                                                                            |
-                                                       | 20260511           |            |                                                                            |
+ app-dicts/fcitx-pinyin-moegirl                        | 20260511           |            | https://github.com/outloudvi/mw2fcitx                                      | Fcitx 5 Pinyin Dictionary from zh.moegirl.org.cn
                                                        | 20260713           |            |                                                                            |
                                                        | 20260812           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -59,8 +55,6 @@
                                                        | 0.3.0.20260416     |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity                               | 2.10.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
-                                                       | 2.7.1              |            |                                                                            |
-                                                       | 2.8.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.5.5              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -81,9 +75,7 @@
  app-editors/typora                                    | 0.11.18            |            | https://typora.io                                                          | Typora will give you a seamless experience as both a reader and a writer
                                                        | 1.14.9             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/void-editor                               | 1.2.1.25105        |            | https://voideditor.com                                                     | Void Editor - AI Code Editor
-                                                       | 1.99.30034         |            |                                                                            |
-                                                       | 1.99.30044         |            |                                                                            |
+ app-editors/void-editor                               | 1.99.30044         |            | https://voideditor.com                                                     | Void Editor - AI Code Editor
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/windsurf                                  | 1.9.2              |            | https://devin.ai/desktop                                                   | AI-powered code editor maintaining flow state with instant assistance
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -127,8 +119,6 @@
  app-i18n/fcitx-meta                                   | 5.0.12-r3          |            | https://fcitx-im.org                                                       | Merge this to pull in Fcitx packages
    app-i18n/fcitx-anthy                                | 9999               | RD         | https://fcitx-im.org/                                                      | Japanese Anthy input methods for Fcitx5
    app-i18n/fcitx-bamboo                               | 1.0.10             | RD         | https://github.com/fcitx/fcitx5-bamboo                                     | Typing Vietnamese by Bamboo core engine for Fcitx5
-                                                       | 1.0.7              |            |                                                                            |
-                                                       | 1.0.8              |            |                                                                            |
    app-i18n/fcitx-chewing                              | 9999               | RD         | https://github.com/fcitx/fcitx5-chewing                                    | Chewing Wrapper for Fcitx
    app-i18n/fcitx-chinese-addons                       | 9999               |  D, RD     | https://github.com/fcitx/fcitx5-chinese-addons                             | Addons related to Chinese, including IME previous bundled inside fcitx4
      app-i18n/fcitx-lua                                | 9999               |  D, RD     | https://github.com/fcitx/fcitx5-lua                                        | Lua support for fcitx
@@ -152,8 +142,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-sayura                                 | 9999               |            | https://github.com/fcitx/fcitx5-sayura                                     | Fcitx-Sayura is a Sinhala input method for Fcitx input method framework
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-skin-material                          | 0.5                |            | https://github.com/hrko/fcitx-skin-material                                | A Material Design-like skin for Fcitx
-                                                       | 0.6.0              |            |                                                                            |
+ app-i18n/fcitx-skin-material                          | 0.6.0              |            | https://github.com/hrko/fcitx-skin-material                                | A Material Design-like skin for Fcitx
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-table-dayi                             | 9999               |            | https://github.com/fcitx/fcitx5-table-dayi                                 | Dayi (大易) table input method for Fcitx5
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -168,35 +157,26 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.8              |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/libime-jyutping                              | 1.0.14             |            | https://github.com/fcitx/libime-jyutping                                   | A library make use of libime to implement jyutping input method
-                                                       | 1.0.17             |            |                                                                            |
+ app-i18n/libime-jyutping                              | 1.0.17             |            | https://github.com/fcitx/libime-jyutping                                   | A library make use of libime to implement jyutping input method
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/lunar                                        | 2.2_p10            |            | https://packages.debian.org/unstable/utils/lunar                           | Chinese Lunar Calendar conversion utility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/rime-ice                                     | 9999               |            | https://github.com/iDvel/rime-ice                                          | Rime ICE - A long-term maintained simplified Chinese Rime schema
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/zh-autoconvert                               | 0.3.16_p10         |            | https://packages.debian.org/stable/source/zh-autoconvert                   | Chinese HZ/GB/BIG5/UNI/UTF7/UTF8 encodings auto-converter
-                                                       | 0.3.16_p11         |            |                                                                            |
+ app-i18n/zh-autoconvert                               | 0.3.16_p11         |            | https://packages.debian.org/stable/source/zh-autoconvert                   | Chinese HZ/GB/BIG5/UNI/UTF7/UTF8 encodings auto-converter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/aichat                                       | 0.30.0             |            | https://github.com/sigoden/aichat                                          | All-in-one LLM CLI Tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/bcompare                                     | 4.4.6.27483        |            | https://www.scootersoftware.com/                                           | Beyond Compare -- Compare, sync, and merge files and folders
-                                                       | 4.4.7.28397        |            |                                                                            |
+ app-misc/bcompare                                     | 4.4.7.28397        |            | https://www.scootersoftware.com/                                           | Beyond Compare -- Compare, sync, and merge files and folders
                                                        | 5.2.5.32528        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/bilihud                                      | 9999               |            | https://github.com/locez/bilihud                                           | B站弹幕阅读器 - 一个可以在游戏全屏时显示弹幕的Qt应用程序
    dev-python/pure-protobuf                            | 3.1.5              | RD         | https://github.com/eigenein/protobuf                                       | A pure python implementation of google protobuf
    dev-python/qasync                                   | 0.28.0             | RD         | https://github.com/CabbageDevelopment/qasync                               | Implementation of the asyncio (PEP 3156) event-loop with Qt
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch                                    | 3.14.1             |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
-                                                       | 3.15.0             |            |                                                                            |
-                                                       | 3.16.1             |            |                                                                            |
-                                                       | 3.17.0             |            |                                                                            |
-                                                       | 3.20.0             |            |                                                                            |
+ app-misc/cc-switch                                    | 3.20.0             |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch-bin                                | 3.14.1             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
-                                                       | 3.16.5             |            |                                                                            |
-                                                       | 3.17.0             |            |                                                                            |
+ app-misc/cc-switch-bin                                | 3.17.0             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.10.3             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -211,8 +191,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/copilot                                      | 1.0.80             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush                                        | 0.88.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
-                                                       | 0.91.1             |            |                                                                            |
+ app-misc/crush                                        | 0.91.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.53.4             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.53.6             |            |                                                                            |
@@ -228,13 +207,11 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029           |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/openclaude                                   | 0.13.0             |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
-                                                       | 0.29.1             |            |                                                                            |
+ app-misc/openclaude                                   | 0.29.1             |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/qwen-code                                    | 0.22.0             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/rmtrash                                      | 1.14               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
-                                                       | 1.15               |            |                                                                            |
+ app-misc/rmtrash                                      | 1.15               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/spark                                        | 1.0.1              |            | https://zachholman.com/spark/                                              | ▁▂▃▅▂▇ in your shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -252,11 +229,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/bytedance-feishu                           | 7.72.23            |            | https://www.feishu.cn/download                                             | 飞书（Feishu） 飞书整合即时消息、日历、音视频会议、云文档、工作台等功能于一体，成就团队和个人，更高效、更愉悦。
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/freeoffice                                 | 1062               |            | https://www.freeoffice.com                                                 | A complete, free Microsoft Office-compatible alternative office suite
-                                                       | 1064               |            |                                                                            |
-                                                       | 1068               |            |                                                                            |
-                                                       | 1220               |            |                                                                            |
-                                                       | 1234               |            |                                                                            |
+ app-office/freeoffice                                 | 1234               |            | https://www.freeoffice.com/de/                                             | A complete, free Microsoft Office-compatible alternative office suite
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/notesnook-bin                              | 3.4.6              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -287,12 +260,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/cajviewer                                    | 9.0-r1             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/goldendict                                   | 25.02.0            |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
-                                                       | 26.3.0             |            |                                                                            |
-                                                       | 26.5.2             |            |                                                                            |
-                                                       | 26.6.1             |            |                                                                            |
-                                                       | 26.6.2             |            |                                                                            |
-                                                       | 26.8.0             |            |                                                                            |
+ app-text/goldendict                                   | 26.8.0             |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
    app-arch/libzim                                     | 9.5.1              |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
                                                        | 9.8.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -307,8 +275,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/readest-bin                                  | 0.12.1             |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-vim/easymotion                                    | 1.3                |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
-                                                       | 3.0.1              |            |                                                                            |
+ app-vim/easymotion                                    | 3.0.1              |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/powerline                                     | 9999               |            | https://www.vim.org/scripts/script.php?script_id=3881                      | vim plugin: The ultimate vim statusline utility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -330,8 +297,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/gotests                                        | 1.9.0              |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-go/staticcheck                                    | 2025.1.1           |            | https://staticcheck.dev                                                    | Go static analysis, detecting bugs, performance issues, and much more
-                                                       | 2026.2.1           |            |                                                                            |
+ dev-go/staticcheck                                    | 2026.2.1           |            | https://staticcheck.dev                                                    | Go static analysis, detecting bugs, performance issues, and much more
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-java/google-java-format                           | 1.36.1             |            | https://github.com/google/google-java-format                               | Reformats Java source code to comply with Google Java Style
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -365,20 +331,15 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/daff                                       | 1.4.2              |            | https://github.com/paulfitz/daff                                           | The daff can produce and apply tabular diffs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/feeluown-bilibili                          | 0.4.1              |            | https://github.com/feeluown/feeluown-bilibili                              | bilibili support for feeluown
-                                                       | 0.5.5              |            |                                                                            |
+ dev-python/feeluown-bilibili                          | 0.5.5              |            | https://github.com/feeluown/feeluown-bilibili                              | bilibili support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/frozendict                                 | 2.4.7              |            | https://github.com/Marco-Sulla/python-frozendict                           | A simple immutable dictionary for Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/fuo-netease                                | 1.0.3              |            | https://github.com/feeluown/feeluown-netease                               | netease cloud music support for feeluown
-                                                       | 1.0.8              |            |                                                                            |
+ dev-python/fuo-netease                                | 1.0.8              |            | https://github.com/feeluown/feeluown-netease                               | netease cloud music support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/fuo-qqmusic                                | 1.0.16             |            | https://github.com/feeluown/feeluown-qqmusic                               | qq music support for feeluown
-                                                       | 1.0.5              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/fuo-ytmusic                                | 0.4.14             |            | https://github.com/feeluown/feeluown-ytmusic                               | youtube music support for feeluown
-                                                       | 0.4.18             |            |                                                                            |
-                                                       | 0.4.2              |            |                                                                            |
+ dev-python/fuo-ytmusic                                | 0.4.18             |            | https://github.com/feeluown/feeluown-ytmusic                               | youtube music support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/fusesoc                                    | 2.4.4              |            | https://github.com/olofk/fusesoc/                                          | Award-winnning package manager and build abstraction tool for HDL code
                                                        | 2.4.6              |            |                                                                            |
@@ -414,12 +375,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/antigravity-cli                              | 1.1.21             |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/arch-install-scripts                         | 29                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
-                                                       | 31                 |            |                                                                            |
-   dev-util/pacstrap                                   | 29                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
-                                                       | 31                 |            |                                                                            |
-     sys-apps/pacman                                   | 7.0.0              |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
-                                                       | 7.1.0              |            |                                                                            |
+ dev-util/arch-install-scripts                         | 31                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
+   dev-util/pacstrap                                   | 31                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
+     sys-apps/pacman                                   | 7.1.0              |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
        app-crypt/archlinux-keyring                     | 20251116           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
                                                        | 20260727           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -483,8 +441,7 @@
  dev-util/trae-ide                                     | 2.3.76125          |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vcpkg-tool                                   | 2026.07.27         |            | https://github.com/microsoft/vcpkg-tool                                    | Library manager for C/C++ (tool only)
-   dev-util/cmakerc                                    | 2.0.1              | BD         | https://github.com/vector-of-bool/cmrc                                     | A Resource Compiler in a Single CMake Script
-                                                       | 2.0.1_p20230725    |            |                                                                            |
+   dev-util/cmakerc                                    | 2.0.1_p20230725    | BD         | https://github.com/vector-of-bool/cmrc                                     | A Resource Compiler in a Single CMake Script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vfox                                         | 1.0.11             |            | https://vfox.dev                                                           | A cross-platform version manager, extendable via plugins
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -622,8 +579,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-plugins/kotonoha                                | 9999               |            | https://github.com/locez/kotonoha                                          | Wayland lyrics overlay for MPRIS-compatible media players
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-plugins/osdlyrics                               | 0.5.15             |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
-                                                       | 0.5.16             |            |                                                                            |
+ media-plugins/osdlyrics                               | 0.5.16             |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-plugins/waylyrics                               | 0.3.21             |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
@@ -646,8 +602,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/listen1_desktop-bin                       | 2.33.0             |            | https://listen1.github.io/listen1/                                         | one for all free music in China
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/lx-music-desktop-bin                      | 2.10.0             |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
-                                                       | 2.12.2             |            |                                                                            |
+ media-sound/lx-music-desktop-bin                      | 2.12.2             |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/netease-cloud-music-gtk                   | 2.5.4-r1           |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -678,10 +633,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/mpv-handler                               | 0.4.2              |            | https://github.com/akiirui/mpv-handler                                     | Play website videos and songs with mpv & yt-dlp
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/piliplus-bin                              | 1.1.5              |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
-                                                       | 1.1.6              |            |                                                                            |
-                                                       | 2.0.9.2            |            |                                                                            |
-                                                       | 2.1.2              |            |                                                                            |
+ media-video/piliplus-bin                              | 2.1.2              |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/tenvideo                                  | 1.0.10             |            | https://v.qq.com/download.html#linux                                       | Tencent videos
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -696,8 +648,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/dstp-bin                                 | 0.4.23             |            | https://github.com/ycd/dstp                                                | Run common networking tests against any site
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-analyzer/nali                                     | 0.8.1              |            | https://github.com/zu1k/nali                                               | An offline tool for querying IP geographic information and CDN provider
-                                                       | 0.8.1_p20250221    |            |                                                                            |
+ net-analyzer/nali                                     | 0.8.1_p20250221    |            | https://github.com/zu1k/nali                                               | An offline tool for querying IP geographic information and CDN provider
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/pwru                                     | 1.0.9              |            | https://github.com/cilium/pwru                                             | eBPF-based Linux kernel networking debugger
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -727,15 +678,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/wechat                                         | 4.1.1.8            |            | https://linux.weixin.qq.com                                                | Weixin for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/wechat-universal-bwrap                         | 1.0.0.241-r1       |            | https://weixin.qq.com                                                      | WeChat (Universal) from UOS, inside bwrap sandbox
-                                                       | 1.0.0.242          |            |                                                                            |
-                                                       | 4.0.0.21           |            |                                                                            |
-                                                       | 4.0.0.23           |            |                                                                            |
+ net-im/wechat-universal-bwrap                         | 4.0.0.23           |            | https://weixin.qq.com                                                      | WeChat (Universal) with bwrap sandbox
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/wemeet                                         | 3.19.1.400         |            | https://meeting.tencent.com/                                               | Wemeet - Tencent Video Conferencing
-                                                       | 3.19.2.400         |            |                                                                            |
-                                                       | 3.26.10.400        |            |                                                                            |
-                                                       | 3.26.10.401        |            |                                                                            |
+ net-im/wemeet                                         | 3.26.10.401        |            | https://meeting.tencent.com/                                               | Wemeet - Tencent Video Conferencing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-libs/bun-bin                                      | 1.4.0              |            | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -752,9 +697,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/apifox                                       | 2.8.44             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/baidunetdisk                                 | 8.5.2              |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
-                                                       | 8.5.2-r1           |            |                                                                            |
-                                                       | 8.7.0              |            |                                                                            |
+ net-misc/baidunetdisk                                 | 8.7.0              |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidupcs-go                                  | 4.0.2              |            | https://github.com/qjfoidnh/BaiduPCS-Go                                    | Terminal utility for Baidu Network Disk (Golang Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -790,9 +733,7 @@
  net-misc/pcmanx-gtk2                                  | 1.3                |            | https://github.com/pcman-bbs/pcmanx                                        | PCMan is a gtk+ based free BBS client
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/prips                                        | 1.0.0              |            | http://devel.ringlet.net/sysutils/prips/                                   | print the IP addresses in a range
-                                                       | 1.2.0              |            |                                                                            |
-                                                       | 1.3.1              |            |                                                                            |
+ net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/reframe                                      | 1.20.1             |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                  |  D, RD     |                                                                            | group for reframe
@@ -812,8 +753,7 @@
  net-p2p/amule-dlp-antileech                           | 9999               |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999               | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-p2p/n2n                                           | 3.0                |            | https://github.com/ntop/n2n                                                | A Layer Two Peer-to-Peer VPN
-                                                       | 3.1.1              |            |                                                                            |
+ net-p2p/n2n                                           | 3.1.1              |            | https://github.com/ntop/n2n                                                | A Layer Two Peer-to-Peer VPN
                                                        | 9999               |            |                                                                            |
    acct-group/n2n                                      | 0                  |  D, RD     |                                                                            | A Layer Two Peer-to-Peer VPN
    acct-user/n2n                                       | 0                  |  D, RD     |                                                                            | A Layer Two Peer-to-Peer VPN
@@ -835,8 +775,7 @@
  net-proxy/clash-verge-rev-bin                         | 2.5.2              |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/dae                                         | 1.0.0              |            | https://github.com/daeuniverse/dae                                         | A lightweight and high-performance transparent proxy solution based on eBPF
-                                                       | 1.1.0              |            |                                                                            |
+ net-proxy/dae                                         | 1.1.0              |            | https://github.com/daeuniverse/dae                                         | A lightweight and high-performance transparent proxy solution based on eBPF
                                                        | 2.0.0              |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -879,8 +818,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/shadowsocks-rust                            | 1.24.0             |            | https://github.com/shadowsocks/shadowsocks-rust                            | shadowsocks is a fast tunnel proxy that helps you bypass firewalls
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/sing-box                                    | 1.11.15-r1         |            | https://sing-box.sagernet.org/                                             | The universal proxy platform
-                                                       | 1.12.25            |            |                                                                            |
+ net-proxy/sing-box                                    | 1.12.25            |            | https://sing-box.sagernet.org/                                             | The universal proxy platform
                                                        | 1.13.19            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/sing-box-windows-bin                        | 2.3.1              |            | https://github.com/xinggaoya/sing-box-windows                              | Modern sing-box desktop client
@@ -979,8 +917,7 @@
                                                        | 7.1.9              |            |                                                                            |
                                                        | 7.2.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/mkinitcpio                                 | 38                 |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
-                                                       | 39.2               |            |                                                                            |
+ sys-kernel/mkinitcpio                                 | 39.2               |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
                                                        | 41                 |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-libs/elog-functions                               | 0.0.2              |            | http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html         | Compatibility functions for the log eclass functions of OpenRC
@@ -1062,14 +999,11 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-y-icons                               | 1.9.2              |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/nordic                                     | 2.1.0              |            | https://github.com/EliverLara/Nordic                                       | Dark Gtk3.20+ theme created using the awesome Nord color pallete
-                                                       | 2.2.0-r1           |            |                                                                            |
+ x11-themes/nordic                                     | 2.2.0-r1           |            | https://github.com/EliverLara/Nordic                                       | Dark Gtk3.20+ theme created using the awesome Nord color pallete
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/nordzy-cursors                             | 0.5.0              |            | https://github.com/guillaumeboehm/Nordzy-cursors                           | Cursor theme using the Nord color palette and based on Vimix and cz-Viator
-                                                       | 2.4.0              |            |                                                                            |
+ x11-themes/nordzy-cursors                             | 2.4.0              |            | https://github.com/guillaumeboehm/Nordzy-cursors                           | Cursor theme using the Nord color palette and based on Vimix and cz-Viator
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/nordzy-icon                                | 1.5                |            | https://github.com/alvatip/Nordzy-icon                                     | A free and open source icon theme for Linux desktops
-                                                       | 1.8.7              |            |                                                                            |
+ x11-themes/nordzy-icon                                | 1.8.7              |            | https://github.com/MolassesLover/Nordzy-icon                               | A free and open source icon theme for Linux desktops
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/ori-fcitx5                                 | 9999               |            | https://github.com/Reverier-Xu/Ori-fcitx5                                  | Ori theme for Fcitx5
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
