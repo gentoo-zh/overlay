@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-27 16:55:05 CST)
+(The last generation time: 2026-08-28 02:08:28 CST)
 
 ### Packages
 
@@ -278,8 +278,6 @@
  app-vim/easymotion                                    | 3.0.1              |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/powerline                                     | 9999               |            | https://www.vim.org/scripts/script.php?script_id=3881                      | vim plugin: The ultimate vim statusline utility
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-build/lito                                        | 0.6.3              |            | https://github.com/litocpp/lito                                            | Module-first C++ build tool with manifest
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/cppcoro                                       | 0.0_p210105        |            | https://github.com/Garcia6l20/cppcoro                                      | A library of C++ coroutine abstractions for the coroutines TS
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
