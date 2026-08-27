@@ -14,9 +14,9 @@ LICENSE="GPL-2"
 
 SLOT="0"
 
-KEYWORDS="~amd64 ~arm ~arm64 ~mips ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~loong ~mips ~x86"
 
-IUSE="+systemd"
+IUSE="systemd"
 
 DEPEND="sys-apps/kmod
 sys-apps/util-linux
@@ -28,6 +28,7 @@ sys-apps/findutils
 sys-apps/sed
 app-alternatives/awk
 sys-apps/baselayout
+virtual/tmpfiles
 virtual/udev
 systemd? ( sys-apps/systemd )
 "
