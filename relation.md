@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-27 15:44:18 CST)
+(The last generation time: 2026-08-27 15:54:31 CST)
 
 ### Packages
 
@@ -54,7 +54,7 @@
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.0.20251223     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
                                                        | 0.3.0.20260416     |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.10.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.11.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.5.5              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -816,7 +816,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/shadowsocks-rust                            | 1.24.0             |            | https://github.com/shadowsocks/shadowsocks-rust                            | shadowsocks is a fast tunnel proxy that helps you bypass firewalls
+ net-proxy/shadowsocks-rust                            | 1.25.0             |            | https://github.com/shadowsocks/shadowsocks-rust                            | shadowsocks is a fast tunnel proxy that helps you bypass firewalls
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/sing-box                                    | 1.12.25            |            | https://sing-box.sagernet.org/                                             | The universal proxy platform
                                                        | 1.13.19            |            |                                                                            |
