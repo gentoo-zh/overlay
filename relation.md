@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-27 15:55:54 CST)
+(The last generation time: 2026-08-27 16:01:13 CST)
 
 ### Packages
 
@@ -191,7 +191,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/copilot                                      | 1.0.80             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush                                        | 0.91.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
+ app-misc/crush                                        | 0.91.2             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.53.4             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.53.6             |            |                                                                            |
@@ -633,7 +633,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/mpv-handler                               | 0.4.2              |            | https://github.com/akiirui/mpv-handler                                     | Play website videos and songs with mpv & yt-dlp
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/piliplus-bin                              | 2.1.2              |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
+ media-video/piliplus-bin                              | 2.1.2.1            |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/tenvideo                                  | 1.0.10             |            | https://v.qq.com/download.html#linux                                       | Tencent videos
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
