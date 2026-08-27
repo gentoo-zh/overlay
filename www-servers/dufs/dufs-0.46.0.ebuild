@@ -42,6 +42,8 @@ src_install() {
 	insinto "/etc/${PN}"
 	newins "${FILESDIR}/${PN}-config.yaml" "config.yaml.example"
 
+	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
+
 	systemd_dounit "${FILESDIR}/${PN}.service"
 	systemd_newunit "${FILESDIR}/${PN}_at.service" "${PN}@.service"
 

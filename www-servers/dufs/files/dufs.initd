@@ -1,0 +1,37 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="A distinctive utility file server"
+
+instance="${RC_SVCNAME#*.}"
+[ "${instance}" = "${RC_SVCNAME}" ] && instance="config"
+DUFS_CONFIG="${DUFS_CONFIG:-/etc/dufs/${instance}.yaml}"
+DUFS_SOCKET="$(sed -n 's|^[[:space:]]*bind:[[:space:]]*\(/[^[:space:]#]*\).*|\1|p' "${DUFS_CONFIG}" 2>/dev/null | head -n1)"
+
+command="/usr/bin/dufs"
+command_args="--config ${DUFS_CONFIG}"
+command_background="true"
+command_user="dufs:dufs"
+pidfile="/run/${RC_SVCNAME}.pid"
+required_files="${DUFS_CONFIG}"
+
+depend() {
+	need net
+}
+
+start_pre() {
+	checkpath -d -m 0750 -o dufs:dufs /run/dufs
+}
+
+start_post() {
+	# dufs creates the socket with the process umask, which leaves group
+	# members unable to connect; dufs.service chmods it for the same reason.
+	[ -n "${DUFS_SOCKET}" ] || return 0
+	ewaitfile "${dufs_socket_delay:-5}" "${DUFS_SOCKET}" || return 1
+	chmod 0660 "${DUFS_SOCKET}"
+}
+
+stop_post() {
+	[ ! -S "${DUFS_SOCKET}" ] || rm -f "${DUFS_SOCKET}"
+}
