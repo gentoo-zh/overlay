@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Simple and easy to use DDNS client"
+
+instance="${RC_SVCNAME#*.}"
+[ "${instance}" = "${RC_SVCNAME}" ] && instance="config"
+DDNS_GO_CONFIG="${DDNS_GO_CONFIG:-/etc/ddns-go/${instance}.yaml}"
+
+command="/usr/bin/ddns-go"
+command_args="-c ${DDNS_GO_CONFIG} ${DDNS_GO_ARGS}"
+yesno "${DDNS_GO_WEB:-no}" || command_args="${command_args} -noweb"
+command_background="true"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+	need net
+	after dns
+}

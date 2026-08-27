@@ -33,6 +33,9 @@ src_compile() {
 
 src_install() {
 	dobin "${PN}"
+	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
+	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
+
 	systemd_dounit "${FILESDIR}/${PN}.service"
 	systemd_newunit "${FILESDIR}/${PN}_at.service" "${PN}@.service"
 	systemd_dounit "${FILESDIR}/${PN}-web.service"

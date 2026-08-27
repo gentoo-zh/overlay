@@ -1,0 +1,12 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+# Configuration file. A service named ddns-go.<name> reads
+# /etc/ddns-go/<name>.yaml instead.
+#DDNS_GO_CONFIG="/etc/ddns-go/config.yaml"
+
+# Serve the web interface on :9876, as ddns-go-web.service does.
+#DDNS_GO_WEB="yes"
+
+# Extra command line arguments, for example -l :9877 -f 600.
+#DDNS_GO_ARGS=""
