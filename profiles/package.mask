@@ -36,9 +36,3 @@ app-misc/aichat
 # Masked for removal in 2026-08-28
 dev-util/kimi-cli-bin
 
-# Zakk <zakk@gentoozh.org> (2026-07-28)
-# Collides with ::gentoo's dev-libs/quickjs-ng over /usr/bin/qjs and /usr/bin/qjsc,
-# neither side blocks the other. Upstream stopped at 2024.01.13, quickjs-ng succeeds
-# it, and nothing depends on this.
-# Masked for removal in 2026-08-28
-dev-lang/quickjs
