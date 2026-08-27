@@ -18,10 +18,6 @@ RESTRICT="bindist mirror strip"
 QA_PREBUILT="opt/${PN}/*"
 
 src_install() {
-	# Drop bundled native addons for other OSes/arches (this is the linux amd64 package).
-	local clip="clipboard/node_modules/@teddyzhu/clipboard"
-	rm "${clip}"/clipboard.{darwin-arm64,darwin-x64,linux-arm64-gnu,win32-arm64-msvc,win32-x64-msvc}.node || die
-
 	# The bundled webview native addon links libxdo.so.3 (Gentoo ships libxdo.so.4)
 	# and a webkit2gtk/gtk3 stack; it only drives the optional canvas UI, from which
 	# the CLI falls back cleanly. Drop it rather than pull in that desktop stack.
