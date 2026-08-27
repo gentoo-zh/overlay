@@ -2545,7 +2545,7 @@ url = "https://raw.githubusercontent.com/CachyOS/linux-cachyos/master/linux-cach
 regex = '_major=[\d.]+\n_minor=\d+'
 from_pattern = '_major=([\d.]+)\s+_minor=(\d+)'
 to_pattern = '\1.\2'
-github_account = ["blackteahamburger", "Zakkaus", "locez"]
+github_account = ["Zakkaus", "xz-dev"]
 
 # Follows sys-kernel/gentoo-kernel and its dist-kernel release schedule rather
 # than an upstream tag of its own.
