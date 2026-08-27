@@ -1,0 +1,21 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Network Time Service (ntpd-rs) metrics exporter"
+
+command="/usr/bin/ntp-metrics-exporter"
+command_args="${NTPD_RS_METRICS_ARGS}"
+command_background="true"
+command_user="ntpd-rs-observe:ntpd-rs-observe"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+export RUST_LOG="${RUST_LOG:-info}"
+
+depend() {
+	need ntpd-rs
+}
+
+start_pre() {
+	checkpath -d -m 0755 -o ntpd-rs-observe:ntpd-rs-observe /run/ntpd-rs-observe
+}

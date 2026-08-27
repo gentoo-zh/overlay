@@ -49,6 +49,9 @@ src_install(){
 	insinto /etc/ntpd-rs
 	doins ../ntp.toml
 
+	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
+	use metrics && newinitd "${FILESDIR}/${PN}-metrics.initd" "${PN}-metrics"
+
 	systemd_dounit ../docs/examples/conf/ntpd-rs-metrics.service
 	systemd_dounit ../docs/examples/conf/ntpd-rs.service
 }
