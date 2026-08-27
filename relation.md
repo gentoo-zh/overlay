@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-28 07:01:45 CST)
+(The last generation time: 2026-08-28 07:16:01 CST)
 
 ### Packages
 
@@ -881,12 +881,13 @@
  sys-kernel/gentoo-cjk-kernel                          | 6.12.103             |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
                                                        | 6.12.104             |            |                                                                            |
                                                        | 6.12.105             |            |                                                                            |
+                                                       | 6.12.106             |            |                                                                            |
                                                        | 6.18.44              |            |                                                                            |
                                                        | 6.18.45              |            |                                                                            |
                                                        | 6.18.46              |            |                                                                            |
+                                                       | 6.18.47              |            |                                                                            |
                                                        | 7.1.10               |            |                                                                            |
-                                                       | 7.1.8                |            |                                                                            |
-                                                       | 7.1.9                |            |                                                                            |
+                                                       | 7.1.11               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.103             |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.12.104             |            |                                                                            |
@@ -900,12 +901,14 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.104             |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.105             |            |                                                                            |
+                                                       | 6.12.106             |            |                                                                            |
                                                        | 6.18.45              |            |                                                                            |
                                                        | 6.18.46              |            |                                                                            |
+                                                       | 6.18.47              |            |                                                                            |
                                                        | 7.1.10               |            |                                                                            |
+                                                       | 7.1.11               |            |                                                                            |
                                                        | 7.1.8-r1             |            |                                                                            |
                                                        | 7.1.9                |            |                                                                            |
-                                                       | 7.2.0                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 41-r1                |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -916,19 +919,20 @@
  virtual/dist-kernel                                   | 6.12.103-r100        |            |                                                                            | Virtual to depend on any Distribution Kernel
                                                        | 6.12.104-r100        |            |                                                                            |
                                                        | 6.12.105-r100        |            |                                                                            |
+                                                       | 6.12.106-r100        |            |                                                                            |
                                                        | 6.18.44-r100         |            |                                                                            |
                                                        | 6.18.45-r100         |            |                                                                            |
                                                        | 6.18.46-r100         |            |                                                                            |
+                                                       | 6.18.47-r100         |            |                                                                            |
                                                        | 7.1.10-r100          |            |                                                                            |
-                                                       | 7.1.8-r100           |            |                                                                            |
-                                                       | 7.1.9-r100           |            |                                                                            |
+                                                       | 7.1.11-r100          |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12                |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 7.1.8                | RD         | https://cachyos.org                                                        | Linux kernel sources with CachyOS patches, optionally with cjktty
                                                        | 7.2.0-r1             |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.1.10               | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-   sys-kernel/xanmod-kernel                            | 7.1.10               | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
-   sys-kernel/xanmod-sources                           | 7.1.10               | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+   sys-kernel/liquorix-sources                         | 7.1.11               | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+   sys-kernel/xanmod-kernel                            | 7.1.11               | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+   sys-kernel/xanmod-sources                           | 7.1.11               | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                    |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646       | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
