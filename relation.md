@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-28 05:19:21 CST)
+(The last generation time: 2026-08-28 05:28:24 CST)
 
 ### Packages
 
@@ -245,8 +245,6 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office365-edu                          | 12.1.2.25882         |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office (WPS 365 Education edition), the Chinese office productivity suite
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-pda/ipadcharge                                    | 9999                 |            | https://github.com/mkorenkov/ipad_charge                                   | Enables USB charging for Apple devices
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/blesh                                      | 9999                 |            | https://github.com/akinomyoga/ble.sh                                       | A line editor written in pure Bash with enhanced features
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/flyline-bin                                | 1.7.1                |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
@@ -303,8 +301,6 @@
                                                        | 21.0.1               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-lang/koka-bin                                     | 3.2.3                |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-lang/quickjs                                      | 2024.01.13           |            | https://bellard.org/quickjs/                                               | Small embeddable Javascript engine
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/lunar-calendar                               | 3.0.1                |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0                |  D         | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
@@ -583,8 +579,6 @@
  media-plugins/waylyrics                               | 0.3.21               |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
                                                        | 0.4.0                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/barva                                     | 9999                 |            | https://github.com/Kharacternyk/barva                                      | a modular audio visualizer
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/cider                                     | 4.0.9.1              |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V4)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/euphonica                                 | 0.99.5               |            | https://github.com/htkhiem/euphonica                                       | An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita
@@ -618,8 +612,6 @@
  media-sound/yesplaymusic-bin                          | 0.4.10               |            | https://github.com/qier222/YesPlayMusic                                    | A third party music player for Netease Music
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/ytmdesktop-bin                            | 2.0.11               |            | https://github.com/ytmdesktop/ytmdesktop                                   | A Desktop App for YouTube Music
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/avplayer                                  | 9999                 |            | https://github.com/avplayer/avplayer                                       | avplayer is a p2p video downloader and player
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/bilibili                                  | 1.18.0_p1            |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
