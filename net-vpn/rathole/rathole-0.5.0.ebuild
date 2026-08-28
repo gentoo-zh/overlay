@@ -31,6 +31,9 @@ PATCHES=("${FILESDIR}/${P}-fix-rust-1.80.patch")
 src_install(){
 	keepdir /etc/rathole
 	dobin $(cargo_target_dir)/rathole
+	newinitd "${FILESDIR}/ratholes.initd" ratholes
+	newinitd "${FILESDIR}/ratholec.initd" ratholec
+
 	systemd_dounit examples/systemd/ratholes@.service
 	systemd_dounit examples/systemd/ratholes.service
 	systemd_dounit examples/systemd/ratholec@.service

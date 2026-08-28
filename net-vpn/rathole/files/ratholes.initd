@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Rathole server"
+
+instance="${RC_SVCNAME#*.}"
+[ "${instance}" = "${RC_SVCNAME}" ] && instance="rathole"
+RATHOLE_CONFIG="${RATHOLE_CONFIG:-/etc/rathole/${instance}.toml}"
+
+command="/usr/bin/rathole"
+command_args="-s ${RATHOLE_CONFIG}"
+command_background="true"
+rc_ulimit="-n 1048576"
+pidfile="/run/${RC_SVCNAME}.pid"
+required_files="${RATHOLE_CONFIG}"
+
+depend() {
+	need net
+}
