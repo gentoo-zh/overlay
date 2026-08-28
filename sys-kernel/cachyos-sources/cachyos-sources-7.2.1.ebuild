@@ -17,7 +17,7 @@ CACHYOS_PR="1"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="1"
+K_GENPATCHES_VER="2"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
