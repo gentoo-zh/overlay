@@ -4,9 +4,10 @@
 
 description="An advanced web panel built for sing-box"
 
-supervisor=supervise-daemon
 command="/usr/bin/sui"
+command_background="true"
 directory="/var/lib/s-ui"
+pidfile="/run/${RC_SVCNAME}.pid"
 
 export SUI_DB_FOLDER="${SUI_DB_FOLDER:-/var/lib/s-ui}"
 
