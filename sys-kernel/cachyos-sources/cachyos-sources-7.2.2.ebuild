@@ -5,7 +5,7 @@ EAPI="8"
 
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="11"
+K_GENPATCHES_VER="3"
 K_SECURITY_UNSUPPORTED="1"
 DESCRIPTION="Linux kernel sources with CachyOS patches, optionally with cjktty"
 HOMEPAGE="
@@ -14,7 +14,7 @@ HOMEPAGE="
 	https://github.com/CachyOS/kernel-patches
 	https://github.com/gentoo-zh/cjktty-patches
 "
-CJKTTY_PV="7.1.7"
+CJKTTY_PV="7.2"
 
 inherit check-reqs kernel-2 cjktty
 detect_version
@@ -39,17 +39,10 @@ SRC_URI+="
 	prjc? (
 		${CACHYOS_PATCH_URI}/sched/0001-prjc-cachy.patch
 			-> ${P}-0001-prjc-cachy.patch
-	)
-	prjc-lfbmq? (
-		${CACHYOS_PATCH_URI}/sched/0001-prjc-cachy-lfbmq.patch
-			-> ${P}-0001-prjc-cachy-lfbmq.patch
-	)
-	${CACHYOS_PATCH_URI}/misc/0001-acpi-call.patch
+	)	${CACHYOS_PATCH_URI}/misc/0001-acpi-call.patch
 		-> ${P}-0001-acpi-call.patch
-	${CACHYOS_PATCH_URI}/misc/0001-aufs-7.1-merge-v20260713.patch
+	${CACHYOS_PATCH_URI}/misc/0001-aufs-7.2-merge-v20260824.patch
 		-> ${P}-0001-aufs.patch
-	${CACHYOS_PATCH_URI}/misc/0001-clang-polly.patch
-		-> ${P}-0001-clang-polly.patch
 	${CACHYOS_PATCH_URI}/misc/0001-handheld.patch
 		-> ${P}-0001-handheld.patch
 	rt? (
@@ -63,8 +56,11 @@ S="${WORKDIR}/linux-${KV_FULL}"
 LICENSE+=" GPL-2"
 
 KEYWORDS="~amd64"
-IUSE+=" +bore cjk prjc prjc-lfbmq rt thin"
-REQUIRED_USE+=" ?? ( bore prjc prjc-lfbmq )"
+IUSE+=" +bore cjk prjc rt thin"
+REQUIRED_USE+=" ?? ( bore prjc )"
+PATCHES=(
+	"${FILESDIR}/cachyos-sources-7.2.2-revert-empty-cpuset-floor.patch"
+)
 RDEPEND="
 	thin? (
 		llvm-core/clang
@@ -96,19 +92,22 @@ apply_gentoo_genpatches() {
 apply_cachyos_patches() {
 	local cachyos_patches=()
 
+	if use prjc; then
+		# 7.2.2 carries an (unrelated) stable tg_cpus() fix that the PRJC
+		# patchset was not written against; hunk 27 removes the whole
+		# region anyway, so revert the fix first.
+		eapply "${FILESDIR}/cachyos-sources-7.2.2-revert-empty-cpuset-floor.patch"
+	fi
+
 	if use bore; then
 		cachyos_patches+=( "${DISTDIR}/${P}-0001-bore-cachy.patch" )
 	elif use prjc; then
 		cachyos_patches+=( "${DISTDIR}/${P}-0001-prjc-cachy.patch" )
-	elif use prjc-lfbmq; then
-		cachyos_patches+=( "${DISTDIR}/${P}-0001-prjc-cachy-lfbmq.patch" )
 	fi
 
 	cachyos_patches+=(
 		"${DISTDIR}/${P}-0001-acpi-call.patch"
 		"${DISTDIR}/${P}-0001-aufs.patch"
-		"${DISTDIR}/${P}-0001-clang-polly.patch"
-		"${DISTDIR}/${P}-0001-handheld.patch"
 	)
 
 	use rt && cachyos_patches+=( "${DISTDIR}/${P}-0001-rt-i915.patch" )

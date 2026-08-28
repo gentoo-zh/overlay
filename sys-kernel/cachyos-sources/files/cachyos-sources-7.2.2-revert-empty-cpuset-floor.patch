@@ -1,0 +1,16 @@
+--- a/kernel/sched/fair.c
++++ b/kernel/sched/fair.c
+@@ -4871,12 +4871,7 @@
+ 			nr = cpuset_num_cpus(cgrp);
+ 	}
+ 
+-	/*
+-	 * An empty cpuset would propagate a 0 shares_max into
+-	 * __calc_smp_shares(), where clamp() yields hi when hi < lo and so
+-	 * defeats the MIN_SHARES floor. Match tg_tasks(), which floors at 1.
+-	 */
+-	return max(nr, 1);
++	return nr;
+ }
+ 
+ static inline int tg_tasks(struct task_group *tg)
