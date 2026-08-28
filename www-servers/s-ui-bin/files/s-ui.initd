@@ -1,0 +1,15 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="An advanced web panel built for sing-box"
+
+supervisor=supervise-daemon
+command="/usr/bin/sui"
+directory="/var/lib/s-ui"
+
+export SUI_DB_FOLDER="${SUI_DB_FOLDER:-/var/lib/s-ui}"
+
+depend() {
+	need net
+}
