@@ -16,7 +16,7 @@ Never substitute memory or superficial similarity for evidence.
 
 Packages live under `category/package/` with ebuilds, `metadata.xml`, optional `Manifest`, and optional `files/`.
 
-Repository metadata is under `metadata/`, `profiles/`, and `repo.xml`. CI is under `.github/`.
+Repository metadata is under `metadata/` and `profiles/`. CI is under `.github/`.
 
 ## Git Workflow
 
@@ -63,9 +63,10 @@ Treat `master` only as an upstream-sync branch.
 
 ## Ebuild Policy
 
-- Install every changed ebuild cleanly; a compile alone is insufficient, and emerge-on-PR fails on every Portage `qa`, `warn`, or `error` elog.
+- Install every changed ebuild cleanly; a compile alone is insufficient. emerge-on-PR discards the elog its `--onlydeps` pass leaves, then fails on any `qa`, `warn`, or `error` elog from the emerge of the package itself, including a dependency that step happens to build.
 - Where the environment cannot run a real merge, such as an unprivileged sandbox that cannot chown to the portage group, record the install as skipped.
-- The amd64 emerge-on-PR CI merges after the push. It covers amd64 only, leaves other `KEYWORDS` unverified, and does not equal a local clean install.
+- An elog from the dependency rather than the package is not a defect in the change. Report it; do not edit the ebuild to clear it.
+- The emerge-on-PR CI installs the changed packages after each push: on both amd64 profiles, openrc and systemd, and on the arm64 systemd profile when the package is keyworded arm64. There is no arm64 openrc run, every other arch stays unverified, and a green run does not replace your own clean install.
 - Build every newly added `KEYWORDS` arch of a source package; never keyword one you did not build. A prebuilt package follows the arm64 exception under Bundled and Prebuilt Binaries.
 - Carrying the prior version's keywords forward is retention—do not narrow them to the one arch you built.
 - For an arch-independent package, keep the inherited keywords and note the arches you did not verify in the completion report; use `~arch`.
@@ -75,7 +76,7 @@ Treat `master` only as an upstream-sync branch.
 - For non-trivial work, use precedent matching the source or prebuilt model, build system, eclass stack, and runtime layout. Re-verify it against the current release.
 - Before writing the fix, find how `::gentoo` or this overlay already solves the same problem and take that form. A construct with no precedent in either tree needs a stated reason.
 - Keep release and `9999` behavior distinct. Port applicable dependency, QA, EAPI, and phase fixes to the live ebuild.
-- A live ebuild must sort above every release the package has. `9999` is lower than a date version, so a package versioned `20240203` needs `99999999`; confirm with `vercmp` before naming the file.
+- A live ebuild must sort above every release the package has. `9999` is lower than a date version, so a package versioned `20240203` needs `99999999`; confirm with `python3 -c 'from portage.versions import vercmp; print(vercmp("9999", "20240203"))'` before naming the file.
 - Every `${FILESDIR}` reference must name a committed file.
 - If `PATCHES` coexists with a custom `src_prepare`, call `default` or apply the patches explicitly. `eapply_user` alone does not apply `PATCHES`.
 - Keep global scope metadata-invariant and side-effect-free. Do not run external programs, emit uncaptured output, modify system state, or depend on system, profile, repository, or phase data.
@@ -84,9 +85,9 @@ Treat `master` only as an upstream-sync branch.
 - Declare external build and test inputs through `SRC_URI`/`Manifest` or an eclass vendor mechanism. Enforce offline operation without warm caches.
 - Each USE state must control every applicable option, dependency, source selection, and install cleanup consistently. Disable automagic.
 - Prune only what `src_install` would otherwise install. Deleting a path it never reaches is dead code, as is a branch that only removes files that USE state does not install.
-- `${ED}` and `${D}` already carry the offset; never append `${EPREFIX}`. Use a bare `${EPREFIX}` only in installed content read at runtime, and only where that consumer runs under Prefix.
+- `${ED}` already carries the offset; never append `${EPREFIX}` to it. `${D}` does not carry it. Use a bare `${EPREFIX}` only in installed content read at runtime, and only where that consumer runs under Prefix.
 - Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`.
-- A license absent from `::gentoo` needs its full text in `licenses/`, an entry in the matching `profiles/license_groups` group, and `RESTRICT` set from its own distribution terms.
+- A license absent from `::gentoo` needs its full text in `licenses/` and `RESTRICT` set from its own distribution terms. One that forbids redistribution sets both `mirror`, which covers the distfile, and `bindist`, which covers what is built from it. Add it to `profiles/license_groups` when it belongs to one of those groups; a license that fits none stays ungrouped.
 - A backport records its upstream commit, PR, or bug URL and applicable and tested versions.
 - A security fix covers every still-keyworded vulnerable branch and relevant sibling or fork. Revbump when installed content or behavior changes.
 - A package move updates `profiles/updates` atomically with every affected reference.
@@ -97,7 +98,7 @@ Treat `master` only as an upstream-sync branch.
 - The `go.mod` `go` directive and `Cargo.toml` `rust-version` are real minimum versions, and no eclass reads them for you.
 - When one exceeds what the profile toolchain guarantees, raise the matching `>=dev-lang/go` `BDEPEND` or `RUST_MIN_VER`.
 - If the raised floor is not yet in the tree, hand over the compare link stating the PR must be opened as a draft.
-- Cite the upstream `go.mod` and the tree state on packages.gentoo.org, for example `>=dev-lang/go-1.26.5` while the tree has 1.26.4.
+- Cite the upstream `go.mod` and the tree state on packages.gentoo.org, for example `>=dev-lang/go-1.26.5` when `go.mod` says `go 1.26.5`.
 - The `go.mod` `toolchain` line is only a suggestion under `GOTOOLCHAIN=local` and sets no floor.
 - Re-check patches and assets. Update the ebuild, `SRC_URI`, version variables, checksums, and `Manifest` together; stop when required evidence is unavailable.
 - When a bump exposes a defect, fix it in the existing ebuild and change only what the new release invalidates. Rewrite it only when the release leaves it unusable, and say what made it so.
@@ -142,7 +143,7 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 - In EAPI 8+, put host tools that must execute while the package is merged, such as post-install cache generators, in `IDEPEND`.
 - For a verified direct ABI consumer, put `:=` or `:slot=` on every `DEPEND` or `RDEPEND` atom that models that linkage. Never copy it to transitive dependencies.
 - Identical prebuilt bytes cannot adapt to a new ABI. Constrain verified provider slots or versions instead of assuming a reinstall fixes them.
-- Built slot operators are invalid in `PDEPEND` and must stay outside `|| ( )`. Inside an any-of group, list only supported providers, preferred first.
+- `:=` and `:slot=` are invalid in `PDEPEND` and must stay outside `|| ( )`. Inside an any-of group, list only supported providers, preferred first.
 - Before adding or retaining any dependency or alternative provider, check removal entries in both this overlay's and the main Gentoo tree's `profiles/package.mask`.
 - When a package is removed or renamed, update dependency atoms plus `elog` and `optfeature` recommendation strings.
 - A provider subslot represents an ABI that requires consumer rebuilds. Re-check SONAMEs, private-header ABI, and library renames on every bump.
@@ -202,7 +203,8 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 - Update `.github/workflows/overlay.toml` in the same PR for a new package tied to an independent upstream project, inserting the entry in `category/package` alphabetical order.
 - A dist-kernel package added at a version must appear in that version's `virtual/dist-kernel-*-r100` `||` list, and a new version needs that virtual created.
 - Leaving it out makes Portage satisfy the `PDEPEND` from a provider that is listed and install a second kernel.
-- The virtual is its own commit and lands before the provider it lists, so `pkgcheck` reports `NonexistentDeps` against that commit alone until the next one adds the package.
+- One version's source, binary, and virtual land in one commit. They name each other, so any half alone fails `pkgcheck`.
+- List a provider only after its artifact is published.
 - Add an active `["category/package"]` table in `.github/workflows/overlay.toml` when releases are trackable, otherwise a commented `#["category/package"]` block giving the reason: live-only, synced elsewhere, or a duplicate source/binary package.
 - Packages with no independent upstream version (`virtual/*`, `acct-*`, meta) need no entry.
 - Add `files/` assets only when phases cannot generate them cleanly.
@@ -244,7 +246,7 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 ### Scanning
 
 - Before the PR, complete required clean installs.
-- After those installs pass, scope the commit scan to this branch with an explicit merge-base range. A bare `--commits` compares against the fork's lagging `origin` and drags in unrelated packages.
+- After those installs pass, scope the commit scan to this branch with an explicit merge-base range. A bare `--commits` compares against whatever `origin` points at, which need not be the base you branched from.
 
   ```bash
   pkgcheck scan --git-remote <canonical> --commits="$(git merge-base <canonical>/master HEAD)..HEAD" --net
@@ -262,7 +264,7 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 
 ### QA notices
 
-- That report names the commit and packages the bot scanned and the status; read it instead of guessing what CI saw.
+- The pkgcheck bot's report on the PR names the commit and packages it scanned and the status; read it instead of guessing what CI saw.
 - Fix genuine QA defects at the root cause.
 - Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk.
 - Never rewrite working behavior merely to silence a checker.
