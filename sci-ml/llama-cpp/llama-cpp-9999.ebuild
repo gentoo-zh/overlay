@@ -17,14 +17,14 @@ if [[ ${PV} == *9999* ]]; then
 	EGIT_MIN_CLONE_TYPE="single"
 	inherit git-r3
 else
-	MY_PV="b${PV#0_pre}"
+	BUILD="b10621"
 	SRC_URI="
-		https://github.com/ggml-org/llama.cpp/archive/refs/tags/${MY_PV}.tar.gz -> ${P}.tar.gz
+		https://github.com/ggml-org/llama.cpp/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
 		webui? (
-			https://github.com/ggml-org/llama.cpp/releases/download/${MY_PV}/llama-${MY_PV}-ui.tar.gz -> ${P}-ui.tar.gz
+			https://github.com/ggml-org/llama.cpp/releases/download/${BUILD}/llama-${BUILD}-ui.tar.gz -> ${P}-ui.tar.gz
 		)
 	"
-	S="${WORKDIR}/llama.cpp-${MY_PV}"
+	S="${WORKDIR}/llama.cpp-${PV}"
 	KEYWORDS="~amd64 ~riscv"
 fi
 
@@ -117,11 +117,11 @@ src_unpack() {
 			mkdir -p "${S}/tools/ui/dist"
 			einfo Downloading webui dist from huggingface bucket...
 			wget -qO - "https://huggingface.co/buckets/ggml-org/llama-ui/resolve/latest/dist.tar.gz" \
-				| tar -xzC "${S}/tools/ui/dist"
+				| tar -xzf - -C "${S}/tools/ui/dist"
 			echo "{\"version\":\"b$(git -C "${S}" rev-list --count HEAD)\"}" > "${S}/tools/ui/dist/build.json"
 		else
-			ln -s "${WORKDIR}/llama-${MY_PV}" "${S}/tools/ui/dist" || die
-			echo "{\"version\":\"${MY_PV}\"}" > "${S}/tools/ui/dist/build.json"
+			ln -s "${WORKDIR}/llama-${BUILD}" "${S}/tools/ui/dist" || die
+			echo "{\"version\":\"${PV}\"}" > "${S}/tools/ui/dist/build.json"
 		fi
 	fi
 }
@@ -143,7 +143,7 @@ src_configure() {
 			-DLLAMA_BUILD_COMMIT="$(git rev-parse HEAD)"
 		)
 	else
-		local mycmakeargs=( -DLLAMA_BUILD_NUMBER="${MY_PV#b}" )
+		local mycmakeargs=( -DLLAMA_BUILD_NUMBER="${BUILD#b}" )
 	fi
 
 	mycmakeargs+=(
