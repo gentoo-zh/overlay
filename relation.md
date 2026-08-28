@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-28 19:59:40 CST)
+(The last generation time: 2026-08-28 20:00:16 CST)
 
 ### Packages
 
@@ -58,7 +58,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.5.5                |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/appflowy-bin                              | 0.13.2               |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
+ app-editors/appflowy-bin                              | 0.14.0               |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/cursor                                    | 3.18.9               |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -363,7 +363,7 @@
    app-i18n/librime                                    | 9999                 |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
    dev-python/autopxd2                                 | 3.2.3                | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/uv-bin                                     | 0.12.6               |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
+ dev-python/uv-bin                                     | 0.12.7               |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -424,7 +424,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.84.3               |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.31.4               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.32.1               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.31.4               |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
