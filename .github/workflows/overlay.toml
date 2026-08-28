@@ -2464,8 +2464,12 @@ to_pattern = '\1_p\2'
 github_account = ["zakkaus", "peeweep"]
 autobump = true
 
-# packaged as a snapshot, upstream has no release
-#["sci-ml/llama-cpp"]
+["sci-ml/llama-cpp"]
+source = "github"
+github = "ggml-org/llama.cpp"
+use_latest_release = true
+prefix = "v"
+github_account = "Puqns67"
 
 # key issued by this project, no upstream version to track
 #["sec-keys/openpgp-keys-gentoozh"]
