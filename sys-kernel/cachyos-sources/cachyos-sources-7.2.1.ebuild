@@ -224,6 +224,11 @@ src_prepare() {
 
 	scripts/config -e CACHY || die
 
+	# FONT_CJK_16x16 is default y, but the 32x32 data patch USE=cjk32
+	# fetches has no effect until the option it fills is selected.
+	# --keep-case: scripts/config would upper-case the symbol name.
+	use cjk32 && { scripts/config --keep-case -e FONT_CJK_32x32 || die; }
+
 	if use bore; then
 		scripts/config -e SCHED_BORE || die
 	elif use rt; then
