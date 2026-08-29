@@ -14,7 +14,7 @@ SRC_URI="
 
 LICENSE="Apache-2.0 BSD BSD-2 ISC MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # Upstream requires Go 1.25.9 or newer.
 BDEPEND=">=dev-lang/go-1.25.9:="
