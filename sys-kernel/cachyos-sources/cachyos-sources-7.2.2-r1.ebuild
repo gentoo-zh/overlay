@@ -440,19 +440,16 @@ pkg_pretend() {
 }
 
 pkg_setup() {
-	elog
-	elog "${PN} is *not* supported by the Gentoo Kernel Project in any way."
-	elog "For support, contact https://github.com/gentoo-zh/overlay or the CachyOS developers."
-	elog "Do *not* open bugs in Gentoo's bugzilla unless you have issues with"
-	elog "the ebuilds. Thank you."
-	elog
+	ewarn ""
+	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
+	ewarn "Report problems to https://github.com/gentoo-zh/overlay rather than"
+	ewarn "Gentoo's bugzilla."
+	ewarn ""
 
 	kernel-2_pkg_setup
 }
 
 pkg_postinst() {
-	local K_SECURITY_UNSUPPORTED=
-
 	kernel-2_pkg_postinst
 
 	elog "For more information about CachyOS kernels, see https://wiki.cachyos.org/features/kernel/."
