@@ -28,7 +28,7 @@ DEPEND="
 
 RDEPEND="${DEPEND}
 	dev-qt/qtwayland:6
-	dev-python/pyqt6[gui,multimedia,network,widgets,${PYTHON_USEDEP}]
+	dev-python/pyqt6[gui,multimedia,network,svg,widgets,${PYTHON_USEDEP}]
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/qasync[${PYTHON_USEDEP}]
 	app-arch/brotli[python,${PYTHON_USEDEP}]
