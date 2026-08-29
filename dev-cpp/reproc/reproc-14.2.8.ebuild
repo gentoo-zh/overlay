@@ -7,7 +7,7 @@ inherit cmake-multilib
 
 DESCRIPTION="A cross-platform (C99/C++11) process library"
 HOMEPAGE="https://github.com/DaanDeMeyer/reproc"
-SRC_URI="https://github.com/DaanDeMeyer/reproc/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/DaanDeMeyer/reproc/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0/14"
