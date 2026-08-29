@@ -16,7 +16,7 @@ SLOT="0/stable"
 KEYWORDS="-* ~amd64"
 
 IUSE="complete-icon gamemode pipewire sdl2 system-ffmpeg +system-sdl"
-RESTRICT="bindist mirror"
+RESTRICT="bindist mirror strip"
 
 RDEPEND="
 	!games-arcade/osu-lazer
@@ -61,11 +61,8 @@ src_prepare() {
 	mkdir -v icons
 	pushd icons
 	if use complete-icon; then
-		magick -verbose "${S}/usr/bin/lazer.ico" osu.png
-		magick -verbose "${S}/usr/bin/beatmap.ico" beatmap.png
-
-		eval $(magick identify -format "mv -v %f osu-%G;" osu*.png)
-		eval $(magick identify -format "mv -v %f beatmap-%G;" beatmap*.png)
+		magick -verbose "${S}/usr/bin/lazer.ico" -set filename:size '%wx%h' 'osu-%[filename:size]'
+		magick -verbose "${S}/usr/bin/beatmap.ico" -set filename:size '%wx%h' 'beatmap-%[filename:size]'
 	fi
 
 	for icon in "${S}"/usr/share/icons/hicolor/*/apps/osu.png; do
@@ -73,16 +70,15 @@ src_prepare() {
 	done
 	popd
 
-	cat >osu-lazer <<EOF
-#!/usr/bin/bash
-
-export OSU_EXTERNAL_UPDATE_PROVIDER=true
-export OSU_SDL3="\${OSU_SDL3:=$(usex sdl2 false true)}"
-$(use gamemode && echo "export LD_PRELOAD=\"/usr/lib64/libgamemodeauto.so\${LD_PRELOAD:+:\$LD_PRELOAD}\"")
-$(use system-ffmpeg && echo "export LD_LIBRARY_PATH=\"/usr/lib/ffmpeg4/lib64\${LD_LIBRARY_PATH:+:\$LD_LIBRARY_PATH}\"")
-
-exec /opt/osu-lazer/osu! "\$@"
-EOF
+	cat > osu-lazer <<- EOF
+		#!/bin/bash
+		export OSU_EXTERNAL_UPDATE_PROVIDER=true
+		export OSU_SDL3="\${OSU_SDL3:=$(usex sdl2 false true)}"
+		$(use gamemode && echo "export LD_PRELOAD=\"/usr/lib64/libgamemodeauto.so\${LD_PRELOAD:+:\$LD_PRELOAD}\"")
+		$(use system-ffmpeg &&
+			echo "export LD_LIBRARY_PATH=\"/usr/lib/ffmpeg4/lib64\${LD_LIBRARY_PATH:+:\$LD_LIBRARY_PATH}\"")
+		exec /opt/osu-lazer/osu! "\$@"
+	EOF
 }
 
 src_install() {
