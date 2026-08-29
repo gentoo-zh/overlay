@@ -84,6 +84,7 @@ Treat `master` only as an upstream-sync branch.
 - Deterministic package-manager helpers and pure shell expansion are valid in global scope. Put work requiring declared build context in phases.
 - Declare external build and test inputs through `SRC_URI`/`Manifest` or an eclass vendor mechanism. Enforce offline operation without warm caches.
 - Each USE state must control every applicable option, dependency, source selection, and install cleanup consistently. Disable automagic.
+- When a package adds, removes, or renames a local USE flag, update its `metadata.xml` flag description in the same change.
 - Prune only what `src_install` would otherwise install. Deleting a path it never reaches is dead code, as is a branch that only removes files that USE state does not install.
 - `${ED}` already carries the offset; never append `${EPREFIX}` to it. `${D}` does not carry it. Use a bare `${EPREFIX}` only in installed content read at runtime, and only where that consumer runs under Prefix.
 - Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`.

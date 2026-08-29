@@ -2,18 +2,18 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<name>locez</name>
-		<email>locez@locez.com</email>
+		<name>Xiangzhe</name>
+		<email>xiangzhedev@gmail.com</email>
 	</maintainer>
 	<use>
 		<!-- CPU schedulers -->
 		<flag name="bore">CachyOS BORE scheduler, optimized for desktop responsiveness</flag>
 		<flag name="bmq">Project C BMQ scheduler</flag>
-		<flag name="prjc">Project C BMQ/PDS CPU scheduler</flag>
-		<flag name="prjc-lfbmq">Project C BMQ/PDS CPU scheduler with the lock-free bitmap queue</flag>
+		<flag name="muqss">MuQSS CPU scheduler with interactive workload accounting</flag>
 		<flag name="rt">Select PREEMPT_RT and apply the RT i915 patch where supported</flag>
 		<flag name="rt-bore">BORE scheduler with PREEMPT_RT</flag>
 		<flag name="eevdf">Linux EEVDF scheduler without an additional scheduler patch</flag>
+		<flag name="server">Use the CachyOS server configuration preset with EEVDF</flag>
 
 		<!-- Hardware-specific patches -->
 		<flag name="deckify">Apply the CachyOS handheld configuration and patches with the selected CPU scheduler</flag>
@@ -26,7 +26,6 @@
 		<flag name="kcfi">Enable Clang Kernel Control Flow Integrity</flag>
 
 		<!-- Optimization features -->
-		<flag name="thin">Install a ThinLTO config fragment and require the LLVM toolchain used to build it</flag>
 		<flag name="autofdo">Enable Clang AutoFDO support for profile-guided optimization</flag>
 		<flag name="propeller">Enable Clang Propeller support for basic-block reordering</flag>
 		<flag name="llvm-lto-thin">Enable LLVM ThinLTO</flag>
