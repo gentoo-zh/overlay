@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-29 11:46:49 CST)
+(The last generation time: 2026-08-29 11:57:54 CST)
 
 ### Packages
 
@@ -271,7 +271,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lemminx-bin                                  | 0.31.2               |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/readest-bin                                  | 0.12.1               |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
+ app-text/readest-bin                                  | 0.12.6               |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/easymotion                                    | 3.0.1                |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -317,7 +317,7 @@
    dev-python/conda-libmamba-solver                    | 26.6.0               |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
                                                        | 26.7.0               |            |                                                                            |
      dev-util/mamba                                    | 2.5.0-r1             | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
-       dev-cpp/reproc                                  | 14.2.7               |  D, RD     | https://github.com/DaanDeMeyer/reproc                                      | A cross-platform (C99/C++11) process library
+       dev-cpp/reproc                                  | 14.2.8               |  D, RD     | https://github.com/DaanDeMeyer/reproc                                      | A cross-platform (C99/C++11) process library
        sys-libs/libsolv                                | 0.7.39               |  D, RD     | https://github.com/openSUSE/libsolv                                        | Library for solving packages and reading repositories
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/conda-package-handling                     | 2.5.0                |            | https://github.com/conda/conda-package-handling                            | Create and extract conda packages of various formats
