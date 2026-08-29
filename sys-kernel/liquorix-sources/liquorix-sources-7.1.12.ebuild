@@ -52,8 +52,8 @@ K_EXTRAEINFO="For more info on liquorix-kernel and details on how to report prob
 pkg_setup() {
 	ewarn ""
 	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
-	ewarn "Report problems to https://github.com/gentoo-zh/overlay rather than"
-	ewarn "Gentoo's bugzilla."
+	ewarn "Do *not* open bugs in Gentoo's bugzilla. Report problems to"
+	ewarn "https://github.com/gentoo-zh/overlay. Thank you."
 	ewarn ""
 
 	kernel-2_pkg_setup

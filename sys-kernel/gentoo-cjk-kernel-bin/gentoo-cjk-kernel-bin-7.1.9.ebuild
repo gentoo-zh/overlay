@@ -226,12 +226,19 @@ src_install() {
 	fi
 }
 
+pkg_setup() {
+	ewarn ""
+	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
+	ewarn "Do *not* open bugs in Gentoo's bugzilla. Report problems to"
+	ewarn "https://github.com/gentoo-zh/overlay. Thank you."
+	ewarn ""
+}
+
 pkg_postinst() {
 	kernel-install_pkg_postinst
 
-	ewarn
+	ewarn ""
 	ewarn "The binary package comes from distfiles.gentoozh.org, which is a single"
-	ewarn "host with no mirror network behind it. Report problems to"
-	ewarn "https://github.com/gentoo-zh/overlay rather than Gentoo's bugzilla."
-	ewarn
+	ewarn "host with no mirror network behind it."
+	ewarn ""
 }

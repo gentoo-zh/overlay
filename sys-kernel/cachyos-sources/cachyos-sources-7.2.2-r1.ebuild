@@ -442,8 +442,8 @@ pkg_pretend() {
 pkg_setup() {
 	ewarn ""
 	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
-	ewarn "Report problems to https://github.com/gentoo-zh/overlay rather than"
-	ewarn "Gentoo's bugzilla."
+	ewarn "Do *not* open bugs in Gentoo's bugzilla. Report problems to"
+	ewarn "https://github.com/gentoo-zh/overlay. Thank you."
 	ewarn ""
 
 	kernel-2_pkg_setup
@@ -455,9 +455,9 @@ pkg_postinst() {
 	elog "For more information about CachyOS kernels, see https://wiki.cachyos.org/features/kernel/."
 
 	if use mnative; then
-		elog "USE=mnative builds the kernel with -march=native, which optimizes for your"
-		elog "specific CPU. Binary packages built this way are NOT portable to other machines."
-		elog "Use USE=mgeneric-v3 or similar for portable builds."
+		ewarn "USE=mnative builds the kernel with -march=native, which optimizes for your"
+		ewarn "specific CPU. Binary packages built this way are NOT portable to other machines."
+		ewarn "Use USE=mgeneric-v3 or similar for portable builds."
 	fi
 
 	optfeature "userspace KSM helper" sys-process/uksmd
@@ -468,14 +468,14 @@ pkg_postinst() {
 	optfeature "sched_ext schedulers" sys-kernel/scx-loader
 
 	if use kernel-builtin-zfs; then
-		elog "WARNING: You are using kernel-builtin-zfs USE flag."
-		elog "It is STRONGLY RECOMMENDED to use sys-fs/zfs instead of building ZFS into the kernel."
-		elog "sys-fs/zfs provides better compatibility and easier updates."
+		ewarn "USE=kernel-builtin-zfs builds ZFS into the kernel."
+		ewarn "sys-fs/zfs is the supported path: it tracks kernel updates without a rebuild"
+		ewarn "of the kernel itself."
 	fi
 
 	if use autofdo || use propeller; then
-		elog "AutoFDO/Propeller requires profile data to affect optimization."
-		elog "Without a profile, the Kconfig symbols are enabled but the kernel is not profile-optimized."
+		ewarn "AutoFDO/Propeller requires profile data to affect optimization."
+		ewarn "Without a profile the Kconfig symbols are enabled but nothing is optimized."
 	fi
 }
 
