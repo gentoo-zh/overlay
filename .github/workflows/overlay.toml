@@ -2175,6 +2175,13 @@ url = "https://www.todesk.com/linux.html"
 regex = 'todesk-v([\d.]+)-amd64\.deb'
 github_account = ["microcai", "gouwazi"]
 
+["net-misc/tssh"]
+source = "github"
+github = "trzsz/trzsz-ssh"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+
 ["net-misc/tsshd"]
 source = "github"
 github = "trzsz/tsshd"

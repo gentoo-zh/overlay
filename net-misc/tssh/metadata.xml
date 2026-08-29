@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription lang="en">
+		tssh is an ssh client that reads the OpenSSH configuration and adds a
+		searchable menu over the hosts it defines, batch login to several of
+		them at once, and trzsz file transfer inside the session.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">trzsz/trzsz-ssh</remote-id>
+	</upstream>
+</pkgmetadata>
