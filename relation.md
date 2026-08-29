@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-29 23:36:46 CST)
+(The last generation time: 2026-08-30 05:20:49 CST)
 
 ### Packages
 
@@ -899,12 +899,12 @@
                                                        | 6.12.104             |            |                                                                            |
                                                        | 6.12.105             |            |                                                                            |
                                                        | 6.12.106             |            |                                                                            |
+                                                       | 6.12.107             |            |                                                                            |
                                                        | 6.18.44              |            |                                                                            |
                                                        | 6.18.45              |            |                                                                            |
                                                        | 6.18.46              |            |                                                                            |
                                                        | 6.18.47              |            |                                                                            |
-                                                       | 7.1.10               |            |                                                                            |
-                                                       | 7.1.11               |            |                                                                            |
+                                                       | 6.18.48              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.104             |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.105             |            |                                                                            |
