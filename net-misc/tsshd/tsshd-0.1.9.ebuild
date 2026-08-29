@@ -12,16 +12,19 @@ SRC_URI="
 	https://github.com/gentoo-zh-drafts/tsshd/releases/download/v${PV}/${P}-vendor.tar.xz
 "
 
-LICENSE="Apache-2.0 BSD MIT"
+LICENSE="Apache-2.0 BSD BSD-2 ISC MIT"
 SLOT="0"
 KEYWORDS="~amd64"
-RESTRICT="test"
 
 # Upstream requires Go 1.25.9 or newer.
 BDEPEND=">=dev-lang/go-1.25.9:="
 
 src_compile() {
 	ego build -buildvcs=false -trimpath -o "${T}/${PN}" ./cmd/tsshd
+}
+
+src_test() {
+	ego test ./...
 }
 
 src_install() {
