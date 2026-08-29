@@ -9,8 +9,8 @@ DESCRIPTION="Cherry Studio is a desktop client that supports for multiple LLM pr
 HOMEPAGE="https://github.com/CherryHQ/cherry-studio"
 URL_PREFIX="https://github.com/CherryHQ/cherry-studio/releases/download/v${PV}/Cherry-Studio-${PV}"
 SRC_URI="
-	amd64? ( ${URL_PREFIX}-x86_64.AppImage -> ${P}-x86_64.AppImage )
-	arm64? ( ${URL_PREFIX}-arm64.AppImage -> ${P}-arm64.AppImage )
+	amd64? ( ${URL_PREFIX}-linux-x64.AppImage -> ${P}-x86_64.AppImage )
+	arm64? ( ${URL_PREFIX}-linux-arm64.AppImage -> ${P}-arm64.AppImage )
 "
 
 S="${WORKDIR}"
