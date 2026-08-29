@@ -22,6 +22,7 @@ DESCRIPTION="Gentoo kernel sources with the cjktty patch for CJK text on the con
 HOMEPAGE="https://github.com/gentoo-zh/cjktty-patches"
 SRC_URI+=" ${KERNEL_URI} ${GENPATCHES_URI} ${ARCH_URI}"
 S="${WORKDIR}/linux-${KV_FULL}"
+SLOT="${PV}"
 KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~hppa ~loong ~m68k ~mips ~ppc ~ppc64 ~riscv ~s390 ~sparc ~x86"
 IUSE+=" +cjk experimental"
 

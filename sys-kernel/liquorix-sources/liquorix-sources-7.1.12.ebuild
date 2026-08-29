@@ -43,6 +43,7 @@ SRC_URI+="
 
 S="${WORKDIR}/linux-${PV}-liquorix"
 
+SLOT="${PV}"
 KEYWORDS="~amd64"
 # To use CJKTTY, Please enable this USE
 IUSE+=" +cjk"

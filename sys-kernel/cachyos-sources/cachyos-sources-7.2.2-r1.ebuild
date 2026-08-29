@@ -90,6 +90,7 @@ SRC_URI+="
 "
 
 LICENSE+=" kernel-builtin-zfs? ( BSD-2 CDDL GPL-3 MIT )"
+SLOT="${PV}"
 KEYWORDS="~amd64"
 IUSE+="
 	+bore bmq muqss rt rt-bore eevdf

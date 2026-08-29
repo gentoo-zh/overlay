@@ -30,6 +30,7 @@ SRC_URI+="
 "
 S="${WORKDIR}/linux-${OKV}${XANMOD_VERSION}"
 
+SLOT="${PV}"
 KEYWORDS="~amd64"
 IUSE+=" cjk"
 
