@@ -55,6 +55,7 @@ fi
 
 ORIG_BRANCH=$(git branch --show-current)
 declare -A RESULT
+declare -A STATUS_COMMENT_FAILED
 
 # run the judge from a copy: the engine switches branches, and if the script only
 # exists on the current branch it would vanish mid-sweep
@@ -94,12 +95,13 @@ status_comment() {  # $1=issue $2=body ; edit the bot's marked comment in place,
         fi
         cid=SKIP; sleep 3
     done
-    [ "$cid" = SKIP ] && return 0
+    [ "$cid" = SKIP ] && { STATUS_COMMENT_FAILED[$n]=1; return 0; }
     if [ -n "$cid" ]; then
         for i in 1 2 3; do gh api -X PATCH "repos/$UPSTREAM_REPO/issues/comments/$cid" -f body="$body" >/dev/null 2>&1 && return 0; sleep 3; done
     else
         for i in 1 2 3; do gh issue comment "$n" --repo "$UPSTREAM_REPO" --body "$body" >/dev/null 2>&1 && return 0; sleep 3; done
     fi
+    STATUS_COMMENT_FAILED[$n]=1
 }
 
 # opt-in whitelist: only bump packages a maintainer marked `autobump = true` in the
@@ -281,4 +283,8 @@ rm -rf "$TOOLS"
 
 echo
 echo "==== sweep summary ===="
-for n in "${ISSUES[@]}"; do printf '#%s  %s\n' "$n" "${RESULT[$n]:-?}"; done
+for n in "${ISSUES[@]}"; do
+    suffix=
+    [ "${STATUS_COMMENT_FAILED[$n]:-}" = 1 ] && suffix=" (status comment not posted)"
+    printf '#%s  %s%s\n' "$n" "${RESULT[$n]:-?}" "$suffix"
+done
