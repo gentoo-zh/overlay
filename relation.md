@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-30 16:26:08 CST)
+(The last generation time: 2026-08-30 16:26:46 CST)
 
 ### Packages
 
@@ -236,7 +236,7 @@
  app-office/obsidian                                   | 1.13.7-r1            |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/siyuan-bin                                 | 3.7.3                |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
-                                                       | 3.8.1                |            |                                                                            |
+                                                       | 3.8.2                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office                                 | 11.1.0.11719-r2      |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office is an office productivity suite, Here is the Chinese version
                                                        | 12.1.2.28080         |            |                                                                            |
@@ -725,7 +725,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/prips                                        | 1.3.1                |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/reframe                                      | 1.20.1               |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
+ net-misc/reframe                                      | 1.21.0               |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                    |  D, RD     |                                                                            | group for reframe
    acct-user/reframe                                   | 0                    |  D, RD     |                                                                            | user for reframe
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
