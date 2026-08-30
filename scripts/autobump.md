@@ -88,10 +88,10 @@ gh workflow run autobump.yml --repo gentoo-zh/overlay -f limit=20
 
 Both take the same inputs; `issues` accepts digits and spaces only.
 
-`limit` defaults to 10 and caps how many packages the engine actually attempts. Packages
+`limit` defaults to 30 and caps how many packages the engine actually attempts. Packages
 that are not opted in, or already done, are skipped without spending the budget.
 
-A run lasts at most 200 minutes and GitHub cancels it there; the script itself does not
+A run lasts at most 360 minutes and GitHub cancels it there; the script itself does not
 stop early. Each package has a separate two-hour ceiling: `ebuild install`, `emerge` and
 `ebuild unpack` are deferred on timeout and retried next run.
 

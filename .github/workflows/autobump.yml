@@ -37,7 +37,7 @@ on:
       limit:
         description: 'max issues per run'
         required: false
-        default: '10'
+        default: '30'
 
 concurrency:
   group: autobump
@@ -55,7 +55,7 @@ jobs:
     # A heavy from-source dep (e.g. net-libs/nodejs for the pnpm/npm family) can take ~1h+; give the
     # per-op ceiling (AUTOBUMP_OP_TIMEOUT below) room for it and keep this job ceiling above one such
     # build plus a tail of light packages, so a heavy build finishes instead of being cut off mid-run.
-    timeout-minutes: 200
+    timeout-minutes: 360
     container:
       image: gentoo/stage3:amd64-desktop-openrc
       options: --privileged
@@ -197,7 +197,7 @@ jobs:
         # dispatch inputs via env, NOT inlined into the command below: this job holds a
         # write-scoped App token, so a crafted input must not be able to inject shell.
         ISSUES: ${{ github.event.inputs.issues }}
-        LIMIT: ${{ github.event.inputs.limit || 10 }}
+        LIMIT: ${{ github.event.inputs.limit || 30 }}
       run: |
         # validate before use: ISSUES is space-separated issue numbers, LIMIT an int.
         case "$ISSUES" in *[!0-9\ ]*) echo "issues must be numbers: $ISSUES" >&2; exit 1;; esac

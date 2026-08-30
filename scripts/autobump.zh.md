@@ -73,9 +73,9 @@ gh workflow run autobump.yml --repo gentoo-zh/overlay -f limit=20
 
 两种方式的输入相同，`issues` 只接受数字和空格。
 
-`limit` 默认 10，限制引擎实际尝试的包数。未开启和已处理过的包会跳过，跳过不占额度。
+`limit` 默认 30，限制引擎实际尝试的包数。未开启和已处理过的包会跳过，跳过不占额度。
 
-一次运行最多 200 分钟，到时由 GitHub 取消，脚本自身不会提前结束。单个包另有两小时上限，`ebuild install`、`emerge` 和 `ebuild unpack` 超时后标记暂缓，下次重试。
+一次运行最多 360 分钟，到时由 GitHub 取消，脚本自身不会提前结束。单个包另有两小时上限，`ebuild install`、`emerge` 和 `ebuild unpack` 超时后标记暂缓，下次重试。
 
 本地运行先把引擎 clone 到 overlay 根目录、安装 `dev-lang/ruby`：
 
