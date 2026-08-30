@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-30 23:08:01 CST)
+(The last generation time: 2026-08-30 23:12:26 CST)
 
 ### Packages
 
@@ -19,7 +19,7 @@
    acct-group/onepassword                              | 0-r1                 |  D, RD     |                                                                            | Password manager and secure wallet
    acct-group/onepassword-mcp                          | 0                    | RD         |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/chezmoi                                     | 2.72.0               |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
+ app-admin/chezmoi                                     | 2.72.1               |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi-bin                                 | 2.71.0               |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
