@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-31 17:47:29 CST)
+(The last generation time: 2026-08-31 19:43:37 CST)
 
 ### Packages
 
@@ -449,9 +449,9 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/rebased-bin                                   | 1.1.14               |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/sourcegit-bin                                 | 2026.16              |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
-                                                       | 2026.17              |            |                                                                            |
+ dev-vcs/sourcegit-bin                                 | 2026.17              |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.18              |            |                                                                            |
+                                                       | 2026.19              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  games-action/vintagestory                             | 1.19.8               |            | https://www.vintagestory.at/                                               | Uncompromising wilderness survival sandbox game (requires paid account)
                                                        | 1.20.12              |            |                                                                            |
