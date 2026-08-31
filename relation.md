@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-31 19:54:51 CST)
+(The last generation time: 2026-08-31 20:06:49 CST)
 
 ### Packages
 
@@ -685,7 +685,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/another-redis-desktop-manager-bin            | 1.7.4                |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/apifox                                       | 2.8.44               |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
+ net-misc/apifox                                       | 2.8.45               |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidunetdisk                                 | 8.7.0                |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -740,7 +740,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.9                |            | https://github.com/trzsz/tsshd                                             | UDP-based SSH server with roaming support
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/yaak-bin                                     | 2026.6.0             |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
+ net-misc/yaak-bin                                     | 2026.7.0             |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-p2p/amule-dlp-antileech                           | 9999                 |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999                 | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
