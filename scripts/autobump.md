@@ -17,11 +17,11 @@ Bumps the new versions nvchecker reports.
 Step 2 has three outcomes:
 
 * **mechanical** — version change only and emerge passed, so it opens a PR.
-* **escalate** — major version jump, changed dependencies, a `files/` patch to
-  re-verify, or a missing per-version vendor bundle. It comments the evidence on the
-  issue and opens no PR.
-* **defer** — a transient network, mirror or upstream-file problem, or a heavy
-  dependency with no binpkg on the binhost that would exceed the CI timeout. Retried
+* **escalate** — major version jump, changed dependencies, or a `files/` patch to
+  re-verify. It comments the evidence on the issue and opens no PR.
+* **defer** — a transient network, mirror or upstream-file problem, a per-version
+  vendor bundle that is not generated yet, or a heavy dependency with no binpkg on
+  the binhost that would exceed the CI timeout. Retried
   automatically.
 
 ## Which packages to opt in
