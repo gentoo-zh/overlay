@@ -14,6 +14,7 @@
 		<flag name="rt-bore">BORE scheduler with PREEMPT_RT</flag>
 		<flag name="eevdf">Linux EEVDF scheduler without an additional scheduler patch</flag>
 		<flag name="server">Use the CachyOS server configuration preset with EEVDF</flag>
+		<flag name="cachyos-hardened">CachyOS hardened configuration and patches with the BORE scheduler</flag>
 
 		<!-- Hardware-specific patches -->
 		<flag name="deckify">Apply the CachyOS handheld configuration and patches with the selected CPU scheduler</flag>
