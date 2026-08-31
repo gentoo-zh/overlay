@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-08-31 20:12:49 CST)
+(The last generation time: 2026-08-31 20:26:13 CST)
 
 ### Packages
 
@@ -35,7 +35,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-backup/snapper-gui                                | 220626               |            | https://github.com/ricardomv/snapper-gui                                   | GUI for snapper, a tool for Linux filesystem snapshot management
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-containers/bubblejail                             | 0.10.3               |            | https://github.com/igo95862/bubblejail                                     | Bubblewrap-based application sandbox with resource isolation
+ app-containers/bubblejail                             | 0.10.4               |            | https://github.com/igo95862/bubblejail                                     | Bubblewrap-based application sandbox with resource isolation
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-crypt/cotp                                        | 1.10.0               |            | https://github.com/replydev/cotp                                           | command-line TOTP/HOTP authenticator app
                                                        | 9999                 |            |                                                                            |
