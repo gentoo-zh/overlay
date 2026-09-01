@@ -629,6 +629,16 @@ github_account = "Nuralii1i"
 # vendor download, no published version index
 #["app-misc/z-library"]
 
+["app-mobilephone/tether"]
+source = "github"
+github = "zackb/tether"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+
+# Follows app-mobilephone/tether, which tracks the same upstream release.
+# ["app-mobilephone/tether-bin"]
+
 ["app-office/anytype-bin"]
 source = "github"
 github = "anyproto/anytype-ts"

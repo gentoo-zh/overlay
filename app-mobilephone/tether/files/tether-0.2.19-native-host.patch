@@ -1,0 +1,8 @@
+--- a/extension/host/tether-native-host.in
++++ b/extension/host/tether-native-host.in
+@@ -1 +1 @@
+-#!/bin/bash
++#!/bin/sh
+@@ -5 +5 @@
+-exec "@CMAKE_INSTALL_FULL_BINDIR@/tether" --native-host 2>> /tmp/tether-native.log
++exec "@CMAKE_INSTALL_FULL_BINDIR@/tether" --native-host
