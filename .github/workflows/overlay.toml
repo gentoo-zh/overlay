@@ -931,6 +931,12 @@ github_account = ["blackteahamburger", "gouwazi"]
 # high update frequency
 #["dev-libs/v2ray-rules-dat-bin"]
 
+["dev-libs/v2ray-domain-list-community-bin"]
+source = "github"
+github = "v2fly/domain-list-community"
+use_latest_release = true
+github_account = "peeweep"
+
 ["dev-python/adafruit-board-toolkit"]
 source = "pypi"
 pypi = "adafruit-board-toolkit"
