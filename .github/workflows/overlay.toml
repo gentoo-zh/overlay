@@ -937,6 +937,12 @@ github = "v2fly/domain-list-community"
 use_latest_release = true
 github_account = "peeweep"
 
+["dev-libs/v2ray-geoip-bin"]
+source = "github"
+github = "v2fly/geoip"
+use_latest_release = true
+github_account = "peeweep"
+
 ["dev-python/adafruit-board-toolkit"]
 source = "pypi"
 pypi = "adafruit-board-toolkit"
