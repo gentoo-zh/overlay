@@ -69,6 +69,12 @@ prefix = "v"
 # use_latest_release = true
 # prefix = "v"
 
+["app-admin/chezmoi-bin"]
+source = "regex"
+url = "https://api.github.com/repos/twpayne/chezmoi/releases/latest"
+regex = '"tag_name":\s*"v([\d.]+)"'
+github_account = "peeweep"
+
 ["app-admin/enpass"]
 source = "apt"
 mirror = "https://apt.enpass.io"
