@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>dev@wangxianggang.com</email>
+		<name>Xianggang Wang</name>
+	</maintainer>
+	<upstream>
+		<bugs-to>https://github.com/zackb/tether/issues</bugs-to>
+		<changelog>https://github.com/zackb/tether/releases</changelog>
+		<remote-id type="github">zackb/tether</remote-id>
+	</upstream>
+</pkgmetadata>
