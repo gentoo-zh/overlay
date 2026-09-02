@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-02 23:10:12 CST)
+(The last generation time: 2026-09-02 23:11:31 CST)
 
 ### Packages
 
@@ -414,7 +414,7 @@
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
                                                        | 18.0.11              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-bin                                 | 1.18.25              |            | https://opencode.ai                                                        | The open source AI coding agent
+ dev-util/opencode-bin                                 | 1.18.26              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.27.3               |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
