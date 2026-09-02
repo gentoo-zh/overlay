@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-02 22:14:13 CST)
+(The last generation time: 2026-09-02 22:59:42 CST)
 
 ### Packages
 
@@ -114,7 +114,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-libthai                                | 5.1.10               |            | https://github.com/fcitx/fcitx5-libthai                                    | Thai input method for Fcitx5 based on libthai
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-mcbopomofo                             | 3.1                  |            | https://github.com/openvanilla/fcitx5-mcbopomofo                           | McBopomofo (Traditional Chinese phonetic) input method for Fcitx5
+ app-i18n/fcitx-mcbopomofo                             | 3.1.1                |            | https://github.com/openvanilla/fcitx5-mcbopomofo                           | McBopomofo (Traditional Chinese phonetic) input method for Fcitx5
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-meta                                   | 5.0.12-r3            |            | https://fcitx-im.org                                                       | Merge this to pull in Fcitx packages
    app-i18n/fcitx-anthy                                | 9999                 | RD         | https://fcitx-im.org/                                                      | Japanese Anthy input methods for Fcitx5
@@ -741,7 +741,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.9                |            | https://github.com/trzsz/tsshd                                             | UDP-based SSH server with roaming support
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/yaak-bin                                     | 2026.7.0             |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
+ net-misc/yaak-bin                                     | 2026.7.1             |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-p2p/amule-dlp-antileech                           | 9999                 |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999                 | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
