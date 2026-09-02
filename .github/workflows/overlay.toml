@@ -1175,6 +1175,14 @@ github_account = "vowstar"
 # autobump off: Rust crates + GIT_CRATES + rusty_v8 vendor bundles are regenerated per version
 # (gentoo-zh-drafts/codex crates.yml) and the ebuild changes each bump -- not a mechanical bump.
 
+["dev-util/codex-bin"]
+source = "github"
+github = "openai/codex"
+use_latest_release = true
+prefix = "rust-v"
+github_account = "gouwazi"
+autobump = true
+
 # shipped inside the prelink tarball, upstream dead
 #["dev-util/execstack"]
 
