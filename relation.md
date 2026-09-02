@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-02 23:23:44 CST)
+(The last generation time: 2026-09-03 00:01:44 CST)
 
 ### Packages
 
@@ -321,6 +321,7 @@
        sys-libs/libsolv                                | 0.7.39               |  D, RD     | https://github.com/openSUSE/libsolv                                        | Library for solving packages and reading repositories
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/conda-package-handling                     | 2.5.0                |            | https://github.com/conda/conda-package-handling                            | Create and extract conda packages of various formats
+                                                       | 2.6.0                |            |                                                                            |
    dev-python/conda-package-streaming                  | 0.13.0               |  D, RD     | https://github.com/conda/conda-package-streaming                           | An efficient library to read from new and old conda packages
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/daff                                       | 1.4.2                |            | https://github.com/paulfitz/daff                                           | The daff can produce and apply tabular diffs
@@ -373,7 +374,7 @@
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
      sys-apps/pacman                                   | 7.1.0                |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
        app-crypt/archlinux-keyring                     | 20251116             |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
-                                                       | 20260727             |            |                                                                            |
+                                                       | 20260902             |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/asdf-vm                                      | 0.20.0               |            | https://github.com/asdf-vm/asdf                                            | Manage all your runtime versions with one tool
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -412,7 +413,7 @@
  dev-util/obs-build                                    | 20260901             |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.1.2               |            |                                                                            |
+                                                       | 18.1.3               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.26              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
