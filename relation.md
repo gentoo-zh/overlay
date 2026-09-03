@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-03 12:52:06 CST)
+(The last generation time: 2026-09-03 16:04:49 CST)
 
 ### Packages
 
@@ -153,7 +153,7 @@
  app-i18n/fcitx-unikey                                 | 9999                 |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-vinput                                 | 2.3.6                |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
-                                                       | 2.3.8                |            |                                                                            |
+                                                       | 2.3.9                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.8                |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -368,7 +368,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.1.24               |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.1.25               |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                   |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -382,7 +382,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex                                        | 0.152.1              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/codex-bin                                    | 0.152.1              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
+ dev-util/codex-bin                                    | 0.153.0              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/fvm                                          | 4.1.4                |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
                                                        | 4.3.0                |            |                                                                            |
@@ -413,7 +413,7 @@
  dev-util/obs-build                                    | 20260901             |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.1.4               |            |                                                                            |
+                                                       | 18.1.5               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.27              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
