@@ -1,0 +1,15 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -73,7 +73,11 @@
+ endif()
+ find_package(Gettext REQUIRED)
+ 
+-pkg_check_modules(SDBUS REQUIRED libsystemd)
++# Allow building sd-bus against libelogind on non-systemd systems.
++set(VINPUT_SDBUS_PROVIDER "libsystemd" CACHE STRING
++    "pkg-config module providing sd-bus (libsystemd or libelogind)")
++pkg_check_modules(SDBUS REQUIRED ${VINPUT_SDBUS_PROVIDER})
++include_directories(${SDBUS_INCLUDE_DIRS})
+ find_package(CURL REQUIRED)
+ find_package(LibArchive REQUIRED)
+ find_package(OpenSSL REQUIRED)

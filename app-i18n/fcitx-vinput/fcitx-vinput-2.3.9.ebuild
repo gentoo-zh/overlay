@@ -13,7 +13,7 @@ MY_P="${MY_PN}-${PV}"
 # Prebuilt sherpa-onnx runtime shared libraries bundled by upstream. The
 # project links against these and installs them privately under
 # /usr/lib*/fcitx5-vinput. Keep in sync with scripts/sherpa-onnx-vars.sh.
-SHERPA_PV=1.13.4
+SHERPA_PV=1.13.7
 
 DESCRIPTION="Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess"
 HOMEPAGE="https://github.com/xifan2333/fcitx5-vinput"
@@ -60,7 +60,7 @@ BDEPEND="
 "
 
 PATCHES=(
-	"${FILESDIR}"/${PN}-2.3.2-sdbus-provider.patch
+	"${FILESDIR}"/${PN}-2.3.9-sdbus-provider.patch
 )
 
 src_configure() {
@@ -76,6 +76,7 @@ src_configure() {
 		-DVINPUT_PACKAGE_HOMEPAGE_URL="${HOMEPAGE}"
 		-DVINPUT_RUNTIME_MODE="bundled"
 		-DVINPUT_FETCH_CLI11="OFF"
+		-DVINPUT_FETCH_NLOHMANN_JSON="OFF"
 		-DVINPUT_SDBUS_PROVIDER="${sdbus_provider}"
 		-DCMAKE_PREFIX_PATH="${sherpa_dir}"
 	)
