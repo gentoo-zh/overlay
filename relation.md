@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-04 21:44:39 CST)
+(The last generation time: 2026-09-04 21:51:25 CST)
 
 ### Packages
 
@@ -152,7 +152,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-unikey                                 | 9999                 |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-vinput                                 | 2.3.11               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
+ app-i18n/fcitx-vinput                                 | 2.3.13               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
                                                        | 2.3.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.8                |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
@@ -670,7 +670,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/vesktop-bin                                    | 1.6.7                |            | https://github.com/Vencord/Vesktop                                         | Discord Desktop with Vencord preinstalled
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/wechat                                         | 4.1.1.8              |            | https://linux.weixin.qq.com                                                | Weixin for Linux
+ net-im/wechat                                         | 4.1.13.8             |            | https://linux.weixin.qq.com                                                | Weixin for Linux
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/wechat-universal-bwrap                         | 4.0.0.23             |            | https://weixin.qq.com                                                      | WeChat (Universal) with bwrap sandbox
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
