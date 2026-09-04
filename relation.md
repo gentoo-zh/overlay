@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-04 22:00:29 CST)
+(The last generation time: 2026-09-04 22:00:59 CST)
 
 ### Packages
 
@@ -180,7 +180,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.10.4               |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.901.20858         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.901.31953         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13               |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.0.12               |            |                                                                            |
