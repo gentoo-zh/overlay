@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-05 01:41:15 CST)
+(The last generation time: 2026-09-05 01:48:53 CST)
 
 ### Packages
 
@@ -313,7 +313,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/browser-cookie3                            | 0.20.1               |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/conda                                      | 26.7.1               |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
+ dev-python/conda                                      | 26.7.2               |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0               |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
                                                        | 26.7.0               |            |                                                                            |
      dev-util/mamba                                    | 2.5.0-r1             | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
@@ -982,7 +982,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/termius                                     | 9.43.1               |            | https://termius.com/download/linux                                         | Desktop SSH Client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-terms/tty7-bin                                    | 26.8.3               |            | https://tty7.io/                                                           | Terminal workbench with persistent sessions, SSH, and coding agent integration
+ x11-terms/tty7-bin                                    | 26.9.0               |            | https://tty7.io/                                                           | Terminal workbench with persistent sessions, SSH, and coding agent integration
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/wezterm                                     | 99999999             |            | https://wezterm.org/                                                       | A GPU-accelerated cross-platform terminal emulator and multiplexer
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -995,7 +995,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-themes                                | 2.4.0                |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/mint-y-icons                               | 1.9.2                |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
+ x11-themes/mint-y-icons                               | 1.9.3                |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/nordic                                     | 2.2.0-r1             |            | https://github.com/EliverLara/Nordic                                       | Dark Gtk3.20+ theme created using the awesome Nord color pallete
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
