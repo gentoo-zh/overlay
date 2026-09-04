@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-04 21:33:56 CST)
+(The last generation time: 2026-09-04 21:44:13 CST)
 
 ### Packages
 
@@ -27,7 +27,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/proton-authenticator-bin                    | 1.1.6                |            | https://proton.me/authenticator                                            | Official open-source two-factor authentication app by Proton
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/qm                                          | 0.1.6                |            | https://qm.ycombinator.com                                                 | Control-plane CLI for portable QM deployments
+ app-admin/qm                                          | 0.1.7                |            | https://qm.ycombinator.com                                                 | Control-plane CLI for portable QM deployments
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/rbw                                         | 1.15.0               |            | https://github.com/doy/rbw                                                 | Unofficial Bitwarden CLI
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -823,7 +823,7 @@
  net-proxy/smartproxy                                  | 0.9.5                |            | https://github.com/microcai/smartproxy                                     | A fast, proxy smart selector
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/v2rayA                                      | 2.2.7.5              |            | https://v2raya.org/                                                        | web GUI of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel
-                                                       | 2.4.16               |            |                                                                            |
+                                                       | 2.4.17               |            |                                                                            |
                                                        | 9999                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/yacd-meta                                   | 0.3.8                |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
