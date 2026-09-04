@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+
+<pkgmetadata>
+  <maintainer type="person">
+    <email>vowstar@gmail.com</email>
+    <name>Huang Rui</name>
+  </maintainer>
+  <longdescription lang="en">
+    DeepSeek Harness (dsh) is an open-source agent harness developed by DeepSeek AI, built on an everything-is-a-plugin architecture powered by Cordis.
+  </longdescription>
+  <longdescription lang="zh">
+    DeepSeek Harness（dsh）是 DeepSeek AI 开发的开源智能体编排框架，基于 Cordis 的「一切皆插件」架构构建。
+  </longdescription>
+  <upstream>
+    <doc>https://deepseek-harness.github.io/deepseek-harness/</doc>
+    <remote-id type="github">deepseek-ai/deepseek-harness</remote-id>
+  </upstream>
+</pkgmetadata>
