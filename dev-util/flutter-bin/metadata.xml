@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription lang="en">
+		The prebuilt Flutter SDK, packaged so that Flutter applications can be built
+		from source against one shared SDK. This is a build-time SDK: the flutter tool
+		locks bin/cache and resolves its own dependencies into the SDK tree, so it
+		cannot run from the read-only install. A consumer copies the slot directory under
+		/opt into its build tree first, which eclass/flutter-app.eclass does for it.
+	</longdescription>
+	<upstream>
+		<doc>https://docs.flutter.dev/</doc>
+		<remote-id type="github">flutter/flutter</remote-id>
+	</upstream>
+</pkgmetadata>
