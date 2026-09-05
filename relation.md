@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-05 14:54:16 CST)
+(The last generation time: 2026-09-05 14:56:36 CST)
 
 ### Packages
 
@@ -27,7 +27,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/proton-authenticator-bin                    | 1.1.6                |            | https://proton.me/authenticator                                            | Official open-source two-factor authentication app by Proton
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/qm                                          | 0.1.7                |            | https://qm.ycombinator.com                                                 | Control-plane CLI for portable QM deployments
+ app-admin/qm                                          | 0.1.8                |            | https://qm.ycombinator.com                                                 | Control-plane CLI for portable QM deployments
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/rbw                                         | 1.15.0               |            | https://github.com/doy/rbw                                                 | Unofficial Bitwarden CLI
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -387,7 +387,7 @@
  dev-util/deepseek-harness                             | 0.1.2_rc1            |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/fvm                                          | 4.1.4                |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
-                                                       | 4.3.0                |            |                                                                            |
+                                                       | 4.3.1                |            |                                                                            |
    dev-lang/dart                                       | 3.13.0               |  D, RD     | https://dart.dev                                                           | The Dart SDK
      dev-lang/dart-bootstrap                           | 3.13.0               | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
