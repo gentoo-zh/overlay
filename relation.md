@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-06 01:11:37 CST)
+(The last generation time: 2026-09-06 01:32:47 CST)
 
 ### Packages
 
@@ -152,7 +152,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-unikey                                 | 9999                 |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-vinput                                 | 2.3.14               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
+ app-i18n/fcitx-vinput                                 | 2.3.16               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
                                                        | 2.3.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.8                |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
@@ -411,7 +411,7 @@
  dev-util/obs-build                                    | 20260901             |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.1.10              |            |                                                                            |
+                                                       | 18.1.11              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.29              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
