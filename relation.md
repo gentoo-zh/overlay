@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-06 01:08:52 CST)
+(The last generation time: 2026-09-06 01:11:37 CST)
 
 ### Packages
 
@@ -164,8 +164,6 @@
  app-i18n/rime-ice                                     | 9999                 |            | https://github.com/iDvel/rime-ice                                          | Rime ICE - A long-term maintained simplified Chinese Rime schema
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/zh-autoconvert                               | 0.3.16_p11           |            | https://packages.debian.org/stable/source/zh-autoconvert                   | Chinese HZ/GB/BIG5/UNI/UTF7/UTF8 encodings auto-converter
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/aichat                                       | 0.30.0               |            | https://github.com/sigoden/aichat                                          | All-in-one LLM CLI Tool
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/bcompare                                     | 4.4.7.28397          |            | https://www.scootersoftware.com/                                           | Beyond Compare -- Compare, sync, and merge files and folders
                                                        | 5.2.5.32528          |            |                                                                            |
@@ -403,8 +401,6 @@
  dev-util/hunk-bin                                     | 0.21.1               |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.7.2.87231          |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kimi-cli-bin                                 | 1.49.0-r1            |            | https://github.com/MoonshotAI/kimi-cli                                     | Kimi Code CLI - an agentic coding tool by Moonshot AI
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-code-bin                                | 0.41.0               |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
