@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-05 14:51:51 CST)
+(The last generation time: 2026-09-05 14:54:16 CST)
 
 ### Packages
 
@@ -180,7 +180,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.10.4               |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.901.31953         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.901.41600         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13               |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.0.12               |            |                                                                            |
@@ -382,7 +382,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex                                        | 0.153.2              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/codex-bin                                    | 0.153.2              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
+ dev-util/codex-bin                                    | 0.153.4              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/deepseek-harness                             | 0.1.2_rc1            |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -417,7 +417,7 @@
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
                                                        | 18.1.10              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-bin                                 | 1.18.28              |            | https://opencode.ai                                                        | The open source AI coding agent
+ dev-util/opencode-bin                                 | 1.18.29              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.27.3               |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
@@ -948,7 +948,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.7.23               |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/brave-bin                                  | 1.94.119             |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+ www-client/brave-bin                                  | 1.94.121             |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 151.0.7922.173_p1-r1 |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 152.0.7977.75_p1     |            |                                                                            |
