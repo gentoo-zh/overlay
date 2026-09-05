@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-05 01:50:20 CST)
+(The last generation time: 2026-09-05 14:51:11 CST)
 
 ### Packages
 
@@ -364,11 +364,11 @@
    app-i18n/librime                                    | 9999                 |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
    dev-python/autopxd2                                 | 3.2.3                | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/uv-bin                                     | 0.12.9               |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
+ dev-python/uv-bin                                     | 0.12.10              |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.1.26               |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.1.27               |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                   |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -428,7 +428,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.85.0               |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.36.0               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.37.0               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.36.0               |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
