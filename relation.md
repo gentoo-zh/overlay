@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-06 14:52:22 CST)
+(The last generation time: 2026-09-06 14:54:17 CST)
 
 ### Packages
 
@@ -118,7 +118,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-meta                                   | 5.0.12-r3            |            | https://fcitx-im.org                                                       | Merge this to pull in Fcitx packages
    app-i18n/fcitx-anthy                                | 9999                 | RD         | https://fcitx-im.org/                                                      | Japanese Anthy input methods for Fcitx5
-   app-i18n/fcitx-bamboo                               | 1.0.10               | RD         | https://github.com/fcitx/fcitx5-bamboo                                     | Typing Vietnamese by Bamboo core engine for Fcitx5
+   app-i18n/fcitx-bamboo                               | 1.0.11               | RD         | https://github.com/fcitx/fcitx5-bamboo                                     | Typing Vietnamese by Bamboo core engine for Fcitx5
    app-i18n/fcitx-chewing                              | 9999                 | RD         | https://github.com/fcitx/fcitx5-chewing                                    | Chewing Wrapper for Fcitx
    app-i18n/fcitx-chinese-addons                       | 9999                 |  D, RD     | https://github.com/fcitx/fcitx5-chinese-addons                             | Addons related to Chinese, including IME previous bundled inside fcitx4
      app-i18n/fcitx-lua                                | 9999                 |  D, RD     | https://github.com/fcitx/fcitx5-lua                                        | Lua support for fcitx
@@ -152,7 +152,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-unikey                                 | 9999                 |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-vinput                                 | 2.3.16               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
+ app-i18n/fcitx-vinput                                 | 2.3.18               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
                                                        | 2.3.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.9                |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
@@ -178,7 +178,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.10.4               |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.901.41600         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.901.51231         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13               |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.0.12               |            |                                                                            |
