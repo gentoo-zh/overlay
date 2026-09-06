@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-06 14:48:21 CST)
+(The last generation time: 2026-09-06 14:50:01 CST)
 
 ### Packages
 
@@ -155,9 +155,9 @@
  app-i18n/fcitx-vinput                                 | 2.3.16               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
                                                        | 2.3.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-zhuyin                                 | 5.1.8                |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
+ app-i18n/fcitx-zhuyin                                 | 5.1.9                |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/libime-jyutping                              | 1.0.17               |            | https://github.com/fcitx/libime-jyutping                                   | A library make use of libime to implement jyutping input method
+ app-i18n/libime-jyutping                              | 1.0.18               |            | https://github.com/fcitx/libime-jyutping                                   | A library make use of libime to implement jyutping input method
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/lunar                                        | 2.2_p10              |            | https://packages.debian.org/unstable/utils/lunar                           | Chinese Lunar Calendar conversion utility
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -424,7 +424,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.85.1               |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.37.0               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.38.0               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.37.0               |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
