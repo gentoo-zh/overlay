@@ -8,13 +8,13 @@ EXTRAVERSION="-cachyos"
 K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
-CACHYOS_PATCHES_COMMIT="a40b85abdcb9f4ba653e2e1ea89d3d1f0cf563ba"
-CACHYOS_CONFIGS_COMMIT="bd8a07da314743eede668d999d37253c1a77c186"
-CACHYOS_PR="1"
+CACHYOS_PATCHES_COMMIT="c3555d2ea83e22259652d5ad4b42036fd57b94f4"
+CACHYOS_CONFIGS_COMMIT="bf83c8e65c1e801fb6ed4734824dbee4a73031be"
+CACHYOS_PR="2"
 
 # Apply Gentoo base and extras fixes on top of the CachyOS release tree.
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="3"
+K_GENPATCHES_VER="4"
 # CachyOS already contains point-release updates and genpatch 2700.
 UNIPATCH_EXCLUDE="10 2700"
 # The release tarball already carries the exact ${PV} tree.
@@ -193,11 +193,14 @@ src_prepare() {
 
 	# Add distributed ThinLTO handling omitted by the upstream AutoFDO/Propeller makefiles.
 	# https://github.com/Szowisz/CachyOS-kernels/issues/35
-	eapply "${FILESDIR}/6.19.0/misc/0002-fix-autofdo-propeller-lto-thin-dist.patch"
+	# Included upstream since the CachyOS 7.2.3 patch series.
+	if ! ver_test -ge 7.2.3; then
+		eapply "${FILESDIR}/6.19.0/misc/0002-fix-autofdo-propeller-lto-thin-dist.patch"
+	fi
 
-	# 7.2.2 changed code that PRJC and MuQSS replace; restore their expected preimage.
+	# 7.2.3 changed code that PRJC and MuQSS replace; restore their expected preimage.
 	if use bmq || use muqss; then
-		eapply "${FILESDIR}/cachyos-sources-7.2.2-revert-empty-cpuset-floor.patch"
+		eapply "${FILESDIR}/cachyos-sources-7.2.3-revert-empty-cpuset-floor.patch"
 	fi
 
 	if use bore || use rt-bore; then
