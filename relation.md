@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-06 14:50:01 CST)
+(The last generation time: 2026-09-06 14:50:30 CST)
 
 ### Packages
 
@@ -112,7 +112,7 @@
    app-i18n/libkkc                                     | 0.3.5                |  D, RD     | https://github.com/ueno/libkkc                                             | Japanese Kana Kanji conversion input method library
      app-i18n/libkkc-data                              | 0.2.7                |  D, RD     | https://github.com/ueno/libkkc                                             | Language model data for the libkkc Japanese input method
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-libthai                                | 5.1.10               |            | https://github.com/fcitx/fcitx5-libthai                                    | Thai input method for Fcitx5 based on libthai
+ app-i18n/fcitx-libthai                                | 5.1.11               |            | https://github.com/fcitx/fcitx5-libthai                                    | Thai input method for Fcitx5 based on libthai
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-mcbopomofo                             | 3.1.1                |            | https://github.com/openvanilla/fcitx5-mcbopomofo                           | McBopomofo (Traditional Chinese phonetic) input method for Fcitx5
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
