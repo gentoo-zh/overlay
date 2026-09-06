@@ -2542,6 +2542,14 @@ prefix = "v"
 github_account = ["st0nie", "gouwazi"]
 autobump = true
 
+["sys-apps/pnpm-bin"]
+source = "github"
+github = "pnpm/pnpm"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+autobump = true
+
 # live package only
 #["sys-apps/wait-online"]
 
