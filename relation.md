@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-08 07:45:05 CST)
+(The last generation time: 2026-09-08 07:47:03 CST)
 
 ### Packages
 
@@ -172,7 +172,7 @@
    dev-python/pure-protobuf                            | 3.1.5                | RD         | https://github.com/eigenein/protobuf                                       | A pure python implementation of google protobuf
    dev-python/qasync                                   | 0.28.0               | RD         | https://github.com/CabbageDevelopment/qasync                               | Implementation of the asyncio (PEP 3156) event-loop with Qt
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch                                    | 3.20.1               |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
+ app-misc/cc-switch                                    | 3.20.2               |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.17.0               |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -582,7 +582,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-plugins/waylyrics                               | 0.3.21               |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
                                                        | 0.4.0                |            |                                                                            |
-                                                       | 0.4.5                |            |                                                                            |
+                                                       | 0.4.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/cider                                     | 4.0.9.1              |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V4)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
