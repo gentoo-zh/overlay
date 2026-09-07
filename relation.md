@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-07 21:07:50 CST)
+(The last generation time: 2026-09-07 21:21:37 CST)
 
 ### Packages
 
@@ -152,7 +152,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-unikey                                 | 9999                 |            | https://fcitx-im.org/                                                      | Unikey (Vietnamese Input Method) engine support for Fcitx
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-vinput                                 | 2.3.22               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
+ app-i18n/fcitx-vinput                                 | 2.3.25               |            | https://github.com/xifan2333/fcitx5-vinput                                 | Voice input addon for Fcitx5 with local sherpa-onnx ASR and LLM postprocess
                                                        | 2.3.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.9                |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
@@ -688,7 +688,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/another-redis-desktop-manager-bin            | 1.7.4                |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/apifox                                       | 2.8.45               |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
+ net-misc/apifox                                       | 2.8.46               |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidunetdisk                                 | 8.7.0                |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -714,8 +714,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/localsend-bin                                | 1.18.2               |            | https://localsend.org                                                      | An open-source cross-platform alternative to AirDrop
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/motrix-next-bin                              | 3.9.6                |            | https://motrix-next.pages.dev                                              | A full-featured download manager
-                                                       | 3.9.7                |            |                                                                            |
+ net-misc/motrix-next-bin                              | 3.9.8                |            | https://motrix-next.pages.dev                                              | A full-featured download manager
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/ntpd-rs                                      | 1.9.0                |            | https://github.com/pendulum-project/ntpd-rs                                | Full-featured implementation of NTP with NTS support
    acct-group/ntpd-rs                                  | 0                    | RD         |                                                                            | Full-featured implementation of NTP with NTS support
