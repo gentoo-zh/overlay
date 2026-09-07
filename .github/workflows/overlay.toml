@@ -1430,6 +1430,14 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = 3
 
+["dev-vcs/worktrunk-bin"]
+source = "github"
+github = "max-sixty/worktrunk"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+autobump = true
+
 ["games-action/vintagestory"]
 source = "regex"
 url = "https://api.vintagestory.at/lateststable.txt"
