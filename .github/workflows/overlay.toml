@@ -1384,6 +1384,14 @@ github_account = "gouwazi"
 # use_latest_release = true
 # prefix = "v"
 
+["dev-util/vimls-go-bin"]
+source = "github"
+github = "neoclide/vimls-go"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
+autobump = true
+
 ["dev-util/waza-bin"]
 source = "github"
 github = "microsoft/waza"
