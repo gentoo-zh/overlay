@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-08 07:15:26 CST)
+(The last generation time: 2026-09-08 07:37:56 CST)
 
 ### Packages
 
@@ -396,7 +396,7 @@
  dev-util/grok-build-bin                               | 0.2.118              |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
                                                        | 1.0.13               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/herdr-bin                                    | 0.8.2                |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
+ dev-util/herdr-bin                                    | 0.9.0                |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.21.1               |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -996,7 +996,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/kora-icon-theme                            | 2.0.6                |            | https://github.com/bikass/kora                                             | An SVG icon theme with lots of new icons for GNU/Linux operating systems
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/mint-themes                                | 2.4.0                |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
+ x11-themes/mint-themes                                | 2.4.1                |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-y-icons                               | 1.9.3                |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
