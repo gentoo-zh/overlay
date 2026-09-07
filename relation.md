@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-07 21:21:37 CST)
+(The last generation time: 2026-09-07 21:27:45 CST)
 
 ### Packages
 
@@ -234,7 +234,7 @@
  app-office/obsidian                                   | 1.13.7-r1            |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/siyuan-bin                                 | 3.7.3                |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
-                                                       | 3.8.2                |            |                                                                            |
+                                                       | 3.8.3                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office                                 | 11.1.0.11719-r2      |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office is an office productivity suite, Here is the Chinese version
                                                        | 12.1.2.28080         |            |                                                                            |
