@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-07 21:27:45 CST)
+(The last generation time: 2026-09-07 23:48:08 CST)
 
 ### Packages
 
@@ -454,6 +454,8 @@
  dev-vcs/sourcegit-bin                                 | 2026.17              |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.18              |            |                                                                            |
                                                        | 2026.19              |            |                                                                            |
+-------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-vcs/worktrunk-bin                                 | 0.76.0               |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  games-action/vintagestory                             | 1.19.8               |            | https://www.vintagestory.at/                                               | Uncompromising wilderness survival sandbox game (requires paid account)
                                                        | 1.20.12              |            |                                                                            |
