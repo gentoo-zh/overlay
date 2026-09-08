@@ -548,6 +548,9 @@ github = "charmbracelet/crush"
 use_latest_release = true
 prefix = "v"
 
+# same source as app-misc/crush
+#["app-misc/crush-bin"]
+
 ["app-misc/go-yq-bin"]
 source = "github"
 github = "mikefarah/yq"
