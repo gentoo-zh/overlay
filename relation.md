@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-08 20:16:32 CST)
+(The last generation time: 2026-09-08 21:05:28 CST)
 
 ### Packages
 
@@ -620,7 +620,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/bilibili                                  | 1.18.0_p1            |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/davinci-resolve                           | 21.0.4               |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
+ media-video/davinci-resolve                           | 21.1.0               |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/implay                                    | 1.5.1                |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
