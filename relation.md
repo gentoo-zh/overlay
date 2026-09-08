@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-09 00:44:07 CST)
+(The last generation time: 2026-09-09 01:25:08 CST)
 
 ### Packages
 
@@ -926,9 +926,9 @@
  virtual/linux-sources                                 | 3-r12                |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.48              | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 7.2.3-r1             |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.2.3                | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-   sys-kernel/xanmod-kernel                            | 7.1.13               | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
-   sys-kernel/xanmod-sources                           | 7.1.13               | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+   sys-kernel/liquorix-sources                         | 7.2.4                | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+   sys-kernel/xanmod-kernel                            | 7.2.4                | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+   sys-kernel/xanmod-sources                           | 7.2.4                | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                    |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646       | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
