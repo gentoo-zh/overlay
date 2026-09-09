@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-09 21:19:26 CST)
+(The last generation time: 2026-09-09 21:20:31 CST)
 
 ### Packages
 
@@ -183,7 +183,7 @@
  app-misc/cherry-studio-bin                            | 1.9.13               |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.0.13               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/claude-desktop                               | 1.46388.2            |            | https://claude.com/download                                                | Desktop application for Claude.ai
+ app-misc/claude-desktop                               | 1.49585.0            |            | https://claude.com/download                                                | Desktop application for Claude.ai
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.2.10               |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -969,7 +969,7 @@
  x11-terms/blackbox-terminal                           | 0.15.2               |            | https://gitlab.gnome.org/raggesilver/blackbox                              | A beautiful GTK 4 terminal
    dev-libs/libpqmarble                                | 2.0.0_p20250109      |  D, RD     | https://gitlab.gnome.org/raggesilver/marble                                | Utility library for GNOME apps
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-terms/termius                                     | 9.43.1               |            | https://termius.com/download/linux                                         | Desktop SSH Client
+ x11-terms/termius                                     | 10.0.0               |            | https://termius.com/download/linux                                         | Desktop SSH Client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/tty7-bin                                    | 26.9.1               |            | https://tty7.io/                                                           | Terminal workbench with persistent sessions, SSH, and coding agent integration
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
