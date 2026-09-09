@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cmake xdg
+inherit cmake optfeature xdg
 
 MUPDF_PV="1.28.2"
 SYNCTEX_COMMIT="917617707955cde0c2fae127130d9d3129303cbc"
@@ -79,4 +79,12 @@ src_install() {
 		mv "${ED}/usr/share/doc/${PN}"/* "${ED}/usr/share/doc/${PF}/" || die
 		rmdir "${ED}/usr/share/doc/${PN}" || die
 	fi
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+
+	optfeature "SVG rendering" "gnome-base/librsvg x11-libs/cairo"
+	optfeature "DjVu documents" app-text/djvu
+	optfeature "EXIF metadata" media-libs/libexif
 }
