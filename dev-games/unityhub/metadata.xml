@@ -4,6 +4,10 @@
 	<maintainer type="person">
 		<email>bz8511929@gmail.com</email>
 	</maintainer>
+	<maintainer type="person">
+		<email>xiaoxi@izm.im</email>
+		<name>Yoshida Kanae</name>
+	</maintainer>
 	<use>
 		<flag name='legacy'>add support for Legacy versions</flag>
 	</use>

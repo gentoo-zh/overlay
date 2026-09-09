@@ -31,6 +31,7 @@ DEPEND="
 	app-crypt/libsecret
 	dev-libs/openssl-compat
 	media-libs/alsa-lib
+	dev-libs/libxml2-compat
 "
 RDEPEND="${DEPEND}"
 

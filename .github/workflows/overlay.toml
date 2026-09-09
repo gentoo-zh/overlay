@@ -846,6 +846,14 @@ url = "https://www.arterytek.com/json/Document.json"
 regex = 'AT32_Work_Bench_Linux-x86_64_V([\d.]+)\.zip'
 github_account = "microcai"
 
+["dev-games/unityhub"]
+source = "apt"
+mirror = "https://hub.unity3d.com/linux/repos/deb"
+suite = "stable"
+repo = "main"
+pkg = "unityhub"
+github_account = ["xiaoxi654", "gouwazi"]
+
 ["dev-go/gotests"]
 source = "github"
 github = "cweill/gotests"
@@ -1726,12 +1734,6 @@ source = "github"
 github = "monostream/tifig"
 use_latest_release = true
 prefix = "v"
-
-["dev-games/unityhub"]
-source = "aur"
-aur = "unityhub"
-strip_release = true
-github_account = "gouwazi"
 
 # TODO: can't check
 #["media-gfx/zw3d"]
