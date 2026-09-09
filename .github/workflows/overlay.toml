@@ -846,6 +846,13 @@ url = "https://www.arterytek.com/json/Document.json"
 regex = 'AT32_Work_Bench_Linux-x86_64_V([\d.]+)\.zip'
 github_account = "microcai"
 
+["dev-games/alcom"]
+source = "github"
+github = "vrc-get/vrc-get"
+use_latest_tag = true
+query = "gui-v"
+prefix = "gui-v"
+
 ["dev-games/unityhub"]
 source = "apt"
 mirror = "https://hub.unity3d.com/linux/repos/deb"

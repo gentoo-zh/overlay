@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>xiaoxi@izm.im</email>
+		<name>Yoshida Kanae</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">vrc-get/vrc-get</remote-id>
+	</upstream>
+</pkgmetadata>
