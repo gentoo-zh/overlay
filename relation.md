@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-09 10:44:02 CST)
+(The last generation time: 2026-09-09 20:00:00 CST)
 
 ### Packages
 
@@ -291,6 +291,8 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-embedded/at32workbench                            | 1.2.05               |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-games/unityhub                                    | 3.21.0               |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
+-------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/gotests                                        | 1.9.0                |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/staticcheck                                    | 2026.2.1             |            | https://staticcheck.dev                                                    | Go static analysis, detecting bugs, performance issues, and much more
@@ -570,8 +572,6 @@
  media-gfx/tgs2png                                     | 9999                 |            | https://github.com/zevlg/tgs2png                                           | Convert Telegram's animated stickers in TGS format into series of PNG images
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/tifig-bin                                   | 0.2.2                |            | https://github.com/monostream/tifig                                        | Converts iOS 11 HEIC images to practical formats - Static binary
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/unityhub                                    | 3.21.0               |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/zw3d                                        | 2026.0.1.1           |            | https://www.zwsoft.cn/product/zw3d                                         | CAD/CAM software for 3D design and processing
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
