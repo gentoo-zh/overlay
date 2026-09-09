@@ -10,11 +10,11 @@ K_NOSETEXTRAVERSION="1"
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
 CACHYOS_PATCHES_COMMIT="c3555d2ea83e22259652d5ad4b42036fd57b94f4"
 CACHYOS_CONFIGS_COMMIT="bf83c8e65c1e801fb6ed4734824dbee4a73031be"
-CACHYOS_PR="2"
+CACHYOS_PR="1"
 
 # Apply Gentoo base and extras fixes on top of the CachyOS release tree.
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="4"
+K_GENPATCHES_VER="5"
 # CachyOS already contains point-release updates and genpatch 2700.
 UNIPATCH_EXCLUDE="10 2700"
 # The release tarball already carries the exact ${PV} tree.
