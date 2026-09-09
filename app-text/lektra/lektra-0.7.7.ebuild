@@ -5,13 +5,13 @@ EAPI=8
 
 inherit cmake xdg
 
-MUPDF_PV="1.27.2"
+MUPDF_PV="1.28.2"
 SYNCTEX_COMMIT="917617707955cde0c2fae127130d9d3129303cbc"
 
 DESCRIPTION="High-performance PDF reader that prioritizes screen space and control"
 HOMEPAGE="https://github.com/dheerajshenoy/lektra"
 SRC_URI="
-	https://github.com/dheerajshenoy/${PN}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/dheerajshenoy/${PN}/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
 	https://mupdf.com/downloads/archive/mupdf-${MUPDF_PV}-source.tar.gz
 	synctex? (
 		https://github.com/jlaurens/synctex/archive/${SYNCTEX_COMMIT}.tar.gz
