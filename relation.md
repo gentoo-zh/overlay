@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-09 09:48:19 CST)
+(The last generation time: 2026-09-09 09:49:51 CST)
 
 ### Packages
 
@@ -899,10 +899,10 @@
                                                        | 7.1.13               |            |                                                                            |
                                                        | 7.2.4                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.108             |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.18.49              |            |                                                                            |
+ sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
+                                                       | 6.18.50              |            |                                                                            |
                                                        | 7.1.13               |            |                                                                            |
-                                                       | 7.2.3                |            |                                                                            |
+                                                       | 7.2.4                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.18.50              |            |                                                                            |
@@ -915,12 +915,9 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-power/tlpui                                       | 1.10.1               |            | https://github.com/d4nj1/TLPUI                                             | A GTK user interface for TLP written in Python
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/dist-kernel                                   | 6.12.108-r100        |            |                                                                            | Virtual to depend on any Distribution Kernel
-                                                       | 6.12.109-r100        |            |                                                                            |
-                                                       | 6.18.49-r100         |            |                                                                            |
+ virtual/dist-kernel                                   | 6.12.109-r100        |            |                                                                            | Virtual to depend on any Distribution Kernel
                                                        | 6.18.50-r100         |            |                                                                            |
                                                        | 7.1.13-r100          |            |                                                                            |
-                                                       | 7.2.3-r100           |            |                                                                            |
                                                        | 7.2.4-r100           |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12                |            |                                                                            | Virtual for Linux kernel sources
