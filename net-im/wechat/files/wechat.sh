@@ -25,6 +25,7 @@ fi
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 if "${EBUILD_WAYLAND}" && [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
     export QT_QPA_PLATFORM="${QT_QPA_PLATFORM:-wayland;xcb}"
+    export QT_IM_MODULE=text-input-unstable-v3
 else
     export QT_QPA_PLATFORM="${QT_QPA_PLATFORM:-xcb}"
 fi
