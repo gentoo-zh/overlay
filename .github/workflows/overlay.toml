@@ -1727,7 +1727,7 @@ github = "monostream/tifig"
 use_latest_release = true
 prefix = "v"
 
-["media-gfx/unityhub"]
+["dev-games/unityhub"]
 source = "aur"
 aur = "unityhub"
 strip_release = true
