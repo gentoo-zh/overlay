@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-10 22:43:49 CST)
+(The last generation time: 2026-09-10 22:47:23 CST)
 
 ### Packages
 
@@ -397,7 +397,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gemini-cli                                   | 0.59.0               |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/gitea-cli                                    | 0.15.1               |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
+ dev-util/gitea-cli                                    | 0.16.0               |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/grok-build-bin                               | 0.2.118              |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
                                                        | 1.0.25               |            |                                                                            |
