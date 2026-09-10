@@ -883,6 +883,13 @@ autobump = true
 # TODO: multiple slot
 #["dev-java/oraclejdk-bin"]
 
+["dev-lang/bun-bin"]
+source = "github"
+github = "oven-sh/bun"
+use_latest_release = true
+prefix = "bun-v"
+autobump = true
+
 ["dev-lang/dart"]
 source = "apt"
 pkg = "dart"
@@ -893,13 +900,6 @@ github_account = "peeweep"
 
 # Version follows dev-lang/dart.
 #["dev-lang/dart-bootstrap"]
-
-["dev-lang/bun-bin"]
-source = "github"
-github = "oven-sh/bun"
-use_latest_release = true
-prefix = "bun-v"
-autobump = true
 
 ["dev-lang/koka-bin"]
 source = "github"
