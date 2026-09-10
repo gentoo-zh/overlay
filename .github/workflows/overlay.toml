@@ -894,6 +894,13 @@ github_account = "peeweep"
 # Version follows dev-lang/dart.
 #["dev-lang/dart-bootstrap"]
 
+["dev-lang/bun-bin"]
+source = "github"
+github = "oven-sh/bun"
+use_latest_release = true
+prefix = "bun-v"
+autobump = true
+
 ["dev-lang/koka-bin"]
 source = "github"
 github = "koka-lang/koka"
@@ -1342,6 +1349,9 @@ github = "badlogic/pi-mono"
 use_latest_release = true
 prefix = "v"
 autobump = true
+
+# live-only: tracks the xz-dev/pi main branch; not autobumpable
+#["dev-util/pi-coding-agent-xz"]
 
 ["dev-util/reasonix-bin"]
 source = "github"
@@ -2041,13 +2051,6 @@ source = "aur"
 aur = "wemeet-bin"
 strip_release = true
 github_account = "gouwazi"
-
-["net-libs/bun-bin"]
-source = "github"
-github = "oven-sh/bun"
-use_latest_release = true
-prefix = "bun-v"
-autobump = true
 
 # live package only
 #["net-libs/jzmq"]

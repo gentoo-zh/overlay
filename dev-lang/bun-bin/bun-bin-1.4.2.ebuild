@@ -17,7 +17,7 @@ LICENSE="MIT"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 
-IUSE="+symlink"
+IUSE="symlink"
 
 BDEPEND="app-arch/unzip"
 RDEPEND="

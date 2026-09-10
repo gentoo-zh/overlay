@@ -3,3 +3,4 @@ move www-apps/cherry-studio-bin app-misc/cherry-studio-bin
 move www-apps/dufs www-servers/dufs
 move net-proxy/clash-verge-bin net-proxy/clash-verge-rev-bin
 move media-gfx/unityhub dev-games/unityhub
+move net-libs/bun-bin dev-lang/bun-bin
