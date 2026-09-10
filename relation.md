@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-10 19:15:22 CST)
+(The last generation time: 2026-09-10 19:16:07 CST)
 
 ### Packages
 
@@ -368,7 +368,7 @@
    app-i18n/librime                                    | 9999                 |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
    dev-python/autopxd2                                 | 3.2.3                | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/uv-bin                                     | 0.12.11              |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
+ dev-python/uv-bin                                     | 0.12.12              |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
