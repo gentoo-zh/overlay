@@ -131,7 +131,6 @@ GCC_LIB_PATH="$(gcc_runtime_path)"
 
 if "${EBUILD_WAYLAND}" && [[ -n "${WAYLAND_DISPLAY:-}" ]]; then
     QT_QPA_PLATFORM="${QT_QPA_PLATFORM:-wayland;xcb}"
-    QT_IM_MODULE=text-input-unstable-v3
 else
     QT_QPA_PLATFORM="${QT_QPA_PLATFORM:-xcb}"
 fi
