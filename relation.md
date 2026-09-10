@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-10 19:09:16 CST)
+(The last generation time: 2026-09-10 19:13:58 CST)
 
 ### Packages
 
@@ -372,7 +372,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.1.28               |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.2.0                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                   |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -386,7 +386,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex                                        | 0.153.4-r1           |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/codex-bin                                    | 0.153.4              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
+ dev-util/codex-bin                                    | 0.154.0              |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/deepseek-harness                             | 0.1.2_rc1            |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
