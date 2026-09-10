@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-09 23:24:30 CST)
+(The last generation time: 2026-09-10 13:32:40 CST)
 
 ### Packages
 
@@ -291,7 +291,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-embedded/at32workbench                            | 1.2.05               |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-games/unityhub                                    | 3.21.0               |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
+ dev-games/unityhub                                    | 3.21.1               |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/gotests                                        | 1.9.0                |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
