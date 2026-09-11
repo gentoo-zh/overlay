@@ -9,15 +9,15 @@ K_NOSETEXTRAVERSION="1"
 
 # Pin patch, config, and downstream rebase inputs so Manifest checks cover
 # exact immutable GitHub bytes.
-CACHYOS_PATCHES_COMMIT="a40b85abdcb9f4ba653e2e1ea89d3d1f0cf563ba"
-CACHYOS_CONFIGS_COMMIT="b165d04e2c7ccfa5f5448957ccb9d61754f20e6e"
+CACHYOS_PATCHES_COMMIT="d5db2a953637445998d2b0e5ab52ea9c04860a24"
+CACHYOS_CONFIGS_COMMIT="fed1a01462a4a26a23acbb095ec6cd3b5c9df19c"
 CACHYOS_REBASE_COMMIT="127c70edf723c471e99963e2a61923e2025feeda"
 # Source tag is cachyos-6.18.48-2; downstream patch updates do not change CPV.
-CACHYOS_PR="2"
+CACHYOS_PR="1"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="55"
+K_GENPATCHES_VER="57"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -399,8 +399,12 @@ src_prepare() {
 		scripts/config -d GENERIC_CPU -d MZEN4 -e X86_NATIVE_CPU || die
 	fi
 
-	use autofdo && { scripts/config -e AUTOFDO_CLANG || die; }
-	use propeller && { scripts/config -e PROPELLER_CLANG || die; }
+	if use autofdo; then
+		scripts/config -e AUTOFDO_CLANG || die
+	fi
+	if use propeller; then
+		scripts/config -e PROPELLER_CLANG || die
+	fi
 
 	scripts/config --set-str DEFAULT_HOSTNAME gentoo || die
 
