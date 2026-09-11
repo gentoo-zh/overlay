@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>xiangzhedev@gmail.com</email>
+		<name>xz-dev</name>
+	</maintainer>
+	<use>
+		<flag name="coexist">Install the launcher as /opt/bin/pi-xz instead of /opt/bin/pi, allowing installation alongside dev-util/pi-coding-agent-bin</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">xz-dev/pi</remote-id>
+	</upstream>
+</pkgmetadata>
