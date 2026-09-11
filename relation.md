@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-11 10:50:10 CST)
+(The last generation time: 2026-09-11 19:02:58 CST)
 
 ### Packages
 
@@ -304,8 +304,6 @@
  dev-java/oraclejdk-bin                                | 8.391                |            | https://www.oracle.com/java/                                               | Oracle's Java SE Development Kit
                                                        | 21.0.1               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-lang/bun-bin                                      | 1.4.2                |            | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
--------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-lang/koka-bin                                     | 3.2.3                |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/lunar-calendar                               | 3.0.1                |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
@@ -431,6 +429,9 @@
  dev-util/pack-cli-bin                                 | 0.37.0               |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.85.1               |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
+-------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-util/pi-coding-agent-xz                           | 9999                 |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
+   dev-lang/bun-bin                                    | 1.4.2                | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.38.5               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
