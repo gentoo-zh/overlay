@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-12 18:49:05 CST)
+(The last generation time: 2026-09-12 21:17:59 CST)
 
 ### Packages
 
@@ -911,8 +911,10 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.50              |            |                                                                            |
+                                                       | 6.18.51              |            |                                                                            |
                                                        | 7.1.13               |            |                                                                            |
                                                        | 7.2.4                |            |                                                                            |
+                                                       | 7.2.5                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.18.50              |            |                                                                            |
