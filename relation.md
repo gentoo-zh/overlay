@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-12 16:15:53 CST)
+(The last generation time: 2026-09-12 16:21:05 CST)
 
 ### Packages
 
@@ -173,7 +173,7 @@
    dev-python/pure-protobuf                            | 3.1.5                | RD         | https://github.com/eigenein/protobuf                                       | A pure python implementation of google protobuf
    dev-python/qasync                                   | 0.28.0               | RD         | https://github.com/CabbageDevelopment/qasync                               | Implementation of the asyncio (PEP 3156) event-loop with Qt
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch                                    | 3.20.2               |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
+ app-misc/cc-switch                                    | 3.20.3               |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.17.0               |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
