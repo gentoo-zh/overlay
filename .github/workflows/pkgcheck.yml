@@ -97,6 +97,15 @@ jobs:
         git checkout --quiet "${head}"
 
         python3 scripts/pkgcheck-new-findings.py base-report.txt report.txt > new.txt
+
+        # commit messages (summary prefix and length, sign-off identity, tags) only
+        # run with --commits, which compares the checked-out branch to origin/HEAD
+        git remote set-head origin master
+        git checkout --quiet 'HEAD^2'
+        pkgcheck scan --commits --checks=GitCommitMessageCheck,GitPkgCommitsCheck \
+          > commits.txt 2>&1 || true
+        git checkout --quiet "${head}"
+        grep -v '^WARNING' commits.txt >> new.txt || true
         echo '--- new ---'; cat new.txt
         echo '--- all ---'; cat report.txt
 

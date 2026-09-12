@@ -1,0 +1,3 @@
+no-ai-attribution: PR body contains forbidden AI attribution
+no-ai-attribution: commit message contains forbidden AI attribution
+no-ai-attribution: commit message uses a GitHub noreply Signed-off-by address

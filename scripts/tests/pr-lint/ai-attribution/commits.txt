@@ -1,0 +1,4 @@
+app-misc/example: update metadata
+
+Co-Authored-By: Claude <claude@example.org>
+Signed-off-by: Bot <bot@users.noreply.github.com>

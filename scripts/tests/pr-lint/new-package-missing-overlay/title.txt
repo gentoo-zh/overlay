@@ -1,0 +1,1 @@
+app-misc/new-tool: new package, add 1.0

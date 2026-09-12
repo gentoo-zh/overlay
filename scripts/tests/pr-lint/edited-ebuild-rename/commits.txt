@@ -1,0 +1,3 @@
+app-misc/example: add 1.1
+
+Signed-off-by: Example Maintainer <maintainer@example.org>

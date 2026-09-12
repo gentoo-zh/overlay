@@ -1,0 +1,1 @@
+new-package-nvchecker: new package app-misc/new-tool lacks an overlay.toml entry in this diff

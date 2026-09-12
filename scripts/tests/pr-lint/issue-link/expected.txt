@@ -1,0 +1,1 @@
+closes-format: overlay issue links must use bare Closes #<n>
