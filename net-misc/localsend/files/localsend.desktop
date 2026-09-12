@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=LocalSend
+Comment=Share files to nearby devices over the local network
+Exec=/opt/bin/localsend
+Terminal=false
+Icon=localsend
+Categories=Network;FileTransfer;
+StartupNotify=false

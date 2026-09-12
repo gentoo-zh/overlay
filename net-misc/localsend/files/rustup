@@ -1,0 +1,19 @@
+#!/bin/sh
+# cargokit invokes rustup to pick a toolchain; the ebuild builds with the
+# system Rust, so report exactly one and run everything with it.
+case "${1} ${2}" in
+	"toolchain list")
+		echo "stable-x86_64-unknown-linux-gnu (default)"
+		;;
+	"target list"*)
+		echo "x86_64-unknown-linux-gnu"
+		;;
+	"run "*)
+		shift 2
+		exec "$@"
+		;;
+	*)
+		echo "rustup shim: unhandled ${*}" >&2
+		exit 1
+		;;
+esac
