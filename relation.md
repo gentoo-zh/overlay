@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-12 11:01:47 CST)
+(The last generation time: 2026-09-12 16:03:32 CST)
 
 ### Packages
 
@@ -27,7 +27,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/proton-authenticator-bin                    | 1.1.6                |            | https://proton.me/authenticator                                            | Official open-source two-factor authentication app by Proton
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/qm                                          | 0.1.9                |            | https://qm.ycombinator.com                                                 | Control-plane CLI for portable QM deployments
+ app-admin/qm                                          | 0.1.11               |            | https://qm.ycombinator.com                                                 | Control-plane CLI for portable QM deployments
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/rbw                                         | 1.15.0               |            | https://github.com/doy/rbw                                                 | Unofficial Bitwarden CLI
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -55,7 +55,7 @@
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.0.20251223       |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
                                                        | 0.3.0.20260416       |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.12.2               |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.13.0               |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.5.5                |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -401,7 +401,7 @@
  dev-util/gitea-cli                                    | 0.16.0               |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/grok-build-bin                               | 0.2.118              |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
-                                                       | 1.0.25               |            |                                                                            |
+                                                       | 1.0.30               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr-bin                                    | 0.9.0                |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
