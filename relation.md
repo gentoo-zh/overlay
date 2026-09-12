@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-12 16:43:23 CST)
+(The last generation time: 2026-09-12 17:11:12 CST)
 
 ### Packages
 
@@ -109,7 +109,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-hazkey                                 | 0.2.1                |            | https://hazkey.hiira.dev/                                                  | Japanese input method for Fcitx5, powered by azooKey engine
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-kkc                                    | 5.1.10               |            | https://github.com/fcitx/fcitx5-kkc                                        | Japanese Kana Kanji conversion (libkkc) input method for Fcitx5
+ app-i18n/fcitx-kkc                                    | 5.1.11               |            | https://github.com/fcitx/fcitx5-kkc                                        | Japanese Kana Kanji conversion (libkkc) input method for Fcitx5
    app-i18n/libkkc                                     | 0.3.5                |  D, RD     | https://github.com/ueno/libkkc                                             | Japanese Kana Kanji conversion input method library
      app-i18n/libkkc-data                              | 0.2.7                |  D, RD     | https://github.com/ueno/libkkc                                             | Language model data for the libkkc Japanese input method
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -133,7 +133,7 @@
      app-i18n/fcitx                                    | 9999                 |  D, RD     | https://fcitx-im.org/                                                      | Fcitx 5 is a generic input method framework
        x11-libs/xcb-imdkit                             | 9999                 |  D, RD     | https://github.com/fcitx/xcb-imdkit                                        | Input method development support for xcb
      app-i18n/rime-data                                | 9999                 |  D, RD     | https://rime.im/                                                           | Data resources for Rime Input Method Engine
-   app-i18n/fcitx-skk                                  | 5.1.10               | RD         | https://fcitx-im.org/                                                      | Japanese SKK input engine for Fcitx5
+   app-i18n/fcitx-skk                                  | 5.1.11               | RD         | https://fcitx-im.org/                                                      | Japanese SKK input engine for Fcitx5
                                                        | 5.1.7-r2             |            |                                                                            |
                                                        | 9999                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
