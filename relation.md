@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-13 02:18:06 CST)
+(The last generation time: 2026-09-13 02:29:51 CST)
 
 ### Packages
 
@@ -194,7 +194,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.94.1               |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush-bin                                    | 0.92.0               |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
+ app-misc/crush-bin                                    | 0.94.1               |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.53.4               |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.53.6               |            |                                                                            |
@@ -455,7 +455,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vfox                                         | 1.0.12               |            | https://vfox.dev                                                           | A cross-platform version manager, extendable via plugins
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/vfox-bin                                     | 1.0.11               |            | https://vfox.dev/                                                          | A cross-platform version manager, extendable via plugins
+ dev-util/vfox-bin                                     | 1.0.12               |            | https://vfox.dev/                                                          | A cross-platform version manager, extendable via plugins
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vimls-go-bin                                 | 0.1.4                |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -613,7 +613,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/listen1_desktop-bin                       | 2.33.0               |            | https://listen1.github.io/listen1/                                         | one for all free music in China
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/lx-music-desktop-bin                      | 2.12.3               |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
+ media-sound/lx-music-desktop-bin                      | 2.12.4               |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/netease-cloud-music-gtk                   | 2.5.4-r1             |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
