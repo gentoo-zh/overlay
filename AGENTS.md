@@ -18,6 +18,18 @@ Packages live under `category/package/` with ebuilds, `metadata.xml`, optional `
 
 Repository metadata is under `metadata/` and `profiles/`. CI is under `.github/`.
 
+## Task routing
+
+Read a rule file before touching the surface it names. These files carry repository policy that used to sit in this one.
+
+- Version bumps and keeping old versions: `.agents/rules/version-bumps.md`.
+- New packages, `virtual/`, `overlay.toml` entries: `.agents/rules/new-packages.md`.
+- Prebuilt or bundled binaries: `.agents/rules/prebuilt-binaries.md`.
+- Desktop files, icons, Wayland flags: `.agents/rules/desktop-integration.md`.
+- Units, init scripts, service or `systemd` dependencies: `.agents/rules/openrc-systemd.md`.
+- Choosing or reading an eclass: `.agents/rules/eclass-discovery.md`.
+- Commit subject and body, PR title and body: `.agents/rules/pr-text.md`.
+
 ## Git Workflow
 
 Every repository modification is PR-bound unless the current request explicitly says otherwise. Read-only inspection is exempt.
@@ -67,7 +79,7 @@ Treat `master` only as an upstream-sync branch.
 - Where the environment cannot run a real merge, such as an unprivileged sandbox that cannot chown to the portage group, record the install as skipped.
 - An elog from the dependency rather than the package is not a defect in the change. Report it; do not edit the ebuild to clear it.
 - The emerge-on-PR CI installs the changed packages after each push: on both amd64 profiles, openrc and systemd, and on the arm64 systemd profile when the package is keyworded arm64. There is no arm64 openrc run, every other arch stays unverified, and a green run does not replace your own clean install.
-- Build every newly added `KEYWORDS` arch of a source package; never keyword one you did not build. A prebuilt package follows the arm64 exception under Bundled and Prebuilt Binaries.
+- Build every newly added `KEYWORDS` arch of a source package; never keyword one you did not build. A prebuilt package follows the arm64 exception in `.agents/rules/prebuilt-binaries.md`.
 - Carrying the prior version's keywords forward is retention—do not narrow them to the one arch you built.
 - For an arch-independent package, keep the inherited keywords and note the arches you did not verify in the completion report; use `~arch`.
 - When removing an arch, update affected reverse dependencies and virtual/meta packages in the same change.
@@ -93,42 +105,6 @@ Treat `master` only as an upstream-sync branch.
 - A security fix covers every still-keyworded vulnerable branch and relevant sibling or fork. Revbump when installed content or behavior changes.
 - A package move updates `profiles/updates` atomically with every affected reference.
 
-## Version Bumps
-
-- Compare existing ebuilds and history with upstream notes and build metadata for dependency, toolchain, option, license, layout, and installed-file changes.
-- The `go.mod` `go` directive and `Cargo.toml` `rust-version` are real minimum versions, and no eclass reads them for you.
-- When one exceeds what the profile toolchain guarantees, raise the matching `>=dev-lang/go` `BDEPEND` or `RUST_MIN_VER`.
-- If the raised floor is not yet in the tree, hand over the compare link stating the PR must be opened as a draft.
-- Cite the upstream `go.mod` and the tree state on packages.gentoo.org, for example `>=dev-lang/go-1.26.5` when `go.mod` says `go 1.26.5`.
-- The `go.mod` `toolchain` line is only a suggestion under `GOTOOLCHAIN=local` and sets no floor.
-- Re-check patches and assets. Update the ebuild, `SRC_URI`, version variables, checksums, and `Manifest` together; stop when required evidence is unavailable.
-- When a bump exposes a defect, fix it in the existing ebuild and change only what the new release invalidates. Rewrite it only when the release leaves it unusable, and say what made it so.
-- Normalize the ebuild version by Gentoo rules. Preserve the literal upstream tag through `MY_PV` or an equivalent variable when needed.
-- Tracker output is only a hint: verify the real tag, artifact, and URL. `-rN` is a Gentoo revision; never derive upstream tags or filenames from `${PVR}` or `${PF}`.
-- Never guess `RDEPEND`, `IUSE`, pins, generated dependency sets, build options, or vendor artifacts merely to obtain a green build.
-- A versioned deps/vendor/crates/`node_modules` artifact must already exist for the new version, or the fetch 404s.
-- That artifact is often not upstream but in an overlay or contributor repo: commonly `gentoo-zh-drafts/<PN>`, sometimes `gentoo-zh/gentoo-deps` or a contributor's repo.
-- Reuse the exact host and naming the existing `SRC_URI` uses; do not assume upstream, invent a host, or switch repos on your own. Change host only under a verified, maintainer-directed migration.
-- Cross-check a large distfile's size against its source, so a truncated download cannot produce a plausible but invalid `Manifest`.
-- When upstream moves, update `HOMEPAGE`, `metadata.xml` `remote-id`, and version-tracking URLs to the current project.
-- Keep `SRC_URI` on the real artifact, and provenance variables on the repository that produced that release.
-- For an in-place tarball replacement, verify provenance, contents, tag or commit, signatures, and licenses. Use a distinct distfile name and revbump.
-- Remove or update only state made obsolete when a version, implementation, USE flag, provider, or package name is removed.
-- Scope cleanup to affected ebuild conditionals, assets, metadata and profile entries, reverse-dependency references, and live or twin variants.
-- Preserve everything required by surviving ebuilds or providers.
-
-## Keeping Old Versions
-
-A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is the exception and needs one of the reasons below.
-
-- Keep the prior version across a major version jump, large rewrite, or build-system migration, even for a `-bin` package and even when history rolls the latest. Drop it once the new branch has held.
-- Keep any version a reverse-dependency pin, `SLOT`, or profile entry still resolves against. Check the overlay and the main tree per `SLOT` and per retained arch before dropping.
-- Keep a version whose replacement is unverified: an arch upstream skipped this release, or a security fix not yet on every keyworded branch.
-- Otherwise drop. A package with no cross-version state, no reverse dependencies, and nothing worth downgrading to keeps exactly one version. Being prebuilt is not a reason to keep the old one.
-- Follow the package's own history where it shows an explicit pattern; otherwise apply the rules above and state the choice. Never keep a version merely because the previous commit did.
-- Stop for direction when an old version loses its immutable source bytes, or when a replacement in place is unexplained.
-- `autobump = N` in `.github/workflows/overlay.toml` applies the same policy to autobump: set a number only for a package meeting a reason above, and return it to `true` when the reason lapses.
-
 ## Dependencies and Revisions
 
 - Every atom traces to evidence here: a linked SONAME, a build-file `dependency()`, `find_package`, or `pkg-config` call, a `dlopen`ed library, or a program a phase runs.
@@ -150,80 +126,6 @@ A bump replaces the version it supersedes—`add NEW, drop OLD`. Retention is th
 - A provider subslot represents an ABI that requires consumer rebuilds. Re-check SONAMEs, private-header ABI, and library renames on every bump.
 - Never derive a sibling package version from `${PV}` without verifying that it exists and resolves.
 - Never replace a `files/` input still referenced by a surviving ebuild; give its replacement a version- or revision-specific name.
-
-## Bundled and Prebuilt Binaries
-
-- For each upstream binary artifact, whitelist only shipped arches (for example `KEYWORDS="-* ~amd64 ~arm64"`) and use per-arch `SRC_URI`. Do not keyword or reference unpublished artifacts.
-- Set `RESTRICT` from verified stripping and redistribution needs; `strip` and `splitdebug` are distinct.
-- `QA_PREBUILT` suppresses broad checks, including DT_NEEDED, executable-stack, textrel/W+X, flags, pre-stripped files, and SONAME.
-- Use `QA_PREBUILT` only for manually reviewed, immutable upstream blobs, scoped to exact installed paths. `RESTRICT=strip`, not `QA_PREBUILT`, prevents stripping.
-- Audit every installed object: ELF class and machine, interpreter, `NEEDED`, SONAME, RPATH, installed path, required libc/libstdc++ symbol floors, and CPU ISA baseline.
-- Smoke-test amd64. If upstream ships an `arm64` artifact for the same release, add `~arm64` untested. Record the unverified arch in the completion report and fix arch-specific problems on report.
-- Depend only on what blobs actually link or invoke.
-- An unresolved `NEEDED` entry is a runtime defect even when QA is suppressed. Resolve it through a verified bundled layout or genuine system `RDEPEND`; never suppress it.
-- A private module may legitimately lack SONAME, but every unusual RPATH needs object-specific justification.
-- For source-built objects, fix the build, link, and install system first. Use `patchelf` only as an evidence-backed fallback and add it to `BDEPEND`.
-- A retained private blob may use a verified literal `'$ORIGIN/...'` RPATH.
-- Replace a bundled component with a system one only after verifying ABI, functionality, and launcher or configuration integration; otherwise stop.
-
-## Desktop Integration
-
-- A window gets a default icon when its Wayland `app_id` or X11 `WM_CLASS` matches no installed desktop file's basename.
-- Measure that `app_id` or `WM_CLASS` on a running instance; KWin reports it through `workspace.windowList()`. Then rename the file or add `StartupWMClass`.
-- Toolkits derive it differently: GTK3 sends `g_get_prgname()`, not the `GApplication` id, so `org.example.App.desktop` still reports `app`.
-- `--ozone-platform-hint=auto` and `--ozone-platform=wayland` are not interchangeable, and either can be the one that fails. Before changing an ozone switch, launch both ways and check which platform the build took.
-- A bundled Chromium silently ignores switches its version predates; confirm each one exists in the shipped binary.
-- `wayland` is a desktop-profile default, so a `wayland?`-guarded switch also reaches X11 users. Prefer a switch that resolves the platform at runtime over one that forces it.
-
-## OpenRC and systemd
-
-- On OpenRC, depend on `virtual/udev` or `virtual/tmpfiles` for those helpers. Neither provider ships `systemctl` or a service manager.
-- Depend on `sys-apps/systemd` only for what `systemd-utils` does not ship, such as `systemctl` or `libsystemd`.
-- That dependency blocks `elogind` and `systemd-utils`, which an OpenRC install normally has. Say so instead of restoring an any-of that `systemd-utils` cannot satisfy.
-- Do not default a `systemd` USE flag on; the profile decides, and forcing it drags systemd into an OpenRC install for an optional hook.
-- A package that installs a unit for a long-running service installs an OpenRC script too. A variant that only differs by a flag becomes a conf.d variable.
-- A template unit is one script, not one per instance: install it under the plain name and read the instance from `${RC_SVCNAME#*.}`. The admin symlinks `/etc/init.d/<name>.<instance>` to it, as `net-analyzer/nfdump` documents in its own script.
-- That one script also serves the plain unit of the same name. Without a suffix `${RC_SVCNAME#*.}` returns the service name itself, so give that case a default or refuse it with a message.
-- Take the script's shape from `net-dns/knot-resolver/files/kresd.initd-r2`: conf.d variables with defaults, `command_background` with a `pidfile`, `command_user`, `capabilities`, and `checkpath` in `start_pre`.
-- Do not add `supervisor=supervise-daemon` to emulate `Restart=`. OpenRC does not supervise by default, and a unit that says `Restart=no` must not be restarted automatically.
-- Map the unit's fields: `AmbientCapabilities` to `capabilities`, `LimitNOFILE` to `rc_ulimit`, `Environment` to `export`, `WorkingDirectory` to `directory`.
-- `RuntimeDirectory` becomes `checkpath -d` in `start_pre`; an `ExecStartPost` that waits for a path becomes `ewaitfile` in `start_post`.
-- Remove the socket in `stop_post`, as `sys-apps/dbus` does. A `start_post` that fixes its mode otherwise lands on a stale file the daemon then replaces.
-- `capabilities` takes cap_iab(3) text: `^cap_x` grants it in the ambient set and `!cap_x` drops it from the bounding set.
-- Use `required_files` for a config the daemon cannot start without. Do not require one the daemon creates itself on first run.
-- Do not set `umask` to fix one file's mode; it applies to everything the daemon creates. Fix the specific path instead.
-- `output_log` is not the default. Under `command_user`, put the file in a directory that user owns, because `start-stop-daemon` opens the redirection after dropping privilege.
-- An installed unit's `ExecStart` must name the path the ebuild installs to. `newsbin` puts the program in `/usr/sbin` while the upstream unit still says `/usr/bin`.
-- Start the service and exercise what it does: a port that answers, a socket the CLI talks to, traffic that reaches the far end. `rc-service start` returning `[ ok ]` says nothing about whether the daemon stayed up. Without an OpenRC system, install the package, record the script as untested in the completion report, and fix problems reported back against it.
-
-## New Packages
-
-- Before drafting, search this overlay and the main tree for the same project, former names, forks, and truly comparable packages.
-- Identify its fixed source artifact, license, build system, runtime files, and tested arches before drafting.
-- Take the shape from that precedent—metadata order, dependency layout, phase set, eclass stack. When upstream ships several packages, a sibling already in the main tree is the closest precedent.
-- Update `.github/workflows/overlay.toml` in the same PR for every new package, inserting the entry in `category/package` alphabetical order.
-- A dist-kernel package added at a version must appear in that version's `virtual/dist-kernel-*-r100` `||` list, and a new version needs that virtual created.
-- Leaving it out makes Portage satisfy the `PDEPEND` from a provider that is listed and install a second kernel.
-- One version's source, binary, and virtual land in one commit. They name each other, so any half alone fails `pkgcheck`.
-- List a provider only after its artifact is published.
-- Add an active `["category/package"]` table in `.github/workflows/overlay.toml` when releases are trackable, otherwise a commented `#["category/package"]` block giving the reason: live-only or synced elsewhere.
-- `acct-*`, `virtual` and `app-alternatives` packages are commented entries too, without a reason.
-- Add `files/` assets only when phases cannot generate them cleanly.
-- Stop when any of these holds:
-
-  - Licensing or redistribution is unclear.
-  - Downloads require credentials or click-through terms.
-  - Naming or category is ambiguous.
-  - Substantial patching or vendoring needs a maintainer decision.
-
-## Eclass Discovery
-
-- Prefer the local main tree at `/var/db/repos/gentoo` when present.
-- Before inheriting, read each eclass's supported EAPIs, deprecation status, pre-inherit and call-time variables, exports, phases, and defaults.
-- On an EAPI bump, re-audit the whole ebuild, including disabled USE branches, generated dependencies, dead helpers, and changed eclass defaults.
-- Define phase composition explicitly when eclasses export the same phase.
-- An override calls the eclass implementation when its documented behavior must remain. `default` invokes the EAPI default, not an eclass-exported phase.
-- Do not inherit an eclass for one helper when clear phase code and current precedent agree.
 
 ## Code Style
 
@@ -303,110 +205,6 @@ Use one standard for commit messages, PRs, comments, notes, and replies: precise
 | --- | --- |
 | 原生可执行文件移到各平台子包 | 拆成薄 loader |
 | 因为上游变更了 Go 模块路径，所以 `-ldflags` 中的导入路径需同步更新，否则注入的版本号不正确 | module 改名，相应更新 ldflags |
-
-## Commit and PR Text
-
-### Subject
-
-- Take `pkgdev`'s final English subject verbatim as the PR title. Never translate or reword it.
-- Where a PR carries more than one commit, use the subject of the commit carrying its main change.
-- A package subject is `category/package: summary`. A bump is `category/package: add NEW`, with `, drop OLD` only when dropping.
-- A package's first commit is `category/package: new package, add NEW`. Later versions of it drop the `new package` clause.
-- A non-package change instead names an eclass (`name.eclass:`) or the affected path or filename—`profiles:`, `licenses:`, `package.mask:`, this overlay's own `AGENTS.md:`—whatever lets a reader identify what changed.
-- The subject is one unwrapped line, at most 69 characters (GLEP 66) where the prefix permits.
-
-### Commit body
-
-- Add a body only when the subject cannot carry the reason; use subject / blank line / body.
-- The commit body carries only the reason. Do not narrate steps, restate the diff, or report a passing build, test, or scan.
-- Do not lecture on a mechanism a Gentoo reviewer already knows; link the upstream source instead.
-- The subject already carries the package, version, and add/drop. The body repeats none of them and states each value once.
-- Do not open the body by restating the title (no `更新到 <version>` line).
-- Give each changed dependency, phase function, patch, USE flag, `RESTRICT`, or revbump its own line, applying the causality rule above.
-- Do not invent causality the evidence lacks, or fold an unrelated fact into a parenthetical.
-- For a large rewrite or upstream restructure, name the rewritten scope instead of enumerating per change. Add a line only for an unexpected behavioral shift.
-- When upstream drove that rewrite, give one line in the form 因为上游修改了 X，所以重写 Y.
-- Put variables, atoms, commands, options, and `FEATURES` values in backticks.
-
-### PR body
-
-- Write the PR body in Chinese when the human directing the current work item writes in Chinese; otherwise use English. Never use both languages.
-- The PR body carries the same rationale as the commit body.
-- Do not report passing tests or which arches were tested; the checklist and CI attest those. A test earns a mention only when it forced a change.
-- A routine or behavior-neutral change needs only `Closes #N` when it closes an overlay issue.
-
-### Issue references and trailers
-
-- Keep overlay GitHub issues as bare `Closes #N` in the PR body; never pass their number or URL to `pkgdev commit -b/--bug` or `-c/--closes`, or rewrite them as Gentoo Bugzilla URLs.
-- For those `pkgdev` options, a bare number means a Gentoo Bugzilla ID; a non-numeric value requires a full HTTP(S) URL. `FIXED`, `OBSOLETE`, and `PKGREMOVED` apply only to Gentoo Bugzilla bugs.
-- Let `pkgdev` generate trailers. Sign off with the contributor's real identity and email, never a GitHub noreply address such as `<id>+<user>@users.noreply.github.com`.
-- Do not add AI, generated-by, or `Co-Authored-By` attribution.
-
-### Commits
-
-- Land each logical change as one clean squashed commit. In a multi-package PR that means one commit per package, never two packages combined.
-- Every commit stands alone and leaves the tree installable: keep an ebuild with its `Manifest`, `metadata.xml`, and any new `licenses/`, `files/`, or eclass it references in that same commit.
-- In a multi-commit PR, order commits so a shared prerequisite lands in or before the first commit that uses it: a new license, eclass, or depended-on package.
-- Commit with `pkgdev commit --scan false --signoff --gpg-sign`; if GPG is unavailable, omit `--gpg-sign`. Never use raw `git commit`.
-
-### Opening the PR
-
-- Keep the PR template: put the description above its marker, leave the checklist intact, and tick only checks that ran.
-- Before opening or updating a PR (`gh pr create`/`gh pr edit`), show the human the exact title, body, and files, and get confirmation for that specific PR.
-- A blanket or batch go-ahead is not per-PR confirmation, drafts included.
-- Open the PR yourself only for a routine bump: an ebuild rename plus `pkgdev manifest`, or a version variable such as a build id, with nothing else changed.
-- Any other change stops at the fork. Push the topic branch, hand the human the drafted subject and body with its compare link against `<canonical>/master`, and let them open the PR.
-
-  ```text
-  https://github.com/gentoo-zh/overlay/compare/master...<fork-owner>:<fork-repo>:<branch>
-  ```
-
-- Watch CI and fix failures from their logs rather than guessing.
-
-Non-version-bump commit example:
-
-```text
-category/package: short description
-
-Essential reason, only when the subject cannot carry it.
-Reference related bugs or issues when relevant.
-```
-
-Version-bump subjects (choose one):
-
-```text
-category/package: new package, add new_version
-```
-
-```text
-category/package: add new_version
-```
-
-```text
-category/package: add new_version, drop old_version
-```
-
-PR body examples—a routine bump, a single change, one change with two reasons, then several changes:
-
-```text
-Closes #<issue>
-```
-
-```text
-在 `RDEPEND` 中增加 `dev-libs/libfoo`，因为已安装的文件需要 `libfoo.so`。Closes #<issue>
-```
-
-```text
-因为测试会导入 `media-sound/feeluown`，但将它加入测试依赖会造成循环依赖；测试还需联网访问 YouTube Music API，无法在 `FEATURES=network-sandbox` 下运行，所以增加 `RESTRICT=test`。Closes #<issue>
-```
-
-```text
-上游 `FindLibCURL.cmake` 会在构建时通过 `FetchContent` 下载固定版本的 curl 头文件。Closes #<issue>
-
-1. 因为该下载会被 `FEATURES=network-sandbox` 阻止，所以改为离线提供：在 `SRC_URI` 加入该版本的 curl 头文件包，并通过 `-DFETCHCONTENT_SOURCE_DIR_LIBCURLHEADERS` 指向解包目录。
-2. 因为程序运行时通过 `dlopen` 加载 libcurl，所以 `RDEPEND` 增加 `net-misc/curl`。
-3. 因为程序直接链接 libfmt，所以将依赖改为 `dev-libs/libfmt:=`，使当前包在 libfmt 的 subslot 变化时重新构建。
-```
 
 ## Completion Report
 
