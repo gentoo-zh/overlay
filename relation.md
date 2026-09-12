@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-12 16:03:32 CST)
+(The last generation time: 2026-09-12 16:07:48 CST)
 
 ### Packages
 
@@ -373,7 +373,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.2.1                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.2.2                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                   |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -418,7 +418,7 @@
  dev-util/obs-build                                    | 20260910             |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.1.17              |            |                                                                            |
+                                                       | 18.1.18              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.30              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
@@ -434,7 +434,7 @@
  dev-util/pi-coding-agent-xz                           | 9999                 |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.2                | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.38.6               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.38.7               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.38.6               |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -607,7 +607,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/listen1_desktop-bin                       | 2.33.0               |            | https://listen1.github.io/listen1/                                         | one for all free music in China
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/lx-music-desktop-bin                      | 2.12.2               |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
+ media-sound/lx-music-desktop-bin                      | 2.12.3               |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/netease-cloud-music-gtk                   | 2.5.4-r1             |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -881,7 +881,7 @@
  sys-apps/pacman-mirrorlist                            | 20251021             |            | https://archlinux.org/mirrorlist/                                          | Repository list for Archlinux's binary package manager
                                                        | 20260610             |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/pnpm-bin                                     | 12.3.4               |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
+ sys-apps/pnpm-bin                                     | 12.4.1               |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999                 |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -947,7 +947,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.7.23               |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/brave-bin                                  | 1.94.121             |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+ www-client/brave-bin                                  | 1.95.101             |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 151.0.7922.173_p1-r1 |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 152.0.7977.82_p1     |            |                                                                            |
