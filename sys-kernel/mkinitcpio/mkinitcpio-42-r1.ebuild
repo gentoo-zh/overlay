@@ -52,6 +52,12 @@ src_prepare() {
 	sed -i "s|run_command('tools/dist.sh', 'get-version', check: true).stdout().strip()|'${PV}'|" \
 		meson.build || die
 	sed -i "s:/usr/lib/libkmod.so.2:/usr/$(get_libdir)/libkmod.so.2:" install/udev || die
+	# libgcc_s lives under the active gcc's libdir, resolve it when the image is built
+	local libgcc='add_binary "$(gcc-config -L | cut -d: -f1)/libgcc_s.so.1" /usr/lib/libgcc_s.so.1'
+	sed -i \
+		-e "/add_binary.*libgcc_s\.so\.1/s#.*#    ${libgcc}#" \
+		-e "s:/usr/lib/ossl-modules/legacy.so:/usr/$(get_libdir)/ossl-modules/legacy.so:" \
+		install/encrypt || die
 }
 
 src_configure() {
@@ -73,7 +79,6 @@ src_install(){
 			"${FILESDIR}"/initcpio-install-systemd > "${T}"/initcpio-install-systemd || die
 		newins "${T}"/initcpio-install-systemd systemd
 	fi
-	newins "${FILESDIR}"/initcpio-install-base base
 	insinto /usr/lib/initcpio/hooks
 	newins "${FILESDIR}"/initcpio-hook-udev udev
 	insinto /etc/mkinitcpio.d
