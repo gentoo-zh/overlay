@@ -62,13 +62,12 @@ github = "twpayne/chezmoi"
 use_latest_tag = true
 prefix = "v"
 
-# FIXME: github graphql api seems to be some confusion between chezmoi and
-# chezmoi-bin, so we disable one of them
-# ["app-admin/chezmoi-bin"]
-# source = "github"
-# github = "twpayne/chezmoi"
-# use_latest_release = true
-# prefix = "v"
+["app-admin/chezmoi-bin"]
+source = "github"
+github = "twpayne/chezmoi"
+use_latest_release = true
+prefix = "v"
+github_account = "tsln1998"
 
 ["app-admin/enpass"]
 source = "apt"
@@ -492,14 +491,12 @@ use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
 
-# FIXME: github graphql api confuses cc-switch and cc-switch-bin (same repo
-# farion1231/cc-switch), so track only the source cc-switch.
-# ["app-misc/cc-switch-bin"]
-# source = "github"
-# github = "farion1231/cc-switch"
-# use_latest_release = true
-# prefix = "v"
-# github_account = ["liangyongxiang", "gouwazi"]
+["app-misc/cc-switch-bin"]
+source = "github"
+github = "farion1231/cc-switch"
+use_latest_release = true
+prefix = "v"
+github_account = ["liangyongxiang", "gouwazi"]
 
 ["app-misc/cc-switch-cli"]
 source = "github"
@@ -555,8 +552,12 @@ github = "charmbracelet/crush"
 use_latest_release = true
 prefix = "v"
 
-# same source as app-misc/crush
-#["app-misc/crush-bin"]
+["app-misc/crush-bin"]
+source = "github"
+github = "charmbracelet/crush"
+use_latest_release = true
+prefix = "v"
+github_account = "gouwazi"
 
 ["app-misc/go-yq-bin"]
 source = "github"
@@ -1258,8 +1259,12 @@ url = "https://x.ai/cli/stable"
 regex = '^([\d.]+)$'
 github_account = "zakkaus"
 
-# same source as dev-util/herdr-bin
-#["dev-util/herdr"]
+["dev-util/herdr"]
+source = "github"
+github = "herdrdev/herdr"
+use_latest_release = true
+prefix = "v"
+github_account = "xz-dev"
 
 ["dev-util/herdr-bin"]
 source = "github"
