@@ -23,6 +23,8 @@ newver = "new_ver.json"
 
 #["acct-group/onepassword-mcp"]
 
+#["acct-group/queqiao"]
+
 #["acct-group/reframe"]
 
 #["acct-group/sing-box"]
@@ -40,6 +42,8 @@ newver = "new_ver.json"
 #["acct-user/ntpd-rs"]
 
 #["acct-user/ntpd-rs-observe"]
+
+#["acct-user/queqiao"]
 
 #["acct-user/reframe"]
 
@@ -2362,6 +2366,13 @@ github_account = ["blackteahamburger", "gouwazi"]
 #use_latest_tag = true
 #prefix = "v"
 #github_account = "Jackarain"
+
+["net-proxy/queqiao"]
+source = "github"
+github = "bojieli/queqiao"
+use_latest_release = true
+prefix = "v"
+github_account = ["irort"]
 
 # packaged from a pinned commit, no tag to compare
 #["net-proxy/qv2ray"]
