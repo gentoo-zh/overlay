@@ -7,6 +7,9 @@
 - Cite the upstream `go.mod` and the tree state on packages.gentoo.org, for example `>=dev-lang/go-1.26.5` when `go.mod` says `go 1.26.5`.
 - The `go.mod` `toolchain` line is only a suggestion under `GOTOOLCHAIN=local` and sets no floor.
 - Re-check patches and assets. Update the ebuild, `SRC_URI`, version variables, checksums, and `Manifest` together; stop when required evidence is unavailable.
+- A GitHub tag archive has no `.git`, so a build that derives its version with `git describe` fails or gets no usable version. Pass the version explicitly, as `sys-kernel/mkinitcpio` does for `meson.build`.
+- A `files/` copy of an upstream hook, unit, or script drifts. On every bump diff it against upstream's current file; `mkinitcpio`'s copied base hook installed `/init` without the executable bit until someone booted the image.
+- When the `::gentoo` snapshot emerge-on-PR uses does not yet carry a version the change depends on, keep the atom, open the PR as a draft, and rerun CI once that snapshot carries it.
 - When a bump exposes a defect, fix it in the existing ebuild and change only what the new release invalidates. Rewrite it only when the release leaves it unusable, and say what made it so.
 - Normalize the ebuild version by Gentoo rules. Preserve the literal upstream tag through `MY_PV` or an equivalent variable when needed.
 - Tracker output is only a hint: verify the real tag, artifact, and URL. `-rN` is a Gentoo revision; never derive upstream tags or filenames from `${PVR}` or `${PF}`.

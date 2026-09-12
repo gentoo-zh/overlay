@@ -87,6 +87,7 @@ Treat `master` only as an upstream-sync branch.
 - Preserve package-local style and user/toolchain flags. Keep patches and refactors narrow; remove forced optimization, hardening, LTO, stripping, and blanket `-Werror`.
 - For non-trivial work, use precedent matching the source or prebuilt model, build system, eclass stack, and runtime layout. Re-verify it against the current release.
 - Before writing the fix, find how `::gentoo` or this overlay already solves the same problem and take that form. A construct with no precedent in either tree needs a stated reason.
+- Search for that precedent instead of recalling it: `grep -rl '<eclass or construct>' "$(portageq get_repo_path / gentoo)" --include='*.ebuild'` shows who uses it today, and `git log -S'<construct>' -- '*.ebuild'` in gentoo.git shows why the tree adopted or dropped it.
 - Keep release and `9999` behavior distinct. Port applicable dependency, QA, EAPI, and phase fixes to the live ebuild.
 - A live ebuild must sort above every release the package has. `9999` is lower than a date version, so a package versioned `20240203` needs `99999999`; confirm with `python3 -c 'from portage.versions import vercmp; print(vercmp("9999", "20240203"))'` before naming the file.
 - Every `${FILESDIR}` reference must name a committed file.
@@ -108,6 +109,7 @@ Treat `master` only as an upstream-sync branch.
 ## Dependencies and Revisions
 
 - Every atom traces to evidence here: a linked SONAME, a build-file `dependency()`, `find_package`, or `pkg-config` call, a `dlopen`ed library, or a program a phase runs.
+- A launcher or `bwrap` script's external commands outside `@system` count as that evidence: find each command's provider with `qfile` on an installed system or by searching the repository. `xdg-user-dir` belongs to `x11-misc/xdg-user-dirs`, not `x11-misc/xdg-utils`.
 - Another distro's control file is not evidence.
 - Do not declare what the environment provides: `@system` members, tools an inherited eclass pulls in, or a compiler or libc floor the profile guarantees.
 - One atom per package: fold the version bound, `SLOT`, and USE constraints into a single entry.
@@ -138,13 +140,16 @@ Treat `master` only as an upstream-sync branch.
 
 ## Commands and QA
 
+- `dev-util/pkgdev` and `dev-util/pkgcheck` are required. When either is missing, stop and tell the human to `emerge` them; do not substitute `git commit`, hand-written Manifests, or a custom lint. `dev-util/github-cli` is optional: without `gh`, hand the human the compare link and let them open the PR.
 - Before treating a finding as yours, read the package's history, the previous version's result, and the pkgcheck bot's report on the PR. A finding that predates your change is pre-existing, and the completion report says so.
+- `ebuild <file> install` resolves no dependencies, so it cannot show a missing `BDEPEND`. A `fowners` to an `acct-user` in `src_install` needs that package in `BDEPEND` and in `RDEPEND`, as `acct-user.eclass` documents.
 - Iterate with the narrowest relevant package checks, and re-run the command exposing each failure.
 - Do not repeat a check that already passed on the same tree: no rebuilding what already built clean, no rerunning a scan that already passed. A rebase or a new commit makes a previous commit scan stale, and this never excuses a gate the Ebuild Policy requires.
 
 ### Manifest
 
 - Run `pkgdev manifest` when distfiles change. Pass `--distdir <writable-dir>` if the system `DISTDIR` is not user-writable.
+- Before the first download of a package payload in a work item, whether a distfile, a vendor bundle, or a release asset, report the URL and the size upstream states, and wait for approval.
 
 ### Scanning
 
@@ -175,7 +180,7 @@ Treat `master` only as an upstream-sync branch.
 ### Network results
 
 - GitHub rate limits can cause false `DeadUrl` or `RedirectedUrl` results; re-verify flagged URLs.
-- A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second network before calling a URL dead.
+- A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second vantage point, such as another mirror or a fetch through a different route, before calling a URL dead.
 - CI's `pkgcheck` runs without `--net`, so no network keyword fires there.
 - A dead `HOMEPAGE` does not block installation. A dead overlay `SRC_URI` is unfetchable because overlay distfiles are not mirrored on `distfiles.gentoo.org`.
 

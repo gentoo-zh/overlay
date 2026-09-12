@@ -12,3 +12,6 @@
 - For source-built objects, fix the build, link, and install system first. Use `patchelf` only as an evidence-backed fallback and add it to `BDEPEND`.
 - A retained private blob may use a verified literal `'$ORIGIN/...'` RPATH.
 - Replace a bundled component with a system one only after verifying ABI, functionality, and launcher or configuration integration; otherwise stop.
+- `REQUIRES_EXCLUDE` only filters the generated `REQUIRES`; it does not make a file loadable. Use it for a `NEEDED` that the unresolved-soname QA reports as a false positive: the provider in `RDEPEND` installs the requested filename under a different SONAME (`libbz2.so.1.0` from `app-arch/bzip2`), or the entry belongs to an optional plugin the program never loads without its provider. Otherwise fix the dependency or the layout; do not patch the binary to hide it.
+- A program that checks its own hash at runtime breaks when stripped. Exclude that file with `dostrip -x <path>`, as `net-proxy/flclash-bin` does; do not set `RESTRICT=strip` for the package.
+- A prebuilt .NET payload built with `dotnet-pkg-base` needs `DOTNET_PKG_COMPAT` matching the framework its `*.runtimeconfig.json` names; `games-server/vintagestory-server` installed and then failed to start on a mismatch.
