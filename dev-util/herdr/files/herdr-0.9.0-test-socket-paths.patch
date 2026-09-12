@@ -1,0 +1,37 @@
+Shorten test socket paths to fit sockaddr_un under PORTAGE_TMPDIR.
+Applies to Herdr 0.9.0.
+
+--- a/src/api/server.rs
++++ b/src/api/server.rs
+@@ -967,12 +967,12 @@
+         LOCK.get_or_init(|| Mutex::new(()))
+     }
+ 
+-    fn unique_test_path(name: &str) -> PathBuf {
++    fn unique_test_path(_name: &str) -> PathBuf {
+         let nanos = std::time::SystemTime::now()
+             .duration_since(std::time::UNIX_EPOCH)
+             .unwrap()
+             .as_nanos();
+-        std::env::temp_dir().join(format!("herdr-{name}-{}-{nanos}", std::process::id()))
++        std::env::temp_dir().join(format!("h-{}-{nanos}", std::process::id()))
+     }
+ 
+     fn read_line(stream: &mut LocalStream) -> String {
+--- a/src/session.rs
++++ b/src/session.rs
+@@ -477,12 +477,12 @@
+     }
+ 
+     #[cfg(unix)]
+-    fn unique_test_path(name: &str) -> std::path::PathBuf {
++    fn unique_test_path(_name: &str) -> std::path::PathBuf {
+         let nanos = std::time::SystemTime::now()
+             .duration_since(std::time::UNIX_EPOCH)
+             .unwrap()
+             .as_nanos();
+-        std::env::temp_dir().join(format!("herdr-{name}-{}-{nanos}", std::process::id()))
++        std::env::temp_dir().join(format!("h-{}-{nanos}", std::process::id()))
+     }
+ 
+     #[cfg(unix)]

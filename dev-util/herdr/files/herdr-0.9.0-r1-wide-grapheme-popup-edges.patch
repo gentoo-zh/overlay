@@ -1,0 +1,254 @@
+From 5f36a17bc43b8e43e666fb508568354c15a06645 Mon Sep 17 00:00:00 2001
+From: xz-dev <xiangzhedev@gmail.com>
+Date: Thu, 10 Sep 2026 16:53:34 +0800
+Subject: [PATCH] fix: blank wide graphemes straddling popup edges
+
+Overlay drawing (settings, menus, toasts, copy feedback, banners, popup
+panes) can overwrite the trailing cell of a wide grapheme from the
+underlying content while the leading cell stays just outside the
+overlay. The blit encoder suppresses the cell following any wide
+grapheme (to_skip), so the stale grapheme kept rendering across the
+overlay edge and swallowed the popup border on that row.
+
+Blank the leading half of any wide grapheme sitting immediately left of
+an overlay rect, at each painter that covers content. The check is
+geometric, so it cannot touch legitimate text and does not depend on
+the trailing-cell symbol, which is not a stable contract across server
+versions (a 0.9.0 server sends " " there once a hyperlink on screen
+forces the full-frame fallback).
+
+refs #1555
+---
+ src/client/shell/composition.rs      |   4 +
+ src/client/shell/endpoint_notices.rs |   1 +
+ src/client/shell/notifications.rs    |   2 +
+ src/client/shell/overlays.rs         |   1 +
+ src/protocol/render_ansi.rs          | 120 ++++++++++++++++++++++++++-
+ src/ui/status.rs                     |   1 +
+ 6 files changed, 127 insertions(+), 2 deletions(-)
+
+diff --git a/src/client/shell/composition.rs b/src/client/shell/composition.rs
+index 523cec8758..89ffdbc617 100644
+--- a/src/client/shell/composition.rs
++++ b/src/client/shell/composition.rs
+@@ -503,6 +503,10 @@ impl ClientShellState {
+                     &mut composed,
+                 );
+                 ratatui::widgets::Widget::render(block, geometry.outer, &mut composed);
++                crate::protocol::render_ansi::blank_wide_cells_left_of(
++                    &mut composed,
++                    geometry.outer,
++                );
+                 frame.replace_from_ratatui_buffer_preserving_effects(&composed, None);
+                 blit_pane_surface(&mut frame, &popup.frame, geometry.inner);
+                 self.hits.popup = Some(PaneHit {
+diff --git a/src/client/shell/endpoint_notices.rs b/src/client/shell/endpoint_notices.rs
+index e796d2c557..335da7082d 100644
+--- a/src/client/shell/endpoint_notices.rs
++++ b/src/client/shell/endpoint_notices.rs
+@@ -50,6 +50,7 @@ pub(super) fn render_lifecycle_banner(
+         &text,
+         Style::default().fg(color).bg(palette.surface0),
+     );
++    crate::protocol::render_ansi::blank_wide_cells_left_of(buffer, rect);
+     rect
+ }
+ 
+diff --git a/src/client/shell/notifications.rs b/src/client/shell/notifications.rs
+index b8437ea749..ff89bb14c2 100644
+--- a/src/client/shell/notifications.rs
++++ b/src/client/shell/notifications.rs
+@@ -61,6 +61,7 @@ pub(super) fn render_mobile_notice_banner(
+             Style::default().fg(palette.overlay0).bg(background),
+         );
+     }
++    crate::protocol::render_ansi::blank_wide_cells_left_of(buffer, rect);
+     rect
+ }
+ 
+@@ -174,6 +175,7 @@ pub(super) fn render_notification_card(
+             buffer,
+         );
+     }
++    crate::protocol::render_ansi::blank_wide_cells_left_of(buffer, rect);
+     rect
+ }
+ 
+diff --git a/src/client/shell/overlays.rs b/src/client/shell/overlays.rs
+index 4418c2c32e..2428c4808e 100644
+--- a/src/client/shell/overlays.rs
++++ b/src/client/shell/overlays.rs
+@@ -251,6 +251,7 @@ fn panel(
+         b[(a.x, y)].set_symbol("│").set_style(border);
+         b[(a.right() - 1, y)].set_symbol("│").set_style(border);
+     }
++    crate::protocol::render_ansi::blank_wide_cells_left_of(b, a);
+     Some(Rect::new(a.x + 1, a.y + 1, a.width - 2, a.height - 2))
+ }
+ fn popup(a: Rect, w: u16, h: u16) -> Option<Rect> {
+diff --git a/src/protocol/render_ansi.rs b/src/protocol/render_ansi.rs
+index fe3ab68fa7..34a492c2ed 100644
+--- a/src/protocol/render_ansi.rs
++++ b/src/protocol/render_ansi.rs
+@@ -31,6 +31,9 @@ use std::io::Write;
+ 
+ use unicode_width::UnicodeWidthStr;
+ 
++use ratatui::buffer::Buffer;
++use ratatui::layout::Rect;
++
+ use crate::protocol::{
+     underline_style_from_modifier, CellData, CursorState, FrameData, PaneSurfacePatchRow,
+ };
+@@ -726,10 +729,15 @@ fn repeat_ime_anchor_after_sync() -> bool {
+ 
+ /// Writes all cells in the frame (full redraw).
+ fn cell_width(cell: &CellData) -> usize {
+-    if is_halfwidth_katakana_voiced_grapheme(&cell.symbol) {
++    grapheme_display_width(&cell.symbol)
++}
++
++/// Display width of a grapheme as the blit encoder measures it.
++pub(crate) fn grapheme_display_width(symbol: &str) -> usize {
++    if is_halfwidth_katakana_voiced_grapheme(symbol) {
+         return 2;
+     }
+-    cell.symbol.width()
++    symbol.width()
+ }
+ 
+ fn is_halfwidth_katakana_voiced_grapheme(symbol: &str) -> bool {
+@@ -745,6 +753,38 @@ fn is_halfwidth_katakana_voiced_grapheme(symbol: &str) -> bool {
+         && matches!(mark, '\u{ff9e}' | '\u{ff9f}')
+ }
+ 
++/// Blanks wide graphemes whose trailing cell is covered by an overlay rect.
++///
++/// Overlay drawing can overwrite the trailing cell of a wide grapheme from the
++/// underlying content while the leading cell stays just outside the overlay
++/// (`rect.x - 1`). The blit encoder suppresses the cell following any wide
++/// grapheme (`to_skip`), so the stale grapheme would keep rendering across the
++/// overlay edge and swallow the overlay's first cell (e.g. a popup border).
++///
++/// The check is purely geometric: a wide grapheme in the column immediately
++/// left of an overlay rect always straddles that rect's edge, no matter what
++/// symbol the covered trailing cell carries. Trailing-cell symbols are not a
++/// stable contract across server versions (released servers may send `" "`
++/// instead of an empty symbol), so detecting straddles from cell content is
++/// not reliable here. Cells anywhere else are never touched.
++///
++/// Overlay painters call this with the opaque rect they just covered
++/// (including its border).
++pub(crate) fn blank_wide_cells_left_of(buffer: &mut Buffer, rect: Rect) {
++    if rect.x == 0 {
++        return;
++    }
++    let x = rect.x - 1;
++    for y in rect.y..rect.bottom() {
++        if !buffer.area.contains((x, y).into()) {
++            continue;
++        }
++        if grapheme_display_width(buffer[(x, y)].symbol()) >= 2 {
++            buffer[(x, y)].set_symbol(" ");
++        }
++    }
++}
++
+ #[derive(Clone, Copy)]
+ struct HostCursorState {
+     position: (u16, u16),
+@@ -1748,6 +1788,82 @@ mod tests {
+         assert!(output.bytes().filter(|byte| *byte == b'A').count() >= 6);
+     }
+ 
++    fn buffer_with_symbols(width: u16, symbols: &[&str]) -> Buffer {
++        let mut buffer = Buffer::empty(Rect::new(0, 0, width, 1));
++        for (x, symbol) in symbols.iter().enumerate() {
++            buffer[(x as u16, 0)].set_symbol(symbol);
++        }
++        buffer
++    }
++
++    #[test]
++    fn blank_wide_cells_left_of_blanks_only_edge_straddlers() {
++        let mut buffer = buffer_with_symbols(8, &["x", "门", "", "t", "界", "", "门", " "]);
++        blank_wide_cells_left_of(&mut buffer, Rect::new(2, 0, 3, 1));
++        assert_eq!(buffer[(0, 0)].symbol(), "x");
++        assert_eq!(buffer[(1, 0)].symbol(), " ", "edge straddler must blank");
++        assert_eq!(buffer[(2, 0)].symbol(), "");
++        assert_eq!(buffer[(3, 0)].symbol(), "t");
++        assert_eq!(buffer[(4, 0)].symbol(), "界", "inside rect is not touched");
++        assert_eq!(
++            buffer[(6, 0)].symbol(),
++            "门",
++            "away from edge is not touched"
++        );
++    }
++
++    #[test]
++    fn blank_wide_cells_left_of_ignores_trailing_cell_representation() {
++        // Released servers may send " " instead of an empty symbol in the
++        // trailing cell of a wide grapheme. The geometric check must not
++        // depend on that representation.
++        let mut buffer = buffer_with_symbols(3, &["门", " ", "t"]);
++        blank_wide_cells_left_of(&mut buffer, Rect::new(1, 0, 2, 1));
++        assert_eq!(buffer[(0, 0)].symbol(), " ");
++        assert_eq!(buffer[(1, 0)].symbol(), " ");
++        assert_eq!(buffer[(2, 0)].symbol(), "t");
++    }
++
++    #[test]
++    fn blank_wide_cells_left_of_never_touches_content_without_overlay_edge() {
++        // Anti-regression: wide graphemes away from any overlay edge must
++        // survive unchanged regardless of trailing-cell representation.
++        let mut buffer = buffer_with_symbols(3, &["门", " ", "t"]);
++        let before = buffer.clone();
++        blank_wide_cells_left_of(&mut buffer, Rect::new(0, 0, 3, 1));
++        assert_eq!(buffer, before, "rect at column 0 has no outside column");
++        let mut two_rows = Buffer::empty(Rect::new(0, 0, 2, 2));
++        two_rows[(0, 0)].set_symbol("门");
++        two_rows[(1, 0)].set_symbol("");
++        two_rows[(0, 1)].set_symbol("a");
++        two_rows[(1, 1)].set_symbol("b");
++        let before_two_rows = two_rows.clone();
++        // Rect covers row 1 only; row 0 keeps its wide pair untouched.
++        blank_wide_cells_left_of(&mut two_rows, Rect::new(1, 1, 1, 1));
++        assert_eq!(two_rows, before_two_rows);
++    }
++
++    #[test]
++    fn encoder_emits_overlay_border_after_blanking_edge_straddler() {
++        for trailing in ["", " "] {
++            let prev_buffer = buffer_with_symbols(3, &["门", trailing, " "]);
++            let prev = FrameData::from_ratatui_buffer(&prev_buffer, None);
++            let mut encoder = BlitEncoder::new();
++            let initial = encoder.encode(&prev, false);
++            encoder.commit(prev, initial);
++
++            let mut curr_buffer = buffer_with_symbols(3, &["门", "│", " "]);
++            blank_wide_cells_left_of(&mut curr_buffer, Rect::new(1, 0, 2, 1));
++            let curr = FrameData::from_ratatui_buffer(&curr_buffer, None);
++            let encoded = encoder.encode(&curr, false);
++            let output = String::from_utf8(encoded.bytes).unwrap();
++            assert!(
++                output.contains('│'),
++                "border cell must reach the terminal (trailing {trailing:?}): {output:?}"
++            );
++        }
++    }
++
+     #[test]
+     fn retained_patch_matches_full_diff_and_updates_the_encoder_baseline() {
+         let previous = make_frame(
+diff --git a/src/ui/status.rs b/src/ui/status.rs
+index e47e0f900a..131a2a7bcf 100644
+--- a/src/ui/status.rs
++++ b/src/ui/status.rs
+@@ -67,6 +67,7 @@ pub(crate) fn render_copy_feedback_buffer(
+         .style(Style::default().bg(palette.panel_bg));
+     let inner = block.inner(feedback_area);
+     block.render(feedback_area, buffer);
++    crate::protocol::render_ansi::blank_wide_cells_left_of(buffer, feedback_area);
+ 
+     if inner.height == 0 {
+         return;
