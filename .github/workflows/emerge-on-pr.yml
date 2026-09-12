@@ -66,6 +66,7 @@ jobs:
         echo "scan non-modified files: $(printf '%s\n' "${packages[@]}" | sort -u | jq -R . | jq -s .)"
 
         declare -a ignore_list=(
+            .agents
             .gitignore
             AGENTS.md
             AUTHORS
