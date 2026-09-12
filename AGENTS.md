@@ -27,6 +27,7 @@ Read a rule file before touching the surface it names. These files carry reposit
 - Prebuilt or bundled binaries: `.agents/rules/prebuilt-binaries.md`.
 - Desktop files, icons, Wayland flags: `.agents/rules/desktop-integration.md`.
 - Units, init scripts, service or `systemd` dependencies: `.agents/rules/openrc-systemd.md`.
+- `sys-kernel/gentoo-cjk-*` and `virtual/dist-kernel-*`: `.agents/rules/dist-kernels.md`.
 - Choosing or reading an eclass: `.agents/rules/eclass-discovery.md`.
 - Commit subject and body, PR title and body: `.agents/rules/pr-text.md`.
 
