@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-13 14:41:38 CST)
+(The last generation time: 2026-09-13 15:00:32 CST)
 
 ### Packages
 
@@ -942,8 +942,8 @@
    sys-kernel/cachyos-sources                          | 6.18.50              | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 7.2.4                |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.4                | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-   sys-kernel/xanmod-kernel                            | 7.2.4                | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
-   sys-kernel/xanmod-sources                           | 7.2.4                | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+   sys-kernel/xanmod-kernel                            | 7.2.5                | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+   sys-kernel/xanmod-sources                           | 7.2.5                | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                    |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646       | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
