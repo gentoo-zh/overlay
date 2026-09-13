@@ -9,6 +9,7 @@
 		<!-- CPU schedulers -->
 		<flag name="bore">CachyOS BORE scheduler, optimized for desktop responsiveness</flag>
 		<flag name="bmq">Project C BMQ scheduler</flag>
+		<flag name="pds">Project C Priority and Deadline based Skip list scheduler</flag>
 		<flag name="muqss">MuQSS CPU scheduler with interactive workload accounting</flag>
 		<flag name="rt">Select PREEMPT_RT and apply the RT i915 patch where supported</flag>
 		<flag name="rt-bore">BORE scheduler with PREEMPT_RT</flag>
@@ -18,6 +19,7 @@
 
 		<!-- Hardware-specific patches -->
 		<flag name="deckify">Apply the CachyOS handheld configuration and patches with the selected CPU scheduler</flag>
+		<flag name="aufs">Enable the AUFS union filesystem as a module</flag>
 
 		<!-- CJK framebuffer console -->
 		<flag name="cjk">Apply cjktty support for CJK text on the framebuffer console</flag>
