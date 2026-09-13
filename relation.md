@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-13 15:00:32 CST)
+(The last generation time: 2026-09-13 21:46:12 CST)
 
 ### Packages
 
@@ -457,7 +457,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vfox-bin                                     | 1.0.12               |            | https://vfox.dev/                                                          | A cross-platform version manager, extendable via plugins
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/vimls-go-bin                                 | 0.1.4                |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
+ dev-util/vimls-go-bin                                 | 0.1.5                |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/waza-bin                                     | 0.38.7               |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
