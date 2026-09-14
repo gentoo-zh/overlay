@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-14 21:31:13 CST)
+(The last generation time: 2026-09-14 23:12:49 CST)
 
 ### Packages
 
@@ -19,7 +19,7 @@
    acct-group/onepassword                              | 0-r1                 |  D, RD     |                                                                            | Password manager and secure wallet
    acct-group/onepassword-mcp                          | 0                    | RD         |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/chezmoi                                     | 2.72.1               |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
+ app-admin/chezmoi                                     | 2.72.2               |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi-bin                                 | 2.72.1               |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -613,7 +613,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/listen1_desktop-bin                       | 2.33.0               |            | https://listen1.github.io/listen1/                                         | one for all free music in China
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/lx-music-desktop-bin                      | 2.12.4               |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
+ media-sound/lx-music-desktop-bin                      | 2.12.5               |            | https://github.com/lyswhut/lx-music-desktop                                | 一个基于 electron 的音乐软件
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/netease-cloud-music-gtk                   | 2.5.4-r1             |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
