@@ -7,7 +7,7 @@ inherit xdg desktop wrapper
 
 DESCRIPTION="BiliBili third-party client developed using Flutter"
 HOMEPAGE="https://github.com/bggRGjQaUbCoE/PiliPlus"
-MY_PV="2.1.3+5315"
+MY_PV="2.1.4+5348"
 SRC_URI="https://github.com/bggRGjQaUbCoE/PiliPlus/releases/download/${PV}/PiliPlus_linux_${MY_PV}_amd64.tar.gz"
 S="${WORKDIR}"
 LICENSE="GPL-3"
