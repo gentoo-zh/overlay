@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-13 21:46:12 CST)
+(The last generation time: 2026-09-14 10:01:13 CST)
 
 ### Packages
 
@@ -600,7 +600,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/cider                                     | 4.0.9.1              |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V4)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/euphonica                                 | 0.99.5               |            | https://github.com/htkhiem/euphonica                                       | An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita
+ media-sound/euphonica                                 | 0.99.7               |            | https://github.com/htkhiem/euphonica                                       | An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/feeluown                                  | 5.1.2                |            | https://github.com/feeluown/FeelUOwn                                       | A user-friendly and hackable music player
    dev-python/fluent-runtime                           | 0.4.0                | RD         | https://github.com/projectfluent/python-fluent                             | Localization library for expressive translations
