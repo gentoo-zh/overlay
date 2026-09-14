@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-14 23:19:49 CST)
+(The last generation time: 2026-09-15 00:02:29 CST)
 
 ### Packages
 
@@ -181,7 +181,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.10.4               |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.908.40834         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.908.61612         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13               |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.0.14               |            |                                                                            |
@@ -212,7 +212,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.30.0               |            | https://github.com/Gitlawb/openclaude                                      | Open-source coding-agent CLI for cloud and local LLM providers
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.23.3               |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.23.4               |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.15                 |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -779,7 +779,7 @@
  net-proxy/clash-rs                                    | 0.10.8               |            | https://watfaq.gitbook.io/clashrs-user-manual/                             | Custom protocol, rule based network proxy
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/clash-verge-rev                             | 2.5.2                |            | https://www.clashverge.dev                                                 | GUI client based on Tauri for tailored proxy experience
-   net-proxy/mihomo                                    | 1.19.30              | BD, RD     | https://wiki.metacubex.one/                                                | Another Clash Kernel, formerly Clash.Meta
+   net-proxy/mihomo                                    | 1.19.31              | BD, RD     | https://wiki.metacubex.one/                                                | Another Clash Kernel, formerly Clash.Meta
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/clash-verge-rev-bin                         | 2.5.2                |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
                                                        | 9999                 |            |                                                                            |
