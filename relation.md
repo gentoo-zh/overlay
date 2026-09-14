@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-14 12:50:08 CST)
+(The last generation time: 2026-09-14 21:23:15 CST)
 
 ### Packages
 
@@ -440,7 +440,7 @@
  dev-util/pi-coding-agent-xz                           | 9999                 |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.2                | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.38.7               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.38.8               |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.38.7               |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -467,9 +467,9 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/rebased-bin                                   | 1.1.15               |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/sourcegit-bin                                 | 2026.17              |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
-                                                       | 2026.18              |            |                                                                            |
+ dev-vcs/sourcegit-bin                                 | 2026.18              |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.19              |            |                                                                            |
+                                                       | 2026.20              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/worktrunk-bin                                 | 0.77.0               |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -794,7 +794,7 @@
    sys-apps/pnpm                                       | 11.25.0              | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
                                                        | 12.4.1               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/flclash-bin                                 | 0.8.97               |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
+ net-proxy/flclash-bin                                 | 0.8.98               |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/hysteria                                    | 2.12.2               |            | https://github.com/HyNetworks/hysteria                                     | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                    |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
