@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-14 10:01:13 CST)
+(The last generation time: 2026-09-14 11:23:20 CST)
 
 ### Packages
 
@@ -940,7 +940,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12                |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.50              | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
-                                                       | 7.2.4                |            |                                                                            |
+                                                       | 7.2.5                |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.4                | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
    sys-kernel/xanmod-kernel                            | 7.2.5                | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
    sys-kernel/xanmod-sources                           | 7.2.5                | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
