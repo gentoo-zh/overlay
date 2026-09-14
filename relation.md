@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-14 21:24:17 CST)
+(The last generation time: 2026-09-14 21:25:21 CST)
 
 ### Packages
 
@@ -424,7 +424,7 @@
  dev-util/obs-build                                    | 20260910             |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.1.19              |            |                                                                            |
+                                                       | 18.1.21              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.30              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
@@ -448,7 +448,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/tailspin                                     | 7.0.0                |            | https://github.com/bensadeh/tailspin                                       | A log file highlighter
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/trae-ide                                     | 2.3.82600            |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
+ dev-util/trae-ide                                     | 2.3.83560            |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vcpkg-tool                                   | 2026.07.27           |            | https://github.com/microsoft/vcpkg-tool                                    | Library manager for C/C++ (tool only)
    dev-util/cmakerc                                    | 2.0.1_p20230725      | BD         | https://github.com/vector-of-bool/cmrc                                     | A Resource Compiler in a Single CMake Script
