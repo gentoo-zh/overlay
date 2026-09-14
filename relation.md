@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 00:02:29 CST)
+(The last generation time: 2026-09-15 00:08:56 CST)
 
 ### Packages
 
@@ -194,7 +194,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.94.1               |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush-bin                                    | 0.94.1               |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
+ app-misc/crush-bin                                    | 0.94.2               |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.53.4               |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.53.6               |            |                                                                            |
