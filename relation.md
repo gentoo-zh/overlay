@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 13:12:48 CST)
+(The last generation time: 2026-09-15 13:19:24 CST)
 
 ### Packages
 
@@ -872,7 +872,7 @@
  sci-mathematics/rstudio-desktop-bin                   | 2026.07.1_p147       |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
                                                        | 2026.09.0_p174       |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-ml/llama-cpp                                      | 0.4.0                |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
+ sci-ml/llama-cpp                                      | 0.4.1                |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
                                                        | 9999                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sec-keys/openpgp-keys-gentoozh                        | 20260726             |            | https://distfiles.gentoozh.org/                                            | OpenPGP keys used to sign gentoo-zh binary packages
