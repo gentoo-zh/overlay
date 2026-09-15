@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 13:27:11 CST)
+(The last generation time: 2026-09-15 13:30:10 CST)
 
 ### Packages
 
@@ -377,7 +377,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.2.2                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.2.3                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                   |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -426,7 +426,7 @@
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
                                                        | 18.1.21              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-bin                                 | 1.18.30              |            | https://opencode.ai                                                        | The open source AI coding agent
+ dev-util/opencode-bin                                 | 1.18.31              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.27.3               |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
@@ -718,7 +718,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.0.0                |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/flyctl-bin                                   | 0.4.102              |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
+ net-misc/flyctl-bin                                   | 0.4.103              |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
                                                        | 0.4.82               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                  |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
@@ -922,8 +922,8 @@
                                                        | 6.18.50              |            |                                                                            |
                                                        | 6.18.51              |            |                                                                            |
                                                        | 7.1.13               |            |                                                                            |
-                                                       | 7.2.4                |            |                                                                            |
                                                        | 7.2.5                |            |                                                                            |
+                                                       | 7.2.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 42-r2                |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -941,7 +941,7 @@
  virtual/linux-sources                                 | 3-r12                |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.50              | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 7.2.5                |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.2.4                | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+   sys-kernel/liquorix-sources                         | 7.2.6                | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
    sys-kernel/xanmod-kernel                            | 7.2.5                | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
    sys-kernel/xanmod-sources                           | 7.2.5                | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
