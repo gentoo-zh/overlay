@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 17:12:10 CST)
+(The last generation time: 2026-09-15 22:25:16 CST)
 
 ### Packages
 
@@ -298,7 +298,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-games/alcom                                       | 1.1.8                |            | https://github.com/vrc-get/vrc-get                                         | A fast open-source alternative of VRChat Creator Companion (VCC)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-games/unityhub                                    | 3.21.2               |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
+ dev-games/unityhub                                    | 3.21.3               |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/gotests                                        | 1.9.0                |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
