@@ -104,7 +104,7 @@ github_account = "liangyongxiang"
 source = "github"
 github = "openzim/libzim"
 use_latest_release = true
-github_account = ["liangyongxiang", "gouwazi"]
+github_account = ["liangyongxiang"]
 autobump = true
 
 ["app-backup/restic-rest-server"]
@@ -183,7 +183,7 @@ autobump_my_build_regex = '"version":"${PV}","execution_id":"([0-9]+)"'
 source = "github"
 github = "AppFlowy-IO/AppFlowy"
 use_latest_release = true
-github_account = ["Linerre", "gouwazi"]
+github_account = ["Linerre"]
 autobump = true
 
 ["app-editors/cursor"]
@@ -527,7 +527,6 @@ source = "github"
 github = "CherryHQ/cherry-studio"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["app-misc/claude-desktop"]
@@ -572,7 +571,6 @@ source = "github"
 github = "mikefarah/yq"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = 2
 
 ["app-misc/gpick"]
@@ -655,7 +653,7 @@ github = "anyproto/anytype-ts"
 prefix = "v"
 use_max_tag = true
 exclude_regex = ".*-(alpha|beta)"
-github_account = ["xz-dev", "gouwazi"]
+github_account = ["xz-dev"]
 autobump = true
 
 # curl https://www.feishu.cn/api/downloads | jq --raw-output '.versions.Linux_deb_x64.download_link'
@@ -728,7 +726,6 @@ source = "github"
 github = "HalFrgrd/flyline"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["app-shells/gentoo-fish-completion"]
@@ -801,7 +798,6 @@ source = "github"
 github = "readest/readest"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["app-text/xreader"]
@@ -893,7 +889,7 @@ source = "github"
 github = "google/google-java-format"
 use_latest_release = true
 prefix = "v"
-github_account = ["oatiz", "gouwazi"]
+github_account = ["oatiz"]
 autobump = true
 
 # TODO: multiple slot
@@ -1163,7 +1159,6 @@ source = "github"
 github = "astral-sh/uv"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 # kept in sync with the main tree qt, no nvchecker needed
@@ -1221,7 +1216,6 @@ source = "github"
 github = "openai/codex"
 use_latest_release = true
 prefix = "rust-v"
-github_account = "gouwazi"
 autobump = true
 
 ["dev-util/deepseek-harness"]
@@ -1272,7 +1266,6 @@ source = "github"
 github = "herdrdev/herdr"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["dev-util/hunk-bin"]
@@ -1280,7 +1273,6 @@ source = "github"
 github = "modem-dev/hunk"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 # TODO:
@@ -1289,7 +1281,6 @@ autobump = true
 source = "aur"
 aur = "jetbrains-toolbox"
 strip_release = true
-github_account = "gouwazi"
 autobump = true
 
 ["dev-util/kimi-code-bin"]
@@ -1328,7 +1319,6 @@ source = "github"
 github = "can1357/oh-my-pi"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["dev-util/opencode-bin"]
@@ -1336,14 +1326,14 @@ source = "github"
 github = "anomalyco/opencode"
 use_latest_release = true
 prefix = "v"
-github_account = ["xz-dev", "gouwazi", "peeweep"]
+github_account = ["xz-dev", "peeweep"]
 autobump = true
 
 ["dev-util/osc"]
 source = "github"
 github = "openSUSE/osc"
 use_latest_tag = true
-github_account = ["gouwazi", "peeweep"]
+github_account = ["peeweep"]
 autobump = true
 
 ["dev-util/pack-cli"]
@@ -1443,7 +1433,6 @@ source = "github"
 github = "neoclide/vimls-go"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["dev-util/waza-bin"]
@@ -1473,7 +1462,6 @@ autobump = true
 source = "github"
 github = "DetachHead/rebased"
 use_latest_release = true
-github_account = "gouwazi"
 autobump = true
 
 ["dev-vcs/sourcegit-bin"]
@@ -1481,7 +1469,6 @@ source = "github"
 github = "sourcegit-scm/sourcegit"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = 3
 
 ["dev-vcs/worktrunk-bin"]
@@ -1489,7 +1476,6 @@ source = "github"
 github = "max-sixty/worktrunk"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["games-action/vintagestory"]
@@ -1928,7 +1914,6 @@ use_latest_release = true
 prefix = "v"
 from_pattern = "(.*)-(.*)"
 to_pattern = '\1_p\2'
-github_account = "gouwazi"
 autobump = true
 
 ["media-video/davinci-resolve"]
@@ -1962,7 +1947,7 @@ github_account = ["st0nie", "gouwazi"]
 source = "aur"
 aur = "piliplus-bin"
 strip_release = true
-github_account = ["xysgh", "gouwazi"]
+github_account = ["xysgh"]
 autobump = true
 autobump_my_pv_url = "https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/tags/${PV}"
 autobump_my_pv_regex = 'PiliPlus_linux_([^"_]+)_amd64\.tar\.gz'
@@ -1996,7 +1981,6 @@ source = "github"
 github = "ycd/dstp"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["net-analyzer/dstp-bin"]
@@ -2004,7 +1988,6 @@ source = "github"
 github = "ycd/dstp"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 # dead upstream
@@ -2104,7 +2087,6 @@ github_account = "123485k"
 ["net-misc/ananta"]
 source = "pypi"
 pypi = "ananta"
-github_account = "gouwazi"
 autobump = true
 
 ["net-misc/another-redis-desktop-manager-bin"]
@@ -2154,7 +2136,6 @@ source = "github"
 github = "usebruno/bruno"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["net-misc/eternalterminal"]
@@ -2185,7 +2166,6 @@ github = "hoppscotch/releases"
 use_latest_release = true
 from_pattern = 'v(.*)-(.*)$'
 to_pattern = '\1.\2'
-github_account = "gouwazi"
 autobump = true
 
 ["net-misc/immich-go"]
@@ -2245,7 +2225,6 @@ source = "github"
 github = "reqable/reqable-app"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 ["net-misc/rustdesk"]
@@ -2299,7 +2278,6 @@ source = "github"
 github = "c0re100/qBittorrent-Enhanced-Edition"
 use_latest_release = true
 prefix = "release-"
-github_account = "gouwazi"
 autobump = true
 
 # TODO: upstream no tags
@@ -2609,7 +2587,7 @@ source = "github"
 github = "pnpm/pnpm"
 use_latest_release = true
 prefix = "v"
-github_account = ["st0nie", "gouwazi"]
+github_account = ["st0nie"]
 autobump = true
 
 ["sys-apps/pnpm-bin"]
@@ -2628,7 +2606,7 @@ source = "github"
 github = "ventoy/Ventoy"
 use_latest_release = true
 prefix = "v"
-github_account = ["st0nie", "gouwazi"]
+github_account = ["st0nie"]
 autobump = true
 
 ["sys-boot/zfsbootmenu"]
@@ -2741,7 +2719,7 @@ source = "aur"
 aur = "brave-bin"
 strip_release = true
 prefix = "1:"
-github_account = ["irort", "Zakkaus", "gouwazi"]
+github_account = ["irort", "Zakkaus"]
 autobump = true
 
 ["www-client/ungoogled-chromium-bin"]
@@ -2757,7 +2735,7 @@ autobump = true
 source = "github"
 github = "zen-browser/desktop"
 use_latest_release = true
-github_account = ["zakkaus", "gouwazi"]
+github_account = ["zakkaus"]
 autobump = true
 
 ["www-servers/darkhttpd"]
@@ -2785,7 +2763,6 @@ source = "github"
 github = "alireza0/s-ui"
 use_latest_release = true
 prefix = "v"
-github_account = "gouwazi"
 autobump = true
 
 # live package only
@@ -2874,7 +2851,7 @@ source = "github"
 github = "bikass/kora"
 use_latest_release = true
 prefix = "v"
-github_account = ["Nuralii1i", "gouwazi"]
+github_account = ["Nuralii1i"]
 autobump = true
 
 ["x11-themes/mint-themes"]
