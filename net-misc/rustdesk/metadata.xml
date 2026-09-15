@@ -6,7 +6,7 @@
     <email>ston.jia@qq.com</email>
   </maintainer>
   <use>
-    <flag name="wayland">enable wayland support</flag>
+    <flag name="wayland">Pull in PipeWire, which screen capture under Wayland needs at runtime</flag>
     <flag name="hwaccel">enable hardware-accelerated rendering support</flag>
   </use>
   <upstream>

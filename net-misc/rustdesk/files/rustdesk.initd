@@ -1,0 +1,34 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+command="/usr/share/rustdesk/rustdesk"
+command_args="--service ${RUSTDESK_OPTS}"
+command_background=true
+directory="/usr/share/rustdesk"
+pidfile="/run/${RC_SVCNAME}.pid"
+rc_ulimit="-n 100000"
+retry="TERM/30/KILL/5"
+
+description="RustDesk remote desktop service"
+
+depend() {
+	need net
+}
+
+# --service spawns --server and --tray under the desktop user, and they
+# outlive it; take down what descends from the service, nothing else
+kill_descendants() {
+	local child
+	for child in $(pgrep -P "$1"); do
+		kill_descendants "${child}"
+	done
+	[ "$1" = "${service_pid}" ] || kill -TERM "$1" 2>/dev/null
+}
+
+stop_pre() {
+	local service_pid
+	read -r service_pid < "${pidfile}" || return 0
+	kill_descendants "${service_pid}"
+	return 0
+}

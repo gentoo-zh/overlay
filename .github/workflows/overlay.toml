@@ -1235,6 +1235,16 @@ autobump = true
 # shipped inside the prelink tarball, upstream dead
 #["dev-util/execstack"]
 
+["dev-util/flutter-bin"]
+source = "github"
+github = "flutter/flutter"
+use_max_tag = true
+include_regex = "^\\d+\\.\\d+\\.\\d+$"
+github_account = "zakkaus"
+
+# version pinned by net-misc/rustdesk's flutter_rust_bridge dependency
+#["dev-util/flutter-rust-bridge-codegen"]
+
 ["dev-util/fvm"]
 source = "github"
 github = "leoafarias/fvm"
@@ -2194,6 +2204,13 @@ github = "simulot/immich-go"
 use_latest_release = true
 prefix = "v"
 github_account = "peeweep"
+
+["net-misc/localsend"]
+source = "github"
+github = "localsend/localsend"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
 
 ["net-misc/localsend-bin"]
 source = "github"
