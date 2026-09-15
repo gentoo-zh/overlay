@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 13:35:04 CST)
+(The last generation time: 2026-09-15 13:37:29 CST)
 
 ### Packages
 
@@ -181,7 +181,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.10.4               |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.908.61612         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.908.70816         |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13               |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.0.14               |            |                                                                            |
@@ -830,7 +830,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/sing-box                                    | 1.12.25              |            | https://sing-box.sagernet.org/                                             | The universal proxy platform
                                                        | 1.13.21              |            |                                                                            |
-                                                       | 1.14.0               |            |                                                                            |
+                                                       | 1.14.1               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/sing-box-windows-bin                        | 2.3.1                |            | https://github.com/xinggaoya/sing-box-windows                              | Modern sing-box desktop client
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
