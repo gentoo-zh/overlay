@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-16 01:58:29 CST)
+(The last generation time: 2026-09-16 03:16:31 CST)
 
 ### Packages
 
@@ -397,8 +397,8 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/fvm                                          | 4.1.4                |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
                                                        | 4.3.1                |            |                                                                            |
-   dev-lang/dart                                       | 3.13.0               |  D, RD     | https://dart.dev                                                           | The Dart SDK
-     dev-lang/dart-bootstrap                           | 3.13.0               | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
+   dev-lang/dart                                       | 3.13.4               |  D, RD     | https://dart.dev                                                           | The Dart SDK
+     dev-lang/dart-bootstrap                           | 3.13.4               | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gemini-cli                                   | 0.59.0               |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -792,7 +792,7 @@
                                                        | 1.27.0-r1            |            |                                                                            |
                                                        | 9999                 |            |                                                                            |
    sys-apps/pnpm                                       | 11.25.0              | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
-                                                       | 12.4.1               |            |                                                                            |
+                                                       | 12.4.2               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.8.98               |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
