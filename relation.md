@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 14:53:44 CST)
+(The last generation time: 2026-09-15 17:12:10 CST)
 
 ### Packages
 
@@ -914,6 +914,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.51              |            |                                                                            |
+                                                       | 6.18.52              |            |                                                                            |
                                                        | 7.1.13               |            |                                                                            |
                                                        | 7.2.5                |            |                                                                            |
                                                        | 7.2.6                |            |                                                                            |
