@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 00:42:58 CST)
+(The last generation time: 2026-09-15 13:12:48 CST)
 
 ### Packages
 
@@ -289,7 +289,7 @@
  dev-cpp/nameof                                        | 0.10.6               |            | https://github.com/Neargye/nameof                                          | Nameof operator for modern C++
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/tgbot-cpp                                     | 1.11                 |            | https://github.com/reo7sp/tgbot-cpp                                        | C++ library for Telegram bot API
-                                                       | 1.12.3               |            |                                                                            |
+                                                       | 1.13                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-debug/lldb-mi                                     | 0.0.1                |            | https://github.com/lldb-tools/lldb-mi                                      | LLDB Machine Interface Driver
                                                        | 9999                 |            |                                                                            |
