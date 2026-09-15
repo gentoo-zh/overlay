@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-15 13:51:22 CST)
+(The last generation time: 2026-09-15 14:19:53 CST)
 
 ### Packages
 
@@ -906,21 +906,20 @@
  sys-fs/systemd-zpool-scrub                            | 9999                 |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel                          | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
-                                                       | 6.18.50              |            |                                                                            |
                                                        | 6.18.51              |            |                                                                            |
+                                                       | 6.18.52              |            |                                                                            |
                                                        | 7.1.13               |            |                                                                            |
                                                        | 7.2.5                |            |                                                                            |
                                                        | 7.2.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.18.50              |            |                                                                            |
                                                        | 6.18.51              |            |                                                                            |
                                                        | 7.1.13               |            |                                                                            |
                                                        | 7.2.5                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.109             |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
-                                                       | 6.18.50              |            |                                                                            |
                                                        | 6.18.51              |            |                                                                            |
+                                                       | 6.18.52              |            |                                                                            |
                                                        | 7.1.13               |            |                                                                            |
                                                        | 7.2.5                |            |                                                                            |
                                                        | 7.2.6                |            |                                                                            |
@@ -932,8 +931,8 @@
  sys-power/tlpui                                       | 1.10.1               |            | https://github.com/d4nj1/TLPUI                                             | A GTK user interface for TLP written in Python
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/dist-kernel                                   | 6.12.109-r100        |            |                                                                            | Virtual to depend on any Distribution Kernel
-                                                       | 6.18.50-r100         |            |                                                                            |
                                                        | 6.18.51-r100         |            |                                                                            |
+                                                       | 6.18.52-r100         |            |                                                                            |
                                                        | 7.1.13-r100          |            |                                                                            |
                                                        | 7.2.5-r100           |            |                                                                            |
                                                        | 7.2.6-r100           |            |                                                                            |
@@ -943,7 +942,9 @@
                                                        | 7.2.5                |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.6                | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
    sys-kernel/xanmod-kernel                            | 7.2.5                | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+                                                       | 7.2.6                |            |                                                                            |
    sys-kernel/xanmod-sources                           | 7.2.5                | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+                                                       | 7.2.6                |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                    |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646       | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
