@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-16 12:01:27 CST)
+(The last generation time: 2026-09-16 12:07:38 CST)
 
 ### Packages
 
@@ -933,6 +933,8 @@
  sys-libs/elog-functions                               | 0.0.2                |            | http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html         | Compatibility functions for the log eclass functions of OpenRC
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-power/tlpui                                       | 1.10.1               |            | https://github.com/d4nj1/TLPUI                                             | A GTK user interface for TLP written in Python
+-------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
+ sys-process/witr                                      | 0.3.3                |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/dist-kernel                                   | 6.12.109-r100        |            |                                                                            | Virtual to depend on any Distribution Kernel
                                                        | 6.12.110-r100        |            |                                                                            |
