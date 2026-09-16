@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-16 15:28:02 CST)
+(The last generation time: 2026-09-16 16:29:23 CST)
 
 ### Packages
 
@@ -188,7 +188,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/claude-desktop                               | 2.110.0              |            | https://claude.com/download                                                | Desktop application for Claude.ai
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/codex-auth                                   | 0.2.10               |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
+ app-misc/codex-auth                                   | 0.3.0                |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/copilot                                      | 1.0.85               |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
