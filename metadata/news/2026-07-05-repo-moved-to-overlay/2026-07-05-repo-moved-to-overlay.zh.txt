@@ -2,7 +2,7 @@ Title: gentoo-zh overlay moved to gentoo-zh/overlay
 Author: zakkaus <zakk@gentoozh.org>
 Content-Type: text/plain
 Posted: 2026-07-05
-Revision: 1
+Revision: 2
 News-Item-Format: 1.0
 
 gentoo-zh overlay 已通过 GitHub repository transfer 从个人账号：
@@ -26,7 +26,7 @@ https://github.com/gentoo-zh/overlay
 重新添加 overlay：
 
 sudo eselect repository remove gentoo-zh
-sudo eselect repository add gentoo-zh git https://github.com/gentoo-zh/overlay.git
+sudo eselect repository enable gentoo-zh
 sudo emaint sync -r gentoo-zh
 
 或编辑 /etc/portage/repos.conf/ 下含 [gentoo-zh] 段的那个配置文件（用 eselect

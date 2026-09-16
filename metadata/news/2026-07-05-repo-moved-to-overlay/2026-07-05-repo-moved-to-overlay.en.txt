@@ -2,7 +2,7 @@ Title: gentoo-zh overlay moved to gentoo-zh/overlay
 Author: zakkaus <zakk@gentoozh.org>
 Content-Type: text/plain
 Posted: 2026-07-05
-Revision: 1
+Revision: 2
 News-Item-Format: 1.0
 
 The gentoo-zh overlay was transferred from the personal account:
@@ -30,7 +30,7 @@ address when convenient.
 Re-add the overlay:
 
 sudo eselect repository remove gentoo-zh
-sudo eselect repository add gentoo-zh git https://github.com/gentoo-zh/overlay.git
+sudo eselect repository enable gentoo-zh
 sudo emaint sync -r gentoo-zh
 
 Or edit whichever file under /etc/portage/repos.conf/ contains the [gentoo-zh]
