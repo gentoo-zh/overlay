@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-16 15:03:39 CST)
+(The last generation time: 2026-09-16 15:04:31 CST)
 
 ### Packages
 
@@ -718,7 +718,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.0.0                |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/flyctl-bin                                   | 0.4.103              |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
+ net-misc/flyctl-bin                                   | 0.4.104              |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
                                                        | 0.4.82               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                  |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
@@ -977,7 +977,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/miniserve                                 | 0.35.0               |            | https://github.com/svenstaro/miniserve                                     | a CLI tool to serve files and dirs over HTTP
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- www-servers/s-ui-bin                                  | 1.6.2                |            | https://github.com/alireza0/s-ui                                           | An advanced Web Panel • Built for SagerNet/Sing-Box
+ www-servers/s-ui-bin                                  | 1.6.3                |            | https://github.com/alireza0/s-ui                                           | An advanced Web Panel • Built for SagerNet/Sing-Box
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/woof                                      | 9999                 |            | https://www.home.unix-ag.org/simon/woof.html                               | an ad-hoc single file webserver
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
