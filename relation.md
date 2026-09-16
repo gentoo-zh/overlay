@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-16 15:04:31 CST)
+(The last generation time: 2026-09-16 15:06:19 CST)
 
 ### Packages
 
@@ -377,7 +377,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.2.3                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.2.4                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                   |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -400,7 +400,7 @@
    dev-lang/dart                                       | 3.13.4               |  D, RD     | https://dart.dev                                                           | The Dart SDK
      dev-lang/dart-bootstrap                           | 3.13.4               | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/gemini-cli                                   | 0.59.0               |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
+ dev-util/gemini-cli                                   | 0.60.0               |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gitea-cli                                    | 0.16.0               |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -424,7 +424,7 @@
  dev-util/obs-build                                    | 20260910             |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.2.0               |            |                                                                            |
+                                                       | 18.2.1               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.31              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
