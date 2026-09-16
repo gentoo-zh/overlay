@@ -2691,6 +2691,13 @@ github = "openSUSE/libsolv"
 use_latest_tag = true
 github_account = ["OriPoin", "gouwazi"]
 
+["sys-process/witr"]
+source = "github"
+github = "pranshuparmar/witr"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+
 ["sys-power/tlpui"]
 source = "github"
 github = "d4nj1/TLPUI"
