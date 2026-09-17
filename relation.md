@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-17 22:06:30 CST)
+(The last generation time: 2026-09-17 22:07:27 CST)
 
 ### Packages
 
@@ -294,7 +294,7 @@
  dev-debug/lldb-mi                                     | 0.0.1                |            | https://github.com/lldb-tools/lldb-mi                                      | LLDB Machine Interface Driver
                                                        | 9999                 |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-embedded/at32workbench                            | 1.2.05               |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
+ dev-embedded/at32workbench                            | 1.2.06               |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-games/alcom                                       | 1.1.8                |            | https://github.com/vrc-get/vrc-get                                         | A fast open-source alternative of VRChat Creator Companion (VCC)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1011,7 +1011,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-themes                                | 2.4.1                |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/mint-y-icons                               | 1.9.3                |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
+ x11-themes/mint-y-icons                               | 1.9.4                |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/nordic                                     | 2.2.0-r1             |            | https://github.com/EliverLara/Nordic                                       | Dark Gtk3.20+ theme created using the awesome Nord color pallete
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
