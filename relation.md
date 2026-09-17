@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-16 22:13:38 CST)
+(The last generation time: 2026-09-17 12:16:30 CST)
 
 ### Packages
 
@@ -409,7 +409,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr                                        | 0.9.0-r1             |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/herdr-bin                                    | 0.9.0                |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
+ dev-util/herdr-bin                                    | 0.9.1                |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.22.0               |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -424,7 +424,7 @@
  dev-util/obs-build                                    | 20260910             |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2               |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.2.1               |            |                                                                            |
+                                                       | 18.2.3               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.31              |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999                 |            |                                                                            |
@@ -471,7 +471,7 @@
                                                        | 2026.19              |            |                                                                            |
                                                        | 2026.20              |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/worktrunk-bin                                 | 0.77.0               |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
+ dev-vcs/worktrunk-bin                                 | 0.78.0               |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  games-action/vintagestory                             | 1.19.8               |            | https://www.vintagestory.at/                                               | Uncompromising wilderness survival sandbox game (requires paid account)
                                                        | 1.20.12              |            |                                                                            |
