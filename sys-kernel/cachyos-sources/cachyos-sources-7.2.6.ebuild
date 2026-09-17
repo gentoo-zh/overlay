@@ -9,12 +9,12 @@ K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
 CACHYOS_PATCHES_COMMIT="d5db2a953637445998d2b0e5ab52ea9c04860a24"
-CACHYOS_CONFIGS_COMMIT="a9073a0930149e4fffd6c48cc60daa7370ba9590"
+CACHYOS_CONFIGS_COMMIT="7269746718b4352087c1418f67e71bbf45fe3184"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="6"
+K_GENPATCHES_VER="7"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -118,8 +118,8 @@ IUSE+="
 # Scheduler patches carried in kernel-patches but unavailable for 7.2:
 # - hardened remains on 7.1.8
 # - PRJC-LFBMQ has no 7.2 patch family
-# - deckify remains on 7.2.3; its handheld patch fails on 7.2.5 drivers/acpi/battery.c
-# - bare BORE fails 8 of 23 kernel/sched/fair.c hunks on the 7.2.5 release tree
+# - deckify remains upstream, but its handheld patch does not apply to 7.2.6
+# - bare BORE is not used by packaged CachyOS variants
 REQUIRED_USE+="
 	^^ ( bore bmq pds muqss rt rt-bore eevdf )
 	server? (
@@ -219,14 +219,11 @@ src_prepare() {
 	# https://github.com/Szowisz/CachyOS-kernels/issues/35
 	eapply "${FILESDIR}/6.19.0/misc/0002-fix-autofdo-propeller-lto-thin-dist.patch"
 
-	# Clang 23 FORTIFY needs both the transfer bound and fixed slot size.
-	# https://github.com/torvalds/linux/commit/da1ea35fea67ad841f4ada28dd61b41be65e5437
-	eapply "${FILESDIR}/7.2.5-gud-tv-mode-fortify.patch"
-
 	# The 7.2.2 stable update changed a block that PRJC and MuQSS remove.
 	# Restore the patchsets' expected preimage before applying either series.
 	if use bmq || use pds || use muqss; then
 		eapply "${FILESDIR}/cachyos-sources-7.2.3-revert-empty-cpuset-floor.patch"
+		eapply "${FILESDIR}/cachyos-sources-7.2.6-sched-alt-prereq.patch"
 	fi
 
 	if use bore || use rt-bore; then

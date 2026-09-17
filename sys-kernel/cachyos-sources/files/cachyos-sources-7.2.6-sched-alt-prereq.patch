@@ -1,0 +1,13 @@
+From: gentoo-zh overlay
+Subject: [PATCH] sched: restore alternative scheduler Kconfig preimage
+
+Linux 7.2.6 added GENERIC_ALLOCATOR to SCHED_CLASS_EXT. PRJC and MuQSS
+replace the scheduler core and disable SCHED_CLASS_EXT, but their patch
+preimage predates that select. Remove it before applying either scheduler
+patch so the upstream dependency hunk applies without changing the normal
+scheduler configuration.
+
+--- a/kernel/Kconfig.preempt
++++ b/kernel/Kconfig.preempt
+@@ -171 +171,0 @@ config SCHED_CLASS_EXT
+-	select GENERIC_ALLOCATOR
