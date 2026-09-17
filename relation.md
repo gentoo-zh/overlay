@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-17 15:30:42 CST)
+(The last generation time: 2026-09-17 22:06:30 CST)
 
 ### Packages
 
@@ -377,7 +377,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1                |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.2.4                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.2.5                |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                   |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                   | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -843,7 +843,7 @@
  net-proxy/yacd-meta                                   | 0.4.0                |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/zashboard                                   | 3.22.0               |            | https://github.com/Zephyruso/zashboard                                     | The Official Mihomo Dashboard
-                                                       | 3.27.0               |            |                                                                            |
+                                                       | 3.28.0               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  net-vpn/easytier                                      | 2.6.4                |            | https://github.com/EasyTier/EasyTier                                       | A full meshed p2p VPN
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
