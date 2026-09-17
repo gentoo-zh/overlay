@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-17 12:44:31 CST)
+(The last generation time: 2026-09-17 14:05:12 CST)
 
 ### Packages
 
@@ -407,7 +407,7 @@
  dev-util/grok-build-bin                               | 0.2.118              |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
                                                        | 1.0.34               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/herdr                                        | 0.9.0-r1             |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
+ dev-util/herdr                                        | 0.9.1                |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr-bin                                    | 0.9.1                |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
