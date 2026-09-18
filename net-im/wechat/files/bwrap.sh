@@ -36,6 +36,11 @@ if [[ -z "${QT_QPA_PLATFORM:-}" ]]; then
   fi
 fi
 
+declare -a session_bus_bind
+if [[ ${DBUS_SESSION_BUS_ADDRESS:-} =~ ^unix:path=(/tmp/[^,;]+) ]] && [[ -S ${BASH_REMATCH[1]} ]]; then
+  session_bus_bind=(--ro-bind "${BASH_REMATCH[1]}" "${BASH_REMATCH[1]}")
+fi
+
 declare -a user_bwrap_flags
 if [[ -f "${XDG_CONFIG_HOME}/wechat-bwrap-flags.conf" ]]; then
   mapfile -t user_bwrap_flags < <(grep -v '^#' "${XDG_CONFIG_HOME}/wechat-bwrap-flags.conf")
@@ -72,6 +77,7 @@ exec bwrap \
   --ro-bind-try /run/systemd/userdb /run/systemd/userdb \
   --proc /proc \
   --tmpfs /tmp \
+  "${session_bus_bind[@]}" \
   --tmpfs /sys/devices/virtual \
   --ro-bind /usr/lib/flatpak-xdg-utils/xdg-open /usr/bin/xdg-open \
   --ro-bind /opt/wechat /opt/wechat \
