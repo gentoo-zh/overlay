@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-18 22:28:55 CST)
+(The last generation time: 2026-09-18 23:29:32 CST)
 
 ### Packages
 
@@ -309,7 +309,7 @@
  dev-java/oraclejdk-bin                                | 8.391                |            | https://www.oracle.com/java/                                               | Oracle's Java SE Development Kit
                                                        | 21.0.1               |            |                                                                            |
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-lang/koka-bin                                     | 3.2.3                |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
+ dev-lang/koka-bin                                     | 3.2.9                |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/lunar-calendar                               | 3.0.1                |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0                |  D         | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
