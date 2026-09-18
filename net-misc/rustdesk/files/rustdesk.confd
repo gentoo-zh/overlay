@@ -1,0 +1,2 @@
+# Extra options for rustdesk --service
+RUSTDESK_OPTS=""

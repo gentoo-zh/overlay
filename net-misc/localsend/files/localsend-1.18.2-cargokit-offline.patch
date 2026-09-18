@@ -1,0 +1,156 @@
+cargokit drives the Rust build through rustup: it runs `rustup toolchain list`
+before anything else, installs the toolchain named in rust-toolchain.toml
+(1.97.1 here), and runs cargo through `rustup run`. Portage has no rustup and
+picks the Rust with rust.eclass, so call the cargo that cargo.eclass exports
+as CARGO directly and drop the toolchain management, also in the release
+helper that compiles into the same binary. The build tool's own
+`dart pub get` runs offline: its packages are in the pub cache the ebuild
+lays out, and the network sandbox blocks pub.dev.
+
+--- a/packages/localsend_isolates/rust_builder/cargokit/build_tool/lib/src/artifacts_provider.dart
++++ b/packages/localsend_isolates/rust_builder/cargokit/build_tool/lib/src/artifacts_provider.dart
+@@ -12,7 +12,6 @@
+ import 'crate_hash.dart';
+ import 'options.dart';
+ import 'precompile_binaries.dart';
+-import 'rustup.dart';
+ import 'target.dart';
+ 
+ class Artifact {
+@@ -63,10 +62,8 @@
+       return result;
+     }
+ 
+-    final rustup = Rustup();
+     for (final target in targets) {
+       final builder = RustBuilder(target: target, environment: environment);
+-      builder.prepare(rustup);
+       _log.info('Building ${environment.crateInfo.packageName} for $target');
+       final targetDir = await builder.build();
+       // For local build accept both static and dynamic libraries.
+--- a/packages/localsend_isolates/rust_builder/cargokit/build_tool/lib/src/builder.dart
++++ b/packages/localsend_isolates/rust_builder/cargokit/build_tool/lib/src/builder.dart
+@@ -11,7 +11,6 @@
+ import 'cargo.dart';
+ import 'environment.dart';
+ import 'options.dart';
+-import 'rustup.dart';
+ import 'target.dart';
+ import 'util.dart';
+ 
+@@ -117,36 +116,16 @@
+     required this.environment,
+   });
+ 
+-  void prepare(
+-    Rustup rustup,
+-  ) {
+-    final toolchain = _getToolchainVersion(environment.manifestDir, _toolchain);
+-    if (rustup.installedTargets(toolchain) == null) {
+-      rustup.installToolchain(toolchain);
+-    }
+-    if (toolchain == 'nightly') {
+-      rustup.installRustSrcForNightly();
+-    }
+-    if (!rustup.installedTargets(toolchain)!.contains(target.rust)) {
+-      rustup.installTarget(target.rust, toolchain: toolchain);
+-    }
+-  }
+-
+   CargoBuildOptions? get _buildOptions =>
+       environment.crateOptions.cargo[environment.configuration];
+ 
+-  String get _toolchain => _buildOptions?.toolchain.name ?? 'stable';
+-
+   /// Returns the path of directory containing build artifacts.
+   Future<String> build() async {
+     final extraArgs = _buildOptions?.flags ?? [];
+     final manifestPath = path.join(environment.manifestDir, 'Cargo.toml');
+     runCommand(
+-      'rustup',
++      Platform.environment['CARGO'] ?? 'cargo',
+       [
+-        'run',
+-        _getToolchainVersion(environment.manifestDir, _toolchain),
+-        'cargo',
+         'build',
+         ...extraArgs,
+         '--manifest-path',
+@@ -198,30 +177,3 @@
+     }
+   }
+ }
+-
+-/// Regex for 'channel = "1.82.0"' capturing the version number
+-final _toolchainVersionPattern = RegExp(r'^channel\s*=\s*"([^"]+)"$');
+-
+-/// Returns the toolchain version preferring the one from the rust-toolchain.toml
+-/// found next to or above the crate's manifest directory.
+-String _getToolchainVersion(String manifestDir, String fallback) {
+-  var dir = Directory(manifestDir);
+-  for (var i = 0; i < 3; i++) {
+-    final toolchainFile = File(path.join(dir.path, 'rust-toolchain.toml'));
+-    if (toolchainFile.existsSync()) {
+-      final content = toolchainFile.readAsStringSync();
+-      for (final line in content.split('\n')) {
+-        final match = _toolchainVersionPattern.firstMatch(line.trim());
+-        if (match != null) {
+-          return match.group(1)!;
+-        }
+-      }
+-    }
+-    final parent = dir.parent;
+-    if (parent.path == dir.path) {
+-      break;
+-    }
+-    dir = parent;
+-  }
+-  return fallback;
+-}
+--- a/packages/localsend_isolates/rust_builder/cargokit/build_tool/lib/src/precompile_binaries.dart
++++ b/packages/localsend_isolates/rust_builder/cargokit/build_tool/lib/src/precompile_binaries.dart
+@@ -13,7 +13,6 @@
+ import 'cargo.dart';
+ import 'crate_hash.dart';
+ import 'options.dart';
+-import 'rustup.dart';
+ import 'target.dart';
+ 
+ final _log = Logger('precompile_binaries');
+@@ -98,8 +97,6 @@
+       androidMinSdkVersion: androidMinSdkVersion,
+     );
+ 
+-    final rustup = Rustup();
+-
+     for (final target in targets) {
+       final artifactNames = getArtifactNames(
+         target: target,
+@@ -119,7 +116,6 @@
+ 
+       final builder =
+           RustBuilder(target: target, environment: buildEnvironment);
+-      builder.prepare(rustup);
+       final res = await builder.build();
+ 
+       final assets = <CreateReleaseAsset>[];
+--- a/packages/localsend_isolates/rust_builder/cargokit/run_build_tool.sh
++++ b/packages/localsend_isolates/rust_builder/cargokit/run_build_tool.sh
+@@ -72,7 +72,7 @@
+ 
+ # Run pub get if needed.
+ if [ ! -f "$PACKAGE_HASH_FILE" ]; then
+-    "$DART" pub get --no-precompile
++    "$DART" pub get --offline --no-precompile
+     "$DART" compile kernel bin/build_tool_runner.dart
+     echo "$PACKAGE_HASH" > "$PACKAGE_HASH_FILE"
+ fi
+@@ -85,7 +85,7 @@
+ 
+ # 253 means invalid snapshot version.
+ if [ $exit_code == 253 ]; then
+-  "$DART" pub get --no-precompile
++  "$DART" pub get --offline --no-precompile
+   "$DART" compile kernel bin/build_tool_runner.dart
+   "$DART" bin/build_tool_runner.dill "$@"
+   exit_code=$?
