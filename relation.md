@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-19 18:56:05 CST)
+(The last generation time: 2026-09-19 18:56:41 CST)
 
 ### Packages
 
@@ -417,7 +417,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-code-bin                                | 2.0.1                |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kiro-cli                                     | 2.22.0               |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
+ dev-util/kiro-cli                                     | 2.22.1               |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.3                |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -966,7 +966,7 @@
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.7.23               |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/brave-bin                                  | 1.95.102             |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+ www-client/brave-bin                                  | 1.95.104             |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|----------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 151.0.7922.173_p1-r1 |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 153.0.8010.36_p1     |            |                                                                            |
