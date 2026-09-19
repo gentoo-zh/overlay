@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-19 22:40:23 CST)
+(The last generation time: 2026-09-20 03:31:49 CST)
 
 ### Packages
 
@@ -415,7 +415,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.8.1.88030        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kimi-code-bin                                | 2.0.1              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
+ dev-util/kimi-code-bin                                | 2.0.2              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kiro-cli                                     | 2.22.1             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
