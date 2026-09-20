@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-20 21:44:55 CST)
+(The last generation time: 2026-09-20 22:01:04 CST)
 
 ### Packages
 
@@ -509,7 +509,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gui-apps/crystal-dock                                 | 2.16               |            | https://github.com/dangvd/crystal-dock                                     | Cool dock (desktop panel) for Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- gui-apps/tux-manager                                  | 1.0.7              |            | https://github.com/benapetr/TuxManager                                     | A Linux Task Manager alternative built with Qt6
+ gui-apps/tux-manager                                  | 1.0.8              |            | https://github.com/benapetr/TuxManager                                     | A Linux Task Manager alternative built with Qt6
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  kde-misc/plasma-applet-netspeed-widget                | 3.1                |            | https://store.kde.org/p/998895/                                            | Plasma 5 widget that displays the currently used network bandwidth
                                                        | 9999               |            |                                                                            |
