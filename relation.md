@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-20 22:17:04 CST)
+(The last generation time: 2026-09-20 22:23:10 CST)
 
 ### Packages
 
@@ -51,7 +51,7 @@
                                                        | 20260812           |            |                                                                            |
                                                        | 20260911           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-dicts/fcitx-pinyin-sougou-dict                    | 20260520           |            | https://github.com/blackteahamburger/fcitx5-pinyin-sougou-dict             | Sougou Pinyin dictionary for Fcitx5 and RIME
+ app-dicts/fcitx-pinyin-sougou-dict                    | 20260920           |            | https://github.com/blackteahamburger/fcitx5-pinyin-sougou-dict             | Sougou Pinyin dictionary for Fcitx5 and RIME
    app-i18n/ibus-rime                                  | 9999               | RD         | https://rime.im/                                                           | Rime Input Method Engine for IBus Framework
    app-text/imewlconverter                             | 3.4.3              | BD         | https://github.com/studyzy/imewlconverter                                  | An open source and free input method dictionary conversion program
                                                        | 9999               |            |                                                                            |
