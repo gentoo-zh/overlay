@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-22 00:15:52 CST)
+(The last generation time: 2026-09-22 00:52:59 CST)
 
 ### Packages
 
@@ -930,13 +930,13 @@
                                                        | 7.2.5              |            |                                                                            |
                                                        | 7.2.6              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-sources                         | 6.12.109           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
-                                                       | 6.12.110           |            |                                                                            |
+ sys-kernel/gentoo-cjk-sources                         | 6.12.110           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 6.12.111           |            |                                                                            |
                                                        | 6.18.51            |            |                                                                            |
                                                        | 6.18.52            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
-                                                       | 7.2.5              |            |                                                                            |
                                                        | 7.2.6              |            |                                                                            |
+                                                       | 7.2.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 42-r2              |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
