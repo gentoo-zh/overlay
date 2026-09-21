@@ -2790,6 +2790,13 @@ use_latest_release = true
 prefix = "v"
 github_account = "vowstar"
 
+["x11-misc/computer-use-linux"]
+source = "github"
+github = "agent-sh/computer-use-linux"
+use_latest_release = true
+prefix = "v"
+github_account = "vowstar"
+
 # live package only
 #["x11-misc/extramaus"]
 

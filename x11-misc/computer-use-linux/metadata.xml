@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>vowstar@gmail.com</email>
+		<name>Huang Rui</name>
+	</maintainer>
+	<longdescription lang="en">
+		computer-use-linux is a Model Context Protocol server that lets an
+		agent operate a Linux desktop. It reads the AT-SPI accessibility tree
+		for semantic element selection, targets windows through the compositor
+		specific interfaces of GNOME, KWin, Hyprland, i3 and COSMIC, takes
+		screenshots through the desktop portal, and synthesises input with the
+		RemoteDesktop portal, ydotool or xdotool. Wayland works through the
+		portals, X11 is supported on a best-effort basis.
+	</longdescription>
+	<longdescription lang="zh">
+		computer-use-linux 是一个 Model Context Protocol 服务程序，让智能体能够
+		操作 Linux 桌面。它通过 AT-SPI 无障碍树做语义化元素定位，针对 GNOME、KWin、
+		Hyprland、i3 和 COSMIC 各自的合成器接口控制窗口，借助桌面 portal 截屏，
+		并使用 RemoteDesktop portal、ydotool 或 xdotool 合成输入。Wayland 通过
+		portal 支持，X11 按尽力而为的方式支持。
+	</longdescription>
+	<upstream>
+		<remote-id type="github">agent-sh/computer-use-linux</remote-id>
+		<bugs-to>https://github.com/agent-sh/computer-use-linux/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
