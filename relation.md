@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-21 15:45:16 CST)
+(The last generation time: 2026-09-21 15:46:01 CST)
 
 ### Packages
 
@@ -471,11 +471,11 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/rebased-bin                                   | 1.1.17             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/sourcegit-bin                                 | 2026.18            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
-                                                       | 2026.19            |            |                                                                            |
+ dev-vcs/sourcegit-bin                                 | 2026.19            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.20            |            |                                                                            |
+                                                       | 2026.21            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/worktrunk-bin                                 | 0.78.0             |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
+ dev-vcs/worktrunk-bin                                 | 0.79.0             |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-action/vintagestory                             | 1.19.8             |            | https://www.vintagestory.at/                                               | Uncompromising wilderness survival sandbox game (requires paid account)
                                                        | 1.20.12            |            |                                                                            |
