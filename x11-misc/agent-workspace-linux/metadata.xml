@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>vowstar@gmail.com</email>
+		<name>Huang Rui</name>
+	</maintainer>
+	<longdescription lang="en">
+		agent-workspace-linux is a Model Context Protocol server that gives an
+		agent a private X11 desktop to work in. Each workspace is a separate
+		Xvfb display with a window manager, a control socket and a floating
+		viewer, so apps launched into it do not attach to the user session.
+		The server observes a workspace through screenshots and window
+		listing, drives it with synthetic input, and can run a browser against
+		an isolated profile. An optional permission ceiling restricts network
+		access, mounts and launched programs, and is enforced with bubblewrap
+		when it is available.
+	</longdescription>
+	<longdescription lang="zh">
+		agent-workspace-linux 是一个 Model Context Protocol 服务程序，为智能体提供
+		一个私有的 X11 桌面。每个工作区是一套独立的 Xvfb 显示、窗口管理器、控制
+		socket 和浮动查看器，因此其中启动的程序不会接入用户的会话。服务程序通过
+		截图和窗口列表观察工作区，用合成输入驱动它，并能以隔离的配置文件运行浏览器。
+		可选的权限上限用于限制网络访问、挂载和可启动的程序，在 bubblewrap 可用时
+		由其强制执行。
+	</longdescription>
+	<upstream>
+		<remote-id type="github">agent-sh/agent-workspace-linux</remote-id>
+		<bugs-to>https://github.com/agent-sh/agent-workspace-linux/issues</bugs-to>
+	</upstream>
+</pkgmetadata>

@@ -2802,6 +2802,13 @@ debianpkg = "9menu"
 from_pattern = "-(\\d+)"
 to_pattern = ""
 
+["x11-misc/agent-workspace-linux"]
+source = "github"
+github = "agent-sh/agent-workspace-linux"
+use_latest_release = true
+prefix = "v"
+github_account = "vowstar"
+
 # live package only
 #["x11-misc/extramaus"]
 
