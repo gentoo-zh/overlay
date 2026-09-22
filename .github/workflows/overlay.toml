@@ -57,7 +57,7 @@ pkg = "1password"
 mirror = "https://downloads.1password.com/linux/debian/amd64"
 suite = "stable"
 # strip_release = true
-github_account = ["yangmame", "peeweep", "gouwazi"]
+github_account = ["yangmame", "gouwazi"]
 # autobump off: install needs acct-group/onepassword, which the engine lacks
 
 ["app-admin/chezmoi"]
@@ -203,7 +203,6 @@ source = "github"
 github = "microsoft/edit"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["app-editors/kiro"]
 source = "regex"
@@ -689,7 +688,7 @@ source = "github"
 github = "obsidianmd/obsidian-releases"
 use_max_tag = true
 prefix = "v"
-github_account = ["peeweep", "zakkaus"]
+github_account = ["zakkaus"]
 autobump = true
 
 ["app-office/siyuan-bin"]
@@ -912,7 +911,6 @@ pkg = "dart"
 mirror = "https://storage.googleapis.com/download.dartlang.org/linux/debian"
 suite = "stable"
 strip_release = true
-github_account = "peeweep"
 
 # Version follows dev-lang/dart.
 #["dev-lang/dart-bootstrap"]
@@ -1173,7 +1171,6 @@ source = "github"
 github = "sheerun/filelock"
 use_latest_tag = true
 prefix = "v"
-github_account = "peeweep"
 
 ["dev-util/antigravity-cli"]
 source = "github"
@@ -1237,7 +1234,6 @@ autobump = true
 source = "github"
 github = "leoafarias/fvm"
 use_latest_release = true
-github_account = "peeweep"
 
 ["dev-util/gemini-cli"]
 source = "regex"
@@ -1315,7 +1311,6 @@ github_account = "semes1"
 source = "github"
 github = "openSUSE/obs-build"
 use_latest_tag = true
-github_account = "peeweep"
 autobump = true
 
 ["dev-util/oh-my-pi-bin"]
@@ -1330,14 +1325,13 @@ source = "github"
 github = "anomalyco/opencode"
 use_latest_release = true
 prefix = "v"
-github_account = ["xz-dev", "peeweep"]
+github_account = ["xz-dev"]
 autobump = true
 
 ["dev-util/osc"]
 source = "github"
 github = "openSUSE/osc"
 use_latest_tag = true
-github_account = ["peeweep"]
 autobump = true
 
 ["dev-util/pack-cli"]
@@ -1387,7 +1381,6 @@ autobump = true
 source = "jq"
 url = "https://dl.reasonix.io/latest/latest.json"
 filter = '.version | ltrimstr("v")'
-github_account = "peeweep"
 autobump = true
 
 ["dev-util/redpanda-cpp"]
@@ -1459,7 +1452,6 @@ source = "github"
 github = "GitoxideLabs/gitoxide"
 use_max_tag = true
 prefix = "v"
-github_account = "peeweep"
 autobump = true
 
 ["dev-vcs/rebased-bin"]
@@ -1964,7 +1956,7 @@ source = "github"
 github = "tsukinaha/tsukimi"
 use_latest_release = true
 prefix = "v"
-github_account = ["peeweep", "irort"]
+github_account = ["irort"]
 
 ["media-video/wiliwili"]
 source = "github"
@@ -2011,7 +2003,6 @@ source = "github"
 github = "XTLS/RealiTLScanner"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-dns/ddns-go"]
 source = "github"
@@ -2025,7 +2016,6 @@ source = "github"
 github = "ameshkov/dnslookup"
 use_latest_tag = true
 prefix = "v"
-github_account = "peeweep"
 
 # live package only
 #["net-dns/dnsmasq-china-list"]
@@ -2035,7 +2025,6 @@ source = "github"
 github = "natesales/q"
 use_latest_tag = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-im/dingtalk"]
 source = "httpheader"
@@ -2162,7 +2151,6 @@ source = "github"
 github = "MetaCubeX/geo"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-misc/hoppscotch-bin"]
 source = "github"
@@ -2177,7 +2165,6 @@ source = "github"
 github = "simulot/immich-go"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-misc/localsend-bin"]
 source = "github"
@@ -2198,7 +2185,6 @@ source = "github"
 github = "pendulum-project/ntpd-rs"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-misc/pcmanx-gtk2"]
 source = "github"
@@ -2340,7 +2326,7 @@ source = "github"
 github = "chen08209/FlClash"
 use_latest_release = true
 prefix = "v"
-github_account = ["yangmame", "peeweep"]
+github_account = ["yangmame"]
 autobump = true
 
 ["net-proxy/hysteria"]
@@ -2361,7 +2347,7 @@ source = "github"
 github = "MetaCubeX/mihomo"
 use_latest_release = true
 prefix = "v"
-github_account = ["st0nie", "peeweep"]
+github_account = ["st0nie"]
 autobump = true
 
 ["net-proxy/naiveproxy-bin"]
@@ -2404,14 +2390,13 @@ github = "SagerNet/serenity"
 use_latest_tag = true
 from_pattern = '^v?(\d+\.\d+\.\d+)-(.+)\.(\d+)$'
 to_pattern = '\1_\2\3'
-github_account = "peeweep"
 
 ["net-proxy/shadowsocks-rust"]
 source = "github"
 github = "shadowsocks/shadowsocks-rust"
 use_latest_release = true
 prefix = "v"
-github_account = ["aieu", "peeweep"]
+github_account = ["aieu"]
 
 ["net-proxy/sing-box"]
 source = "github"
@@ -2482,21 +2467,18 @@ source = "github"
 github = "EasyTier/EasyTier"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-vpn/netbird"]
 source = "github"
 github = "netbirdio/netbird"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-vpn/rathole"]
 source = "github"
 github = "rathole-org/rathole"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["net-vpn/sstp-server"]
 source = "github"
@@ -2553,7 +2535,7 @@ url = "https://www.rstudio.org/links/check_for_update?version=1.0.0&os=linux"
 regex = 'update-version=([\d.]+%2B\d+)'
 from_pattern = '(.*)%2B(\d+)'
 to_pattern = '\1_p\2'
-github_account = ["zakkaus", "peeweep"]
+github_account = ["zakkaus"]
 autobump = true
 
 ["sci-ml/llama-cpp"]
@@ -2774,7 +2756,6 @@ source = "github"
 github = "svenstaro/miniserve"
 use_latest_release = true
 prefix = "v"
-github_account = "peeweep"
 
 ["www-servers/s-ui-bin"]
 source = "github"
