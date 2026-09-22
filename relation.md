@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-22 22:18:30 CST)
+(The last generation time: 2026-09-22 22:26:33 CST)
 
 ### Packages
 
@@ -914,16 +914,15 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel                          | 6.12.109           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
-                                                       | 6.12.110           |            |                                                                            |
+ sys-kernel/gentoo-cjk-kernel                          | 6.12.110           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.12.111           |            |                                                                            |
                                                        | 6.18.51            |            |                                                                            |
                                                        | 6.18.52            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.6              |            |                                                                            |
                                                        | 7.2.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.109           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.12.110           |            |                                                                            |
+ sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.110           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.51            |            |                                                                            |
                                                        | 6.18.52            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
@@ -945,8 +944,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-process/witr                                      | 0.3.3              |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/dist-kernel                                   | 6.12.109-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
-                                                       | 6.12.110-r100      |            |                                                                            |
+ virtual/dist-kernel                                   | 6.12.110-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 6.12.111-r100      |            |                                                                            |
                                                        | 6.18.51-r100       |            |                                                                            |
                                                        | 6.18.52-r100       |            |                                                                            |
                                                        | 7.1.13-r100        |            |                                                                            |
