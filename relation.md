@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-22 22:28:02 CST)
+(The last generation time: 2026-09-22 22:37:54 CST)
 
 ### Packages
 
@@ -782,7 +782,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/clash-rs                                    | 0.10.8             |            | https://watfaq.gitbook.io/clashrs-user-manual/                             | Custom protocol, rule based network proxy
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/clash-verge-rev                             | 2.5.4              |            | https://www.clashverge.dev                                                 | GUI client based on Tauri for tailored proxy experience
+ net-proxy/clash-verge-rev                             | 2.5.5              |            | https://www.clashverge.dev                                                 | GUI client based on Tauri for tailored proxy experience
    net-proxy/mihomo                                    | 1.19.31            | BD, RD     | https://wiki.metacubex.one/                                                | Another Clash Kernel, formerly Clash.Meta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/clash-verge-rev-bin                         | 2.5.5              |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
@@ -916,14 +916,13 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel                          | 6.12.110           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
                                                        | 6.12.111           |            |                                                                            |
-                                                       | 6.18.51            |            |                                                                            |
                                                        | 6.18.52            |            |                                                                            |
+                                                       | 6.18.53            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.6              |            |                                                                            |
                                                        | 7.2.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.110           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.18.51            |            |                                                                            |
                                                        | 6.18.52            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.6              |            |                                                                            |
@@ -946,8 +945,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/dist-kernel                                   | 6.12.110-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
                                                        | 6.12.111-r100      |            |                                                                            |
-                                                       | 6.18.51-r100       |            |                                                                            |
                                                        | 6.18.52-r100       |            |                                                                            |
+                                                       | 6.18.53-r100       |            |                                                                            |
                                                        | 7.1.13-r100        |            |                                                                            |
                                                        | 7.2.6-r100         |            |                                                                            |
                                                        | 7.2.7-r100         |            |                                                                            |
@@ -994,6 +993,8 @@
  x11-misc/9menu                                        | 1.11               |            | https://packages.debian.org/source/sid/9menu                               | Create X menus from the shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/agent-workspace-linux                        | 0.3.3              |            | https://github.com/agent-sh/agent-workspace-linux                          | Isolated X11 workspaces in which an agent runs and observes apps
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ x11-misc/computer-use-linux                           | 0.7.1              |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/extramaus                                    | 3                  |            | https://aur.archlinux.org/packages/extramaus                               | workaround to always show mouse cursor under x11
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
