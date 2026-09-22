@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-22 21:21:23 CST)
+(The last generation time: 2026-09-22 21:24:17 CST)
 
 ### Packages
 
@@ -958,10 +958,11 @@
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 7.2.6              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.6              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+                                                       | 7.2.7              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.5              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.6              |            |                                                                            |
-   sys-kernel/xanmod-sources                           | 7.2.5              | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
-                                                       | 7.2.6              |            |                                                                            |
+   sys-kernel/xanmod-sources                           | 7.2.6              | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+                                                       | 7.2.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
