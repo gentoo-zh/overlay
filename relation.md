@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-22 00:54:34 CST)
+(The last generation time: 2026-09-22 20:34:54 CST)
 
 ### Packages
 
@@ -993,6 +993,8 @@
  x11-libs/glbinding                                    | 3.5.0              |            | https://glbinding.org/                                                     | A C++ binding for the OpenGL API
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/9menu                                        | 1.11               |            | https://packages.debian.org/source/sid/9menu                               | Create X menus from the shell
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ x11-misc/agent-workspace-linux                        | 0.3.3              |            | https://github.com/agent-sh/agent-workspace-linux                          | Isolated X11 workspaces in which an agent runs and observes apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/extramaus                                    | 3                  |            | https://aur.archlinux.org/packages/extramaus                               | workaround to always show mouse cursor under x11
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
