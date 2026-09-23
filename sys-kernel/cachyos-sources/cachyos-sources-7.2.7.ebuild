@@ -8,13 +8,13 @@ EXTRAVERSION="-cachyos"
 K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
-CACHYOS_PATCHES_COMMIT="d5db2a953637445998d2b0e5ab52ea9c04860a24"
-CACHYOS_CONFIGS_COMMIT="7269746718b4352087c1418f67e71bbf45fe3184"
+CACHYOS_PATCHES_COMMIT="99064837d235f63a1fcd12625258f82bcf94c059"
+CACHYOS_CONFIGS_COMMIT="bd534465e6b8a6fe4483b0ee2c28cbaf00a9b285"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="7"
+K_GENPATCHES_VER="8"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
