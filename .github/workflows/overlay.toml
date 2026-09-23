@@ -1128,6 +1128,13 @@ github = "ContinuumIO/pycosat"
 use_latest_tag = true
 github_account = "OriPoin"
 
+["dev-python/pygls"]
+source = "github"
+github = "openlawlibrary/pygls"
+use_latest_tag = true
+prefix = "v"
+github_account = "Freed-Wu"
+
 ["dev-python/pypinyin"]
 source = "github"
 github = "mozillazg/python-pinyin"
