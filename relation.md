@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-23 22:56:35 CST)
+(The last generation time: 2026-09-23 22:57:16 CST)
 
 ### Packages
 
@@ -59,7 +59,7 @@
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.0.20251223     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
                                                        | 0.3.0.20260416     |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.15.1             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.16.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.5.5              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -389,7 +389,7 @@
        app-crypt/archlinux-keyring                     | 20251116           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
                                                        | 20260909           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/asdf-vm                                      | 0.20.0             |            | https://github.com/asdf-vm/asdf                                            | Manage all your runtime versions with one tool
+ dev-util/asdf-vm                                      | 0.20.2             |            | https://github.com/asdf-vm/asdf                                            | Manage all your runtime versions with one tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/binsider                                     | 0.3.2              |            | https://binsider.dev                                                       | Analyze ELF binaries like a boss
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -409,7 +409,7 @@
  dev-util/gitea-cli                                    | 0.16.0             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/grok-build-bin                               | 0.2.118            |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
-                                                       | 1.0.40             |            |                                                                            |
+                                                       | 1.0.41             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr                                        | 0.9.1              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1016,7 +1016,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/termius                                     | 10.1.0             |            | https://termius.com/download/linux                                         | Desktop SSH Client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-terms/tty7-bin                                    | 26.9.2             |            | https://tty7.io/                                                           | Terminal workbench with persistent sessions, SSH, and coding agent integration
+ x11-terms/tty7-bin                                    | 26.9.3             |            | https://tty7.io/                                                           | Terminal workbench with persistent sessions, SSH, and coding agent integration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/wezterm                                     | 99999999           |            | https://wezterm.org/                                                       | A GPU-accelerated cross-platform terminal emulator and multiplexer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
