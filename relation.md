@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-23 22:44:55 CST)
+(The last generation time: 2026-09-23 22:56:35 CST)
 
 ### Packages
 
@@ -232,7 +232,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/z-library                                    | 3.1.0              |            | https://z-lib.fm/z-access                                                  | Z-library application
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/anytype-bin                                | 0.56.5             |            | https://anytype.io                                                         | A notebook based on p2p network
+ app-office/anytype-bin                                | 0.57.0             |            | https://anytype.io                                                         | A notebook based on p2p network
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/bytedance-feishu                           | 7.72.23            |            | https://www.feishu.cn/download                                             | 飞书（Feishu） 飞书整合即时消息、日历、音视频会议、云文档、工作台等功能于一体，成就团队和个人，更高效、更愉悦。
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -439,7 +439,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pack-cli-bin                                 | 0.40.9             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pi-coding-agent-bin                          | 0.87.0             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
+ dev-util/pi-coding-agent-bin                          | 0.87.1             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.2              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
