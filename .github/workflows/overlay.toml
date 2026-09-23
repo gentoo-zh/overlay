@@ -1409,6 +1409,12 @@ github = "bensadeh/tailspin"
 use_latest_release = true
 github_account = "liangyongxiang"
 
+["dev-util/termux-language-server"]
+source = "github"
+github = "termux/termux-language-server"
+use_latest_tag = true
+github_account = "Freed-Wu"
+
 ["dev-util/trae-ide"]
 source = "regex"
 url = "https://api.trae.cn/icube/api/v1/native/version/trae/cn/latest"
