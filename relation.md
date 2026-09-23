@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-23 20:51:11 CST)
+(The last generation time: 2026-09-23 22:25:57 CST)
 
 ### Packages
 
@@ -381,7 +381,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.2.8              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.2.9              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -726,7 +726,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.0.0              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/flyctl-bin                                   | 0.4.105            |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
+ net-misc/flyctl-bin                                   | 0.4.106            |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
                                                        | 0.4.82             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
