@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-23 17:43:10 CST)
+(The last generation time: 2026-09-23 20:51:11 CST)
 
 ### Packages
 
@@ -451,6 +451,10 @@
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                              | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/tailspin                                     | 7.0.0              |            | https://github.com/bensadeh/tailspin                                       | A log file highlighter
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-util/termux-language-server                       | 0.1.12             |            | https://github.com/termux/termux-language-server                           | A language server for some specific Bash scripts
+   dev-python/lsp-tree-sitter                          | 0.2.19             | RD         | https://github.com/neomutt/lsp-tree-sitter                                 | A library to create language servers
+     dev-python/pygls                                  | 2.1.1              | RD         | https://github.com/openlawlibrary/pygls                                    | A pythonic generic language server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/trae-ide                                     | 2.3.87416          |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
