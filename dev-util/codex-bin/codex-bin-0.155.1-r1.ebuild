@@ -31,6 +31,7 @@ REQUIRED_USE="elibc_glibc"
 
 RDEPEND="
 	!dev-util/codex
+	>=sys-apps/bubblewrap-0.11.2
 	>=sys-libs/glibc-2.38
 	sys-libs/ncurses:0/6
 "
