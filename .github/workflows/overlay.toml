@@ -1075,6 +1075,12 @@ use_latest_release = true
 prefix = "v"
 github_account = "wgjak47"
 
+["dev-python/lsp-tree-sitter"]
+source = "github"
+github = "neomutt/lsp-tree-sitter"
+use_latest_tag = true
+github_account = "Freed-Wu"
+
 ["dev-python/menuinst"]
 source = "github"
 github = "conda/menuinst"

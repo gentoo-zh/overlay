@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <name>Wu, Zhenyu</name>
+    <email>wuzhenyu@ustc.edu</email>
+  </maintainer>
+  <upstream>
+    <bugs-to>https://github.com/neomutt/lsp-tree-sitter/issues</bugs-to>
+    <remote-id type="github">neomutt/lsp-tree-sitter</remote-id>
+    <remote-id type="pypi">lsp-tree-sitter</remote-id>
+  </upstream>
+</pkgmetadata>
