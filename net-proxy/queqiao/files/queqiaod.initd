@@ -1,0 +1,20 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+: ${QUEQIAO_USER:=queqiao}
+: ${QUEQIAO_GROUP:=queqiao}
+
+command="/usr/bin/queqiaod"
+command_args="server ${QUEQIAOD_ARGS}"
+command_background="yes"
+command_user="${QUEQIAO_USER}:${QUEQIAO_GROUP}"
+pidfile="/run/queqiaod.pid"
+
+capabilities="^cap_net_bind_service"
+rc_ulimit="-u 4096 -n 65536"
+
+depend() {
+    need net
+    after local
+}

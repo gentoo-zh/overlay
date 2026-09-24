@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit go-module systemd
+inherit go-module systemd readme.gentoo-r1
 
 DESCRIPTION="Self-hosted WAN optimization proxy for difficult long-haul links"
 HOMEPAGE="https://github.com/bojieli/queqiao"
@@ -46,4 +46,12 @@ src_install() {
 	doins "${FILESDIR}/queqiaod.env"
 
 	systemd_dounit deploy/queqiaod.service
+	newinitd "${FILESDIR}/queqiaod.initd" queqiaod
+	newconfd "${FILESDIR}/queqiaod.confd" queqiaod
+
+	readme.gentoo_create_doc
+}
+
+pkg_postinst() {
+	readme.gentoo_print_elog
 }

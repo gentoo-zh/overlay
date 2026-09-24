@@ -1,0 +1,13 @@
+Notes:
+  Before starting the queqiaod service, please complete
+the steps to initialize the trusted domains.
+
+  Example:
+
+    # sudo -u queqiao /usr/bin/queqiaod provider init \
+    --state /var/lib/queqiao/provider \
+    --name "Example Network" \
+    --endpoint gateway.example.net:443
+
+  For detailed information, please refer to 
+https://github.com/bojieli/queqiao/blob/main/docs/DEPLOYING.md#install-the-gateway
