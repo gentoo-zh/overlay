@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-25 22:21:11 CST)
+(The last generation time: 2026-09-25 22:22:35 CST)
 
 ### Packages
 
@@ -173,7 +173,7 @@
  app-i18n/zh-autoconvert                               | 0.3.16_p11         |            | https://packages.debian.org/stable/source/zh-autoconvert                   | Chinese HZ/GB/BIG5/UNI/UTF7/UTF8 encodings auto-converter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/bcompare                                     | 4.4.7.28397        |            | https://www.scootersoftware.com/                                           | Beyond Compare -- Compare, sync, and merge files and folders
-                                                       | 5.2.5.32528        |            |                                                                            |
+                                                       | 5.2.6.32774        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/bilihud                                      | 9999               |            | https://github.com/locez/bilihud                                           | B站弹幕阅读器 - 一个可以在游戏全屏时显示弹幕的Qt应用程序
    dev-python/pure-protobuf                            | 3.1.5              | RD         | https://github.com/eigenein/protobuf                                       | A pure python implementation of google protobuf
