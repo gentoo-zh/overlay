@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-25 15:41:26 CST)
+(The last generation time: 2026-09-25 15:42:01 CST)
 
 ### Packages
 
@@ -646,7 +646,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/implay                                    | 1.5.1              |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/iptvnator-bin                             | 0.23.0             |            | https://4gray.github.io/iptvnator/                                         | Cross-platform IPTV player application with multiple features
+ media-video/iptvnator-bin                             | 0.24.0             |            | https://4gray.github.io/iptvnator/                                         | Cross-platform IPTV player application with multiple features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/mpv-handler                               | 0.4.2              |            | https://github.com/akiirui/mpv-handler                                     | Play website videos and songs with mpv & yt-dlp
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -765,7 +765,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.9              |            | https://github.com/trzsz/tsshd                                             | UDP-based SSH server with roaming support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/yaak-bin                                     | 2026.8.0           |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
+ net-misc/yaak-bin                                     | 2026.8.1           |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-p2p/amule-dlp-antileech                           | 9999               |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999               | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
@@ -976,7 +976,7 @@
    dev-libs/v2ray-geoip                                | 202607050337       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
    dev-libs/v2ray-geoip-bin                            | 202607050337       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/adspower-global                            | 8.7.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
+ www-client/adspower-global                            | 8.9.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/brave-bin                                  | 1.95.104           |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
