@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-25 22:44:13 CST)
+(The last generation time: 2026-09-25 22:50:35 CST)
 
 ### Packages
 
@@ -65,11 +65,11 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/appflowy-bin                              | 0.14.5             |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/cursor                                    | 3.21.18            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
+ app-editors/cursor                                    | 3.22.7             |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/edit                                      | 2.0.0              |            | https://github.com/microsoft/edit                                          | Microsoft edit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/kiro                                      | 1.1.14             |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
+ app-editors/kiro                                      | 1.1.70             |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/marktext-bin                              | 0.19.1             |            | https://github.com/marktext/marktext                                       | A simple and elegant markdown editor, available for Linux, macOS and Windows
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
