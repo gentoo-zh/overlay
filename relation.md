@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-25 15:42:01 CST)
+(The last generation time: 2026-09-25 15:43:47 CST)
 
 ### Packages
 
@@ -815,7 +815,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/proxy-server                                | 11.0.1             |            | https://github.com/jackarain/proxy                                         | Implementation of all proxy protocols using modern c++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/queqiao                                     | 0.8.0              |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
+ net-proxy/queqiao                                     | 0.8.0-r1           |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/qvplugin-command                            | 3.0.0              |            | https://github.com/Qv2ray/QvPlugin-Command                                 | Plugin for Qv2ray to run any commands when something happens in Qv2ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
