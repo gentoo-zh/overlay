@@ -19,6 +19,11 @@ if [[ -f "${XDG_CONFIG_HOME}/qq-flags.conf" ]]; then
     echo "User QQ flags:" "${USER_QQ_FLAGS[@]}"
 fi
 
+declare -a SESSION_BUS_BIND
+if [[ ${DBUS_SESSION_BUS_ADDRESS:-} =~ ^unix:path=(/tmp/[^,;]+) ]] && [[ -S ${BASH_REMATCH[1]} ]]; then
+  SESSION_BUS_BIND=(--ro-bind "${BASH_REMATCH[1]}" "${BASH_REMATCH[1]}")
+fi
+
 # 设置下载文件夹
 if [ -z "${QQ_DOWNLOAD_DIR}" ]; then
     if [ -z "${XDG_DOWNLOAD_DIR}" ]; then
@@ -94,6 +99,7 @@ exec bwrap \
     --ro-bind-try /run/systemd/userdb /run/systemd/userdb \
     --proc /proc \
     --tmpfs /tmp \
+    "${SESSION_BUS_BIND[@]}" \
     --tmpfs /sys/devices/virtual \
     --ro-bind /usr/lib/flatpak-xdg-utils/xdg-open /usr/bin/xdg-open \
     --bind "${QQ_APP_DIR}" "${QQ_APP_DIR}" \
