@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-26 23:24:58 CST)
+(The last generation time: 2026-09-26 23:28:06 CST)
 
 ### Packages
 
@@ -953,7 +953,6 @@
                                                        | 6.18.53-r100       |            |                                                                            |
                                                        | 6.18.54-r100       |            |                                                                            |
                                                        | 7.1.13-r100        |            |                                                                            |
-                                                       | 7.2.6-r100         |            |                                                                            |
                                                        | 7.2.7-r100         |            |                                                                            |
                                                        | 7.2.8-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -962,10 +961,10 @@
                                                        | 7.2.7              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.6              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.7              |            |                                                                            |
-   sys-kernel/xanmod-kernel                            | 7.2.6              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
-                                                       | 7.2.7              |            |                                                                            |
-   sys-kernel/xanmod-sources                           | 7.2.6              | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
-                                                       | 7.2.7              |            |                                                                            |
+   sys-kernel/xanmod-kernel                            | 7.2.7              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+                                                       | 7.2.8              |            |                                                                            |
+   sys-kernel/xanmod-sources                           | 7.2.7              | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+                                                       | 7.2.8              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
