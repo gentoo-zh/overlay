@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-27 00:28:11 CST)
+(The last generation time: 2026-09-27 01:03:03 CST)
 
 ### Packages
 
@@ -929,8 +929,10 @@
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.110           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.12.111           |            |                                                                            |
                                                        | 6.18.53            |            |                                                                            |
+                                                       | 6.18.54            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.7              |            |                                                                            |
+                                                       | 7.2.8              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.110           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.111           |            |                                                                            |
