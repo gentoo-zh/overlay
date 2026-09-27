@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-27 20:53:20 CST)
+(The last generation time: 2026-09-27 22:44:23 CST)
 
 ### Packages
 
@@ -955,8 +955,8 @@
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 7.2.8              |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.2.6              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-                                                       | 7.2.7              |            |                                                                            |
+   sys-kernel/liquorix-sources                         | 7.2.7              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+                                                       | 7.2.8              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.7              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.8              |            |                                                                            |
    sys-kernel/xanmod-sources                           | 7.2.7              | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
