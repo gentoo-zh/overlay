@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-27 18:23:16 CST)
+(The last generation time: 2026-09-27 20:53:20 CST)
 
 ### Packages
 
@@ -505,6 +505,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-util/sgdboop                                    | 1.4.3              |            | https://github.com/SteamGridDB/SGDBoop                                     | Apply SteamGridDB assets directly to your Steam library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ games-util/watt-toolkit-bin                           | 3.1.0              |            | https://steampp.net/                                                       | Multi-purpose Steam toolbox (Watt Toolkit, formerly Steam++)
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/gnome-shell-extension-clipboard-indicator | 49                 |            | https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator       | The most popular clipboard manager for GNOME, with over 1M downloads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/nautilus-open-any-terminal                | 0.8.3              |            | https://github.com/Stunkymonkey/nautilus-open-any-terminal                 | context-menu entry for opening other terminal in nautilus
@@ -952,7 +954,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
-                                                       | 7.2.7              |            |                                                                            |
+                                                       | 7.2.8              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.6              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.7              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.7              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
