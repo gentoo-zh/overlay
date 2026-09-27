@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Watt Toolkit
+Comment=Multi-purpose Steam toolbox
+Comment[zh_CN]=一个开源跨平台的多功能 Steam 工具箱
+Exec=watt-toolkit
+Icon=net.steampp.app
+Terminal=false
+Categories=Network;
+Keywords=Steam;Steam++;WattToolkit;
+StartupWMClass=Steam++

@@ -1544,6 +1544,12 @@ prefix = "v"
 github_account = "xiaoxi654"
 autobump = true
 
+["games-util/watt-toolkit-bin"]
+source = "github"
+github = "BeyondDimension/SteamTools"
+use_latest_release = true
+github_account = "xiaoxi654"
+
 # ebuild version tracks the GNOME Shell series, not the extension release
 #["gnome-extra/gnome-shell-extension-clipboard-indicator"]
 
