@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-27 22:52:59 CST)
+(The last generation time: 2026-09-27 22:53:32 CST)
 
 ### Packages
 
@@ -446,7 +446,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.2             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-desktop-bin                         | 1.39.0             |            | https://reasonix.io                                                        | Reasonix desktop client
+ dev-util/reasonix-desktop-bin                         | 1.39.2             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                              | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -473,7 +473,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/gitoxide                                      | 0.59.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/rebased-bin                                   | 1.1.18             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
+ dev-vcs/rebased-bin                                   | 1.1.19             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/sourcegit-bin                                 | 2026.19            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.20            |            |                                                                            |
@@ -558,8 +558,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/nerd-fonts                                | 3.5.1              |            | https://github.com/ryanoasis/nerd-fonts                                    | Nerd Fonts is a project that patches developer targeted fonts with glyphs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/sarasa-gothic                             | 1.0.40             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
-                                                       | 1.0.41             |            |                                                                            |
+ media-fonts/sarasa-gothic                             | 1.0.41             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
+                                                       | 1.0.42             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/sarasa-term-sc-nerd                       | 2.3.1              |            | https://github.com/laishulu/Sarasa-Term-SC-Nerd                            | Sarasa Mono SC font patched with Nerd fonts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
