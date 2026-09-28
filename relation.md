@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-29 00:23:45 CST)
+(The last generation time: 2026-09-29 00:37:11 CST)
 
 ### Packages
 
@@ -397,7 +397,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex-bin                                    | 0.158.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/deepseek-harness                             | 0.1.5_rc3          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
+ dev-util/deepseek-harness                             | 0.1.7_rc2          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/fvm                                          | 4.1.4              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
                                                        | 4.3.1              |            |                                                                            |
@@ -849,7 +849,7 @@
                                                        | 2.5.7              |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/yacd-meta                                   | 0.4.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
+ net-proxy/yacd-meta                                   | 0.5.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/zashboard                                   | 3.22.0             |            | https://github.com/Zephyruso/zashboard                                     | The Official Mihomo Dashboard
                                                        | 3.29.1             |            |                                                                            |
@@ -997,7 +997,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/agent-workspace-linux                        | 0.3.3              |            | https://github.com/agent-sh/agent-workspace-linux                          | Isolated X11 workspaces in which an agent runs and observes apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-misc/computer-use-linux                           | 0.7.4              |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
+ x11-misc/computer-use-linux                           | 0.7.5              |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/extramaus                                    | 3                  |            | https://aur.archlinux.org/packages/extramaus                               | workaround to always show mouse cursor under x11
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
