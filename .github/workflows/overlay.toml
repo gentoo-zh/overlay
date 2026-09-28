@@ -2195,6 +2195,13 @@ github = "simulot/immich-go"
 use_latest_release = true
 prefix = "v"
 
+["net-misc/lazyssh-bin"]
+source = "github"
+github = "Adembc/lazyssh"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 ["net-misc/localsend-bin"]
 source = "github"
 github = "localsend/localsend"
