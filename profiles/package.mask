@@ -1,6 +1,12 @@
 # Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
+# Xianggang Wang <dev@wangxianggang.com> (2026-09-29)
+# Motrix Next is superseded by net-misc/rayburst-bin. Rayburst does not import
+# its settings, tasks or history; finish active downloads before switching.
+# Removal on 2026-10-29.
+net-misc/motrix-next-bin
+
 # Zakk <zakk@gentoozh.org> (2026-09-11)
 # Superseded by net-im/wechat[bwrap].
 # Removal on 2026-10-11.

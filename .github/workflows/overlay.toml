@@ -2216,13 +2216,6 @@ use_latest_release = true
 prefix = "v"
 github_account = ["Nuralii1i", "gouwazi"]
 
-["net-misc/motrix-next-bin"]
-source = "github"
-github = "AnInsomniacy/motrix-next"
-use_latest_release = true
-prefix = "v"
-github_account = "gouwazi"
-
 ["net-misc/ntpd-rs"]
 source = "github"
 github = "pendulum-project/ntpd-rs"
@@ -2240,6 +2233,13 @@ gitlab = "prips/prips"
 use_max_tag = true
 prefix = "release/"
 github_account = "gouwazi"
+
+["net-misc/rayburst-bin"]
+source = "github"
+github = "AnInsomniacy/rayburst"
+use_latest_release = true
+prefix = "v"
+autobump = true
 
 ["net-misc/reframe"]
 source = "github"
