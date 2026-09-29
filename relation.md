@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-29 00:50:21 CST)
+(The last generation time: 2026-09-29 11:10:51 CST)
 
 ### Packages
 
@@ -747,6 +747,8 @@
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-misc/rayburst-bin                                 | 4.0.0              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/reframe                                      | 1.21.0             |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                  |  D, RD     |                                                                            | group for reframe
