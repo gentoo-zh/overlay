@@ -15,11 +15,12 @@ SRC_URI="
 
 S="${WORKDIR}/mw2fcitx-${PV}"
 
-LICENSE="MIT CC-BY-NC-SA-3.0"
+LICENSE="MIT CC-BY-NC-SA-4.0"
 SLOT="5"
 KEYWORDS="~amd64"
 IUSE="+fcitx rime"
 REQUIRED_USE="|| ( fcitx rime )"
+RESTRICT="bindist mirror"
 
 RDEPEND="
 	fcitx? ( app-i18n/fcitx:5 )
