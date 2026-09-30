@@ -92,13 +92,19 @@ def today():
 
 # A new target version has a distinct ledger key, so terminal results never retry.
 def ledger_line(package, version, result=None):
-    fields = (package, version, result, today()) if result else (package, version, today(), run_token())
+    fields = (package, version, result, today()) if result else (package, version, today(), attempt_token())
     return " ".join(fields)
 
 
 def run_token():
     """What tells one attempt from another: two runs on one day, one delivered twice."""
     return os.environ.get("GITHUB_RUN_ID") or f"p{os.getpid()}"
+
+
+def attempt_token():
+    """A rerun keeps its run id; its attempt number tells its tries from the first run's."""
+    attempt = os.environ.get("GITHUB_RUN_ATTEMPT")
+    return f"{run_token()}.{attempt}" if attempt and attempt != "1" else run_token()
 
 
 def record_ledger(settings, ledger_name, package, version, result=None):
