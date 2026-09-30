@@ -53,6 +53,10 @@ on:
         description: 'run on an earlier environment image (YYYYMMDD, empty = today)'
         required: false
         default: ''
+      bundles_only:
+        description: 'prepare the vendor bundles of the queue and bump nothing'
+        type: boolean
+        default: false
 
 concurrency:
   group: autobump
@@ -100,6 +104,12 @@ jobs:
     - name: checkout
       uses: actions/checkout@v7
 
+    - name: fetch autobump-rb (the bundle controller)
+      uses: actions/checkout@v7
+      with:
+        repository: gentoo-zh/autobump-rb
+        path: autobump-rb
+
     - name: mint app token
       id: app-token
       uses: actions/create-github-app-token@v3
@@ -108,6 +118,28 @@ jobs:
         private-key: ${{ secrets.APP_PRIVATE_KEY }}
         owner: gentoo-zh
         repositories: overlay
+
+    # the bundle controller dispatches bundle producers with these; only this job holds them.
+    # A fork without the DRAFTS_BOT secrets still plans: its bundle reads go out anonymously
+    # and a bundle that needs a dispatch stays unknown, which ends the run failed.
+    - name: mint gentoo-deps token
+      id: deps-token
+      continue-on-error: true
+      uses: actions/create-github-app-token@v3
+      with:
+        client-id: ${{ secrets.DRAFTS_BOT_CLIENT_ID }}
+        private-key: ${{ secrets.DRAFTS_BOT_PRIVATE_KEY }}
+        owner: gentoo-zh
+        repositories: gentoo-deps
+
+    - name: mint gentoo-zh-drafts token
+      id: drafts-token
+      continue-on-error: true
+      uses: actions/create-github-app-token@v3
+      with:
+        client-id: ${{ secrets.DRAFTS_BOT_CLIENT_ID }}
+        private-key: ${{ secrets.DRAFTS_BOT_PRIVATE_KEY }}
+        owner: gentoo-zh-drafts
 
     - name: restore state
       uses: actions/cache/restore@v6
@@ -120,18 +152,39 @@ jobs:
       id: plan
       env:
         GH_TOKEN: ${{ steps.app-token.outputs.token }}
+        GH_TOKEN_GENTOO_ZH: ${{ steps.deps-token.outputs.token }}
+        GH_TOKEN_GENTOO_ZH_DRAFTS: ${{ steps.drafts-token.outputs.token }}
         XDG_STATE_HOME: ${{ github.workspace }}/.autobump-state
+        AUTOBUMP_BUNDLE_CONTROLLER: autobump-rb/bin/bundles.py
         ISSUES: ${{ github.event.inputs.issues }}
         LIMIT: ${{ github.event.inputs.limit || 0 }}
         RETRY: ${{ github.event.inputs.retry == 'true' && '--retry' || '' }}
+        BUNDLES_ONLY: ${{ github.event.inputs.bundles_only == 'true' && '--bundles-only' || '' }}
         SHARDS: '8'
       run: |
         # validate before use: ISSUES is space-separated issue numbers, LIMIT and SHARDS are ints.
         case "$ISSUES" in *[!0-9\ ]*) echo "issues must be numbers: $ISSUES" >&2; exit 1;; esac
         case "$LIMIT" in ''|*[!0-9]*) echo "limit must be a number: $LIMIT" >&2; exit 1;; esac
         # $ISSUES intentionally unquoted so it word-splits into positional args (validated above).
-        plan=$(python3 scripts/autobump-sweep.py $ISSUES $RETRY --limit "$LIMIT" --plan "$SHARDS")
+        # --comment: the plan tells an issue when its bundle was dispatched or escalated
+        plan=$(python3 scripts/autobump-sweep.py $ISSUES $RETRY $BUNDLES_ONLY --limit "$LIMIT" --comment --bundles bundles.json --bundles-delta autobump-delta-plan.json --plan "$SHARDS")
         echo "plan=$plan" >> "$GITHUB_OUTPUT"
+
+    # the shards judge a bundle 404 from this snapshot, and collect needs the plan's ledger lines
+    # even when no shard runs. A name is taken once per run, so "Re-run all jobs" overwrites.
+    - name: upload bundle snapshot
+      uses: actions/upload-artifact@v7
+      with:
+        name: autobump-bundles
+        path: bundles.json
+        overwrite: true
+
+    - name: upload plan delta
+      uses: actions/upload-artifact@v7
+      with:
+        name: autobump-delta-plan
+        path: autobump-delta-plan.json
+        overwrite: true
 
   bump:
     needs: [env, plan]
@@ -192,6 +245,15 @@ jobs:
         repository: gentoo-zh/autobump-rb
         path: autobump-rb
 
+    # outside the checkout: the engine switches branches under it. A failed controller leaves
+    # no snapshot and no bundle item in any shard; the other packages still bump.
+    - name: download bundle snapshot
+      continue-on-error: true
+      uses: actions/download-artifact@v8
+      with:
+        name: autobump-bundles
+        path: /tmp/autobump-bundles
+
     - name: register overlay
       run: |
         mkdir -p /etc/portage/repos.conf
@@ -250,6 +312,7 @@ jobs:
         AUTOBUMP_OP_TIMEOUT: '7200'
         # inside the container: ${{ runner.temp }} is a host path the container lacks
         AUTOBUMP_EVIDENCE_DIR: /tmp/autobump-evidence
+        AUTOBUMP_BUNDLE_STATUS: /tmp/autobump-bundles/bundles.json
         SHARD: ${{ toJSON(fromJSON(needs.plan.outputs.plan).shards[matrix.shard]) }}
         SHARD_ID: ${{ matrix.shard }}
         LIMIT: ${{ github.event.inputs.limit || 0 }}
@@ -295,8 +358,8 @@ jobs:
         key: autobump-state-${{ github.run_id }}
         restore-keys: autobump-state-
 
-    - name: download shard deltas
-      if: ${{ needs.bump.result != 'skipped' && needs.bump.result != 'cancelled' }}
+    # the plan's delta is always there, so this runs even when no shard did
+    - name: download deltas
       uses: actions/download-artifact@v8
       with:
         pattern: autobump-delta-*
@@ -311,9 +374,21 @@ jobs:
         shopt -s nullglob
         python3 scripts/autobump-sweep.py --collect "$PLAN" autobump-deltas/*.json
 
+    # a key is written once, so a rerun saves its dispatches under a key of its own; the
+    # restore steps take the newest state by prefix
     - name: save state
       if: success()
       uses: actions/cache/save@v6
       with:
         path: ${{ github.workspace }}/.autobump-state/autobump
-        key: autobump-state-${{ github.run_id }}
+        key: autobump-state-${{ github.run_id }}-${{ github.run_attempt }}
+
+    # last, so the counts of this run are saved: a failed controller, or a bundle it could not
+    # judge, must not pass as a quiet run
+    - name: fail on a bundle controller error
+      if: always() && fromJSON(needs.plan.outputs.plan).bundle_error
+      env:
+        BUNDLE_ERROR: ${{ fromJSON(needs.plan.outputs.plan).bundle_error }}
+      run: |
+        echo "::error title=bundles::$BUNDLE_ERROR"
+        exit 1

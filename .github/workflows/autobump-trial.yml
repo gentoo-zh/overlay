@@ -121,6 +121,9 @@ jobs:
         AUTOBUMP_SYNC_REMOTE: origin
         AUTOBUMP_UPSTREAM_REPO: gentoo-zh/overlay
         AUTOBUMP_OP_TIMEOUT: '2700'
+        # bundles.py status only reads public releases and runs
+        GH_TOKEN_GENTOO_ZH: ${{ github.token }}
+        GH_TOKEN_GENTOO_ZH_DRAFTS: ${{ github.token }}
         # passed via env, never inlined into the script (shell-injection hygiene)
         TARGETS: ${{ github.event.inputs.targets }}
       run: |
@@ -168,6 +171,25 @@ jobs:
           trial_comment "$n" "**autobump-trial** build-testing \`$pkg\` → \`$ver\` (not opted in)… · [run]($RUN_URL)"
           # the package's own rewrite/retention flags, so a trial runs what a real sweep would
           args=(); a=$(python3 scripts/autobump-args.py "$pkg") && [ -n "$a" ] && mapfile -t args <<<"$a"
+          # the same read-only snapshot a sweep shard gets: the engine judges a bundle 404 from
+          # it, and the summary shows its state because a covered URI is not probed before fetch
+          bundle=''
+          # an unreadable index is not a package without bundles: the engine would run blind
+          if ! has=$(python3 autobump-rb/bin/bundles.py has "$pkg"); then
+            echo "::error title=bundles::cannot tell whether $pkg has a bundle; see the log"
+            printf '| #%s | `%s` | %s | - | SKIP — bundle index unreadable |\n' "$n" "$pkg" "$ver" >> "$GITHUB_STEP_SUMMARY"
+            continue
+          fi
+          if [ "$has" = yes ]; then
+            snap="/tmp/autobump-bundles/$n.json"
+            python3 autobump-rb/bin/bundles.py status "$pkg" --version "$ver" --out "$snap"
+            if [ ! -s "$snap" ]; then
+              printf '| #%s | `%s` | %s | - | SKIP — no bundle snapshot |\n' "$n" "$pkg" "$ver" >> "$GITHUB_STEP_SUMMARY"
+              continue
+            fi
+            args+=(--bundle-status "$snap")
+            bundle=" · bundle $(jq -r '.targets[0].state' "$snap")"
+          fi
           ruby autobump-rb/bin/autobump "$n" --install "${args[@]}"; ec=$?   # build+install+pkgcheck, no --pr, no opt-in
           case "$ec" in
             0)   res='PASS — mechanical, built + installed + pkgcheck clean' ;;
@@ -182,8 +204,8 @@ jobs:
             2)   tres="**DEFER** — transient (fetch / dep-gap / timeout)." ;;
             *)   tres="unexpected exit $ec. · [log]($RUN_URL)" ;;
           esac
-          trial_comment "$n" "**autobump-trial** \`$pkg\` → \`$ver\`: $tres"
-          printf '| #%s | `%s` | %s | %s | %s |\n' "$n" "$pkg" "$ver" "$ec" "$res" >> "$GITHUB_STEP_SUMMARY"
+          trial_comment "$n" "**autobump-trial** \`$pkg\` → \`$ver\`: $tres$bundle"
+          printf '| #%s | `%s` | %s | %s | %s%s |\n' "$n" "$pkg" "$ver" "$ec" "$res" "$bundle" >> "$GITHUB_STEP_SUMMARY"
         done
         {
           echo

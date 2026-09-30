@@ -143,6 +143,7 @@ github = "replydev/cotp"
 use_latest_release = true
 prefix = "v"
 github_account = "huaji2369"
+deps = "rust"
 
 ["app-dicts/fcitx-pinyin-custom-pinyin-dictionary"]
 source = "regex"
@@ -1272,6 +1273,10 @@ from_pattern = '^(.+)-(alpha|beta|rc)\.(\d+)$'
 to_pattern = '\1_\2\3'
 github_account = "vowstar"
 autobump = true
+bundle = [
+  { id = "node_modules", repo = "gentoo-zh-drafts/deepseek-harness", workflow = "node_modules.yml", tag = "v{bundle_pv}", inputs = { version = "{bundle_pv}" } },
+]
+bundle_pv = [["_alpha", "-alpha."], ["_beta", "-beta."], ["_rc", "-rc."]]
 
 # shipped inside the prelink tarball, upstream dead
 #["dev-util/execstack"]
@@ -1280,6 +1285,7 @@ autobump = true
 source = "github"
 github = "leoafarias/fvm"
 use_latest_release = true
+deps = "dart"
 
 ["dev-util/gemini-cli"]
 source = "regex"
@@ -2072,6 +2078,7 @@ github = "jeessy2/ddns-go"
 use_latest_release = true
 prefix = "v"
 github_account = "Puqns67"
+deps = { lang = "golang", vendordir = "{P}" }
 
 ["net-dns/dnslookup"]
 source = "github"
@@ -2510,6 +2517,7 @@ github = "v2rayA/v2rayA"
 use_latest_release = true
 prefix = "v"
 github_account = ["liuyujielol", "Zakkaus"]
+deps = { lang = "golang", modules = ["service", "core"] }
 
 ["net-proxy/Xray"]
 # XTLS marks new versions as prerelease; track releases only to avoid their breaking changes. Do not switch to use_max_tag.
@@ -2531,6 +2539,7 @@ github = "Zephyruso/zashboard"
 use_latest_tag = true
 prefix = "v"
 autobump = true
+deps = "javascript"
 
 ["net-vpn/easytier"]
 source = "github"

@@ -18,6 +18,7 @@ Read with: `pr-text.md` before committing; `prebuilt-binaries.md` when the packa
 - Never guess `RDEPEND`, `IUSE`, pins, generated dependency sets, build options, or vendor artifacts merely to obtain a green build.
 - A versioned deps/vendor/crates/`node_modules` artifact must already exist for the new version, or the fetch 404s.
 - That artifact is often not upstream but in an overlay or contributor repo: commonly `gentoo-zh-drafts/<PN>`, sometimes `gentoo-zh/gentoo-deps` or a contributor's repo.
+- When a bump starts downloading a bundle from `gentoo-zh/gentoo-deps` or a `gentoo-zh-drafts` workflow, add `deps` or `bundle` to the package's `.github/workflows/overlay.toml` table, as `scripts/autobump.md` describes, so autobump prepares the bundle of later versions.
 - Reuse the exact host and naming the existing `SRC_URI` uses; do not assume upstream, invent a host, or switch repos on your own. Change host only under a verified, maintainer-directed migration.
 - Cross-check a large distfile's size against its source, so a truncated download cannot produce a plausible but invalid `Manifest`.
 - When upstream moves, update `HOMEPAGE`, `metadata.xml` `remote-id`, and version-tracking URLs to the current project.

@@ -1,0 +1,91 @@
+# bundles: check or prepare the vendor bundles a package's ebuild downloads.
+#
+# One entry point for every gentoo-deps and gentoo-zh-drafts bundle: type the package, and
+# autobump-rb's bin/bundles.py resolves its repository, producer workflow and inputs from the
+# `deps` or `bundle` key in overlay.toml. `status` only reads; `prepare` dispatches the
+# producer when neither a release nor a producer run exists for the tag. The job summary links
+# the run and the release.
+#
+# autobump.yml plan runs the same script for every open nvchecker issue. A prepare here is
+# not written to autobump's ledger, so it does not count toward the three dispatches a
+# version gets there; run autobump with `bundles_only` to prepare through the ledger.
+
+name: bundles
+
+on:
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: 'category/package atoms, space separated'
+        required: true
+      version:
+        description: 'Gentoo version (one package only; empty = the newest ebuild)'
+        required: false
+        default: ''
+      mode:
+        description: 'status reads, prepare dispatches what is missing'
+        type: choice
+        options: [status, prepare]
+        default: status
+
+permissions: {}
+
+jobs:
+  bundles:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v7
+
+    - name: fetch autobump-rb (the bundle controller)
+      uses: actions/checkout@v7
+      with:
+        repository: gentoo-zh/autobump-rb
+        path: autobump-rb
+
+    # each owner on its own: a failed mint must not skip the other owner's token or the
+    # controller, which reports the owner it has no token for as unknown
+    - name: mint gentoo-deps token
+      id: deps-token
+      continue-on-error: true
+      uses: actions/create-github-app-token@v3
+      with:
+        client-id: ${{ secrets.DRAFTS_BOT_CLIENT_ID }}
+        private-key: ${{ secrets.DRAFTS_BOT_PRIVATE_KEY }}
+        owner: gentoo-zh
+        repositories: gentoo-deps
+
+    - name: mint gentoo-zh-drafts token
+      id: drafts-token
+      continue-on-error: true
+      uses: actions/create-github-app-token@v3
+      with:
+        client-id: ${{ secrets.DRAFTS_BOT_CLIENT_ID }}
+        private-key: ${{ secrets.DRAFTS_BOT_PRIVATE_KEY }}
+        owner: gentoo-zh-drafts
+
+    - name: bundles
+      env:
+        GH_TOKEN_GENTOO_ZH: ${{ steps.deps-token.outputs.token }}
+        GH_TOKEN_GENTOO_ZH_DRAFTS: ${{ steps.drafts-token.outputs.token }}
+        # passed via env, never inlined into the script
+        PACKAGES: ${{ inputs.packages }}
+        VERSION: ${{ inputs.version }}
+        MODE: ${{ inputs.mode }}
+      run: |
+        case "$MODE" in status|prepare) ;; *) echo "mode must be status or prepare: $MODE" >&2; exit 1;; esac
+        case "$PACKAGES" in ''|*[!A-Za-z0-9_.+/\ -]*) echo "packages must be category/package atoms: $PACKAGES" >&2; exit 1;; esac
+        case "$VERSION" in *[!A-Za-z0-9_.+-]*) echo "not a version: $VERSION" >&2; exit 1;; esac
+        args=()
+        [ -n "$VERSION" ] && args=(--version "$VERSION")
+        # $PACKAGES intentionally unquoted so it word-splits into atoms (validated above)
+        python3 autobump-rb/bin/bundles.py "$MODE" $PACKAGES "${args[@]}" --out bundles.json
+
+    - name: upload snapshot
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@v7
+      with:
+        name: bundles
+        path: bundles.json
+        if-no-files-found: ignore

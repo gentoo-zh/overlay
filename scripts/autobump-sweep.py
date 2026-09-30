@@ -3,7 +3,7 @@
 """Bump the packages nvchecker reported, one issue at a time.
 
     autobump-sweep.py [issue#...] [--limit N] [--pr] [--comment]
-    autobump-sweep.py [issue#...] [--limit N] --plan N
+    autobump-sweep.py [issue#...] [--limit N] --plan N [--bundles JSON --bundles-delta PATH] [--bundles-only]
     autobump-sweep.py --worker JSON --delta PATH [--limit N] [--pr] [--comment]
     autobump-sweep.py --collect JSON [delta...]
 """
@@ -20,6 +20,7 @@ import subprocess
 import sys
 import tempfile
 import time
+import tomllib
 
 
 STATUS_MARKER = "<!-- autobump-status -->"
@@ -39,6 +40,9 @@ class Arguments:
     delta: str | None
     collect: str | None
     delta_files: list[str]
+    bundles: str | None
+    bundles_delta: str | None
+    bundles_only: bool
 
 
 @dataclass
@@ -48,12 +52,14 @@ class Settings:
     judge: str
     done_ledger: Path | None
     attempts_ledger: Path | None
+    bundles_ledger: Path | None
     pr: str
     comment: bool
     limit: str
     issues: list[str]
     retry: bool
     engine: str | None
+    bundle_controller: str | None
     plan_shards: int | None
     worker_items: list[dict] | None
     delta: Path | None
@@ -62,6 +68,9 @@ class Settings:
     ledger_additions: dict[str, list[str]]
     worker_attempts: dict[tuple[str, str], int]
     evidence_dir: Path | None
+    bundles: Path | None
+    bundles_delta: Path | None
+    bundles_only: bool
 
 
 # A build log carries whatever bytes upstream wrote; strict decoding loses the bump over one.
@@ -120,6 +129,12 @@ def record_ledger(settings, ledger_name, package, version, result=None):
         f.write(ledger_line(package, version, result) + "\n")
 
 
+# The line format the bundle controller reads: one observation per run, whatever the bundle count.
+# Only a worker defers on a bundle, and collect merges its lines.
+def record_bundle_event(settings, package, version, kind):
+    settings.ledger_additions["bundles"].append(f"{package} {version} {kind} {today()} {run_token()}")
+
+
 def matching_ledger_line(path, package, version):
     needle = f"{package} {version} "
     with path.open() as f:
@@ -148,6 +163,8 @@ VALUE_FLAGS = {
     "--worker": "worker",
     "--delta": "delta",
     "--collect": "collect",
+    "--bundles": "bundles",
+    "--bundles-delta": "bundles_delta",
 }
 NUMERIC_FLAGS = {"limit", "plan_shards"}
 
@@ -164,6 +181,9 @@ def parse_args(argv):
         "delta": None,
         "collect": None,
         "delta_files": [],
+        "bundles": None,
+        "bundles_delta": None,
+        "bundles_only": False,
     }
     remaining = list(argv)
     while remaining:
@@ -174,6 +194,8 @@ def parse_args(argv):
             parsed["comment"] = True
         elif arg == "--retry":
             parsed["retry"] = True
+        elif arg == "--bundles-only":
+            parsed["bundles_only"] = True
         elif arg in VALUE_FLAGS:
             option = VALUE_FLAGS[arg]
             if remaining:
@@ -506,10 +528,20 @@ def read_settings(argv):
     done_ledger = state_dir / "done.list"
     # ATTEMPTS records only retryable outcomes, so its cap reaches a human without making transient failures terminal.
     attempts_ledger = state_dir / "attempts"
+    # bundle observations and dispatches, written by the bundle controller and by bundle defers here
+    bundles_ledger = state_dir / "bundles"
     if arguments.worker is None:
         state_dir.mkdir(parents=True, exist_ok=True)
         done_ledger.touch(exist_ok=True)
         attempts_ledger.touch(exist_ok=True)
+        bundles_ledger.touch(exist_ok=True)
+    if (arguments.bundles is None) != (arguments.bundles_delta is None):
+        print("--bundles and --bundles-delta go together", file=sys.stderr)
+        raise SystemExit(2)
+    bundle_controller = os.environ.get("AUTOBUMP_BUNDLE_CONTROLLER")
+    if arguments.bundles is not None and not bundle_controller:
+        print("--bundles: set AUTOBUMP_BUNDLE_CONTROLLER, e.g. autobump-rb/bin/bundles.py", file=sys.stderr)
+        raise SystemExit(2)
 
     try:
         os.chdir(repo)
@@ -527,20 +559,25 @@ def read_settings(argv):
         judge=judge,
         done_ledger=done_ledger if arguments.worker is None else None,
         attempts_ledger=attempts_ledger if arguments.worker is None else None,
+        bundles_ledger=bundles_ledger if arguments.worker is None else None,
         pr=arguments.pr,
         comment=arguments.comment,
         limit=arguments.limit,
         issues=arguments.issues,
         retry=arguments.retry,
         engine=os.environ.get("AUTOBUMP_ENGINE"),
+        bundle_controller=bundle_controller,
         plan_shards=arguments.plan_shards,
         worker_items=worker_items,
         delta=Path(arguments.delta) if arguments.delta is not None else None,
         collect_plan=json.loads(arguments.collect) if arguments.collect is not None else None,
         delta_files=[Path(path) for path in arguments.delta_files],
-        ledger_additions={"done": [], "attempts": []},
+        ledger_additions={"done": [], "attempts": [], "bundles": []},
         worker_attempts=worker_attempts,
         evidence_dir=Path(evidence_dir) if evidence_dir else None,
+        bundles=Path(arguments.bundles) if arguments.bundles is not None else None,
+        bundles_delta=Path(arguments.bundles_delta) if arguments.bundles_delta is not None else None,
+        bundles_only=arguments.bundles_only,
     )
 
 
@@ -593,7 +630,11 @@ def engine_command(settings):
     return shlex.split(settings.engine)
 
 
-def issue_bump_target(settings, issue):
+OVERLAY_TOML = Path(".github/workflows/overlay.toml")
+NOT_OPTED_IN = "skip (not opted in: no autobump key)"
+
+
+def issue_title_target(settings, issue):
     status, title = command_output(
         ["gh", "issue", "view", issue, "--repo", settings.upstream_repo, "--json", "title", "--jq", ".title"],
         stderr=subprocess.DEVNULL,
@@ -604,8 +645,15 @@ def issue_bump_target(settings, issue):
     package, version = package_and_version(title)
     if not package or not version:
         return None, None, "unparseable title"
-    if not autobump_enabled(Path(".github/workflows/overlay.toml"), package):
-        return None, None, "skip (not opted in: no autobump key)"
+    return package, version, None
+
+
+def issue_bump_target(settings, issue):
+    package, version, result = issue_title_target(settings, issue)
+    if result:
+        return None, None, result
+    if not autobump_enabled(OVERLAY_TOML, package):
+        return None, None, NOT_OPTED_IN
     return package, version, None
 
 
@@ -628,21 +676,146 @@ def ledger_skip(settings, package, version):
     return matching_ledger_line(settings.done_ledger, package, version)
 
 
+# A bundle that is not ready is waited on, not bumped: the bundle controller counts the waits.
+BUNDLE_SCHEMA = 1
+
+
+def bundle_packages():
+    """Packages with a `deps` or `bundle` key; each needs a snapshot target before a shard may take it."""
+    with OVERLAY_TOML.open("rb") as f:
+        return {package for package, table in tomllib.load(f).items()
+                if isinstance(table, dict) and ("deps" in table or "bundle" in table)}
+
+
+def bundle_links(settings, package, bundles):
+    """Where a human goes next: the bundle repo, its producer run, and the manual entry point.
+
+    `bundles` are the snapshot's or the engine's; both give each bundle's repo and run_url."""
+    links = []
+    for bundle in bundles:
+        repo = bundle.get("repo")
+        if repo and repo != "-":
+            links.append(f"[{repo}](https://github.com/{repo})")
+        if bundle.get("run_url"):
+            links.append(f"[producer run]({bundle['run_url']})")
+    server = os.environ.get("GITHUB_SERVER_URL") or "https://github.com"
+    links.append(f"[bundles.yml]({server}/{settings.upstream_repo}/actions/workflows/bundles.yml)"
+                 f" with `packages={package}`")
+    return " · ".join(dict.fromkeys(links))
+
+
+def bundle_status_body(settings, package, version, reason, links, *, escalate, detail=""):
+    if escalate:
+        return (
+            f"**autobump** can't get the vendor bundle for `{package}` → `{version}`{detail}: **{reason}**. "
+            f"Needs a maintainer: {links}. Re-run autobump with `retry` for this issue once it is fixed."
+            f"{run_link(settings.upstream_repo, 'log')}"
+        )
+    return (
+        f"**autobump** is waiting for the vendor bundle of `{package}` → `{version}`{detail}: {reason}. "
+        f"{links}. Will retry automatically.{run_link(settings.upstream_repo)}"
+    )
+
+
+def run_bundle_controller(settings, candidates):
+    """The bundle controller's plan over every target with a bundle, opted in or not.
+
+    Returns ({(package, version): target}, error). error names a controller that failed: with no
+    snapshot every bundle target is held back; with one, a target it could not judge is not ready."""
+    targets = [
+        {"issue": c["issue"], "package": c["package"], "version": c["version"],
+         "retry": settings.retry and bool(settings.issues)}
+        for c in candidates
+    ]
+    with tempfile.NamedTemporaryFile("w", suffix=".json", prefix="autobump-targets-", delete=False) as f:
+        json.dump(targets, f)
+    # an earlier run's snapshot must not stand in for this one
+    settings.bundles.unlink(missing_ok=True)
+    status, output = command_output_with_stderr([
+        sys.executable, settings.bundle_controller, "plan", "--targets", f.name,
+        "--ledger", str(settings.bundles_ledger), "--out", str(settings.bundles),
+        "--delta", str(settings.bundles_delta),
+    ])
+    os.unlink(f.name)
+    # stdout carries the plan itself
+    print(output, file=sys.stderr)
+    if not settings.bundles_delta.exists():
+        settings.bundles_delta.write_text(json.dumps({"done": [], "attempts": [], "bundles": [], "results": {},
+                                                      "status_comment_failed": []}) + "\n")
+    try:
+        snapshot = json.loads(settings.bundles.read_text())
+        if snapshot.get("schema") != BUNDLE_SCHEMA or not isinstance(snapshot.get("targets"), list):
+            raise ValueError(f"not a schema {BUNDLE_SCHEMA} snapshot")
+        # collect fails the run on it: an API failure that persists would otherwise stay unknown unseen
+        error = f"bundles.py plan exited {status}; see the plan log" if status else None
+        return {(t["package"], t["version"]): t for t in snapshot["targets"]}, error
+    except (OSError, ValueError, AttributeError, KeyError, TypeError) as error:
+        message = f"bundle controller failed: bundles.py plan exited {status}, {error}"
+        print(f"::error title=bundles::{message}", file=sys.stderr)
+        return {}, message
+
+
+def announce_bundle(settings, target, status_comment_failed):
+    """Comment on what changed this run: a dispatch, or the escalation to a maintainer."""
+    if not target.get("escalated_now") and not target.get("dispatched"):
+        return
+    package = target["package"]
+    body = bundle_status_body(settings, package, target["version"], short_status_reason(target["reason"]),
+                              bundle_links(settings, package, target["bundles"]),
+                              escalate=target.get("escalated_now"))
+    status_comment(target["issue"], body, comment=settings.comment, footer="",
+                   upstream_repo=settings.upstream_repo, status_comment_failed=status_comment_failed)
+
+
 def plan_issues(settings, issues, apply_run_limit):
     results = {}
-    items = []
-    planned = {}
-    attempts = 0
+    candidates = []
     for issue in issues:
-        package, version, result = issue_bump_target(settings, issue)
+        package, version, result = issue_title_target(settings, issue)
         if result:
             results[issue] = result
             continue
+        opted_in = autobump_enabled(OVERLAY_TOML, package)
+        if not opted_in:
+            results[issue] = NOT_OPTED_IN
+        else:
+            prior = ledger_skip(settings, package, version)
+            if prior is not None:
+                results[issue] = f"skip ({prior})"
+                continue
+        candidates.append({"issue": issue, "package": package, "version": version, "opted_in": opted_in})
 
-        prior = ledger_skip(settings, package, version)
-        if prior is not None:
-            results[issue] = f"skip ({prior})"
+    status_comment_failed = set()
+    snapshot, with_bundles, bundle_error = {}, set(), None
+    if settings.bundles is not None:
+        with_bundles = bundle_packages()
+        snapshot, bundle_error = run_bundle_controller(
+            settings, [c for c in candidates if c["package"] in with_bundles])
+        for target in snapshot.values():
+            if target.get("issue"):
+                announce_bundle(settings, target, status_comment_failed)
+
+    items = []
+    planned = {}
+    attempts = 0
+    for candidate in candidates:
+        issue, package, version = candidate["issue"], candidate["package"], candidate["version"]
+        bundle = snapshot.get((package, version))
+        if not candidate["opted_in"]:
+            if bundle:
+                results[issue] += f" · bundle {bundle['state']}"
+            elif bundle_error and package in with_bundles:
+                results[issue] += f" · {bundle_error}"
             continue
+        # only a ready bundle reaches a shard: a fetch there would read a pending one as missing
+        if package in with_bundles:
+            if bundle is None:
+                results[issue] = f"not attempted ({bundle_error or f'no bundle snapshot for {package} {version}'})"
+                continue
+            if bundle["state"] != "ready":
+                reason = short_status_reason(bundle["reason"])
+                results[issue] = f"not attempted (bundle {bundle['state']}): {reason}"
+                continue
 
         args, footer, result = engine_arguments(Path("scripts"), package)
         if result:
@@ -655,6 +828,10 @@ def plan_issues(settings, issues, apply_run_limit):
             results[issue] = f"skip (#{planned[package]} already bumps {package} this run)"
             continue
 
+        if settings.bundles_only:
+            results[issue] = "skip (bundles_only run)"
+            continue
+
         cap = run_limit(settings)
         if apply_run_limit and cap is not None and attempts >= cap:
             results[issue] = f"skip (per-run attempt limit {cap} reached)"
@@ -662,17 +839,19 @@ def plan_issues(settings, issues, apply_run_limit):
 
         planned[package] = issue
         attempts += 1
-        items.append(
-            {
-                "issue": issue,
-                "package": package,
-                "version": version,
-                "args": args,
-                "footer": footer,
-                "attempt": attempts,
-                "attempts": matching_ledger_count(settings.attempts_ledger, package, version),
-            }
-        )
+        item = {
+            "issue": issue,
+            "package": package,
+            "version": version,
+            "args": args,
+            "footer": footer,
+            "attempt": attempts,
+            "attempts": matching_ledger_count(settings.attempts_ledger, package, version),
+        }
+        if bundle:
+            item["bundle_observations"] = bundle["observations"]
+            item["bundle_observation_limit"] = bundle["observation_limit"]
+        items.append(item)
 
     shards = [[] for _ in range(min(settings.plan_shards, len(items)))]
     for index, item in enumerate(items):
@@ -689,6 +868,10 @@ def plan_issues(settings, issues, apply_run_limit):
         "shards": [{"items": shard} for shard in shards],
         "issues": issues,
         "results": results,
+        "status_comment_failed": sorted(status_comment_failed),
+        # collect fails the run on it, after the shards of every other package have run
+        "bundle_error": bundle_error,
+        "bundles_delta": settings.bundles_delta.name if settings.bundles_delta else None,
     }
 
 
@@ -789,6 +972,9 @@ def record_escalation(settings, issue, package, version, evidence, verdict, engi
         f"**autobump** can't bump `{package}` → `{version}` mechanically: "
         f"**{short_status_reason(reason)}**. Needs a manual bump.{run_link(settings.upstream_repo, 'log')}"
     )
+    bundle = engine_bundle_result(engine_output)
+    if bundle:
+        body += f"\n\nBundle: {bundle_links(settings, package, bundle.get('bundles') or [])}"
     excerpt = evidence_excerpt(evidence)
     if excerpt:
         body += f"\n\n{excerpt}"
@@ -839,6 +1025,41 @@ def record_precondition(settings, issue, package, version, footer, status_commen
     return f"done (precondition: overlay already at/ahead of {version})"
 
 
+def engine_bundle_result(text):
+    """The engine's `result:` line for a 404 judged from the bundle snapshot, or None."""
+    for line in reversed(text.split("\n")):
+        if line.startswith("result: "):
+            try:
+                result = json.loads(line[len("result: "):])
+            except json.JSONDecodeError:
+                return None
+            return result if isinstance(result, dict) and result.get("bundle") is True else None
+    return None
+
+
+def defer_bundle(settings, issue, package, version, result, footer, observed, limit, status_comment_failed):
+    # the bundle policy, not ATTEMPTS: a producer still at work is not a transient failure
+    count = observed + 1
+    record_bundle_event(settings, package, version, "observe")
+    reason = short_status_reason(result.get("reason") or "bundle pending")
+    escalate = count >= limit
+    if escalate:
+        record_bundle_event(settings, package, version, "escalate")
+    detail = f" after {count} checks" if escalate else f" (check {count} of {limit})"
+    links = bundle_links(settings, package, result.get("bundles") or [])
+    status_comment(
+        issue,
+        bundle_status_body(settings, package, version, reason, links, escalate=escalate, detail=detail),
+        comment=settings.comment,
+        footer=footer,
+        upstream_repo=settings.upstream_repo,
+        status_comment_failed=status_comment_failed,
+    )
+    if escalate:
+        return f"escalated: bundle not ready after {count} observations: {reason}"
+    return f"not attempted (bundle pending, observation {count}/{limit}): {reason}"
+
+
 def defer_transient(settings, issue, package, version, engine_output, footer, status_comment_failed):
     # Dirty trees, fetch flakes, timeouts, and dependency gaps retry until ATTEMPTS hands persistent failures to a maintainer.
     tries = attempt_count(settings, package, version)
@@ -875,7 +1096,8 @@ def defer_transient(settings, issue, package, version, engine_output, footer, st
     return f"deferred after {tries + 1} transient attempts: {reason}"
 
 
-def run_package(settings, tools, engine, issue, package, version, args, footer, attempt, status_comment_failed):
+def run_package(settings, tools, engine, issue, package, version, args, footer, attempt, status_comment_failed,
+                bundle_observations=None, bundle_observation_limit=None):
     cap = run_limit(settings)
     counter = f"{attempt}/{cap}" if cap else str(attempt)
     print(f"==== #{issue} {package} -> {version} ({counter}) ====")
@@ -893,6 +1115,12 @@ def run_package(settings, tools, engine, issue, package, version, args, footer, 
     if status == 3:
         return handle_escalation(
             settings, tools, engine, issue, package, version, args, footer, engine_output, status_comment_failed
+        )
+    bundle = engine_bundle_result(engine_output) if bundle_observations is not None else None
+    if bundle and bundle.get("exit") == 2:
+        return defer_bundle(
+            settings, issue, package, version, bundle, footer, bundle_observations, bundle_observation_limit,
+            status_comment_failed,
         )
     # the abort reason only: a build log line ("destination path ... already exists") would
     # otherwise record a transient failure as a permanent precondition
@@ -936,10 +1164,21 @@ def run_issues(settings, issues, apply_run_limit, tools, engine):
     return results, status_comment_failed
 
 
+def worker_engine_arguments(item):
+    # the engine would run without the snapshot and read a pending bundle as a missing file
+    if "bundle_observations" not in item:
+        return item["args"]
+    snapshot = os.environ.get("AUTOBUMP_BUNDLE_STATUS")
+    if not snapshot or not Path(snapshot).is_file():
+        raise RuntimeError(f"bundle snapshot missing (AUTOBUMP_BUNDLE_STATUS={snapshot!r})")
+    return [*item["args"], "--bundle-status", str(Path(snapshot).resolve())]
+
+
 def write_delta(settings, results, status_comment_failed):
     delta = {
         "done": settings.ledger_additions["done"],
         "attempts": settings.ledger_additions["attempts"],
+        "bundles": settings.ledger_additions["bundles"],
         "results": results,
         "status_comment_failed": sorted(status_comment_failed),
     }
@@ -959,6 +1198,7 @@ def run_worker(settings):
             return 1
         for item in settings.worker_items:
             try:
+                args = worker_engine_arguments(item)
                 results[item["issue"]] = run_package(
                     settings,
                     tools,
@@ -966,10 +1206,12 @@ def run_worker(settings):
                     item["issue"],
                     item["package"],
                     item["version"],
-                    item["args"],
+                    args,
                     item["footer"],
                     item["attempt"],
                     status_comment_failed,
+                    bundle_observations=item.get("bundle_observations"),
+                    bundle_observation_limit=item.get("bundle_observation_limit"),
                 )
             except Exception as error:  # noqa: BLE001
                 results[item["issue"]] = f"error ({type(error).__name__}: {error})"
@@ -995,13 +1237,17 @@ def merge_lines(path, lines):
 
 def collect(settings):
     results = dict(settings.collect_plan["results"])
-    status_comment_failed = set()
-    for path in settings.delta_files:
+    status_comment_failed = set(settings.collect_plan.get("status_comment_failed", []))
+    # the plan's lines first: a --retry reset there must not wipe a shard's observation of this run
+    plan_delta = settings.collect_plan.get("bundles_delta")
+    for path in sorted(settings.delta_files, key=lambda path: path.name != plan_delta):
         delta = json.loads(path.read_text())
         merge_lines(settings.done_ledger, delta["done"])
         # merged, like done: an attempt line carries the run it came from, so two attempts on one
         # day are two lines while the same delta delivered twice is still one
         merge_lines(settings.attempts_ledger, delta["attempts"])
+        # the plan's own delta carries the bundle controller's lines, even when no shard ran
+        merge_lines(settings.bundles_ledger, delta.get("bundles", []))
         results.update(delta["results"])
         status_comment_failed.update(delta["status_comment_failed"])
     print_summary(settings.collect_plan["issues"], results, status_comment_failed)
