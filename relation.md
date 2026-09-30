@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-30 10:32:54 CST)
+(The last generation time: 2026-09-30 10:37:08 CST)
 
 ### Packages
 
@@ -202,8 +202,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/fast-resume                                  | 2.13.0             |            | https://github.com/angristan/fast-resume                                   | Fast fuzzy finder for coding agent session history
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/go-yq-bin                                    | 4.53.4             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
-                                                       | 4.53.6             |            |                                                                            |
+ app-misc/go-yq-bin                                    | 4.53.6             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
+                                                       | 4.54.1             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/gpick                                        | 0.4                |            | https://github.com/thezbyg/gpick                                           | Advanced color picker written in C++ using GTK+ toolkit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -245,7 +245,7 @@
  app-office/obsidian                                   | 1.13.7-r1          |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/siyuan-bin                                 | 3.7.3              |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
-                                                       | 3.8.5              |            |                                                                            |
+                                                       | 3.8.6              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office                                 | 11.1.0.11719-r2    |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office is an office productivity suite, Here is the Chinese version
                                                        | 12.1.2.28080       |            |                                                                            |
@@ -276,7 +276,7 @@
  app-text/gzpaste                                      | 0.1.3              |            | https://github.com/gentoo-zh/gzpaste                                       | Command-line client for the paste.gentoozh.org pastebin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lektra                                       | 0.6.5              |            | https://github.com/dheerajshenoy/lektra                                    | High-performance PDF reader that prioritizes screen space and control
-                                                       | 0.7.7              |            |                                                                            |
+                                                       | 0.7.8              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lemminx-bin                                  | 0.31.2             |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -306,7 +306,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-games/alcom                                       | 1.1.8              |            | https://github.com/vrc-get/vrc-get                                         | A fast open-source alternative of VRChat Creator Companion (VCC)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-games/unityhub                                    | 3.21.3             |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
+ dev-games/unityhub                                    | 3.22.0             |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/gotests                                        | 1.9.0              |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -330,7 +330,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/conda                                      | 26.7.2             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
+ dev-python/conda                                      | 26.7.3             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0             |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
                                                        | 26.7.0             |            |                                                                            |
      dev-util/mamba                                    | 2.5.0-r1           | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
@@ -385,7 +385,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.2.12             |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.2.13             |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 31                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -399,7 +399,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex                                        | 0.158.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/codex-bin                                    | 0.158.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
+ dev-util/codex-bin                                    | 0.159.2            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/deepseek-harness                             | 0.1.7_rc2          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -709,7 +709,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/another-redis-desktop-manager-bin            | 1.7.4              |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/apifox                                       | 2.8.48             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
+ net-misc/apifox                                       | 2.8.49             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidunetdisk                                 | 8.7.0              |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
