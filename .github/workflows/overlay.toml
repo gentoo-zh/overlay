@@ -508,6 +508,9 @@ use_latest_release = true
 prefix = "v"
 autobump = true
 github_account = "liangyongxiang"
+bundle = [
+  { id = "distfiles", repo = "gentoo-zh-drafts/cc-switch", workflow = "crate-dist.yml", tag = "v{PV}", inputs = { tag = "v{PV}" } },
+]
 
 ["app-misc/cc-switch-bin"]
 source = "github"
@@ -2384,6 +2387,10 @@ github = "clash-verge-rev/clash-verge-rev"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
+bundle = [
+  { id = "crates", repo = "gentoo-zh/gentoo-deps", workflow = "generator.yml", tag = "clash-verge-{PV}", inputs = { LANG = "rust", REPO = "clash-verge-rev/clash-verge-rev", TAG = "v{PV}", P = "clash-verge-{PV}" } },
+  { id = "web", repo = "gentoo-zh-drafts/tauri-web-dist", workflow = "generator.yml", tag = "{P}", inputs = { REPO = "clash-verge-rev/clash-verge-rev", TAG = "v{PV}", P = "{P}" } },
+]
 
 ["net-proxy/clash-verge-rev-bin"]
 source = "github"
@@ -2399,6 +2406,8 @@ github = "daeuniverse/dae"
 use_latest_release = true
 prefix = "v"
 github_account = "st0nie"
+deps = { lang = "golang", tag = "v{bundle_pv}" }
+bundle_pv = [["_rc", "rc"]]
 
 # upstream archived
 #["net-proxy/daed"]
@@ -2875,6 +2884,7 @@ github = "agent-sh/agent-workspace-linux"
 use_latest_release = true
 prefix = "v"
 github_account = "vowstar"
+deps = "rust"
 
 ["x11-misc/computer-use-linux"]
 source = "github"
