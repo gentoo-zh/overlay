@@ -9,7 +9,7 @@ PYTHON_COMPAT=( python3_{12..15} )
 inherit distutils-r1 pypi
 
 DESCRIPTION="a powerful command-line tool"
-HOMEPAGE="https://sr.ht/~cwt/ananta/"
+HOMEPAGE="https://github.com/cwt/ananta"
 
 RDEPEND="
 	<dev-python/asyncssh-3.0.0[${PYTHON_USEDEP}]
