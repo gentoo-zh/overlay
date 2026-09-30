@@ -429,7 +429,8 @@ def parse_verdict(verdict_json):
 def last_clear_reason(text):
     clear_reasons = []
     for line in text.split("\n"):
-        match = re.search(r".*not mechanically safe \(([^)]+)\).*", line)
+        # a reason can carry its own parentheses; the engine ends it with "); evidence: <dir>"
+        match = re.search(r"not mechanically safe \((.+)\); evidence: ", line)
         if match:
             clear_reasons.append(match.group(1))
     return clear_reasons[-1] if clear_reasons else ""
