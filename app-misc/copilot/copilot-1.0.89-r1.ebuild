@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/github/copilot-cli"
 SRC_URI="amd64? ( https://registry.npmjs.org/@github/copilot-linux-x64/-/copilot-linux-x64-${PV}.tgz -> ${P}-amd64.tgz )"
 S="${WORKDIR}/package"
 
-LICENSE="Apache-2.0"
+LICENSE="GitHub-Copilot-CLI"
 SLOT="0"
 KEYWORDS="-* ~amd64"
 RESTRICT="bindist mirror strip"
