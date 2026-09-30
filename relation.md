@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-30 23:45:47 CST)
+(The last generation time: 2026-09-30 23:52:44 CST)
 
 ### Packages
 
@@ -855,7 +855,7 @@
                                                        | 2.5.8              |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/yacd-meta                                   | 0.5.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
+ net-proxy/yacd-meta                                   | 0.6.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/zashboard                                   | 3.22.0             |            | https://github.com/Zephyruso/zashboard                                     | The Official Mihomo Dashboard
                                                        | 3.29.1             |            |                                                                            |
