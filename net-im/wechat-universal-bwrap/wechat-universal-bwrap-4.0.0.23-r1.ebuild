@@ -21,7 +21,7 @@ SRC_URI="
 "
 
 S="${WORKDIR}"
-LICENSE="all-rights-reserved GPL-2"
+LICENSE="Tencent-Weixin GPL-2+"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64 ~loong"
 RESTRICT="bindist strip mirror"
