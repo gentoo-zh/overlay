@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-30 13:07:51 CST)
+(The last generation time: 2026-09-30 13:37:35 CST)
 
 ### Packages
 
@@ -194,7 +194,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.3.0              |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/copilot                                      | 1.0.89             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
+ app-misc/copilot                                      | 1.0.89-r1          |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.97.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -560,7 +560,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/misans                                    | 4.003-r1           |            | https://hyperos.mi.com/font                                                | MiSans 是由小米主导,联合汉仪发布的可免费使用的字体
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/nerd-fonts                                | 3.5.1              |            | https://github.com/ryanoasis/nerd-fonts                                    | Nerd Fonts is a project that patches developer targeted fonts with glyphs
+ media-fonts/nerd-fonts                                | 3.5.1-r1           |            | https://github.com/ryanoasis/nerd-fonts                                    | Nerd Fonts is a project that patches developer targeted fonts with glyphs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/sarasa-gothic                             | 1.0.41             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
                                                        | 1.0.42             |            |                                                                            |
@@ -589,7 +589,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/tgs2png                                     | 9999               |            | https://github.com/zevlg/tgs2png                                           | Convert Telegram's animated stickers in TGS format into series of PNG images
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/tifig-bin                                   | 0.2.2              |            | https://github.com/monostream/tifig                                        | Converts iOS 11 HEIC images to practical formats - Static binary
+ media-gfx/tifig-bin                                   | 0.2.2-r1           |            | https://github.com/monostream/tifig                                        | Converts iOS 11 HEIC images to practical formats - Static binary
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/zw3d                                        | 2026.0.1.1         |            | https://www.zwsoft.cn/product/zw3d                                         | CAD/CAM software for 3D design and processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -615,7 +615,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/go-musicfox                               | 5.1.0              |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/harmonoid                                 | 0.3.32             |            | https://harmonoid.com/                                                     | Plays & manages your music library
+ media-sound/harmonoid                                 | 0.3.32-r1          |            | https://harmonoid.com/                                                     | Plays & manages your music library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/listen1_desktop-bin                       | 2.33.0             |            | https://listen1.github.io/listen1/                                         | one for all free music in China
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -625,7 +625,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/open-orpheus-bin                          | 0.18.0             |            | https://github.com/YUCLing/open-orpheus                                    | An open-source implementation of Netease Cloud Music's Orpheus browser host
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/qqmusic                                   | 1.1.8              |            | https://y.qq.com/                                                          | Tencent QQ Music, converted from .deb package
+ media-sound/qqmusic                                   | 1.1.8-r1           |            | https://y.qq.com/                                                          | Tencent QQ Music, converted from .deb package
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/splayer                                   | 3.1.1              |            | https://splayer.imsyy.top/                                                 | A cross-platform music player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -680,7 +680,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-dns/q                                             | 0.19.12            |            | https://github.com/natesales/q                                             | A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/dingtalk                                       | 8.2.8.260818002    |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
+ net-im/dingtalk                                       | 8.2.8.260818002-r1 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503      | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.33_p260902     |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
@@ -694,7 +694,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/wechat                                         | 4.1.13.23-r1       |            | https://linux.weixin.qq.com/                                               | Weixin for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/wechat-universal-bwrap                         | 4.0.0.23           |            | https://weixin.qq.com                                                      | WeChat (Universal) with bwrap sandbox
+ net-im/wechat-universal-bwrap                         | 4.0.0.23-r1        |            | https://weixin.qq.com                                                      | WeChat (Universal) with bwrap sandbox
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/wemeet                                         | 3.26.10.401        |            | https://meeting.tencent.com/                                               | Wemeet - Tencent Video Conferencing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -767,7 +767,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.9              |            | https://github.com/trzsz/tsshd                                             | UDP-based SSH server with roaming support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/yaak-bin                                     | 2026.8.1           |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
+ net-misc/yaak-bin                                     | 2026.8.1-r1        |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-p2p/amule-dlp-antileech                           | 9999               |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999               | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
@@ -907,7 +907,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-boot/ventoy-bin                                   | 1.1.17             |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
+ sys-boot/ventoy-bin                                   | 1.1.17-r1          |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-boot/zfsbootmenu                                  | 3.1.0              |            | https://zfsbootmenu.org                                                    | ZFS bootloader for root-on-ZFS systems
                                                        | 9999               |            |                                                                            |
