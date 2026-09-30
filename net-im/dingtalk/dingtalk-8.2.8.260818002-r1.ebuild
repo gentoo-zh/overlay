@@ -12,7 +12,7 @@ SRC_URI="https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linu
 
 S=${WORKDIR}
 
-LICENSE="all-rights-reserved"
+LICENSE="DingTalk-EULA"
 SLOT="0"
 KEYWORDS="-* ~amd64"
 
