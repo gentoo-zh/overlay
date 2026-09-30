@@ -11,4 +11,4 @@ MISC-FREE Programmer-Dvorak
 
 # Binary redistribution needs no permission. The two LCEDA files grant it only
 # as a pair, so the EULA is here and not in @EULA.
-BINARY-REDISTRIBUTABLE LCEDA-Distribution-License LCEDA-Software-EULA
+BINARY-REDISTRIBUTABLE LCEDA-Distribution-License LCEDA-Software-EULA Monofur

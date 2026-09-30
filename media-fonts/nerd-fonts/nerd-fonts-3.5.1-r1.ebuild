@@ -169,6 +169,7 @@ LICENSE="MIT
 		BSD
 		WTFPL-2
 		heavydata? ( Vic-Fieger-License )
+		monofur? ( Monofur )
 		UbuntuFontLicense-1.0"
 SLOT="0"
 KEYWORDS="~amd64 ~loong ~x86"
