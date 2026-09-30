@@ -18,7 +18,7 @@ LICENSE="ASAL-1.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RESTRICT="strip"
+RESTRICT="bindist mirror strip"
 
 RDEPEND="sys-fs/fuse:0"
 BDEPEND="app-arch/dpkg"
