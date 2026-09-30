@@ -627,6 +627,9 @@ github = "Gitlawb/openclaude"
 use_latest_release = true
 prefix = "v"
 github_account = "liangyongxiang"
+bundle = [
+  { id = "node_modules", repo = "gentoo-zh-drafts/openclaude", workflow = "node_modules.yml", tag = "v{PV}", inputs = { tag = "v{PV}" } },
+]
 
 ["app-misc/qwen-code"]
 source = "github"
@@ -895,6 +898,9 @@ github = "vrc-get/vrc-get"
 use_latest_tag = true
 query = "gui-v"
 prefix = "gui-v"
+bundle = [
+  { id = "artifacts", repo = "gentoo-zh-drafts/alcom", workflow = "generator.yml", tag = "{P}", inputs = { TAG = "gui-v{PV}", P = "{P}" } },
+]
 
 ["dev-games/unityhub"]
 source = "apt"
