@@ -13,12 +13,12 @@ SRC_URI="
 "
 
 S="${WORKDIR}"
-LICENSE="MIT"
+LICENSE="Yaak-EULA MIT"
 
 SLOT="0"
 KEYWORDS="-* ~amd64"
 
-RESTRICT="strip"
+RESTRICT="bindist mirror strip"
 
 RDEPEND="
 	net-libs/webkit-gtk:4.1

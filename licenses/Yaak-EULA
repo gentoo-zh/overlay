@@ -1,0 +1,125 @@
+Terms of Service
+
+Yaak is desktop application developed and owned by Mountain Loop Labs,
+Inc. (“Mountain Loop Labs”, “we”, “us”, or “our”). By downloading,
+installing, or using Yaak (“Software”), you (“user”, “you”, or “your”)
+agree to these Terms of Service (“Terms”). Please read them carefully
+before using Yaak.
+
+If you do not agree to these Terms, you must not download, install, or
+use the Software.
+
+1. License Terms
+
+Personal Use: You may use Yaak free of charge for non-commercial,
+personal purposes such as hobby projects, learning, or personal
+tinkering.
+
+Commercial Use: Use of Yaak for revenue-generating or work-related
+activities requires a paid commercial license.
+
+Open Source Note: Portions of Yaak are available under the MIT License
+at github.com/mountain-loop/yaak. These Terms apply to official Yaak
+binaries distributed by Mountain Loop Labs. Use of the source code alone
+is governed by the MIT License.
+
+2. Commercial License Terms
+
+If you purchase a commercial license, the following terms apply:
+
+Individual Licenses: Individual licenses are assigned to a single person
+and email address and cannot be transferred to another person.
+
+Business Licenses: Business licenses are assigned to an organization and
+may be reassigned to other individuals within that organization.
+
+Lifetime Fallback License: If your subscription ends, you may continue
+using the last version of Yaak released while your license was active
+for commercial purposes, but you will not receive future updates or
+support.
+
+Device Limit: Each license may be activated on a limited number of
+devices by the same individual. Sharing licenses with others is
+prohibited.
+
+3. License Restrictions
+
+You agree not to:
+
+Use Yaak for commercial purposes without a valid license.
+
+Share, transfer, or sublicense your license to others (except for
+Business license reassignments within your organization).
+
+Remove or obscure any copyright, trademark, or other proprietary notices
+included in the Software.
+
+4. Ownership and Intellectual Property
+
+Yaak, including all intellectual property rights, is and remains the
+sole property of Mountain Loop Labs. All rights not expressly granted to
+you under these Terms are reserved by Mountain Loop Labs.
+
+5. Updates and Support
+
+We may release updates, bug fixes, or improvements to Yaak at any time.
+Updates are installed automatically but can be disabled in the
+application settings. We are not obligated to provide technical support
+but may choose to do so at our discretion.
+
+6. Privacy and Data Collection
+
+Yaak is designed to function offline and does not transmit API request
+data, environment variables, or secrets. Limited data such as license
+status, application version, or anonymized error information may be
+transmitted solely to operate licensing and improve stability. For more
+details, please review the Privacy Policy.
+
+7. Disclaimer of Warranties
+
+Yaak is provided “as is” without warranties of any kind, either express
+or implied. To the fullest extent permitted by law, we disclaim all
+warranties, including but not limited to implied warranties of
+merchantability, fitness for a particular purpose, and non-infringement.
+We do not guarantee that Yaak will meet your requirements, operate
+uninterrupted, or be error-free.
+
+8. Limitation of Liability
+
+To the fullest extent permitted by law, Mountain Loop Labs will not be
+liable for any indirect, incidental, special, consequential, or punitive
+damages, including but not limited to loss of profits, data, or business
+opportunities, arising from or related to your use of Yaak. Our total
+liability under these Terms is limited to the amount you paid for Yaak
+in the 12 months preceding the claim.
+
+9. Termination
+
+These Terms are effective until terminated by either party. You may
+terminate these Terms by uninstalling and ceasing all use of Yaak. We
+may terminate your license at any time if you violate these Terms. Upon
+termination, you must cease use of Yaak except where continued use is
+permitted under a valid fallback license.
+
+10. Governing Law
+
+These Terms are governed by and construed in accordance with the laws of
+the Province of British Columbia and the federal laws of Canada
+applicable therein, without regard to its conflict of law principles.
+Any disputes arising out of or related to these Terms will be resolved
+exclusively in the courts located in British Columbia, Canada.
+
+11. Changes to These Terms
+
+We may update these Terms from time to time. The most current version
+will be available on our website. By continuing to use Yaak after
+changes to the Terms become effective, you agree to be bound by the
+updated Terms.
+
+12. Contact Information
+
+If you have any questions about these Terms, please contact us at:
+legal@yaak.app
+
+Last updated: February 14, 2026
+Source: https://yaak.app/terms
