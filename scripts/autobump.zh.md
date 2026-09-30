@@ -14,8 +14,8 @@
 第 2 步有三种结果：
 
 * **可机械处理**：只改版本号且 emerge 通过，创建 PR。
-* **需人工处理**：大版本跳变、依赖有变化，或 `files/` 里的 patch 要重新验证。只在 issue 上记录证据，完整证据目录作为 run artifact 上传，不创建 PR。
-* **暂缓**：网络、镜像或上游文件暂时不可用，per-version vendor bundle 还没生成，或者某个过重的依赖在 binhost 上没有 binpkg、从源码编译会超出 CI 限时。下次自动重试，重试若干次仍不行才交给人。
+* **需人工处理**：大版本跳变、依赖有变化、`files/` 里的 patch 要重新验证，或上游对 distfile 返回 404 或 403。因为上游没有这个文件，重试也不会成功，所以直接交给人。只在 issue 上记录证据，完整证据目录作为 run artifact 上传，不创建 PR。
+* **暂缓**：网络或镜像暂时不可用（超时、连接被重置、5xx），per-version vendor bundle 还没生成（下载前检查其 URL 返回 404），或者某个过重的依赖在 binhost 上没有 binpkg、从源码编译会超出 CI 限时。下次自动重试，重试若干次仍不行才交给人。
 
 ## 哪些包可以开启
 
@@ -72,7 +72,7 @@ autobump_my_build_url = "https://example.org/releases/${PV}"
 
 ## 运行
 
-每次 nvchecker 跑完 5 分钟后执行；另有每天 11:00 UTC 一次作为兜底。
+`master` 上的 nvchecker 每次运行结束 60 秒后执行，留出时间让 GitHub 搜索收录新开的 issue；另有每天 11:00 UTC 一次作为兜底。因为 autobump 处理的是所有 open 的 issue，所以 nvchecker 运行失败时照常执行，只有运行被取消时才跳过。
 
 ### 网页
 

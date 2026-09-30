@@ -17,13 +17,14 @@ Bumps the new versions nvchecker reports.
 Step 2 has three outcomes:
 
 * **mechanical** — version change only and emerge passed, so it opens a PR.
-* **escalate** — major version jump, changed dependencies, or a `files/` patch to
-  re-verify. It comments the evidence on the issue, uploads the engine's evidence
-  directory as a run artifact, and opens no PR.
-* **defer** — a transient network, mirror or upstream-file problem, a per-version
-  vendor bundle that is not generated yet, or a heavy dependency with no binpkg on
-  the binhost that would exceed the CI timeout. Retried
-  automatically.
+* **escalate** — major version jump, changed dependencies, a `files/` patch to
+  re-verify, or a distfile upstream answers with 404 or 403, because the file is not
+  there and a retry cannot fix that. It comments the evidence on the issue, uploads
+  the engine's evidence directory as a run artifact, and opens no PR.
+* **defer** — a transient network or mirror problem (timeout, reset connection, 5xx),
+  a per-version vendor bundle that is not generated yet (its URL answers 404 before
+  the fetch), or a heavy dependency with no binpkg on the binhost that would exceed
+  the CI timeout. Retried automatically.
 
 ## Which packages to opt in
 
@@ -94,8 +95,9 @@ bumped.
 
 ## Running it
 
-It runs 5 minutes after each nvchecker run finishes, once the issues are filed, and daily
-at 11:00 UTC as a backstop.
+It runs 60 seconds after each nvchecker run on `master` finishes, so GitHub search lists
+the new issues, and daily at 11:00 UTC as a backstop. Because it works from the open
+issues, a failed nvchecker run still starts it; only a cancelled one does not.
 
 ### Web
 
