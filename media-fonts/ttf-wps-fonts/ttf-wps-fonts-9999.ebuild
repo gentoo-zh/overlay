@@ -16,7 +16,7 @@ EGIT_REPO_URI="https://github.com/dv-anomaly/ttf-wps-fonts.git"
 FONT_SUFFIX="ttf"
 
 # Only installs fonts
-RESTRICT="binchecks strip test"
+RESTRICT="binchecks bindist mirror strip test"
 
 pkg_postinst() {
 	unset FONT_CONF # override default message
