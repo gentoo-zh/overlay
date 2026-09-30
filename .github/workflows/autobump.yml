@@ -64,16 +64,14 @@ permissions:
   issues: write
 
 jobs:
+  # the queue is the open issues, not nvchecker's output, so a failed issue or dispatch job
+  # there does not hold the bumps back; only a cancelled run skips
   wait:
-    if: github.repository == 'gentoo-zh/overlay' || github.event_name == 'workflow_dispatch'
+    if: >-
+      (github.repository == 'gentoo-zh/overlay' || github.event_name == 'workflow_dispatch')
+      && github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     steps:
-    - name: stop if nvchecker failed
-      if: github.event_name == 'workflow_run' && github.event.workflow_run.conclusion != 'success'
-      run: |
-        echo "nvchecker concluded ${{ github.event.workflow_run.conclusion }}; nothing to bump" >&2
-        exit 1
-
     # the issues exist by now; this waits on the search index the queue is read through
     - name: wait for the issues to settle
       if: github.event_name == 'workflow_run'
