@@ -12,7 +12,7 @@ SRC_URI="https://c.y.qq.com/cgi-bin/file_redirect.fcg?bid=dldir&file=ecosfile_pl
 
 S="${WORKDIR}"
 
-LICENSE="Tencent"
+LICENSE="QQMusic-EULA"
 SLOT="0"
 KEYWORDS="-* ~amd64"
 RESTRICT="bindist mirror strip"
