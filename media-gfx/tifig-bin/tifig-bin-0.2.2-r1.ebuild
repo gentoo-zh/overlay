@@ -8,9 +8,10 @@ HOMEPAGE="https://github.com/monostream/tifig"
 SRC_URI="https://github.com/monostream/${PN%-bin}/releases/download/${PV}/${PN%-bin}-static-${PV}.tar.gz"
 
 S="${WORKDIR}"
-LICENSE="Apache-2.0"
+LICENSE="Apache-2.0 LGPL-2.1+ MIT Nokia-HEIF-1.0"
 SLOT="0"
 KEYWORDS="~amd64"
+RESTRICT="bindist mirror"
 
 src_install(){
 	dobin ${PN%-bin}
