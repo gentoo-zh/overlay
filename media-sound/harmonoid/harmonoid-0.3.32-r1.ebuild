@@ -16,7 +16,7 @@ SRC_URI="
 	arm64? ( ${BASE_URI}/${PN}-linux-aarch64.tar.gz -> ${P}-arm64.tar.gz )
 "
 S="${WORKDIR}"
-LICENSE="harmonoid-EULA"
+LICENSE="PolyForm-Strict-1.0.0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="bindist mirror"
