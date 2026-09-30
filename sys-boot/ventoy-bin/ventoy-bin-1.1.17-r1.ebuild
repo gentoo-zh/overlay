@@ -10,13 +10,13 @@ HOMEPAGE="https://www.ventoy.net/"
 SRC_URI="https://github.com/ventoy/Ventoy/releases/download/v${PV}/ventoy-${PV}-linux.tar.gz"
 
 S=${WORKDIR}/ventoy-${PV}
-LICENSE="GPL-3"
+LICENSE="GPL-3+ CC-BY-NC-SA-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
 
 IUSE="+gtk"
 
-RESTRICT="strip mirror"
+RESTRICT="bindist mirror strip"
 
 DEPEND="
 	sys-fs/dosfstools
