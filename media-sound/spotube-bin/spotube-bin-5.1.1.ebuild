@@ -10,7 +10,7 @@ SRC_URI="https://github.com/KRTirtho/spotube/releases/download/v${PV}/spotube-li
 
 S="${WORKDIR}"
 
-LICENSE="GPL-3"
+LICENSE="BSD-4"
 SLOT="0"
 KEYWORDS="~amd64"
 
