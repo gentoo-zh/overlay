@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-09-30 10:32:17 CST)
+(The last generation time: 2026-09-30 10:32:54 CST)
 
 ### Packages
 
@@ -417,7 +417,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr                                        | 0.9.1              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/herdr-bin                                    | 0.9.1              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
+ dev-util/herdr-bin                                    | 0.9.3              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.22.0             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -425,7 +425,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-code-bin                                | 2.1.1              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kiro-cli                                     | 2.24.1             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
+ dev-util/kiro-cli                                     | 2.26.0             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.3              |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -638,7 +638,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/ytmdesktop-bin                            | 2.0.12             |            | https://github.com/ytmdesktop/ytmdesktop                                   | A Desktop App for YouTube Music
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/bilibili                                  | 1.19.0_p1          |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
+ media-video/bilibili                                  | 1.19.0_p3          |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/davinci-resolve                           | 21.1.0             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
