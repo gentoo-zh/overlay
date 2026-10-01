@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-02 00:24:22 CST)
+(The last generation time: 2026-10-02 00:25:08 CST)
 
 ### Packages
 
@@ -194,7 +194,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.3.0              |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/copilot                                      | 1.0.89-r1          |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
+ app-misc/copilot                                      | 1.0.90             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.97.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -448,7 +448,7 @@
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.2              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-bin                                 | 1.39.5             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
+ dev-util/reasonix-bin                                 | 1.39.6             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.39.5             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -979,7 +979,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.9.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/brave-bin                                  | 1.96.59            |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+ www-client/brave-bin                                  | 1.96.60            |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 153.0.8010.52_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 154.0.8037.57_p1   |            |                                                                            |
@@ -1015,7 +1015,7 @@
  x11-terms/blackbox-terminal                           | 0.15.2             |            | https://gitlab.gnome.org/raggesilver/blackbox                              | A beautiful GTK 4 terminal
    dev-libs/libpqmarble                                | 2.0.0_p20250109    |  D, RD     | https://gitlab.gnome.org/raggesilver/marble                                | Utility library for GNOME apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-terms/termius                                     | 10.1.0             |            | https://termius.com/download/linux                                         | Desktop SSH Client
+ x11-terms/termius                                     | 10.1.3             |            | https://termius.com/download/linux                                         | Desktop SSH Client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/tty7-bin                                    | 26.9.4             |            | https://tty7.io/                                                           | Terminal workbench with persistent sessions, SSH, and coding agent integration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
