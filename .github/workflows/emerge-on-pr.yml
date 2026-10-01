@@ -217,11 +217,17 @@ jobs:
         install -dm775 -o root -g portage /var/cache/distfiles
         install -dm775 -o portage -g portage /var/cache/distfiles/git3-src
 
+    # only a target whose REQUIRED_USE the baseline cannot meet gets the runner's CPU flags;
+    # other targets and every dependency keep the profile's baseline
     - name: setup cpu flags
+      env:
+        ATOM: ${{ matrix.target.package }}
       run: |
-        FEATURES="getbinpkg" emerge --oneshot --quiet app-portage/cpuid2cpuflags
-        echo "${{ matrix.target.package }} $(cpuid2cpuflags)" > /etc/portage/package.use/cpu-flags
-        cat /etc/portage/package.use/cpu-flags
+        if scripts/needs-cpu-flags.sh "$ATOM"; then
+          FEATURES="getbinpkg" emerge --oneshot --quiet app-portage/cpuid2cpuflags
+          echo "$ATOM $(cpuid2cpuflags)" > /etc/portage/package.use/cpu-flags
+          cat /etc/portage/package.use/cpu-flags
+        fi
 
     - name: emerge --onlydeps packages
       run: |

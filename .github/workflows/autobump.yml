@@ -218,12 +218,9 @@ jobs:
     - name: sync gentoo main tree
       run: emerge-webrsync --no-pgp-verify
 
-    # both describe the runner, so the image cannot carry them; without the flags a
-    # cpu_flags_x86 REQUIRED_USE reads as a build failure
+    # describes the runner, so the image cannot carry it
     - name: tune portage for this runner
-      run: |
-        echo "MAKEOPTS=\"\${MAKEOPTS} -j$(nproc)\"" >> /etc/portage/make.conf
-        echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/autobump-cpuflags
+      run: echo "MAKEOPTS=\"\${MAKEOPTS} -j$(nproc)\"" >> /etc/portage/make.conf
 
     # every shard restores, one saves: an entry holds the whole directory, and eight
     # near-copies a day would evict the rest of the repo's 10 GB
@@ -272,6 +269,19 @@ jobs:
         location = $(realpath .)
         priority = 0
         EOF
+
+    # as in emerge-on-pr: the runner's CPU flags only for a package whose REQUIRED_USE the
+    # baseline cannot meet, so dependencies keep the binhost's USE
+    - name: set CPU flags for the packages that need them
+      env:
+        PACKAGES: ${{ matrix.packages }}
+      run: |
+        for pkg in $PACKAGES; do
+          if scripts/needs-cpu-flags.sh "$pkg"; then
+            echo "$pkg $(cpuid2cpuflags)"
+          fi
+        done > /etc/portage/package.use/autobump-cpuflags
+        cat /etc/portage/package.use/autobump-cpuflags
 
     # Mint an installation token for the gentoo-zh-autobump GitHub App. A PR opened with
     # the default GITHUB_TOKEN (github-actions[bot]) does NOT trigger emerge-on-pr/pkgcheck

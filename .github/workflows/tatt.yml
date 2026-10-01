@@ -177,9 +177,11 @@ jobs:
       run: |
         FEATURES="getbinpkg" emerge --oneshot --quiet --autounmask=y --autounmask-write=y --autounmask-continue=y \
             app-portage/tatt app-portage/cpuid2cpuflags
-        echo "$ATOM $(cpuid2cpuflags)" > /etc/portage/package.use/cpu-flags
+        if scripts/needs-cpu-flags.sh "$ATOM"; then
+          echo "$ATOM $(cpuid2cpuflags)" > /etc/portage/package.use/cpu-flags
+        fi
 
-        # cpu_flags_* stay at the runner's values: toggling them would test binaries the host cannot run
+        # cpu_flags_* stay as set above: toggling them would test binaries the host cannot run
         cat > ~/.tatt << EOF
         arch=amd64
         usecombis=4

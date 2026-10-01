@@ -74,12 +74,8 @@ jobs:
           app-portage/iwdevtools dev-util/github-cli app-misc/jq net-misc/curl \
           app-portage/cpuid2cpuflags x11-base/xorg-server
 
-    # the same two settings production derives from its runner: without the flags a
-    # cpu_flags_x86 REQUIRED_USE reads as a build failure and the candidate looks unbumpable
     - name: tune portage for this runner
-      run: |
-        echo "MAKEOPTS=\"\${MAKEOPTS} -j$(nproc)\"" >> /etc/portage/make.conf
-        echo "*/* $(cpuid2cpuflags)" > /etc/portage/package.use/autobump-cpuflags
+      run: echo "MAKEOPTS=\"\${MAKEOPTS} -j$(nproc)\"" >> /etc/portage/make.conf
 
     # the engine commits with pkgdev even without --pr, and pkgdev needs an author
     - name: bot identity
@@ -168,6 +164,12 @@ jobs:
             continue
           fi
           echo "==== #$n  $pkg -> $ver ===="
+          # as in production, the runner's CPU flags only when the baseline cannot meet REQUIRED_USE
+          if scripts/needs-cpu-flags.sh "$pkg"; then
+            echo "$pkg $(cpuid2cpuflags)" > /etc/portage/package.use/autobump-cpuflags
+          else
+            rm -f /etc/portage/package.use/autobump-cpuflags
+          fi
           trial_comment "$n" "**autobump-trial** build-testing \`$pkg\` → \`$ver\` (not opted in)… · [run]($RUN_URL)"
           # the package's own rewrite/retention flags, so a trial runs what a real sweep would
           args=(); a=$(python3 scripts/autobump-args.py "$pkg") && [ -n "$a" ] && mapfile -t args <<<"$a"
