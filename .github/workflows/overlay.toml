@@ -2884,6 +2884,7 @@ use_latest_release = true
 prefix = "v"
 github_account = "vowstar"
 deps = "rust"
+autobump = true
 
 ["x11-misc/computer-use-linux"]
 source = "github"
