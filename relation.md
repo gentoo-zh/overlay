@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-02 07:33:59 CST)
+(The last generation time: 2026-10-02 07:55:19 CST)
 
 ### Packages
 
@@ -706,7 +706,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/ananta                                       | 2.1.0              |            | https://github.com/cwt/ananta                                              | a powerful command-line tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/another-redis-desktop-manager-bin            | 1.7.4              |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
+ net-misc/another-redis-desktop-manager-bin            | 1.7.4-r1           |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/apifox                                       | 2.8.49             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
