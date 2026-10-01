@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-02 06:41:28 CST)
+(The last generation time: 2026-10-02 06:42:07 CST)
 
 ### Packages
 
@@ -333,7 +333,7 @@
  dev-python/conda                                      | 26.9.0             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0             |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
                                                        | 26.7.0             |            |                                                                            |
-     dev-util/mamba                                    | 2.5.0-r1           | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
+     dev-util/mamba                                    | 2.5.0-r2           | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
        dev-cpp/reproc                                  | 14.2.8             |  D, RD     | https://github.com/DaanDeMeyer/reproc                                      | A cross-platform (C99/C++11) process library
        sys-libs/libsolv                                | 0.7.40             |  D, RD     | https://github.com/openSUSE/libsolv                                        | Library for solving packages and reading repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -359,7 +359,7 @@
    dev-python/simplesat                                | 0.9.2              | RD         | https://github.com/enthought/sat-solver                                    | Prototype for SAT-based dependency handling
      dev-python/okonomiyaki                            | 3.0.0              | RD         | https://github.com/enthought/okonomiyaki                                   | Self-contained library to deal with metadata in egg and runtime archives
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/menuinst                                   | 2.5.2              |            | https://github.com/conda/menuinst                                          | Cross platform menu item installation
+ dev-python/menuinst                                   | 2.5.2-r1           |            | https://github.com/conda/menuinst                                          | Cross platform menu item installation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/microfs2                                   | 2.1.1              |            | https://github.com/blackteahamburger/microfs                               | A module and utility to work with the simple filesystem on the BBC micro:bit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
