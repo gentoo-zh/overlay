@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-02 07:56:44 CST)
+(The last generation time: 2026-10-02 08:15:03 CST)
 
 ### Packages
 
@@ -749,7 +749,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/rayburst-bin                                 | 4.0.0              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
+ net-misc/rayburst-bin                                 | 4.0.0-r1           |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/reframe                                      | 1.21.0             |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                  |  D, RD     |                                                                            | group for reframe
@@ -844,7 +844,7 @@
                                                        | 1.13.21            |            |                                                                            |
                                                        | 1.14.2             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/sing-box-windows-bin                        | 2.3.2              |            | https://github.com/xinggaoya/sing-box-windows                              | Modern sing-box desktop client
+ net-proxy/sing-box-windows-bin                        | 2.3.2-r1           |            | https://github.com/xinggaoya/sing-box-windows                              | Modern sing-box desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/smartproxy                                  | 0.9.5              |            | https://github.com/microcai/smartproxy                                     | A fast, proxy smart selector
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
