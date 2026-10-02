@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<name>Yongxiang Liang</name>
+		<email>tanekliang@gmail.com</email>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">zai-org/ZCode</remote-id>
+	</upstream>
+</pkgmetadata>

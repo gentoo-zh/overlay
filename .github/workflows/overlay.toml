@@ -1510,6 +1510,12 @@ prefix = "v"
 github_account = "liangyongxiang"
 autobump = true
 
+["dev-util/zcode-bin"]
+source = "regex"
+url = "https://zcode.z.ai/en/docs/install"
+regex = 'ZCode-([\d.]+)-linux-x64\.AppImage'
+github_account = "liangyongxiang"
+
 ["dev-util/zprint-bin"]
 source = "github"
 github = "kkinnear/zprint"
