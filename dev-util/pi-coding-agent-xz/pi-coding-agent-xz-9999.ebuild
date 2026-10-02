@@ -12,6 +12,7 @@ EGIT_REPO_URI="https://github.com/xz-dev/pi.git"
 LICENSE="MIT"
 SLOT="0"
 IUSE="X coexist"
+# Stripping would remove the payload bun appends to the compiled executable.
 RESTRICT="strip"
 
 BDEPEND="
@@ -35,45 +36,21 @@ src_unpack() {
 }
 
 src_compile() {
-	local arch=$(usex amd64 x64 arm64)
+	local target=$(usex amd64 linux-x64-gnu-baseline linux-arm64-gnu)
 
-	# Same steps as scripts/build-binaries.sh minus the zip packaging.
-	NODE_ENV=production npm run build:offline || die
-
-	cd "${S}/packages/coding-agent" || die
-	bun build --compile --minify --bytecode --format=esm \
-		--target="bun-linux-${arch}" \
-		./dist/bun/cli.js ./src/utils/image-resize-worker.ts \
-		--outfile dist/pi || die
-	npm run copy-binary-assets || die
-
-	# copy-binary-assets leaves the X11 clipboard helper to build-binaries.sh.
-	if use X; then
-		mkdir -p "dist/native/linux/prebuilds/linux-${arch}" || die
-		cp "../tui/native/linux/prebuilds/linux-${arch}/linux-platform-x11.node" \
-			"dist/native/linux/prebuilds/linux-${arch}/" || die
-		cp ../../LICENSE dist/native/LICENSE || die
-	fi
-
-	mv dist/pi dist/pi-native || die
-	cat > dist/pi <<-EOF || die
-		#!/bin/sh
-		exec "\$(dirname "\$(readlink -f "\$0")")/pi-native" "\$@"
-	EOF
+	# Use the release build script so the embedded resources and entrypoint
+	# always match the published single executables.
+	bash scripts/build-binaries.sh --skip-install --offline-model-data \
+		--platform "${target}" --out "${T}/out" || die
+	mv "${T}/out/pi-${target}" "${T}/pi" || die
 }
 
 src_install() {
-	local dist="${S}/packages/coding-agent/dist"
-	insinto /opt/${PN}
-	doins "${dist}"/{package.json,README.md,CHANGELOG.md,photon_rs_bg.wasm}
-	doins -r "${dist}"/{theme,assets,export-html,docs,examples}
-	use X && doins -r "${dist}"/native
-
-	# pi update --self refuses to overwrite the binary when this marker exists.
-	touch "${ED}/opt/${PN}/.portage.managed.lock" || die
-
 	exeinto /opt/${PN}
-	doexe "${dist}"/{pi,pi-native}
+	doexe "${T}/pi"
+
+	# pi update --self refuses to replace the binary when this marker exists.
+	touch "${ED}/opt/${PN}/.portage.managed.lock" || die
 
 	dosym ../${PN}/pi /opt/bin/$(usex coexist pi-xz pi)
 }
