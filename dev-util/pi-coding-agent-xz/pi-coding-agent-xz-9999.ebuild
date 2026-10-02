@@ -37,11 +37,13 @@ src_unpack() {
 
 src_compile() {
 	local target=$(usex amd64 linux-x64-gnu-baseline linux-arm64-gnu)
+	local myargs=()
+	use X || myargs+=( --without-x11 )
 
 	# Use the release build script so the embedded resources and entrypoint
 	# always match the published single executables.
 	bash scripts/build-binaries.sh --skip-install --offline-model-data \
-		--platform "${target}" --out "${T}/out" || die
+		--platform "${target}" --out "${T}/out" "${myargs[@]}" || die
 	mv "${T}/out/pi-${target}" "${T}/pi" || die
 }
 
