@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-02 08:15:03 CST)
+(The last generation time: 2026-10-02 19:44:52 CST)
 
 ### Packages
 
@@ -472,6 +472,8 @@
  dev-util/vimls-go-bin                                 | 0.2.0              |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/waza-bin                                     | 0.38.8             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-util/zcode-bin                                    | 3.14.4             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zprint-bin                                   | 1.3.0              |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
