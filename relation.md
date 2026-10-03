@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-03 22:18:02 CST)
+(The last generation time: 2026-10-03 22:19:24 CST)
 
 ### Packages
 
@@ -1034,7 +1034,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-themes                                | 2.4.1              |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/mint-y-icons                               | 1.9.5              |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
+ x11-themes/mint-y-icons                               | 1.9.6              |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/nordic                                     | 2.2.0-r1           |            | https://github.com/EliverLara/Nordic                                       | Dark Gtk3.20+ theme created using the awesome Nord color pallete
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
