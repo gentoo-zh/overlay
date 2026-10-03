@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-03 19:25:42 CST)
+(The last generation time: 2026-10-03 19:30:48 CST)
 
 ### Packages
 
@@ -331,7 +331,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/conda                                      | 26.9.0             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
+ dev-python/conda                                      | 26.9.1             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0             |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
                                                        | 26.7.0             |            |                                                                            |
      dev-util/mamba                                    | 2.5.0-r2           | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
@@ -433,7 +433,7 @@
  dev-util/obs-build                                    | 20260910           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.4.10            |            |                                                                            |
+                                                       | 18.5.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.34            |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
@@ -988,7 +988,7 @@
  www-client/ungoogled-chromium-bin                     | 153.0.8010.52_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 154.0.8037.92_p1   |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/zen-browser-bin                            | 1.22.3b            |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
+ www-client/zen-browser-bin                            | 1.23b              |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/darkhttpd                                 | 1.17               |            | https://unix4lyfe.org/darkhttpd/                                           | A small, static webserver
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
