@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-03 19:14:21 CST)
+(The last generation time: 2026-10-03 19:19:04 CST)
 
 ### Packages
 
@@ -947,7 +947,7 @@
                                                        | 7.2.7              |            |                                                                            |
                                                        | 7.2.8              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/mkinitcpio                                 | 42.1               |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
+ sys-kernel/mkinitcpio                                 | 42.2               |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-libs/elog-functions                               | 0.0.2              |            | http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html         | Compatibility functions for the log eclass functions of OpenRC
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
