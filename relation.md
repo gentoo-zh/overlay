@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-04 12:44:09 CST)
+(The last generation time: 2026-10-04 12:54:33 CST)
 
 ### Packages
 
@@ -983,7 +983,7 @@
  www-client/brave-bin                                  | 1.96.61            |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 153.0.8010.52_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
-                                                       | 154.0.8037.92_p1   |            |                                                                            |
+                                                       | 154.0.8037.97_p1   |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/zen-browser-bin                            | 1.23b              |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
