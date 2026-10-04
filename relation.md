@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-04 12:17:56 CST)
+(The last generation time: 2026-10-04 12:18:42 CST)
 
 ### Packages
 
@@ -444,7 +444,7 @@
  dev-util/pack-cli-bin                                 | 0.40.9             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.99.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
-                                                       | 1.0.0              |            |                                                                            |
+                                                       | 1.0.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.2              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
@@ -906,7 +906,7 @@
  sys-apps/pacman-mirrorlist                            | 20251021           |            | https://archlinux.org/mirrorlist/                                          | Repository list for Archlinux's binary package manager
                                                        | 20260610           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/pnpm-bin                                     | 12.8.1             |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
+ sys-apps/pnpm-bin                                     | 12.9.1             |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
