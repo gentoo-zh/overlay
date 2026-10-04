@@ -49,6 +49,7 @@ class Arguments:
 class Settings:
     repo: str
     upstream_repo: str
+    assignee: str
     judge: str
     done_ledger: Path | None
     attempts_ledger: Path | None
@@ -372,6 +373,19 @@ def status_comment(issue, body, *, comment, footer, upstream_repo, status_commen
     status_comment_failed.add(issue)
 
 
+def assign_issue(settings, issue, add):
+    if not (settings.comment and settings.assignee):
+        return
+    flag = "--add-assignee" if add else "--remove-assignee"
+    command = ["gh", "issue", "edit", issue, "--repo", settings.upstream_repo, flag, settings.assignee]
+    for _ in range(3):
+        status, _ = command_output(command, stderr=subprocess.DEVNULL)
+        if status == 0:
+            return
+        time.sleep(3)
+    print(f"warning: could not {'assign' if add else 'unassign'} {settings.assignee} on #{issue}", file=sys.stderr)
+
+
 # GitHub refuses these in an artifact path, and portage names an elog
 # "<cat>:<pn>-<ver>:<timestamp>.log".
 UPLOADABLE_NAME = re.compile(r'["<>|*?:\r\n]')
@@ -519,6 +533,8 @@ def read_settings(argv):
     if not repo:
         _, repo = command_output(["git", "rev-parse", "--show-toplevel"], stderr=subprocess.DEVNULL)
     upstream_repo = os.environ.get("AUTOBUMP_UPSTREAM_REPO") or "gentoo-zh/overlay"
+    # the account that opens the nvchecker issues; an empty value assigns nobody
+    assignee = os.environ.get("AUTOBUMP_ASSIGNEE", "gentoo-zh-bot")
     # An unset judge sends each escalation to a human; configure one only when its semantic judgment merits a call.
     judge = os.environ.get("AUTOBUMP_JUDGE", "")
     # where escalation evidence is kept for upload; unset means the run keeps none
@@ -556,6 +572,7 @@ def read_settings(argv):
     return Settings(
         repo=repo,
         upstream_repo=upstream_repo,
+        assignee=assignee,
         judge=judge,
         done_ledger=done_ledger if arguments.worker is None else None,
         attempts_ledger=attempts_ledger if arguments.worker is None else None,
@@ -1101,6 +1118,22 @@ def run_package(settings, tools, engine, issue, package, version, args, footer, 
     cap = run_limit(settings)
     counter = f"{attempt}/{cap}" if cap else str(attempt)
     print(f"==== #{issue} {package} -> {version} ({counter}) ====")
+    # Assigned while the bump runs and kept only when a PR was opened, so the issue list shows who is on it.
+    assign_issue(settings, issue, True)
+    result = None
+    try:
+        result = bump_package(
+            settings, tools, engine, issue, package, version, args, footer, status_comment_failed,
+            bundle_observations, bundle_observation_limit,
+        )
+        return result
+    finally:
+        if not (settings.pr and result and result.startswith("bumped")):
+            assign_issue(settings, issue, False)
+
+
+def bump_package(settings, tools, engine, issue, package, version, args, footer, status_comment_failed,
+                 bundle_observations, bundle_observation_limit):
     status_comment(
         issue,
         f"**autobump** is bumping `{package}` → `{version}`…{run_link(settings.upstream_repo)}",
