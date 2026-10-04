@@ -1,0 +1,40 @@
+From: gentoo-zh overlay
+Subject: [PATCH] rebase PRJC onto the 7.2.9 genpatches Kconfig
+
+Upstream: https://github.com/CachyOS/kernel-patches/blob/227a7d1a2a402274e3fd6455aacb101e5dec4ed2/7.2/sched/0001-prjc-cachy.patch
+
+Preserve the GENERIC_ALLOCATOR select in CachyOS 7.2.9 with genpatches-7.2-10
+when adding the SCHED_CLASS_EXT dependency. Account for release_task's updated
+PID lifetime handling without relying on fuzzy context matching. Apply to
+a copy of the pinned patch, not the kernel tree, so both the rebase and the
+scheduler patch fail on unexpected context.
+
+--- a/prjc.patch
++++ b/prjc.patch
+@@ -5272,12 +5272,13 @@
+  	help
+  	  This option permits Core Scheduling, a means of coordinated task
+  	  selection across SMT siblings. When enabled -- see
+-@@ -168,7 +168,7 @@ config SCHED_CORE
++@@ -168,8 +168,8 @@ config SCHED_CORE
+  
+  config SCHED_CLASS_EXT
+  	bool "Extensible Scheduling Class"
+ -	depends on BPF_SYSCALL && BPF_JIT && DEBUG_INFO_BTF
+ +	depends on BPF_SYSCALL && BPF_JIT && DEBUG_INFO_BTF && !SCHED_ALT
++ 	select GENERIC_ALLOCATOR
+  	select STACKTRACE if STACKTRACE_SUPPORT
+  	help
+  	  This option enables a new scheduler class sched_ext (SCX), which
+@@ -5384,9 +5385,9 @@
+  	sig->nr_threads--;
+  	__unhash_process(post, tsk, group_dead);
+  	write_sequnlock(&sig->stats_lock);
+-@@ -295,8 +295,8 @@ void release_task(struct task_struct *p)
+- 	/* @thread_pid can't go away until free_pids() below */
++@@ -298,8 +298,8 @@ void release_task(struct task_struct *p)
+  	proc_flush_pid(thread_pid);
++ 	put_pid(thread_pid);
+  	exit_cred_namespaces(p);
+ -	add_device_randomness(&p->se.sum_exec_runtime,
+ -			      sizeof(p->se.sum_exec_runtime));

@@ -8,13 +8,15 @@ EXTRAVERSION="-cachyos"
 K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
-CACHYOS_PATCHES_COMMIT="a1bccf2f016523440bd3723a09ae9d3657f492ab"
-CACHYOS_CONFIGS_COMMIT="c7d6ad1ead107761d354a12d6217ddf6840cb177"
-CACHYOS_PR="$(( ${PR#r} + 1 ))"
+CACHYOS_PATCHES_COMMIT="a8efcb97a509c3d36f839451dacb896ab48581c5"
+CACHYOS_CONFIGS_COMMIT="ee39638ff003ef2def73671ec1677d48218e7c03"
+# Source tag is cachyos-6.18.55-1; the tarball already embeds bore-cachy and
+# prjc-cachy, so scheduler selection is a pure Kconfig flip.
+CACHYOS_PR="1"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="8"
+K_GENPATCHES_VER="63"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -27,13 +29,13 @@ K_NO_VERSION_CHECK="1"
 K_SECURITY_UNSUPPORTED="1"
 
 ZFS_COMMIT="71a9f9578616a90c3c14bb59629fb4d31bfd68d1"
-CJKTTY_PV="7.2"
+CJKTTY_PV="6.18.45"
 CKV="$(ver_cut 1-3)"
 CACHYOS_SERIES="$(ver_cut 1-2)"
 CACHYOS_PATCH_URI="https://github.com/CachyOS/kernel-patches/raw/${CACHYOS_PATCHES_COMMIT}/${CACHYOS_SERIES}"
 CACHYOS_CONFIG_URI="https://github.com/CachyOS/linux-cachyos/raw/${CACHYOS_CONFIGS_COMMIT}"
 CACHYOS_PATCH_PREFIX="cachyos-kernel-patches-${CACHYOS_PATCHES_COMMIT}-${CACHYOS_SERIES}"
-CACHYOS_CONFIG_PREFIX="linux-cachyos-${CACHYOS_CONFIGS_COMMIT}"
+CACHYOS_CONFIG_PREFIX="linux-cachyos-lts-${CACHYOS_CONFIGS_COMMIT}"
 
 inherit check-reqs kernel-2 optfeature cjktty
 
@@ -58,40 +60,22 @@ HOMEPAGE="
 SRC_URI+="
 	${KERNEL_URI}
 	${GENPATCHES_URI}
-	${CACHYOS_CONFIG_URI}/linux-cachyos/config
+	${CACHYOS_CONFIG_URI}/linux-cachyos-lts/config
 		-> ${CACHYOS_CONFIG_PREFIX}-config
-	bore? (
-		${CACHYOS_PATCH_URI}/sched/0001-bore-cachy.patch
-			-> ${CACHYOS_PATCH_PREFIX}-bore.patch
-	)
-	bmq? (
-		${CACHYOS_PATCH_URI}/sched/0001-prjc-cachy.patch
-			-> ${CACHYOS_PATCH_PREFIX}-prjc.patch
-	)
-	pds? (
-		${CACHYOS_PATCH_URI}/sched/0001-prjc-cachy.patch
-			-> ${CACHYOS_PATCH_PREFIX}-prjc.patch
-	)
-	muqss? (
-		${CACHYOS_PATCH_URI}/sched/0001-muqss-cachy.patch
-			-> ${CACHYOS_PATCH_PREFIX}-muqss.patch
+	cachyos-hardened? (
+		${CACHYOS_PATCH_URI}/misc/0001-hardened.patch
+			-> ${CACHYOS_PATCH_PREFIX}-hardened.patch
 	)
 	rt? (
 		${CACHYOS_PATCH_URI}/misc/0001-rt-i915.patch
 			-> ${CACHYOS_PATCH_PREFIX}-rt-i915.patch
 	)
 	rt-bore? (
-		${CACHYOS_PATCH_URI}/sched/0001-bore-cachy.patch
-			-> ${CACHYOS_PATCH_PREFIX}-bore.patch
 		${CACHYOS_PATCH_URI}/misc/0001-rt-i915.patch
 			-> ${CACHYOS_PATCH_PREFIX}-rt-i915.patch
 	)
 	${CACHYOS_PATCH_URI}/misc/dkms-clang.patch
 		-> ${CACHYOS_PATCH_PREFIX}-dkms-clang.patch
-	aufs? (
-		${CACHYOS_PATCH_URI}/misc/0001-aufs-7.2-merge-v20260907.patch
-			-> ${CACHYOS_PATCH_PREFIX}-aufs.patch
-	)
 	kernel-builtin-zfs? (
 		https://github.com/cachyos/zfs/archive/${ZFS_COMMIT}.tar.gz
 			-> zfs-${ZFS_COMMIT}.tar.gz
@@ -101,10 +85,10 @@ SRC_URI+="
 LICENSE+=" kernel-builtin-zfs? ( BSD-2 CDDL GPL-3 MIT )"
 KEYWORDS="~amd64"
 IUSE+="
-	+bore bmq pds muqss rt rt-bore eevdf
-	server aufs kcfi cjk
-	+autofdo +propeller
-	+llvm-lto-thin llvm-lto-full llvm-lto-thin-dist llvm-lto-none
+	bore bmq cachyos-hardened rt rt-bore +eevdf
+	kcfi cjk
+	autofdo propeller
+	llvm-lto-thin llvm-lto-full llvm-lto-thin-dist +llvm-lto-none
 	kernel-builtin-zfs
 	hz-ticks-100 hz-ticks-250 hz-ticks-300 hz-ticks-500 hz-ticks-600 hz-ticks-750 +hz-ticks-1000
 	+per-gov tickrate-periodic tickrate-idle +tickrate-full +preempt-full preempt-lazy
@@ -115,19 +99,12 @@ IUSE+="
 "
 
 # OpenZFS does not support Clang CFI: https://github.com/openzfs/zfs/issues/15911
-# Scheduler patches carried in kernel-patches but unavailable for 7.2:
-# - hardened remains on 7.1.8
-# - PRJC-LFBMQ has no 7.2 patch family
-# - deckify remains upstream, but its handheld patch does not apply to 7.2.6
-# - bare BORE is not used by packaged CachyOS variants
+# The default upstream "cachyos" selector is documented as EEVDF and downloads
+# no scheduler patch; it is represented by the default eevdf USE selection.
+# Deckify, MuQSS, and BMQ-LFBMQ are absent from the current LTS PKGBUILD.
 REQUIRED_USE+="
-	^^ ( bore bmq pds muqss rt rt-bore eevdf )
-	server? (
-		eevdf
-		hz-ticks-300 tickrate-full preempt-lazy !per-gov
-		llvm-lto-none !autofdo !propeller
-		o3 hugepage-always
-	)
+	^^ ( bore bmq cachyos-hardened rt rt-bore eevdf )
+	cachyos-hardened? ( llvm-lto-none )
 	propeller? ( !llvm-lto-full !llvm-lto-none )
 	autofdo? ( || ( llvm-lto-thin llvm-lto-full llvm-lto-thin-dist ) )
 	kernel-builtin-zfs? ( !kcfi )
@@ -167,13 +144,7 @@ RDEPEND+="
 _set_hztick_rate() {
 	local hertz=$1
 
-	if use muqss; then
-		scripts/config \
-			-d HZ_100_NODEF -d HZ_250_NODEF -d HZ_300_NODEF \
-			-d HZ_500_NODEF -d HZ_600_NODEF -d HZ_750_NODEF \
-			-d HZ_1000_NODEF -e "HZ_${hertz}_NODEF" \
-			--set-val HZ "${hertz}" || die
-	elif [[ ${hertz} == 300 ]]; then
+	if [[ ${hertz} == 300 ]]; then
 		scripts/config -e HZ_300 --set-val HZ 300 || die
 	else
 		scripts/config -d HZ_300 -e "HZ_${hertz}" --set-val HZ "${hertz}" || die
@@ -219,27 +190,17 @@ src_prepare() {
 	# https://github.com/Szowisz/CachyOS-kernels/issues/35
 	eapply "${FILESDIR}/6.19.0/misc/0002-fix-autofdo-propeller-lto-thin-dist.patch"
 
-	# The 7.2.2 stable update changed a block that PRJC and MuQSS remove.
-	# Restore the patchsets' expected preimage before applying either series.
-	if use bmq || use pds || use muqss; then
-		eapply "${FILESDIR}/cachyos-sources-7.2.3-revert-empty-cpuset-floor.patch"
-		eapply "${FILESDIR}/cachyos-sources-7.2.6-sched-alt-prereq.patch"
+	# BORE and PRJC are already included in the source tarball.
+	if use cachyos-hardened; then
+		cp "${patches_prefix}-hardened.patch" "${T}/hardened.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-6.18.55-hardened-rebase.patch"
+		eapply --fuzz=0 -- "${T}/hardened.patch"
 	fi
 
-	if use bore || use rt-bore; then
-		eapply "${patches_prefix}-bore.patch"
-	elif use bmq || use pds; then
-		eapply "${patches_prefix}-prjc.patch"
-	elif use muqss; then
-		eapply "${patches_prefix}-muqss.patch"
-	fi
-
-	if use rt || use rt-bore; then
+	if use rt; then
 		eapply "${patches_prefix}-rt-i915.patch"
-	fi
-
-	if use aufs; then
-		eapply "${patches_prefix}-aufs.patch"
+	elif use rt-bore; then
+		eapply "${patches_prefix}-rt-i915.patch"
 	fi
 
 	cp "${configs_prefix}-config" .config || die
@@ -257,35 +218,21 @@ src_prepare() {
 	# Keep source directory and kernel release on kernel-2.eclass's revision suffix.
 	echo "${KV_FULL#${PV}}" > localversion.20-pkgname || die
 
-	if use server; then
-		scripts/config -d CACHY || die
-	else
-		scripts/config -e CACHY || die
-	fi
+	scripts/config -e CACHY || die
 
 	if use cjk; then
 		scripts/config --keep-case -e FONT_CJK_16x16 || die
 		use cjk32 && { scripts/config --keep-case -e FONT_CJK_32x32 || die; }
 	fi
 
-	if use bore; then
+	if use bore || use cachyos-hardened; then
 		scripts/config -e SCHED_BORE || die
 	elif use bmq; then
 		scripts/config -e SCHED_ALT -e SCHED_BMQ || die
-	elif use pds; then
-		scripts/config -e SCHED_ALT -d SCHED_BMQ -e SCHED_PDS || die
-	elif use muqss; then
-		scripts/config -e SCHED_MUQSS -e MUQSS_IOTIME || die
 	elif use rt; then
 		scripts/config -e PREEMPT_RT || die
 	elif use rt-bore; then
 		scripts/config -e SCHED_BORE -e PREEMPT_RT || die
-	elif use eevdf; then
-		scripts/config -e SCHED_POC_SELECTOR || die
-	fi
-
-	if use aufs; then
-		scripts/config -m AUFS_FS || die
 	fi
 
 	### Enable KCFI
@@ -339,23 +286,7 @@ src_prepare() {
 		scripts/config -d CPU_FREQ_DEFAULT_GOV_SCHEDUTIL -e CPU_FREQ_DEFAULT_GOV_PERFORMANCE || die
 	fi
 
-	if use muqss; then
-		if use tickrate-periodic; then
-			scripts/config \
-				-e HZ_PERIODIC_NODEF -d NO_HZ_IDLE_NODEF -d NO_HZ_FULL_NODEF \
-				-d NO_HZ_IDLE -d NO_HZ_FULL -d NO_HZ -d NO_HZ_COMMON \
-				-e HZ_PERIODIC || die
-		elif use tickrate-idle; then
-			scripts/config \
-				-d HZ_PERIODIC_NODEF -e NO_HZ_IDLE_NODEF -d NO_HZ_FULL_NODEF \
-				-d HZ_PERIODIC -d NO_HZ_FULL -e NO_HZ_IDLE -e NO_HZ -e NO_HZ_COMMON || die
-		elif use tickrate-full; then
-			scripts/config \
-				-d HZ_PERIODIC_NODEF -d NO_HZ_IDLE_NODEF -e NO_HZ_FULL_NODEF \
-				-d HZ_PERIODIC -d NO_HZ_IDLE -d CONTEXT_TRACKING_FORCE \
-				-e NO_HZ_FULL -e NO_HZ -e NO_HZ_COMMON -e CONTEXT_TRACKING || die
-		fi
-	elif use tickrate-periodic; then
+	if use tickrate-periodic; then
 		scripts/config -d NO_HZ_IDLE -d NO_HZ_FULL -d NO_HZ -d NO_HZ_COMMON -e HZ_PERIODIC || die
 	elif use tickrate-idle; then
 		scripts/config -d HZ_PERIODIC -d NO_HZ_FULL -e NO_HZ_IDLE -e NO_HZ -e NO_HZ_COMMON || die
@@ -368,17 +299,7 @@ src_prepare() {
 
 	if ! use rt && ! use rt-bore; then
 		scripts/config -e PREEMPT_DYNAMIC || die
-		if use muqss; then
-			if use preempt-full; then
-				scripts/config \
-					-d PREEMPT_NONE_NODEF -d PREEMPT_VOLUNTARY_NODEF \
-					-e PREEMPT_NODEF -d PREEMPT_LAZY_NODEF || die
-			elif use preempt-lazy; then
-				scripts/config \
-					-d PREEMPT_NONE_NODEF -d PREEMPT_VOLUNTARY_NODEF \
-					-d PREEMPT_NODEF -e PREEMPT_LAZY_NODEF || die
-			fi
-		elif use preempt-full; then
+		if use preempt-full; then
 			scripts/config -e PREEMPT -d PREEMPT_LAZY || die
 		elif use preempt-lazy; then
 			scripts/config -d PREEMPT -e PREEMPT_LAZY || die
@@ -474,9 +395,8 @@ pkg_pretend() {
 pkg_setup() {
 	ewarn ""
 	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
-	ewarn "Report ebuild and kernel problems to https://github.com/Szowisz/CachyOS-kernels."
-	ewarn "Report kernel problems to the CachyOS project, if you sure it's due to upstream."
-	ewarn "Do *not* open bugs in Gentoo's bugzilla. Thank you."
+	ewarn "Do *not* open bugs in Gentoo's bugzilla. Report problems to"
+	ewarn "https://github.com/gentoo-zh/overlay. Thank you."
 	ewarn ""
 
 	kernel-2_pkg_setup
@@ -486,6 +406,13 @@ pkg_postinst() {
 	kernel-2_pkg_postinst
 
 	elog "For more information about CachyOS kernels, see https://wiki.cachyos.org/features/kernel/."
+
+	if use mnative; then
+		ewarn "USE=mnative builds the kernel with -march=native, which optimizes for your"
+		ewarn "specific CPU. Binary packages built this way are NOT portable to other machines."
+		ewarn "Use USE=mgeneric-v3 or similar for portable builds."
+	fi
+
 	optfeature "userspace KSM helper" sys-process/uksmd
 	optfeature "NVIDIA open-source module" "x11-drivers/nvidia-drivers[kernel-open]"
 	optfeature "NVIDIA module" x11-drivers/nvidia-drivers

@@ -1,0 +1,76 @@
+From: gentoo-zh overlay
+Subject: [PATCH] rebase hardened onto CachyOS 6.18.55 with genpatches-6.18-63
+
+Upstream: https://github.com/CachyOS/kernel-patches/blob/a8efcb97a509c3d36f839451dacb896ab48581c5/6.18/misc/0001-hardened.patch
+
+Apply to a copy of the pinned patch. Keep genpatches' symlink/hardlink
+protection and raise the FIFO/regular defaults to 2. Account for the
+inode_get_ctime_sec accessor. Drop the checkreqprot hunk: 6.18.55 has
+already removed the setting's implementation, leaving only a warning.
+
+--- a/hardened.patch
++++ b/hardened.patch
+@@ -711,16 +711,12 @@
+ index 7377020a2cba..fbcebb6181eb 100644
+ --- a/fs/namei.c
+ +++ b/fs/namei.c
+-@@ -1095,10 +1095,10 @@ static inline void put_link(struct nameidata *nd)
+- 		path_put(&last->link);
+- }
++@@ -1097,8 +1097,8 @@ static inline void put_link(struct nameidata *nd)
+  
+--static int sysctl_protected_symlinks __read_mostly;
+--static int sysctl_protected_hardlinks __read_mostly;
+--static int sysctl_protected_fifos __read_mostly;
+--static int sysctl_protected_regular __read_mostly;
+-+static int sysctl_protected_symlinks __read_mostly = 1;
+-+static int sysctl_protected_hardlinks __read_mostly = 1;
++ static int sysctl_protected_symlinks __read_mostly = 1;
++ static int sysctl_protected_hardlinks __read_mostly = 1;
++-int sysctl_protected_fifos __read_mostly = 1;
++-int sysctl_protected_regular __read_mostly = 1;
+ +static int sysctl_protected_fifos __read_mostly = 2;
+ +static int sysctl_protected_regular __read_mostly = 2;
+  
+@@ -813,7 +809,7 @@
+ +		stat->mtime = inode_get_ctime(inode);
+ +	else
+ +		stat->mtime = inode_get_mtime(inode);
+- 	stat->ctime.tv_sec = inode->i_ctime_sec;
++ 	stat->ctime.tv_sec = inode_get_ctime_sec(inode);
+  	stat->ctime.tv_nsec = (u32)atomic_read(pcn);
+  	if (!(stat->ctime.tv_nsec & I_CTIME_QUERIED))
+ @@ -84,6 +87,7 @@ void generic_fillattr(struct mnt_idmap *idmap, u32 request_mask,
+@@ -3102,32 +3098,6 @@
+  /**
+   * selinux_secmark_enabled - Check to see if SECMARK is currently enabled
+   *
+-diff --git a/security/selinux/selinuxfs.c b/security/selinux/selinuxfs.c
+-index 232e087bce3e..c6da24809b70 100644
+---- a/security/selinux/selinuxfs.c
+-+++ b/security/selinux/selinuxfs.c
+-@@ -699,20 +699,12 @@ static ssize_t sel_write_checkreqprot(struct file *file, const char __user *buf,
+- 	if (IS_ERR(page))
+- 		return PTR_ERR(page);
+- 
+--	if (sscanf(page, "%u", &new_value) != 1) {
+-+	if (sscanf(page, "%u", &new_value) != 1 || new_value) {
+- 		length = -EINVAL;
+- 		goto out;
+- 	}
+- 	length = count;
+- 
+--	if (new_value) {
+--		char comm[sizeof(current->comm)];
+--
+--		strscpy(comm, current->comm);
+--		pr_err("SELinux: %s (%d) set checkreqprot to 1. This is no longer supported.\n",
+--		       comm, current->pid);
+--	}
+--
+- 	selinux_ima_measure_state();
+- 
+- out:
+ diff --git a/security/yama/Kconfig b/security/yama/Kconfig
+ index a810304123ca..b809050b25d2 100644
+ --- a/security/yama/Kconfig
