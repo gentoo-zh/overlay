@@ -15,7 +15,7 @@ PATCHSET=linux-gentoo-patches-6.12.97
 # forked to git.gentoo.org:fork/fedora/kernel
 CONFIG_VER=6.12.41-gentoo
 GENTOO_CONFIG_P=gentoo-kernel-config-g19
-SHA256SUM_DATE=20260914
+SHA256SUM_DATE=20261003
 DESCRIPTION="Distribution kernel with the cjktty patch for CJK text on the console"
 HOMEPAGE="
 	https://github.com/gentoo-zh/cjktty-patches
