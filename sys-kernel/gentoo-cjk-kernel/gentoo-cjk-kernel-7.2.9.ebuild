@@ -15,7 +15,7 @@ PATCHSET=linux-gentoo-patches-7.1.9
 # forked to git.gentoo.org:fork/fedora/kernel
 CONFIG_VER=7.2.5-gentoo
 GENTOO_CONFIG_P=gentoo-kernel-config-g19
-SHA256SUM_DATE=20260921
+SHA256SUM_DATE=20261003
 # Debian kconfig commit from:
 # https://salsa.debian.org/kernel-team/linux/-/tree/debian/latest/debian/
 DEBIAN_COMMIT=31e70f1f469ef1ce4c910df1d12b7de09da561d1

@@ -8,5 +8,5 @@ SLOT="0/${PVR}"
 KEYWORDS="~amd64"
 
 RDEPEND="
-	~sys-kernel/xanmod-kernel-${PV}
+	~sys-kernel/gentoo-cjk-kernel-${PV}
 "
