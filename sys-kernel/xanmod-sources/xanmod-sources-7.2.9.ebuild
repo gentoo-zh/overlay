@@ -5,7 +5,7 @@ EAPI="8"
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
 # Note: to bump xanmod, check K_GENPATCHES_VER in sys-kernel/gentoo-sources
-K_GENPATCHES_VER="8"
+K_GENPATCHES_VER="10"
 
 # Not supported by the Gentoo security team
 K_SECURITY_UNSUPPORTED="1"
