@@ -6,7 +6,7 @@ ETYPE="sources"
 K_WANT_GENPATCHES="base extras experimental"
 K_SECURITY_UNSUPPORTED="1"
 CJKTTY_PV="7.2"
-K_GENPATCHES_VER="8"
+K_GENPATCHES_VER="10"
 K_NO_VERSION_CHECK=0
 
 inherit kernel-2 cjktty
