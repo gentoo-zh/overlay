@@ -10,8 +10,8 @@ CRATES="
 
 declare -A GIT_CRATES=(
 	[boring-noise]='https://github.com/Watfaq/boring-noise;9ddf1b54d0c9679e7bc50e9151f72d526190db1a;boring-noise-%commit%'
-	[console-api]='https://github.com/tokio-rs/console;59e23edf17b0e42e87e315bfc9cbb8a6ba2f401f;console-%commit%/console-api'
-	[console-subscriber]='https://github.com/tokio-rs/console;59e23edf17b0e42e87e315bfc9cbb8a6ba2f401f;console-%commit%/console-subscriber'
+	[console-api]='https://github.com/tokio-rs/console;b59758e5a6effe3a9df3ec84a2f28d319d178234;console-%commit%/console-api'
+	[console-subscriber]='https://github.com/tokio-rs/console;b59758e5a6effe3a9df3ec84a2f28d319d178234;console-%commit%/console-subscriber'
 	[dhcproto-macros]='https://github.com/bluecatengineering/dhcproto;eece41c9a13b0e4912fb9a8f08401ab01b4123d4;dhcproto-%commit%/dhcproto-macros'
 	[dhcproto]='https://github.com/bluecatengineering/dhcproto;eece41c9a13b0e4912fb9a8f08401ab01b4123d4;dhcproto-%commit%'
 	[netstack-lwip]='https://github.com/eycorsican/netstack-lwip;f434fefd6c227c9dfbec84c364452ba6c1532779;netstack-lwip-%commit%'
@@ -19,10 +19,8 @@ declare -A GIT_CRATES=(
 	[quinn-proto]='https://github.com/Tipuch/quinn;ce60e5b5c115db2a6053f4e0ca7fc52103cb76b9;quinn-%commit%/quinn-proto'
 	[quinn-udp]='https://github.com/Tipuch/quinn;ce60e5b5c115db2a6053f4e0ca7fc52103cb76b9;quinn-%commit%/quinn-udp'
 	[quinn]='https://github.com/Tipuch/quinn;ce60e5b5c115db2a6053f4e0ca7fc52103cb76b9;quinn-%commit%/quinn'
-	[rustls-acme]='https://github.com/rust-proxy/rustls-acme;cc306ff72acd5f4b47cda426137ae80d10a425ce;rustls-acme-%commit%'
-	[rustls]='https://github.com/Watfaq/rustls;e6e8e7e1a0d65f2f273eb7b5b6179896536ac174;rustls-%commit%/rustls'
-	[shadowquic-macros]='https://github.com/spongebob888/shadowquic;295034e1b6478706a4348565bfc3ecea8378da98;shadowquic-%commit%/shadowquic-macros'
-	[shadowquic]='https://github.com/spongebob888/shadowquic;295034e1b6478706a4348565bfc3ecea8378da98;shadowquic-%commit%/shadowquic'
+	[rustls-acme]='https://github.com/rust-proxy/rustls-acme;a55cbfde0f36d68d6c0ce33a5cbef45bd84036d8;rustls-acme-%commit%'
+	[rustls]='https://github.com/Watfaq/rustls;63d10d50f2308478f366f14f9f81e378f5911e3c;rustls-%commit%/rustls'
 	[shadowsocks]='https://github.com/shadowsocks/shadowsocks-rust;c4d8d18527289d12470cad1ce718754c908a75fe;shadowsocks-rust-%commit%/crates/shadowsocks'
 	[sock2proc]='https://github.com/Watfaq/sock2proc;9f9e6304d62285115b2e4fa632527ae563bf0fcc;sock2proc-%commit%'
 	[tokio-rustls]='https://github.com/Watfaq/tokio-rustls;b26e3e2b7a0161d505fd12d6e545b16463f1a45f;tokio-rustls-%commit%'
@@ -86,8 +84,6 @@ src_prepare() {
 	[patch.crates-io]
 	rustls = { path = "$(gen_git_crate_dir rustls)" }
 	tokio-rustls = { path = "$(gen_git_crate_dir tokio-rustls)" }
-	shadowquic = { path = "$(gen_git_crate_dir shadowquic)" }
-	shadowquic-macros = { path = "$(gen_git_crate_dir shadowquic-macros)" }
 	EOF
 }
 
