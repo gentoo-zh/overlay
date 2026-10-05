@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-05 17:02:36 CST)
+(The last generation time: 2026-10-05 17:21:08 CST)
 
 ### Packages
 
@@ -510,7 +510,7 @@
    acct-group/vintagestory                             | 0                  | RD         |                                                                            | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                            | User for Vintage Story Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-util/sgdboop                                    | 1.4.3              |            | https://github.com/SteamGridDB/SGDBoop                                     | Apply SteamGridDB assets directly to your Steam library
+ games-util/sgdboop                                    | 1.4.4              |            | https://github.com/SteamGridDB/SGDBoop                                     | Apply SteamGridDB assets directly to your Steam library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-util/watt-toolkit-bin                           | 3.1.0              |            | https://steampp.net/                                                       | Multi-purpose Steam toolbox (Watt Toolkit, formerly Steam++)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
