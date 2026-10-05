@@ -81,6 +81,10 @@ jobs:
         nvchecker --file overlay.toml --keyfile keyfile.toml
         echo "::endgroup::"
 
+        echo "::group::check versions"
+        ../../scripts/nvchecker-check.py overlay.toml old_ver.json new_ver.json
+        echo "::endgroup::"
+
         echo "::group::nvcmp"
         # Tree oldver needs --sort portage: PEP440 misreads _p/_rc and reports downgrades as updates.
         nvcmp=$(nvcmp --file overlay.toml --json --newer --sort portage \
