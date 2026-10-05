@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-05 17:02:06 CST)
+(The last generation time: 2026-10-05 17:02:36 CST)
 
 ### Packages
 
@@ -185,7 +185,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.10.5             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.930.41038       |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.930.51102       |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.1.4              |            |                                                                            |
@@ -280,7 +280,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lemminx-bin                                  | 0.31.2             |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/readest-bin                                  | 0.12.10            |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
+ app-text/readest-bin                                  | 0.12.12            |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/stirling-pdf-bin                             | 3.0.2              |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
