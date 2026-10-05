@@ -48,6 +48,7 @@ CRATES="
 	darling_core@0.23.0
 	darling_macro@0.23.0
 	digest@0.11.3
+	dlib@0.5.3
 	downcast-rs@1.2.1
 	dyn-clone@1.0.20
 	endi@1.1.1
@@ -92,6 +93,7 @@ CRATES="
 	js-sys@0.3.98
 	leb128fmt@0.1.0
 	libc@0.2.186
+	libloading@0.8.9
 	libmimalloc-sys@0.1.49
 	linux-raw-sys@0.12.1
 	log@0.4.29
@@ -197,6 +199,7 @@ CRATES="
 	wyz@0.5.1
 	x11rb-protocol@0.14.0
 	x11rb@0.14.0
+	xkbcommon-dl@0.4.2
 	xkeysym@0.2.1
 	zbus-lockstep-macros@0.5.2
 	zbus-lockstep@0.5.2
@@ -226,12 +229,16 @@ SRC_URI="
 
 LICENSE="MIT"
 # Dependent crate licenses
-LICENSE+=" Apache-2.0 GPL-3 MIT Unicode-3.0 ZLIB"
+LICENSE+=" Apache-2.0 GPL-3 ISC MIT Unicode-3.0 ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
-# Provides the AT-SPI registry the accessibility tree reads.
-RDEPEND="app-accessibility/at-spi2-core"
+# at-spi2-core provides the AT-SPI registry the accessibility tree reads.
+# libxkbcommon is dlopened for the GNOME keymap check of typed text.
+RDEPEND="
+	app-accessibility/at-spi2-core
+	x11-libs/libxkbcommon
+"
 
 src_install() {
 	cargo_src_install
@@ -253,11 +260,14 @@ src_test() {
 	local CARGO_SKIP_TESTS=(
 		diagnostics_impl::tests::ydotool_socket_check_accepts_datagram_socket
 		diagnostics_impl::tests::ydotool_socket_check_rejects_legacy_stream_socket
+		server::tests::pointer_coordinate_backend_dispatch_is_safe
 		windowing::backends::kwin::transaction_tests::duplicate_callback_path_fails_without_disturbing_its_owner
 		windowing::backends::kwin::transaction_tests::transaction_times_out_and_cleans_up_when_callback_never_arrives
 		windowing::backends::kwin::transaction_tests::transaction_times_out_and_cleans_up_when_load_script_never_replies
 		windowing::backends::kwin::transaction_tests::transaction_times_out_and_cleans_up_when_start_never_replies
 		windowing::backends::niri::tests::discovery_refuses_other_sessions_and_ambiguous_sockets
+		windowing::backends::niri::tests::socket_reads_a_complete_line_without_waiting_for_eof
+		windowing::backends::niri::tests::socket_rejects_truncated_and_oversized_replies
 		ydotool::tests::implicit_socket_rejects_shared_tmp_and_wrong_owner
 		ydotool::tests::implicit_socket_requires_private_runtime_directory_and_socket
 	)
