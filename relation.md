@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-05 17:21:08 CST)
+(The last generation time: 2026-10-05 17:43:44 CST)
 
 ### Packages
 
@@ -953,7 +953,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-power/tlpui                                       | 1.10.1             |            | https://github.com/d4nj1/TLPUI                                             | A GTK user interface for TLP written in Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-process/witr                                      | 0.3.3              |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
+ sys-process/witr                                      | 0.3.4              |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/dist-kernel                                   | 6.12.111-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
                                                        | 6.12.112-r100      |            |                                                                            |
