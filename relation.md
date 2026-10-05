@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-05 17:47:18 CST)
+(The last generation time: 2026-10-05 17:52:21 CST)
 
 ### Packages
 
@@ -980,7 +980,7 @@
    dev-libs/v2ray-domain-list-community-bin            | 20260710034646     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
-   dev-libs/v2ray-geoip                                | 202609050329       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
+   dev-libs/v2ray-geoip                                | 202610050438       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
    dev-libs/v2ray-geoip-bin                            | 202607050337       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.9.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
