@@ -2940,7 +2940,8 @@ autobump = true
 ["x11-terms/tty7-bin"]
 source = "github"
 github = "l0ng-ai/tty7"
-use_latest_release = true
+use_max_release = true
+include_regex = "^v\\d+\\.\\d+\\.\\d+$"
 prefix = "v"
 autobump = true
 github_account = "gouwazi"
