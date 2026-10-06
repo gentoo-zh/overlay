@@ -5,7 +5,7 @@ EAPI=8
 
 inherit cmake optfeature xdg
 
-MUPDF_PV="1.28.2"
+MUPDF_PV="1.28.5"
 SYNCTEX_COMMIT="917617707955cde0c2fae127130d9d3129303cbc"
 
 DESCRIPTION="High-performance PDF reader that prioritizes screen space and control"
@@ -65,6 +65,8 @@ src_prepare() {
 src_configure() {
 	local mycmakeargs=(
 		-DWITH_SYNCTEX=$(usex synctex ON OFF)
+		-DWITH_FONTCONFIG=OFF
+		-DWITH_LIBARCHIVE=OFF
 		-DWITH_LUA=OFF
 		-DWITH_LLM_SUPPORT=OFF
 	)
