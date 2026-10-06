@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-06 20:16:18 CST)
+(The last generation time: 2026-10-06 21:30:03 CST)
 
 ### Packages
 
@@ -629,7 +629,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/netease-cloud-music-gtk                   | 2.5.4-r1           |            | https://github.com/gmg137/netease-cloud-music-gtk                          | netease cloud music player based on Rust & GTK for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/open-orpheus-bin                          | 0.19.1             |            | https://github.com/YUCLing/open-orpheus                                    | An open-source implementation of Netease Cloud Music's Orpheus browser host
+ media-sound/open-orpheus-bin                          | 0.19.2             |            | https://github.com/YUCLing/open-orpheus                                    | An open-source implementation of Netease Cloud Music's Orpheus browser host
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/qqmusic                                   | 1.1.8-r1           |            | https://y.qq.com/                                                          | Tencent QQ Music, converted from .deb package
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -819,7 +819,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/juicity                                     | 0.5.0              |            | https://github.com/juicity/juicity                                         | juicity is a quic-based proxy protocol
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/naiveproxy-bin                              | 154.0.8037.49_p2   |            | https://github.com/klzgrad/naiveproxy                                      | A proxy using Chromium's network stack to camouflage traffic
+ net-proxy/naiveproxy-bin                              | 154.0.8037.49_p3   |            | https://github.com/klzgrad/naiveproxy                                      | A proxy using Chromium's network stack to camouflage traffic
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/proxy-server                                | 11.0.1             |            | https://github.com/jackarain/proxy                                         | Implementation of all proxy protocols using modern c++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
