@@ -1451,6 +1451,13 @@ use_latest_release = true
 prefix = "v"
 github_account = ["Dawn-Xu-helloworld", "gouwazi"]
 
+["dev-util/t3code-bin"]
+source = "github"
+github = "pingdotgg/t3code"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 ["dev-util/tailspin"]
 source = "github"
 github = "bensadeh/tailspin"
