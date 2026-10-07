@@ -16,6 +16,7 @@
 		<flag name="gtk3">Enable GTK3 IM support</flag>
 		<flag name="gtk4">Enable GTK4 IM support</flag>
 		<flag name="hangul">Install Hangul Korean input method</flag>
+		<flag name="qt6">Enable Qt6 IM support</flag>
 		<flag name="rime">Install Rime Chinese input method</flag>
 		<flag name="skk">Install SKK Japanese input method</flag>
 	</use>

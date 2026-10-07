@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -9,7 +9,7 @@ HOMEPAGE="https://fcitx-im.org"
 LICENSE="metapackage"
 SLOT="5"
 KEYWORDS="~amd64"
-IUSE="anthy bamboo chewing +configtool +chinese-addons gtk2 +gtk3 gtk4 hangul lua m17n +qt5 rime skk"
+IUSE="anthy bamboo chewing +configtool +chinese-addons gtk2 +gtk3 gtk4 hangul lua m17n +qt6 rime skk"
 
 RDEPEND="
 	app-i18n/fcitx:${SLOT}
@@ -24,7 +24,7 @@ RDEPEND="
 	hangul? ( app-i18n/fcitx-hangul:${SLOT} )
 	lua? ( app-i18n/fcitx-lua:${SLOT} )
 	m17n? ( app-i18n/fcitx-m17n:${SLOT} )
-	qt5? ( app-i18n/fcitx-qt:${SLOT} )
+	qt6? ( app-i18n/fcitx-qt:${SLOT} )
 	rime? ( app-i18n/fcitx-rime:${SLOT} )
 	skk? ( app-i18n/fcitx-skk:${SLOT} )
 "
