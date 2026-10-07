@@ -352,6 +352,8 @@ PATCHES=(
 	"${FILESDIR}/${P}-wide-grapheme-popup-edges.patch"
 	"${FILESDIR}/${P}-build.patch"
 	"${FILESDIR}/${P}-test-socket-paths.patch"
+	"${FILESDIR}/${P}-overlay-style-isolation.patch"
+	"${FILESDIR}/${P}-empty-cell-background.patch"
 )
 
 pkg_setup() {

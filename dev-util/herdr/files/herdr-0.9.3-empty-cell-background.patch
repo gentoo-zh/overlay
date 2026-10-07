@@ -1,0 +1,103 @@
+From 3940969186f405635b84e1d670544b15fb6e11c5 Mon Sep 17 00:00:00 2001
+From: Xiangzhe <xiangzhedev@gmail.com>
+Date: Wed, 7 Oct 2026 11:28:40 +0800
+Subject: [PATCH] fix: repaint exposed empty terminal cells
+
+Paint a space when an emitted cell has an empty symbol so its background replaces any color left by a wide grapheme. Keep the existing suppression of still-covered wide tails.
+
+Replay full, diff and retained updates through Ghostty to verify the background next to a narrow overlay border.
+---
+ src/protocol/render_ansi.rs | 70 ++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 69 insertions(+), 1 deletion(-)
+
+diff --git a/src/protocol/render_ansi.rs b/src/protocol/render_ansi.rs
+index 98653601..0741d49f 100644
+--- a/src/protocol/render_ansi.rs
++++ b/src/protocol/render_ansi.rs
+@@ -978,7 +978,13 @@ fn write_cell(
+     }
+ 
+     write_hyperlink_if_changed(writer, active_hyperlink, cell_hyperlink_uri(frame, cell));
+-    let _ = writer.write_all(cell.symbol.as_bytes());
++    // Covered wide tails are skipped by callers; exposed empty cells still need painting.
++    let symbol = if cell.symbol.is_empty() {
++        " "
++    } else {
++        cell.symbol.as_str()
++    };
++    let _ = writer.write_all(symbol.as_bytes());
+ }
+ 
+ /// Writes only the cells that changed between the previous and current frame.
+@@ -2353,6 +2359,68 @@ mod tests {
+         assert!(output_str.contains("\x1b[1;3H"));
+     }
+ 
++    #[test]
++    fn uncovered_wide_tail_repaints_its_background() {
++        use crate::ghostty::{RenderState, RgbColor, RowCells, RowIterator, Terminal};
++
++        const PANE_BG: u32 = 0x02_001E27;
++        const MENU_BG: u32 = 0x02_002B36;
++        for trailing in ["", " "] {
++            for mode in ["full", "diff", "patch"] {
++                let previous = make_frame(
++                    3,
++                    1,
++                    vec![
++                        make_cell("修", 0, PANE_BG, 0),
++                        make_cell(trailing, 0, PANE_BG, 0),
++                        make_cell("Z", 0, PANE_BG, 0),
++                    ],
++                );
++                let mut current = previous.clone();
++                current.cells[0] = make_cell("│", 0, MENU_BG, 0);
++                let mut terminal = Terminal::new(3, 1, 0).unwrap();
++                let mut encoder = BlitEncoder::new();
++                let initial = encoder.encode(&previous, false);
++                terminal.write(&initial.bytes);
++                encoder.commit(previous, initial);
++
++                let update = match mode {
++                    "full" => encoder.encode(&current, true),
++                    "diff" => encoder.encode(&current, false),
++                    _ => encoder
++                        .encode_patch(
++                            &[PaneSurfacePatchRow {
++                                x: 0,
++                                y: 0,
++                                cells: current.cells.clone(),
++                            }],
++                            None,
++                            false,
++                        )
++                        .unwrap(),
++                };
++                terminal.write(&update.bytes);
++
++                let mut rendered = RenderState::new().unwrap();
++                rendered.update(&terminal).unwrap();
++                let mut row_iterator = RowIterator::new().unwrap();
++                let mut rows = rendered.populate_row_iterator(&mut row_iterator).unwrap();
++                assert!(rows.next());
++                let mut row_cells = RowCells::new().unwrap();
++                let mut cells = rows.populate_cells(&mut row_cells).unwrap();
++                assert!(cells.next());
++                assert!(cells.next());
++                assert_eq!(
++                    cells.bg_color().unwrap(),
++                    Some(RgbColor { r: 0, g: 30, b: 39 }),
++                    "{mode} redraw must restore the uncovered {trailing:?} tail background"
++                );
++                assert_eq!(terminal.screen_cell(0, 0).unwrap().1, vec![u32::from('│')]);
++                assert_eq!(terminal.screen_cell(2, 0).unwrap().1, vec![u32::from('Z')]);
++            }
++        }
++    }
++
+     #[test]
+     fn diff_redraw_reveals_cells_hidden_by_previous_wide_graphemes() {
+         let prev = FrameData {
+-- 
+2.56.0
+
