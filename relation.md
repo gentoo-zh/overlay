@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-08 00:11:09 CST)
+(The last generation time: 2026-10-08 00:18:10 CST)
 
 ### Packages
 
@@ -59,7 +59,7 @@
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.0.20251223     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
                                                        | 0.3.0.20260416     |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.19.1             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.21.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.5.5              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -432,7 +432,7 @@
  dev-util/obs-build                                    | 20260910           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.6.3             |            |                                                                            |
+                                                       | 18.8.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.35            |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
