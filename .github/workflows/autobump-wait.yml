@@ -1,0 +1,46 @@
+name: autobump-wait
+
+on:
+  workflow_run:
+    workflows: [autobump]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: 'autobump run whose missing bundles to wait for'
+        required: true
+        type: string
+
+concurrency:
+  group: autobump-wait-${{ github.event.workflow_run.id || inputs.run_id }}
+  cancel-in-progress: false
+
+permissions:
+  actions: write
+  contents: read
+  issues: read
+
+jobs:
+  wait:
+    if: github.repository == 'gentoo-zh/overlay' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    steps:
+    - name: checkout
+      uses: actions/checkout@v7
+
+    - name: fetch autobump-rb
+      uses: actions/checkout@v7
+      with:
+        repository: gentoo-zh/autobump-rb
+        path: autobump-rb
+
+    - name: wait for the missing bundles
+      env:
+        GH_TOKEN: ${{ github.token }}
+        GH_TOKEN_GENTOO_ZH: ${{ github.token }}
+        GH_TOKEN_GENTOO_ZH_DRAFTS: ${{ github.token }}
+        RUN_ID: ${{ github.event.workflow_run.id || inputs.run_id }}
+      run: |
+        case "$RUN_ID" in ''|*[!0-9]*) echo "run_id must be a number: $RUN_ID" >&2; exit 1;; esac
+        python3 autobump-rb/bin/wait.py --repo "$GITHUB_REPOSITORY" --run-id "$RUN_ID" --overlay .

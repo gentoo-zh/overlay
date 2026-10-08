@@ -1,4 +1,5 @@
 name: autobump
+run-name: "${{ inputs.issues && format('autobump issues: {0}', inputs.issues) || 'autobump' }}"
 
 on:
   # Scheduled runs can start hours late, so chain from nvchecker.
@@ -142,6 +143,7 @@ jobs:
         echo "plan=$plan" >> "$GITHUB_OUTPUT"
 
     - name: upload bundle snapshot
+      if: always()
       uses: actions/upload-artifact@v7
       with:
         name: autobump-bundles
@@ -149,6 +151,7 @@ jobs:
         overwrite: true
 
     - name: upload plan delta
+      if: always()
       uses: actions/upload-artifact@v7
       with:
         name: autobump-delta-plan
