@@ -78,8 +78,9 @@ src_install() {
 	# the bundled ffmpeg stack was reachable only through the bundled libmpv
 	# removed above; libpulsecommon needs libsystemd.so.0, which a non-systemd
 	# profile does not provide, and 0.14.5 dropped the bundled librsvg that
-	# libavcodec links, leaving an unresolved soname.
-	rm lib/libSDL2* lib/libpulse* lib/libchromaprint.so* \
+	# libavcodec links, leaving an unresolved soname. The bundled libass lacks
+	# ass_configure_prune, which the system libmpv needs.
+	rm lib/libSDL2* lib/libpulse* lib/libchromaprint.so* lib/libass.so* \
 		lib/libavcodec.so* lib/libavdevice.so* lib/libavfilter.so* \
 		lib/libavformat.so* lib/libavutil.so* lib/libpostproc.so* \
 		lib/libswresample.so* lib/libswscale.so* || die
