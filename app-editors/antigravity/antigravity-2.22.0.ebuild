@@ -9,7 +9,7 @@ CHROMIUM_LANGS="af am ar bg bn ca cs da de el en-GB es es-419 et fa fi fil fr gu
 
 inherit chromium-2 desktop optfeature pax-utils xdg
 
-MY_BUILD="5614635819335680"
+MY_BUILD="5446056071266304"
 ICON_COMMIT="8182e2d354c6b096e544f24b3ea8fcfb5e73d699"
 
 DESCRIPTION="Google Antigravity multi-agent orchestration platform"
