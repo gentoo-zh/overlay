@@ -24,6 +24,7 @@ NUGETS="
 	system.text.encoding.codepages@7.0.0
 	system.threading.tasks.extensions@4.5.4
 	utf.unknown@2.5.1
+	zstdsharp.port@0.8.8
 "
 
 inherit dotnet-pkg
