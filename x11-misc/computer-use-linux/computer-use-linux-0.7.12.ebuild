@@ -7,6 +7,8 @@ CRATES="
 	adler2@2.0.1
 	android_system_properties@0.1.5
 	anyhow@1.0.103
+	arrayref@0.3.9
+	arrayvec@0.7.8
 	async-broadcast@0.7.2
 	async-channel@2.5.0
 	async-executor@1.14.0
@@ -30,8 +32,11 @@ CRATES="
 	blocking@1.6.2
 	bumpalo@3.20.2
 	bytemuck@1.25.0
+	bytemuck_derive@1.12.1
 	byteorder-lite@0.1.0
 	bytes@1.11.1
+	calloop-wayland-source@0.4.1
+	calloop@0.14.5
 	cc@1.2.62
 	cfg-if@1.0.4
 	cfg_aliases@0.2.1
@@ -44,6 +49,7 @@ CRATES="
 	crc32fast@1.5.0
 	crossbeam-utils@0.8.21
 	crypto-common@0.2.2
+	cursor-icon@1.2.0
 	darling@0.23.0
 	darling_core@0.23.0
 	darling_macro@0.23.0
@@ -64,6 +70,7 @@ CRATES="
 	find-msvc-tools@0.1.9
 	flate2@1.1.9
 	foldhash@0.1.5
+	font-types@0.11.3
 	funty@2.0.0
 	futures-channel@0.3.32
 	futures-core@0.3.32
@@ -98,6 +105,7 @@ CRATES="
 	linux-raw-sys@0.12.1
 	log@0.4.29
 	memchr@2.8.0
+	memmap2@0.9.11
 	memoffset@0.9.1
 	mimalloc@0.1.52
 	miniz_oxide@0.8.9
@@ -122,6 +130,7 @@ CRATES="
 	quote@1.0.45
 	r-efi@6.0.0
 	radium@0.7.0
+	read-fonts@0.39.2
 	ref-cast-impl@1.0.25
 	ref-cast@1.0.25
 	rmcp-macros@2.2.0
@@ -141,16 +150,22 @@ CRATES="
 	shlex@1.3.0
 	signal-hook-registry@1.4.8
 	simd-adler32@0.3.9
+	skrifa@0.42.1
 	slab@0.4.12
 	smallvec@1.15.1
+	smithay-client-toolkit@0.21.1
 	socket2@0.6.3
 	static_assertions@1.1.0
+	strict-num@0.1.1
 	strsim@0.11.1
 	syn@2.0.117
+	syn@3.0.6
 	tap@1.0.1
 	tempfile@3.27.0
 	thiserror-impl@2.0.18
 	thiserror@2.0.18
+	tiny-skia-path@0.12.0
+	tiny-skia@0.12.0
 	tokio-macros@2.7.0
 	tokio-util@0.7.18
 	tokio@1.52.3
@@ -177,6 +192,10 @@ CRATES="
 	wasmparser@0.244.0
 	wayland-backend@0.3.15
 	wayland-client@0.31.14
+	wayland-csd-frame@0.3.0
+	wayland-cursor@0.31.14
+	wayland-protocols-experimental@20251230.0.3
+	wayland-protocols-misc@0.3.12
 	wayland-protocols-wlr@0.3.12
 	wayland-protocols@0.32.12
 	wayland-scanner@0.31.10
@@ -199,6 +218,7 @@ CRATES="
 	wyz@0.5.1
 	x11rb-protocol@0.14.0
 	x11rb@0.14.0
+	xcursor@0.3.11
 	xkbcommon-dl@0.4.2
 	xkeysym@0.2.1
 	zbus-lockstep-macros@0.5.2
@@ -229,7 +249,7 @@ SRC_URI="
 
 LICENSE="MIT"
 # Dependent crate licenses
-LICENSE+=" Apache-2.0 GPL-3 ISC MIT Unicode-3.0 ZLIB"
+LICENSE+=" Apache-2.0 BSD-2 GPL-3 ISC MIT Unicode-3.0 ZLIB"
 SLOT="0"
 KEYWORDS="~amd64"
 
@@ -260,6 +280,15 @@ src_test() {
 	local CARGO_SKIP_TESTS=(
 		diagnostics_impl::tests::ydotool_socket_check_accepts_datagram_socket
 		diagnostics_impl::tests::ydotool_socket_check_rejects_legacy_stream_socket
+		indicator::tests::capture_release_unlocks_an_inherited_descriptor
+		indicator::tests::captures_fail_when_a_running_overlay_does_not_reply
+		indicator::tests::captures_fail_while_a_stalled_overlay_cannot_be_told_to_hide
+		indicator::tests::captures_wait_only_while_the_overlay_was_on_screen
+		indicator::tests::concurrent_captures_do_not_consume_each_others_replies
+		indicator::tests::disabled_servers_still_hold_captures
+		indicator::tests::keycaps_mask_secret_focus_and_the_hide_text_setting
+		indicator::tests::overlays_can_answer_the_client_socket
+		indicator::tests::set_values_are_masked_even_when_the_cached_role_was_public
 		server::tests::pointer_coordinate_backend_dispatch_is_safe
 		windowing::backends::kwin::transaction_tests::duplicate_callback_path_fails_without_disturbing_its_owner
 		windowing::backends::kwin::transaction_tests::transaction_times_out_and_cleans_up_when_callback_never_arrives
