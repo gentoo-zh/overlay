@@ -1,103 +1,617 @@
-From 3940969186f405635b84e1d670544b15fb6e11c5 Mon Sep 17 00:00:00 2001
 From: Xiangzhe <xiangzhedev@gmail.com>
-Date: Wed, 7 Oct 2026 11:28:40 +0800
-Subject: [PATCH] fix: repaint exposed empty terminal cells
+Subject: [PATCH] fix: repaint exposed tails at opaque overlay edges
 
-Paint a space when an emitted cell has an empty symbol so its background replaces any color left by a wide grapheme. Keep the existing suppression of still-covered wide tails.
+Source: downstream branch fix/overlay-exposed-cell-background
+Base: 3d9d2b18dab139ba226ebc5a1c9a9f2c9c3ee4df
+Tip: d3cb71ee329509c71b49406d6664512b6c128de1
+Applies-to: Herdr v0.9.3 with the Gentoo popup-edge and style-isolation patches
 
-Replay full, diff and retained updates through Ghostty to verify the background next to a narrow overlay border.
----
- src/protocol/render_ansi.rs | 70 ++++++++++++++++++++++++++++++++++++-
- 1 file changed, 69 insertions(+), 1 deletion(-)
+Repaint empty wide-glyph tails exposed immediately right of opaque overlays,
+retaining each cell's original style. Leave ordinary ANSI and sparse output
+unchanged rather than introducing complete-frame fallback.
 
-diff --git a/src/protocol/render_ansi.rs b/src/protocol/render_ansi.rs
-index 98653601..0741d49f 100644
---- a/src/protocol/render_ansi.rs
-+++ b/src/protocol/render_ansi.rs
-@@ -978,7 +978,13 @@ fn write_cell(
+Exported as the entire base..tip branch diff, including regression tests.
+Uses --unified=1 to avoid context overlap with the independent edge patch.
+
+diff --git a/src/client/shell/composition.rs b/src/client/shell/composition.rs
+index b7ab4a96792a077f78c0059fae974abc5a4d76d0..5db3ae0e1155eb8197fcf3f12a87c1f67c6992bf 100644
+--- a/src/client/shell/composition.rs
++++ b/src/client/shell/composition.rs
+@@ -579,2 +579,3 @@ impl ClientShellState {
+                 );
++                crate::ui::normalize_exposed_tail_cells(&mut composed, geometry.outer);
+                 ratatui::widgets::Widget::render(block, geometry.outer, &mut composed);
+diff --git a/src/client/shell/endpoint_notices.rs b/src/client/shell/endpoint_notices.rs
+index e796d2c557e505b85c7b734b3aafcb3b55f246d9..339a3b62d9168483be5517e925adbf428e0e04a8 100644
+--- a/src/client/shell/endpoint_notices.rs
++++ b/src/client/shell/endpoint_notices.rs
+@@ -44,2 +44,3 @@ pub(super) fn render_lifecycle_banner(
+     buffer.set_style(rect, Style::default().bg(palette.surface0));
++    crate::ui::normalize_exposed_tail_cells(buffer, rect);
+     super::render::put_text(
+diff --git a/src/client/shell/notifications.rs b/src/client/shell/notifications.rs
+index b8437ea749abf959a70ce0ad4f2acd4600a702d2..b1c87f7de7405c5649c4c7aaf46d745571c3ca8e 100644
+--- a/src/client/shell/notifications.rs
++++ b/src/client/shell/notifications.rs
+@@ -30,2 +30,3 @@ pub(super) fn render_mobile_notice_banner(
+     buffer.set_style(rect, Style::default().bg(background));
++    crate::ui::normalize_exposed_tail_cells(buffer, rect);
+     let mut x = rect.x;
+@@ -144,2 +145,3 @@ pub(super) fn render_notification_card(
+     Clear.render(rect, buffer);
++    crate::ui::normalize_exposed_tail_cells(buffer, rect);
+     let block = Block::default()
+diff --git a/src/client/shell/overlays.rs b/src/client/shell/overlays.rs
+index f26cc6e4e64b411f07c4007f22ad16ca1cb9e73c..f9daad2d9be6e0f8214ee7049a9af19f0bede4e7 100644
+--- a/src/client/shell/overlays.rs
++++ b/src/client/shell/overlays.rs
+@@ -236,2 +236,3 @@ fn panel(
      }
- 
-     write_hyperlink_if_changed(writer, active_hyperlink, cell_hyperlink_uri(frame, cell));
--    let _ = writer.write_all(cell.symbol.as_bytes());
-+    // Covered wide tails are skipped by callers; exposed empty cells still need painting.
-+    let symbol = if cell.symbol.is_empty() {
-+        " "
-+    } else {
-+        cell.symbol.as_str()
-+    };
-+    let _ = writer.write_all(symbol.as_bytes());
- }
- 
- /// Writes only the cells that changed between the previous and current frame.
-@@ -2353,6 +2359,68 @@ mod tests {
-         assert!(output_str.contains("\x1b[1;3H"));
-     }
- 
-+    #[test]
-+    fn uncovered_wide_tail_repaints_its_background() {
-+        use crate::ghostty::{RenderState, RgbColor, RowCells, RowIterator, Terminal};
++    crate::ui::normalize_exposed_tail_cells(b, a);
+     for x in a.x..a.right() {
+diff --git a/src/client/shell/tests/mod.rs b/src/client/shell/tests/mod.rs
+index 9d9601439aabd1f8004814f43df086a743894c4f..03f3074006747a16dab322f5e9246e1613825da1 100644
+--- a/src/client/shell/tests/mod.rs
++++ b/src/client/shell/tests/mod.rs
+@@ -260,2 +260,3 @@ mod mobile;
+ mod mouse_selection;
++mod overlay_edges;
+ mod popup_focus_projection;
+diff --git a/src/client/shell/tests/overlay_edges.rs b/src/client/shell/tests/overlay_edges.rs
+new file mode 100644
+index 0000000000000000000000000000000000000000..c1dd895b368aa0324fa50634223dc41d7b86d2bb
+--- /dev/null
++++ b/src/client/shell/tests/overlay_edges.rs
+@@ -0,0 +1,500 @@
++// Exposed wide-glyph tail cells immediately right of an opaque overlay must be
++// repainted as ordinary blanks so the original ANSI encoder emits a space and
++// the real terminal shows the underlying pane background, not the overlay's.
++use super::*;
++use crate::config::ToastClipboardPosition;
++use crate::ghostty::{RenderState, RgbColor, RowCells, RowIterator, Terminal};
++use crate::protocol::render_ansi::BlitEncoder;
++use crate::protocol::PaneSurfacePatchRow;
++use ratatui::buffer::Cell;
++use ratatui::style::Color;
 +
-+        const PANE_BG: u32 = 0x02_001E27;
-+        const MENU_BG: u32 = 0x02_002B36;
-+        for trailing in ["", " "] {
-+            for mode in ["full", "diff", "patch"] {
-+                let previous = make_frame(
-+                    3,
-+                    1,
-+                    vec![
-+                        make_cell("修", 0, PANE_BG, 0),
-+                        make_cell(trailing, 0, PANE_BG, 0),
-+                        make_cell("Z", 0, PANE_BG, 0),
-+                    ],
-+                );
-+                let mut current = previous.clone();
-+                current.cells[0] = make_cell("│", 0, MENU_BG, 0);
-+                let mut terminal = Terminal::new(3, 1, 0).unwrap();
-+                let mut encoder = BlitEncoder::new();
-+                let initial = encoder.encode(&previous, false);
-+                terminal.write(&initial.bytes);
-+                encoder.commit(previous, initial);
++const PANE_RGB: RgbColor = RgbColor { r: 0, g: 30, b: 39 };
++const PANEL_RGB: Color = Color::Rgb(43, 54, 60);
 +
-+                let update = match mode {
-+                    "full" => encoder.encode(&current, true),
-+                    "diff" => encoder.encode(&current, false),
-+                    _ => encoder
-+                        .encode_patch(
-+                            &[PaneSurfacePatchRow {
-+                                x: 0,
-+                                y: 0,
-+                                cells: current.cells.clone(),
-+                            }],
-+                            None,
-+                            false,
-+                        )
-+                        .unwrap(),
-+                };
-+                terminal.write(&update.bytes);
++fn palette() -> Palette {
++    let mut palette = ClientShellConfig::from_config(&Config::default()).palette;
++    palette.panel_bg = PANEL_RGB;
++    palette
++}
 +
-+                let mut rendered = RenderState::new().unwrap();
-+                rendered.update(&terminal).unwrap();
-+                let mut row_iterator = RowIterator::new().unwrap();
-+                let mut rows = rendered.populate_row_iterator(&mut row_iterator).unwrap();
-+                assert!(rows.next());
-+                let mut row_cells = RowCells::new().unwrap();
-+                let mut cells = rows.populate_cells(&mut row_cells).unwrap();
-+                assert!(cells.next());
-+                assert!(cells.next());
-+                assert_eq!(
-+                    cells.bg_color().unwrap(),
-+                    Some(RgbColor { r: 0, g: 30, b: 39 }),
-+                    "{mode} redraw must restore the uncovered {trailing:?} tail background"
-+                );
-+                assert_eq!(terminal.screen_cell(0, 0).unwrap().1, vec![u32::from('│')]);
-+                assert_eq!(terminal.screen_cell(2, 0).unwrap().1, vec![u32::from('Z')]);
-+            }
++fn assert_bg(terminal: &Terminal, x: u16, y: u16, expected: RgbColor) {
++    let mut rendered = RenderState::new().unwrap();
++    rendered.update(terminal).unwrap();
++    let mut iterator = RowIterator::new().unwrap();
++    let mut rows = rendered.populate_row_iterator(&mut iterator).unwrap();
++    for _ in 0..=y {
++        assert!(rows.next());
++    }
++    let mut row_cells = RowCells::new().unwrap();
++    let mut cells = rows.populate_cells(&mut row_cells).unwrap();
++    for _ in 0..=x {
++        assert!(cells.next());
++    }
++    assert_eq!(
++        cells.bg_color().unwrap(),
++        Some(expected),
++        "background at ({x}, {y})"
++    );
++}
++
++fn assert_symbol(terminal: &Terminal, x: u16, y: u16, expected: char) {
++    assert_eq!(
++        terminal.screen_cell(x, y.into()).unwrap().1,
++        vec![u32::from(expected)],
++        "symbol at ({x}, {y})"
++    );
++}
++
++fn pane_buffer(area: Rect) -> Buffer {
++    let mut blank = Cell::default();
++    blank
++        .set_symbol(" ")
++        .set_style(Style::default().bg(Color::Rgb(0, 30, 39)));
++    Buffer::filled(area, blank)
++}
++
++fn context_menu(x: u16, y: u16) -> ClientContextMenuOverlay {
++    ClientContextMenuOverlay {
++        target: ClientContextMenuTarget::Pane {
++            pane_id: "pane_1".into(),
++            workspace_id: "ws_1".into(),
++            source_pane_id: None,
++            has_manual_label: false,
++            right_click_passthrough: false,
++        },
++        x,
++        y,
++        highlighted: 0,
++    }
++}
++
++/// Drive an opaque painter through the real frame-replacement → original
++/// encoder → real Ghostty path and assert every exposed tail row repaints to
++/// the pane background. `paint` receives the supplied `sub_area`, which must
++/// be interior so the painted rect's right edge is exposed inside `area`.
++/// Asserts the exposure precondition per seed: no coverage is claimed for
++/// geometry that never exposes a tail.
++fn assert_exposed_tail_repaint(
++    area: Rect,
++    sub_area: Rect,
++    paint: impl Fn(&mut Buffer, Rect) -> Rect,
++    probe_ys: impl Fn(Rect) -> Vec<u16>,
++) {
++    for trailing in ["", " "] {
++        let mut scratch = Buffer::empty(area);
++        let rect = paint(&mut scratch, sub_area);
++        assert!(
++            rect.right() < area.right(),
++            "exposure precondition: {rect:?} must end inside {area:?}"
++        );
++        let ys = probe_ys(rect);
++        assert!(!ys.is_empty(), "probe rows required for {rect:?}");
++        let mut underlying = pane_buffer(area);
++        for &y in &ys {
++            underlying[(rect.right() - 1, y)].set_symbol("修");
++            underlying[(rect.right(), y)].set_symbol(trailing);
++        }
++
++        let previous = FrameData::from_ratatui_buffer(&underlying, None);
++        let mut terminal = Terminal::new(area.width, area.height, 0).unwrap();
++        terminal.write(b"\x1b[?7l");
++        let mut encoder = BlitEncoder::new();
++        let initial = encoder.encode(&previous, false);
++        terminal.write(&initial.bytes);
++        encoder.commit(previous.clone(), initial);
++
++        // Same frame-replacement path as compose().
++        let mut composed = previous.to_ratatui_buffer().unwrap();
++        paint(&mut composed, sub_area);
++        let mut opened = previous.clone();
++        opened.replace_from_ratatui_buffer_preserving_effects(&composed, None);
++        let update = encoder.encode(&opened, false);
++        terminal.write(&update.bytes);
++        encoder.commit(opened, update);
++
++        for &y in &ys {
++            assert_bg(&terminal, rect.right(), y, PANE_RGB);
++        }
++
++        // Closing the overlay restores the underlying wide glyph.
++        let closed = encoder.encode(&previous, false);
++        terminal.write(&closed.bytes);
++        encoder.commit(previous.clone(), closed);
++        for &y in &ys {
++            assert_symbol(&terminal, rect.right() - 1, y, '修');
 +        }
 +    }
++}
 +
-     #[test]
-     fn diff_redraw_reveals_cells_hidden_by_previous_wide_graphemes() {
-         let prev = FrameData {
--- 
-2.56.0
-
++#[test]
++fn exposed_tail_normalization_preserves_other_cells_and_styles() {
++    let mut original = pane_buffer(Rect::new(2, 1, 8, 4));
++    // A covered wide tail and an unrelated wide tail must remain empty.
++    for (head_x, tail_x) in [(4, 5), (8, 9)] {
++        original[(head_x, 2)].set_symbol("中");
++        original[(tail_x, 2)].set_symbol("");
++    }
++    original[(6, 2)].set_symbol("│");
++    original[(7, 2)].set_symbol("").set_style(
++        Style::default()
++            .fg(Color::Yellow)
++            .bg(Color::Blue)
++            .add_modifier(ratatui::style::Modifier::BOLD),
++    );
++    original[(7, 3)].set_symbol("");
++
++    for (rect, exposes_tail) in [
++        (Rect::new(4, 2, 3, 1), true),
++        (Rect::new(7, 2, 0, 1), false),
++        (Rect::new(4, 2, 3, 0), false),
++        (Rect::new(4, 2, 6, 1), false), // Buffer right edge.
++        (Rect::new(4, 2, 9, 1), false), // Clipped beyond buffer right edge.
++        (Rect::new(4, 2, 4, 1), false), // Non-empty neighbor.
++        (Rect::new(4, 1, 3, 1), false), // Ordinary space neighbor.
++    ] {
++        let mut actual = original.clone();
++        let mut expected = original.clone();
++        if exposes_tail {
++            expected[(7, 2)].set_symbol(" ");
++        }
++        crate::ui::normalize_exposed_tail_cells(&mut actual, rect);
++        assert_eq!(actual, expected, "full-cell preservation for {rect:?}");
++    }
++}
++
++#[test]
++fn context_menu_right_edge_repaints_exposed_tail_background() {
++    let area = Rect::new(0, 0, 80, 24);
++    let palette = palette();
++    for repaint in [false, true] {
++        for menu_x in [0, 4, 80] {
++            let menu = context_menu(menu_x, 2);
++            let mut scratch = Buffer::empty(area);
++            let rect = render::render_context_menu(&mut scratch, &menu, &palette)
++                .expect("real menu geometry")
++                .area;
++            let y = rect.y + 1;
++            let mut underlying = pane_buffer(area);
++            if rect.right() < area.right() {
++                underlying[(rect.right() - 1, y)].set_symbol("修");
++                underlying[(rect.right(), y)].set_symbol("");
++            }
++            let text_x = if rect.right() + 6 < area.right() {
++                rect.right() + 2
++            } else {
++                0
++            };
++            underlying[(text_x, y)].set_symbol("中");
++            underlying[(text_x + 1, y)].set_symbol(" ");
++            underlying[(text_x + 2, y)].set_symbol("p");
++            underlying[(text_x + 3, y)].set_symbol("i");
++
++            let previous = FrameData::from_ratatui_buffer(&underlying, None);
++            let mut terminal = Terminal::new(area.width, area.height, 0).unwrap();
++            terminal.write(b"\x1b[?7l");
++            let mut encoder = BlitEncoder::new();
++            let initial = encoder.encode(&previous, false);
++            terminal.write(&initial.bytes);
++            encoder.commit(previous.clone(), initial);
++
++            let mut composed = previous.to_ratatui_buffer().unwrap();
++            render::render_context_menu(&mut composed, &menu, &palette).unwrap();
++            let mut opened = previous.clone();
++            opened.replace_from_ratatui_buffer_preserving_effects(&composed, None);
++            let update = encoder.encode(&opened, repaint);
++            terminal.write(&update.bytes);
++            encoder.commit(opened, update);
++
++            if rect.right() < area.right() {
++                assert_bg(&terminal, rect.right(), y, PANE_RGB);
++                assert_symbol(&terminal, rect.right() - 1, y, '│');
++            }
++            // Left-edge remnant of a head whose tail is covered is a separate
++            // seam handled by another patch; this baseline only owns the
++            // right-edge exposure.
++            assert_symbol(&terminal, text_x, y, '中');
++            assert_symbol(&terminal, text_x + 2, y, 'p');
++            assert_symbol(&terminal, text_x + 3, y, 'i');
++
++            let closed = encoder.encode(&previous, false);
++            terminal.write(&closed.bytes);
++            encoder.commit(previous.clone(), closed);
++            if rect.right() < area.right() {
++                assert_symbol(&terminal, rect.right() - 1, y, '修');
++            }
++
++            // A real committed " " baseline cell updated to an empty tail must
++            // stay on the sparse path; baseline and desired symbols differ.
++            let start = usize::from(y) * usize::from(area.width) + usize::from(text_x + 1);
++            assert_eq!(previous.cells[start].symbol, " ");
++            let mut cells = previous.cells[start..start + 1].to_vec();
++            cells[0].symbol.clear();
++            assert_ne!(cells[0].symbol, previous.cells[start].symbol);
++            let rows = vec![PaneSurfacePatchRow {
++                x: text_x + 1,
++                y,
++                cells,
++            }];
++            let sparse = encoder
++                .encode_patch(&rows, None, false)
++                .expect("ordinary space->tail update must not require composed-frame fallback");
++            terminal.write(&sparse.bytes);
++            assert!(encoder.commit_patch(&rows, None, sparse));
++            assert_symbol(&terminal, text_x, y, '中');
++            assert_symbol(&terminal, text_x + 2, y, 'p');
++            assert_symbol(&terminal, text_x + 3, y, 'i');
++            assert_bg(&terminal, text_x + 1, y, PANE_RGB);
++        }
++    }
++}
++
++#[test]
++fn notification_card_right_edge_repaints_exposed_tail_background() {
++    let area = Rect::new(0, 0, 60, 12);
++    let palette = palette();
++    for position in [
++        crate::config::ToastHerdrPosition::TopLeft,
++        crate::config::ToastHerdrPosition::TopRight,
++    ] {
++        // Interior supplied area so the card's right edge is genuinely exposed.
++        let sub_area = Rect::new(2, 1, 40, 8);
++        assert_exposed_tail_repaint(
++            area,
++            sub_area,
++            |buffer, sub_area| {
++                let rect = notifications::render_notification_card(
++                    buffer,
++                    sub_area,
++                    "agent done",
++                    "body",
++                    position,
++                    1,
++                    Color::Red,
++                    &palette,
++                );
++                assert!(
++                    rect.right() < area.right(),
++                    "notification card must expose its right edge"
++                );
++                rect
++            },
++            |rect| (rect.y..rect.bottom()).collect(),
++        );
++    }
++}
++
++#[test]
++fn mobile_notice_banner_right_edge_repaints_exposed_tail_background() {
++    let area = Rect::new(0, 0, 44, 8);
++    let palette = palette();
++    // Interior supplied area: the banner spans its width, leaving its right
++    // edge exposed inside the larger buffer.
++    let sub_area = Rect::new(2, 0, 36, 8);
++    assert_exposed_tail_repaint(
++        area,
++        sub_area,
++        |buffer, sub_area| {
++            notifications::render_mobile_notice_banner(
++                buffer,
++                sub_area,
++                "waiting",
++                None,
++                Color::Red,
++                false,
++                &palette,
++            )
++        },
++        |rect| vec![rect.y],
++    );
++}
++
++#[test]
++fn lifecycle_banner_right_edge_repaints_exposed_tail_background() {
++    let area = Rect::new(0, 0, 60, 8);
++    let palette = palette();
++    // Interior supplied area: the banner is right-aligned within it, so its
++    // right edge sits inside the larger buffer.
++    let sub_area = Rect::new(4, 1, 44, 6);
++    assert_exposed_tail_repaint(
++        area,
++        sub_area,
++        |buffer, sub_area| {
++            endpoint_notices::render_lifecycle_banner(
++                buffer,
++                sub_area,
++                "remote",
++                ClientEndpointStatus::Disabled,
++                2,
++                &palette,
++            )
++        },
++        |rect| vec![rect.y],
++    );
++}
++
++#[test]
++fn copy_feedback_right_edge_repaints_exposed_tail_background() {
++    let area = Rect::new(0, 0, 60, 12);
++    let palette = palette();
++    let feedback = crate::app::state::CopyFeedback {
++        message: "copied".into(),
++    };
++    for position in [
++        ToastClipboardPosition::TopLeft,
++        ToastClipboardPosition::BottomRight,
++    ] {
++        // Interior supplied area: right-aligned positions still leave the
++        // toast's right edge exposed inside the larger buffer.
++        let sub_area = Rect::new(4, 1, 44, 9);
++        assert_exposed_tail_repaint(
++            area,
++            sub_area,
++            |buffer, sub_area| {
++                crate::ui::render_copy_feedback_buffer(
++                    buffer, sub_area, &feedback, 1, position, &palette,
++                )
++            },
++            |rect| (rect.y..rect.bottom()).collect(),
++        );
++    }
++}
++
++#[test]
++fn copy_feedback_short_height_right_edge_repaints_exposed_tail() {
++    // Assigned small-height case: rect height 2 leaves no inner rows; the
++    // early-return path must still normalize the exposed edge.
++    let area = Rect::new(0, 0, 60, 6);
++    let palette = palette();
++    let feedback = crate::app::state::CopyFeedback {
++        message: "copied".into(),
++    };
++    let sub_area = Rect::new(4, 0, 12, 2);
++    assert_exposed_tail_repaint(
++        area,
++        sub_area,
++        |buffer, sub_area| {
++            let rect = crate::ui::render_copy_feedback_buffer(
++                buffer,
++                sub_area,
++                &feedback,
++                0,
++                ToastClipboardPosition::TopLeft,
++                &palette,
++            );
++            assert_eq!(rect.height, 2, "short-height early-return case");
++            rect
++        },
++        |rect| (rect.y..rect.bottom()).collect(),
++    );
++}
++
++#[test]
++fn composed_popup_right_edge_repaints_exposed_tail() {
++    // Real compose() path: popup Block + Clear over a pane surface, with a
++    // wide glyph straddling the popup's right edge. The probe is seeded into
++    // the full-surface frame at layout coordinates so it lands under the
++    // popup after `blit_pane_surface` at `layout.pane_surface`.
++    let mut config = ClientShellConfig::from_config(&Config::default());
++    // Deterministic pane_surface: hidden collapsed sidebar, tab bar bottom.
++    config.sidebar_collapsed_mode = SidebarCollapsedModeConfig::Hidden;
++    config.sidebar_width = 0;
++    config.tab_bar_position = TabBarPositionConfig::Bottom;
++    config.palette.panel_bg = PANEL_RGB;
++    let mut state = ClientShellState::new(config);
++    state.sidebar_collapsed = true;
++    state.set_snapshot(Box::new(snapshot()));
++    let pane_surface = state.layout(80, 24).pane_surface;
++    // Same size mapping as compose(): the fixture popup is Cells(12)xCells(5).
++    let geometry = crate::popup_size::resolve_popup_geometry(
++        Some(crate::popup_size::PopupSize::Cells(12)),
++        Some(crate::popup_size::PopupSize::Cells(5)),
++        pane_surface,
++    )
++    .expect("popup geometry");
++    assert!(
++        geometry.outer.right() < 80,
++        "popup must expose its right edge"
++    );
++    let probe_y = geometry.outer.y + 1;
++
++    let mut surface = surface_with_popup();
++    // Write the probe glyph into the full-surface frame at the popup edge:
++    // head just inside the right border, tail just outside it. The surface
++    // frame is sized to `pane_surface` and blitted at its origin, so probe
++    // coordinates are surface-local. Give the tail the pane background so
++    // the assert detects an unrepainted overlay cell.
++    surface.frame = FrameData::from_ratatui_buffer(
++        &pane_buffer(Rect::new(0, 0, pane_surface.width, pane_surface.height)),
++        None,
++    );
++    let mut full = surface.frame.to_ratatui_buffer().expect("surface frame");
++    let head_x = geometry.outer.right() - 1 - pane_surface.x;
++    let local_y = probe_y - pane_surface.y;
++    full[(head_x, local_y)].set_symbol("修");
++    full[(geometry.outer.right() - pane_surface.x, local_y)].set_symbol("");
++    surface.frame = FrameData::from_ratatui_buffer(&full, None);
++    state.set_pane_surface(surface);
++
++    let composed = state.compose(80, 24).expect("composed frame");
++    let mut terminal = Terminal::new(80, 24, 0).unwrap();
++    terminal.write(b"\x1b[?7l");
++    let encoder = BlitEncoder::new();
++    let initial = encoder.encode(&composed.frame, false);
++    terminal.write(&initial.bytes);
++
++    // The exposed tail cell just outside the popup's right border must carry
++    // the pane background, not the popup's panel background.
++    assert_bg(&terminal, geometry.outer.right(), probe_y, PANE_RGB);
++    assert_symbol(&terminal, geometry.outer.right() - 1, probe_y, '│');
++}
++
++#[test]
++fn adjacent_width_transitions_stay_sparse() {
++    for (before, after) in [("中", "x"), ("x", "中")] {
++        for reverse in [false, true] {
++            let mut buffer = Buffer::with_lines(["    "]);
++            buffer[(0, 0)].set_symbol(before);
++            buffer[(2, 0)].set_symbol("p");
++            buffer[(3, 0)].set_symbol("i");
++            let previous = FrameData::from_ratatui_buffer(&buffer, None);
++            let mut rows = vec![
++                PaneSurfacePatchRow {
++                    x: 0,
++                    y: 0,
++                    cells: vec![crate::protocol::CellData {
++                        symbol: after.into(),
++                        ..previous.cells[0].clone()
++                    }],
++                },
++                PaneSurfacePatchRow {
++                    x: 1,
++                    y: 0,
++                    cells: vec![crate::protocol::CellData {
++                        symbol: String::new(),
++                        ..previous.cells[1].clone()
++                    }],
++                },
++            ];
++            if reverse {
++                rows.reverse();
++            }
++            let mut terminal = Terminal::new(4, 1, 0).unwrap();
++            terminal.write(b"\x1b[?7l");
++            let mut encoder = BlitEncoder::new();
++            let initial = encoder.encode(&previous, false);
++            terminal.write(&initial.bytes);
++            encoder.commit(previous, initial);
++            let update = encoder
++                .encode_patch(&rows, None, false)
++                .expect("no new fallback");
++            terminal.write(&update.bytes);
++            assert_eq!(
++                terminal.screen_cell(0, 0).unwrap().1,
++                after.chars().map(u32::from).collect::<Vec<_>>()
++            );
++            assert_symbol(&terminal, 2, 0, 'p');
++            assert_symbol(&terminal, 3, 0, 'i');
++        }
++    }
++}
+diff --git a/src/ui.rs b/src/ui.rs
+index 4ec80dbafa16561fd381ab692905094ab0218662..fd5d53624132549497fdee2ea87a0a4b61b174cd 100644
+--- a/src/ui.rs
++++ b/src/ui.rs
+@@ -46,3 +46,5 @@ pub(crate) use self::tab_surface::{
+ pub(crate) use self::text::truncate_end;
+-pub(crate) use self::widgets::{centered_popup_rect, modal_stack_areas};
++pub(crate) use self::widgets::{
++    centered_popup_rect, modal_stack_areas, normalize_exposed_tail_cells,
++};
+ 
+diff --git a/src/ui/status.rs b/src/ui/status.rs
+index d8371cdb5443dbd3fdc7ea06a09441678c8667e1..e2cb8a03d83eebe92a0a259092b7be795ea56d85 100644
+--- a/src/ui/status.rs
++++ b/src/ui/status.rs
+@@ -63,2 +63,3 @@ pub(crate) fn render_copy_feedback_buffer(
+     Clear.render(feedback_area, buffer);
++    super::widgets::normalize_exposed_tail_cells(buffer, feedback_area);
+     let block = Block::default()
+diff --git a/src/ui/widgets.rs b/src/ui/widgets.rs
+index 33fcc9a05a000d724f57657e0a76b655fcf07b86..d4d642f918b35b3d093c27546130b336105c189a 100644
+--- a/src/ui/widgets.rs
++++ b/src/ui/widgets.rs
+@@ -1,2 +1,3 @@
+ use ratatui::{
++    buffer::Buffer,
+     layout::{Constraint, Layout, Rect},
+@@ -109 +110,24 @@ pub(crate) fn continue_button_rect(area: Rect) -> Rect {
+ }
++
++/// Repaint empty wide-glyph tail cells immediately right of an opaque rect.
++///
++/// Native Ghostty reserves an empty symbol for a wide glyph's spacer tail. When
++/// an opaque overlay removes the head inside its edge, the exposed tail emits no
++/// character and keeps the overlay background. Normalizing the tail to a plain
++/// space lets the ordinary ANSI encoder repaint it with the pane background.
++/// The cell's style is preserved; empty rects and non-exposed edges are no-ops.
++/// The caller must have already painted `rect` opaquely.
++pub(crate) fn normalize_exposed_tail_cells(buffer: &mut Buffer, rect: Rect) {
++    if rect.is_empty() {
++        return;
++    }
++    let x = rect.right();
++    for y in rect.y..rect.bottom() {
++        if let Some(cell) = buffer
++            .cell_mut((x, y))
++            .filter(|cell| cell.symbol().is_empty())
++        {
++            cell.set_symbol(" ");
++        }
++    }
++}
