@@ -561,12 +561,7 @@ prefix = "v"
 github_account = "liangyongxiang"
 autobump = true
 
-["app-misc/copilot"]
-source = "github"
-github = "github/copilot-cli"
-use_latest_release = true
-prefix = "v"
-autobump = true
+#["app-misc/copilot"]
 
 ["app-misc/crush"]
 source = "github"
