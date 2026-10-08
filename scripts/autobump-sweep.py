@@ -72,6 +72,7 @@ class Settings:
     bundles: Path | None
     bundles_delta: Path | None
     bundles_only: bool
+    waits: list[dict]
 
 
 # A build log carries whatever bytes upstream wrote; strict decoding loses the bump over one.
@@ -595,6 +596,7 @@ def read_settings(argv):
         bundles=Path(arguments.bundles) if arguments.bundles is not None else None,
         bundles_delta=Path(arguments.bundles_delta) if arguments.bundles_delta is not None else None,
         bundles_only=arguments.bundles_only,
+        waits=[],
     )
 
 
@@ -807,7 +809,7 @@ def plan_issues(settings, issues, apply_run_limit):
     if settings.bundles is not None:
         with_bundles = bundle_packages()
         snapshot, bundle_error = run_bundle_controller(
-            settings, [c for c in candidates if c["package"] in with_bundles])
+            settings, [c for c in candidates if c["package"] in with_bundles or c["opted_in"]])
         for target in snapshot.values():
             if target.get("issue"):
                 announce_bundle(settings, target, status_comment_failed)
@@ -1085,6 +1087,9 @@ def defer_transient(settings, issue, package, version, engine_output, footer, st
     record_ledger(settings, "attempts", package, version)
     reason = engine_abort_reason(engine_output)
     if tries < 2:
+        missing = re.match(r"per-version deps artifact missing \(HTTP 404\): (\S+)", reason)
+        if missing:
+            settings.waits.append({"issue": issue, "package": package, "version": version, "url": missing.group(1)})
         status_comment(
             issue,
             (
@@ -1216,6 +1221,7 @@ def write_delta(settings, results, status_comment_failed):
         "bundles": settings.ledger_additions["bundles"],
         "results": results,
         "status_comment_failed": sorted(status_comment_failed),
+        "waits": settings.waits,
     }
     settings.delta.parent.mkdir(parents=True, exist_ok=True)
     settings.delta.write_text(json.dumps(delta, separators=(",", ":")) + "\n")
