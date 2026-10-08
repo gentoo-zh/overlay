@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-09 07:36:31 CST)
+(The last generation time: 2026-10-09 07:38:08 CST)
 
 ### Packages
 
@@ -198,7 +198,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/copilot                                      | 1.0.93             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush                                        | 0.97.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
+ app-misc/crush                                        | 0.98.0             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush-bin                                    | 0.98.0             |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -434,7 +434,7 @@
  dev-util/obs-build                                    | 20260910           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.8.5             |            |                                                                            |
+                                                       | 18.8.6             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.35            |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
