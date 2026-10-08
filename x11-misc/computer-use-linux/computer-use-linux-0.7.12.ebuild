@@ -249,7 +249,20 @@ SRC_URI="
 
 LICENSE="MIT"
 # Dependent crate licenses
-LICENSE+=" Apache-2.0 BSD-2 GPL-3 ISC MIT Unicode-3.0 ZLIB"
+LICENSE+="
+	0BSD
+	Apache-2.0
+	Apache-2.0-with-LLVM-exceptions
+	BSD
+	BSD-2
+	GPL-3
+	ISC
+	LGPL-2.1+
+	MIT
+	Unicode-3.0
+	Unlicense
+	ZLIB
+"
 SLOT="0"
 KEYWORDS="~amd64"
 
