@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-09 00:57:00 CST)
+(The last generation time: 2026-10-09 00:57:57 CST)
 
 ### Packages
 
@@ -71,7 +71,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/kiro                                      | 1.2.37             |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/marktext-bin                              | 0.20.0             |            | https://github.com/marktext/marktext                                       | A simple and elegant markdown editor, available for Linux, macOS and Windows
+ app-editors/marktext-bin                              | 0.21.1             |            | https://github.com/marktext/marktext                                       | A simple and elegant markdown editor, available for Linux, macOS and Windows
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/neomacs                                   | 9999               |            | https://github.com/eval-exec/neomacs                                       | Modern Emacs fork rewriting Emacs internals in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
