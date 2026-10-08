@@ -9,7 +9,7 @@ body_file=${4:?body-file}
 
 comments=$(gh api "repos/$repository/issues/$issue/comments" --paginate --slurp)
 comment_id=$(jq -r --arg marker "$marker" '
-    [.[][] | select(.body | contains($marker))][0].id // empty
+    [.[][] | select(.user.type == "Bot" and (.body | contains($marker)))][0].id // empty
 ' <<< "$comments")
 
 if [ -n "$comment_id" ]; then

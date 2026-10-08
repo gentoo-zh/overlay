@@ -46,7 +46,9 @@ fi
     else
         echo "*Packages scanned*: ${count}"
     fi
-    if [ "${new}" -eq 0 ]; then
+    if [ ! -f "$report_dir"/complete ]; then
+        echo "*Status*: :x: the scan did not finish, see the [run](${RUN_URL})"
+    elif [ "${new}" -eq 0 ]; then
         echo '*Status*: :white_check_mark: good'
     else
         echo '*Status*: :warning: **new issues**'

@@ -44,6 +44,7 @@ case "${1:?packages, scan or stage}" in
         python3 scripts/pkgcheck-new-findings.py base-report.txt report.txt > new.txt
         echo '--- new ---'; cat new.txt
         echo '--- all ---'; cat report.txt
+        : > scan-complete
         ;;
     stage)
         mkdir -p pkgcheck-report
@@ -51,5 +52,6 @@ case "${1:?packages, scan or stage}" in
         cp packages.txt pkgcheck-report/packages 2>/dev/null || : > pkgcheck-report/packages
         cp report.txt pkgcheck-report/report.txt 2>/dev/null || : > pkgcheck-report/report.txt
         cp new.txt pkgcheck-report/new.txt 2>/dev/null || : > pkgcheck-report/new.txt
+        [ ! -f scan-complete ] || : > pkgcheck-report/complete
         ;;
 esac
