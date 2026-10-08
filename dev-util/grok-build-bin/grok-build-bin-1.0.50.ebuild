@@ -7,7 +7,7 @@ inherit shell-completion
 
 DESCRIPTION="Terminal-based AI coding agent by SpaceXAI"
 HOMEPAGE="https://x.ai/cli https://github.com/xai-org/grok-build"
-MY_COMMIT="07e35a3dfeed2f200d319ef6c893b5ea286d9a51"
+MY_COMMIT="2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8"
 SRC_URI="
 	amd64? ( https://x.ai/cli/grok-${PV}-linux-x86_64 -> ${P}-amd64 )
 	https://raw.githubusercontent.com/xai-org/grok-build/${MY_COMMIT}/LICENSE
