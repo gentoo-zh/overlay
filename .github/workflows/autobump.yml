@@ -46,18 +46,6 @@ permissions:
   issues: write
 
 jobs:
-  # A failed nvchecker run can still leave issues to bump.
-  wait:
-    if: >-
-      (github.repository == 'gentoo-zh/overlay' || github.event_name == 'workflow_dispatch')
-      && github.event.workflow_run.conclusion != 'cancelled'
-    runs-on: ubuntu-latest
-    steps:
-    # The issue search index lags issue creation.
-    - name: wait for the issues to settle
-      if: github.event_name == 'workflow_run'
-      run: sleep 60
-
   env:
     needs: plan
     if: ${{ fromJSON(needs.plan.outputs.plan).matrix.include[0] != null }}
@@ -70,7 +58,10 @@ jobs:
       date: ${{ inputs.env_date || '' }}
 
   plan:
-    needs: wait
+    # A failed nvchecker run can still leave issues to bump.
+    if: >-
+      (github.repository == 'gentoo-zh/overlay' || github.event_name == 'workflow_dispatch')
+      && github.event.workflow_run.conclusion != 'cancelled'
     runs-on: ubuntu-latest
     outputs:
       plan: ${{ steps.plan.outputs.plan }}

@@ -216,8 +216,7 @@ gh workflow run autobump.yml --repo gentoo-zh/overlay -f issues="11855 11860" -f
 
 ## Running it
 
-It runs 60 seconds after each nvchecker run on `master` finishes, so GitHub search lists
-the new issues, and daily at 11:00 UTC as a backstop. Because it works from the open
+It runs after each nvchecker run on `master` finishes, and daily at 11:00 UTC as a backstop. Because it works from the open
 issues, a failed nvchecker run still starts it; only a cancelled one does not.
 
 ### Web

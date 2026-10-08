@@ -613,16 +613,14 @@ def select_issues(settings):
             "list",
             "--repo",
             settings.upstream_repo,
-            "--search",
-            "[nvchecker] in:title",
             "--state",
             "open",
             "--limit",
             str((run_limit(settings) or 20) * 10),
             "--json",
-            "number",
+            "number,title",
             "--jq",
-            ".[].number",
+            '.[] | select(.title | startswith("[nvchecker]")) | .number',
         ]
     )
     if status != 0:
