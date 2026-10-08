@@ -320,6 +320,12 @@ DESCRIPTION="Terminal workspace manager for AI coding agents"
 HOMEPAGE="https://herdr.dev https://github.com/herdrdev/herdr"
 SRC_URI="
 	https://github.com/herdrdev/herdr/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
+	https://github.com/xz-dev/herdr/commit/dbaac8e0f73a0f16ddc125d6c05bf8a5453fcb17.patch
+		-> ${P}-wide-grapheme-popup-edges-dbaac8e0.patch
+	https://github.com/xz-dev/herdr/commit/b12243687d0ade025986ef636a2ebd0340a78c68.patch
+		-> ${P}-overlay-style-isolation-b1224368.patch
+	https://github.com/xz-dev/herdr/commit/526ec7c904be0c5c253e0918a12968cc7548835b.patch
+		-> ${P}-empty-cell-background-526ec7c9.patch
 	${ZBS_DEPENDENCIES_SRC_URI}
 	${CARGO_CRATE_URIS}
 "
@@ -349,11 +355,11 @@ IUSE="test"
 RESTRICT="!test? ( test )"
 
 PATCHES=(
-	"${FILESDIR}/${P}-wide-grapheme-popup-edges.patch"
+	"${DISTDIR}/${P}-wide-grapheme-popup-edges-dbaac8e0.patch"
 	"${FILESDIR}/${P}-build.patch"
 	"${FILESDIR}/${P}-test-socket-paths.patch"
-	"${FILESDIR}/${P}-overlay-style-isolation.patch"
-	"${FILESDIR}/${P}-empty-cell-background.patch"
+	"${DISTDIR}/${P}-overlay-style-isolation-b1224368.patch"
+	"${DISTDIR}/${P}-empty-cell-background-526ec7c9.patch"
 )
 
 pkg_setup() {
