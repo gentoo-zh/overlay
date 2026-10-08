@@ -20,6 +20,7 @@ HOMEPAGE="https://pnpm.io"
 SRC_URI="
 	https://github.com/pnpm/pnpm/archive/v${PV}.tar.gz -> ${P}.tar.gz
 	https://github.com/gentoo-zh-drafts/pnpm/releases/download/v${PV}/${P}-crates.tar.xz
+	https://github.com/gentoo-zh-drafts/pnpm/releases/download/v${PV}/${P}-cas-loader.mjs.inc
 	${CARGO_CRATE_URIS}
 "
 
@@ -38,6 +39,8 @@ RDEPEND="net-libs/nodejs"
 
 src_prepare() {
 	default
+
+	cp "${DISTDIR}/${P}-cas-loader.mjs.inc" pnpm/crates/deps-restorer/src/cas-loader.mjs.inc || die
 
 	# upstream's .cargo/config.toml redirects crates-io to a pnpm-managed
 	# vendor dir that only exists after "pnpm install"; it shadows the
