@@ -304,7 +304,7 @@ STATUS_LOOKUP_BACKOFF = float(os.environ.get("AUTOBUMP_STATUS_BACKOFF", "3"))
 def find_status_comment_id(issue, upstream_repo):
     # A failed FIND must not fall through to CREATE: a transient API error would duplicate the status comment.
     status_comment_id_filter = (
-        "map(select(.body|contains(\"<!-- autobump-status -->\")))|.[0].id // empty"
+        "map(select(.user.type == \"Bot\" and (.body|contains(\"<!-- autobump-status -->\"))))|.[0].id // empty"
     )
     for _ in range(3):
         status, comment_id = command_output(
@@ -319,7 +319,8 @@ def find_status_comment_id(issue, upstream_repo):
             stderr=subprocess.DEVNULL,
         )
         if status == 0:
-            return comment_id
+            # --jq runs per page, so each page with a match prints an id
+            return comment_id.partition("\n")[0]
         time.sleep(STATUS_LOOKUP_BACKOFF)
     return None
 
@@ -616,7 +617,7 @@ def select_issues(settings):
             "--state",
             "open",
             "--limit",
-            str((run_limit(settings) or 20) * 10),
+            "1000",
             "--json",
             "number,title",
             "--jq",
@@ -1254,6 +1255,8 @@ def run_worker(settings):
                 )
             except Exception as error:  # noqa: BLE001
                 results[item["issue"]] = f"error ({type(error).__name__}: {error})"
+                # the shard still succeeds so the others' deltas merge; the annotation shows on the run
+                print(f"::error title=autobump #{item['issue']}::{results[item['issue']]}")
     finally:
         restore_branch(original_branch)
         if tools is not None:
