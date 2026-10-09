@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-10 01:43:57 CST)
+(The last generation time: 2026-10-10 01:47:51 CST)
 
 ### Packages
 
@@ -860,7 +860,7 @@
  net-proxy/v2rayA                                      | 2.2.7.5            |            | https://v2raya.org/                                                        | web GUI of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel
                                                        | 2.4.23             |            |                                                                            |
                                                        | 2.4.25             |            |                                                                            |
-                                                       | 2.5.9              |            |                                                                            |
+                                                       | 2.5.10             |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/yacd-meta                                   | 0.6.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
@@ -915,7 +915,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-boot/ventoy-bin                                   | 1.1.17-r1          |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
+ sys-boot/ventoy-bin                                   | 1.1.18             |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-boot/zfsbootmenu                                  | 3.1.0              |            | https://zfsbootmenu.org                                                    | ZFS bootloader for root-on-ZFS systems
                                                        | 9999               |            |                                                                            |
