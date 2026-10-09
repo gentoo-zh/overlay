@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-10 01:40:32 CST)
+(The last generation time: 2026-10-10 01:41:18 CST)
 
 ### Packages
 
@@ -200,7 +200,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.98.0             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush-bin                                    | 0.98.0             |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
+ app-misc/crush-bin                                    | 0.98.1             |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/fast-resume                                  | 2.13.2             |            | https://github.com/angristan/fast-resume                                   | Fast fuzzy finder for coding agent session history
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -434,7 +434,7 @@
  dev-util/obs-build                                    | 20260910           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.8.6             |            |                                                                            |
+                                                       | 18.8.7             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.18.35            |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
