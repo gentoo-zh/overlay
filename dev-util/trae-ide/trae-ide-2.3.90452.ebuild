@@ -10,11 +10,11 @@ HOMEPAGE="https://www.trae.cn/"
 
 SRC_URI="
 	amd64? (
-		https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/${PV}/linux/TraeCode_CN-linux-x64.deb
+		https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/${PV}/linux/TRAE_CN-linux-x64.deb
 			-> ${P}-amd64.deb
 	)
 	arm64? (
-		https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/${PV}/linux/TraeCode_CN-linux-arm64.deb
+		https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/app/releases/stable/${PV}/linux/TRAE_CN-linux-arm64.deb
 			-> ${P}-arm64.deb
 	)
 "
