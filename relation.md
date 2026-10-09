@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-10 01:48:24 CST)
+(The last generation time: 2026-10-10 01:52:24 CST)
 
 ### Packages
 
@@ -180,7 +180,7 @@
    dev-python/qasync                                   | 0.28.0             | RD         | https://github.com/CabbageDevelopment/qasync                               | Implementation of the asyncio (PEP 3156) event-loop with Qt
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch                                    | 3.20.4             |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
-                                                       | 4.0.5              |            |                                                                            |
+                                                       | 4.0.6              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.20.4             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
                                                        | 4.0.6              |            |                                                                            |
@@ -240,7 +240,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/bytedance-feishu                           | 7.72.23            |            | https://www.feishu.cn/download                                             | 飞书（Feishu） 飞书整合即时消息、日历、音视频会议、云文档、工作台等功能于一体，成就团队和个人，更高效、更愉悦。
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/freeoffice                                 | 1234               |            | https://www.freeoffice.com/de/                                             | A complete, free Microsoft Office-compatible alternative office suite
+ app-office/freeoffice                                 | 1238               |            | https://www.freeoffice.com/de/                                             | A complete, free Microsoft Office-compatible alternative office suite
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/notesnook-bin                              | 3.4.9              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
