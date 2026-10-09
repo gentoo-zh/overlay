@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-10 01:47:51 CST)
+(The last generation time: 2026-10-10 01:48:24 CST)
 
 ### Packages
 
@@ -198,7 +198,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/copilot                                      | 1.0.93             |            | https://github.com/github/copilot-cli                                      | The power of GitHub Copilot, now in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush                                        | 0.98.0             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
+ app-misc/crush                                        | 0.98.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush-bin                                    | 0.98.1             |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -799,7 +799,7 @@
  net-proxy/clash-verge-rev                             | 2.5.7-r1           |            | https://www.clashverge.dev                                                 | GUI client based on Tauri for tailored proxy experience
    net-proxy/mihomo                                    | 1.19.32            | BD, RD     | https://wiki.metacubex.one/                                                | Another Clash Kernel, formerly Clash.Meta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/clash-verge-rev-bin                         | 2.5.7              |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
+ net-proxy/clash-verge-rev-bin                         | 2.5.8              |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/dae                                         | 1.1.0              |            | https://github.com/daeuniverse/dae                                         | A lightweight and high-performance transparent proxy solution based on eBPF
