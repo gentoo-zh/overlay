@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-10 15:41:13 CST)
+(The last generation time: 2026-10-10 23:22:50 CST)
 
 ### Packages
 
@@ -123,7 +123,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-mcbopomofo                             | 3.1.1              |            | https://github.com/openvanilla/fcitx5-mcbopomofo                           | McBopomofo (Traditional Chinese phonetic) input method for Fcitx5
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-meta                                   | 5.0.12-r3          |            | https://fcitx-im.org                                                       | Merge this to pull in Fcitx packages
+ app-i18n/fcitx-meta                                   | 5.0.12-r4          |            | https://fcitx-im.org                                                       | Merge this to pull in Fcitx packages
    app-i18n/fcitx-anthy                                | 9999               | RD         | https://fcitx-im.org/                                                      | Japanese Anthy input methods for Fcitx5
    app-i18n/fcitx-bamboo                               | 1.0.11             | RD         | https://github.com/fcitx/fcitx5-bamboo                                     | Typing Vietnamese by Bamboo core engine for Fcitx5
    app-i18n/fcitx-chewing                              | 9999               | RD         | https://github.com/fcitx/fcitx5-chewing                                    | Chewing Wrapper for Fcitx
