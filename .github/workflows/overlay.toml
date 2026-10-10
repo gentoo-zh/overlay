@@ -1395,6 +1395,13 @@ use_latest_release = true
 prefix = "v"
 autobump = true
 
+["dev-util/openchamber-bin"]
+source = "github"
+github = "openchamber/openchamber"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 ["dev-util/opencode-bin"]
 source = "github"
 github = "anomalyco/opencode"
