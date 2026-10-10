@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       targets: ${{ steps.packages.outputs.targets }}
+      image: ${{ steps.image.outputs.ref }}
 
     steps:
     - uses: actions/checkout@v7
@@ -32,6 +33,12 @@ jobs:
         targets=$(scripts/emerge-targets.sh "$PR")
         echo "targets=$targets" >> "$GITHUB_OUTPUT"
 
+    - name: image name
+      id: image
+      env:
+        OWNER: ${{ github.repository_owner }}
+      run: echo "ref=ghcr.io/$(printf '%s' "$OWNER" | tr 'A-Z' 'a-z')/stage3" >> "$GITHUB_OUTPUT"
+
   build:
     name: emerge ${{ matrix.target.package }} (${{ matrix.target.profile }})
     needs: scan
@@ -42,8 +49,14 @@ jobs:
         target: ${{ fromJSON(needs.scan.outputs.targets) }}
 
     runs-on: ${{ matrix.target.runner }}
+    permissions:
+      contents: read
+      packages: read
     container:
-      image: gentoo/stage3:${{ matrix.target.profile }}
+      image: ${{ needs.scan.outputs.image }}:${{ matrix.target.profile }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
       options: --privileged
 
     steps:
@@ -64,15 +77,6 @@ jobs:
           FEATURES="getbinpkg" emerge --oneshot --quiet app-portage/cpuid2cpuflags
           echo "$ATOM $(cpuid2cpuflags)" > /etc/portage/package.use/cpu-flags
           cat /etc/portage/package.use/cpu-flags
-        fi
-
-    - name: update perl to the binhost version
-      env:
-        ATOM: ${{ matrix.target.package }}
-      run: |
-        if scripts/needs-perl-update.sh "$ATOM"; then
-          FEATURES="getbinpkg" emerge --oneshot --update --quiet dev-lang/perl
-          FEATURES="getbinpkg" perl-cleaner --all -- --quiet --jobs 4
         fi
 
     - name: emerge --onlydeps packages

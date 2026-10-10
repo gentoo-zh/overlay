@@ -1,0 +1,75 @@
+name: stage3
+
+on:
+  # scheduled runs start 5-8 hours late here; 21:17 still finishes before nvchecker's 09:00 run
+  schedule:
+    - cron: '17 21 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: stage3
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    name: stage3 ${{ matrix.profile }}
+    if: github.repository == 'gentoo-zh/overlay' || github.event_name == 'workflow_dispatch'
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - profile: amd64-desktop-openrc
+            runner: ubuntu-latest
+          - profile: amd64-desktop-systemd
+            runner: ubuntu-latest
+          - profile: arm64-desktop-systemd
+            runner: ubuntu-24.04-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 180
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v7
+
+    - name: image name
+      id: image
+      env:
+        OWNER: ${{ github.repository_owner }}
+        PROFILE: ${{ matrix.profile }}
+      run: echo "ref=ghcr.io/$(printf '%s' "$OWNER" | tr 'A-Z' 'a-z')/stage3:$PROFILE" >> "$GITHUB_OUTPUT"
+
+    - name: log in to ghcr
+      uses: docker/login-action@v4
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: build and push
+      uses: docker/build-push-action@v7
+      with:
+        context: .github/stage3
+        build-args: PROFILE=${{ matrix.profile }}
+        push: true
+        no-cache: true
+        # attestation manifests are untagged and the cleanup would delete them
+        provenance: false
+        tags: ${{ steps.image.outputs.ref }}
+
+  cleanup:
+    needs: build
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+    - name: drop replaced images
+      uses: actions/delete-package-versions@v5
+      with:
+        owner: ${{ github.repository_owner }}
+        package-name: stage3
+        package-type: container
+        delete-only-untagged-versions: true
+        min-versions-to-keep: 0

@@ -57,6 +57,7 @@ jobs:
         owner=$(printf '%s' "$OWNER" | tr 'A-Z' 'a-z')
         tag=$(printf '%s' "$REF" | tr 'A-Z' 'a-z' | tr -c 'a-z0-9._-' '-')
         echo "ref=ghcr.io/$owner/autobump-env:$tag-${DAY:-$(date -u +%Y%m%d)}" >> "$GITHUB_OUTPUT"
+        echo "base=ghcr.io/$owner/stage3:amd64-desktop-openrc" >> "$GITHUB_OUTPUT"
 
     - name: log in to ghcr
       uses: docker/login-action@v4
@@ -87,6 +88,7 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: .github/autobump-env
+        build-args: BASE=${{ steps.image.outputs.base }}
         push: true
         no-cache: true
         # no attestation manifests: the cleanup below deletes untagged versions

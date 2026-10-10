@@ -1,4 +1,5 @@
-FROM gentoo/stage3:amd64-desktop-openrc
+ARG BASE
+FROM ${BASE}
 
 RUN emerge-webrsync --no-pgp-verify \
  && { \
