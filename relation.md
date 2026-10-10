@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-11 02:06:38 CST)
+(The last generation time: 2026-10-11 02:09:03 CST)
 
 ### Packages
 
@@ -183,7 +183,7 @@
                                                        | 4.0.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.20.4             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
-                                                       | 4.0.7              |            |                                                                            |
+                                                       | 4.0.8              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.11.0             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -778,7 +778,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.10             |            | https://github.com/trzsz/tsshd                                             | UDP-based SSH server with roaming support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/yaak-bin                                     | 2026.8.1-r1        |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
+ net-misc/yaak-bin                                     | 2026.9.0           |            | https://yaak.app/                                                          | A fast, privacy-first API client for REST, GraphQL, SSE, WebSocket, and gRPC
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-p2p/amule-dlp-antileech                           | 9999               |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999               | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
