@@ -12,11 +12,10 @@ TMPFILES_OPTIONAL=1
 EMULTILIB_PKG="true"
 
 # Gentoo patchset (ignored for live ebuilds)
-PATCH_VER=2
-PATCH_DEV=dilfridge
+PATCH_VER=4
 
 # liblol additions
-GLIBC_PV=2.43
+GLIBC_PV=2.44
 GLIBC_P="glibc-${GLIBC_PV}"
 GLIBC_PVR="${GLIBC_PV}"
 LOLPREFIX=/opt/lol
@@ -68,7 +67,7 @@ else
 	KEYWORDS="-* ~loong"
 	SRC_URI="mirror://gnu/glibc/${GLIBC_P}.tar.xz"
 	SRC_URI+=" verify-sig? ( mirror://gnu/glibc/${GLIBC_P}.tar.xz.sig )"
-	SRC_URI+=" https://dev.gentoo.org/~${PATCH_DEV}/distfiles/${GLIBC_P}-patches-${PATCH_VER}.tar.xz"
+	SRC_URI+=" https://distfiles.gentoo.org/pub/proj/toolchain/glibc/patches/${GLIBC_P}-patches-${PATCH_VER}.tar.xz"
 	SRC_URI+=" https://github.com/AOSC-Dev/liblol/archive/refs/tags/v${PV}.tar.gz -> liblol-${PV}.tar.gz"
 fi
 
@@ -224,6 +223,7 @@ XFAIL_TEST_LIST=(
 	# Fails with certain PORTAGE_NICENESS/PORTAGE_SCHEDULING_POLICY
 	tst-sched1
 	tst-sched_setattr
+	tst-sched_setattr-thread
 
 	# Fails regularly, unreliable
 	tst-valgrind-smoke
@@ -240,6 +240,9 @@ XFAIL_TEST_LIST=(
 
 	# Fails only in portage. Needs investigation.
 	tst-setvbuf2
+
+	# https://sourceware.org/PR34433
+	tst-dl-llp-stack
 )
 
 XFAIL_NSPAWN_TEST_LIST=(
@@ -250,6 +253,7 @@ XFAIL_NSPAWN_TEST_LIST=(
 	tst-aarch64-pkey
 	tst-bz21269
 	tst-mlock2
+	tst-mseal-pkey
 	tst-ntp_gettime
 	tst-ntp_gettime-time64
 	tst-ntp_gettimex
@@ -387,6 +391,21 @@ setup_target_flags() {
 	just_headers && return 0
 
 	case $(tc-arch) in
+		alpha)
+			# glibc selects its hand-written assembly mem*/str* routines by the
+			# host triplet's machine prefix (sysdeps/alpha/preconfigure does
+			# machine=alpha/$machine), NOT by the -mcpu codegen flag.  With the
+			# bare alpha-*-* CHOST only the generic C is built.  Map -mcpu to the
+			# most specific sysdeps/alpha/alphaev* dir that exists (Implies chain
+			# alphaev67 -> alphaev6 -> alphaev5) so the tuned asm is selected.
+			local cpu
+			case $(get-flag mcpu) in
+			21264a|ev67)           cpu="alphaev67" ;;
+			21264|ev6)             cpu="alphaev6" ;;
+			21164*|ev5|ev56|pca56) cpu="alphaev5" ;;
+			esac
+			[[ -n ${cpu} ]] && CTARGET_OPT="${cpu}-${CTARGET#*-}"
+		;;
 		x86)
 			# -march needed for #185404 #199334
 			# TODO: When creating the first glibc cross-compile, this test will
@@ -418,7 +437,12 @@ setup_target_flags() {
 					[[ ${t} == "x86_64" ]] && t="x86-64"
 					filter-flags '-march=*'
 					# ugly, ugly, ugly.  ugly.
-					CFLAGS_x86=$(CFLAGS=${CFLAGS_x86}; filter-flags '-march=*'; echo "${CFLAGS}")
+					CFLAGS_x86=$(
+						CFLAGS=${CFLAGS_x86}
+						filter-flags '-march=*'
+						is-flagq '-mfpmath=sse' && append-cflags -msse
+						echo "${CFLAGS}"
+					)
 					export CFLAGS_x86="${CFLAGS_x86} -march=${t}"
 					einfo "Auto adding -march=${t} to CFLAGS_x86 #185404 (ABI=${ABI})"
 				fi
@@ -574,6 +598,9 @@ setup_flags() {
 	#  include/libc-symbols.h:75:3: #error "glibc cannot be compiled without optimization"
 	# https://sourceware.org/glibc/wiki/FAQ#Why_do_I_get:.60.23error_.22glibc_cannot_be_compiled_without_optimization.22.27.2C_when_trying_to_compile_GNU_libc_with_GNU_CC.3F
 	replace-flags -O0 -O1
+
+	# bug #982652 (PR34672)
+	is_hurd && replace-flags -Os -O2
 
 	# Similar issues as with SSP. Can't inject yourself that early.
 	filter-flags '-fsanitize=*'
@@ -929,7 +956,7 @@ sanity_prechecks() {
 			die "Found directory (${ESYSROOT}/usr/lib/include) which will break build (bug #833620)!"
 		fi
 
-		if [[ ${CTARGET} == *-linux* ]] ; then
+		if is_linux ; then
 			local run_kv build_kv want_kv
 
 			run_kv=$(g_get_running_KV)
@@ -1032,7 +1059,7 @@ src_unpack() {
 	use systemd && unpack glibc-systemd-${GLIBC_SYSTEMD_VER}.tar.gz
 
 	ebegin "Removing backported patch from the libLoL patchset"
-	rm -f "${WORKDIR}/liblol-${PV}/autobuild/patches/glibc/0001-BACKPORT-UPSTREAM-stdlib-resolve-a-double-lock-init-.patch"
+	rm -f "${WORKDIR}/liblol-${PV}/autobuild/patches/glibc/0001-FROMLIST-LoongArch-Fix-intermittent-nptl-tst-cancel3.patch"
 	eend $?
 }
 
