@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-10 23:55:30 CST)
+(The last generation time: 2026-10-10 23:56:28 CST)
 
 ### Packages
 
@@ -726,7 +726,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidupcs-go                                  | 4.0.2              |            | https://github.com/qjfoidnh/BaiduPCS-Go                                    | Terminal utility for Baidu Network Disk (Golang Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/biliup-app-bin                               | 1.2.3              |            | https://github.com/biliup/biliup-app-new                                   | A Tool for Upload video to bilibili
+ net-misc/biliup-app-bin                               | 1.3.0              |            | https://github.com/biliup/biliup-app-new                                   | A Tool for Upload video to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/biliup-bin                                   | 1.2.11             |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
