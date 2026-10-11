@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-11 17:49:18 CST)
+(The last generation time: 2026-10-12 04:01:50 CST)
 
 ### Packages
 
@@ -694,6 +694,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/dingtalk                                       | 8.2.8.260818002-r1 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503      | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-im/telegram-desktop                               | 7.3.1              |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.34_p260924     |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
    media-libs/openslide                                | 4.0.1              | RD         | https://openslide.org/                                                     | A C library that provides a simple interface to read whole-slide images
