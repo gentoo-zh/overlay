@@ -16,7 +16,7 @@ IUSE="X coexist"
 RESTRICT="strip"
 
 BDEPEND="
-	~dev-lang/bun-bin-1.4.2
+	>=dev-lang/bun-bin-1.4.2
 	>=net-libs/nodejs-22.19
 "
 RDEPEND="
