@@ -2147,6 +2147,13 @@ method = "GET"
 regex = 'com.alibabainc.dingtalk_(.*)_amd64.deb'
 github_account = "gouwazi"
 
+["net-im/telegram-desktop"]
+source = "github"
+github = "telegramdesktop/tdesktop"
+use_latest_release = true
+prefix = "v"
+github_account = "Zakkaus"
+
 ["net-im/tencent-qq"]
 source = "jq"
 url = "https://qq-web.cdn-go.cn/im.qq.com_new/latest/rainbow/pcConfig.json"
