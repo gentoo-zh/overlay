@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-12 21:42:18 CST)
+(The last generation time: 2026-10-12 21:47:56 CST)
 
 ### Packages
 
@@ -23,7 +23,7 @@
    acct-group/onepassword                              | 0-r1               |  D, RD     |                                                                            | Password manager and secure wallet
    acct-group/onepassword-mcp                          | 0                  | RD         |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/chezmoi                                     | 2.73.0             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
+ app-admin/chezmoi                                     | 2.73.1             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi-bin                                 | 2.73.1             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -185,7 +185,7 @@
  app-misc/cc-switch-bin                                | 3.20.4             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
                                                        | 4.0.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch-cli                                | 5.11.0             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
+ app-misc/cc-switch-cli                                | 5.11.1             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/chatgpt-desktop                              | 26.1007.21434      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -617,7 +617,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/cider                                     | 4.0.9.1            |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V4)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/euphonica                                 | 0.99.7             |            | https://github.com/htkhiem/euphonica                                       | An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita
+ media-sound/euphonica                                 | 0.99.8             |            | https://github.com/htkhiem/euphonica                                       | An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/feeluown                                  | 5.1.2              |            | https://github.com/feeluown/FeelUOwn                                       | A user-friendly and hackable music player
    dev-python/fluent-runtime                           | 0.4.0              | RD         | https://github.com/projectfluent/python-fluent                             | Localization library for expressive translations
