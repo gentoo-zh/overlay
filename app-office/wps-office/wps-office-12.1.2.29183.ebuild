@@ -8,7 +8,7 @@ inherit unpacker xdg
 DESCRIPTION="WPS Office is an office productivity suite, Here is the Chinese version"
 HOMEPAGE="https://www.wps.cn/product/wpslinux/"
 
-MY_BUILD_ID="763366"
+MY_BUILD_ID="806791"
 MY_URI="https://wps-linux-personal.wpscdn.cn/wps/download/ep/Linux2023/${PV##*.}"
 SRC_URI="https://wps302.wcbing.top/${MY_URI}/${PN}_${PV}.AK.preread.sw.Personal_${MY_BUILD_ID}_amd64.deb
 	-> ${PN}_${PV}_amd64.deb"
@@ -48,6 +48,7 @@ RDEPEND="
 	media-libs/fontconfig:1.0
 	media-libs/freetype:2
 	media-libs/libglvnd
+	media-libs/libva[X]
 	media-libs/mesa[gbm(+)]
 	net-print/cups
 	sys-apps/dbus
@@ -150,6 +151,7 @@ src_install() {
 
 	insinto /opt/kingsoft/wps-office
 	use systemd || { rm "${S}"/opt/kingsoft/wps-office/office6/libdbus-1.so* || die ; }
+	rm "${S}"/opt/kingsoft/wps-office/office6/libksai{engine.so*,toolkits.so} || die
 	doins -r "${S}"/opt/kingsoft/wps-office/{office6,templates}
 
 	# doins forces 0644, which strips the executable bit off the many helper
