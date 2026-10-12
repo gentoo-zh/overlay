@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-12 20:17:03 CST)
+(The last generation time: 2026-10-12 21:41:41 CST)
 
 ### Packages
 
@@ -390,7 +390,7 @@
  dev-util/antigravity-cli                              | 1.3.3              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 31                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
-   dev-util/pacstrap                                   | 31                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
+   dev-util/pacstrap                                   | 32                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
      sys-apps/pacman                                   | 7.1.0              |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
        app-crypt/archlinux-keyring                     | 20251116           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
                                                        | 20260909           |            |                                                                            |
