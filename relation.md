@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-12 15:02:54 CST)
+(The last generation time: 2026-10-12 15:06:12 CST)
 
 ### Packages
 
@@ -969,7 +969,6 @@
                                                        | 6.18.56-r100       |            |                                                                            |
                                                        | 7.1.13-r100        |            |                                                                            |
                                                        | 7.2.10-r100        |            |                                                                            |
-                                                       | 7.2.8-r100         |            |                                                                            |
                                                        | 7.2.9-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
@@ -978,9 +977,9 @@
                                                        | 7.2.9-r1           |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.10             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.9              |            |                                                                            |
-   sys-kernel/xanmod-kernel                            | 7.2.8              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+   sys-kernel/xanmod-kernel                            | 7.2.10             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.9              |            |                                                                            |
-   sys-kernel/xanmod-sources                           | 7.2.8              | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+   sys-kernel/xanmod-sources                           | 7.2.10             | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
                                                        | 7.2.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
