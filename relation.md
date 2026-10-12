@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-12 14:55:25 CST)
+(The last generation time: 2026-10-12 14:56:05 CST)
 
 ### Packages
 
@@ -949,10 +949,10 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.111           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.112           |            |                                                                            |
-                                                       | 6.18.54            |            |                                                                            |
                                                        | 6.18.55            |            |                                                                            |
+                                                       | 6.18.56            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
-                                                       | 7.2.8              |            |                                                                            |
+                                                       | 7.2.10             |            |                                                                            |
                                                        | 7.2.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 42.2               |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
@@ -976,7 +976,7 @@
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 6.18.55            |            |                                                                            |
                                                        | 7.2.9-r1           |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.2.8              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+   sys-kernel/liquorix-sources                         | 7.2.10             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.9              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.8              | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.9              |            |                                                                            |
