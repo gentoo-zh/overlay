@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-12 21:41:41 CST)
+(The last generation time: 2026-10-12 21:42:18 CST)
 
 ### Packages
 
@@ -71,7 +71,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/kiro                                      | 1.2.56             |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/marktext-bin                              | 0.21.1             |            | https://github.com/marktext/marktext                                       | A simple and elegant markdown editor, available for Linux, macOS and Windows
+ app-editors/marktext-bin                              | 0.21.2             |            | https://github.com/marktext/marktext                                       | A simple and elegant markdown editor, available for Linux, macOS and Windows
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/neomacs                                   | 9999               |            | https://github.com/eval-exec/neomacs                                       | Modern Emacs fork rewriting Emacs internals in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -389,7 +389,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/antigravity-cli                              | 1.3.3              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/arch-install-scripts                         | 31                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
+ dev-util/arch-install-scripts                         | 32                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 32                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
      sys-apps/pacman                                   | 7.1.0              |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
        app-crypt/archlinux-keyring                     | 20251116           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
