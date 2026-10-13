@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-13 18:11:30 CST)
+(The last generation time: 2026-10-13 18:12:07 CST)
 
 ### Packages
 
@@ -455,7 +455,7 @@
                                                        | 1.4.3              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
-                                                       | 2.37.0             |            |                                                                            |
+                                                       | 2.38.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.39.8             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -772,7 +772,7 @@
  net-misc/remmina-plugin-rustdesk                      | 1.0.0.0-r1         |            | https://www.muflone.com/remmina-plugin-rustdesk/                           | A protocol plugin for Remmina to launch a Rustdesk connection
    net-misc/rustdesk                                   | 1.5.0              |  D, RD     | https://rustdesk.com/                                                      | An open-source remote desktop, and alternative to TeamViewer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/reqable                                      | 3.2.23             |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
+ net-misc/reqable                                      | 3.3.1              |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/todesk                                       | 4.9.7.0            |            | https://www.todesk.com/                                                    | Remote control and team work
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
