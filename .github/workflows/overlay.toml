@@ -624,6 +624,13 @@ use_latest_tag = true
 prefix = "v"
 github_account = "st0nie"
 
+["app-misc/magpie-bin"]
+source = "github"
+github = "yetone/magpie"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 # packaged from a pinned commit, no tag to compare
 #["app-misc/mdx_util"]
 
