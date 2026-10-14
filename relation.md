@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-14 13:42:52 CST)
+(The last generation time: 2026-10-14 13:43:30 CST)
 
 ### Packages
 
@@ -65,11 +65,11 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/appflowy-bin                              | 0.14.8-r1          |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/cursor                                    | 3.24.12            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
+ app-editors/cursor                                    | 3.24.18            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/edit                                      | 2.0.0              |            | https://github.com/microsoft/edit                                          | Microsoft edit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/kiro                                      | 1.2.56             |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
+ app-editors/kiro                                      | 1.3.0              |            | https://kiro.dev/                                                          | Amazon's agent-first AI IDE with spec-driven development
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/marktext-bin                              | 0.21.2             |            | https://github.com/marktext/marktext                                       | A simple and elegant markdown editor, available for Linux, macOS and Windows
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -387,7 +387,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.3.4              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.3.5              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 32                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 32                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -419,7 +419,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr                                        | 0.9.3-r3           |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/herdr-bin                                    | 0.9.3              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
+ dev-util/herdr-bin                                    | 0.9.4              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.23.0             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -427,14 +427,14 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-code-bin                                | 2.1.1              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kiro-cli                                     | 2.30.0             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
+ dev-util/kiro-cli                                     | 2.31.0             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.3              |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/obs-build                                    | 20260910           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.10.3            |            |                                                                            |
+                                                       | 18.10.4            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.3.1              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -737,7 +737,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.0.0              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/flyctl-bin                                   | 0.4.116            |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
+ net-misc/flyctl-bin                                   | 0.4.117            |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
                                                        | 0.4.82             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
