@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-14 13:43:30 CST)
+(The last generation time: 2026-10-14 13:44:11 CST)
 
 ### Packages
 
@@ -187,7 +187,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.11.1             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.1007.21434      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.1007.71326      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.1.6              |            |                                                                            |
@@ -282,7 +282,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lemminx-bin                                  | 0.31.2             |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/readest-bin                                  | 0.12.12            |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
+ app-text/readest-bin                                  | 0.12.16            |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/stirling-pdf-bin                             | 3.1.0              |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -554,7 +554,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-bright                               | 5.528              |            | https://github.com/lxgw/LxgwBright                                         | LXGW Bright: a Ming/serif-style Chinese font by LXGW
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/lxgw-marker-gothic                        | 1.003              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
+ media-fonts/lxgw-marker-gothic                        | 1.004              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-neo-xihei                            | 1.304              |            | https://github.com/lxgw/LxgwNeoXiHei                                       | A Simplified Chinese sans-serif font derived from IPAex Gothic
                                                        | 1.305              |            |                                                                            |
