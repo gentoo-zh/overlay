@@ -1410,6 +1410,12 @@ prefix = "v"
 github_account = ["xz-dev"]
 autobump = true
 
+["dev-util/opencode-desktop-bin"]
+source = "jq"
+url = "https://opencode.ai/update/api/latest/desktop"
+filter = '.artifacts[] | select(.distribution == "opencode") | .version'
+autobump = true
+
 ["dev-util/osc"]
 source = "github"
 github = "openSUSE/osc"
