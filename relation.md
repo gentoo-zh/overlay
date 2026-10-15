@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-15 01:36:09 CST)
+(The last generation time: 2026-10-15 12:55:28 CST)
 
 ### Packages
 
@@ -334,7 +334,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/conda                                      | 26.9.2             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
+ dev-python/conda                                      | 26.9.3             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0             |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
                                                        | 26.7.0             |            |                                                                            |
      dev-util/mamba                                    | 2.5.0-r2           | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
