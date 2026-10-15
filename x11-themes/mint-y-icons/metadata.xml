@@ -4,8 +4,4 @@
 	<upstream>
 		<remote-id type="github">linuxmint/mint-y-icons</remote-id>
 	</upstream>
-	<maintainer type="person">
-		<email>akira7095@riseup.net</email>
-		<name>Akira</name>
-	</maintainer>
 </pkgmetadata>
