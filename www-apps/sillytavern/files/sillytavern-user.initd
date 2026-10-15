@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+USER="${RC_SVCNAME#*.}"
+export HOME="$(getent passwd "${USER}" | cut -d: -f6)"
+name="SillyTavern for ${USER}"
+description="LLM frontend for power users"
+command="/usr/bin/sillytavern"
+command_user="${USER}"
+command_args="${SILLYTAVERN_OPTS}"
+error_log="${HOME}/.config/sillytavern/error.log"
+pidfile="/run/${RC_SVCNAME}.pid"
+command_background="yes"
+
+depend() {
+	after net
+}
+
+start_pre() {
+	if [ "${USER}" = "${RC_SVCNAME}" ]; then
+		eerror "Run this script through a per-user symlink:"
+		eerror "  ln -s ${RC_SVCNAME} /etc/init.d/${RC_SVCNAME}.<user>"
+		return 1
+
+	elif [ "${USER}" = "root" ]; then
+		eerror "Running as root is not supported; symlink for a regular user instead:"
+		eerror "  ln -s ${RC_SVCNAME%%.*} /etc/init.d/${RC_SVCNAME%%.*}.<user>"
+		return 1
+	fi
+
+	checkpath -d -o "${USER}" "${HOME}/.config/sillytavern" "${HOME}/.local/share/sillytavern"
+}
