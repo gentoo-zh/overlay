@@ -1295,6 +1295,13 @@ use_latest_release = true
 prefix = "rust-v"
 autobump = true
 
+["dev-util/command-code-desktop"]
+source = "github"
+github = "CommandCodeAI/desktop"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 ["dev-util/deepseek-harness"]
 source = "npm"
 npm = "@deepseek-ai/dsh"
