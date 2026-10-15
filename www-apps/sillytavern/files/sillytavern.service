@@ -1,0 +1,11 @@
+[Unit]
+Description=SillyTavern LLM frontend for power users
+Documentation=https://docs.sillytavern.app/
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sillytavern
+Restart=on-failure
+
+[Install]
+WantedBy=default.target

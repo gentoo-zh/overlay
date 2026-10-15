@@ -1,0 +1,3 @@
+# /etc/conf.d/sillytavern: options for sillytavern.<user>
+# e.g. SILLYTAVERN_OPTS="--port 8010"
+SILLYTAVERN_OPTS=""

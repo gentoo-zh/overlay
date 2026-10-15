@@ -1,0 +1,7 @@
+#!/bin/sh
+data_dir="${XDG_DATA_HOME:-${HOME}/.local/share}/sillytavern"
+config_dir="${XDG_CONFIG_HOME:-${HOME}/.config}/sillytavern"
+mkdir -p "${data_dir}" "${config_dir}"
+exec node /usr/share/sillytavern/server.js \
+	--dataRoot "${data_dir}" \
+	--configPath "${config_dir}/config.yaml" "$@"
