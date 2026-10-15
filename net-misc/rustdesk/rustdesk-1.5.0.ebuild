@@ -82,16 +82,22 @@ inherit cargo desktop llvm-r1 systemd xdg
 
 DESCRIPTION="An open-source remote desktop, and alternative to TeamViewer"
 HOMEPAGE="https://rustdesk.com/"
+# sciter publishes one prebuilt library per architecture
+_SCITER_BIN="https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx"
 SRC_URI="
 	https://github.com/rustdesk/rustdesk/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-	https://raw.githubusercontent.com/c-smile/sciter-sdk/master/bin.lnx/x64/libsciter-gtk.so -> ${PN}-libsciter-gtk.so
+	amd64? ( ${_SCITER_BIN}/x64/libsciter-gtk.so -> ${PN}-libsciter-gtk-amd64.so )
+	arm64? ( ${_SCITER_BIN}/arm64/libsciter-gtk.so -> ${PN}-libsciter-gtk-arm64.so )
 	https://github.com/gentoo-zh-drafts/rustdesk/releases/download/${PV}/${P}-crates.tar.xz
 	${CARGO_CRATE_URIS}
 "
 
 # grep VCPKG_COMMIT_ID .github/workflows/flutter-build.yml
 _VCPKG_COMMIT="9e593bb18ea69cc5095e012465dcd675a822ed0d"
-SRC_URI+=" https://github.com/gentoo-zh-drafts/rustdesk-vcpkg/releases/download/${PV}/${P}-vcpkg-${_VCPKG_COMMIT}-lite.tar.gz"
+SRC_URI+="
+	amd64? ( https://github.com/gentoo-zh-drafts/rustdesk-vcpkg/releases/download/${PV}/${P}-vcpkg-${_VCPKG_COMMIT}-x64-linux-lite.tar.gz )
+	arm64? ( https://github.com/gentoo-zh-drafts/rustdesk-vcpkg/releases/download/${PV}/${P}-vcpkg-${_VCPKG_COMMIT}-arm64-linux-lite.tar.gz )
+"
 
 # FIX:
 # 1. missing rust-webm-*/src/sys/libwebm
@@ -122,7 +128,7 @@ LICENSE+="
 	Unicode-DFS-2016 Unlicense WTFPL-2 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="wayland +hwaccel"
 
@@ -170,6 +176,8 @@ src_prepare() {
 	default
 	cd "${S}"/.. || die
 	eapply "${FILESDIR}"/rust-sciter.patch
+	# FIX: hwcodec only links zlib on x86_64
+	eapply "${FILESDIR}"/hwcodec-link-zlib.patch
 
 	# GIT_CRATES does not override git sources in [patch.crates-io]
 	local _TUNGSTENITE_COMMIT=`echo "${GIT_CRATES[tungstenite]}" | awk -F';' '{print $2}'`
@@ -215,7 +223,7 @@ src_install() {
 	exeinto "${rustdesk_dir}"
 	insinto "${rustdesk_dir}"
 	doexe $(cargo_target_dir)/rustdesk
-	newins "${DISTDIR}/${PN}-libsciter-gtk.so" libsciter-gtk.so
+	newins "${DISTDIR}/${PN}-libsciter-gtk-${ARCH}.so" libsciter-gtk.so
 	rm src/ui/*.rs || die
 	newbin "${FILESDIR}/rustdesk.sh" rustdesk
 	insinto "${rustdesk_dir}/src"

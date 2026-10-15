@@ -1,0 +1,24 @@
+The bundled ffmpeg is built with zlib on every architecture, as libavformat.pc
+in both vcpkg bundles shows, but hwcodec only passes -lz on x86_64. On arm64
+this leaves uncompress() unresolved when the linker pulls in libavformat's
+id3v2.o. Link zlib on all Linux targets.
+
+--- a/hwcodec-778df1f99597722473b29443bac22ae6c23946fe/build.rs
++++ b/hwcodec-778df1f99597722473b29443bac22ae6c23946fe/build.rs
+@@ -174,15 +174,10 @@
+ 
+     fn link_os() {
+         let target_os = std::env::var("CARGO_CFG_TARGET_OS").unwrap();
+-        let target_arch = std::env::var("CARGO_CFG_TARGET_ARCH").unwrap();
+         let dyn_libs: Vec<&str> = if target_os == "windows" {
+             ["User32", "bcrypt", "ole32", "advapi32"].to_vec()
+         } else if target_os == "linux" {
+-            let mut v = ["drm", "X11", "stdc++"].to_vec();
+-            if target_arch == "x86_64" {
+-                v.push("z");
+-            }
+-            v
++            ["drm", "X11", "stdc++", "z"].to_vec()
+         } else if target_os == "macos" || target_os == "ios" {
+             ["c++", "m"].to_vec()
+         } else if target_os == "android" {
