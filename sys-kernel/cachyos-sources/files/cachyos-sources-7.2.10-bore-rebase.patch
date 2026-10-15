@@ -1,0 +1,12 @@
+--- a/bore.patch
++++ b/bore.patch
+@@ -28,8 +28,8 @@
+ --- a/include/linux/sched.h
+ +++ b/include/linux/sched.h
+ @@ -824,6 +824,31 @@ struct kmap_ctrl {
++ struct task_ipi_mask { };
+  #endif
+- };
+  
+ +#ifdef CONFIG_SCHED_BORE
+ +#define BORE_BC_TIMESTAMP_SHIFT 16

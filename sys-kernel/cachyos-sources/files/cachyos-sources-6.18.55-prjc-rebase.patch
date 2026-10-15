@@ -1,0 +1,53 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] adapt scheduler to CachyOS 6.18.55
+
+Preserve the PID reference fix and scope-based scheduler locking. Guard the
+new DEADLINE PI helper with the rest of the fair-scheduler-only helpers.
+Upstream: kernel-patches@a8efcb97a509c3d36f839451dacb896ab48581c5/6.18/sched/0001-prjc-cachy.patch
+Apply to a copy of the pinned upstream patch, not the kernel tree.
+
+--- a/prjc.patch
++++ b/prjc.patch
+@@ -715,8 +715,8 @@
+  	write_sequnlock(&sig->stats_lock);
+ @@ -291,8 +291,8 @@ void release_task(struct task_struct *p)
+  	write_unlock_irq(&tasklist_lock);
+- 	/* @thread_pid can't go away until free_pids() below */
+  	proc_flush_pid(thread_pid);
++ 	put_pid(thread_pid);
+ -	add_device_randomness(&p->se.sum_exec_runtime,
+ -			      sizeof(p->se.sum_exec_runtime));
+ +	add_device_randomness((const void*) &tsk_seruntime(p),
+@@ -10795,9 +10795,9 @@
+ +	__task_access_unlock(p, lock);
+ +	raw_spin_unlock_irqrestore(&p->pi_lock, flags);
+ +#else
+- 	bool queued, running;
+  	struct rq *rq;
+  	int old_prio;
++ 
+ @@ -112,6 +156,7 @@ void set_user_nice(struct task_struct *p, long nice)
+  	 * lowered its priority, then reschedule its CPU:
+  	 */
+@@ -10867,9 +10867,9 @@
+  
+ +#ifndef CONFIG_SCHED_ALT
+ +
+- #ifdef CONFIG_UCLAMP_TASK
+- 
+- static int uclamp_validate(struct task_struct *p,
++ #ifdef CONFIG_RT_MUTEXES
++ static inline void __setscheduler_dl_pi(int newprio, int policy,
++ 			      struct task_struct *p,
+ @@ -446,6 +513,7 @@ static inline int uclamp_validate(struct task_struct *p,
+  static void __setscheduler_uclamp(struct task_struct *p,
+  				  const struct sched_attr *attr) { }
+@@ -11065,7 +11065,7 @@
+ +	return retval;
+ +#else /* !CONFIG_SCHED_ALT */
+  	int oldpolicy = -1, policy = attr->sched_policy;
+- 	int retval, oldprio, newprio, queued, running;
++ 	int retval, oldprio, newprio;
+  	const struct sched_class *prev_class, *next_class;
+ @@ -750,6 +974,7 @@ int __sched_setscheduler(struct task_struct *p,
+  	if (cpuset_locked)

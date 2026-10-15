@@ -9,16 +9,17 @@
 		<!-- CPU schedulers -->
 		<flag name="bore">CachyOS BORE scheduler, optimized for desktop responsiveness</flag>
 		<flag name="bmq">Project C BMQ scheduler</flag>
+		<flag name="bmq-lfbmq">Project C BMQ scheduler with the lock-free bitmap queue runqueue variant</flag>
 		<flag name="pds">Project C Priority and Deadline based Skip list scheduler</flag>
 		<flag name="muqss">MuQSS CPU scheduler with interactive workload accounting</flag>
 		<flag name="rt">Select PREEMPT_RT and apply the RT i915 patch where supported</flag>
 		<flag name="rt-bore">BORE scheduler with PREEMPT_RT</flag>
-		<flag name="eevdf">Linux EEVDF scheduler without an additional scheduler patch</flag>
-		<flag name="server">Use the CachyOS server configuration preset with EEVDF</flag>
+		<flag name="eevdf">Linux EEVDF scheduler; includes the CachyOS POC idle CPU selector on mainline kernels</flag>
+		<flag name="server">Disable CONFIG_CACHY kernel tweaks; scheduler and tuning options remain independently selectable</flag>
 		<flag name="cachyos-hardened">CachyOS hardened configuration and patches with the BORE scheduler</flag>
 
 		<!-- Hardware-specific patches -->
-		<flag name="deckify">Apply the CachyOS handheld configuration and patches with the selected CPU scheduler</flag>
+		<flag name="deckify">Apply the CachyOS handheld configuration and patches with the BORE scheduler</flag>
 		<flag name="aufs">Enable the AUFS union filesystem as a module</flag>
 
 		<!-- CJK framebuffer console -->
@@ -65,8 +66,8 @@
 
 		<!-- Network and memory -->
 		<flag name="bbr3">Use TCP BBR3 and the FQ packet scheduler by default</flag>
-		<flag name="hugepage-always">Always enable transparent huge pages</flag>
-		<flag name="hugepage-madvise">Enable transparent huge pages only when requested with madvise</flag>
+		<flag name="hugepage-always">Force transparent huge pages to always. On server-capable versions, disabling both hugepage flags uses madvise with server and always otherwise.</flag>
+		<flag name="hugepage-madvise">Force transparent huge pages to madvise. On server-capable versions, disabling both hugepage flags uses madvise with server and always otherwise.</flag>
 
 		<!-- CPU-specific optimizations -->
 		<flag name="mgeneric">Use the generic x86-64 CPU target</flag>

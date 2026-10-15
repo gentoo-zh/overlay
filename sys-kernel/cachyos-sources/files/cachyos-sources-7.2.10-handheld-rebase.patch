@@ -1,0 +1,13 @@
+--- a/handheld.patch
++++ b/handheld.patch
+@@ -1853,9 +1853,9 @@
+  	struct dc_link *link;
+  	u32 brightness = 0;
+ +	u32 prev_brightness;
++ 	u32 millipercent = 0;
+  	bool rc = false, reallow_idle = false;
+  	struct drm_connector *connector;
+- 	struct dc_stream_state *stream;
+ @@ -5441,7 +5454,10 @@ static void amdgpu_dm_backlight_set_level(struct amdgpu_display_manager *dm,
+  	amdgpu_dm_update_backlight_caps(dm, bl_idx);
+  	caps = &dm->backlight_caps[bl_idx];

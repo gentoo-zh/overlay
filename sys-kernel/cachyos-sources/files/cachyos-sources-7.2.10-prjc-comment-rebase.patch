@@ -1,0 +1,27 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] match the 7.2.10 delayed-entity comment
+
+Keep the upstream comment rename, matching the stable release extended
+comment instead of the changed delayed-entity check. Apply to temporary
+scheduler.patch after the existing PRJC-specific rebase, if any.
+
+--- a/scheduler.patch
++++ b/scheduler.patch
+@@ -3562,14 +3562,14 @@
+  
+  static __always_inline void return_cfs_rq_runtime(struct cfs_rq *cfs_rq);
+ @@ -6316,7 +6206,7 @@ static void set_delayed(struct sched_entity *se)
+- 
++ {
+  	/*
+  	 * Delayed se of cfs_rq have no tasks queued on them.
+ -	 * Do not adjust h_nr_runnable since __dequeue_task()
+ +	 * Do not adjust h_nr_runnable since dequeue_entities()
+  	 * will account it for blocked tasks.
+- 	 */
+- 	if (!entity_is_task(se))
++ 	 *
++ 	 * This check can be removed because when flat pick
+ @@ -6349,16 +6239,45 @@ static void clear_delayed(struct sched_entity *se)
+  	}
+  }

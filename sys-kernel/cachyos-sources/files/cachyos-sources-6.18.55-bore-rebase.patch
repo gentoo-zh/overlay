@@ -1,0 +1,63 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] adapt scheduler to CachyOS 6.18.55
+
+Adapt entity_lag extraction and wakeup preemption to the PREEMPT_WAKEUP_SHORT
+enum, preserving the upstream BORE short-preemption decision.
+Upstream: kernel-patches@a8efcb97a509c3d36f839451dacb896ab48581c5/6.18/sched/0001-bore-cachy.patch
+Apply to a copy of the pinned upstream patch, not the kernel tree.
+
+--- a/bore.patch
++++ b/bore.patch
+@@ -995,14 +995,14 @@
+  {
+ @@ -786,6 +798,10 @@ static void update_entity_lag(struct cfs_rq *cfs_rq, struct sched_entity *se)
+  
+- 	vlag = avg_vruntime(cfs_rq) - se->vruntime;
++ 	vlag = avruntime - se->vruntime;
+  	limit = calc_delta_fair(max_slice, se);
+ +#ifdef CONFIG_SCHED_BORE
+ +	if (static_branch_likely(&sched_bore_key))
+ +		limit >>= 1;
+ +#endif /* CONFIG_SCHED_BORE */
+  
+- 	se->vlag = clamp(vlag, -limit, limit);
++ 	return clamp(vlag, -limit, limit);
+  }
+ @@ -970,7 +986,11 @@ struct sched_entity *__pick_first_entity(struct cfs_rq *cfs_rq)
+   */
+@@ -1057,8 +1057,8 @@
+  		 * If the fair_server is active, we need to account for the
+  		 * fair_server time whether or not the task is running on
+ @@ -3842,7 +3874,7 @@ dequeue_load_avg(struct cfs_rq *cfs_rq, struct sched_entity *se)
+- 
+- static void place_entity(struct cfs_rq *cfs_rq, struct sched_entity *se, int flags);
++ 		se->vprot = div64_long(se->vprot * old_weight, weight);
++ }
+  
+ -static void reweight_entity(struct cfs_rq *cfs_rq, struct sched_entity *se,
+ +void reweight_entity(struct cfs_rq *cfs_rq, struct sched_entity *se,
+@@ -1197,20 +1197,20 @@
+  		return false;
+  
+ @@ -8893,6 +8960,16 @@ static void check_preempt_wakeup_fair(struct rq *rq, struct task_struct *p, int
+- 	if (__pick_eevdf(cfs_rq, !do_preempt_short) == pse)
+- 		goto preempt;
++ 	if (!nse && cfs_rq->nr_queued)
++ 		goto pick;
+  
+ +#ifdef CONFIG_SCHED_BORE
+ +	if (static_branch_likely(&sched_bore_key) &&
+ +			sched_feat(PREEMPT_SHORT_BORE) &&
+ +			entity_is_task(pse) && entity_is_task(se) &&
+ +			task_of(pse)->bore.penalty < task_of(se)->bore.penalty) {
+-+		do_preempt_short = true;
+++		preempt_action = PREEMPT_WAKEUP_SHORT;
+ +		goto preempt;
+ +	}
+ +#endif /* CONFIG_SCHED_BORE */
+ +
+- 	if (sched_feat(RUN_TO_PARITY) && do_preempt_short)
++ 	if (sched_feat(RUN_TO_PARITY))
+  		update_protect_slice(cfs_rq, se);
+  
+ @@ -9067,16 +9144,25 @@ static void yield_task_fair(struct rq *rq)

@@ -1,0 +1,18 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] sched/alt: follow the sched_mm_cid_exit() stable rename
+
+The 6.18.55 stable kernel calls sched_mm_cid_exit(), while PRJC still
+provides the old sched_mm_cid_exit_signals() name. The implementation
+matches core.c; rename it to match the caller.
+
+--- a/kernel/sched/alt_core.c
++++ b/kernel/sched/alt_core.c
+@@ -7497,7 +7497,7 @@
+ 	task_work_add(curr, work, TWA_RESUME);
+ }
+ 
+-void sched_mm_cid_exit_signals(struct task_struct *t)
++void sched_mm_cid_exit(struct task_struct *t)
+ {
+ 	struct mm_struct *mm = t->mm;
+ 	struct rq *rq;

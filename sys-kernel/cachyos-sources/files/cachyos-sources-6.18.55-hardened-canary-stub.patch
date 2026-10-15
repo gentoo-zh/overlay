@@ -1,0 +1,18 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] mm/slub: stub check_set_canary_bulk() without SLAB_CANARY
+
+The hardened patch defines check_set_canary_bulk() only under
+CONFIG_SLAB_CANARY, but calls it unconditionally. The LTS config keeps
+SLAB_MERGE_DEFAULT=y, so SLAB_CANARY is off and mm/slub.c fails to build.
+Add a no-op stub next to the existing set_canary()/check_canary() stubs.
+
+--- a/mm/slub.c
++++ b/mm/slub.c
+@@ -941,6 +941,7 @@
+ #else
+ #define set_canary(s, object, value)
+ #define check_canary(s, object, value)
++#define check_set_canary_bulk(s, size, objects, check_value, set_value)
+ #endif
+ 
+ #ifdef CONFIG_SLUB_DEBUG
