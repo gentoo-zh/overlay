@@ -133,6 +133,7 @@ KEYWORDS="~amd64 ~arm64"
 IUSE="wayland +hwaccel"
 
 RDEPEND="
+	dev-libs/libayatana-appindicator
 	media-libs/alsa-lib
 	x11-libs/gtk+:3
 	x11-libs/libxcb
