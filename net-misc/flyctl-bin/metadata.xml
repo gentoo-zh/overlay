@@ -4,8 +4,4 @@
 	<upstream>
 		<remote-id type="github">superfly/flyctl</remote-id> 
 	</upstream>
-	<maintainer type="person">
-		<email>akira7095@riseup.net</email>
-		<name>Akira</name>
-	</maintainer>
 </pkgmetadata>
