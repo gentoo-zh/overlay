@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-16 14:14:24 CST)
+(The last generation time: 2026-10-16 14:14:56 CST)
 
 ### Packages
 
@@ -305,7 +305,7 @@
  dev-debug/lldb-mi                                     | 0.0.1              |            | https://github.com/lldb-tools/lldb-mi                                      | LLDB Machine Interface Driver
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-embedded/at32workbench                            | 1.2.06             |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
+ dev-embedded/at32workbench                            | 1.2.07             |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-games/alcom                                       | 1.1.8              |            | https://github.com/vrc-get/vrc-get                                         | A fast open-source alternative of VRChat Creator Companion (VCC)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -464,7 +464,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                              | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/t3code-bin                                   | 0.0.45             |            | https://t3.codes                                                           | Desktop control surface for local coding agents
+ dev-util/t3code-bin                                   | 0.1.0              |            | https://t3.codes                                                           | Desktop control surface for local coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/tailspin                                     | 7.0.0              |            | https://github.com/bensadeh/tailspin                                       | A log file highlighter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
