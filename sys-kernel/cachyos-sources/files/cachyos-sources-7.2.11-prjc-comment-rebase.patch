@@ -1,5 +1,5 @@
 From: Gentoo CachyOS overlay
-Subject: [PATCH] match the 7.2.10 delayed-entity comment
+Subject: [PATCH] match the 7.2.11 delayed-entity comment
 
 Keep the upstream comment rename, matching the stable release extended
 comment instead of the changed delayed-entity check. Apply to temporary

@@ -8,13 +8,13 @@ EXTRAVERSION="-cachyos"
 K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
-CACHYOS_PATCHES_COMMIT="17bb0bb818d283d0dc6e0280a2e9d5b95e66808b"
-CACHYOS_CONFIGS_COMMIT="5a14cc870dbe958da0fe3fff96d0df6561b8b064"
+CACHYOS_PATCHES_COMMIT="333b9269015584d1b31f75af9e23d838d7b3d0fe"
+CACHYOS_CONFIGS_COMMIT="4a8d2ec8509d0da7d5fd5293f42251ea99d5ea3c"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="11"
+K_GENPATCHES_VER="12"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -132,19 +132,19 @@ IUSE+="
 	+mnative mzen4
 "
 
-# Scheduler patch compatibility for 7.2.10:
+# Scheduler patch compatibility for 7.2.11:
 # - PRJC-LFBMQ has no 7.2 patch family
 # - bare BORE targets vanilla fair.c, not CachyOS's POC/scheduler preimage
-# - bore-cachy, hardened and handheld are rebased onto the 7.2.10 release plus
-#   genpatches-7.2-11 and applied at fuzz 0; each rebase patch records the
-#   changed context (task_ipi_mask, namei sysctl defaults, millipercent).
-# - PRJC needs the cpuset preimage rollback and a context rebase; MuQSS
-#   already matches the cpuset fix and must not receive that rollback.
-#   PRJC also needs the rt_mutex_futex_*_schedule() helpers that upstream
-#   added to MuQSS for the 7.2.10 futex backport.
+# - bore-cachy needs the 7.2.10 task_ipi_mask rebase (unchanged by 7.2.11);
+#   genpatches-7.2-12 applies it at fuzz 0.
+# - PRJC needs the cpuset preimage rollback, the 7.2.9 context rebase, the
+#   7.2.11 comment rebase and the futex helpers.
+# - hardened: fs/namei.c hunk collides with genpatches-12's sysctl
+#   defaults; the 7.2.10 rebase patch rewrites it unchanged in 7.2.11.
+# - deckify uses the official handheld update at patch pin 333b9269.
+# - MuQSS uses the existing 7.2.10 comment rebase without PRJC cpuset rollback.
 REQUIRED_USE+="
 	^^ ( bore bmq pds muqss rt rt-bore eevdf cachyos-hardened )
-	cachyos-hardened? ( llvm-lto-none )
 	deckify? ( bore )
 	propeller? ( !llvm-lto-full !llvm-lto-none )
 	autofdo? ( || ( llvm-lto-thin llvm-lto-full llvm-lto-thin-dist ) )
@@ -241,25 +241,23 @@ src_prepare() {
 		cp "${patches_prefix}-bore.patch" "${T}/bore.patch" || die
 		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.10-bore-rebase.patch"
 		eapply --fuzz=0 -- "${T}/bore.patch"
-	elif use bmq || use pds || use muqss; then
-		local scheduler=prjc
-		if use muqss; then
-			scheduler=muqss
-			cp "${patches_prefix}-muqss.patch" "${T}/scheduler.patch" || die
-		else
-			eapply "${FILESDIR}/cachyos-sources-7.2.3-revert-empty-cpuset-floor.patch"
-			cp "${patches_prefix}-prjc.patch" "${T}/prjc.patch" || die
-			eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.9-prjc-rebase.patch"
-			mv "${T}/prjc.patch" "${T}/scheduler.patch" || die
-		fi
-		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.10-${scheduler}-comment-rebase.patch"
+	elif use muqss; then
+		cp "${patches_prefix}-muqss.patch" "${T}/scheduler.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.10-muqss-comment-rebase.patch"
 		eapply --fuzz=0 -- "${T}/scheduler.patch"
-		if [[ ${scheduler} == prjc ]]; then
-			eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-prjc-futex-schedule.patch"
-		fi
+	elif use bmq || use pds; then
+		eapply "${FILESDIR}/cachyos-sources-7.2.3-revert-empty-cpuset-floor.patch"
+		cp "${patches_prefix}-prjc.patch" "${T}/prjc.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.9-prjc-rebase.patch"
+		mv "${T}/prjc.patch" "${T}/scheduler.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.11-prjc-comment-rebase.patch"
+		eapply --fuzz=0 -- "${T}/scheduler.patch"
+		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-prjc-futex-schedule.patch"
 	fi
 
 	if use cachyos-hardened; then
+		# hardened: fs/namei.c hunk collides with genpatches-12's sysctl
+		# defaults; rebase the patch file, then apply at fuzz 0.
 		cp "${patches_prefix}-hardened.patch" "${T}/hardened.patch" || die
 		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.10-hardened-rebase.patch"
 		eapply --fuzz=0 -- "${T}/hardened.patch"
@@ -271,9 +269,8 @@ src_prepare() {
 
 	if use deckify; then
 		eapply "${patches_prefix}-acpi-call.patch"
-		cp "${patches_prefix}-handheld.patch" "${T}/handheld.patch" || die
-		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.2.10-handheld-rebase.patch"
-		eapply --fuzz=0 -- "${T}/handheld.patch"
+
+		eapply --fuzz=0 -- "${patches_prefix}-handheld.patch"
 	fi
 
 	if use aufs; then
