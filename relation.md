@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-17 02:54:08 CST)
+(The last generation time: 2026-10-17 02:55:25 CST)
 
 ### Packages
 
@@ -407,7 +407,7 @@
  dev-util/deepseek-harness                             | 0.2.0_rc2          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/fvm                                          | 4.1.4              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
-                                                       | 4.3.1              |            |                                                                            |
+                                                       | 4.3.2              |            |                                                                            |
    dev-lang/dart                                       | 3.13.5             |  D, RD     | https://dart.dev                                                           | The Dart SDK
      dev-lang/dart-bootstrap                           | 3.13.4             | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -977,7 +977,7 @@
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 6.18.55-r1         |            |                                                                            |
-                                                       | 7.2.10             |            |                                                                            |
+                                                       | 7.2.11             |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.10             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.9              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.10             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
