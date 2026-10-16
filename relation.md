@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-17 03:00:00 CST)
+(The last generation time: 2026-10-17 03:04:09 CST)
 
 ### Packages
 
@@ -876,7 +876,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-vpn/easytier                                      | 2.6.4              |            | https://github.com/EasyTier/EasyTier                                       | A full meshed p2p VPN
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-vpn/netbird                                       | 0.80.0             |            | https://netbird.io/                                                        | An Open Source Zero Trust Networking platform
+ net-vpn/netbird                                       | 0.81.1             |            | https://netbird.io/                                                        | An Open Source Zero Trust Networking platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-vpn/rathole                                       | 0.5.0              |            | https://github.com/rathole-org/rathole                                     | A reverse proxy for NAT traversal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -934,21 +934,18 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel                          | 6.12.111           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
-                                                       | 6.12.112           |            |                                                                            |
-                                                       | 6.18.55            |            |                                                                            |
+ sys-kernel/gentoo-cjk-kernel                          | 6.12.112           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.12.113           |            |                                                                            |
                                                        | 6.18.56            |            |                                                                            |
+                                                       | 6.18.57            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.10             |            |                                                                            |
-                                                       | 7.2.9              |            |                                                                            |
+                                                       | 7.2.11             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.111           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.12.112           |            |                                                                            |
-                                                       | 6.18.55            |            |                                                                            |
+ sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.112           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.56            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.10             |            |                                                                            |
-                                                       | 7.2.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.112           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.113           |            |                                                                            |
@@ -966,12 +963,13 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-process/witr                                      | 0.3.4              |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/dist-kernel                                   | 6.12.111-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
-                                                       | 6.12.112-r100      |            |                                                                            |
-                                                       | 6.18.55-r100       |            |                                                                            |
+ virtual/dist-kernel                                   | 6.12.112-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 6.12.113-r100      |            |                                                                            |
                                                        | 6.18.56-r100       |            |                                                                            |
+                                                       | 6.18.57-r100       |            |                                                                            |
                                                        | 7.1.13-r100        |            |                                                                            |
                                                        | 7.2.10-r100        |            |                                                                            |
+                                                       | 7.2.11-r100        |            |                                                                            |
                                                        | 7.2.9-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
