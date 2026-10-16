@@ -13,9 +13,9 @@ PATCH_PV=${PV%_p*}
 PATCHSET=linux-gentoo-patches-7.1.9
 # https://koji.fedoraproject.org/koji/packageinfo?packageID=8
 # forked to git.gentoo.org:fork/fedora/kernel
-CONFIG_VER=7.2.5-gentoo
+CONFIG_VER=7.2.10-gentoo
 GENTOO_CONFIG_P=gentoo-kernel-config-g19
-SHA256SUM_DATE=20261003
+SHA256SUM_DATE=20261015
 # Debian kconfig commit from:
 # https://salsa.debian.org/kernel-team/linux/-/tree/debian/latest/debian/
 DEBIAN_COMMIT=31e70f1f469ef1ce4c910df1d12b7de09da561d1
@@ -30,7 +30,7 @@ SRC_URI+="
 	https://cdn.kernel.org/pub/linux/kernel/v$(ver_cut 1).x/patch-${PATCH_PV}.xz
 	https://distfiles.gentoo.org/pub/proj/dist-kernel/patchsets/7.1/${PATCHSET}.tar.xz
 	https://gitweb.gentoo.org/proj/dist-kernel/gentoo-kernel-config.git/snapshot/${GENTOO_CONFIG_P}.tar.bz2
-	https://gitweb.gentoo.org/fork/fedora/kernel.git/snapshot/kernel-${CONFIG_VER}.tar.bz2
+	https://distfiles.gentoo.org/pub/proj/dist-kernel/config/fedora-kernel-config-${CONFIG_VER}.tar.xz
 	https://salsa.debian.org/kernel-team/linux/-/archive/${DEBIAN_COMMIT}/linux-${DEBIAN_COMMIT}.tar.bz2
 	verify-sig? (
 		https://cdn.kernel.org/pub/linux/kernel/v$(ver_cut 1).x/sha256sums.asc
@@ -97,7 +97,7 @@ src_prepare() {
 			)
 			;;
 		amd64)
-			cp "${WORKDIR}/kernel-${CONFIG_VER}/kernel-x86_64-fedora.config" .config || die
+			cp "${WORKDIR}/fedora-kernel-config-${CONFIG_VER}/kernel-x86_64-fedora.config" .config || die
 			;;
 		arm)
 			cp "${WORKDIR}/linux-${DEBIAN_COMMIT}/debian/config/config" .config || die
@@ -107,7 +107,7 @@ src_prepare() {
 			)
 			;;
 		arm64)
-			cp "${WORKDIR}/kernel-${CONFIG_VER}/kernel-aarch64-fedora.config" .config || die
+			cp "${WORKDIR}/fedora-kernel-config-${CONFIG_VER}/kernel-aarch64-fedora.config" .config || die
 			biendian=true
 			;;
 		loong)
@@ -129,14 +129,14 @@ src_prepare() {
 			)
 			;;
 		ppc64)
-			cp "${WORKDIR}/kernel-${CONFIG_VER}/kernel-ppc64le-fedora.config" .config || die
+			cp "${WORKDIR}/fedora-kernel-config-${CONFIG_VER}/kernel-ppc64le-fedora.config" .config || die
 			biendian=true
 			;;
 		riscv)
-			cp "${WORKDIR}/kernel-${CONFIG_VER}/kernel-riscv64-fedora.config" .config || die
+			cp "${WORKDIR}/fedora-kernel-config-${CONFIG_VER}/kernel-riscv64-fedora.config" .config || die
 			;;
 		s390)
-			cp "${WORKDIR}/kernel-${CONFIG_VER}/kernel-s390x-fedora.config" .config || die
+			cp "${WORKDIR}/fedora-kernel-config-${CONFIG_VER}/kernel-s390x-fedora.config" .config || die
 			;;
 		sparc)
 			cp "${WORKDIR}/linux-${DEBIAN_COMMIT}/debian/config/config" .config || die
@@ -146,7 +146,7 @@ src_prepare() {
 			)
 			;;
 		x86)
-			cp "${WORKDIR}/kernel-${CONFIG_VER}/kernel-i686-fedora.config" .config || die
+			cp "${WORKDIR}/fedora-kernel-config-${CONFIG_VER}/kernel-i686-fedora.config" .config || die
 			;;
 		*)
 			die "Unsupported arch ${ARCH}"
