@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-17 13:29:46 CST)
+(The last generation time: 2026-10-17 13:30:15 CST)
 
 ### Packages
 
@@ -184,7 +184,7 @@
  app-misc/cc-switch-bin                                | 3.20.4             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
                                                        | 4.0.14             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/cc-switch-cli                                | 5.11.1             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
+ app-misc/cc-switch-cli                                | 5.11.2             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/chatgpt-desktop                              | 26.1013.40934      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -432,7 +432,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.3              |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/obs-build                                    | 20261014           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
+ dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
                                                        | 18.11.3            |            |                                                                            |
@@ -442,7 +442,7 @@
  dev-util/opencode-bin                                 | 1.19.3             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-desktop-bin                         | 2.0.30             |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
+ dev-util/opencode-desktop-bin                         | 2.0.32             |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1002,7 +1002,7 @@
  www-client/ungoogled-chromium-bin                     | 154.0.8037.97_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 155.0.8059.79_p1   |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/zen-browser-bin                            | 1.23.2b            |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
+ www-client/zen-browser-bin                            | 1.23.3b            |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/darkhttpd                                 | 1.17               |            | https://unix4lyfe.org/darkhttpd/                                           | A small, static webserver
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
