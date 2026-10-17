@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-17 13:24:34 CST)
+(The last generation time: 2026-10-17 13:29:15 CST)
 
 ### Packages
 
@@ -435,11 +435,11 @@
  dev-util/obs-build                                    | 20261014           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.11.1            |            |                                                                            |
+                                                       | 18.11.3            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.3.3              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-bin                                 | 1.19.2             |            | https://opencode.ai                                                        | The open source AI coding agent
+ dev-util/opencode-bin                                 | 1.19.3             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-desktop-bin                         | 2.0.30             |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
