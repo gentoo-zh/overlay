@@ -39,7 +39,7 @@ SRC_URI+="
 "
 S=${WORKDIR}/${BASE_P}
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE+=" +cjk debug hardened"
 
 BDEPEND="
