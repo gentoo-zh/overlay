@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-18 13:13:41 CST)
+(The last generation time: 2026-10-18 13:34:13 CST)
 
 ### Packages
 
@@ -23,7 +23,7 @@
    acct-group/onepassword                              | 0-r1               |  D, RD     |                                                                            | Password manager and secure wallet
    acct-group/onepassword-mcp                          | 0                  | RD         |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/chezmoi                                     | 2.73.1             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
+ app-admin/chezmoi                                     | 2.73.2             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi-bin                                 | 2.73.2             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -259,7 +259,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/blesh                                      | 9999               |            | https://github.com/akinomyoga/ble.sh                                       | A line editor written in pure Bash with enhanced features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-shells/flyline-bin                                | 1.9.0              |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
+ app-shells/flyline-bin                                | 1.10.0             |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/gentoo-fish-completion                     | 0.0.3              |            | https://github.com/douglarek/gentoo-fish-completion                        | Gentoo specific fish completion support (ported from gentoo-zsh-completions)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
