@@ -8,7 +8,7 @@ inherit python-any-r1
 
 MY_PN="fcitx5-pinyin-zhwiki"
 CONVERTERV=$(ver_cut 1-3)
-ZHWIKIV="20260401"
+ZHWIKIV="20261001"
 WEBSLANGV=$(ver_cut 4)
 
 DESCRIPTION="Fcitx 5 Pinyin Dictionary from zh.wikipedia.org"
@@ -36,6 +36,7 @@ BDEPEND="
 	${PYTHON_DEPS}
 	fcitx? ( app-i18n/libime:5 )
 	$(python_gen_any_dep '
+		dev-python/more-itertools[${PYTHON_USEDEP}]
 		dev-python/pypinyin[${PYTHON_USEDEP}]
 		dev-python/regex[${PYTHON_USEDEP}]
 	')
@@ -50,6 +51,7 @@ _emake() {
 }
 
 python_check_deps() {
+	python_has_version "dev-python/more-itertools[${PYTHON_USEDEP}]" &&
 	python_has_version "dev-python/pypinyin[${PYTHON_USEDEP}]" &&
 	python_has_version "dev-python/regex[${PYTHON_USEDEP}]" &&
 	python_has_version "app-i18n/opencc[python(-),${PYTHON_SINGLE_USEDEP}]"
