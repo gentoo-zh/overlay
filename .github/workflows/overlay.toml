@@ -2331,6 +2331,13 @@ use_latest_release = true
 prefix = "v"
 autobump = true
 
+["net-misc/omnyssh-bin"]
+source = "github"
+github = "timhartmann7/omnyssh"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 ["net-misc/pcmanx-gtk2"]
 source = "github"
 github = "pcman-bbs/pcmanx"
