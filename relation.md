@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-19 16:01:31 CST)
+(The last generation time: 2026-10-19 22:55:15 CST)
 
 ### Packages
 
@@ -897,7 +897,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/lceda-pro                             | 4.1.78             |            | https://lceda.cn/                                                          | LCEDA Pro (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-electronics/openfpgaloader                        | 1.1.1              |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
+ sci-electronics/openfpgaloader                        | 1.2.0              |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/elan-bin                              | 4.2.4              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
