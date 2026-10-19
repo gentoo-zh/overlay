@@ -132,13 +132,27 @@ KEYWORDS="~amd64 ~arm64"
 
 IUSE="wayland +hwaccel"
 
-RDEPEND="
-	dev-libs/libayatana-appindicator
+DEPEND="
+	dev-libs/glib:2
 	media-libs/alsa-lib
-	x11-libs/gtk+:3
-	x11-libs/libxcb
-	x11-libs/libXfixes
+	media-libs/gst-plugins-base:1.0
+	media-libs/gstreamer:1.0
 	media-libs/libpulse
+	sys-apps/dbus
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
+	x11-libs/gtk+:3
+	x11-libs/libdrm
+	x11-libs/libX11
+	x11-libs/libXfixes
+	x11-libs/libxcb
+	x11-libs/libxkbcommon
+	x11-libs/libXtst
+	x11-libs/pango
+"
+RDEPEND="
+	${DEPEND}
+	dev-libs/libayatana-appindicator
 	x11-misc/xdotool
 	media-libs/libva[X]
 	wayland? ( media-video/pipewire[gstreamer] )
@@ -147,12 +161,8 @@ RDEPEND="
 BDEPEND="
 	dev-lang/nasm
 	dev-lang/yasm
-	media-libs/alsa-lib
-	media-libs/libpulse
 	dev-build/cmake
 	dev-build/ninja
-	media-libs/gstreamer
-	media-libs/gst-plugins-base
 	$(llvm_gen_dep '
 		llvm-core/clang:${LLVM_SLOT}
 		llvm-core/llvm:${LLVM_SLOT}
