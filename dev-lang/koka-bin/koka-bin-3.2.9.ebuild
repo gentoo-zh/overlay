@@ -7,13 +7,16 @@ inherit unpacker
 
 DESCRIPTION="A Functional Language with Effect Types and Handlers"
 HOMEPAGE="https://github.com/koka-lang/koka"
-SRC_URI="https://github.com/koka-lang/koka/releases/download/v${PV}/koka-v${PV}-linux-x64.tar.gz"
+SRC_URI="
+	amd64? ( https://github.com/koka-lang/koka/releases/download/v${PV}/koka-v${PV}-linux-x64.tar.gz )
+	arm64? ( https://github.com/koka-lang/koka/releases/download/v${PV}/koka-v${PV}-linux-arm64.tar.gz )
+"
 
 S="${WORKDIR}"
 LICENSE="Apache-2.0"
 
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 RESTRICT="strip"
 
