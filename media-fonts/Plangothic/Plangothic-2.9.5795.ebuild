@@ -14,7 +14,7 @@ S="${WORKDIR}/${REPO}-${PV}"
 
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="+otf static web"
 REQUIRED_USE="|| ( otf static web )"
 
