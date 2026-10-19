@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-19 13:13:43 CST)
+(The last generation time: 2026-10-19 13:18:08 CST)
 
 ### Packages
 
@@ -188,7 +188,7 @@
  app-misc/chatgpt-desktop                              | 26.1013.40934      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
-                                                       | 2.1.6              |            |                                                                            |
+                                                       | 2.1.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/claude-desktop                               | 2.42304.0          |            | https://claude.com/download                                                | Desktop application for Claude.ai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -565,7 +565,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-wenkai-gb                            | 1.530              |            | https://github.com/lxgw/LxgwWenkaiGB                                       | LXGW WenKai following the GB 18030 (national standard) glyph forms
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/lxgw-wenkai-screen                        | 1.522              |            | https://github.com/lxgw/LxgwWenKai-Screen                                  | Screen-reading optimized variant of LXGW WenKai
+ media-fonts/lxgw-wenkai-screen                        | 1.530              |            | https://github.com/lxgw/LxgwWenKai-Screen                                  | Screen-reading optimized variant of LXGW WenKai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-wenkai-tc                            | 1.530              |            | https://github.com/lxgw/LxgwWenkaiTC                                       | Traditional Chinese variant of LXGW WenKai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
