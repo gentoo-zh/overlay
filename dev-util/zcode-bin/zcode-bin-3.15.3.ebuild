@@ -12,13 +12,17 @@ SRC_URI="
 		https://cdn-zcode.z.ai/zcode/electron/releases/${PV}/linux-x64/ZCode-${PV}-linux-x64.AppImage
 			-> ${P}-amd64.AppImage
 	)
+	arm64? (
+		https://cdn-zcode.z.ai/zcode/electron/releases/${PV}/linux-arm64/ZCode-${PV}-linux-arm64.AppImage
+			-> ${P}-arm64.AppImage
+	)
 "
 
 S="${WORKDIR}/${P}"
 
 LICENSE="Zcode"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="mirror bindist strip"
 
 QA_PREBUILT="opt/zcode-bin/*"
@@ -48,9 +52,9 @@ RDEPEND="
 "
 
 src_unpack() {
-	cp "${DISTDIR}/${P}-amd64.AppImage" . || die
-	chmod +x "${P}-amd64.AppImage"
-	./"${P}-amd64.AppImage" --appimage-extract >/dev/null || die "appimage-extract failed"
+	cp "${DISTDIR}/${A}" . || die
+	chmod +x "${A}"
+	./"${A}" --appimage-extract >/dev/null || die "appimage-extract failed"
 	mv squashfs-root "${P}" || die
 }
 
@@ -66,10 +70,13 @@ src_install() {
 	cp -r "${S}"/. "${ED}${dest}" || die
 	fperms 4711 "${dest}"/chrome-sandbox
 
-	# Ubuntu tray fallbacks and gconf need GTK2 and dbus-glib; the app does not load them.
-	rm "${ED}${dest}"/usr/lib/{libappindicator.so.1,libindicator.so.7,libgconf-2.so.4} || die
-	# The amd64 AppImage ships an aarch64 sshcrypto.node; ssh2 falls back to pure JS.
-	rm "${ED}${dest}"/resources/app.asar.unpacked/node_modules/ssh2/lib/protocol/crypto/build/Release/sshcrypto.node || die
+	if use amd64; then
+		# Ubuntu tray fallbacks and gconf need GTK2 and dbus-glib; the app does not load them.
+		rm "${ED}${dest}"/usr/lib/{libappindicator.so.1,libindicator.so.7,libgconf-2.so.4} || die
+		# The amd64 AppImage ships an aarch64 sshcrypto.node; ssh2 falls back to pure JS.
+		local ssh2="${ED}${dest}"/resources/app.asar.unpacked/node_modules/ssh2
+		rm "${ssh2}"/lib/protocol/crypto/build/Release/sshcrypto.node || die
+	fi
 
 	dosym -r "${dest}"/zcode /usr/bin/zcode
 
