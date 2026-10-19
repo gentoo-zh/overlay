@@ -11,7 +11,7 @@ SRC_URI="https://download.fcitx-im.org/fcitx5/${PN}/${P}_dict.tar.zst -> ${P}.ta
 
 LICENSE="LGPL-2.1+ GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="doc +engine test"
 RESTRICT="!test? ( test )"
 
