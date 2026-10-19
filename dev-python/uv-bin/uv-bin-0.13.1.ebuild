@@ -11,12 +11,16 @@ SRC_URI="
 		elibc_glibc? ( ${URLPREFIX}/${PV}/uv-x86_64-unknown-linux-gnu.tar.gz -> ${P}-x86_64-unknown-linux-gnu.tar.gz )
 		elibc_musl? ( ${URLPREFIX}/${PV}/uv-x86_64-unknown-linux-musl.tar.gz  -> ${P}-x86_64-unknown-linux-musl.tar.gz )
 	)
+	arm64? (
+		elibc_glibc? ( ${URLPREFIX}/${PV}/uv-aarch64-unknown-linux-gnu.tar.gz -> ${P}-aarch64-unknown-linux-gnu.tar.gz )
+		elibc_musl? ( ${URLPREFIX}/${PV}/uv-aarch64-unknown-linux-musl.tar.gz -> ${P}-aarch64-unknown-linux-musl.tar.gz )
+	)
 "
 
 S="${WORKDIR}"
 LICENSE="|| ( Apache-2.0 MIT )"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="strip"
 RDEPEND="
 	!dev-python/uv
@@ -31,9 +35,9 @@ QA_PREBUILT="usr/bin/uv usr/bin/uvx"
 
 src_install() {
 	if use elibc_glibc ; then
-		dir="uv-x86_64-unknown-linux-gnu"
+		dir="uv-$(usex arm64 aarch64 x86_64)-unknown-linux-gnu"
 	elif use elibc_musl ; then
-		dir="uv-x86_64-unknown-linux-musl"
+		dir="uv-$(usex arm64 aarch64 x86_64)-unknown-linux-musl"
 	else
 		die "Unsupported libc"
 	fi
