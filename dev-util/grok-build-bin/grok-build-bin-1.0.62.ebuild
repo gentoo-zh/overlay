@@ -10,6 +10,7 @@ HOMEPAGE="https://x.ai/cli https://github.com/xai-org/grok-build"
 MY_COMMIT="2bdd1d6a6369de0e8c68132ea4539e9abd9e14a8"
 SRC_URI="
 	amd64? ( https://x.ai/cli/grok-${PV}-linux-x86_64 -> ${P}-amd64 )
+	arm64? ( https://x.ai/cli/grok-${PV}-linux-aarch64 -> ${P}-arm64 )
 	https://raw.githubusercontent.com/xai-org/grok-build/${MY_COMMIT}/LICENSE
 		-> ${P}-LICENSE
 	https://raw.githubusercontent.com/xai-org/grok-build/${MY_COMMIT}/THIRD-PARTY-NOTICES
@@ -23,13 +24,13 @@ LICENSE="
 	MPL-2.0 Unicode-3.0 Unicode-DFS-2016 ZLIB
 "
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="strip"
 
 QA_PREBUILT="usr/bin/grok"
 
 src_unpack() {
-	cp "${DISTDIR}/${P}-amd64" grok || die
+	cp "${DISTDIR}/${P}-${ARCH}" grok || die
 	chmod +x grok || die
 }
 
