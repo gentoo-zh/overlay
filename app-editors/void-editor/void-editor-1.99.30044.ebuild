@@ -8,12 +8,15 @@ inherit desktop xdg
 DESCRIPTION="Void Editor - AI Code Editor"
 HOMEPAGE="https://voideditor.com"
 
-SRC_URI="https://github.com/voideditor/binaries/releases/download/${PV}/Void-linux-x64-${PV}.tar.gz"
+SRC_URI="
+	amd64? ( https://github.com/voideditor/binaries/releases/download/${PV}/Void-linux-x64-${PV}.tar.gz )
+	arm64? ( https://github.com/voideditor/binaries/releases/download/${PV}/Void-linux-arm64-${PV}.tar.gz )
+"
 S="${WORKDIR}"
 
 LICENSE="Apache-2.0 MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="mirror strip"
 
 RDEPEND="
