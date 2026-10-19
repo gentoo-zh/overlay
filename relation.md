@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-19 23:39:20 CST)
+(The last generation time: 2026-10-20 05:37:19 CST)
 
 ### Packages
 
@@ -79,7 +79,7 @@
  app-editors/typora                                    | 0.11.18            |            | https://typora.io                                                          | Typora will give you a seamless experience as both a reader and a writer
                                                        | 1.14.9             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/void-editor                               | 1.99.30044         |            | https://voideditor.com                                                     | Void Editor - AI Code Editor
+ app-editors/void-editor                               | 1.99.30044-r1      |            | https://voideditor.com                                                     | Void Editor - AI Code Editor
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/windsurf                                  | 1.9.2              |            | https://devin.ai/desktop                                                   | AI-powered code editor maintaining flow state with instant assistance
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
