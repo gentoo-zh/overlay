@@ -14,7 +14,7 @@ S="${DISTDIR}"
 
 LICENSE="|| ( CC-BY-SA-4.0 FDL-1.3 )"
 SLOT="5"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+fcitx rime"
 REQUIRED_USE="|| ( fcitx rime )"
 
