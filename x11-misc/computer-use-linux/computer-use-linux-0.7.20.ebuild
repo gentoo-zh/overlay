@@ -265,7 +265,7 @@ LICENSE+="
 	ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # at-spi2-core provides the AT-SPI registry the accessibility tree reads.
 # libxkbcommon is dlopened for the GNOME keymap check of typed text.
