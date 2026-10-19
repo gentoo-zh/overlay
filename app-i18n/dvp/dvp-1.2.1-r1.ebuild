@@ -13,7 +13,7 @@ SRC_URI="https://www.kaufmann.no/downloads/linux/${MY_P}.map.gz"
 S="${WORKDIR}"
 LICENSE="Programmer-Dvorak"
 SLOT="0"
-KEYWORDS="~amd64 ~mips ~x86"
+KEYWORDS="~amd64 ~arm64 ~mips ~x86"
 
 DEPEND="app-arch/gzip"
 RDEPEND="sys-apps/kbd"
