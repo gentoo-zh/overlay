@@ -12,7 +12,7 @@ SRC_URI="https://github.com/ventoy/Ventoy/releases/download/v${PV}/ventoy-${PV}-
 S=${WORKDIR}/ventoy-${PV}
 LICENSE="GPL-3+ CC-BY-NC-SA-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 IUSE="+gtk"
 
@@ -28,11 +28,11 @@ RDEPEND="
 	gtk? ( x11-libs/gtk+:3 )
 "
 
-CARCH="x86_64"
-
 QA_PREBUILT="*"
 
 src_prepare() {
+	local CARCH=$(usex arm64 aarch64 x86_64)
+
 	# Decompress tools
 	pushd tool/$CARCH || die
 	for file in *.xz; do
@@ -69,6 +69,8 @@ src_prepare() {
 }
 
 src_install() {
+	local CARCH=$(usex arm64 aarch64 x86_64)
+
 	insopts -m0644
 	insinto /opt/ventoy/boot/
 	doins boot/*
@@ -95,5 +97,8 @@ src_install() {
 
 	dobin "${FILESDIR}"/ventoy{,gui,web,plugson,-{,extend-}persistent}
 
-	rm "${D}"/opt/ventoy/tool/x86_64/Ventoy2Disk.gtk2 || die
+	# Only the x86_64 tool directory ships a GTK2 frontend.
+	if use amd64; then
+		rm "${D}"/opt/ventoy/tool/x86_64/Ventoy2Disk.gtk2 || die
+	fi
 }
