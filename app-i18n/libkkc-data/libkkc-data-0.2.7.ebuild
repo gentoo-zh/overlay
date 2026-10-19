@@ -13,7 +13,7 @@ SRC_URI="https://github.com/ueno/${PN%-*}/releases/download/v0.3.5/${P}.tar.xz"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # sortlm.py/genfilter.py build the marisa tries via the marisa python binding.
 BDEPEND="$(python_gen_any_dep '
