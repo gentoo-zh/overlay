@@ -7,11 +7,14 @@ inherit java-vm-2
 
 DESCRIPTION="Oracle's Java SE Development Kit"
 HOMEPAGE="https://www.oracle.com/java/"
-SRC_URI="https://download.oracle.com/java/21/archive/jdk-${PV}_linux-x64_bin.tar.gz"
+SRC_URI="
+	amd64? ( https://download.oracle.com/java/21/archive/jdk-${PV}_linux-x64_bin.tar.gz )
+	arm64? ( https://download.oracle.com/java/21/archive/jdk-${PV}_linux-aarch64_bin.tar.gz )
+"
 S="${WORKDIR}/jdk-${PV}"
 LICENSE="NFTC"
 SLOT="21"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 IUSE="alsa +commercial cups headless-awt +source"
 RESTRICT="bindist mirror preserve-libs strip"
 QA_PREBUILT="*"
