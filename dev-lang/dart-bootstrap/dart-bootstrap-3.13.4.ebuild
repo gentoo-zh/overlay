@@ -12,13 +12,17 @@ SRC_URI="
 		https://storage.googleapis.com/dart-archive/channels/stable/release/${PV}/sdk/dartsdk-linux-x64-release.zip
 			-> dartsdk-${PV}-amd64.zip
 	)
+	arm64? (
+		https://storage.googleapis.com/dart-archive/channels/stable/release/${PV}/sdk/dartsdk-linux-arm64-release.zip
+			-> dartsdk-${PV}-arm64.zip
+	)
 "
 
 S="${WORKDIR}"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 RDEPEND="sys-libs/glibc"
 BDEPEND="app-arch/unzip"
