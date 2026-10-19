@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-19 08:06:39 CST)
+(The last generation time: 2026-10-19 11:34:48 CST)
 
 ### Packages
 
@@ -759,6 +759,8 @@
    acct-group/ntpd-rs-observe                          | 0                  | RD         |                                                                            | Full-featured implementation of NTP with NTS support
    acct-user/ntpd-rs                                   | 0                  | RD         |                                                                            | user for ntpd-rs daemon
    acct-user/ntpd-rs-observe                           | 0                  | RD         |                                                                            | user for ntpd-rs-observe daemon
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-misc/omnyssh-bin                                  | 1.1.5              |            | https://github.com/timhartmann7/omnyssh                                    | SSH dashboard, terminal, and SFTP file manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/pcmanx-gtk2                                  | 1.3                |            | https://github.com/pcman-bbs/pcmanx                                        | PCMan is a gtk+ based free BBS client
                                                        | 9999               |            |                                                                            |
