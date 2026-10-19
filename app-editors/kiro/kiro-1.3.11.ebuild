@@ -16,12 +16,16 @@ SRC_URI="
 		https://prod.download.desktop.kiro.dev/releases/stable/linux-x64/signed/${PV}/tar/kiro-ide-${PV}-stable-linux-x64.tar.gz
 			-> ${P}-amd64.tar.gz
 	)
+	arm64? (
+		https://prod.download.desktop.kiro.dev/releases/stable/linux-arm64/signed/${PV}/tar/kiro-ide-${PV}-stable-linux-arm64.tar.gz
+			-> ${P}-arm64.tar.gz
+	)
 "
 S="${WORKDIR}"
 
 LICENSE="Kiro"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 IUSE="egl kerberos wayland webkit"
 RESTRICT="bindist mirror strip"
 
