@@ -10,7 +10,7 @@ SRC_URI="https://github.com/hrko/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/${P}"
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RDEPEND="app-i18n/fcitx"
 
 src_install() {
