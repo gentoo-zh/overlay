@@ -13,3 +13,19 @@ HOMEPAGE="https://github.com/paulfitz/daff"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~riscv ~sparc ~x86"
+
+IUSE="test"
+RESTRICT="!test? ( test )"
+
+BDEPEND="
+	test? (
+		$(python_gen_impl_dep sqlite)
+	)
+"
+
+python_test() {
+	local t
+	for t in test/test_*.py; do
+		"${EPYTHON}" "${t}" || die "${t} failed with ${EPYTHON}"
+	done
+}
