@@ -22,7 +22,7 @@ HOMEPAGE="
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/edalize-0.4.1[${PYTHON_USEDEP}]
