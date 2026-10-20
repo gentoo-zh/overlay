@@ -19,7 +19,7 @@ S="${WORKDIR}/geoip-${PV}"
 
 LICENSE="CC-BY-SA-4.0 CC-BY-4.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="!dev-libs/v2ray-geoip-bin"
 BDEPEND=">=dev-lang/go-1.26"
