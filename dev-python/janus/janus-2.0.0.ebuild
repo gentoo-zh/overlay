@@ -14,20 +14,15 @@ LICENSE="Apache-2.0"
 
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
-IUSE="test"
-RESTRICT="!test? ( test )"
+EPYTEST_PLUGINS=( pytest-asyncio )
+distutils_enable_tests pytest
 
-DEPEND="
-	dev-python/setuptools[${PYTHON_USEDEP}]
-	test? (
-		dev-python/pytest[${PYTHON_USEDEP}]
-	)
-"
+EPYTEST_IGNORE=(
+	# needs pytest-codspeed, which is not packaged
+	tests/test_benchmarks.py
+)
 
-python_test() {
-	py.test -v || die "Tests fail with ${EPYTHON}"
-}
-
-python_install_all() {
-	distutils-r1_python_install_all
+src_prepare() {
+	distutils-r1_src_prepare
+	sed -i -e '/License ::/d' -e '/^addopts = --cov/d' setup.cfg || die
 }
