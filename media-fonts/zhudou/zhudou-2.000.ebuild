@@ -14,7 +14,7 @@ SRC_URI="https://github.com/Buernia/Zhudou-Sans/archive/refs/tags/v${PV}.tar.gz 
 S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 FONT_SUFFIX="ttf"
 
