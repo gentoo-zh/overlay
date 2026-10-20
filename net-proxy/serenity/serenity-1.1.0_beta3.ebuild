@@ -21,7 +21,7 @@ S="${WORKDIR}/${PN}-${_PV}"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_compile(){
 	ego build -ldflags "-X 'github.com/sagernet/serenity/constant.Version=${PV}'" ./cmd/serenity
