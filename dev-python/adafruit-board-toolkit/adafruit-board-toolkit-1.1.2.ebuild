@@ -21,3 +21,8 @@ KEYWORDS="~amd64 ~arm64"
 RDEPEND="
 	>=dev-python/pyserial-3.5[${PYTHON_USEDEP}]
 "
+
+src_prepare() {
+	distutils-r1_src_prepare
+	sed -i '/License ::/d' setup.py || die
+}
