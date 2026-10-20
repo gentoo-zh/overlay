@@ -25,3 +25,8 @@ PATCHES=(
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
+
+src_prepare() {
+	distutils-r1_src_prepare
+	sed -i '/License ::/d' setup.py || die
+}
