@@ -14,7 +14,7 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="GPL-3+"
 SLOT="5"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+qt6"
 
 RDEPEND="
