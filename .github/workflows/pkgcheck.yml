@@ -11,6 +11,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   scan:
     runs-on: ubuntu-latest
@@ -48,11 +52,11 @@ jobs:
       run: scripts/pkgcheck-report.sh scan
 
     - name: stage the report
-      if: always()
+      if: ${{ !cancelled() }}
       run: scripts/pkgcheck-report.sh stage
 
     - name: upload the report
-      if: always()
+      if: ${{ !cancelled() }}
       uses: actions/upload-artifact@v7
       with:
         name: pkgcheck-report

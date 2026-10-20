@@ -20,7 +20,7 @@ permissions:
 
 jobs:
   scan:
-    name: scan changed ebuilds
+    name: select tatt targets
     if: github.event.action != 'labeled' || github.event.label.name == 'tatt'
     runs-on: ubuntu-latest
     permissions:
@@ -53,7 +53,8 @@ jobs:
       run: echo "ref=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/stage3:amd64-desktop-systemd" >> "$GITHUB_OUTPUT"
 
   tatt:
-    name: tatt ${{ matrix.target.atom }}
+    # a skipped job never expands its matrix, so a name built from it shows the raw expression
+    name: tatt
     needs: scan
     if: fromJSON(needs.scan.outputs.targets)[0] != null
     strategy:

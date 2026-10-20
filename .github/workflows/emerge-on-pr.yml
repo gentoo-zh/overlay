@@ -18,7 +18,7 @@ permissions:
 
 jobs:
   scan:
-    name: scan changed ebuilds
+    name: select emerge targets
     runs-on: ubuntu-latest
     permissions:
       contents: read
