@@ -25,6 +25,10 @@ DEPEND="
 	>=dev-libs/libgee-0.20:0.8
 	>=gui-libs/vte-0.70:2.91-gtk4
 	x11-libs/pango
+	>=dev-libs/libxml2-2.9.12:=
+	>=gnome-base/librsvg-2.54.0:2
+	dev-libs/libpcre2:=
+	media-libs/graphene
 "
 RDEPEND="${DEPEND}"
 
