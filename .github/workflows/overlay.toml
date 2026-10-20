@@ -65,6 +65,7 @@ source = "github"
 github = "twpayne/chezmoi"
 use_latest_tag = true
 prefix = "v"
+autobump = true
 
 ["app-admin/chezmoi-bin"]
 source = "github"
@@ -226,6 +227,7 @@ github = "marktext/marktext"
 use_latest_release = true
 prefix = "v"
 github_account = ["Schroedingersdoraemon", "gouwazi"]
+autobump = true
 
 # live package only
 #["app-editors/neomacs"]
@@ -1561,6 +1563,7 @@ source = "regex"
 url = "https://zcode.z.ai/en/docs/install"
 regex = 'ZCode-([\d.]+)-linux-x64\.AppImage'
 github_account = "liangyongxiang"
+autobump = true
 
 ["dev-util/zprint-bin"]
 source = "github"
@@ -1989,6 +1992,7 @@ github = "YUCLing/open-orpheus"
 use_latest_release = true
 prefix = "v"
 github_account = "Puqns67"
+autobump = true
 
 ["media-sound/qqmusic"]
 source = "regex"
@@ -2619,6 +2623,7 @@ use_latest_release = true
 prefix = "v"
 github_account = ["liuyujielol", "Zakkaus"]
 deps = { lang = "golang", modules = ["service", "core"] }
+autobump = true
 
 ["net-proxy/Xray"]
 # XTLS marks new versions as prerelease; track releases only to avoid their breaking changes. Do not switch to use_max_tag.
@@ -2633,6 +2638,7 @@ github = "MetaCubeX/Yacd-meta"
 use_latest_release = true
 prefix = "v"
 github_account = "st0nie"
+autobump = true
 
 ["net-proxy/zashboard"]
 source = "github"
