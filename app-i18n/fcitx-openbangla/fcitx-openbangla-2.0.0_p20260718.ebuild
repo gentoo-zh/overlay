@@ -78,7 +78,7 @@ S="${WORKDIR}/OpenBangla-Keyboard-${OB_COMMIT}"
 # GPL-3+: OpenBangla and riti; remainder: bundled crates.
 LICENSE="GPL-3+ Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD-2 LGPL-2.1+ MIT Unicode-3.0 Unlicense"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	>=app-i18n/fcitx-5.0.5:5
