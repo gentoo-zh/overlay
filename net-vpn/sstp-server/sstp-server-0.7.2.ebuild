@@ -14,7 +14,7 @@ SRC_URI="https://github.com/sorz/sstp-server/archive/v${PV}.tar.gz -> ${P}.tar.g
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~mips ~x86"
+KEYWORDS="~amd64 ~arm ~arm64 ~mips ~x86"
 
 DEPEND="net-dialup/ppp"
 
