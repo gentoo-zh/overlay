@@ -18,7 +18,7 @@ S="${WORKDIR}/proxy-${PV}"
 # MIT covers third_party/fmt, which is built in
 LICENSE="Boost-1.0 MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-libs/openssl:=
