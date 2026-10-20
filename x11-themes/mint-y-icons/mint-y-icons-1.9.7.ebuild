@@ -11,7 +11,7 @@ SRC_URI="https://github.com/linuxmint/mint-y-icons/archive/refs/tags/${PV}.tar.g
 
 LICENSE="CC-BY-4.0 GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 src_install() {
 	insinto /usr/share/icons
