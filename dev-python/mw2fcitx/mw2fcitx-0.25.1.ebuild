@@ -18,7 +18,7 @@ HOMEPAGE="
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=app-i18n/opencc-1.1.9[python(-),${PYTHON_SINGLE_USEDEP}]
