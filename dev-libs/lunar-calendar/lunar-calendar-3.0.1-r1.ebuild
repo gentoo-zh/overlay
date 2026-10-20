@@ -14,10 +14,15 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="doc vala introspection test"
 RESTRICT="!test? ( test )"
-RDEPEND=">=dev-python/pygobject-2.11.5"
+RDEPEND="
+	>=dev-python/pygobject-2.11.5
+	dev-libs/glib:2
+	dev-libs/lunar-date
+	x11-libs/gtk+:3
+	x11-libs/pango
+"
 
 DEPEND="${RDEPEND}
-	dev-libs/lunar-date
 	dev-util/gdbus-codegen
 	sys-devel/gettext
 	virtual/pkgconfig
