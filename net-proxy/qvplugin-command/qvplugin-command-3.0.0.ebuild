@@ -37,6 +37,14 @@ src_unpack() {
 	mv "${WORKDIR}/QJsonStruct-${GIT_COMMIT_QJSONSTRUCT}" "${S}/lib/QJsonStruct" || die
 }
 
+src_prepare() {
+	# ensure cmake_minimum_required >=3.10 (Bug: 951350, 964405)
+	sed -e '/cmake_minimum_required/s/3\.1\.0/3.10/' \
+		-i CMakeLists.txt interface/Qv{,GUI}PluginInterface.cmake || die
+	sed -e '/cmake_minimum_required/s/3\.5/3.10/' -i lib/QJsonStruct/CMakeLists.txt || die
+	cmake_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
 		-DQVPLUGIN_USE_QT6=ON
