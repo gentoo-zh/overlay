@@ -13,6 +13,8 @@ HOMEPAGE="https://github.com/feeluown/feeluown-netease"
 LICENSE="GPL-3"
 SLOT="1"
 KEYWORDS="~amd64"
+# tests import feeluown (a PDEPEND) and reach the live NetEase Cloud Music API
+RESTRICT="test"
 
 RDEPEND="
 	dev-python/beautifulsoup4[${PYTHON_USEDEP}]
