@@ -11,7 +11,7 @@ SRC_URI="https://github.com/Stunkymonkey/nautilus-open-any-terminal/archive/${PV
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/nautilus-python
