@@ -11,7 +11,7 @@ SRC_URI="https://gitlab.archlinux.org/archlinux/${PN}/-/archive/${PV}/${P}.tar.b
 LICENSE="GPL-3+"
 SLOT="0"
 
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64"
 
 BDEPEND=">=app-crypt/sequoia-sq-0.33.0"
 
