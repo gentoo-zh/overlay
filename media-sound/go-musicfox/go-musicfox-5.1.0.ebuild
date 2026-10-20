@@ -11,7 +11,7 @@ SRC_URI="https://github.com/go-musicfox/go-musicfox/archive/refs/tags/v${PV}.tar
 
 LICENSE="Apache-2.0 BSD BSD-2 GPL-3 LGPL-3-with-linking-exception MIT"
 SLOT="0"
-KEYWORDS="~amd64 ~loong"
+KEYWORDS="~amd64 ~arm64 ~loong"
 IUSE="clang"
 
 DEPEND="
