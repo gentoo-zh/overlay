@@ -11,7 +11,7 @@ SRC_URI="https://github.com/yetist/lunar-date/archive/v${PV}.tar.gz -> ${P}.tar.
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="+dbus doc introspection test"
 
 REQUIRED_USE="doc? ( introspection )"
