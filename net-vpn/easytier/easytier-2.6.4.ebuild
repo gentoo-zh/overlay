@@ -19,9 +19,10 @@ declare -A GIT_CRATES=(
 	[windivert]='https://github.com/EasyTier/windivert-rust;adcc56d1550f7b5377ec2b3429f413ee24a77375;windivert-rust-%commit%/windivert'
 )
 
+LLVM_COMPAT=( {17..22} )
 RUST_MIN_VER="1.95"
 
-inherit cargo systemd
+inherit cargo llvm-r2 systemd
 
 DESCRIPTION="A full meshed p2p VPN"
 HOMEPAGE="https://github.com/EasyTier/EasyTier"
@@ -48,8 +49,14 @@ KEYWORDS="~amd64"
 BDEPEND="
 	dev-libs/protobuf
 	sys-devel/mold
+	$(llvm_gen_dep 'llvm-core/clang:${LLVM_SLOT}')
 "
 RESTRICT="test" # fails with network-sandbox
+
+pkg_setup() {
+	llvm-r2_pkg_setup
+	rust_pkg_setup
+}
 
 src_prepare() {
 	default
