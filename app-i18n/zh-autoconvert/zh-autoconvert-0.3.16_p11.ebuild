@@ -14,7 +14,7 @@ S="${WORKDIR}/${PN}-debian-${MY_PV}"
 
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="static-libs"
 
 PATCHES=(
