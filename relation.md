@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-20 14:53:06 CST)
+(The last generation time: 2026-10-20 14:59:18 CST)
 
 ### Packages
 
@@ -358,7 +358,7 @@
  dev-python/fusesoc                                    | 2.4.4              |            | https://github.com/olofk/fusesoc/                                          | Award-winnning package manager and build abstraction tool for HDL code
                                                        | 2.4.7              |            |                                                                            |
    dev-python/edalize                                  | 0.6.8              | RD         | https://github.com/olofk/edalize/                                          | Library for interfacing EDA tools
-   dev-python/simplesat                                | 0.9.2              | RD         | https://github.com/enthought/sat-solver                                    | Prototype for SAT-based dependency handling
+   dev-python/simplesat                                | 0.9.2-r1           | RD         | https://github.com/enthought/sat-solver                                    | Prototype for SAT-based dependency handling
      dev-python/okonomiyaki                            | 3.0.0              | RD         | https://github.com/enthought/okonomiyaki                                   | Self-contained library to deal with metadata in egg and runtime archives
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/menuinst                                   | 2.5.2-r1           |            | https://github.com/conda/menuinst                                          | Cross platform menu item installation
