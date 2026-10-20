@@ -17,7 +17,7 @@ S="${WORKDIR}/domain-list-community-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="!dev-libs/v2ray-domain-list-community-bin"
 BDEPEND=">=dev-lang/go-1.25.12"
