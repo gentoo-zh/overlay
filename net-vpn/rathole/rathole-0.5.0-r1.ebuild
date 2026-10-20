@@ -26,6 +26,10 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="~amd64"
 
+DEPEND="dev-libs/openssl:="
+RDEPEND="${DEPEND}"
+BDEPEND="virtual/pkgconfig"
+
 PATCHES=("${FILESDIR}/${P}-fix-rust-1.80.patch")
 
 src_install(){
