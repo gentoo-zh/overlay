@@ -213,7 +213,7 @@ LICENSE+="
 	Unicode-3.0
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RUST_MIN_VER="1.85.0"
 
 RDEPEND="
