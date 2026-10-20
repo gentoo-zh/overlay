@@ -25,7 +25,7 @@ S="${WORKDIR}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="+righthanded lefthanded +modern-style original-style color-amber +color-black color-white"
 REQUIRED_USE="
