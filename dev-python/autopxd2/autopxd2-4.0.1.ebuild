@@ -3,7 +3,7 @@
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{12..14} )
+PYTHON_COMPAT=( python3_{12..15} )
 DISTUTILS_USE_PEP517=setuptools
 PYPI_VERIFY_REPO="https://github.com/elijahr/python-autopxd2"
 inherit distutils-r1 pypi
@@ -26,9 +26,10 @@ RDEPEND="
 BDEPEND="
 	test? (
 		dev-python/cython[${PYTHON_USEDEP}]
-		dev-python/pytest-timeout[${PYTHON_USEDEP}]
 	)
 "
+
+EPYTEST_PLUGINS=( pytest-timeout )
 
 distutils_enable_tests pytest
 
