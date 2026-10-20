@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>vowstar@gmail.com</email>
+		<name>Huang Rui</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">axiomantic/headerkit</remote-id>
+		<remote-id type="pypi">headerkit</remote-id>
+	</upstream>
+	<longdescription lang="en">
+		headerkit is a C/C++ header analysis toolkit with pluggable parser
+		backends and writers for ctypes, Cython, CFFI, LuaJIT FFI, Nim, and
+		other binding formats. It bundles LLVM clang Python bindings for
+		LLVM 14 through 23.
+	</longdescription>
+	<longdescription lang="zh">
+		headerkit 是一个 C/C++ 头文件分析工具包，提供可插拔的解析后端，
+		以及 ctypes、Cython、CFFI、LuaJIT FFI、Nim 等绑定格式的生成器。
+		它内置了 LLVM 14 到 23 的 clang Python 绑定。
+	</longdescription>
+</pkgmetadata>
