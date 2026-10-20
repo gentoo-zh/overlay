@@ -20,38 +20,43 @@ case "${1:?packages, scan or stage}" in
         pmaint sync gentoo
         head=$(git rev-parse HEAD)
 
+        # --config no drops the exit keywords in metadata/pkgcheck.conf, so a failure means the
+        # scan broke rather than that it found something.
         scan() {
             local out=$1
             shift
             pmaint regen --dir ~/.cache/pkgcheck/repos . > /dev/null
-            pkgcheck scan --checks=-RedundantVersionCheck --keywords=-NonsolvableDepsInDev \
-                "$@" > "${out}" 2>&1 || true
+            pkgcheck scan --config no --checks=-RedundantVersionCheck --keywords=-NonsolvableDepsInDev \
+                --reporter JsonStream "$@" > "${out}"
         }
 
         mapfile -t pkgs < packages.txt
-        scan report.txt "${pkgs[@]}"
+        scan report.json "${pkgs[@]}"
 
         git checkout --quiet 'HEAD^1'
-        : > base-report.txt
+        : > base-report.json
         mapfile -t base_pkgs < <(
             for pkg in "${pkgs[@]}"; do
                 ls "${pkg}"/*.ebuild > /dev/null 2>&1 && echo "${pkg}"
             done
         )
-        [ "${#base_pkgs[@]}" -eq 0 ] || scan base-report.txt "${base_pkgs[@]}"
+        [ "${#base_pkgs[@]}" -eq 0 ] || scan base-report.json "${base_pkgs[@]}"
         git checkout --quiet "${head}"
 
-        python3 scripts/pkgcheck-new-findings.py base-report.txt report.txt > new.txt
-        echo '--- new ---'; cat new.txt
-        echo '--- all ---'; cat report.txt
+        rc=0
+        python3 scripts/pkgcheck-new-findings.py base-report.json report.json > findings.json || rc=$?
+        [ "${rc}" -eq 0 ] || [ "${rc}" -eq 3 ] || exit "${rc}"
         : > scan-complete
+        if [ "${rc}" -eq 3 ]; then
+            echo '::error::this pull request adds error level pkgcheck findings'
+            exit 1
+        fi
         ;;
     stage)
         mkdir -p pkgcheck-report
         git rev-parse --short 'HEAD^2' > pkgcheck-report/commit
         cp packages.txt pkgcheck-report/packages 2>/dev/null || : > pkgcheck-report/packages
-        cp report.txt pkgcheck-report/report.txt 2>/dev/null || : > pkgcheck-report/report.txt
-        cp new.txt pkgcheck-report/new.txt 2>/dev/null || : > pkgcheck-report/new.txt
+        cp findings.json pkgcheck-report/findings.json 2>/dev/null || echo '[]' > pkgcheck-report/findings.json
         # the comment runs master's scripts, which may be newer than the ones that made this artifact
         [ -f scan-complete ] || : > pkgcheck-report/incomplete
         ;;
