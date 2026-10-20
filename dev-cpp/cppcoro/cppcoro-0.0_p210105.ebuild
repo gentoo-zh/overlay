@@ -13,7 +13,7 @@ SRC_URI="https://github.com/Garcia6l20/cppcoro/archive/${COMMIT_ID}.tar.gz -> ${
 S="${WORKDIR}/cppcoro-${COMMIT_ID}"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 # currently, test is broken
 IUSE="+shared"
