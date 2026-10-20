@@ -12,7 +12,7 @@ SRC_URI="https://github.com/conda/conda-package-streaming/archive/v${PV}.tar.gz 
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 DEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
