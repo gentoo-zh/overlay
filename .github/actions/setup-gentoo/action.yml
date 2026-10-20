@@ -42,7 +42,10 @@ runs:
       run: |
         getuto
         export GNUPGHOME=/etc/portage/gnupg
-        wget -qO - https://distfiles.gentoozh.org/gentoo-zh-binhost.asc | gpg --import
+        wget --no-verbose --tries=5 --waitretry=10 --retry-connrefused --retry-on-host-error \
+          --retry-on-http-error=429,500,502,503,504 \
+          -O /tmp/gentoo-zh-binhost.asc https://distfiles.gentoozh.org/gentoo-zh-binhost.asc
+        gpg --import /tmp/gentoo-zh-binhost.asc
         gpg --batch --yes --pinentry-mode loopback --passphrase-file "$GNUPGHOME/pass" --lsign-key 6A0726AF1476A2F382C6AC6638A0234EC16AD42E
         gpg --batch --check-trustdb
 
