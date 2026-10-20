@@ -24,6 +24,11 @@ RDEPEND="
 	x11-libs/gtksourceview:3.0
 "
 
+PATCHES=(
+	# pkg_resources was removed from setuptools
+	"${FILESDIR}"/${P}-pkg_resources.patch
+)
+
 src_prepare() {
 	sed -i 's/Utilities;/Utility;/' "${S}/snapper-gui.desktop"
 	default

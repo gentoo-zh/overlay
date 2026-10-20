@@ -1,0 +1,160 @@
+diff -ru a/snappergui/application.py b/snappergui/application.py
+--- a/snappergui/application.py	2026-10-20 16:28:32.829708129 +1100
++++ b/snappergui/application.py	2026-10-20 16:28:32.851707840 +1100
+@@ -1,4 +1,4 @@
+-import pkg_resources, sys, signal
++import importlib.resources, sys, signal
+ from gi.repository import Gtk, GLib, GdkPixbuf, Gio
+ from snappergui.mainWindow import SnapperGUI
+ from snappergui.propertiesDialog import propertiesDialog
+@@ -21,7 +21,7 @@
+ 
+     def build_app_menu(self):
+         builder = Gtk.Builder()
+-        builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                               "ui/app-menu.ui"))
+         menu = builder.get_object('app-menu')
+         self.set_app_menu(menu)
+diff -ru a/snappergui/changesWindow.py b/snappergui/changesWindow.py
+--- a/snappergui/changesWindow.py	2026-10-20 16:28:32.829708129 +1100
++++ b/snappergui/changesWindow.py	2026-10-20 16:28:32.851707840 +1100
+@@ -1,5 +1,5 @@
+ from snappergui import snapper
+-import pkg_resources, os, time, difflib, collections
++import importlib.resources, os, time, difflib, collections
+ from gi.repository import Gtk, GtkSource, GObject, Gdk
+ 
+ 
+@@ -29,7 +29,7 @@
+         super(changesWindow, self).__init__()
+         builder = Gtk.Builder()
+         GObject.type_register(GtkSource.View)
+-        builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                               "glade/changesWindow.glade"))
+ 
+         builder.get_object("titlelabel").set_text("%s -> %s" % (begin, end))
+diff -ru a/snappergui/createConfig.py b/snappergui/createConfig.py
+--- a/snappergui/createConfig.py	2026-10-20 16:28:32.829708129 +1100
++++ b/snappergui/createConfig.py	2026-10-20 16:28:32.851707840 +1100
+@@ -1,5 +1,5 @@
+ from snappergui import snapper
+-import pkg_resources
++import importlib.resources
+ from gi.repository import Gtk
+ 
+ 
+@@ -9,7 +9,7 @@
+     def __init__(self, parent):
+         super(createConfig, self).__init__()
+         builder = Gtk.Builder()
+-        builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                               "glade/createConfig.glade"))
+         self.dialog = builder.get_object("createConfig")
+         self.dialog.set_transient_for(parent)
+diff -ru a/snappergui/createSnapshot.py b/snappergui/createSnapshot.py
+--- a/snappergui/createSnapshot.py	2026-10-20 16:28:32.830708116 +1100
++++ b/snappergui/createSnapshot.py	2026-10-20 16:28:32.851707840 +1100
+@@ -1,5 +1,5 @@
+ from snappergui import snapper
+-import pkg_resources
++import importlib.resources
+ from gi.repository import Gtk, Gdk
+ 
+ 
+@@ -10,7 +10,7 @@
+     def __init__(self, parent, config_name):
+         super(createSnapshot, self).__init__()
+         builder = Gtk.Builder()
+-        builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                               "glade/createSnapshot.glade"))
+ 
+         self.dialog = builder.get_object("dialogCreate")
+diff -ru a/snappergui/deleteDialog.py b/snappergui/deleteDialog.py
+--- a/snappergui/deleteDialog.py	2026-10-20 16:28:32.829708129 +1100
++++ b/snappergui/deleteDialog.py	2026-10-20 16:28:32.851707840 +1100
+@@ -1,5 +1,5 @@
+ from snappergui import snapper
+-import pkg_resources
++import importlib.resources
+ from gi.repository import Gtk
+ from pwd import getpwuid
+ 
+@@ -10,7 +10,7 @@
+     def __init__(self, parent, config, snapshots):
+         super(deleteDialog, self).__init__()
+         builder = Gtk.Builder()
+-        builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                               "glade/deleteSnapshot.glade"))
+ 
+         self.dialog = builder.get_object("dialogDelete")
+diff -ru a/snappergui/mainWindow.py b/snappergui/mainWindow.py
+--- a/snappergui/mainWindow.py	2026-10-20 16:28:32.844707932 +1100
++++ b/snappergui/mainWindow.py	2026-10-20 16:28:32.852707826 +1100
+@@ -1,5 +1,5 @@
+ from snappergui import snapper
+-import pkg_resources, subprocess, dbus
++import importlib.resources, subprocess, dbus
+ from snappergui.createSnapshot import createSnapshot
+ from snappergui.createConfig import createConfig
+ from snappergui.deleteDialog import deleteDialog
+@@ -16,7 +16,7 @@
+     def __init__(self, app):
+         super(SnapperGUI, self).__init__()
+         self.builder = Gtk.Builder()
+-        self.builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        self.builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                                    "glade/mainWindow.glade"))
+         self.statusbar = self.builder.get_object("statusbar")
+         self.snapshotsTreeView = self.builder.get_object("snapstreeview")
+diff -ru a/snappergui/propertiesDialog.py b/snappergui/propertiesDialog.py
+--- a/snappergui/propertiesDialog.py	2026-10-20 16:28:32.844707932 +1100
++++ b/snappergui/propertiesDialog.py	2026-10-20 16:28:32.852707826 +1100
+@@ -1,5 +1,5 @@
+ from snappergui import snapper
+-import pkg_resources, dbus
++import importlib.resources, dbus
+ from gi.repository import Gtk
+ 
+ 
+@@ -8,7 +8,7 @@
+ 
+     def __init__(self, config):
+         builder = Gtk.Builder()
+-        builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                               "glade/propertiesDialog.glade"))
+         self.configsGrid = builder.get_object("configsGrid")
+ 
+@@ -54,7 +54,7 @@
+         self.parent = parent
+ 
+         builder = Gtk.Builder()
+-        builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                               "glade/propertiesDialog.glade"))
+         self.dialog = builder.get_object("dialogProperties")
+         self.notebook = builder.get_object("notebookProperties")
+diff -ru a/snappergui/snapshotsView.py b/snappergui/snapshotsView.py
+--- a/snappergui/snapshotsView.py	2026-10-20 16:28:32.844707932 +1100
++++ b/snappergui/snapshotsView.py	2026-10-20 16:28:32.852707826 +1100
+@@ -1,5 +1,5 @@
+ from snappergui import snapper
+-import pkg_resources, dbus
++import importlib.resources, dbus
+ from gi.repository import Gtk
+ from time import strftime, localtime
+ from pwd import getpwuid
+@@ -12,7 +12,7 @@
+         super(snapshotsView, self).__init__()
+         self.config = config
+         self.builder = Gtk.Builder()
+-        self.builder.add_from_file(pkg_resources.resource_filename("snappergui",
++        self.builder.add_from_file(str(importlib.resources.files("snappergui") /
+                                                                    "glade/snapshotsView.glade"))
+         self.builder.connect_signals(self)
+         self._TreeView = self.builder.get_object("snapstreeview")
