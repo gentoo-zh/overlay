@@ -15,7 +15,7 @@ S="${WORKDIR}/marble-${COMMIT}"
 
 LICENSE="GPL-3+"
 SLOT="0/2"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	>=gui-libs/gtk-4.0:4
