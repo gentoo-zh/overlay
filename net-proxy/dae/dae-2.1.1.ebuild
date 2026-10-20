@@ -20,7 +20,7 @@ S="${WORKDIR}"
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~riscv"
+KEYWORDS="~amd64 ~arm64 ~riscv"
 MINKV="5.17"
 
 DEPEND="
