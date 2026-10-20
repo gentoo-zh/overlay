@@ -15,7 +15,7 @@ HOMEPAGE="
 "
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/pyserial-3.0.1[${PYTHON_USEDEP}]
