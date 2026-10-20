@@ -10,7 +10,7 @@ HOMEPAGE="https://github.com/thezbyg/gpick"
 SRC_URI="https://github.com/thezbyg/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="+gtk3 nls"
 
 RDEPEND="
