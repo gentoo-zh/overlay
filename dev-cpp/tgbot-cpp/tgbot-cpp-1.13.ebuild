@@ -11,7 +11,7 @@ SRC_URI="https://github.com/reo7sp/tgbot-cpp/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+shared-libs doc test"
 RESTRICT="!test? ( test )"
 
