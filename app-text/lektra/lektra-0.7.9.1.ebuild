@@ -22,7 +22,7 @@ SRC_URI="
 # lektra is AGPL-3; the bundled synctex parser is MIT.
 LICENSE="AGPL-3 synctex? ( MIT )"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="synctex"
 
 # mupdf and, with synctex, the synctex parser are git submodules absent
