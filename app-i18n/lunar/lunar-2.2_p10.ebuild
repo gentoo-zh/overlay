@@ -14,7 +14,7 @@ SRC_URI="https://salsa.debian.org/chinese-team/lunar/-/archive/debian/${MY_PV}/l
 S="${WORKDIR}/lunar-debian-${MY_PV}"
 LICENSE="GPL-2+"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 PATCHES=(
 	"${S}/debian/patches/01_strip_trailing_whitespace.diff"
