@@ -15,8 +15,6 @@ SRC_URI="
 
 S="${WORKDIR}/${MY_PN}-${PV}"
 
-PATCHES=( "${FILESDIR}/${P}-imewlconverter-gnu-cli.patch" )
-
 LICENSE="Unlicense"
 SLOT="5"
 KEYWORDS="~amd64"
