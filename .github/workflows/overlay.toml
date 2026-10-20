@@ -907,6 +907,7 @@ source = "regex"
 url = "https://www.arterytek.com/json/Document.json"
 regex = 'AT32_Work_Bench_Linux-x86_64_V([\d.]+)\.zip'
 github_account = "microcai"
+autobump = true
 
 ["dev-games/alcom"]
 source = "github"
@@ -1605,6 +1606,7 @@ use_latest_release = true
 from_pattern = '^(\d{4}\.\d{3,4}\.\d+)-lazer$'
 to_pattern = '\1'
 github_account = "Puqns67"
+autobump = 3
 
 ["games-emulation/onscripter-yuri"]
 source = "github"
@@ -1947,6 +1949,7 @@ github = "go-musicfox/go-musicfox"
 use_latest_release = true
 prefix = "v"
 github_account = ["st0nie", "gouwazi"]
+autobump = true
 
 ["media-sound/harmonoid"]
 source = "github"
@@ -2258,6 +2261,7 @@ github = "biliup/biliup-app-new"
 use_latest_release = true
 prefix = "app-v"
 github_account = "123485k"
+autobump = true
 
 ["net-misc/biliup-bin"]
 source = "github"
@@ -2524,6 +2528,7 @@ prefix = "v"
 from_pattern = '(.*)-(.*)'
 to_pattern = '\1_p\2'
 github_account = ["blackteahamburger", "gouwazi"]
+autobump = true
 
 # TODO: missing KEYWORDS
 #["net-proxy/proxy-server"]
