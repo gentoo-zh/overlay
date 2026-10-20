@@ -30,5 +30,6 @@ RUST_MIN_VER="1.88"
 
 src_prepare () {
 	mv "${WORKDIR}/mdx-111cab6cddb119ce35158ee1a8d641bab698c87e" "${WORKDIR}/mdx"
+	eapply -d "${WORKDIR}/mdx" -- "${FILESDIR}"/${P}-root-locale.patch
 	default_src_prepare
 }

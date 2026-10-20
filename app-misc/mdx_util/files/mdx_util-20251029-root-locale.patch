@@ -1,0 +1,18 @@
+Bug: https://github.com/raymanzhang/mdx/issues/7
+
+icu_locale_core 2.x rejects the ICU root locale "root" as an invalid
+BCP-47 tag, so the collator cannot be created for the builder default
+(BuilderConfig::default()) or for a file whose DefaultSortingLocale
+is "root". Use the default collation for it, as for an empty string.
+
+--- a/src/utils/icu_wrapper.rs
++++ b/src/utils/icu_wrapper.rs
+@@ -154,7 +154,7 @@
+             use icu_collator::options::{Strength, AlternateHandling, CaseLevel};
+             
+             log::info!("Creating collator for locale: {}", locale_str);
+-            if locale_str.is_empty() {
++            if locale_str.is_empty() || locale_str == "root" {
+                 return Ok(Self {
+                     collator: Collator::try_new(CollatorPreferences::default(), CollatorOptions::default())
+                         .map_err(|e| {
