@@ -13,7 +13,7 @@ SRC_URI="https://github.com/conda/menuinst/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/tomli-w[${PYTHON_USEDEP}]
