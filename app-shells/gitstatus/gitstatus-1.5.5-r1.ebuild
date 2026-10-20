@@ -11,7 +11,7 @@ SRC_URI="https://github.com/romkatv/gitstatus/archive/v${PV}.tar.gz -> ${P}.tar.
 
 # LIBGIT2_TAG depends on pkgver. They must be updated together. See libgit2_version in:
 # https://raw.githubusercontent.com/romkatv/gitstatus/v${pkgver}/build.info
-LIBGIT2_TAG="tag-5860a42d19bcd226cb6eff2dcbfcbf155d570c73"
+LIBGIT2_TAG="tag-2ecf33948a4df9ef45a66c68b8ef24a5e60eaac6"
 SRC_URI+=" https://github.com/romkatv/libgit2/archive/refs/tags/${LIBGIT2_TAG}.tar.gz -> libgit2-${LIBGIT2_TAG}.tar.gz"
 CMAKE_USE_DIR="${S}/deps/libgit2"
 BUILD_DIR="${CMAKE_USE_DIR}_BUILD"
