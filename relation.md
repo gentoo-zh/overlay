@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-20 13:17:56 CST)
+(The last generation time: 2026-10-20 13:35:46 CST)
 
 ### Packages
 
@@ -220,7 +220,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.33.0             |            | https://github.com/Twigpine/openclaude                                     | Open-source coding-agent CLI for cloud and local LLM providers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.25.2             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.25.3             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.15               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -381,7 +381,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/pyrime                                     | 0.2.4              |            | https://github.com/rimeinn/pyrime                                          | rime for python
    app-i18n/librime                                    | 9999               |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
-   dev-python/autopxd2                                 | 3.2.3              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
+   dev-python/autopxd2                                 | 4.0.1              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
+     dev-python/headerkit                              | 0.46.2             | RD         | https://github.com/axiomantic/headerkit                                    | C/C++ header analysis toolkit with pluggable backends and writers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/uv-bin                                     | 0.13.1             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -433,7 +434,7 @@
  dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.12.2            |            |                                                                            |
+                                                       | 18.12.3            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.4.0              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -456,7 +457,7 @@
                                                        | 1.4.3              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
-                                                       | 2.45.0             |            |                                                                            |
+                                                       | 2.46.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.39.8             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -738,7 +739,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.0.0              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/flyctl-bin                                   | 0.4.118            |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
+ net-misc/flyctl-bin                                   | 0.4.119            |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
                                                        | 0.4.82             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
