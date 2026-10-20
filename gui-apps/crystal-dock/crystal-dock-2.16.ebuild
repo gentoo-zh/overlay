@@ -13,7 +13,7 @@ S="${WORKDIR}/${P}/src"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	>=dev-libs/wayland-1.22
