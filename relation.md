@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-20 13:46:20 CST)
+(The last generation time: 2026-10-20 14:51:51 CST)
 
 ### Packages
 
@@ -37,7 +37,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-backup/restic-rest-server                         | 0.14.0             |            | https://github.com/restic/rest-server                                      | A high performance HTTP server that implements restic's REST backend API
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-backup/snapper-gui                                | 220626             |            | https://github.com/ricardomv/snapper-gui                                   | GUI for snapper, a tool for Linux filesystem snapshot management
+ app-backup/snapper-gui                                | 220626-r1          |            | https://github.com/ricardomv/snapper-gui                                   | GUI for snapper, a tool for Linux filesystem snapshot management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-containers/bubblejail                             | 0.10.4             |            | https://github.com/igo95862/bubblejail                                     | Bubblewrap-based application sandbox with resource isolation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
