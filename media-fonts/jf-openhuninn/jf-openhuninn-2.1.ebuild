@@ -12,7 +12,7 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="OFL-1.1"
 SLOT="0"
 
-KEYWORDS="~alpha ~amd64 ~arm ~ppc ~ppc64 ~s390 ~sparc ~x86"
+KEYWORDS="~alpha ~amd64 ~arm ~arm64 ~ppc ~ppc64 ~s390 ~sparc ~x86"
 
 FONT_SUFFIX="ttf"
 FONT_S="${S}/font"
