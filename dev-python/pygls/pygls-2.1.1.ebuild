@@ -17,7 +17,7 @@ SRC_URI="https://github.com/openlawlibrary/pygls/archive/v${PV}.tar.gz -> ${P}.g
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/cattrs[${PYTHON_USEDEP}]
