@@ -36,6 +36,10 @@ BDEPEND="
 	dev-python/cython[${PYTHON_USEDEP}]
 "
 
+PATCHES=(
+	"${FILESDIR}"/${P}-traits-lifetime.patch
+)
+
 EPYTEST_PLUGINS=( )
 
 distutils_enable_tests pytest

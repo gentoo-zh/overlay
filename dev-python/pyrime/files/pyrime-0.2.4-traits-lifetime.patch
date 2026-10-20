@@ -1,0 +1,57 @@
+From: https://github.com/rimeinn/pyrime/pull/14
+
+From de8bdcde72d0359bb5908aa49e9bd636b73daae4 Mon Sep 17 00:00:00 2001
+From: Zakk <zakk@gentoozh.org>
+Date: Wed, 21 Oct 2026 09:11:11 +1100
+Subject: [PATCH] :bug: Fix dangling pointers in RimeTraits
+
+The bytes returned by .encode() were released right after the struct
+was built, so librime read freed memory, and prebuilt_data_dir and
+staging_dir were left uninitialized.
+---
+ src/pyrime/api.pyi | 27 +++++++++++++++++++--------
+ 1 file changed, 19 insertions(+), 8 deletions(-)
+
+diff --git a/src/pyrime/api.pyi b/src/pyrime/api.pyi
+index 5c47863..572045e 100644
+--- a/src/pyrime/api.pyi
++++ b/src/pyrime/api.pyi
+@@ -80,19 +80,30 @@ class Traits:
+                 raise NotADirectoryError(dir)
+         os.makedirs(self.log_dir, exist_ok=True)
+         c_min_log_level: c.int = self.min_log_level.value
++        # keep the encoded strings alive while librime reads them
++        shared_data_dir: bytes = self.shared_data_dir.encode()
++        user_data_dir: bytes = self.user_data_dir.encode()
++        distribution_name: bytes = self.distribution_name.encode()
++        distribution_code_name: bytes = self.distribution_code_name.encode()
++        distribution_version: bytes = self.distribution_version.encode()
++        app_name: bytes = self.app_name.encode()
++        log_dir: bytes = self.log_dir.encode()
+         traits: RimeTraits = RimeTraits(
+-            shared_data_dir=self.shared_data_dir.encode(),
+-            user_data_dir=self.user_data_dir.encode(),
+-            distribution_name=self.distribution_name.encode(),
+-            distribution_code_name=self.distribution_code_name.encode(),
+-            distribution_version=self.distribution_version.encode(),
+-            app_name=self.app_name.encode(),
++            shared_data_dir=shared_data_dir,
++            user_data_dir=user_data_dir,
++            distribution_name=distribution_name,
++            distribution_code_name=distribution_code_name,
++            distribution_version=distribution_version,
++            app_name=app_name,
+             min_log_level=c_min_log_level,
+-            log_dir=self.log_dir.encode(),
++            log_dir=log_dir,
++            prebuilt_data_dir=c.NULL,
++            staging_dir=c.NULL,
+         )
+         traits.data_size = c.sizeof(RimeTraits) - c.sizeof(traits.data_size)
++        module: bytes = self.modules[0].encode()
+         traits.modules: c.array[c.p_const_char, len(self.modules) + 1] = [
+-            self.modules[0].encode(),
++            module,
+             c.NULL,
+         ]
+         self.data_size = traits.data_size
