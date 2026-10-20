@@ -14,7 +14,7 @@ S="${WORKDIR}/MiSans Global _ALL"
 
 LICENSE="MiSans"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 BDEPEND="app-arch/unzip"
 FONT_SUFFIX="otf ttf"
 
