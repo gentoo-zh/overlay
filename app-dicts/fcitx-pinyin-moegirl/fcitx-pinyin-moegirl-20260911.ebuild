@@ -17,7 +17,7 @@ S="${WORKDIR}/mw2fcitx-${PV}"
 
 LICENSE="MIT CC-BY-NC-SA-4.0"
 SLOT="5"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+fcitx rime"
 REQUIRED_USE="|| ( fcitx rime )"
 RESTRICT="bindist mirror"
