@@ -18,7 +18,7 @@ SRC_URI="
 S="${WORKDIR}/${PN}-app-v${PV}"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	>=dev-lang/go-1.26.0
