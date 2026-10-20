@@ -12,7 +12,7 @@ HOMEPAGE="https://github.com/CabbageDevelopment/qasync"
 
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	|| (
