@@ -13,7 +13,7 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 FONT_SUFFIX="ttf otf"
 
