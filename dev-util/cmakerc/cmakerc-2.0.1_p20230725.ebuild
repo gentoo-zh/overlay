@@ -14,7 +14,7 @@ S="${WORKDIR}/cmrc-${COMMIT_ID}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 PATCHES=(
 	"${FILESDIR}/cmakerc-2.0.1-CMakeLists-minimum-version.patch"
