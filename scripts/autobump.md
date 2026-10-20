@@ -17,6 +17,11 @@ Bumps the new versions nvchecker reports.
 Step 2 has three outcomes:
 
 * **mechanical** — version change only and emerge passed, so it opens a PR.
+  The PR is a draft when only amd64 was built, when the GUI launch probe failed, or
+  when the engine accepted a difference it would otherwise escalate on: a raised Go or
+  Rust floor, a missing toolchain atom it could only note, or files the new payload
+  dropped that nothing names and that the install and smoke test did not miss. The body
+  lists each accepted difference, and the issue comment says why the PR is a draft.
 * **escalate** — major version jump, changed dependencies, a `files/` patch to
   re-verify, or a distfile upstream answers with 404 or 403, because the file is not
   there and a retry cannot fix that. It comments the evidence on the issue, uploads
