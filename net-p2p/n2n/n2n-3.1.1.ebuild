@@ -30,6 +30,8 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 
+PATCHES=( "${FILESDIR}/${P}-cmake4.patch" )
+
 src_configure() {
 	mycmakeargs=(
 		-DBUILD_SHARED_LIBS=OFF

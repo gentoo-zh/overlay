@@ -1,0 +1,15 @@
+From: https://github.com/ntop/n2n/pull/1238
+
+Fix CMake compatibility with modern CMake (>= 4.0)
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index a01cdc587..405dceaff 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,5 +1,5 @@
++cmake_minimum_required(VERSION 3.5...3.31)
+ project(n2n)
+-cmake_minimum_required(VERSION 2.6)
+ include(CheckFunctionExists)
+ SET(CMAKE_VERBOSE_MAKEFILE ON)
+ 
