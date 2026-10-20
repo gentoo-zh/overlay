@@ -16,7 +16,7 @@ SRC_URI="
 S="${WORKDIR}"
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~loong ~riscv ~x86"
+KEYWORDS="~amd64 ~arm64 ~loong ~riscv ~x86"
 
 IUSE="light +regular medium"
 
