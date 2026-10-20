@@ -11,7 +11,7 @@ SRC_URI="https://github.com/linuxmint/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-2+ LGPL-2+ LGPL-2.1+ FDL-1.1+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="cups djvu dvi +introspection keyring +postscript t1lib tiff xps"
 REQUIRED_USE="t1lib? ( dvi )"
 
