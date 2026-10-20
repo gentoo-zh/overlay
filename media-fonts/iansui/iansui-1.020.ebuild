@@ -11,7 +11,7 @@ SRC_URI="https://github.com/ButTaiwan/iansui/archive/refs/tags/v${PV}.tar.gz -> 
 
 LICENSE="OFL-1.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 FONT_SUFFIX="ttf"
 FONT_S="${WORKDIR}/${P}/fonts/ttf"
