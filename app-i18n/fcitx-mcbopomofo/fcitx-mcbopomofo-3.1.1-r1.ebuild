@@ -19,6 +19,7 @@ RESTRICT="!test? ( test )"
 
 DEPEND="
 	>=app-i18n/fcitx-5.1.0:5
+	dev-libs/icu:=
 	dev-libs/json-c:=
 	dev-libs/libfmt:=
 "
