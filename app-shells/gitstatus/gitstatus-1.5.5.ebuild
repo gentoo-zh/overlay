@@ -29,6 +29,13 @@ src_unpack() {
 	mv -v "${WORKDIR}/libgit2-${LIBGIT2_TAG}" "${S}/deps/libgit2" || die
 }
 
+src_prepare() {
+	# ensure cmake_minimum_required >=3.10 (Bug: 964405)
+	sed -e '/CMAKE_MINIMUM_REQUIRED/s/3\.5\.1/3.10/' \
+		-i "${CMAKE_USE_DIR}"/CMakeLists.txt || die
+	cmake_src_prepare
+}
+
 src_configure() {
 	mycmakeargs=(
 		-DCMAKE_BUILD_TYPE=Release
