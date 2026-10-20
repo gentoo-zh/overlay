@@ -13,6 +13,8 @@ HOMEPAGE="https://github.com/feeluown/feeluown-qqmusic"
 LICENSE="GPL-3"
 SLOT="1"
 KEYWORDS="~amd64"
+# tests import feeluown (a PDEPEND) and reach the live QQ Music API
+RESTRICT="test"
 
 RDEPEND="
 	dev-python/requests[${PYTHON_USEDEP}]
