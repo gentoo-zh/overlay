@@ -22,6 +22,12 @@ PATCHES=(
 	"${FILESDIR}/${P}-qt6.patch"
 )
 
+src_prepare() {
+	# ensure cmake_minimum_required >=3.10 (Bug: 951350)
+	sed -e '/cmake_minimum_required/s/3\.2/3.10/' -i CMakeLists.txt || die
+	cmake_src_prepare
+}
+
 src_configure() {
 	local mycmakeargs=(
 		-DBUILD_EXAMPLES=OFF
