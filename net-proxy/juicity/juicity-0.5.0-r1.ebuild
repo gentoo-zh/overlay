@@ -19,7 +19,10 @@ IUSE="+server client"
 src_compile(){
 	for i in server client ;do
 		if use $i; then
-			emake "juicity-$i"
+			CGO_ENABLED=0 ego build \
+				-trimpath \
+				-ldflags "-X github.com/juicity/juicity/config.Version=${PV}" \
+				-o "juicity-${i}" "./cmd/${i}"
 		fi
 	done
 }
