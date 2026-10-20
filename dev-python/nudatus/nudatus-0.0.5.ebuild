@@ -17,7 +17,7 @@ SRC_URI="https://github.com/ZanderBrown/nudatus/archive/refs/tags/${PV}.tar.gz -
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 PATCHES=(
 	"${FILESDIR}/${P}-python3.12-fix.patch"
