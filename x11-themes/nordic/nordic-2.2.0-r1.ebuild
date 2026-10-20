@@ -13,7 +13,7 @@ S="${WORKDIR}/Nordic-${PV}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="+gtk2 +gtk3 +gtk4 kde xfce mate gnome-shell cinnamon"
 
 src_prepare() {
