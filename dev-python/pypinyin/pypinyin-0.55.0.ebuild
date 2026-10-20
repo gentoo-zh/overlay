@@ -19,7 +19,7 @@ S="${WORKDIR}/python-pinyin-${PV}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 EPYTEST_PLUGINS=()
 distutils_enable_tests pytest
