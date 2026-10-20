@@ -45,7 +45,7 @@ LICENSE+="
 	WTFPL-2 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 BDEPEND="
 	dev-libs/protobuf
 	sys-devel/mold
