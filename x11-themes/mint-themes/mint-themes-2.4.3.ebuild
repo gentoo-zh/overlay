@@ -12,7 +12,7 @@ SRC_URI="https://github.com/linuxmint/mint-themes/archive/refs/tags/${PV}.tar.gz
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	${PYTHON_DEPS}
