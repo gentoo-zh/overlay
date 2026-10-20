@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-20 08:25:17 CST)
+(The last generation time: 2026-10-20 13:17:56 CST)
 
 ### Packages
 
@@ -392,8 +392,7 @@
  dev-util/arch-install-scripts                         | 32                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 32                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
      sys-apps/pacman                                   | 7.1.0              |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
-       app-crypt/archlinux-keyring                     | 20251116           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
-                                                       | 20260909           |            |                                                                            |
+       app-crypt/archlinux-keyring                     | 20260909           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/asdf-vm                                      | 0.20.2             |            | https://github.com/asdf-vm/asdf                                            | Manage all your runtime versions with one tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
