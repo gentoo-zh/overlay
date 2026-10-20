@@ -49,6 +49,10 @@ src_unpack() {
 
 src_prepare() {
 	sed -i -e 's/rfc2818_verification/host_name_verification/' trojan/src/core/service.cpp || die
+	# ensure cmake_minimum_required >=3.10 (Bug: 951350, 964405)
+	sed -e '/cmake_minimum_required/s/3\.1\.0/3.10/' \
+		-i CMakeLists.txt interface/Qv{,GUI}PluginInterface.cmake || die
+	sed -e '/cmake_minimum_required/s/3\.7\.2/3.10/' -i trojan/CMakeLists.txt || die
 	cmake_src_prepare
 }
 
