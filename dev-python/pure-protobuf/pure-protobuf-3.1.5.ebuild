@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/eigenein/protobuf"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	>=dev-python/typing-extensions-4.4.0[${PYTHON_USEDEP}]
