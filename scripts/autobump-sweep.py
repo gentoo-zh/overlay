@@ -888,6 +888,9 @@ def record_bumped(settings, issue, package, version, engine_output, footer, stat
     result = f"bumped{' + PR' if settings.pr else ''}"
     urls = re.findall(r"https://github\.com/[^ \n]+/pull/[0-9]+", engine_output)
     opened_pr = f" — opened {urls[-1]}" if urls else ""
+    draft = re.search(r"^ok PR opened \(draft: (.+)\)$", engine_output, re.M)
+    if draft:
+        opened_pr += f" as a draft because {draft.group(1)}"
     status_comment(
         issue,
         f"**autobump** bumped `{package}` → `{version}`{opened_pr}{run_link(settings.upstream_repo)}",
