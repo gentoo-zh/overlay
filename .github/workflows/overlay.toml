@@ -172,13 +172,17 @@ source = "archpkg"
 archpkg = "fcitx5-pinyin-zhwiki"
 strip_release = true
 github_account = "blackteahamburger"
+autobump = true
+autobump_zhwikiv_url = "https://gitlab.archlinux.org/archlinux/packaging/packages/fcitx5-pinyin-zhwiki/-/raw/main/PKGBUILD"
+autobump_zhwikiv_regex = '(?m)^_zhwikiver=([0-9]{8})$'
 
 ["app-editors/antigravity"]
 source = "regex"
 url = "https://antigravity-hub-auto-updater-974169037036.us-central1.run.app/releases"
 regex = '"version":"([\d.]+)"'
 github_account = "zakkaus"
-# autobump off: ICON_COMMIT does not track the package version
+autobump = true
+autobump_my_build_regex = '"version":"${PV}","execution_id":"([0-9]+)"'
 
 ["app-editors/antigravity-ide"]
 source = "regex"
@@ -2082,7 +2086,7 @@ strip_release = true
 github_account = ["xysgh"]
 autobump = true
 autobump_my_pv_url = "https://api.github.com/repos/bggRGjQaUbCoE/PiliPlus/releases/tags/${PV}"
-autobump_my_pv_regex = 'PiliPlus_linux_([^"_]+)_amd64\.tar\.gz'
+autobump_my_pv_regex = 'PiliPlus_linux_([0-9.]+\+[0-9]+)_amd64\.tar\.gz'
 
 # TODO: upstream removed linux support
 #["media-video/tenvideo"]
@@ -2721,6 +2725,9 @@ github = "ggml-org/llama.cpp"
 use_latest_release = true
 prefix = "v"
 github_account = "Puqns67"
+autobump = true
+autobump_build_url = "https://github.com/ggml-org/llama.cpp/releases/download/v${PV}/nightly-tag.txt"
+autobump_build_regex = '(b[0-9]+)'
 
 # key issued by this project, no upstream version to track
 #["sec-keys/openpgp-keys-gentoozh"]
