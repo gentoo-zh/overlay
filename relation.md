@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-20 15:52:00 CST)
+(The last generation time: 2026-10-20 15:56:16 CST)
 
 ### Packages
 
@@ -51,7 +51,7 @@
                                                        | 20260812           |            |                                                                            |
                                                        | 20260911           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-dicts/fcitx-pinyin-sougou-dict                    | 20260920           |            | https://github.com/blackteahamburger/fcitx5-pinyin-sougou-dict             | Sougou Pinyin dictionary for Fcitx5 and RIME
+ app-dicts/fcitx-pinyin-sougou-dict                    | 20261020           |            | https://github.com/blackteahamburger/fcitx5-pinyin-sougou-dict             | Sougou Pinyin dictionary for Fcitx5 and RIME
    app-i18n/ibus-rime                                  | 9999               | RD         | https://rime.im/                                                           | Rime Input Method Engine for IBus Framework
    app-text/imewlconverter                             | 3.6.0              | BD         | https://github.com/studyzy/imewlconverter                                  | An open source and free input method dictionary conversion program
                                                        | 9999               |            |                                                                            |
@@ -484,7 +484,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/waza-bin                                     | 0.38.10            |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/zcode-bin                                    | 3.15.3             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
+ dev-util/zcode-bin                                    | 3.16.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zprint-bin                                   | 1.3.0              |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
