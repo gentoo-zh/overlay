@@ -17,7 +17,7 @@ SRC_URI="
 S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="BSD-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 QA_PRESTRIPPED="/usr/bin/${PN}"
 
 src_compile() {
