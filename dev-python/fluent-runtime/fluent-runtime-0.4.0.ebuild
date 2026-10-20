@@ -15,7 +15,7 @@ HOMEPAGE="https://github.com/projectfluent/python-fluent"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 # The PyPI sdist ships an incomplete test suite: tests/ has no __init__.py or
 # utils.py, so the relative imports fail. The full suite runs only from the
 # upstream git checkout.
