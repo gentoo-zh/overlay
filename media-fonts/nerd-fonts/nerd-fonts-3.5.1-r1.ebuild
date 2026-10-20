@@ -172,7 +172,7 @@ LICENSE="MIT
 		monofur? ( Monofur )
 		UbuntuFontLicense-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~loong ~x86"
+KEYWORDS="~amd64 ~arm64 ~loong ~x86"
 
 RDEPEND="media-libs/fontconfig"
 
