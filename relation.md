@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 15:55:52 CST)
+(The last generation time: 2026-10-21 17:29:06 CST)
 
 ### Packages
 
@@ -656,6 +656,7 @@
  media-video/davinci-resolve                           | 21.1.1             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/hov-qt                                    | 1.3.1              |            | https://github.com/HougeLangley/HyperOnlineVideo                           | Aggregated YouTube/Bilibili/NetEase/QQ Music client (Qt6 desktop)
+                                                       | 1.3.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/implay                                    | 1.5.1              |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
