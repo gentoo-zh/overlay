@@ -10,13 +10,16 @@ MY_PN="biliup-app"
 DESCRIPTION="A Tool for Upload video to bilibili"
 
 HOMEPAGE="https://github.com/biliup/biliup-app-new"
-SRC_URI="https://github.com/biliup/biliup-app-new/releases/download/app-v${PV}/${MY_PN}_${PV}_amd64.deb"
+SRC_URI="
+	amd64? ( https://github.com/biliup/biliup-app-new/releases/download/app-v${PV}/${MY_PN}_${PV}_amd64.deb )
+	arm64? ( https://github.com/biliup/biliup-app-new/releases/download/app-v${PV}/${MY_PN}_${PV}_arm64.deb )
+"
 
 S="${WORKDIR}"
 
 LICENSE="0BSD Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD Boost-1.0 CC0-1.0 ISC MIT MIT-0 MPL-2.0 Unicode-DFS-2016 Unlicense ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="mirror strip"
 
 RDEPEND="
