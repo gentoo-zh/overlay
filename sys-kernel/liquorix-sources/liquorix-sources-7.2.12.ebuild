@@ -67,4 +67,5 @@ src_unpack() {
 src_prepare() {
 	cjktty_apply_patches
 	kernel-2_src_prepare
+	rm "${S}/tools/testing/selftests/tc-testing/action-ebpf" || die
 }
