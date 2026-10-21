@@ -14,7 +14,7 @@ SRC_URI="
 
 LICENSE="MIT BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~riscv"
+KEYWORDS="~amd64 ~arm64 ~riscv"
 
 BDEPEND=">=dev-lang/go-1.25.0"
 
