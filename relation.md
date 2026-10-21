@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 12:37:13 CST)
+(The last generation time: 2026-10-21 13:28:02 CST)
 
 ### Packages
 
@@ -25,7 +25,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi                                     | 2.73.2             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/chezmoi-bin                                 | 2.73.2             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
+ app-admin/chezmoi-bin                                 | 2.73.3             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/enpass                                      | 6.12.6.2258        |            | https://www.enpass.io                                                      | A cross-platform, complete password management solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -185,7 +185,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.11.2             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.1013.40934      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.1016.51333      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.1.7              |            |                                                                            |
@@ -427,21 +427,21 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-code-bin                                | 2.2.0              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kiro-cli                                     | 2.32.0             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
+ dev-util/kiro-cli                                     | 2.33.0             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.3              |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.12.3            |            |                                                                            |
+                                                       | 18.12.5            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.5.0              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.19.3             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-desktop-bin                         | 2.0.32             |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
+ dev-util/opencode-desktop-bin                         | 2.1.2              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -482,7 +482,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vimls-go-bin                                 | 0.2.0              |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/waza-bin                                     | 0.38.10            |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
+ dev-util/waza-bin                                     | 0.39.0             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zcode-bin                                    | 3.16.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -732,7 +732,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/biliup-app-bin                               | 1.4.2              |            | https://github.com/biliup/biliup-app-new                                   | A Tool for Upload video to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/biliup-bin                                   | 1.3.1              |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
+ net-misc/biliup-bin                                   | 1.3.2              |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/bruno-bin                                    | 3.5.3              |            | https://www.usebruno.com/                                                  | Opensource IDE For Exploring and Testing Api's
                                                        | 4.2.1              |            |                                                                            |
@@ -767,7 +767,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/rayburst-bin                                 | 4.0.1              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
+ net-misc/rayburst-bin                                 | 4.1.0              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/reframe                                      | 1.21.0             |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                  |  D, RD     |                                                                            | group for reframe
