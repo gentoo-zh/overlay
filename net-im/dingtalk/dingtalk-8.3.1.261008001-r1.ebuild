@@ -91,7 +91,12 @@ src_install() {
 	# Set RPATH for preserve-libs handling
 	pushd "${dingtalk_dir}" || die
 	rpath_root="/opt/apps/${MY_PGK_NAME}/files/${MY_VERSION}"
-	rpath="${rpath_root}/:${rpath_root}/swiftshader/"
+	# The trailing colon separates the concatenated entries: without it the
+	# swiftshader/ and platforminputcontexts/ paths merge into one nonexistent
+	# entry, the bundled fcitx5 platform input context plugin cannot resolve
+	# its DT_NEEDED libFcitx5Qt5DBusAddons.so.1 in platforminputcontexts/, and
+	# Qt silently falls back to the compose input context, breaking CJK input.
+	rpath="${rpath_root}/:${rpath_root}/swiftshader/:"
 	rpath+="${rpath_root}/platforminputcontexts/:${rpath_root}/imageformats/"
 	for x in $(find) ; do
 		# Use \x7fELF header to separate ELF executables and libraries
