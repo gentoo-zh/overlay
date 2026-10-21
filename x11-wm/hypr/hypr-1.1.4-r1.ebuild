@@ -12,7 +12,7 @@ SRC_URI="https://github.com/hyprwm/Hypr/archive/refs/tags/${PV}.tar.gz -> ${P}.t
 S="${WORKDIR}/Hypr-${PV}"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-cpp/gtkmm:3.0
