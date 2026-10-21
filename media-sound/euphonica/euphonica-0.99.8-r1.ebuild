@@ -40,6 +40,7 @@ RDEPEND="
 	>=sys-devel/gettext-0.23
 	>=media-sound/mpd-0.24
 	media-libs/alsa-lib
+	media-video/pipewire:=
 	dev-db/sqlite
 	sys-apps/xdg-desktop-portal
 "
