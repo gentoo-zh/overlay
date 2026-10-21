@@ -10,13 +10,14 @@ HOMEPAGE="https://yaak.app/"
 URI_PREFIX="https://github.com/mountain-loop/yaak/releases/download/v${PV}/yaak_${PV}_"
 SRC_URI="
 	amd64? ( ${URI_PREFIX}amd64.deb )
+	arm64? ( ${URI_PREFIX}arm64.deb )
 "
 
 S="${WORKDIR}"
 LICENSE="Yaak-EULA MIT"
 
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 RESTRICT="bindist mirror strip"
 
