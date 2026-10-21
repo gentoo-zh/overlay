@@ -13,7 +13,7 @@ SRC_URI="
 
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND=">=dev-lang/go-1.25"
 
