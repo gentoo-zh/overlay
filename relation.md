@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 19:06:20 CST)
+(The last generation time: 2026-10-22 03:19:39 CST)
 
 ### Packages
 
@@ -697,7 +697,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-dns/q                                             | 0.19.12            |            | https://github.com/natesales/q                                             | A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/dingtalk                                       | 8.3.1.261008001    |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
+ net-im/dingtalk                                       | 8.3.1.261008001-r1 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503      | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/telegram-desktop                               | 7.3.2              |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
