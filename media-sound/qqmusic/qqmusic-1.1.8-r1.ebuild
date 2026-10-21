@@ -13,6 +13,8 @@ qqmusic_src_uri() {
 
 DESCRIPTION="Tencent QQ Music, converted from .deb package"
 HOMEPAGE="https://y.qq.com/"
+# dldir.y.qq.com may only serve this file in mainland China; elsewhere it
+# returns 403, so download the file manually and place it in DISTDIR.
 SRC_URI="$(qqmusic_src_uri)"
 
 S="${WORKDIR}"
