@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 13:48:18 CST)
+(The last generation time: 2026-10-21 14:16:52 CST)
 
 ### Packages
 
@@ -85,7 +85,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/xed                                       | 3.9.0              |            | https://github.com/linuxmint/xed                                           | GTK-based text editor from the X-Apps project
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-emulation/deepin-udis86                           | 1.72-r4            |            | https://www.deepin.org                                                     | Disassembler library for x86 (32-bit shared library)
+ app-emulation/deepin-udis86                           | 1.72-r5            |            | https://www.deepin.org                                                     | Disassembler library for x86 (32-bit shared library)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/la-ow-syscall                           | 0.1.1              |            | https://github.com/AOSC-Dev/la_ow_syscall                                  | Linux kernel module for compatibility with LoongArch's old-world ABI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
