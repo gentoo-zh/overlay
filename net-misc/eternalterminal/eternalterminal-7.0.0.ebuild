@@ -23,7 +23,7 @@ S="${WORKDIR}/EternalTerminal-et-v${PV}"
 # are the licenses of ET and the bundled sources that remain in use.
 LICENSE="Apache-2.0 MIT ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="icu test +unwind utempter"
 REQUIRED_USE="elibc_musl? ( unwind )"
 RESTRICT="!test? ( test )"
