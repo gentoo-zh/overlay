@@ -28,6 +28,7 @@ RDEPEND="
 	media-libs/libepoxy
 	net-libs/libvncserver
 	x11-libs/libxkbcommon
+	systemd? ( sys-apps/systemd:= )
 	neatvnc? (
 		gui-libs/neatvnc
 		dev-libs/aml
@@ -38,6 +39,7 @@ RDEPEND="
 DEPEND="
 	${RDEPEND}
 "
+BDEPEND="virtual/pkgconfig"
 
 src_prepare() {
 	rm -rf "${S}/deps/mvmath"
@@ -49,6 +51,7 @@ src_prepare() {
 src_configure() {
 	local emesonargs=(
 		-D neatvnc=$(usex neatvnc true false)
+		$(meson_use systemd)
 	)
 
 	meson_src_configure
