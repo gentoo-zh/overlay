@@ -32,6 +32,7 @@ BDEPEND="
 # https://gitlab.gnome.org/raggesilver/marble/-/issues/12
 PATCHES=(
 	"${FILESDIR}/${PN}-2.0.0-css-provider.patch"
+	"${FILESDIR}/${PN}-2.0.0-settings-strv.patch"
 )
 
 src_prepare() {

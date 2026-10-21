@@ -1,0 +1,22 @@
+Build the GVariant for g_settings_set_value() from the NULL-terminated
+strv. For g_settings_set_strv() valac passes gchar ** where the argument
+is const gchar *const *, so GCC reports -Wincompatible-pointer-types for
+the generated Settings.c. g_object_get() does not set the array length,
+so Variant.strv() or the implicit string[] conversion would save an
+empty array.
+
+--- a/src/services/Settings.vala
++++ b/src/services/Settings.vala
+@@ -168,7 +168,11 @@
+       string[] strv = null;
+       this.get(key, &strv);
+       if (strv != this.schema.get_strv(key)) {
+-        res = this.schema.set_strv(key, strv);
++        var builder = new VariantBuilder(VariantType.STRING_ARRAY);
++        for (int i = 0; strv != null && strv[i] != null; i++) {
++          builder.add("s", strv[i]);
++        }
++        res = this.schema.set_value(key, builder.end());
+       }
+     }
+     else if (
