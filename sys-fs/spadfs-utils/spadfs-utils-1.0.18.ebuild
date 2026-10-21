@@ -12,7 +12,7 @@ SRC_URI="http://www.jikos.cz/~mikulas/spadfs/download/spadfs-${PV}.tar.gz"
 S="${WORKDIR}/spadfs-${PV}"
 LICENSE="all-rights-reserved"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="bindist mirror"
 
 src_compile() {
