@@ -9,7 +9,7 @@ SRC_URI="https://github.com/arnoldrobbins/9menu/archive/refs/tags/${PN}-release-
 S="${WORKDIR}/${PN}-${PN}-release-${PV}"
 LICENSE="public-domain"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="x11-libs/libX11"
 
