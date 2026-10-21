@@ -1,6 +1,19 @@
 # Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
+# Zakk <zakk@gentoozh.org> (2026-10-21)
+# Qv2ray has made no release since 2021, and upstream archived its plugins and
+# dev-libs/qnodeeditor, which only qv2ray uses. The stable net-libs/grpc that
+# qv2ray depends on does not support Python 3.14, so qv2ray and its plugins
+# fail to build on stable.
+# Removal on 2026-11-20.
+dev-libs/qnodeeditor
+net-proxy/qv2ray
+net-proxy/qvplugin-command
+net-proxy/qvplugin-ss
+net-proxy/qvplugin-trojan
+net-proxy/qvplugin-trojan-go
+
 # Zakk <zakk@gentoozh.org> (2026-10-09)
 # Unmaintained.
 # Removal on 2026-11-09.
