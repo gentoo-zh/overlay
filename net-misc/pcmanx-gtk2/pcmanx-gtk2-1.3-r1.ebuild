@@ -11,7 +11,7 @@ SRC_URI="https://github.com/pcman-bbs/pcmanx/releases/download/${PV}/${P}.tar.xz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+libnotify +proxy iplookup +wget"
 
 COMMON_DEPEND="
