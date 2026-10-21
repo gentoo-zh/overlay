@@ -10,10 +10,11 @@ declare -A GIT_CRATES=(
 	[mpd]='https://github.com/htkhiem/rust-mpd;0bb8342c47244548724a5b1bcc523d9ffe3ca47f;rust-mpd-%commit%'
 )
 
+LLVM_COMPAT=( {19..22} )
 MY_PV="${PV}-beta"
 RUST_MIN_VER="1.92.0"
 
-inherit cargo meson gnome2-utils xdg
+inherit cargo llvm-r2 meson gnome2-utils xdg
 
 DESCRIPTION="An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita"
 HOMEPAGE="https://github.com/htkhiem/euphonica"
@@ -42,9 +43,19 @@ RDEPEND="
 	media-libs/alsa-lib
 	media-video/pipewire:=
 	dev-db/sqlite
+	dev-libs/openssl:=
 	sys-apps/xdg-desktop-portal
 "
 DEPEND="${RDEPEND}"
+BDEPEND="
+	virtual/pkgconfig
+	$(llvm_gen_dep 'llvm-core/clang:${LLVM_SLOT}')
+"
+
+pkg_setup() {
+	llvm-r2_pkg_setup
+	rust_pkg_setup
+}
 
 src_prepare () {
 	default_src_prepare
