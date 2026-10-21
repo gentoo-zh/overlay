@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 07:26:32 CST)
+(The last generation time: 2026-10-22 07:27:12 CST)
 
 ### Packages
 
@@ -41,7 +41,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-containers/bubblejail                             | 0.10.4             |            | https://github.com/igo95862/bubblejail                                     | Bubblewrap-based application sandbox with resource isolation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-crypt/cotp                                        | 1.10.0             |            | https://github.com/replydev/cotp                                           | command-line TOTP/HOTP authenticator app
+ app-crypt/cotp                                        | 1.11.0             |            | https://github.com/replydev/cotp                                           | command-line TOTP/HOTP authenticator app
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-custom-pinyin-dictionary       | 20260101           |            | https://github.com/wuhgit/CustomPinyinDictionary                           | Fcitx5 自建拼音输入法词库，百万常用词汇量。
@@ -232,6 +232,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/xmind                                        | 26.01.07153        |            | https://www.xmind.net                                                      | Brainstorming and Mind Mapping Software
                                                        | 26.05.01107        |            |                                                                            |
+                                                       | 27.01.05085        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/yazi                                         | 26.9.1             |            | https://yazi-rs.github.io                                                  | Blazing fast terminal file manager written in Rust, based on async I/O
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -332,7 +333,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/conda                                      | 26.9.3             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
+ dev-python/conda                                      | 26.9.4             |            | https://docs.conda.io/                                                     | OS-agnostic, system-level binary package manager and ecosystem
    dev-python/conda-libmamba-solver                    | 26.6.0             |  D, RD     | https://github.com/conda/conda-libmamba-solver                             | The libmamba based solver for conda
                                                        | 26.7.0             |            |                                                                            |
      dev-util/mamba                                    | 2.5.0-r2           | RD         | https://github.com/mamba-org/mamba                                         | The Fast Cross-Platform Package Manager
