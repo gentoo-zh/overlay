@@ -24,7 +24,7 @@ LICENSE="MIT"
 # Dependent crate licenses
 LICENSE+=" MIT MPL-2.0 Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="strip"
 
 RDEPEND="
