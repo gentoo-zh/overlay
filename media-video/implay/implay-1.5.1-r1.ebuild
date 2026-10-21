@@ -13,7 +13,7 @@ S="${WORKDIR}/ImPlay-${PV}"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	media-libs/freetype:2
