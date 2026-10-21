@@ -13,7 +13,7 @@ S="${WORKDIR}/picom-${PV}"
 
 LICENSE="MPL-2.0 MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="+config-file dbus +doc +drm opengl pcre test"
 
 REQUIRED_USE="test? ( dbus )" # avoid "DBus support not compiled in!"
