@@ -12,7 +12,7 @@ SRC_URI="https://github.com/juicity/juicity/releases/download/v${PV}/juicity-ful
 S="$WORKDIR"
 LICENSE="AGPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="+server client"
 
