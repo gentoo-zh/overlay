@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 13:28:02 CST)
+(The last generation time: 2026-10-21 13:31:38 CST)
 
 ### Packages
 
@@ -267,7 +267,7 @@
  app-shells/zsh-theme-powerlevel10k                    | 1.20.0             |            | https://github.com/romkatv/powerlevel10k                                   | Theme for Zsh that emphasizes speed, flexibility and out-of-the-box experience
    app-shells/gitstatus                                | 1.5.5-r1           |  D, RD     | https://github.com/romkatv/gitstatus                                       | Git status for Bash and Zsh prompt
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/cajviewer                                    | 9.0-r1             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
+ app-text/cajviewer                                    | 9.0-r2             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/goldendict                                   | 26.8.0             |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
    app-arch/libzim                                     | 9.5.1              |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
