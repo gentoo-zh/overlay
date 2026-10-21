@@ -26,7 +26,7 @@ RDEPEND="
 	)
 "
 RDEPEND+=" !dev-util/pack-cli-bin"
-BDEPEND=">=dev-lang/go-1.25.12"
+BDEPEND=">=dev-lang/go-1.26.10"
 
 src_compile() {
 	local ldflags="-X 'github.com/buildpacks/pack/pkg/client.Version=${PV}'"
