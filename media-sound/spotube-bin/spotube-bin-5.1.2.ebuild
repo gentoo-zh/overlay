@@ -5,14 +5,17 @@ EAPI=8
 
 inherit desktop xdg
 DESCRIPTION="A lightweight Spotify client using YouTube as audio source"
-HOMEPAGE="https://github.com/KRTirtho/spotube"
-SRC_URI="https://github.com/KRTirtho/spotube/releases/download/v${PV}/spotube-linux-${PV}-x86_64.tar.xz"
+HOMEPAGE="https://github.com/team-spotube/spotube"
+SRC_URI="
+	amd64? ( https://github.com/team-spotube/spotube/releases/download/v${PV}/spotube-linux-${PV}-x86_64.tar.xz )
+	arm64? ( https://github.com/team-spotube/spotube/releases/download/v${PV}/spotube-linux-${PV}-aarch64.tar.xz )
+"
 
 S="${WORKDIR}"
 
 LICENSE="BSD-4"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 BDEPEND="
 		dev-util/patchelf

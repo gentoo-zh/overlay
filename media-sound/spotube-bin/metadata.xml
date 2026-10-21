@@ -6,6 +6,6 @@
 		<email>tefiszx@gmail.com</email>
 	</maintainer>
 	<upstream>
-		<remote-id type="github">KRTirtho/spotube</remote-id>
+		<remote-id type="github">team-spotube/spotube</remote-id>
 	</upstream>
 </pkgmetadata>
