@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 10:02:14 CST)
+(The last generation time: 2026-10-21 10:02:55 CST)
 
 ### Packages
 
@@ -1035,7 +1035,7 @@
  x11-misc/picom-jonaburg                               | 8                  |            | https://github.com/jonaburg/picom                                          | jonaburg's picom fork with dual_kawase blur and rounded corners
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-terms/blackbox-terminal                           | 0.15.2             |            | https://gitlab.gnome.org/raggesilver/blackbox                              | A beautiful GTK 4 terminal
+ x11-terms/blackbox-terminal                           | 0.15.2-r1          |            | https://gitlab.gnome.org/raggesilver/blackbox                              | A beautiful GTK 4 terminal
    dev-libs/libpqmarble                                | 2.0.0_p20250109    |  D, RD     | https://gitlab.gnome.org/raggesilver/marble                                | Utility library for GNOME apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/termius                                     | 10.2.1             |            | https://termius.com/download/linux                                         | Desktop SSH Client
