@@ -3,7 +3,9 @@
 
 EAPI=8
 
-inherit cmake
+LLVM_COMPAT=( {19..22} )
+
+inherit cmake llvm-r2
 
 DESCRIPTION="LLDB Machine Interface Driver"
 HOMEPAGE="https://github.com/lldb-tools/lldb-mi"
@@ -16,8 +18,10 @@ SLOT="0"
 KEYWORDS="~amd64"
 
 DEPEND="
-	llvm-core/llvm:=
-	llvm-core/lldb
+	$(llvm_gen_dep '
+		=llvm-core/lldb-${LLVM_SLOT}*:=
+		llvm-core/llvm:${LLVM_SLOT}=
+	')
 "
 RDEPEND="${DEPEND}"
 
