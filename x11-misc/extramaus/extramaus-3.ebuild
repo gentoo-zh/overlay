@@ -13,7 +13,7 @@ S="${WORKDIR}"
 
 LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 #https://gist.github.com/ibLeDy/aecab4b95b242ff07108c6d58e35d421#file-extramaus-c-L18-L36
 DEPEND="x11-libs/libX11
 x11-libs/libXext"
