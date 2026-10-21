@@ -261,7 +261,7 @@ MY_P="tdesktop-${PV}-full"
 # Pinned by Telegram/build/prepare/prepare.py
 TLOTTIE_COMMIT="92df98dc209bc39b1e567ec74a8c86a0af5239de"
 WALLET_ENGINE_COMMIT="e59e0d89d7ee90c388bf36e3334c5b276f396697"
-PATCHES_COMMIT="aec474953ff7ee9b6e4cd9b8658288ea86d124f3"
+PATCHES_COMMIT="fe957833b84525e634a8d776a7f834ed536d9a21"
 SRC_URI="
 	https://github.com/telegramdesktop/tdesktop/releases/download/v${PV}/${MY_P}.tar.gz
 	https://github.com/dkaraush/tlottie/archive/${TLOTTIE_COMMIT}.tar.gz
@@ -397,6 +397,9 @@ src_prepare() {
 	sed -e '/find_package(lz4 /d' -i cmake/external/lz4/CMakeLists.txt || die
 	sed -e '/find_package(xxHash /d' -i cmake/external/xxhash/CMakeLists.txt || die
 	sed -e '/find_package(minizip /d' -i cmake/external/minizip/CMakeLists.txt || die
+	# KF6WindowSystem is only used with DESKTOP_APP_DISABLE_PRIVATE_QT_API
+	sed -e '/find_package(KF${QT_VERSION_MAJOR}WindowSystem /d' \
+		-i Telegram/lib_base/CMakeLists.txt || die
 
 	# Greedily remove ThirdParty directories, keep only ones that interest us
 	local keep=(
