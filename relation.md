@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 13:37:38 CST)
+(The last generation time: 2026-10-21 13:41:52 CST)
 
 ### Packages
 
@@ -62,7 +62,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.5.5              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/appflowy-bin                              | 0.14.8-r1          |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
+ app-editors/appflowy-bin                              | 0.14.10            |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/cursor                                    | 3.26.13            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -214,7 +214,7 @@
  app-misc/keyd                                         | 2.6.0              |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.1294           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.1307           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -720,7 +720,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/aliyunpan                                    | 0.4.0              |            | https://github.com/tickstep/aliyunpan                                      | aliyunpan cli client, support Webdav service, JavaScript plugin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/ananta                                       | 2.1.0              |            | https://github.com/cwt/ananta                                              | a powerful command-line tool
+ net-misc/ananta                                       | 2.1.1              |            | https://github.com/cwt/ananta                                              | a powerful command-line tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/another-redis-desktop-manager-bin            | 1.7.4-r1           |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
