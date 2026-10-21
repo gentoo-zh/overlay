@@ -1,7 +1,7 @@
 EAPI=8
 
 CRATES=""
-RUST_MIN_VER="1.88.0"
+RUST_MIN_VER="1.89.0"
 
 inherit cargo
 
@@ -23,8 +23,6 @@ LICENSE="GPL-3"
 # Dependent crate licenses
 LICENSE+="
 	Apache-2.0
-	BSD-2
-	BSD
 	Boost-1.0
 	ISC
 	MIT
