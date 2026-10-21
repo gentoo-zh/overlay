@@ -1,4 +1,4 @@
-# Copyright 1999-2023 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -9,7 +9,7 @@ DESCRIPTION="Disassembler library for x86 (32-bit shared library)"
 HOMEPAGE="https://www.deepin.org"
 
 COMMON_URI="https://community-packages.deepin.com/deepin/pool/non-free/u"
-SRC_URI="${COMMON_URI}/udis86/udis86_${PV}-${PR/r/}_i386.deb"
+SRC_URI="${COMMON_URI}/udis86/udis86_${PV}-4_i386.deb"
 
 S=${WORKDIR}
 LICENSE="BSD-2"
@@ -24,4 +24,5 @@ src_install() {
 	doins -r usr/bin usr/include usr/lib
 
 	fperms 0755 -R /usr/bin/
+	find "${ED}" -name '*.la' -delete || die
 }
