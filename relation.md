@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 05:49:48 CST)
+(The last generation time: 2026-10-21 09:55:55 CST)
 
 ### Packages
 
@@ -120,7 +120,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-libthai                                | 5.1.11             |            | https://github.com/fcitx/fcitx5-libthai                                    | Thai input method for Fcitx5 based on libthai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-mcbopomofo                             | 3.1.1              |            | https://github.com/openvanilla/fcitx5-mcbopomofo                           | McBopomofo (Traditional Chinese phonetic) input method for Fcitx5
+ app-i18n/fcitx-mcbopomofo                             | 3.1.1-r1           |            | https://github.com/openvanilla/fcitx5-mcbopomofo                           | McBopomofo (Traditional Chinese phonetic) input method for Fcitx5
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-meta                                   | 5.0.12-r4          |            | https://fcitx-im.org                                                       | Merge this to pull in Fcitx packages
    app-i18n/fcitx-anthy                                | 9999               | RD         | https://fcitx-im.org/                                                      | Japanese Anthy input methods for Fcitx5
@@ -265,7 +265,7 @@
  app-shells/oh-my-bash                                 | 9999               |            | https://ohmybash.nntoan.com/                                               | An open source, community-driven framework for managing your bash configuration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/zsh-theme-powerlevel10k                    | 1.20.0             |            | https://github.com/romkatv/powerlevel10k                                   | Theme for Zsh that emphasizes speed, flexibility and out-of-the-box experience
-   app-shells/gitstatus                                | 1.5.5              |  D, RD     | https://github.com/romkatv/gitstatus                                       | Git status for Bash and Zsh prompt
+   app-shells/gitstatus                                | 1.5.5-r1           |  D, RD     | https://github.com/romkatv/gitstatus                                       | Git status for Bash and Zsh prompt
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/cajviewer                                    | 9.0-r1             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -321,8 +321,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-lang/koka-bin                                     | 3.2.9              |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-libs/lunar-calendar                               | 3.0.1              |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
-   dev-libs/lunar-date                                 | 3.2.0              |  D         | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
+ dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
+   dev-libs/lunar-date                                 | 3.2.0              |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/v2ray-rules-dat-bin                          | 202607092306       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -379,7 +379,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/pyqt6-charts                               | 6.11.0             |            | https://www.riverbankcomputing.com/software/pyqtchart/                     | Python bindings for QtChart
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/pyrime                                     | 0.2.4              |            | https://github.com/rimeinn/pyrime                                          | rime for python
+ dev-python/pyrime                                     | 0.2.4-r1           |            | https://github.com/rimeinn/pyrime                                          | rime for python
    app-i18n/librime                                    | 9999               |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
    dev-python/autopxd2                                 | 4.0.1              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
      dev-python/headerkit                              | 0.46.2             | RD         | https://github.com/axiomantic/headerkit                                    | C/C++ header analysis toolkit with pluggable backends and writers
@@ -828,7 +828,7 @@
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
    acct-user/hysteria                                  | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/juicity                                     | 0.5.0              |            | https://github.com/juicity/juicity                                         | juicity is a quic-based proxy protocol
+ net-proxy/juicity                                     | 0.5.0-r1           |            | https://github.com/juicity/juicity                                         | juicity is a quic-based proxy protocol
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/naiveproxy-bin                              | 154.0.8037.49_p4   |            | https://github.com/klzgrad/naiveproxy                                      | A proxy using Chromium's network stack to camouflage traffic
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
