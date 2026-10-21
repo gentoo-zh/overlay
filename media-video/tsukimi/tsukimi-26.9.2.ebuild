@@ -29,7 +29,7 @@ LICENSE+="
 	CDLA-Permissive-2.0 ISC LGPL-2.1 MIT MPL-2.0 Unicode-3.0 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="clang"
 
