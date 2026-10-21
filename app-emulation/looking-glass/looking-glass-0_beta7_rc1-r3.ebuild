@@ -52,7 +52,10 @@ DEPEND="gui-libs/egl-wayland
 	obs? (
 		media-video/obs-studio
 	)"
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	acct-user/qemu
+"
 
 MY_CMAKE_PROJECT="client "
 
@@ -140,4 +143,9 @@ src_install() {
 	# install desktop
 	domenu "${FILESDIR}/${PN}.desktop"
 	newicon -s 128 "${S}/resources/icon-128x128.png" "${PN}.png"
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+	tmpfiles_process ${PN}.conf
 }
