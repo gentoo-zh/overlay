@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 09:55:55 CST)
+(The last generation time: 2026-10-21 10:02:14 CST)
 
 ### Packages
 
@@ -216,7 +216,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/magpie-bin                                   | 0.1.1294           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/mdx_util                                     | 20251029           |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
+ app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.33.0             |            | https://github.com/Twigpine/openclaude                                     | Open-source coding-agent CLI for cloud and local LLM providers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -881,7 +881,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-vpn/netbird                                       | 0.81.3             |            | https://netbird.io/                                                        | An Open Source Zero Trust Networking platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-vpn/rathole                                       | 0.5.0              |            | https://github.com/rathole-org/rathole                                     | A reverse proxy for NAT traversal
+ net-vpn/rathole                                       | 0.5.0-r1           |            | https://github.com/rathole-org/rathole                                     | A reverse proxy for NAT traversal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-vpn/sstp-server                                   | 0.7.2              |            | https://github.com/sorz/sstp-server/                                       | A Secure Socket Tunneling Protocol (SSTP) server implemented in Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
