@@ -18,9 +18,11 @@ KEYWORDS="~amd64"
 DEPEND="
 	media-libs/freetype:2
 	media-libs/glfw
-	media-video/mpv
-	x11-libs/gtk+
+	media-video/mpv:=[libmpv]
+	x11-libs/gtk+:3
 "
+RDEPEND="${DEPEND}"
+BDEPEND="virtual/pkgconfig"
 
 src_prepare() {
 	sed -i \
@@ -44,11 +46,11 @@ src_configure() {
 }
 
 src_install() {
-	insinto "/usr/lib64"
+	insinto /usr/$(get_libdir)
 	doins "${BUILD_DIR}"/third_party/nativefiledialog/src/libnfd.so.1.1.0
-	dosym ../../../../../../../../usr/lib64/libnfd.so.1.1.0 /usr/lib64/libnfd.so.1
+	dosym libnfd.so.1.1.0 /usr/$(get_libdir)/libnfd.so.1
 	cmake_src_install
-	dosym ../../../../../../../../usr/bin/ImPlay /usr/bin/implay
+	dosym ImPlay /usr/bin/implay
 	make_desktop_entry ${PN} "A Cross-Platform Desktop Media Player"
 }
 
