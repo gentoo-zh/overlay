@@ -1,0 +1,21 @@
+--- a/setup.py
++++ b/setup.py
+@@ -2,7 +2,7 @@
+ 
+ import os
+ from setuptools import setup
+-from distutils.command.build_py import build_py
++from setuptools.command.build_py import build_py
+ from subprocess import call
+ import json
+ import os.path
+@@ -44,8 +44,7 @@
+     long_description_content_type='text/markdown',
+     classifiers=[
+         "Development Status :: 3 - Alpha",
+-        "Topic :: Utilities",
+-        "License :: OSI Approved :: MIT License"
++        "Topic :: Utilities"
+     ],
+     cmdclass={'build_py': my_build_py}
+ )

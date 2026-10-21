@@ -17,6 +17,10 @@ KEYWORDS="~amd64 ~arm64 ~riscv ~sparc ~x86"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
+PATCHES=(
+	"${FILESDIR}"/${P}-setuptools.patch
+)
+
 BDEPEND="
 	test? (
 		$(python_gen_impl_dep sqlite)
