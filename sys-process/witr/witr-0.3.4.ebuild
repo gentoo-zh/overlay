@@ -13,7 +13,7 @@ LICENSE="Apache-2.0"
 # vendored dependencies in the upstream tarball
 LICENSE+=" BSD BSD-2 MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND=">=dev-lang/go-1.25.0"
 
