@@ -22,9 +22,11 @@ DEPEND="
 	sys-libs/libcap
 	dev-embedded/libftdi
 	cmsisdap? ( dev-libs/hidapi )
+	virtual/libudev:=
 	virtual/zlib
 "
 RDEPEND="${DEPEND}"
+BDEPEND="virtual/pkgconfig"
 
 # Upstream still sticks to old CMakeList.txt v3.5, skip checking for now
 CMAKE_QA_COMPAT_SKIP=1
