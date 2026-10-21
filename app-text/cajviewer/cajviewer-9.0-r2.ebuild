@@ -7,6 +7,8 @@ inherit desktop unpacker xdg
 DESCRIPTION="Document Viewer for CAJ, KDH, NH, TEB and PDF format"
 
 HOMEPAGE="https://cajviewer.cnki.net"
+# download.cnki.net may only serve this file to Hong Kong and mainland China;
+# elsewhere it returns a certificate for another host, so the fetch fails.
 SRC_URI="https://download.cnki.net/cajPackage/CAJLinuxPackage/${PN}_${PV}_amd64.deb"
 S="${WORKDIR}"
 
@@ -17,7 +19,7 @@ RESTRICT="bindist mirror strip"
 
 RDEPEND="
 	dev-db/freetds
-	dev-libs/libxml2
+	dev-libs/libxml2-compat:2
 	media-libs/tiff-compat:4
 "
 DEPEND="${RDEPEND}"
@@ -33,6 +35,8 @@ QA_PREBUILT="
 src_install(){
 	# fix preserved libs warning due to dev-qt/qtvirtualkeyboard
 	rm -f "${S}"/opt/cajviewer/plugins/platforminputcontexts/libqtvirtualkeyboardplugin.so || die
+	# needs libQt5Pdf.so.5, which the package does not bundle
+	rm -f "${S}"/opt/cajviewer/plugins/imageformats/libqpdf.so || die
 
 	insinto "/opt"
 	doins -r "./${MY_PREFIX}"
