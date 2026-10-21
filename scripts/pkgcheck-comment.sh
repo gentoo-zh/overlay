@@ -8,12 +8,7 @@ findings=$report_dir/findings.json
 body_file=$(mktemp)
 trap 'rm -f "$body_file"' EXIT
 
-# commits/{sha}/pulls returns nothing for a fork PR; the artifact is not trusted
-pulls=$(gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --paginate --slurp)
-matches=$(jq -r --arg head_sha "$HEAD_SHA" '
-    .[][] | select(.head.sha == $head_sha) | .number
-' <<< "$pulls")
-pr=${matches%%$'\n'*}
+pr=$(scripts/pr-at-commit.sh "$GITHUB_REPOSITORY" "$HEAD_SHA")
 if [ -z "$pr" ]; then
     echo 'no open pull request at this commit'
     exit 0
@@ -60,6 +55,16 @@ block() {
 
 count=$(wc -l < "$report_dir"/packages)
 if [ "$count" -eq 0 ]; then
+    {
+        echo '## Pull request pkgcheck report'
+        echo
+        echo "*Newest commit scanned*: \`$(cat "$report_dir"/commit)\`"
+        echo '*Status*: :white_check_mark: no packages touched'
+    } > "$body_file"
+    scripts/upsert-comment-section.sh "$GITHUB_REPOSITORY" "$pr" "$MARKER" pkgcheck "$body_file"
+    # emerge-on-pr skips a pull request that only touches .github, so drop its report here
+    : > "$body_file"
+    scripts/upsert-comment-section.sh "$GITHUB_REPOSITORY" "$pr" "$MARKER" elog "$body_file"
     echo 'no packages touched'
     exit 0
 fi
@@ -98,9 +103,7 @@ minor=$(list true style info)
         block 'New style and info findings' yes "$minor"
         block 'Existing findings in these packages' yes "$(list false error warning style info)"
     fi
-    echo
-    echo "${MARKER}"
 } > "$body_file"
 
-scripts/upsert-comment.sh "$GITHUB_REPOSITORY" "$pr" "$MARKER" "$body_file"
+scripts/upsert-comment-section.sh "$GITHUB_REPOSITORY" "$pr" "$MARKER" pkgcheck "$body_file"
 echo "commented on #${pr}"

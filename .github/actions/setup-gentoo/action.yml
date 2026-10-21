@@ -22,7 +22,7 @@ runs:
       run: |
         cat >> /etc/portage/make.conf << EOF
         MAKEOPTS="\${MAKEOPTS} -j$(nproc)"
-        PORTAGE_ELOG_CLASSES="qa warn error"
+        PORTAGE_ELOG_CLASSES="log warn error qa"
         PORTAGE_ELOG_SYSTEM="save"
         FETCHCOMMAND="\${FETCHCOMMAND} --no-verbose"
         RESUMECOMMAND="\${RESUMECOMMAND} --no-verbose"

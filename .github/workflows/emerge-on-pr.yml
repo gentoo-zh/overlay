@@ -72,6 +72,7 @@ jobs:
         ref: ${{ github.event.pull_request.head.sha }}
 
     - name: setup portage config
+      id: setup
       uses: ./.github/actions/setup-gentoo
 
     - name: setup cpu flags
@@ -85,22 +86,97 @@ jobs:
         fi
 
     - name: emerge --onlydeps packages
+      id: deps
+      shell: bash
       env:
         ATOM: ${{ matrix.target.package }}
       run: |
-        FEATURES="getbinpkg" emerge --onlydeps --jobs 2 --quiet --verbose --autounmask=y --autounmask-write=y --autounmask-continue=y "$ATOM"
+        FEATURES="getbinpkg" emerge --onlydeps --jobs 2 --quiet --verbose --autounmask=y --autounmask-write=y --autounmask-continue=y "$ATOM" 2>&1 | tee /var/tmp/deps.log
         rm -rf /var/log/portage/elog/*
 
     - name: emerge packages
+      id: emerge
+      shell: bash
       env:
         ATOM: ${{ matrix.target.package }}
-      run: emerge --verbose --autounmask=y --autounmask-write=y --autounmask-continue=y "$ATOM"
+      run: emerge --verbose --autounmask=y --autounmask-write=y --autounmask-continue=y "$ATOM" 2>&1 | tee /var/tmp/emerge.log
 
+    # Portage cleans the build directory of every package that merged, so what is left failed
+    - name: save failed build logs
+      if: ${{ failure() }}
+      env:
+        LOG: build-log-${{ strategy.job-index }}.log
+      run: |
+        for log in /var/tmp/portage/*/*/temp/build.log; do
+          [ -f "$log" ] || continue
+          pkg=${log#/var/tmp/portage/}
+          echo ">>> ${pkg%/temp/build.log}"
+          sed 's/\x1b\[[0-9;]*m//g' "$log"
+        done > "$LOG"
+        [ -s "$LOG" ] || rm -f "$LOG"
+
+    - name: upload failed build logs
+      id: build-logs
+      if: ${{ failure() }}
+      uses: actions/upload-artifact@v7
+      with:
+        path: build-log-${{ strategy.job-index }}.log
+        archive: false
+        if-no-files-found: ignore
+
+    - name: save portage elog
+      if: ${{ !cancelled() }}
+      env:
+        ATOM: ${{ matrix.target.package }}
+        PROFILE: ${{ matrix.target.profile }}
+        SETUP: ${{ steps.setup.outcome }}
+        DEPS: ${{ steps.deps.outcome }}
+        OUTCOME: ${{ steps.emerge.outcome }}
+        BUILD_LOGS: ${{ steps.build-logs.outputs.artifact-url }}
+      run: |
+        mkdir -p elog-report
+        echo "$ATOM" > elog-report/atom
+        echo "$PROFILE" > elog-report/profile
+        echo "$BUILD_LOGS" > elog-report/build-logs
+        echo "$SETUP" > elog-report/setup
+        echo "$DEPS" > elog-report/deps
+        echo "$OUTCOME" > elog-report/outcome
+        log=
+        [ "$DEPS" != failure ] || log=/var/tmp/deps.log
+        [ "$OUTCOME" != failure ] || log=/var/tmp/emerge.log
+        # news and config file notices differ between images and say nothing about the failure
+        [ -z "$log" ] || grep -vE '^ \* (IMPORTANT: |Use eselect news|See the CONFIGURATION FILES|sections of the emerge man page)' "$log" \
+          | cat -s | tail -n 40 > elog-report/output
+        # the onlydeps elog is left over when that step fails
+        [ "$OUTCOME" != skipped ] || exit 0
+        for file in /var/log/portage/elog/*; do
+          [ -f "$file" ] || continue
+          # category:pf:date.log -> category/pf
+          pkg=${file##*/}
+          pkg=${pkg%:*}
+          echo ">>> ${pkg/://}"
+          cat "$file"
+        done | awk '
+          # pkg_pretend writes a second file for the package, and an unsaved INFO section
+          # between two sections of the same class repeats their header
+          /^>>> / { if ($0 == pkg) next; pkg = $0; section = "" }
+          /^(LOG|WARN|ERROR|QA): [a-z]+$/ { if ($0 == section) next; section = $0 }
+          { print }
+        ' > elog-report/elog
+
+    - name: upload portage elog
+      if: ${{ !cancelled() }}
+      uses: actions/upload-artifact@v7
+      with:
+        name: elog-${{ strategy.job-index }}
+        path: elog-report/
+
+    # warn and log elog, such as CONFIG_CHECK without kernel sources, only go to the PR comment
     - name: check portage elog
       run: |
-        if ls /var/log/portage/elog/* 1> /dev/null 2>&1; then
-          echo "Found Portage elog messages:"
-          cat /var/log/portage/elog/*
+        cat elog-report/elog
+        if grep -qE '^(QA|ERROR): [a-z]+$' elog-report/elog; then
+          echo "Found QA or error elog messages."
           exit 1
         fi
-        echo "No elog messages found."
+        echo "No QA or error elog messages found."
