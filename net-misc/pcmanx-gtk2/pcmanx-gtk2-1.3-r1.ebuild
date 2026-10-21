@@ -15,6 +15,7 @@ KEYWORDS="~amd64"
 IUSE="+libnotify +proxy iplookup +wget"
 
 COMMON_DEPEND="
+	dev-libs/libltdl
 	libnotify? ( x11-libs/libnotify )
 	x11-libs/libXft
 	>=x11-libs/gtk+-2.4:2
