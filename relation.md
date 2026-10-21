@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 14:42:39 CST)
+(The last generation time: 2026-10-21 14:43:19 CST)
 
 ### Packages
 
@@ -754,7 +754,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/motrix-next-bin                              | 3.9.9              |            | https://motrix-next.pages.dev                                              | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/ntpd-rs                                      | 1.9.0              |            | https://github.com/pendulum-project/ntpd-rs                                | Full-featured implementation of NTP with NTS support
+ net-misc/ntpd-rs                                      | 1.9.0-r1           |            | https://github.com/pendulum-project/ntpd-rs                                | Full-featured implementation of NTP with NTS support
    acct-group/ntpd-rs                                  | 0                  | RD         |                                                                            | Full-featured implementation of NTP with NTS support
    acct-group/ntpd-rs-observe                          | 0                  | RD         |                                                                            | Full-featured implementation of NTP with NTS support
    acct-user/ntpd-rs                                   | 0                  | RD         |                                                                            | user for ntpd-rs daemon
