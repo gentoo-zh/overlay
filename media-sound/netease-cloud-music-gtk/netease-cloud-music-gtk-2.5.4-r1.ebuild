@@ -31,7 +31,7 @@ LICENSE+="
 	Unicode-3.0
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 DEPEND="
 	dev-libs/glib:2
