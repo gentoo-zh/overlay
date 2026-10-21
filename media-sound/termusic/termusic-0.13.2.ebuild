@@ -29,7 +29,7 @@ LICENSE+="
 	Unicode-3.0 Unicode-DFS-2016 ZLIB
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 IUSE="+symphonia gst mpv +yt-dlp"
 REQUIRED_USE="^^ ( symphonia gst mpv )"
