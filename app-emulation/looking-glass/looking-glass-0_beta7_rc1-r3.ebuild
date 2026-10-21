@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit cmake tmpfiles linux-info desktop xdg
+inherit cmake tmpfiles desktop xdg
 
 MY_PV="${PV//0_beta/B}"
 MY_PV="${MY_PV//_/-}"
@@ -115,7 +115,6 @@ src_configure() {
 		BUILD_DIR="${WORKDIR}/${prj}"
 		cmake_src_configure "$@"
 	done
-	set_arch_to_kernel
 }
 
 src_compile() {
