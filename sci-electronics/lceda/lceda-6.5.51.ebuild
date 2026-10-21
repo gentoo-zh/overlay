@@ -7,12 +7,15 @@ inherit desktop xdg
 
 DESCRIPTION="LCEDA (binary package)"
 HOMEPAGE="https://lceda.cn/"
-SRC_URI="https://image.lceda.cn/files/${PN}-linux-x64-${PV}.zip"
+SRC_URI="
+	amd64? ( https://image.lceda.cn/files/${PN}-linux-x64-${PV}.zip )
+	arm64? ( https://image.lceda.cn/files/${PN}-linux-arm64-${PV}.zip )
+"
 
-S="${WORKDIR}/lceda-linux-x64"
+S="${WORKDIR}/${PN}"
 LICENSE="LCEDA-Software-EULA LCEDA-Distribution-License"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 DEPEND="
 	>=app-accessibility/at-spi2-core-2.46.0:2
@@ -51,6 +54,11 @@ BDEPEND="app-arch/unzip"
 RESTRICT="strip"
 
 QA_PREBUILT="*"
+
+src_unpack() {
+	default
+	mv "${WORKDIR}"/${PN}-linux-* "${S}" || die
+}
 
 src_install(){
 	insinto /opt/lceda
