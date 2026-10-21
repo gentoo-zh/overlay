@@ -37,7 +37,7 @@ LICENSE="GPL-3"
 # glfw -> zlib
 LICENSE+=" MPL-2.0 Apache-2.0 MIT GPL-2 BSD ZLIB"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="glfw +hwaccel opencc +sdl2 +webp wayland +X"
 REQUIRED_USE="
 	|| ( wayland X )
