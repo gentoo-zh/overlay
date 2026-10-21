@@ -11,13 +11,17 @@ HOMEPAGE="https://github.com/farion1231/cc-switch"
 SRC_URI="amd64? (
 	https://github.com/farion1231/cc-switch/releases/download/v${PV}/CC-Switch-v${PV}-Linux-x86_64.deb
 		-> ${P}-amd64.deb
+)
+arm64? (
+	https://github.com/farion1231/cc-switch/releases/download/v${PV}/CC-Switch-v${PV}-Linux-arm64.deb
+		-> ${P}-arm64.deb
 )"
 
 S="${WORKDIR}"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 IUSE="+X wayland"
 
 RESTRICT="strip"
