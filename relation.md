@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 07:27:12 CST)
+(The last generation time: 2026-10-22 07:53:52 CST)
 
 ### Packages
 
@@ -974,7 +974,6 @@
                                                        | 6.18.57-r100       |            |                                                                            |
                                                        | 6.18.58-r100       |            |                                                                            |
                                                        | 7.1.13-r100        |            |                                                                            |
-                                                       | 7.2.10-r100        |            |                                                                            |
                                                        | 7.2.11-r100        |            |                                                                            |
                                                        | 7.2.12-r100        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -984,8 +983,8 @@
                                                        | 7.2.11             |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.11             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.12             |            |                                                                            |
-   sys-kernel/xanmod-kernel                            | 7.2.10             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
-                                                       | 7.2.11             |            |                                                                            |
+   sys-kernel/xanmod-kernel                            | 7.2.11             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
+                                                       | 7.2.12             |            |                                                                            |
    sys-kernel/xanmod-sources                           | 7.2.11             | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
                                                        | 7.2.12             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
