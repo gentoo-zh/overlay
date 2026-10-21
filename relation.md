@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 07:23:05 CST)
+(The last generation time: 2026-10-22 07:26:32 CST)
 
 ### Packages
 
@@ -445,9 +445,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pack-cli                                     | 0.40.9             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
+ dev-util/pack-cli                                     | 0.40.10            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pack-cli-bin                                 | 0.40.9             |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
+ dev-util/pack-cli-bin                                 | 0.40.10            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.99.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
                                                        | 1.3.0              |            |                                                                            |
