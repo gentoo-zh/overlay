@@ -25,7 +25,7 @@ LICENSE+="
 	BZIP2
 "
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RUST_MIN_VER="1.88"
 
 src_prepare () {
