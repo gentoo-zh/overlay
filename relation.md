@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-21 13:41:52 CST)
+(The last generation time: 2026-10-21 13:47:33 CST)
 
 ### Packages
 
@@ -459,7 +459,7 @@
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
                                                        | 2.47.1             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/reasonix-desktop-bin                         | 1.39.8             |            | https://reasonix.io                                                        | Reasonix desktop client
+ dev-util/reasonix-desktop-bin                         | 1.39.9             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/redpanda-cpp                                 | 3.4                |            | http://royqh.net/redpandacpp/                                              | A lightweight yet powerful C/C++/GNU Assembly IDE
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
