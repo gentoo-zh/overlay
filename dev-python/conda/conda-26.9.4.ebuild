@@ -20,6 +20,7 @@ DEPEND="dev-vcs/git
 		$(python_gen_cond_dep '
 		dev-python/archspec[${PYTHON_USEDEP}]
 		dev-python/boltons[${PYTHON_USEDEP}]
+		>=dev-python/certifi-2026.10.19[${PYTHON_USEDEP}]
 		dev-python/charset-normalizer[${PYTHON_USEDEP}]
 		dev-python/conda-package-handling[${PYTHON_USEDEP}]
 		dev-python/conda-package-streaming[${PYTHON_USEDEP}]
