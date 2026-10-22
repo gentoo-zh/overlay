@@ -23,6 +23,7 @@ RESTRICT="test"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 DEPEND="app-arch/libarchive:=
+	app-arch/bzip2:=
 	app-arch/zstd:=
 	dev-cpp/cli11
 	dev-cpp/nlohmann_json
@@ -34,7 +35,6 @@ DEPEND="app-arch/libarchive:=
 	sys-libs/libsolv:=[conda]
 	mamba? (
 		app-crypt/mit-krb5
-		app-arch/bzip2
 		app-arch/lz4
 		app-arch/xz-utils
 		dev-libs/libunistring
