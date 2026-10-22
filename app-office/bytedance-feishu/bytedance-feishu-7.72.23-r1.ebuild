@@ -35,7 +35,30 @@ DEPEND="
 BDEPEND="
 	dev-util/patchelf
 "
-RDEPEND="${DEPEND}"
+RDEPEND="
+	${DEPEND}
+	app-accessibility/at-spi2-core:2
+	dev-libs/expat
+	dev-libs/glib:2
+	dev-libs/libgcrypt
+	dev-libs/nspr
+	media-libs/libglvnd
+	net-libs/gnutls
+	net-print/cups
+	sys-apps/dbus
+	virtual/libudev
+	virtual/zlib
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
+	x11-libs/libX11
+	x11-libs/libXcomposite
+	x11-libs/libXdamage
+	x11-libs/libXfixes
+	x11-libs/libXrandr
+	x11-libs/libXtst
+	x11-libs/pango
+	x11-libs/pixman
+"
 
 src_prepare() {
 	default
