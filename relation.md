@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 05:59:50 CST)
+(The last generation time: 2026-10-23 06:00:23 CST)
 
 ### Packages
 
@@ -274,7 +274,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/goldendict                                   | 26.8.0             |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
    app-arch/libzim                                     | 9.5.1              |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
-                                                       | 9.8.2              |            |                                                                            |
+                                                       | 9.8.2-r1           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/groff-utf8                                   | 0-r2               |            | https://www.haible.de/bruno/packages-groff-utf8.html                       | GNU groff wrapper allowing UTF-8 input
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -629,7 +629,7 @@
      dev-python/fluent-syntax                          | 0.19.0             | RD         | https://github.com/projectfluent/python-fluent                             | Parser and serializer for Fluent localization files
    dev-python/janus                                    | 2.0.0              | RD         | https://github.com/aio-libs/janus                                          | Mixed sync-async queue to interoperate between asyncio tasks and classic threads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/go-musicfox                               | 5.1.0              |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
+ media-sound/go-musicfox                               | 5.1.0-r1           |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/harmonoid                                 | 0.3.32-r1          |            | https://harmonoid.com/                                                     | Plays & manages your music library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
