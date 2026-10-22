@@ -12,14 +12,23 @@ MY_P="${D_PN}-${PVR}"
 
 DESCRIPTION="A Desktop App for YouTube Music"
 HOMEPAGE="https://github.com/ytmdesktop/ytmdesktop"
-SRC_URI="https://github.com/ytmdesktop/ytmdesktop/releases/download/v${PV}/${D_PN}_${PV}_amd64.deb -> ${MY_P}.deb"
+SRC_URI="
+	amd64? (
+		https://github.com/ytmdesktop/ytmdesktop/releases/download/v${PV}/${D_PN}_${PV}_amd64.deb
+			-> ${MY_P}.deb
+	)
+	arm64? (
+		https://github.com/ytmdesktop/ytmdesktop/releases/download/v${PV}/${D_PN}_${PV}_arm64.deb
+			-> ${MY_P}-arm64.deb
+	)
+"
 
 S="${WORKDIR}"
 
 LICENSE="GPL-3"
 SLOT="0"
 
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64"
 
 RDEPEND="
 		>=app-accessibility/at-spi2-core-2.46.0:2
