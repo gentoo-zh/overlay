@@ -21,6 +21,8 @@ newver = "new_ver.json"
 
 #["acct-group/onepassword"]
 
+#["acct-group/onepassword-cli"]
+
 #["acct-group/onepassword-mcp"]
 
 #["acct-group/queqiao"]
@@ -59,6 +61,12 @@ suite = "stable"
 # strip_release = true
 github_account = ["yangmame", "gouwazi"]
 autobump = true
+
+["app-admin/1password-cli"]
+source = "regex"
+url = "https://app-updates.agilebits.com/check/1/0/CLI2/en/2.0.0/N"
+regex = '"version":"([\d.]+)"'
+github_account = "Zakkaus"
 
 ["app-admin/chezmoi"]
 source = "github"
