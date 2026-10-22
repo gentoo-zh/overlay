@@ -24,7 +24,25 @@ SLOT="0"
 IUSE="static perl python ruby tcl rpm pubkey suse comps helix debian mdk arch cudf conda appdata lzma bzip2 zstd zchunk libxml2"
 
 RDEPEND="
-	zchunk? ( app-arch/zchunk )
+	virtual/zlib:=
+	bzip2? ( app-arch/bzip2:= )
+	lzma? ( app-arch/xz-utils )
+	arch? ( app-arch/xz-utils )
+	debian? ( app-arch/xz-utils )
+	zstd? ( app-arch/zstd:= )
+	zchunk? (
+		app-arch/zchunk
+		app-arch/zstd:=
+	)
+	libxml2? ( dev-libs/libxml2:= )
+	!libxml2? (
+		appdata? ( dev-libs/expat )
+		comps? ( dev-libs/expat )
+		helix? ( dev-libs/expat )
+		mdk? ( dev-libs/expat )
+		rpm? ( dev-libs/expat )
+		suse? ( dev-libs/expat )
+	)
 	python? ( ${PYTHON_DEPS} )
 "
 DEPEND="
@@ -38,6 +56,7 @@ DEPEND="
 	)
 "
 BDEPEND="${DEPEND}"
+DEPEND+=" ${RDEPEND}"
 REQUIRED_USE="python? ( ${PYTHON_REQUIRED_USE} )"
 
 src_prepare() {
