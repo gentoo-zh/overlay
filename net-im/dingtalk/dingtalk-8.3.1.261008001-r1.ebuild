@@ -8,13 +8,17 @@ inherit desktop unpacker xdg
 
 DESCRIPTION="Communication platform that supports video and audio conferencing"
 HOMEPAGE="https://www.dingtalk.com"
-SRC_URI="https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release/com.alibabainc.${PN}_${PV}_amd64.deb"
+_BASE_URI="https://dtapp-pub.dingtalk.com/dingtalk-desktop/xc_dingtalk_update/linux_deb/Release"
+SRC_URI="
+	amd64? ( ${_BASE_URI}/com.alibabainc.${PN}_${PV}_amd64.deb )
+	arm64? ( ${_BASE_URI}/com.alibabainc.${PN}_${PV}_arm64.deb )
+"
 
 S=${WORKDIR}
 
 LICENSE="DingTalk-EULA"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 RESTRICT="strip mirror bindist"
 
@@ -46,13 +50,18 @@ RDEPEND="
 	x11-libs/xcb-util-renderutil
 	x11-libs/xcb-util-wm
 	virtual/libcrypt
+	arm64? (
+		media-libs/gst-plugins-bad:1.0
+		media-libs/gst-plugins-base:1.0[opengl]
+		media-libs/gstreamer:1.0
+	)
 "
 
 DEPEND="${RDEPEND}"
 
 BDEPEND="
 	dev-util/patchelf
-	dev-util/execstack
+	amd64? ( dev-util/execstack )
 "
 
 QA_PREBUILT="*"
@@ -81,12 +90,20 @@ src_install() {
 	# Drop the obsolete diagnostic tool chain that requires removed PangoX libs.
 	rm -rf "${dingtalk_dir}"/doctor \
 		"${dingtalk_dir}"/doctor_config \
-		"${dingtalk_dir}"/libgdkglext-x11-1.0.so.0 \
-		"${dingtalk_dir}"/libgtkglext-x11-1.0.so \
-		"${dingtalk_dir}"/libgtkglext-x11-1.0.so.0 || die
+		"${dingtalk_dir}"/libgdkglext-x11-1.0.so* \
+		"${dingtalk_dir}"/libgtkglext-x11-1.0.so* || die
 
 	# Fix  */dingtalk_dll.so: cannot enable executable stack as shared object requires: Invalid argument
-	execstack -c "${dingtalk_dir}"/{dingtalk_dll,libconference_new}.so || die
+	# The arm64 build already has a non-executable stack.
+	if use amd64; then
+		execstack -c "${dingtalk_dir}"/{dingtalk_dll,libconference_new}.so || die
+	fi
+
+	# The arm64 libpng16 links ./libz.so.1, but the bundled libz is removed.
+	if use arm64; then
+		patchelf --replace-needed ./libz.so.1 libz.so.1 \
+			"${dingtalk_dir}"/libpng16.so.16 || die
+	fi
 
 	# Set RPATH for preserve-libs handling
 	pushd "${dingtalk_dir}" || die
