@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 06:10:18 CST)
+(The last generation time: 2026-10-23 06:13:42 CST)
 
 ### Packages
 
@@ -272,7 +272,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/cajviewer                                    | 9.0-r3             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/goldendict                                   | 26.8.0             |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
+ app-text/goldendict                                   | 26.8.0-r1          |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
    app-arch/libzim                                     | 9.5.1              |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
                                                        | 9.8.2-r1           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
