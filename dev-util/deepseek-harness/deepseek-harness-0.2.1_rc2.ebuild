@@ -15,11 +15,35 @@ SRC_URI="
 	https://github.com/gentoo-zh-drafts/deepseek-harness/releases/download/v${MY_PV}/${PN}-${MY_PV}-node_modules.tar.xz
 "
 
+# The vendored node_modules only carries the linux-x64 native packages;
+# fetch their arm64 counterparts from the npm registry.
+ARM64_PACKAGES=(
+	@deepseek-ai/node-addon-system-linux-arm64:0.1.2
+	@img/sharp-libvips-linux-arm64:1.3.4
+	@img/sharp-linux-arm64:0.35.5
+	@koromix/koffi-linux-arm64:3.1.1
+	@vscode/ripgrep-linux-arm64:1.18.0
+	node-addon-require-builtin-linux-arm64-gnu:0.1.9
+	sherpa-onnx-linux-arm64:1.13.8
+)
+for _p in "${ARM64_PACKAGES[@]}"; do
+	_n=${_p%:*}
+	_v=${_p##*:}
+	_f=${_n#@}
+	SRC_URI+="
+		arm64? (
+			https://registry.npmjs.org/${_n}/-/${_n##*/}-${_v}.tgz
+				-> ${PN}-${MY_PV}-${_f//\//-}-${_v}.tgz
+		)
+	"
+done
+unset _p _n _v _f
+
 S="${WORKDIR}/package"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 RESTRICT="strip"
 
 # Prebuilt native addons ship from the npm platform packages.
@@ -30,21 +54,40 @@ QA_PREBUILT="
 
 RDEPEND=">=net-libs/nodejs-22.19"
 
+src_unpack() {
+	unpack ${PN}-${MY_PV}.tgz ${PN}-${MY_PV}-node_modules.tar.xz
+
+	if use arm64; then
+		local p n v f
+		for p in "${ARM64_PACKAGES[@]}"; do
+			n=${p%:*}
+			v=${p##*:}
+			f=${n#@}
+			rm -rf "${S}/node_modules/${n/arm64/x64}" || die
+			mkdir -p "${S}/node_modules/${n}" || die
+			tar -xzf "${DISTDIR}/${PN}-${MY_PV}-${f//\//-}-${v}.tgz" \
+				--strip-components=1 -C "${S}/node_modules/${n}" || die
+		done
+	fi
+}
+
 src_prepare() {
 	default
-	# amd64 only ships the linux-x64 prebuilds.
+	local arch=x64 other=arm64
+	use arm64 && { arch=arm64; other=x64; }
+	# Keep only the node-pty prebuilds for this arch.
 	rm -rf "${S}"/node_modules/node-pty/prebuilds/win32-* \
 		"${S}"/node_modules/node-pty/prebuilds/darwin-* \
-		"${S}"/node_modules/node-pty/prebuilds/linux-arm64 \
+		"${S}"/node_modules/node-pty/prebuilds/linux-${other} \
 		"${S}"/node_modules/node-pty/third_party/conpty || die
-	# koffi-linux-x64 and node-addon-system-linux-x64 ship glibc and musl
+	# koffi-linux-* and node-addon-system-linux-* ship glibc and musl
 	# builds; keep the active libc.
 	if use elibc_musl; then
-		rm -rf "${S}"/node_modules/@koromix/koffi-linux-x64/linux_x64 \
-			"${S}"/node_modules/@deepseek-ai/node-addon-system-linux-x64/bin/glibc || die
+		rm -rf "${S}"/node_modules/@koromix/koffi-linux-${arch}/linux_${arch} \
+			"${S}"/node_modules/@deepseek-ai/node-addon-system-linux-${arch}/bin/glibc || die
 	else
-		rm -rf "${S}"/node_modules/@koromix/koffi-linux-x64/musl_x64 \
-			"${S}"/node_modules/@deepseek-ai/node-addon-system-linux-x64/bin/musl || die
+		rm -rf "${S}"/node_modules/@koromix/koffi-linux-${arch}/musl_${arch} \
+			"${S}"/node_modules/@deepseek-ai/node-addon-system-linux-${arch}/bin/musl || die
 	fi
 }
 
