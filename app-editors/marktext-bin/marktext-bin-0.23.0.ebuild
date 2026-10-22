@@ -7,12 +7,21 @@ inherit desktop xdg unpacker
 
 DESCRIPTION="A simple and elegant markdown editor, available for Linux, macOS and Windows"
 HOMEPAGE="https://github.com/marktext/marktext"
-SRC_URI="https://github.com/marktext/marktext/releases/download/v${PV}/${PN%-bin}-linux-${PV}.deb -> ${P}.deb"
+SRC_URI="
+	amd64? (
+		https://github.com/marktext/marktext/releases/download/v${PV}/${PN%-bin}-linux-${PV}.deb
+			-> ${P}.deb
+	)
+	arm64? (
+		https://github.com/marktext/marktext/releases/download/v${PV}/${PN%-bin}-linux-arm64-${PV}.deb
+			-> ${P}-arm64.deb
+	)
+"
 
 S="${WORKDIR}"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	app-accessibility/at-spi2-core:2
@@ -53,6 +62,8 @@ QA_PREBUILT="
 	opt/MarkText/marktext
 	opt/MarkText/resources/app.asar.unpacked/node_modules/*
 "
+
+QA_PRESTRIPPED="opt/MarkText/chrome-sandbox"
 
 src_prepare(){
 	default
