@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 15:42:07 CST)
+(The last generation time: 2026-10-22 15:47:41 CST)
 
 ### Packages
 
@@ -938,31 +938,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-fs/systemd-zpool-scrub                            | 9999               |            | https://github.com/lnicola/systemd-zpool-scrub                             | Systemd service for automatic ZFS zpool scrubbing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel                          | 6.12.113           |            | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
-                                                       | 6.12.114           |            |                                                                            |
-                                                       | 6.18.57            |            |                                                                            |
-                                                       | 6.18.58            |            |                                                                            |
-                                                       | 7.1.13             |            |                                                                            |
-                                                       | 7.2.11             |            |                                                                            |
-                                                       | 7.2.12             |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.113           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.12.114           |            |                                                                            |
-                                                       | 6.18.57            |            |                                                                            |
-                                                       | 6.18.58            |            |                                                                            |
-                                                       | 7.1.13             |            |                                                                            |
-                                                       | 7.2.11             |            |                                                                            |
-                                                       | 7.2.12             |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-kernel/gentoo-cjk-sources                         | 6.12.113           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
-                                                       | 6.12.114           |            |                                                                            |
-                                                       | 6.18.57            |            |                                                                            |
-                                                       | 6.18.58            |            |                                                                            |
-                                                       | 7.1.13             |            |                                                                            |
-                                                       | 7.2.11             |            |                                                                            |
-                                                       | 7.2.12             |            |                                                                            |
-                                                       | 7.3.0              |            |                                                                            |
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/mkinitcpio                                 | 42.2               |            | https://github.com/archlinux/mkinitcpio                                    | Modular initramfs image creation utility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-libs/elog-functions                               | 0.0.2              |            | http://xochitl.matem.unam.mx/~canek/gentoo-systemd-only/index.html         | Compatibility functions for the log eclass functions of OpenRC
@@ -979,10 +954,32 @@
                                                        | 7.2.11-r100        |            |                                                                            |
                                                        | 7.2.12-r100        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/linux-sources                                 | 3-r12              |            |                                                                            | Virtual for Linux kernel sources
+ virtual/linux-sources                                 | 3-r13              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 6.18.55-r1         |            |                                                                            |
                                                        | 7.2.11             |            |                                                                            |
+   sys-kernel/gentoo-cjk-kernel                        | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.12.114           |            |                                                                            |
+                                                       | 6.18.57            |            |                                                                            |
+                                                       | 6.18.58            |            |                                                                            |
+                                                       | 7.1.13             |            |                                                                            |
+                                                       | 7.2.11             |            |                                                                            |
+                                                       | 7.2.12             |            |                                                                            |
+   sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
+                                                       | 6.12.114           |            |                                                                            |
+                                                       | 6.18.57            |            |                                                                            |
+                                                       | 6.18.58            |            |                                                                            |
+                                                       | 7.1.13             |            |                                                                            |
+                                                       | 7.2.11             |            |                                                                            |
+                                                       | 7.2.12             |            |                                                                            |
+   sys-kernel/gentoo-cjk-sources                       | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 6.12.114           |            |                                                                            |
+                                                       | 6.18.57            |            |                                                                            |
+                                                       | 6.18.58            |            |                                                                            |
+                                                       | 7.1.13             |            |                                                                            |
+                                                       | 7.2.11             |            |                                                                            |
+                                                       | 7.2.12             |            |                                                                            |
+                                                       | 7.3.0              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.11             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.12             |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.11             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
