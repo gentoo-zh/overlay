@@ -28,4 +28,7 @@ RDEPEND="
 		sys-kernel/linux-next
 		sys-kernel/asahi-sources
 		sys-kernel/cachyos-sources
+		sys-kernel/gentoo-cjk-sources
+		sys-kernel/gentoo-cjk-kernel
+		sys-kernel/gentoo-cjk-kernel-bin
 	)"
