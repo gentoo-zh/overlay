@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 06:24:34 CST)
+(The last generation time: 2026-10-23 06:25:06 CST)
 
 ### Packages
 
@@ -289,7 +289,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/stirling-pdf-bin                             | 3.2.0-r1           |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/xreader                                      | 4.6.9              |            | https://github.com/linuxmint/xreader                                       | Document viewer for the X-Apps project
+ app-text/xreader                                      | 4.6.9-r1           |            | https://github.com/linuxmint/xreader                                       | Document viewer for the X-Apps project
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/easymotion                                    | 3.0.1              |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
