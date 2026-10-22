@@ -23,7 +23,13 @@ import sys
 from pkgcheck.reporters import JsonStream
 
 LEVELS = ("error", "warning", "style", "info")
-GENTOO_CI_ERRORS = {"BadKeywords", "MissingLicenseRestricts", "UnknownManifest", "VisibleVcsPkg"}
+GENTOO_CI_ERRORS = {
+    "BadKeywords",
+    "BadWhitespaceCharacter",
+    "MissingLicenseRestricts",
+    "UnknownManifest",
+    "VisibleVcsPkg",
+}
 LINE_NUMBERS = re.compile(r"\blines?:? \d+(?:, \d+)*")
 
 
