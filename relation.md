@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 05:58:23 CST)
+(The last generation time: 2026-10-23 05:59:50 CST)
 
 ### Packages
 
@@ -165,7 +165,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-zhuyin                                 | 5.1.9-r1           |            | https://github.com/fcitx/fcitx5-zhuyin                                     | Zhuyin (Bopomofo) input method for Fcitx5 based on libzhuyin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/libime-jyutping                              | 1.0.18             |            | https://github.com/fcitx/libime-jyutping                                   | A library make use of libime to implement jyutping input method
+ app-i18n/libime-jyutping                              | 1.0.18-r1          |            | https://github.com/fcitx/libime-jyutping                                   | A library make use of libime to implement jyutping input method
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/lunar                                        | 2.2_p10            |            | https://packages.debian.org/unstable/utils/lunar                           | Chinese Lunar Calendar conversion utility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
