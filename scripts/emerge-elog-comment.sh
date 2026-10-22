@@ -41,6 +41,17 @@ sections() {
     grep -cE "^(${2}): [a-z]+\$" "$1" || true
 }
 
+# summary <qa> <errors> <warnings> <messages>: "1 QA, 2 log", empty without sections
+summary() {
+    local counts=() text
+    [ "$1" -eq 0 ] || counts+=("$1 QA")
+    [ "$2" -eq 0 ] || counts+=("$2 error")
+    [ "$3" -eq 0 ] || counts+=("$3 warn")
+    [ "$4" -eq 0 ] || counts+=("$4 log")
+    text=$(printf '%s, ' "${counts[@]}")
+    echo "${text%, }"
+}
+
 # add_detail <atom> <profile> <title> <file> [<build-log-url>]: a collapsed block, shared
 # by the profiles that printed the same text
 keys=()
@@ -64,6 +75,16 @@ add_detail() {
     fi
 }
 
+# add_need <atom> <profile> <entry>: an entry autounmask added, shared by the profiles
+# that needed it
+need_keys=()
+declare -A need_profiles
+add_need() {
+    local key="$1"$'\t'"$3"
+    [ -n "${need_profiles[$key]+set}" ] || need_keys+=("$key")
+    need_profiles[$key]+="${need_profiles[$key]:+, }<code>$2</code>"
+}
+
 t_atom=()
 t_profile=()
 t_emerge=()
@@ -71,6 +92,7 @@ t_elog=()
 broken=0
 output=0
 failing=0
+dependencies_failing=0
 warned=0
 logged=0
 for dir in "${targets[@]}"; do
@@ -90,12 +112,24 @@ for dir in "${targets[@]}"; do
             *) emerge=unknown ;;
         esac
     fi
-    [ "$outcome" = success ] || broken=$(( broken + 1 ))
+    if [ "$outcome" != success ]; then
+        broken=$(( broken + 1 ))
+    elif [ "$(field "$dir" unmerge)" = failure ]; then
+        emerge='unmerge failed'
+        broken=$(( broken + 1 ))
+    fi
     build_logs=$(field "$dir" build-logs)
     [[ $build_logs == "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/"* ]] || build_logs=
     if [ -s "$dir/output" ]; then
         add_detail "$atom" "$profile" 'emerge output' "$dir/output" "$build_logs"
         output=1
+    fi
+    # the pull request's run wrote the entries, so only the first 20 and atom and USE
+    # flag characters are kept
+    if [ -s "$dir/autounmask" ]; then
+        while IFS= read -r entry; do
+            [ -z "$entry" ] || add_need "$atom" "$profile" "$entry"
+        done < <(head -n 20 "$dir/autounmask" | cut -c 1-200 | tr -cd '[:alnum:] /._+=~@:*<>!\n-')
     fi
     elog=$dir/elog
     if [ ! -s "$elog" ]; then
@@ -104,24 +138,34 @@ for dir in "${targets[@]}"; do
             *) verdict=N/A ;;
         esac
     else
-        qa=$(sections "$elog" QA)
-        errors=$(sections "$elog" ERROR)
-        warnings=$(sections "$elog" WARN)
-        messages=$(sections "$elog" LOG)
-        counts=()
-        [ "$qa" -eq 0 ] || counts+=("${qa} QA")
-        [ "$errors" -eq 0 ] || counts+=("${errors} error")
-        [ "$warnings" -eq 0 ] || counts+=("${warnings} warn")
-        [ "$messages" -eq 0 ] || counts+=("${messages} log")
+        # only the target's own QA and error elog fails the job; older reports have no
+        # target-elog and count every package as the target
+        target=$dir/target-elog
+        [ -f "$target" ] || target=$elog
+        qa=$(sections "$target" QA)
+        errors=$(sections "$target" ERROR)
+        warnings=$(sections "$target" WARN)
+        messages=$(sections "$target" LOG)
+        dep_qa=$(( $(sections "$elog" QA) - qa ))
+        dep_errors=$(( $(sections "$elog" ERROR) - errors ))
+        dep_warnings=$(( $(sections "$elog" WARN) - warnings ))
+        dep_messages=$(( $(sections "$elog" LOG) - messages ))
         if [ $(( qa + errors )) -gt 0 ]; then
             failing=$(( failing + 1 ))
-        elif [ "$warnings" -gt 0 ]; then
+        elif [ $(( dep_qa + dep_errors )) -gt 0 ]; then
+            dependencies_failing=$(( dependencies_failing + 1 ))
+        elif [ $(( warnings + dep_warnings )) -gt 0 ]; then
             warned=$(( warned + 1 ))
         else
             logged=$(( logged + 1 ))
         fi
-        verdict=$(printf '%s, ' "${counts[@]}")
-        verdict=${verdict%, }
+        verdict=$(summary "$qa" "$errors" "$warnings" "$messages")
+        verdict=${verdict:-none}
+        dependencies=$(summary "$dep_qa" "$dep_errors" "$dep_warnings" "$dep_messages")
+        if [ -n "$dependencies" ]; then
+            verdict+="; dependencies: ${dependencies}"
+            [ $(( dep_qa + dep_errors )) -eq 0 ] || verdict+=', which do not fail the job'
+        fi
         add_detail "$atom" "$profile" elog "$elog"
     fi
     t_atom+=("$atom")
@@ -164,6 +208,8 @@ done
         echo "*Status*: :x: **emerge failed**, see the [run](${RUN_URL})"
     elif [ "$failing" -gt 0 ]; then
         echo '*Status*: :x: **QA or error elog**, which fails the emerge job'
+    elif [ "$dependencies_failing" -gt 0 ]; then
+        echo '*Status*: :warning: QA or error elog from dependencies only, which does not fail the emerge job'
     elif [ "$warned" -gt 0 ]; then
         echo '*Status*: :warning: warnings only, which do not fail the emerge job'
     elif [ "$logged" -gt 0 ]; then
@@ -194,6 +240,24 @@ done
     elif [ "$clean" -gt 0 ]; then
         echo
         echo "All ${clean} ${packages} emerged on every profile with no elog."
+    fi
+    if [ "${#need_keys[@]}" -gt 0 ]; then
+        echo
+        echo 'Autounmask changed the Portage configuration to emerge these packages, so users have to make the same changes:'
+        previous=
+        for key in "${need_keys[@]}"; do
+            atom=${key%%$'\t'*}
+            entry=${key#*$'\t'}
+            if [ "$atom" != "$previous" ]; then
+                echo
+                echo "\`${atom}\` needs:"
+                echo
+                previous=$atom
+            fi
+            where=
+            [ "${need_profiles[$key]}" = "${atom_profiles[$atom]}" ] || where=" (${need_profiles[$key]})"
+            echo "- \`${entry%% *}\`: \`${entry#* }\`${where}"
+        done
     fi
 } > "$body_file"
 # a comment holds at most 65536 characters, shared with the pkgcheck section

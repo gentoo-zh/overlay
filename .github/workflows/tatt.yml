@@ -108,7 +108,10 @@ jobs:
         EOF
 
     - name: emerge --onlydeps
-      run: FEATURES="getbinpkg" emerge --onlydeps --jobs 2 --quiet --autounmask=y --autounmask-write=y --autounmask-continue=y "$ATOM"
+      # a binpkg of the target would drop its build-time deps here, and tatt builds it from the ebuild
+      run: |
+        package=$(portageq pquery --no-filters -n "$ATOM")
+        FEATURES="getbinpkg" emerge --onlydeps --usepkg-exclude "$package" --jobs 2 --quiet --autounmask=y --autounmask-write=y --autounmask-continue=y "$ATOM"
 
     - name: run tatt
       run: |

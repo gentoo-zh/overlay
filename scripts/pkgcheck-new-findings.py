@@ -6,6 +6,10 @@ report has the same keyword and message for the same package. The version, line
 numbers and the version inside the message are left out of the comparison, so a
 finding that a bump carries over from the previous ebuild is not new.
 
+Gentoo CI's pkgcheck2html.conf.json rates some keywords "err" that pkgcheck rates
+warning, so those are reported with the error level. The list follows
+https://github.com/projg2/pkgcheck2html/blob/master/pkgcheck2html.conf.json
+
 Lists the findings on stderr for the job log, and exits 3 when a new finding has the
 error level.
 
@@ -19,6 +23,7 @@ import sys
 from pkgcheck.reporters import JsonStream
 
 LEVELS = ("error", "warning", "style", "info")
+GENTOO_CI_ERRORS = {"BadKeywords", "MissingLicenseRestricts", "UnknownManifest", "VisibleVcsPkg"}
 LINE_NUMBERS = re.compile(r"\blines?:? \d+(?:, \d+)*")
 
 
@@ -53,7 +58,7 @@ def main():
     for result in load(sys.argv[2]):
         package, target, message = describe(result)
         findings.append({
-            "level": result.level,
+            "level": "error" if result.name in GENTOO_CI_ERRORS else result.level,
             "keyword": result.name,
             "target": target,
             "desc": result.desc,
