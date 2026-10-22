@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 05:49:09 CST)
+(The last generation time: 2026-10-23 05:55:35 CST)
 
 ### Packages
 
@@ -118,7 +118,7 @@
  app-i18n/fcitx-hazkey                                 | 0.2.1              |            | https://hazkey.hiira.dev/                                                  | Japanese input method for Fcitx5, powered by azooKey engine
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-kkc                                    | 5.1.11             |            | https://github.com/fcitx/fcitx5-kkc                                        | Japanese Kana Kanji conversion (libkkc) input method for Fcitx5
-   app-i18n/libkkc                                     | 0.3.5              |  D, RD     | https://github.com/ueno/libkkc                                             | Japanese Kana Kanji conversion input method library
+   app-i18n/libkkc                                     | 0.3.5-r1           |  D, RD     | https://github.com/ueno/libkkc                                             | Japanese Kana Kanji conversion input method library
      app-i18n/libkkc-data                              | 0.2.7              |  D, RD     | https://github.com/ueno/libkkc                                             | Language model data for the libkkc Japanese input method
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-libthai                                | 5.1.11             |            | https://github.com/fcitx/fcitx5-libthai                                    | Thai input method for Fcitx5 based on libthai
@@ -706,7 +706,7 @@
  net-im/telegram-desktop                               | 7.3.3-r1           |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.34_p260924     |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
-   media-libs/openslide                                | 4.0.1              | RD         | https://openslide.org/                                                     | A C library that provides a simple interface to read whole-slide images
+   media-libs/openslide                                | 4.0.1-r1           | RD         | https://openslide.org/                                                     | A C library that provides a simple interface to read whole-slide images
      media-libs/libdicom                               | 1.3.0              |  D, RD     | https://libdicom.readthedocs.io/                                           | A C library and a set of command-line tools for reading DICOM WSI files
    virtual/loong-ow-compat                             | 0                  | RD         |                                                                            | Virtual for LoongArch old-world compatibility
      app-emulation/liblol                              | 0.1.10             | RD         | https://liblol.aosc.io                                                     | LoongArch old-world ABI compatibility layer from AOSC OS
