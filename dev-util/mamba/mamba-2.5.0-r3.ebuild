@@ -16,7 +16,7 @@ HOMEPAGE="https://github.com/mamba-org/mamba"
 SRC_URI="https://github.com/mamba-org/mamba/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="BSD"
 SLOT="0/3"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="python mamba"
 # Test requires network access
 RESTRICT="test"
