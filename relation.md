@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 08:33:52 CST)
+(The last generation time: 2026-10-22 10:35:55 CST)
 
 ### Packages
 
@@ -948,9 +948,12 @@
                                                        | 7.2.12             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-kernel-bin                      | 6.12.113           |            | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
+                                                       | 6.12.114           |            |                                                                            |
                                                        | 6.18.57            |            |                                                                            |
+                                                       | 6.18.58            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.11             |            |                                                                            |
+                                                       | 7.2.12             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-kernel/gentoo-cjk-sources                         | 6.12.113           |            | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.114           |            |                                                                            |
