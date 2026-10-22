@@ -36,7 +36,7 @@ unset _b _n _v _f
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 BDEPEND="
 	net-libs/nodejs[npm]
