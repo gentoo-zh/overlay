@@ -108,8 +108,7 @@ src_install() {
 	exeinto "${DESTDIR}"
 
 	doexe opt/Vesktop/vesktop opt/Vesktop/chrome-sandbox \
-		opt/Vesktop/libEGL.so opt/Vesktop/libffmpeg.so \
-		opt/Vesktop/libGLESv2.so opt/Vesktop/libvk_swiftshader.so
+		opt/Vesktop/libffmpeg.so opt/Vesktop/libvk_swiftshader.so
 
 	insinto "${DESTDIR}"
 	doins opt/Vesktop/chrome_100_percent.pak opt/Vesktop/chrome_200_percent.pak \
