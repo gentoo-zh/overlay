@@ -3,12 +3,15 @@
 
 EAPI=8
 
-inherit desktop xdg
+inherit desktop unpacker xdg
 
 DESCRIPTION="A third party music player for Netease Music"
 HOMEPAGE="https://github.com/qier222/YesPlayMusic"
 BASE_URI="https://github.com/qier222/YesPlayMusic/releases/download"
-SRC_URI="${BASE_URI}/v${PV}/${PN%-bin}-${PV}.pacman"
+SRC_URI="
+	amd64? ( ${BASE_URI}/v${PV}/${PN%-bin}_${PV}_amd64.deb )
+	arm64? ( ${BASE_URI}/v${PV}/${PN%-bin}_${PV}_arm64.deb )
+"
 
 S="${WORKDIR}"
 
@@ -21,12 +24,31 @@ RESTRICT="mirror strip"
 QA_PRESTRIPPED="*"
 
 RDEPEND="
+	app-accessibility/at-spi2-core:2
 	app-arch/gzip
+	dev-libs/expat
+	dev-libs/glib:2
+	dev-libs/nspr
 	dev-libs/nss
 	media-libs/alsa-lib
+	media-libs/mesa
 	net-print/cups
-	x11-libs/gtk+:*
-	x11-libs/libxkbcommon"
+	sys-apps/dbus
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
+	x11-libs/gtk+:3
+	x11-libs/libdrm
+	x11-libs/libX11
+	x11-libs/libxcb
+	x11-libs/libXcomposite
+	x11-libs/libXdamage
+	x11-libs/libXext
+	x11-libs/libXfixes
+	x11-libs/libxkbcommon
+	x11-libs/libXrandr
+	x11-libs/libxshmfence
+	x11-libs/pango
+"
 
 QA_PREBUILT="
 	opt/YesPlayMusic/chrome-sandbox
@@ -39,10 +61,6 @@ QA_PREBUILT="
 	opt/YesPlayMusic/swiftshader/libGLESv2.so
 	opt/YesPlayMusic/yesplaymusic
 "
-
-src_unpack(){
-	tar xf "${DISTDIR}/yesplaymusic-${PV}.pacman" || die
-}
 
 src_install(){
 	insinto "/opt"
