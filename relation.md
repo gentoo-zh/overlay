@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 06:20:21 CST)
+(The last generation time: 2026-10-23 06:21:09 CST)
 
 ### Packages
 
@@ -209,7 +209,7 @@
  app-misc/go-yq-bin                                    | 4.53.6             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.54.1             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/gpick                                        | 0.4                |            | https://github.com/thezbyg/gpick                                           | Advanced color picker written in C++ using GTK+ toolkit
+ app-misc/gpick                                        | 0.4-r1             |            | https://github.com/thezbyg/gpick                                           | Advanced color picker written in C++ using GTK+ toolkit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/joshuto                                      | 0.9.9              |            | https://github.com/kamiyaa/joshuto                                         | Terminal file manager inspired by ranger
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
