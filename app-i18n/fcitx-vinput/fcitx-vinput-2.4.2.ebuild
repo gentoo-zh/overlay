@@ -20,6 +20,9 @@ HOMEPAGE="https://github.com/xifan2333/fcitx5-vinput"
 SRC_URI="
 	https://github.com/xifan2333/${MY_PN}/releases/download/v${PV}/${MY_P}.tar.gz
 	https://github.com/k2-fsa/sherpa-onnx/releases/download/v${SHERPA_PV}/sherpa-onnx-v${SHERPA_PV}-linux-x64-shared-no-tts.tar.bz2
+	arm64? (
+		https://github.com/k2-fsa/sherpa-onnx/releases/download/v${SHERPA_PV}/sherpa-onnx-v${SHERPA_PV}-linux-aarch64-shared-cpu.tar.bz2
+	)
 "
 S="${WORKDIR}/${MY_P}"
 
@@ -27,7 +30,7 @@ S="${WORKDIR}/${MY_P}"
 # and the silero VAD model (data/vad/silero_vad.onnx): MIT.
 LICENSE="GPL-3 Apache-2.0 MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="systemd"
 
 # Bundled prebuilt sherpa-onnx/onnxruntime shared libraries.
@@ -63,8 +66,26 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-2.3.9-sdbus-provider.patch
 )
 
+src_prepare() {
+	cmake_src_prepare
+
+	# The aarch64 sherpa-onnx build ships no headers. Like upstream's
+	# scripts/build-sherpa-onnx.sh, take them from the x64 build.
+	if use arm64; then
+		mv "${WORKDIR}"/sherpa-onnx-v${SHERPA_PV}-linux-x64-shared-no-tts/include \
+			"${WORKDIR}"/sherpa-onnx-v${SHERPA_PV}-linux-aarch64-shared-cpu/ || die
+	fi
+}
+
 src_configure() {
-	local sherpa_dir="${WORKDIR}/sherpa-onnx-v${SHERPA_PV}-linux-x64-shared-no-tts"
+	# Upstream picks a different sherpa-onnx build per arch, see
+	# scripts/sherpa-onnx-vars.sh.
+	local sherpa_dir="${WORKDIR}/sherpa-onnx-v${SHERPA_PV}-linux-"
+	if use arm64; then
+		sherpa_dir+="aarch64-shared-cpu"
+	else
+		sherpa_dir+="x64-shared-no-tts"
+	fi
 
 	# Without a systemd profile, build sd-bus against libelogind instead.
 	local sdbus_provider=libelogind
