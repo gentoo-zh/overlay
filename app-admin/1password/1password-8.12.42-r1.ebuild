@@ -9,7 +9,7 @@ CHROMIUM_LANGS="
 	ta te th tr uk ur vi zh-CN zh-TW
 "
 
-inherit chromium-2 desktop xdg
+inherit chromium-2 desktop optfeature xdg
 
 DESCRIPTION="Password manager and secure wallet"
 HOMEPAGE="https://1password.com"
@@ -158,6 +158,8 @@ pkg_preinst() {
 
 pkg_postinst() {
 	xdg_pkg_postinst
+	optfeature "unlocking the CLI with the desktop app" app-admin/1password-cli
+
 	use policykit || return 0
 
 	elog "The Polkit policy owner list contains the first ten accounts with"
