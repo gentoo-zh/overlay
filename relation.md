@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 21:36:25 CST)
+(The last generation time: 2026-10-22 21:53:48 CST)
 
 ### Packages
 
@@ -287,7 +287,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/readest-bin                                  | 0.12.16-r1         |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/stirling-pdf-bin                             | 3.2.0              |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
+ app-text/stirling-pdf-bin                             | 3.2.0-r1           |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/xreader                                      | 4.6.9              |            | https://github.com/linuxmint/xreader                                       | Document viewer for the X-Apps project
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -669,7 +669,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/piliplus-bin                              | 2.1.6.2            |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/tenvideo                                  | 1.0.10             |            | https://v.qq.com/download.html#linux                                       | Tencent videos
+ media-video/tenvideo                                  | 1.0.10-r1          |            | https://v.qq.com/download.html#linux                                       | Tencent videos
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/tsukimi                                   | 0.21.0-r1          |            | https://github.com/tsukinaha/tsukimi                                       | A simple Emby Client written by GTK4-RS
                                                        | 26.9.2             |            |                                                                            |
