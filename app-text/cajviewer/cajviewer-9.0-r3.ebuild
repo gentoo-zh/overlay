@@ -18,9 +18,24 @@ KEYWORDS="~amd64"
 RESTRICT="bindist mirror strip"
 
 RDEPEND="
+	app-crypt/p11-kit
 	dev-db/freetds
+	dev-libs/expat
+	dev-libs/gmp
+	dev-libs/libgpg-error
 	dev-libs/libxml2-compat:2
+	dev-libs/libxslt
+	media-libs/alsa-lib
+	media-libs/fontconfig
+	media-libs/freetype
+	media-libs/libglvnd
 	media-libs/tiff-compat:4
+	virtual/libudev
+	virtual/zlib
+	x11-libs/libICE
+	x11-libs/libSM
+	x11-libs/libX11
+	x11-libs/libxcb
 "
 DEPEND="${RDEPEND}"
 
