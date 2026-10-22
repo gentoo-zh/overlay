@@ -39,6 +39,7 @@ RDEPEND="
 	dev-libs/nss
 	media-libs/alsa-lib
 	media-libs/mesa[gbm(+)]
+	media-video/pipewire
 	net-print/cups
 	sys-apps/dbus
 	sys-apps/xdg-desktop-portal
