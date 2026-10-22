@@ -24,24 +24,40 @@ KEYWORDS="-* ~amd64 ~arm64"
 IUSE="mcp policykit"
 RESTRICT="mirror strip bindist"
 
-DEPEND="
+RDEPEND="
 	acct-group/onepassword
-	app-crypt/gnupg
+	app-accessibility/at-spi2-core:2
+	dev-libs/expat
+	dev-libs/glib:2
+	dev-libs/nspr
 	dev-libs/nss
 	media-libs/alsa-lib
 	media-libs/mesa
-	net-misc/curl
 	net-print/cups
+	sys-apps/dbus
+	virtual/libudev
+	virtual/zlib
+	x11-libs/cairo
 	x11-libs/gtk+:3
+	x11-libs/libX11
+	x11-libs/libXcomposite
+	x11-libs/libXdamage
+	x11-libs/libXext
+	x11-libs/libXfixes
+	x11-libs/libXrandr
+	x11-libs/libxcb
 	x11-libs/libxkbcommon
-"
-RDEPEND="
-	${DEPEND}
+	x11-libs/pango
+	x11-misc/xdg-utils
 	mcp? ( acct-group/onepassword-mcp )
 	policykit? ( sys-auth/polkit[pam] )
 "
+BDEPEND="
+	acct-group/onepassword
+	mcp? ( acct-group/onepassword-mcp )
+"
 
-QA_PREBUILT="*"
+QA_PREBUILT="opt/1Password/*"
 
 pkg_setup() {
 	# chromium-2 inherits linux-info, but this binary package does not need kernel probing.
@@ -91,7 +107,7 @@ src_install() {
 	fi
 
 	insinto /opt/1Password/
-	insopts -m0755
+	insopts -m0644
 	doins *.pak *.bin *.json *.dat
 	doins -r locales resources
 
@@ -100,7 +116,7 @@ src_install() {
 
 	# Chrome-sandbox requires the setuid bit to be specifically set.
 	# see https://github.com/electron/electron/issues/17972
-	fperms 4755 /opt/1Password/chrome-sandbox
+	fperms 4711 /opt/1Password/chrome-sandbox
 
 	fowners root:onepassword /opt/1Password/1Password-BrowserSupport
 	fperms g+s /opt/1Password/1Password-BrowserSupport
