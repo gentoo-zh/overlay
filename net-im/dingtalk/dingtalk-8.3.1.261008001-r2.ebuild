@@ -23,28 +23,58 @@ KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="strip mirror bindist"
 
 RDEPEND="
+	app-accessibility/at-spi2-core:2
+	dev-libs/expat
+	dev-libs/glib:2
+	dev-libs/libgcrypt
 	dev-libs/nspr
 	dev-libs/nss
 	dev-libs/wayland
 	dev-libs/libthai
 	dev-libs/libinput
+	media-gfx/graphite2
+	media-libs/alsa-lib
+	media-libs/fontconfig
+	media-libs/freetype
+	media-libs/libepoxy
+	media-libs/libglvnd
+	media-libs/opus
 	media-libs/tiff-compat:4
 	media-libs/libpulse
 	media-video/rtmpdump
+	net-libs/gnutls
 	net-misc/curl
 	net-nds/openldap
 	net-print/cups
 	virtual/libc
+	virtual/libudev
 	virtual/zlib
+	sys-apps/dbus
 	sys-libs/mtdev
 	sys-process/procps
-	x11-libs/gtk+:2
+	x11-libs/cairo
+	x11-libs/gdk-pixbuf:2
 	x11-libs/gtk+:3[X]
 	x11-libs/libdrm
+	x11-libs/libICE
+	x11-libs/libSM
+	x11-libs/libX11
+	x11-libs/libXau
+	x11-libs/libxcb
+	x11-libs/libXcomposite
+	x11-libs/libXcursor
+	x11-libs/libXdamage
+	x11-libs/libXdmcp
+	x11-libs/libXext
+	x11-libs/libXfixes
+	x11-libs/libXi
 	x11-libs/libXinerama
+	x11-libs/libXrandr
+	x11-libs/libXrender
 	x11-libs/libXScrnSaver
 	x11-libs/libXtst
 	x11-libs/libxkbcommon[X]
+	x11-libs/pango
 	x11-libs/xcb-util-image
 	x11-libs/xcb-util-keysyms
 	x11-libs/xcb-util-renderutil
