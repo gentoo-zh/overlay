@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 13:32:09 CST)
+(The last generation time: 2026-10-22 13:37:05 CST)
 
 ### Packages
 
@@ -709,7 +709,7 @@
      app-emulation/liblol                              | 0.1.10             | RD         | https://liblol.aosc.io                                                     | LoongArch old-world ABI compatibility layer from AOSC OS
    x11-misc/flatpak-xdg-utils                          | 1.0.6              | RD         | https://github.com/flatpak/flatpak-xdg-utils                               | Utilities for containerized apps to launch programs outside the container
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/vesktop-bin                                    | 1.6.7              |            | https://github.com/Vencord/Vesktop                                         | Discord Desktop with Vencord preinstalled
+ net-im/vesktop-bin                                    | 1.6.8              |            | https://github.com/Vencord/Vesktop                                         | Discord Desktop with Vencord preinstalled
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/wechat                                         | 4.1.13.26          |            | https://linux.weixin.qq.com/                                               | Weixin for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
