@@ -18,7 +18,7 @@ BUILD_DIR="${CMAKE_USE_DIR}_BUILD"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~arm64 ~x86"
 IUSE="zsh-completion"
 
 DEPEND="zsh-completion? ( app-shells/zsh )"
