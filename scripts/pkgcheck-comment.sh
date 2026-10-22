@@ -20,11 +20,19 @@ if [ ! -f "$findings" ]; then
     exit 0
 fi
 
+# atom: stdin cut to 200 atom characters. The pull request's run wrote the report, so
+# the commit and package names go through it.
+atom() {
+    head -c 200 | tr -cd '[:alnum:]/._+=~@:-'
+}
+
 # list <new> <level>...: one line per finding, existing ones prefixed with their level
+# and control characters turned into spaces, so a finding cannot leave its code block
 list() {
     jq -r --argjson new "$1" '
         .[] | select(.new == $new and (.level | IN($ARGS.positional[])))
         | (if $new then "" else "\(.level): " end) + "\(.target): \(.keyword): \(.desc)"
+        | gsub("[[:cntrl:]]"; " ") | .[:300]
     ' "$findings" --args "${@:2}"
 }
 
@@ -58,7 +66,7 @@ if [ "$count" -eq 0 ]; then
     {
         echo '## Pull request pkgcheck report'
         echo
-        echo "*Newest commit scanned*: \`$(cat "$report_dir"/commit)\`"
+        echo "*Newest commit scanned*: \`$(atom < "$report_dir"/commit)\`"
         echo '*Status*: :white_check_mark: no packages touched'
     } > "$body_file"
     scripts/upsert-comment-section.sh "$GITHUB_REPOSITORY" "$pr" "$MARKER" pkgcheck "$body_file"
@@ -75,11 +83,11 @@ minor=$(list true style info)
 {
     echo '## Pull request pkgcheck report'
     echo
-    echo "*Newest commit scanned*: \`$(cat "$report_dir"/commit)\`"
+    echo "*Newest commit scanned*: \`$(atom < "$report_dir"/commit)\`"
     if [ "${count}" -le 10 ]; then
         packages=()
         while IFS= read -r package; do
-            packages+=("\`$package\`")
+            packages+=("\`$(atom <<< "$package")\`")
         done < "$report_dir/packages"
         echo "*Packages scanned*: ${packages[*]}"
     else
