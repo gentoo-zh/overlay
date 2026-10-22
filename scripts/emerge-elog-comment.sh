@@ -93,6 +93,7 @@ broken=0
 output=0
 failing=0
 dependencies_failing=0
+noticed=0
 warned=0
 logged=0
 for dir in "${targets[@]}"; do
@@ -168,6 +169,13 @@ for dir in "${targets[@]}"; do
         fi
         add_detail "$atom" "$profile" elog "$elog"
     fi
+    # emerge-qa.sh moved the qa-vdb and LDFLAGS notices out of the elog
+    if [ -s "$dir/notices" ]; then
+        notices="$(sections "$dir/notices" QA) notice"
+        [ "$verdict" = none ] && verdict=$notices || verdict+="; ${notices}"
+        noticed=$(( noticed + 1 ))
+        add_detail "$atom" "$profile" 'QA notices, which do not fail the job' "$dir/notices"
+    fi
     t_atom+=("$atom")
     t_profile+=("$profile")
     t_emerge+=("$emerge")
@@ -210,6 +218,8 @@ done
         echo '*Status*: :x: **QA or error elog**, which fails the emerge job'
     elif [ "$dependencies_failing" -gt 0 ]; then
         echo '*Status*: :warning: QA or error elog from dependencies only, which does not fail the emerge job'
+    elif [ "$noticed" -gt 0 ]; then
+        echo '*Status*: :warning: qa-vdb or LDFLAGS QA notices only, which do not fail the emerge job'
     elif [ "$warned" -gt 0 ]; then
         echo '*Status*: :warning: warnings only, which do not fail the emerge job'
     elif [ "$logged" -gt 0 ]; then

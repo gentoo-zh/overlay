@@ -75,6 +75,9 @@ jobs:
       id: setup
       uses: ./.github/actions/setup-gentoo
 
+    - name: setup QA checks
+      run: scripts/emerge-qa.sh before
+
     - name: setup cpu flags
       env:
         ATOM: ${{ matrix.target.package }}
@@ -146,6 +149,10 @@ jobs:
         UNMERGE: ${{ steps.unmerge.outcome }}
         BUILD_LOGS: ${{ steps.build-logs.outputs.artifact-url }}
       run: scripts/emerge-report.sh save "$ATOM"
+
+    - name: split QA notices
+      if: ${{ !cancelled() }}
+      run: scripts/emerge-qa.sh after
 
     - name: upload portage elog
       if: ${{ !cancelled() }}
