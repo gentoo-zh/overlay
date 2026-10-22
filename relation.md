@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 06:35:16 CST)
+(The last generation time: 2026-10-23 06:40:00 CST)
 
 ### Packages
 
@@ -643,7 +643,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/qqmusic                                   | 1.1.8-r2           |            | https://y.qq.com/                                                          | Tencent QQ Music, converted from .deb package
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/splayer                                   | 3.1.1              |            | https://splayer.imsyy.top/                                                 | A cross-platform music player
+ media-sound/splayer                                   | 3.1.1-r1           |            | https://splayer.imsyy.top/                                                 | A cross-platform music player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/spotube-bin                               | 5.1.1              |            | https://github.com/KRTirtho/spotube                                        | A lightweight Spotify client using YouTube as audio source
                                                        | 5.1.2              |            |                                                                            |
