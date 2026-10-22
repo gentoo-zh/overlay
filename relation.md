@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 06:21:09 CST)
+(The last generation time: 2026-10-23 06:24:34 CST)
 
 ### Packages
 
@@ -531,7 +531,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/nautilus-open-any-terminal                | 0.8.3              |            | https://github.com/Stunkymonkey/nautilus-open-any-terminal                 | context-menu entry for opening other terminal in nautilus
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- gnome-extra/resources                                 | 1.10.2             |            | https://github.com/nokyan/resources                                        | Keep an eye on system resources
+ gnome-extra/resources                                 | 1.10.2-r1          |            | https://github.com/nokyan/resources                                        | Keep an eye on system resources
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gui-apps/crystal-dock                                 | 2.16               |            | https://github.com/dangvd/crystal-dock                                     | Cool dock (desktop panel) for Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
