@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 13:30:55 CST)
+(The last generation time: 2026-10-22 13:31:31 CST)
 
 ### Packages
 
@@ -457,7 +457,7 @@
                                                        | 1.4.3              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
-                                                       | 2.47.1             |            |                                                                            |
+                                                       | 2.48.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.39.9             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -558,10 +558,10 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-marker-gothic                        | 1.004              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/lxgw-neo-xihei                            | 1.304              |            | https://github.com/lxgw/LxgwNeoXiHei                                       | A Simplified Chinese sans-serif font derived from IPAex Gothic
-                                                       | 1.305              |            |                                                                            |
+ media-fonts/lxgw-neo-xihei                            | 1.305              |            | https://github.com/lxgw/LxgwNeoXiHei                                       | A Simplified Chinese sans-serif font derived from IPAex Gothic
+                                                       | 1.306              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/lxgw-neo-zhisong                          | 1.067              |            | https://github.com/lxgw/LxgwNeoZhiSong                                     | A Chinese serif font derived from IPAex Mincho and IPAmj Mincho
+ media-fonts/lxgw-neo-zhisong                          | 1.068              |            | https://github.com/lxgw/LxgwNeoZhiSong                                     | A Chinese serif font derived from IPAex Mincho and IPAmj Mincho
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-wenkai-gb                            | 1.530              |            | https://github.com/lxgw/LxgwWenkaiGB                                       | LXGW WenKai following the GB 18030 (national standard) glyph forms
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
