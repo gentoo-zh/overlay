@@ -35,10 +35,13 @@ config() (
 autounmask() {
     local file atom rest
     comm -13 <(config "$BEFORE") <(config /etc/portage) | while read -r file atom rest; do
-        # the target is often keyworded ~arch only, so its own keyword entry is expected
-        if [ "$file" = package.accept_keywords ] && [ "$(package_of "$atom")" = "$1" ]; then
-            continue
-        fi
+        # the target is often keyworded ~arch only or under a license a user accepts on
+        # purpose, so its own keyword and license entries are expected
+        case $file in
+            package.accept_keywords|package.license)
+                [ "$(package_of "$atom")" != "$1" ] || continue
+                ;;
+        esac
         echo "$file $atom${rest:+ $rest}"
     done
 }
