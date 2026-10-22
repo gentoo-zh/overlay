@@ -53,6 +53,7 @@ RDEPEND="
 	media-libs/libglvnd
 	media-libs/mesa
 	net-misc/curl
+	net-print/cups
 	sys-apps/dbus
 	virtual/zlib
 	sys-process/lsof
