@@ -296,6 +296,7 @@ CDEPEND="
 	>=dev-qt/qtimageformats-6.11:6
 	>=dev-qt/qtsvg-6.11:6
 	kde-frameworks/kcoreaddons:6
+	media-libs/fontconfig:1.0
 	media-libs/libjpeg-turbo:=
 	media-libs/openal
 	media-libs/rnnoise:=
@@ -304,6 +305,8 @@ CDEPEND="
 	net-libs/tdlib:=[tde2e]
 	sys-apps/hwloc:=
 	virtual/minizip:=
+	x11-libs/cairo
+	x11-libs/pango
 	!enchant? ( >=app-text/hunspell-1.7:= )
 	enchant? ( app-text/enchant:= )
 	webkit? ( wayland? (
