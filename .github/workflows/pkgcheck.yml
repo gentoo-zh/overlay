@@ -18,11 +18,31 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
     - name: checkout
       uses: actions/checkout@v7
 
+    # scan is a required check, so the job always runs and only the scan is skipped
+    - name: check for files pkgcheck reads
+      id: files
+      if: github.event_name == 'pull_request'
+      env:
+        GH_TOKEN: ${{ github.token }}
+        PR: ${{ github.event.pull_request.number }}
+      run: |
+        files=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR/files" --paginate --jq '.[].filename')
+        if grep -qvE '^(\.github/|scripts/|\.agents/|[^/]+\.md$)' <<< "$files"; then
+          echo "scan=true" >> "$GITHUB_OUTPUT"
+        else
+          echo "scan=false" >> "$GITHUB_OUTPUT"
+          echo "This pull request changes only CI, scripts and documentation, so the repository scan is skipped."
+        fi
+
     - name: run pkgcheck
+      if: steps.files.outputs.scan != 'false'
       uses: pkgcore/pkgcheck-action@v1
       with:
         args: --checks=-RedundantVersionCheck --keywords=-NonsolvableDepsInDev --exit=NonexistentDeps
