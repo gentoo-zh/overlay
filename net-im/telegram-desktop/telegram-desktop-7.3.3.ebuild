@@ -261,7 +261,7 @@ MY_P="tdesktop-${PV}-full"
 # Pinned by Telegram/build/prepare/prepare.py
 TLOTTIE_COMMIT="92df98dc209bc39b1e567ec74a8c86a0af5239de"
 WALLET_ENGINE_COMMIT="e59e0d89d7ee90c388bf36e3334c5b276f396697"
-PATCHES_COMMIT="fe957833b84525e634a8d776a7f834ed536d9a21"
+PATCHES_COMMIT="a895fef40eaa7d66481cff542c623b039b7ce494"
 SRC_URI="
 	https://github.com/telegramdesktop/tdesktop/releases/download/v${PV}/${MY_P}.tar.gz
 	https://github.com/dkaraush/tlottie/archive/${TLOTTIE_COMMIT}.tar.gz
