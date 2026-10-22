@@ -16,15 +16,33 @@ LICENSE="Apache-2.0"
 SLOT="0"
 QA_PREBUILT="*"
 KEYWORDS="-* ~amd64 ~arm64"
-RDEPEND="x11-libs/gtk+:3[cups]
-	x11-libs/libXScrnSaver
-	dev-libs/nss
-	app-crypt/p11-kit
-	dev-libs/libayatana-appindicator
-	app-accessibility/at-spi2-core[X]
+RDEPEND="
+	app-accessibility/at-spi2-core:2[X]
 	app-crypt/libsecret
-	x11-libs/libnotify
+	app-crypt/p11-kit
+	dev-libs/expat
+	dev-libs/glib:2
+	dev-libs/libayatana-appindicator
+	dev-libs/nspr
+	dev-libs/nss
 	media-libs/alsa-lib
+	media-libs/mesa
+	net-print/cups
+	sys-apps/dbus
+	virtual/libudev
+	x11-libs/cairo
+	x11-libs/gtk+:3[cups]
+	x11-libs/libnotify
+	x11-libs/libX11
+	x11-libs/libxcb
+	x11-libs/libXcomposite
+	x11-libs/libXdamage
+	x11-libs/libXext
+	x11-libs/libXfixes
+	x11-libs/libxkbcommon
+	x11-libs/libXrandr
+	x11-libs/libXScrnSaver
+	x11-libs/pango
 "
 src_install() {
 	insinto /opt
