@@ -41,21 +41,40 @@ sections() {
     grep -cE "^(${2}): [a-z]+\$" "$1" || true
 }
 
-# summary <qa> <errors> <warnings> <messages>: "1 QA, 2 log", empty without sections
+# plural <count> <noun> [<plural>]: "1 file", "2 files"
+plural() {
+    if [ "$1" -eq 1 ]; then
+        echo "$1 $2"
+    else
+        echo "$1 ${3:-$2s}"
+    fi
+}
+
+# fix <atom> <name> <count>: the largest count of a QA notice that needs a fix, over the
+# profiles of the package
+declare -A fixes
+fixed=0
+fix() {
+    local key="$1"$'\t'"$2"
+    fixed=1
+    [ "${fixes[$key]:-0}" -ge "$3" ] || fixes[$key]=$3
+}
+
+# summary <qa> <errors> <warnings> <messages>: "1 QA, 2 messages", empty without sections
 summary() {
     local counts=() text
     [ "$1" -eq 0 ] || counts+=("$1 QA")
-    [ "$2" -eq 0 ] || counts+=("$2 error")
-    [ "$3" -eq 0 ] || counts+=("$3 warn")
-    [ "$4" -eq 0 ] || counts+=("$4 log")
+    [ "$2" -eq 0 ] || counts+=("$(plural "$2" error)")
+    [ "$3" -eq 0 ] || counts+=("$(plural "$3" warning)")
+    [ "$4" -eq 0 ] || counts+=("$(plural "$4" message)")
     text=$(printf '%s, ' "${counts[@]}")
     echo "${text%, }"
 }
 
 # add_detail <atom> <profile> <title> <file> [<build-log-url>]: a collapsed block, shared
-# by the profiles that printed the same text
+# by the profiles that printed the same text. The block's key is left in detail_key.
 keys=()
-declare -A detail_atom detail_title detail_text detail_profiles detail_links detail_unlinked atom_profiles
+declare -A detail_atom detail_title detail_text detail_profiles detail_links detail_unlinked detail_all detail_action detail_footer atom_profiles
 add_detail() {
     local text key
     text=$(sed 's/\x1b\[[0-9;]*m//g' "$4")
@@ -73,6 +92,35 @@ add_detail() {
     else
         detail_unlinked[$key]=1
     fi
+    detail_key=$key
+}
+
+# add_notice <atom> <profile> <title> <action> <file>: add_detail for a QA notice that
+# needs a fix, with the fix under the summary
+add_notice() {
+    add_detail "$1" "$2" "$3" "$5"
+    detail_all[$detail_key]=1
+    detail_action[$detail_key]=$4
+}
+
+# add_ldflags <atom> <profile> <file>: one block per package with the files of the first
+# profile, and a line under it for every other profile that listed different files
+add_ldflags() {
+    local key="ldflags $1" text files
+    text=$(cat "$3")
+    files=$(plural "$(wc -l < "$3")" file)
+    if [ -z "${detail_text[$key]+set}" ]; then
+        keys+=("$key")
+        detail_atom[$key]=$1
+        detail_title[$key]="<code>$1</code> ${files} built without respecting LDFLAGS"
+        detail_text[$key]=$text
+        detail_all[$key]=1
+        detail_action[$key]="Set \`QA_PREBUILT\` for prebuilt files; otherwise make the build pass \`LDFLAGS\`, for example with \`cargo_env\`."
+    elif [ "$text" != "${detail_text[$key]}" ]; then
+        detail_footer[$key]+="- \`$2\`: ${files}, see the [run](${RUN_URL})"$'\n'
+    fi
+    detail_profiles[$key]+="${detail_profiles[$key]:+, }<code>$2</code>"
+    detail_unlinked[$key]=1
 }
 
 # add_need <atom> <profile> <entry>: an entry autounmask added, shared by the profiles
@@ -92,10 +140,8 @@ t_elog=()
 broken=0
 output=0
 failing=0
-dependencies_failing=0
-noticed=0
 warned=0
-logged=0
+informed=0
 for dir in "${targets[@]}"; do
     atom=$(field "$dir" atom)
     atom=${atom#=}
@@ -151,14 +197,15 @@ for dir in "${targets[@]}"; do
         dep_errors=$(( $(sections "$elog" ERROR) - errors ))
         dep_warnings=$(( $(sections "$elog" WARN) - warnings ))
         dep_messages=$(( $(sections "$elog" LOG) - messages ))
+        # messages of the target and every elog of dependencies are informational
+        title=elog
         if [ $(( qa + errors )) -gt 0 ]; then
             failing=$(( failing + 1 ))
-        elif [ $(( dep_qa + dep_errors )) -gt 0 ]; then
-            dependencies_failing=$(( dependencies_failing + 1 ))
-        elif [ $(( warnings + dep_warnings )) -gt 0 ]; then
+        elif [ "$warnings" -gt 0 ]; then
             warned=$(( warned + 1 ))
         else
-            logged=$(( logged + 1 ))
+            informed=$(( informed + 1 ))
+            title='elog, informational'
         fi
         verdict=$(summary "$qa" "$errors" "$warnings" "$messages")
         verdict=${verdict:-none}
@@ -167,14 +214,37 @@ for dir in "${targets[@]}"; do
             verdict+="; dependencies: ${dependencies}"
             [ $(( dep_qa + dep_errors )) -eq 0 ] || verdict+=', which do not fail the job'
         fi
-        add_detail "$atom" "$profile" elog "$elog"
+        add_detail "$atom" "$profile" "$title" "$elog"
     fi
     # emerge-qa.sh moved the qa-vdb and LDFLAGS notices out of the elog
-    if [ -s "$dir/notices" ]; then
-        notices="$(sections "$dir/notices" QA) notice"
-        [ "$verdict" = none ] && verdict=$notices || verdict+="; ${notices}"
-        noticed=$(( noticed + 1 ))
-        add_detail "$atom" "$profile" 'QA notices, which do not fail the job' "$dir/notices"
+    # qa-vdb marks a missing dependency with > and a missing slot or binding operator with |
+    notices=()
+    if [ -s "$dir/notices-vdb" ]; then
+        count=$(grep -cE '^ *> ' "$dir/notices-vdb" || true)
+        if [ "$count" -gt 0 ]; then
+            notices+=("missing dependencies ${count}")
+            fix "$atom" 'missing dependencies' "$count"
+            add_notice "$atom" "$profile" "$(plural "$count" 'missing dependency' 'missing dependencies')" \
+                "Add each missing dependency to \`RDEPEND\`." <(sed -nE 's/^ *> //p' "$dir/notices-vdb")
+        fi
+        count=$(grep -c ' | ' "$dir/notices-vdb" || true)
+        if [ "$count" -gt 0 ]; then
+            notices+=("slot/binding ${count}")
+            fix "$atom" slot/binding "$count"
+            add_notice "$atom" "$profile" "$(plural "$count" 'missing slot or binding operator')" \
+                'Add the slot or binding operator shown on the right to each dependency.' <(grep ' | ' "$dir/notices-vdb")
+        fi
+    fi
+    if [ -s "$dir/notices-ldflags" ]; then
+        count=$(wc -l < "$dir/notices-ldflags")
+        notices+=("LDFLAGS $(plural "$count" file)")
+        fix "$atom" LDFLAGS "$count"
+        add_ldflags "$atom" "$profile" "$dir/notices-ldflags"
+    fi
+    if [ "${#notices[@]}" -gt 0 ]; then
+        listed=$(printf '%s, ' "${notices[@]}")
+        listed=":warning: ${listed%, }"
+        [ "$verdict" = none ] && verdict=$listed || verdict+="; ${listed}"
     fi
     t_atom+=("$atom")
     t_profile+=("$profile")
@@ -206,6 +276,22 @@ while [ "$i" -lt "${#t_atom[@]}" ]; do
     i=$j
 done
 
+# fix_summary: "missing dependencies 1, slot/binding 2, LDFLAGS 10 files", summed over
+# the packages
+fix_summary() {
+    local name key total parts=() text
+    for name in 'missing dependencies' slot/binding LDFLAGS; do
+        total=0
+        for key in "${!fixes[@]}"; do
+            [ "${key#*$'\t'}" != "$name" ] || total=$(( total + fixes[$key] ))
+        done
+        [ "$total" -gt 0 ] || continue
+        [ "$name" = LDFLAGS ] && parts+=("LDFLAGS $(plural "$total" file)") || parts+=("$name $total")
+    done
+    text=$(printf '%s, ' "${parts[@]}")
+    echo "${text%, }"
+}
+
 {
     echo '## emerge elog'
     echo
@@ -216,14 +302,12 @@ done
         echo "*Status*: :x: **emerge failed**, see the [run](${RUN_URL})"
     elif [ "$failing" -gt 0 ]; then
         echo '*Status*: :x: **QA or error elog**, which fails the emerge job'
-    elif [ "$dependencies_failing" -gt 0 ]; then
-        echo '*Status*: :warning: QA or error elog from dependencies only, which does not fail the emerge job'
-    elif [ "$noticed" -gt 0 ]; then
-        echo '*Status*: :warning: qa-vdb or LDFLAGS QA notices only, which do not fail the emerge job'
+    elif [ "$fixed" -gt 0 ]; then
+        echo "*Status*: :warning: QA notices that need a fix, which do not fail the emerge job: $(fix_summary)"
     elif [ "$warned" -gt 0 ]; then
         echo '*Status*: :warning: warnings only, which do not fail the emerge job'
-    elif [ "$logged" -gt 0 ]; then
-        echo '*Status*: :white_check_mark: messages only, which do not fail the emerge job'
+    elif [ "$informed" -gt 0 ] || [ "${#need_keys[@]}" -gt 0 ]; then
+        echo '*Status*: :white_check_mark: informational output only, which does not fail the emerge job'
     else
         echo '*Status*: :white_check_mark: no elog'
     fi
@@ -253,14 +337,14 @@ done
     fi
     if [ "${#need_keys[@]}" -gt 0 ]; then
         echo
-        echo 'Autounmask changed the Portage configuration to emerge these packages, so users have to make the same changes:'
+        echo 'Autounmask added these entries to the Portage configuration. The pull request needs no change for them, but users must add the same entries:'
         previous=
         for key in "${need_keys[@]}"; do
             atom=${key%%$'\t'*}
             entry=${key#*$'\t'}
             if [ "$atom" != "$previous" ]; then
                 echo
-                echo "\`${atom}\` needs:"
+                echo "\`${atom}\` requires:"
                 echo
                 previous=$atom
             fi
@@ -270,27 +354,56 @@ done
         done
     fi
 } > "$body_file"
-# a comment holds at most 65536 characters, shared with the pkgcheck section
+# a package's LDFLAGS block follows its other blocks, which later profiles can add
+ordered=()
+pending=
 for key in "${keys[@]}"; do
+    if [ -n "$pending" ] && [ "${detail_atom[$key]}" != "${detail_atom[$pending]}" ]; then
+        ordered+=("$pending")
+        pending=
+    fi
+    [[ $key == 'ldflags '* ]] && pending=$key || ordered+=("$key")
+done
+[ -z "$pending" ] || ordered+=("$pending")
+# a comment holds at most 65536 characters, shared with the pkgcheck section
+for key in "${ordered[@]}"; do
     text=${detail_text[$key]}
     title=${detail_title[$key]}
     links=${detail_links[$key]:-}
-    # name the profiles when they did not all print the same, unless every one has a build.log link
+    # name the profiles when they did not all print the same, unless every one has a build.log link;
+    # a QA notice says "all profiles" when more than one did
     if [ -z "$links" ] || [ -n "${detail_unlinked[$key]:-}" ]; then
-        [ "${detail_profiles[$key]}" = "${atom_profiles[${detail_atom[$key]}]}" ] || title+=" (${detail_profiles[$key]})"
+        if [ "${detail_profiles[$key]}" != "${atom_profiles[${detail_atom[$key]}]}" ]; then
+            title+=" (${detail_profiles[$key]})"
+        elif [ -n "${detail_all[$key]:-}" ] && [[ ${detail_profiles[$key]} == *,* ]]; then
+            title+=' (all profiles)'
+        elif [ -n "${detail_all[$key]:-}" ]; then
+            title+=" (${detail_profiles[$key]})"
+        fi
     fi
     [ -z "$links" ] || title+=", build.log: ${links}"
+    [ -z "${detail_action[$key]:-}" ] || title=":warning: ${title}"
     lines=$(wc -l <<< "$text")
     detail=$(
         echo
         echo "<details><summary>${title}</summary>"
         echo
+        if [ -n "${detail_action[$key]:-}" ]; then
+            echo "${detail_action[$key]}"
+            echo
+        fi
         echo '``````'
         head -n "$MAX_LINES" <<< "$text"
         echo '``````'
         if [ "$lines" -gt "$MAX_LINES" ]; then
             echo
             echo "$(( lines - MAX_LINES )) more lines in the [run](${RUN_URL})."
+        fi
+        if [ -n "${detail_footer[$key]:-}" ]; then
+            echo
+            echo 'Other profiles listed different files:'
+            echo
+            printf '%s' "${detail_footer[$key]}"
         fi
         echo
         echo '</details>'

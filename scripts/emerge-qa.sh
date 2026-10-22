@@ -25,10 +25,10 @@ EOF
     echo "LDFLAGS=$(portageq envvar LDFLAGS)"
 }
 
-# split_notices <elog> <notices>: print the elog without the notices, which go to <notices>
-# under the same package and section lines
+# split_notices <elog> <vdb> <ldflags>: print the elog without the notices. The
+# dependency lines of qa-vdb go to <vdb> and the files built without LDFLAGS to <ldflags>.
 split_notices() {
-    awk -v notices="$2" '
+    awk -v vdb="$2" -v ldflags="$3" '
         function flush(   i) {
             if (kept) {
                 if (pkg != "") print pkg
@@ -36,16 +36,10 @@ split_notices() {
                 print header
                 for (i = 1; i <= kept; i++) print keep[i]
             }
-            if (noted) {
-                if (notice_pkg != "") print notice_pkg > notices
-                notice_pkg = ""
-                print header > notices
-                for (i = 1; i <= noted; i++) print note[i] > notices
-            }
-            kept = noted = 0
+            kept = 0
             state = ""
         }
-        /^>>> / { flush(); header = ""; pkg = notice_pkg = $0; next }
+        /^>>> / { flush(); header = ""; pkg = $0; next }
         /^(LOG|WARN|ERROR|QA): [a-z]+$/ { flush(); header = $0; qa = $0 ~ /^QA/; next }
         {
             line = $0
@@ -57,28 +51,35 @@ split_notices() {
             # qa-vdb runs after pkg_postinst, so its output ends the section
             if (qa && line ~ /^VDB: detected possibly incorrect R?DEPEND /)
                 state = "vdb"
-            if (state != "") note[++noted] = $0
-            else keep[++kept] = $0
+            if (state == "ldflags") {
+                if (line ~ /^\//) print line > ldflags
+            } else if (state == "vdb") {
+                # qa-vdb marks a missing slot or binding operator with | and a missing
+                # dependency with >; --no-extra leaves out the unneeded ones
+                sub(/ +$/, "", line)
+                if (line ~ /(^| )[|>]( |$)/) print line > vdb
+            } else
+                keep[++kept] = $0
         }
         END { flush() }
     ' "$1"
 }
 
-# after: move the notices out of elog and target-elog, keeping only the target's in notices
+# after: move the notices out of elog and target-elog, keeping only the target's in
+# notices-vdb and notices-ldflags
 after() {
-    local file
+    local kind
     [ -f "$REPORT/elog" ] || return 0
-    for file in elog target-elog; do
-        split_notices "$REPORT/$file" "$REPORT/$file.notices" > "$REPORT/$file.new"
-        mv "$REPORT/$file.new" "$REPORT/$file"
+    split_notices "$REPORT/elog" /dev/null /dev/null > "$REPORT/elog.new"
+    mv "$REPORT/elog.new" "$REPORT/elog"
+    rm -f "$REPORT/notices-vdb" "$REPORT/notices-ldflags"
+    split_notices "$REPORT/target-elog" "$REPORT/notices-vdb" "$REPORT/notices-ldflags" > "$REPORT/target-elog.new"
+    mv "$REPORT/target-elog.new" "$REPORT/target-elog"
+    for kind in vdb ldflags; do
+        [ -s "$REPORT/notices-$kind" ] || continue
+        echo "notices-$kind:"
+        cat "$REPORT/notices-$kind"
     done
-    rm -f "$REPORT/elog.notices"
-    if [ -s "$REPORT/target-elog.notices" ]; then
-        mv "$REPORT/target-elog.notices" "$REPORT/notices"
-        cat "$REPORT/notices"
-    else
-        rm -f "$REPORT/target-elog.notices"
-    fi
 }
 
 command=${1:-}
