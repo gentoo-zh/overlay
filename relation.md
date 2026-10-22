@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 05:57:10 CST)
+(The last generation time: 2026-10-23 05:58:23 CST)
 
 ### Packages
 
@@ -1033,7 +1033,7 @@
  x11-misc/i3lock-fancy                                 | 9999               |            | https://github.com/meskarune/i3lock-fancy                                  | A fancy i3lock
    x11-misc/i3lock-color                               | 9999               |  D, RD     | https://github.com/Raymo111/i3lock-color                                   | An improved i3lock
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-misc/picom-jonaburg                               | 8                  |            | https://github.com/jonaburg/picom                                          | jonaburg's picom fork with dual_kawase blur and rounded corners
+ x11-misc/picom-jonaburg                               | 8-r1               |            | https://github.com/jonaburg/picom                                          | jonaburg's picom fork with dual_kawase blur and rounded corners
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/blackbox-terminal                           | 0.15.2-r1          |            | https://gitlab.gnome.org/raggesilver/blackbox                              | A beautiful GTK 4 terminal
