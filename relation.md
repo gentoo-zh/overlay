@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 08:28:22 CST)
+(The last generation time: 2026-10-22 08:29:03 CST)
 
 ### Packages
 
@@ -659,7 +659,7 @@
  media-video/hov-qt                                    | 1.3.1              |            | https://github.com/HougeLangley/HyperOnlineVideo                           | Aggregated YouTube/Bilibili/NetEase/QQ Music client (Qt6 desktop)
                                                        | 1.3.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/implay                                    | 1.5.1              |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
+ media-video/implay                                    | 1.5.1-r1           |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/iptvnator-bin                             | 0.24.0             |            | https://4gray.github.io/iptvnator/                                         | Cross-platform IPTV player application with multiple features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
