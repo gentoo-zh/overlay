@@ -14,6 +14,9 @@ LICENSE="GPL-2+ LGPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 
+DEPEND="virtual/libelf:="
+RDEPEND="${DEPEND}"
+
 src_prepare() {
 	default
 	# fix libelf detection
