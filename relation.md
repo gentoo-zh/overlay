@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-22 07:53:52 CST)
+(The last generation time: 2026-10-22 08:28:22 CST)
 
 ### Packages
 
@@ -764,14 +764,14 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/omnyssh-bin                                  | 1.1.5              |            | https://github.com/timhartmann7/omnyssh                                    | SSH dashboard, terminal, and SFTP file manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/pcmanx-gtk2                                  | 1.3                |            | https://github.com/pcman-bbs/pcmanx                                        | PCMan is a gtk+ based free BBS client
+ net-misc/pcmanx-gtk2                                  | 1.3-r1             |            | https://github.com/pcman-bbs/pcmanx                                        | PCMan is a gtk+ based free BBS client
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/rayburst-bin                                 | 4.1.0              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/reframe                                      | 1.21.0             |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
+ net-misc/reframe                                      | 1.21.0-r1          |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                  |  D, RD     |                                                                            | group for reframe
    acct-user/reframe                                   | 0                  |  D, RD     |                                                                            | user for reframe
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -899,7 +899,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/lceda-pro                             | 4.1.78             |            | https://lceda.cn/                                                          | LCEDA Pro (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-electronics/openfpgaloader                        | 1.2.0              |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
+ sci-electronics/openfpgaloader                        | 1.2.0-r1           |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/elan-bin                              | 4.2.4              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
