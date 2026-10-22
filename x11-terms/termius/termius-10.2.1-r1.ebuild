@@ -31,6 +31,7 @@ RDEPEND="
 	sys-apps/keyutils
 	sys-apps/util-linux
 	sys-fs/e2fsprogs
+	virtual/libudev
 	x11-libs/cairo
 	x11-libs/gtk+:3
 	x11-libs/libdrm
