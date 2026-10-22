@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 06:00:23 CST)
+(The last generation time: 2026-10-23 06:04:59 CST)
 
 ### Packages
 
@@ -793,7 +793,7 @@
  net-p2p/amule-dlp-antileech                           | 9999               |            | https://github.com/persmule/amule-dlp.antileech                            | , dynamic DLP library for amule-dlp
    net-p2p/amule-dlp                                   | 9999               | RD         | https://github.com/persmule/amule-dlp                                      | aMule with DLP patch, the all-platform eMule p2p client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-p2p/n2n                                           | 3.1.1              |            | https://github.com/ntop/n2n                                                | A Layer Two Peer-to-Peer VPN
+ net-p2p/n2n                                           | 3.1.1-r1           |            | https://github.com/ntop/n2n                                                | A Layer Two Peer-to-Peer VPN
                                                        | 9999               |            |                                                                            |
    acct-group/n2n                                      | 0                  |  D, RD     |                                                                            | A Layer Two Peer-to-Peer VPN
    acct-user/n2n                                       | 0                  |  D, RD     |                                                                            | A Layer Two Peer-to-Peer VPN
