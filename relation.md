@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 09:02:16 CST)
+(The last generation time: 2026-10-23 09:08:38 CST)
 
 ### Packages
 
@@ -812,7 +812,7 @@
  net-proxy/clash-verge-rev                             | 2.5.8              |            | https://www.clashverge.dev                                                 | GUI client based on Tauri for tailored proxy experience
    net-proxy/mihomo                                    | 1.19.33            | BD, RD     | https://wiki.metacubex.one/                                                | Another Clash Kernel, formerly Clash.Meta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/clash-verge-rev-bin                         | 2.5.8              |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
+ net-proxy/clash-verge-rev-bin                         | 2.5.8-r1           |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/dae                                         | 1.1.0              |            | https://github.com/daeuniverse/dae                                         | A lightweight and high-performance transparent proxy solution based on eBPF
@@ -928,7 +928,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-boot/ventoy-bin                                   | 1.1.18             |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
+ sys-boot/ventoy-bin                                   | 1.1.18-r1          |            | https://www.ventoy.net/                                                    | A new multiboot USB solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-boot/zfsbootmenu                                  | 3.1.0              |            | https://zfsbootmenu.org                                                    | ZFS bootloader for root-on-ZFS systems
                                                        | 9999               |            |                                                                            |
