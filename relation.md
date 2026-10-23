@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:51:33 CST)
+(The last generation time: 2026-10-23 10:52:10 CST)
 
 ### Packages
 
@@ -826,7 +826,7 @@
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
                                                        | 12.14.0            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/flclash-bin                                 | 0.9.1              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
+ net-proxy/flclash-bin                                 | 0.9.1-r1           |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/hysteria                                    | 2.13.0             |            | https://github.com/HyNetworks/hysteria                                     | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
