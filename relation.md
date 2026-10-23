@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:52:10 CST)
+(The last generation time: 2026-10-23 10:55:12 CST)
 
 ### Packages
 
@@ -30,7 +30,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi-bin                                 | 2.73.3             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/enpass                                      | 6.12.6.2258        |            | https://www.enpass.io                                                      | A cross-platform, complete password management solution
+ app-admin/enpass                                      | 6.12.6.2258-r1     |            | https://www.enpass.io                                                      | A cross-platform, complete password management solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/proton-authenticator-bin                    | 1.1.6-r1           |            | https://proton.me/authenticator                                            | Official open-source two-factor authentication app by Proton
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
