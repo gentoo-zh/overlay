@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:39:00 CST)
+(The last generation time: 2026-10-23 10:41:30 CST)
 
 ### Packages
 
@@ -1037,7 +1037,7 @@
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/blackbox-terminal                           | 0.15.2-r1          |            | https://gitlab.gnome.org/raggesilver/blackbox                              | A beautiful GTK 4 terminal
-   dev-libs/libpqmarble                                | 2.0.0_p20250109    |  D, RD     | https://gitlab.gnome.org/raggesilver/marble                                | Utility library for GNOME apps
+   dev-libs/libpqmarble                                | 2.0.0_p20250109-r1 |  D, RD     | https://gitlab.gnome.org/raggesilver/marble                                | Utility library for GNOME apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-terms/termius                                     | 10.2.1-r1          |            | https://termius.com/download/linux                                         | Desktop SSH Client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
