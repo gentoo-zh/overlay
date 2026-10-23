@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 09:28:49 CST)
+(The last generation time: 2026-10-23 09:35:40 CST)
 
 ### Packages
 
@@ -233,8 +233,8 @@
  app-misc/xdg-ninja                                    | 0.2.0.2_p20260510  |            | https://github.com/b3nj5m1n/xdg-ninja                                      | Check the home directory for files that violate the XDG specification
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/xmind                                        | 26.05.01107        |            | https://xmind.com                                                          | Brainstorming and Mind Mapping Software
-                                                       | 27.01.05085        |            |                                                                            |
+ app-misc/xmind                                        | 26.05.01107-r1     |            | https://xmind.com                                                          | Brainstorming and Mind Mapping Software
+                                                       | 27.01.05085-r1     |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/yazi                                         | 26.9.1             |            | https://yazi-rs.github.io                                                  | Blazing fast terminal file manager written in Rust, based on async I/O
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
