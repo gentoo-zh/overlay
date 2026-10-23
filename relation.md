@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:55:12 CST)
+(The last generation time: 2026-10-23 11:34:26 CST)
 
 ### Packages
 
@@ -691,6 +691,8 @@
  net-analyzer/pwru-bin                                 | 1.0.12             |            | https://github.com/cilium/pwru                                             | eBPF-based Linux kernel networking debugger
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/realitlscanner                           | 0.2.3              |            | https://github.com/XTLS/RealiTLScanner                                     | A TLS server scanner for Reality
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-analyzer/sslx-bin                                 | 0.3.1              |            | https://github.com/glincker/sslx                                           | Inspect, grade, and manage certificates and TLS from the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-dns/ddns-go                                       | 6.17.7             |            | https://github.com/jeessy2/ddns-go                                         | Automatically obtain your public IP address and set to your domain name service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
