@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:18:44 CST)
+(The last generation time: 2026-10-23 10:19:23 CST)
 
 ### Packages
 
@@ -899,14 +899,14 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/lceda                                 | 6.5.51             |            | https://lceda.cn/                                                          | LCEDA (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-electronics/lceda-pro                             | 4.1.78             |            | https://lceda.cn/                                                          | LCEDA Pro (binary package)
+ sci-electronics/lceda-pro                             | 4.1.78-r1          |            | https://lceda.cn/                                                          | LCEDA Pro (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/openfpgaloader                        | 1.2.0-r1           |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/elan-bin                              | 4.2.4              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-mathematics/rstudio-desktop-bin                   | 2026.07.1_p147     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
-                                                       | 2026.10.0_p233     |            |                                                                            |
+ sci-mathematics/rstudio-desktop-bin                   | 2026.07.1_p147-r1  |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
+                                                       | 2026.10.0_p233-r1  |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-ml/llama-cpp                                      | 0.7.0-r1           |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
                                                        | 9999               |            |                                                                            |
