@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 12:27:39 CST)
+(The last generation time: 2026-10-23 12:28:24 CST)
 
 ### Packages
 
@@ -248,7 +248,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/notesnook-bin                              | 3.4.9              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/obsidian                                   | 1.14.4-r1          |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
+ app-office/obsidian                                   | 1.14.5             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/siyuan-bin                                 | 3.8.8-r1           |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -391,7 +391,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.4.4              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.4.5              |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 32                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 32                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -836,7 +836,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/juicity                                     | 0.5.0-r1           |            | https://github.com/juicity/juicity                                         | juicity is a quic-based proxy protocol
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/naiveproxy-bin                              | 154.0.8037.49_p4   |            | https://github.com/klzgrad/naiveproxy                                      | A proxy using Chromium's network stack to camouflage traffic
+ net-proxy/naiveproxy-bin                              | 154.0.8037.49_p5   |            | https://github.com/klzgrad/naiveproxy                                      | A proxy using Chromium's network stack to camouflage traffic
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/proxy-server                                | 11.0.1             |            | https://github.com/jackarain/proxy                                         | Implementation of all proxy protocols using modern c++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
