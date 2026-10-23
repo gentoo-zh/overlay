@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 09:58:09 CST)
+(The last generation time: 2026-10-23 10:18:44 CST)
 
 ### Packages
 
@@ -322,7 +322,7 @@
  dev-java/oraclejdk-bin                                | 8.391              |            | https://www.oracle.com/java/                                               | Oracle's Java SE Development Kit
                                                        | 21.0.1-r1          |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-lang/koka-bin                                     | 3.2.9              |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
+ dev-lang/koka-bin                                     | 3.2.9-r1           |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0              |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
@@ -599,7 +599,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/zhudou                                    | 2.000              |            | https://github.com/Buernia/Zhudou-Sans                                     | A font family for CJK symbols and punctuation, derived from Noto Sans
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/bambustudio-bin                             | 02.08.02.61        |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
+ media-gfx/bambustudio-bin                             | 02.08.02.61-r1     |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/scangearmp                                  | 2.4.10-r1          |            | https://www.canon.com                                                      | Driver and utility package for Canon scanners
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
