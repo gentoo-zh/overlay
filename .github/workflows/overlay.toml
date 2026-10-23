@@ -2158,6 +2158,13 @@ github = "XTLS/RealiTLScanner"
 use_latest_release = true
 prefix = "v"
 
+["net-analyzer/sslx-bin"]
+source = "github"
+github = "glincker/sslx"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 ["net-dns/ddns-go"]
 source = "github"
 github = "jeessy2/ddns-go"
