@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:43:05 CST)
+(The last generation time: 2026-10-23 10:49:28 CST)
 
 ### Packages
 
@@ -117,7 +117,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-hazkey                                 | 0.2.1              |            | https://hazkey.hiira.dev/                                                  | Japanese input method for Fcitx5, powered by azooKey engine
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/fcitx-kkc                                    | 5.1.11             |            | https://github.com/fcitx/fcitx5-kkc                                        | Japanese Kana Kanji conversion (libkkc) input method for Fcitx5
+ app-i18n/fcitx-kkc                                    | 5.1.11-r1          |            | https://github.com/fcitx/fcitx5-kkc                                        | Japanese Kana Kanji conversion (libkkc) input method for Fcitx5
    app-i18n/libkkc                                     | 0.3.5-r1           |  D, RD     | https://github.com/ueno/libkkc                                             | Japanese Kana Kanji conversion input method library
      app-i18n/libkkc-data                              | 0.2.7              |  D, RD     | https://github.com/ueno/libkkc                                             | Language model data for the libkkc Japanese input method
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
