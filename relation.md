@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 09:35:40 CST)
+(The last generation time: 2026-10-23 09:58:09 CST)
 
 ### Packages
 
@@ -32,7 +32,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/enpass                                      | 6.12.6.2258        |            | https://www.enpass.io                                                      | A cross-platform, complete password management solution
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/proton-authenticator-bin                    | 1.1.6              |            | https://proton.me/authenticator                                            | Official open-source two-factor authentication app by Proton
+ app-admin/proton-authenticator-bin                    | 1.1.6-r1           |            | https://proton.me/authenticator                                            | Official open-source two-factor authentication app by Proton
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/qm                                          | 0.1.15             |            | https://qm.ycombinator.com                                                 | Control-plane CLI for portable QM deployments
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -248,9 +248,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/notesnook-bin                              | 3.4.9              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/obsidian                                   | 1.14.4             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
+ app-office/obsidian                                   | 1.14.4-r1          |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/siyuan-bin                                 | 3.8.8              |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
+ app-office/siyuan-bin                                 | 3.8.8-r1           |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/wps-office                                 | 11.1.0.11719-r2    |            | https://www.wps.cn/product/wpslinux/                                       | WPS Office is an office productivity suite, Here is the Chinese version
                                                        | 12.1.2.29183       |            |                                                                            |
@@ -320,7 +320,7 @@
  dev-java/google-java-format                           | 1.37.0             |            | https://github.com/google/google-java-format                               | Reformats Java source code to comply with Google Java Style
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-java/oraclejdk-bin                                | 8.391              |            | https://www.oracle.com/java/                                               | Oracle's Java SE Development Kit
-                                                       | 21.0.1             |            |                                                                            |
+                                                       | 21.0.1-r1          |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-lang/koka-bin                                     | 3.2.9              |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -489,7 +489,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zcode-bin                                    | 3.16.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/zprint-bin                                   | 1.3.0              |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
+ dev-util/zprint-bin                                   | 1.3.0-r1           |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/gitoxide                                      | 0.60.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
