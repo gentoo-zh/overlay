@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:49:28 CST)
+(The last generation time: 2026-10-23 10:51:33 CST)
 
 ### Packages
 
@@ -104,7 +104,7 @@
  app-emulation/winetricks-zh                           | 20240105.1         |            | https://github.com/hillwoodroc/winetricks-zh/                              | windows applications setup wizard for Chinese wine users
                                                        | 99999999           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-i18n/akaza                                        | 2026.602.0         |            | https://github.com/akaza-im/akaza                                          | Yet another Japanese IME for IBus
+ app-i18n/akaza                                        | 2026.602.0-r1      |            | https://github.com/akaza-im/akaza                                          | Yet another Japanese IME for IBus
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/dvp                                          | 1.2.1-r1           |            | https://www.kaufmann.no/roland/dvorak/index.html                           | The kbd keymap for Programmer Dvorak
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -287,7 +287,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/readest-bin                                  | 0.12.16-r1         |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/stirling-pdf-bin                             | 3.2.0-r1           |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
+ app-text/stirling-pdf-bin                             | 3.2.0-r2           |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/xreader                                      | 4.6.9-r1           |            | https://github.com/linuxmint/xreader                                       | Document viewer for the X-Apps project
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -523,7 +523,7 @@
    acct-group/vintagestory                             | 0                  | RD         |                                                                            | User group for Vintage Story Server
    acct-user/vintagestory                              | 0                  | RD         |                                                                            | User for Vintage Story Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-util/sgdboop                                    | 1.4.4-r1           |            | https://github.com/SteamGridDB/SGDBoop                                     | Apply SteamGridDB assets directly to your Steam library
+ games-util/sgdboop                                    | 1.4.4-r2           |            | https://github.com/SteamGridDB/SGDBoop                                     | Apply SteamGridDB assets directly to your Steam library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-util/watt-toolkit-bin                           | 3.1.0              |            | https://steampp.net/                                                       | Multi-purpose Steam toolbox (Watt Toolkit, formerly Steam++)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -631,7 +631,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/go-musicfox                               | 5.1.0-r1           |            | https://github.com/go-musicfox/go-musicfox                                 | Command-line Netease Cloud Music written in Go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/harmonoid                                 | 0.3.32-r2          |            | https://harmonoid.com/                                                     | Plays & manages your music library
+ media-sound/harmonoid                                 | 0.3.32-r3          |            | https://harmonoid.com/                                                     | Plays & manages your music library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/listen1_desktop-bin                       | 2.33.0-r1          |            | https://listen1.github.io/listen1/                                         | one for all free music in China
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -667,7 +667,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/mpv-handler                               | 0.4.2              |            | https://github.com/akiirui/mpv-handler                                     | Play website videos and songs with mpv & yt-dlp
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/piliplus-bin                              | 2.1.6.2-r1         |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
+ media-video/piliplus-bin                              | 2.1.6.2-r2         |            | https://github.com/bggRGjQaUbCoE/PiliPlus                                  | BiliBili third-party client developed using Flutter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/tenvideo                                  | 1.0.10-r1          |            | https://v.qq.com/download.html#linux                                       | Tencent videos
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -700,12 +700,12 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-dns/q                                             | 0.19.12            |            | https://github.com/natesales/q                                             | A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/dingtalk                                       | 8.3.1.261008001-r2 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
+ net-im/dingtalk                                       | 8.3.1.261008001-r3 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503-r1   | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/telegram-desktop                               | 7.3.3-r1           |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/tencent-qq                                     | 3.2.34_p260924-r1  |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
+ net-im/tencent-qq                                     | 3.2.34_p260924-r2  |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
    media-libs/openslide                                | 4.0.1-r1           | RD         | https://openslide.org/                                                     | A C library that provides a simple interface to read whole-slide images
      media-libs/libdicom                               | 1.3.0              |  D, RD     | https://libdicom.readthedocs.io/                                           | A C library and a set of command-line tools for reading DICOM WSI files
    virtual/loong-ow-compat                             | 0                  | RD         |                                                                            | Virtual for LoongArch old-world compatibility
@@ -730,7 +730,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/apifox                                       | 2.8.51             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/baidunetdisk                                 | 8.7.0-r1           |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
+ net-misc/baidunetdisk                                 | 8.7.0-r2           |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidupcs-go                                  | 4.0.2              |            | https://github.com/qjfoidnh/BaiduPCS-Go                                    | Terminal utility for Baidu Network Disk (Golang Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -812,7 +812,7 @@
  net-proxy/clash-verge-rev                             | 2.5.8-r1           |            | https://www.clashverge.dev                                                 | GUI client based on Tauri for tailored proxy experience
    net-proxy/mihomo                                    | 1.19.33            | BD, RD     | https://wiki.metacubex.one/                                                | Another Clash Kernel, formerly Clash.Meta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/clash-verge-rev-bin                         | 2.5.8-r1           |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
+ net-proxy/clash-verge-rev-bin                         | 2.5.8-r2           |            | https://github.com/clash-verge-rev/clash-verge-rev                         | (Continuation) of Clash Meta GUI based on Tauri
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/dae                                         | 1.1.0              |            | https://github.com/daeuniverse/dae                                         | A lightweight and high-performance transparent proxy solution based on eBPF
@@ -891,7 +891,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-wireless/linux-wifi-hotspot                       | 9999               |            | https://github.com/lakinduakash/linux-wifi-hotspot                         | Linux Wifi Hotspot
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-chemistry/vesta                                   | 3.5.8-r1           |            | https://jp-minerals.org/vesta/                                             | Visualization for Electronic and STructural Analysis
+ sci-chemistry/vesta                                   | 3.5.8-r2           |            | https://jp-minerals.org/vesta/                                             | Visualization for Electronic and STructural Analysis
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/circuitjs1-bin                        | 4.1.5.1            |            | https://www.falstad.com/circuit/                                           | Electronic Circuit Simulator in the Browser
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -908,7 +908,7 @@
  sci-mathematics/rstudio-desktop-bin                   | 2026.07.1_p147-r1  |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
                                                        | 2026.10.0_p233-r1  |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-ml/llama-cpp                                      | 0.7.0-r1           |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
+ sci-ml/llama-cpp                                      | 0.7.0-r2           |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sec-keys/openpgp-keys-gentoozh                        | 20260726           |            | https://distfiles.gentoozh.org/                                            | OpenPGP keys used to sign gentoo-zh binary packages
