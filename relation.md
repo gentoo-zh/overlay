@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 08:28:09 CST)
+(The last generation time: 2026-10-23 08:49:12 CST)
 
 ### Packages
 
@@ -654,7 +654,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/ytmdesktop-bin                            | 2.0.12             |            | https://github.com/ytmdesktop/ytmdesktop                                   | A Desktop App for YouTube Music
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/bilibili                                  | 1.19.0_p3          |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
+ media-video/bilibili                                  | 1.19.0_p3-r1       |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/davinci-resolve                           | 21.1.1             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1002,7 +1002,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.9.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/brave-bin                                  | 1.97.59            |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+ www-client/brave-bin                                  | 1.97.59-r1         |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 154.0.8037.97_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 155.0.8059.84_p1   |            |                                                                            |
