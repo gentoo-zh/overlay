@@ -11,7 +11,7 @@
 		<flag name="bmq">Project C BMQ scheduler</flag>
 		<flag name="bmq-lfbmq">Project C BMQ scheduler with the lock-free bitmap queue runqueue variant</flag>
 		<flag name="pds">Project C Priority and Deadline based Skip list scheduler</flag>
-		<flag name="muqss">MuQSS CPU scheduler with interactive workload accounting</flag>
+		<flag name="muqss">MuQSS CPU scheduler from standalone CK patches on 7.3 and CachyOS patches on older kernels</flag>
 		<flag name="rt">Select PREEMPT_RT and apply the RT i915 patch where supported</flag>
 		<flag name="rt-bore">BORE scheduler with PREEMPT_RT</flag>
 		<flag name="eevdf">Linux EEVDF scheduler; includes the CachyOS POC idle CPU selector on mainline kernels</flag>

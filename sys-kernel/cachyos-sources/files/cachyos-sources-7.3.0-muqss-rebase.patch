@@ -1,0 +1,31 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] rebase standalone MuQSS v0.32 Kconfig contexts on CachyOS
+
+Match CachyOS CACHY insertion and removal of the EXPERT dependency.
+Only patch context changes; retain the official MuQSS dependency gates.
+Apply to temporary scheduler.patch, not the kernel source.
+
+--- a/scheduler.patch
++++ b/scheduler.patch
+@@ -387,9 +387,9 @@
+  
+ +source "kernel/Kconfig.MuQSS"
+ +
+- config BROKEN
+- 	bool
+- 	help
++ config CACHY
++ 	bool "Kernel tweaks by CachyOS"
++ 	default y
+ @@ -893,6 +895,7 @@ menu "Scheduler features"
+  config UCLAMP_TASK
+  	bool "Enable utilization clamping for RT/FAIR tasks"
+@@ -689,7 +689,7 @@
+ @@ -92,6 +92,8 @@ endchoice
+  config PREEMPT_RT
+  	bool "Fully Preemptible Kernel (Real-Time)"
+- 	depends on EXPERT && ARCH_SUPPORTS_RT && !COMPILE_TEST
++ 	depends on ARCH_SUPPORTS_RT && !COMPILE_TEST
+ +	# MuQSS does not implement the PREEMPT_RT scheduler/locking contract
+ +	depends on !SCHED_MUQSS
+  	select PREEMPTION
