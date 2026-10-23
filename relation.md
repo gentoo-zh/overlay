@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:41:30 CST)
+(The last generation time: 2026-10-23 10:43:05 CST)
 
 ### Packages
 
@@ -601,7 +601,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/bambustudio-bin                             | 02.08.02.61-r1     |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/scangearmp                                  | 2.4.10-r1          |            | https://www.canon.com                                                      | Driver and utility package for Canon scanners
+ media-gfx/scangearmp                                  | 2.4.10-r2          |            | https://www.canon.com                                                      | Driver and utility package for Canon scanners
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/tgs2png                                     | 9999               |            | https://github.com/zevlg/tgs2png                                           | Convert Telegram's animated stickers in TGS format into series of PNG images
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
