@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 12:29:33 CST)
+(The last generation time: 2026-10-23 12:30:14 CST)
 
 ### Packages
 
@@ -246,7 +246,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/freeoffice                                 | 1238               |            | https://www.freeoffice.com/de/                                             | A complete, free Microsoft Office-compatible alternative office suite
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/notesnook-bin                              | 3.4.9              |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
+ app-office/notesnook-bin                              | 3.4.10             |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/obsidian                                   | 1.14.5             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -925,7 +925,7 @@
  sys-apps/pacman-mirrorlist                            | 20251021           |            | https://archlinux.org/mirrorlist/                                          | Repository list for Archlinux's binary package manager
                                                        | 20260610           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/pnpm-bin                                     | 12.14.0            |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
+ sys-apps/pnpm-bin                                     | 12.15.0            |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
