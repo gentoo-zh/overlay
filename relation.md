@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 10:19:23 CST)
+(The last generation time: 2026-10-23 10:28:44 CST)
 
 ### Packages
 
@@ -325,7 +325,7 @@
  dev-lang/koka-bin                                     | 3.2.9-r1           |            | https://github.com/koka-lang/koka                                          | A Functional Language with Effect Types and Handlers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
-   dev-libs/lunar-date                                 | 3.2.0              |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
+   dev-libs/lunar-date                                 | 3.2.0-r1           |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-libs/v2ray-rules-dat-bin                          | 202607092306       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -395,7 +395,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 32                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 32                 | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
-     sys-apps/pacman                                   | 7.1.0              |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
+     sys-apps/pacman                                   | 7.1.0-r1           |  D         | https://pacman.archlinux.page/                                             | Archlinux's binary package manager
        app-crypt/archlinux-keyring                     | 20260909           |  D, RD     | https://gitlab.archlinux.org/archlinux/archlinux-keyring                   | GnuPG keyring of Archlinux developer keys
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/asdf-vm                                      | 0.20.2             |            | https://github.com/asdf-vm/asdf                                            | Manage all your runtime versions with one tool
@@ -474,7 +474,7 @@
    dev-python/lsp-tree-sitter                          | 0.2.19             | RD         | https://github.com/neomutt/lsp-tree-sitter                                 | A library to create language servers
      dev-python/pygls                                  | 2.1.1              | RD         | https://github.com/openlawlibrary/pygls                                    | A pythonic generic language server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/trae-ide                                     | 2.3.93438          |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
+ dev-util/trae-ide                                     | 2.3.93438-r1       |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vcpkg-tool                                   | 2026.09.26         |            | https://github.com/microsoft/vcpkg-tool                                    | Library manager for C/C++ (tool only)
    dev-util/cmakerc                                    | 2.0.1_p20230725    | BD         | https://github.com/vector-of-bool/cmrc                                     | A Resource Compiler in a Single CMake Script
@@ -540,7 +540,7 @@
  kde-misc/plasma-applet-netspeed-widget                | 3.1                |            | https://store.kde.org/p/998895/                                            | Plasma 5 widget that displays the currently used network bandwidth
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- kde-misc/plasma-ions-china                            | 0.1.2              |            | https://github.com/arenekosreal/plasma-ions-china                          | A collection of plasma weather ions for Chinese users
+ kde-misc/plasma-ions-china                            | 0.1.2-r1           |            | https://github.com/arenekosreal/plasma-ions-china                          | A collection of plasma weather ions for Chinese users
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/Plangothic                                | 2.9.5795           |            | https://github.com/Fitzgerald-Porthmouth-Koenigsegg/Plangothic_Project     | 遍黑体项目（Plangothic Project）
@@ -613,7 +613,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-plugins/kotonoha                                | 9999               |            | https://github.com/locez/kotonoha                                          | Wayland lyrics overlay for MPRIS-compatible media players
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-plugins/osdlyrics                               | 0.5.16             |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
+ media-plugins/osdlyrics                               | 0.5.16-r1          |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-plugins/waylyrics                               | 0.3.21             |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
