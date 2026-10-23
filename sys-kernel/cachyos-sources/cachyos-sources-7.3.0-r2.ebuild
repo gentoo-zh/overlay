@@ -214,6 +214,11 @@ src_prepare() {
 	# https://github.com/Szowisz/CachyOS-kernels/issues/35
 	eapply "${FILESDIR}/6.19.0/misc/0002-fix-autofdo-propeller-lto-thin-dist.patch"
 
+	# Backport: SND_SOC_TAS2783_SDW needs SND_SOC_SDCA && EFI, but
+	# SND_SOC_AMD_LEGACY_SDW_MACH selected it unconditionally.
+	# Upstream: https://git.kernel.org/broonie/sound/c/d06607bafb36
+	eapply "${FILESDIR}/cachyos-sources-7.3.0-tas2783-sdca-deps.patch"
+
 	if use bore || use rt-bore || use deckify; then
 		eapply --fuzz=0 -- "${patches_prefix}-bore.patch"
 	elif use muqss; then

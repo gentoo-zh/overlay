@@ -1,0 +1,63 @@
+From: Syed Saba Kareem <Syed.SabaKareem@amd.com>
+Subject: ASoC: amd: acp: fix TAS2783 SoundWire codec unmet dependencies
+Date: Thu, 24 Sep 2026 18:11:52 +0530
+
+SND_SOC_AMD_LEGACY_SDW_MACH unconditionally selects SND_SOC_TAS2783_SDW,
+but that codec depends on SND_SOC_SDCA and EFI in addition to SOUNDWIRE.
+An unconditional select force-enables the codec even when those
+dependencies are not met, which the kernel test robot reported as unmet
+direct dependencies when EFI=n:
+
+  WARNING: unmet direct dependencies detected for SND_SOC_TAS2783_SDW
+    Depends on [n]: SOUND [=y] && SND [=y] && SND_SOC [=y] &&
+      SOUNDWIRE [=y] && SND_SOC_SDCA [=y] && EFI [=n]
+    Selected by [y]:
+    - SND_SOC_AMD_LEGACY_SDW_MACH [=y] && ...
+
+The other SoundWire codecs selected by this machine driver only depend
+on SOUNDWIRE, which the driver already depends on, so they select
+cleanly.  SND_SOC_TAS2783_SDW is the only one that additionally needs
+the SDCA core and EFI (it reads speaker calibration data from EFI
+variables).
+
+SND_SOC_SDCA cannot simply be selected here, as that introduces a
+recursive Kconfig dependency (SOUNDWIRE depends on SND_SOC_SDCA_OPTIONAL,
+whose default pulls in SND_SOC_SDCA), and EFI is a platform feature that
+must not be selected by a driver.  Instead, guard the select with the
+missing dependencies so the codec is only (and always) built when they
+are satisfied:
+
+  select SND_SOC_TAS2783_SDW if SND_SOC_SDCA && EFI
+
+This keeps the TAS2783 SoundWire codec built together with the machine
+driver on platforms that can use it, while avoiding the unmet dependency
+when SND_SOC_SDCA or EFI is disabled.
+
+Backport of upstream commit d06607bafb36 ("ASoC: amd: acp: fix TAS2783
+SoundWire codec unmet dependencies") in broonie/sound.git for-7.4.
+https://lore.kernel.org/all/20260924124205.3376083-1-syed.sabakareem@amd.com/
+https://git.kernel.org/broonie/sound/c/d06607bafb36
+
+Fixes: 28114992dd2f ("ASoC: amd: acp: enable TAS2783 and add RT712-VB SoundWire machine")
+Reported-by: kernel test robot <lkp@intel.com>
+Closes: https://lore.kernel.org/oe-kbuild-all/202609182147.gfofWIXW-lkp@intel.com/
+Signed-off-by: Syed Saba Kareem <Syed.SabaKareem@amd.com>
+---
+ sound/soc/amd/acp/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sound/soc/amd/acp/Kconfig b/sound/soc/amd/acp/Kconfig
+index e880e44b9763..6433876430f0 100644
+--- a/sound/soc/amd/acp/Kconfig
++++ b/sound/soc/amd/acp/Kconfig
+@@ -181,7 +181,7 @@ config SND_SOC_AMD_LEGACY_SDW_MACH
+ 	select SND_SOC_RT715_SDW
+ 	select SND_SOC_RT715_SDCA_SDW
+ 	select SND_SOC_RT722_SDCA_SDW
+-	select SND_SOC_TAS2783_SDW
++	select SND_SOC_TAS2783_SDW if SND_SOC_SDCA && EFI
+ 	help
+ 	  This option enables Legacy(No DSP) sound card support for SoundWire
+ 	  enabled AMD platforms along with ACP PDM controller.
+-- 
+2.43.0
