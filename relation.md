@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 09:25:26 CST)
+(The last generation time: 2026-10-23 09:28:49 CST)
 
 ### Packages
 
@@ -780,9 +780,9 @@
  net-misc/remmina-plugin-rustdesk                      | 1.0.0.0-r1         |            | https://www.muflone.com/remmina-plugin-rustdesk/                           | A protocol plugin for Remmina to launch a Rustdesk connection
    net-misc/rustdesk                                   | 1.5.0-r2           |  D, RD     | https://rustdesk.com/                                                      | An open-source remote desktop, and alternative to TeamViewer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/reqable                                      | 3.3.4              |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
+ net-misc/reqable                                      | 3.3.4-r1           |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/todesk                                       | 4.9.8.0            |            | https://www.todesk.com/                                                    | Remote control and team work
+ net-misc/todesk                                       | 4.9.8.0-r1         |            | https://www.todesk.com/                                                    | Remote control and team work
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tssh                                         | 0.1.26             |            | https://github.com/trzsz/trzsz-ssh                                         | SSH client with a server selection menu and trzsz file transfer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
