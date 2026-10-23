@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-23 13:22:37 CST)
+(The last generation time: 2026-10-23 14:22:57 CST)
 
 ### Packages
 
@@ -281,7 +281,7 @@
  app-text/gzpaste                                      | 0.1.3              |            | https://github.com/gentoo-zh/gzpaste                                       | Command-line client for the paste.gentoozh.org pastebin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lektra                                       | 0.6.5              |            | https://github.com/dheerajshenoy/lektra                                    | High-performance PDF reader that prioritizes screen space and control
-                                                       | 0.7.9.1            |            |                                                                            |
+                                                       | 0.8.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lemminx-bin                                  | 0.31.2             |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
