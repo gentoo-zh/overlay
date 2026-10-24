@@ -2542,6 +2542,15 @@ bundle_pv = [["_rc", "rc"]]
 # upstream archived
 #["net-proxy/daed"]
 
+["net-proxy/doona"]
+source = "github"
+github = "Zakkaus/doona"
+use_max_tag = true
+prefix = "v"
+from_pattern = '^(.+)-(alpha|beta|rc)\.(\d+)$'
+to_pattern = '\1_\2\3'
+github_account = "zakkaus"
+
 ["net-proxy/flclash-bin"]
 source = "github"
 github = "chen08209/FlClash"
