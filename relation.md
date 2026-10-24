@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-24 12:21:18 CST)
+(The last generation time: 2026-10-24 12:22:29 CST)
 
 ### Packages
 
@@ -97,7 +97,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/liblol-libxcrypt                        | 0.1.10             |            | https://github.com/besser82/libxcrypt                                      | libxcrypt for liblol
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-emulation/looking-glass                           | 0_beta7_rc1-r3     |            | https://looking-glass.io                                                   | A low latency KVMFR application for guests with VGA PCI Passthrough
+ app-emulation/looking-glass                           | 0_beta7_rc1-r4     |            | https://looking-glass.io                                                   | A low latency KVMFR application for guests with VGA PCI Passthrough
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/winboat-bin                             | 0.9.2-r1           |            | https://www.winboat.app/                                                   | Run Windows apps on Linux with seamless integration
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -767,7 +767,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/omnyssh-bin                                  | 1.1.5              |            | https://github.com/timhartmann7/omnyssh                                    | SSH dashboard, terminal, and SFTP file manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/pcmanx-gtk2                                  | 1.3-r1             |            | https://github.com/pcman-bbs/pcmanx                                        | PCMan is a gtk+ based free BBS client
+ net-misc/pcmanx-gtk2                                  | 1.3-r2             |            | https://github.com/pcman-bbs/pcmanx                                        | PCMan is a gtk+ based free BBS client
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
