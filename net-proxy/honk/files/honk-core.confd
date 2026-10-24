@@ -1,0 +1,10 @@
+# Configuration file read by honk-core
+#HONK_CONFIG="/etc/honk/config.dae"
+
+#HONK_PIDFILE="/run/honk-core.pid"
+
+# Resource limits, as LimitNPROC and LimitNOFILE in honk-core.service
+#HONK_ULIMIT="-u 512 -n 1048576"
+
+# Extra honk-core options, e.g. "--log-file /var/log/honk-core.log"
+HONK_OPTS=""
