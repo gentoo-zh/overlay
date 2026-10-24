@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-24 08:47:24 CST)
+(The last generation time: 2026-10-24 08:57:55 CST)
 
 ### Packages
 
@@ -651,7 +651,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/yesplaymusic-bin                          | 0.4.11-r1          |            | https://github.com/qier222/YesPlayMusic                                    | A third party music player for Netease Music
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/ytmdesktop-bin                            | 2.0.12             |            | https://github.com/ytmdesktop/ytmdesktop                                   | A Desktop App for YouTube Music
+ media-sound/ytmdesktop-bin                            | 2.0.12-r1          |            | https://github.com/ytmdesktop/ytmdesktop                                   | A Desktop App for YouTube Music
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/bilibili                                  | 1.19.0_p3-r1       |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
