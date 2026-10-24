@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-24 20:02:50 CST)
+(The last generation time: 2026-10-25 00:12:08 CST)
 
 ### Packages
 
@@ -303,6 +303,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/tgbot-cpp                                     | 1.11               |            | https://github.com/reo7sp/tgbot-cpp                                        | C++ library for Telegram bot API
                                                        | 1.13-r1            |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ dev-db/pgroonga                                       | 4.1.0              |            | https://pgroonga.github.io/                                                | Full-text search extension for PostgreSQL usable with all languages
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-debug/lldb-mi                                     | 0.0.1-r1           |            | https://github.com/lldb-tools/lldb-mi                                      | LLDB Machine Interface Driver
                                                        | 9999               |            |                                                                            |
@@ -703,6 +705,12 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/dingtalk                                       | 8.3.1.261008001-r3 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503-r1   | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-im/luoxu                                          | 9999               |            | https://github.com/lilydjwg/luoxu                                          | A Telegram userbot to index Chinese and Japanese group contents
+   acct-group/luoxu                                    | 0                  | RD         |                                                                            | Group for net-im/luoxu
+   acct-user/luoxu                                     | 0                  | RD         |                                                                            | User for net-im/luoxu
+   dev-python/asyncpg                                  | 0.32.0             | RD         | https://pypi.org/project/asyncpg/                                          | An asyncio PostgreSQL driver
+   dev-python/telethon                                 | 1.45.0             | RD         | https://codeberg.org/Lonami/Telethon                                       | Full-featured Telegram client library for Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/telegram-desktop                               | 7.3.3-r1           |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
