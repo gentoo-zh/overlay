@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+: ${HONK_CONFIG:=/etc/honk/config.dae}
+: ${HONK_PIDFILE:=/run/${RC_SVCNAME}.pid}
+
+command="/usr/bin/honk-core"
+command_args="${HONK_OPTS} -c ${HONK_CONFIG}"
+pidfile="${HONK_PIDFILE}"
+command_background=true
+retry="TERM/90/KILL/5"
+rc_ulimit="${HONK_ULIMIT:--u 512 -n 1048576}"
+required_files="${HONK_CONFIG}"
+
+extra_started_commands="reload"
+description="eBPF transparent proxy"
+
+depend() {
+	need net
+	use net-online
+	after docker sysctl
+}
+
+reload() {
+	ebegin "Reloading ${RC_SVCNAME}"
+	"${command}" reload
+	eend $?
+}
