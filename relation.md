@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-24 06:53:34 CST)
+(The last generation time: 2026-10-24 08:47:24 CST)
 
 ### Packages
 
@@ -802,7 +802,7 @@
  net-p2p/qbittorrent-enhanced                          | 4.6.7.10           |            | https://github.com/c0re100/qBittorrent-Enhanced-Edition                    | qBittorrent Enhanced, based on qBittorrent
                                                        | 5.2.4.10-r1        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-print/epson-inkjet-printer_201207w                | 1.0.0-r2           |            | https://openprinting.github.io/foomatic/driver/epson-201207w               | Epson printer driver (L110, L210, L300, L350, L355, L550, L555)
+ net-print/epson-inkjet-printer_201207w                | 1.0.0-r3           |            | https://openprinting.github.io/foomatic/driver/epson-201207w               | Epson printer driver (L110, L210, L300, L350, L355, L550, L555)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/bore                                        | 0.6.0              |            | https://github.com/ekzhang/bore                                            | bore is a simple CLI tool for making tunnels to localhost
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
