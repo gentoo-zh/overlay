@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-24 12:22:29 CST)
+(The last generation time: 2026-10-24 12:23:10 CST)
 
 ### Packages
 
@@ -273,7 +273,7 @@
  app-text/cajviewer                                    | 9.0-r3             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/goldendict                                   | 26.8.0-r1          |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
-   app-arch/libzim                                     | 9.5.1              |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
+   app-arch/libzim                                     | 9.5.1-r1           |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
                                                        | 9.8.2-r1           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/groff-utf8                                   | 0-r2               |            | https://www.haible.de/bruno/packages-groff-utf8.html                       | GNU groff wrapper allowing UTF-8 input
