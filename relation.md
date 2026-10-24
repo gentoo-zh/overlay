@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-24 12:53:23 CST)
+(The last generation time: 2026-10-24 13:27:39 CST)
 
 ### Packages
 
@@ -202,7 +202,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush                                        | 0.98.1             |            | https://github.com/charmbracelet/crush                                     | The glamourous AI coding agent for your favourite terminal 💘
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/crush-bin                                    | 0.98.1             |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
+ app-misc/crush-bin                                    | 0.98.2             |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/fast-resume                                  | 2.14.0             |            | https://github.com/angristan/fast-resume                                   | Fast fuzzy finder for coding agent session history
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
