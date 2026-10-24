@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<use>
+		<flag name="clash-api">Enable the Clash-compatible REST and WebSocket API</flag>
+		<flag name="mimalloc">Use the mimalloc allocator bundled by the mimalloc crate instead of the libc allocator</flag>
+		<flag name="native-api">Enable the honk native API and the configuration database</flag>
+		<flag name="native-ui">Embed the <pkg>net-proxy/doona</pkg> web UI</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">daeuniverse/honk</remote-id>
+	</upstream>
+</pkgmetadata>
