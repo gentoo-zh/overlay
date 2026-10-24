@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+# Copyright 1999-2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+: ${AMULE_USER:=amule}
+: ${AMULE_GROUP:=amule}
+: ${AMULE_HOME:=/var/lib/amule}
+
+command="/usr/bin/amuleweb"
+command_args="${AMULEWEB_OPTS}"
+command_user="${AMULE_USER}:${AMULE_GROUP}"
+command_background=true
+pidfile="/run/${RC_SVCNAME}.pid"
+directory="${AMULE_HOME}"
+required_files="${AMULE_HOME}/.aMule/remote.conf"
+retry="TERM/60/KILL/5"
+
+description="aMule web interface"
+
+depend() {
+	need net
+	use amuled
+}
+
+start_pre() {
+	export HOME="${AMULE_HOME}"
+}

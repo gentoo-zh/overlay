@@ -1,0 +1,13 @@
+# User, group and home directory of amuled. It reads its configuration
+# from ${AMULE_HOME}/.aMule/amule.conf.
+#AMULE_USER="amule"
+#AMULE_GROUP="amule"
+#AMULE_HOME="/var/lib/amule"
+
+# amuled exits until external connections are enabled. Start it once to
+# create ${AMULE_HOME}/.aMule/amule.conf, then set in that file:
+#   AcceptExternalConnections=1
+#   ECPassword=<output of: printf %s 'password' | md5sum | cut -d' ' -f1>
+
+# Additional options for amuled.
+#AMULED_OPTS=""

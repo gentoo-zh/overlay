@@ -1,0 +1,54 @@
+Declare and define PrefsUnifiedDlg::OnButtonReloadAntiLeech outside the
+ENABLE_IP2COUNTRY / GEOIP_GUI blocks, because the event table entry for
+IDC_RELOADANTILEECH is only guarded by AMULE_DLP and the build fails with
+ENABLE_IP2COUNTRY=NO.
+
+diff --git a/src/PrefsUnifiedDlg.cpp b/src/PrefsUnifiedDlg.cpp
+index 0a5df2f..08532b7 100644
+--- a/src/PrefsUnifiedDlg.cpp
++++ b/src/PrefsUnifiedDlg.cpp
+@@ -2296,9 +2296,6 @@ void PrefsUnifiedDlg::OnButtonIPFilterUpdate(wxCommandEvent &WXUNUSED(event))
+ #endif
+ }
+ 
+-#ifdef GEOIP_GUI
+-PrefsUnifiedDlg *PrefsUnifiedDlg::s_activeInstance = NULL;
+-
+ //Bill Lee
+ #ifdef AMULE_DLP
+ void PrefsUnifiedDlg::OnButtonReloadAntiLeech(wxCommandEvent& WXUNUSED(event)){
+@@ -2314,6 +2311,9 @@ void PrefsUnifiedDlg::OnButtonReloadAntiLeech(wxCommandEvent& WXUNUSED(event)){
+ }
+ #endif
+ 
++#ifdef GEOIP_GUI
++PrefsUnifiedDlg *PrefsUnifiedDlg::s_activeInstance = NULL;
++
+ PrefsUnifiedDlg::~PrefsUnifiedDlg()
+ {
+ 	// Clear the active-instance pointer so the IP2Country download callback cannot poke a
+diff --git a/src/PrefsUnifiedDlg.h b/src/PrefsUnifiedDlg.h
+index 25e9c18..d5fbba3 100644
+--- a/src/PrefsUnifiedDlg.h
++++ b/src/PrefsUnifiedDlg.h
+@@ -251,6 +251,9 @@ private:
+ #ifdef ENABLE_IPV6
+ 	void OnAddressFamiliesChange(wxCommandEvent &event);
+ #endif
++#ifdef AMULE_DLP
++	void OnButtonReloadAntiLeech(wxCommandEvent &event); /* Dynamic Leech Protect - Bill Lee */
++#endif
+ #if defined(ENABLE_IP2COUNTRY) || defined(CLIENT_GUI)
+ 	void OnGeoIPSourceChange(wxCommandEvent &event);
+ 	void OnGeoIPUpdateNow(wxCommandEvent &event);
+@@ -267,10 +270,6 @@ private:
+ 	// TransferToWindow.
+ 	void UpdateGeoIPControlsEnabled();
+ 
+-#ifdef AMULE_DLP
+-	void OnButtonReloadAntiLeech(wxCommandEvent &event); /* Dynamic Leech Protect - Bill Lee */
+-#endif
+-
+ private:
+ 	// Set in the ctor / cleared in dtor so the IP2Country download
+ 	// callback can find an open dialog without a global pointer chain.

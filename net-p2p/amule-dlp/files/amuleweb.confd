@@ -1,0 +1,12 @@
+# User, group and home directory of amuleweb. It reads the external
+# connection settings and the web passwords from
+# ${AMULE_HOME}/.aMule/remote.conf.
+#AMULE_USER="amule"
+#AMULE_GROUP="amule"
+#AMULE_HOME="/var/lib/amule"
+
+# Create remote.conf once with:
+#   su -s /bin/sh -c 'HOME=/var/lib/amule amuleweb --write-config --host=localhost --port=4712 --password=<EC password> --admin-pass=<web password>' amule
+
+# Additional options for amuleweb.
+#AMULEWEB_OPTS=""

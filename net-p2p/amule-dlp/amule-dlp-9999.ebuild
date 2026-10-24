@@ -1,10 +1,13 @@
-# Copyright 1999-2021 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 WX_GTK_VER="3.2-gtk3"
 
-inherit wxwidgets xdg-utils git-r3
+PYTHON_COMPAT=( python3_{12..15} )
+
+inherit cmake flag-o-matic python-any-r1 wxwidgets xdg git-r3
+
 DESCRIPTION="aMule with DLP patch, the all-platform eMule p2p client"
 HOMEPAGE="https://github.com/persmule/amule-dlp"
 EGIT_REPO_URI="https://github.com/persmule/amule-dlp"
@@ -13,122 +16,90 @@ LICENSE="GPL-2+"
 SLOT="0"
 IUSE="daemon debug geoip nls remote stats upnp +X"
 
+REQUIRED_USE="|| ( daemon remote X )"
+
 RDEPEND="
 	dev-libs/boost:=
 	dev-libs/crypto++:=
+	net-misc/curl
 	sys-libs/binutils-libs:0=
 	sys-libs/readline:0=
-	virtual/zlib
-	x11-libs/wxGTK:${WX_GTK_VER}[X?]
-	daemon? ( acct-user/amule )
-	geoip? ( dev-libs/geoip )
+	virtual/zlib:=
+	x11-libs/wxGTK:${WX_GTK_VER}=[curl,X?]
+	daemon? (
+		acct-user/amule
+		dev-libs/glib:2
+	)
+	geoip? ( dev-libs/libmaxminddb )
 	nls? ( virtual/libintl )
 	remote? (
 		acct-user/amule
 		media-libs/libpng:0=
 	)
 	stats? ( media-libs/gd:=[jpeg,png] )
-	upnp? ( net-libs/libupnp:0 )
+	upnp? ( net-libs/libupnp:0= )
+	X? ( dev-libs/glib:2 )
 	!net-p2p/amule
 "
-DEPEND="${RDEPEND}
-	X? ( dev-util/desktop-file-utils )
-"
+DEPEND="${RDEPEND}"
 BDEPEND="
+	${PYTHON_DEPS}
 	virtual/pkgconfig
 	nls? ( sys-devel/gettext )
 "
 
-pkg_setup() {
-	setup-wxwidgets
-}
-
-src_prepare() {
-	default
-
-	eapply "${FILESDIR}"/amule-dlp-allow-autoconf.patch
-	eapply "${FILESDIR}"/amule-dlp-fix-boost-1.87.patch
-	if [[ ${PV} == 9999 ]]; then
-		./autogen.sh || die
-	fi
-}
+PATCHES=(
+	"${FILESDIR}"/amule-dlp-reload-antileech-without-geoip.patch
+)
 
 src_configure() {
-	local myconf=(
-		--with-denoise-level=0
-		--with-wx-config="${WX_CONFIG}"
-		--enable-amulecmd
-		--with-boost
-		$(use_enable debug)
-		$(use_enable daemon amule-daemon)
-		$(use_enable geoip)
-		$(use_enable nls)
-		$(use_enable remote webserver)
-		$(use_enable stats cas)
-		$(use_enable stats alcc)
-		$(use_enable upnp)
+	setup-wxwidgets
+
+	use debug || append-cppflags -DwxDEBUG_LEVEL=0
+	CMAKE_BUILD_TYPE=$(usex debug Debug ${CMAKE_BUILD_TYPE})
+
+	local mycmakeargs=(
+		-DAMULE_DLP=YES
+		-DBUILD_ALCC=YES
+		-DBUILD_ED2K=YES
+		-DBUILD_ALC="$(usex X)"
+		-DBUILD_AMULECMD="$(usex remote)"
+		-DBUILD_DAEMON="$(usex daemon)"
+		-DBUILD_CAS="$(usex stats)"
+		-DBUILD_MONOLITHIC="$(usex X)"
+		-DBUILD_TESTING=NO
+		-DBUILD_WEBSERVER="$(usex remote)"
+		-DENABLE_BFD=YES
+		-DENABLE_IP2COUNTRY="$(usex geoip)"
+		-DENABLE_NLS="$(usex nls)"
+		-DENABLE_UPNP="$(usex upnp)"
+		-DENABLE_VERSION_CHECK=NO
 	)
 
 	if use X; then
-		myconf+=(
-			$(use_enable remote amule-gui)
-			$(use_enable stats alc)
-			$(use_enable stats wxcas)
+		mycmakeargs+=(
+			-DBUILD_REMOTEGUI="$(usex remote)"
+			-DBUILD_WXCAS="$(usex stats)"
 		)
 	else
-		myconf+=(
-			--disable-monolithic
-			--disable-amule-gui
-			--disable-alc
-			--disable-wxcas
+		mycmakeargs+=(
+			-DBUILD_REMOTEGUI=NO
+			-DBUILD_WXCAS=NO
 		)
 	fi
 
-	econf "${myconf[@]}"
+	cmake_src_configure
 }
 
 src_install() {
-	default
+	cmake_src_install
 
 	if use daemon; then
-		newconfd "${FILESDIR}"/amuled.confd-r1 amuled
+		newconfd "${FILESDIR}"/amuled.confd amuled
 		newinitd "${FILESDIR}"/amuled.initd amuled
 	fi
 	if use remote; then
-		newconfd "${FILESDIR}"/amuleweb.confd-r1 amuleweb
+		newconfd "${FILESDIR}"/amuleweb.confd amuleweb
 		newinitd "${FILESDIR}"/amuleweb.initd amuleweb
 	fi
-
-	if use daemon || use remote; then
-		keepdir /var/lib/${PN}
-		fowners amule:amule /var/lib/${PN}
-		fperms 0750 /var/lib/${PN}
-	fi
-}
-
-pkg_postinst() {
-	local ver
-
-	if use daemon || use remote; then
-		for ver in ${REPLACING_VERSIONS}; do
-			if ver_test ${ver} -lt "2.3.2-r4"; then
-				elog "Default user under which amuled and amuleweb daemons are started"
-				elog "have been changed from p2p to amule. Default home directory have been"
-				elog "changed as well."
-				echo
-				elog "If you want to preserve old download/share location, you can create"
-				elog "symlink /var/lib/amule/.aMule pointing to the old location and adjust"
-				elog "files ownership *or* restore AMULEUSER and AMULEHOME variables in"
-				elog "/etc/conf.d/{amuled,amuleweb} to the old values."
-
-				break
-			fi
-		done
-	fi
-
-	use X && xdg_desktop_database_update
-}
-
-pkg_postrm() {
-	use X && xdg_desktop_database_update
 }
