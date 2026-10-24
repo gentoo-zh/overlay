@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-24 08:57:55 CST)
+(The last generation time: 2026-10-24 12:21:18 CST)
 
 ### Packages
 
@@ -799,7 +799,7 @@
    acct-group/n2n                                      | 0                  |  D, RD     |                                                                            | A Layer Two Peer-to-Peer VPN
    acct-user/n2n                                       | 0                  |  D, RD     |                                                                            | A Layer Two Peer-to-Peer VPN
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-p2p/qbittorrent-enhanced                          | 4.6.7.10           |            | https://github.com/c0re100/qBittorrent-Enhanced-Edition                    | qBittorrent Enhanced, based on qBittorrent
+ net-p2p/qbittorrent-enhanced                          | 4.6.7.10-r1        |            | https://github.com/c0re100/qBittorrent-Enhanced-Edition                    | qBittorrent Enhanced, based on qBittorrent
                                                        | 5.2.4.10-r1        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-print/epson-inkjet-printer_201207w                | 1.0.0-r3           |            | https://openprinting.github.io/foomatic/driver/epson-201207w               | Epson printer driver (L110, L210, L300, L350, L355, L550, L555)
