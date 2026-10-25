@@ -20,7 +20,7 @@ LICENSE="MIT Apache-2.0 BSD BSD-2 ISC MPL-2.0 Unlicense"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
-BDEPEND=">=dev-lang/go-1.25.0:="
+BDEPEND=">=dev-lang/go-1.26.0:="
 
 src_compile() {
 	ego build -buildvcs=false -trimpath -o "${T}/${PN}" ./cmd/tssh
