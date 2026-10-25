@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-25 13:48:31 CST)
+(The last generation time: 2026-10-25 14:33:30 CST)
 
 ### Packages
 
@@ -49,10 +49,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-custom-pinyin-dictionary       | 20260101           |            | https://github.com/wuhgit/CustomPinyinDictionary                           | Fcitx5 自建拼音输入法词库，百万常用词汇量。
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-dicts/fcitx-pinyin-moegirl                        | 20260511           |            | https://github.com/outloudvi/mw2fcitx                                      | Fcitx 5 Pinyin Dictionary from zh.moegirl.org.cn
-                                                       | 20260713           |            |                                                                            |
-                                                       | 20260812           |            |                                                                            |
-                                                       | 20260911           |            |                                                                            |
+ app-dicts/fcitx-pinyin-moegirl                        | 20261024           |            | https://github.com/outloudvi/mw2fcitx                                      | Fcitx 5 Pinyin Dictionary from zh.moegirl.org.cn
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-sougou-dict                    | 20261020           |            | https://github.com/blackteahamburger/fcitx5-pinyin-sougou-dict             | Sougou Pinyin dictionary for Fcitx5 and RIME
    app-i18n/ibus-rime                                  | 9999               | RD         | https://rime.im/                                                           | Rime Input Method Engine for IBus Framework
@@ -841,7 +838,7 @@
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
                                                        | 12.15.0            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/flclash-bin                                 | 0.9.1-r1           |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
+ net-proxy/flclash-bin                                 | 0.9.2              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/hysteria                                    | 2.13.0             |            | https://github.com/HyNetworks/hysteria                                     | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
