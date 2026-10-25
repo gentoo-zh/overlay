@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-25 13:32:19 CST)
+(The last generation time: 2026-10-25 13:33:36 CST)
 
 ### Packages
 
@@ -585,8 +585,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/nerd-fonts                                | 3.5.1-r1           |            | https://github.com/ryanoasis/nerd-fonts                                    | Nerd Fonts is a project that patches developer targeted fonts with glyphs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/sarasa-gothic                             | 1.0.41             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
-                                                       | 1.0.42             |            |                                                                            |
+ media-fonts/sarasa-gothic                             | 1.0.42             |            | https://github.com/be5invis/Sarasa-Gothic                                  | A CJK programming font based on Iosevka and Source Han Sans. (TTC)
+                                                       | 1.0.43             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/sarasa-term-sc-nerd                       | 2.3.1              |            | https://github.com/laishulu/Sarasa-Term-SC-Nerd                            | Sarasa Mono SC font patched with Nerd fonts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -799,7 +799,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/todesk                                       | 4.9.8.0-r1         |            | https://www.todesk.com/                                                    | Remote control and team work
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/tssh                                         | 0.1.26             |            | https://github.com/trzsz/trzsz-ssh                                         | SSH client with a server selection menu and trzsz file transfer
+ net-misc/tssh                                         | 0.1.27             |            | https://github.com/trzsz/trzsz-ssh                                         | SSH client with a server selection menu and trzsz file transfer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tsshd                                        | 0.1.10             |            | https://github.com/trzsz/tsshd                                             | UDP-based SSH server with roaming support
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
