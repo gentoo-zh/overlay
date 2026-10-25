@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-25 13:31:42 CST)
+(The last generation time: 2026-10-25 13:32:19 CST)
 
 ### Packages
 
@@ -184,7 +184,7 @@
                                                        | 4.0.19             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.20.4             |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
-                                                       | 4.0.19             |            |                                                                            |
+                                                       | 4.0.20             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.11.3             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -218,7 +218,7 @@
  app-misc/keyd                                         | 2.6.0              |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.1364           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.1482           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -287,7 +287,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/readest-bin                                  | 0.12.16-r1         |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/stirling-pdf-bin                             | 3.2.1              |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
+ app-text/stirling-pdf-bin                             | 3.2.2              |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/xreader                                      | 4.6.9-r1           |            | https://github.com/linuxmint/xreader                                       | Document viewer for the X-Apps project
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -786,7 +786,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/rayburst-bin                                 | 4.1.0              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
+ net-misc/rayburst-bin                                 | 4.1.1              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/reframe                                      | 1.21.0-r1          |            | https://reframe.alynx.one/                                                 | DRM/KMS based remote desktop for Linux
    acct-group/reframe                                  | 0                  |  D, RD     |                                                                            | group for reframe
