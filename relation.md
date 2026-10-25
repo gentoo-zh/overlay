@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-25 19:56:02 CST)
+(The last generation time: 2026-10-25 19:56:39 CST)
 
 ### Packages
 
@@ -382,7 +382,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/pyrime                                     | 0.2.4-r1           |            | https://github.com/rimeinn/pyrime                                          | rime for python
    app-i18n/librime                                    | 9999               |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
-   dev-python/autopxd2                                 | 4.0.1              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
+   dev-python/autopxd2                                 | 4.0.2              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
      dev-python/headerkit                              | 0.46.2             | RD         | https://github.com/axiomantic/headerkit                                    | C/C++ header analysis toolkit with pluggable backends and writers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/uv-bin                                     | 0.13.5             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
