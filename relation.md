@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-26 17:34:38 CST)
+(The last generation time: 2026-10-26 17:55:52 CST)
 
 ### Packages
 
@@ -90,9 +90,11 @@
  app-emulation/la-ow-syscall                           | 0.1.1              |            | https://github.com/AOSC-Dev/la_ow_syscall                                  | Linux kernel module for compatibility with LoongArch's old-world ABI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/liblol-glibc                            | 0.1.10-r1          |            | https://www.gnu.org/software/libc/                                         | GNU libc C library, for liblol
+                                                       | 0.1.12             |            |                                                                            |
    dev-util/patchelf-liblol                            | 0.1.9              | BD         | https://github.com/NixOS/patchelf                                          | patchelf patched for building libLoL only
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/liblol-libxcrypt                        | 0.1.10             |            | https://github.com/besser82/libxcrypt                                      | libxcrypt for liblol
+                                                       | 0.1.12             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-emulation/looking-glass                           | 0_beta7_rc1-r4     |            | https://looking-glass.io                                                   | A low latency KVMFR application for guests with VGA PCI Passthrough
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -722,6 +724,7 @@
      media-libs/libdicom                               | 1.3.0              |  D, RD     | https://libdicom.readthedocs.io/                                           | A C library and a set of command-line tools for reading DICOM WSI files
    virtual/loong-ow-compat                             | 0                  | RD         |                                                                            | Virtual for LoongArch old-world compatibility
      app-emulation/liblol                              | 0.1.10             | RD         | https://liblol.aosc.io                                                     | LoongArch old-world ABI compatibility layer from AOSC OS
+                                                       | 0.1.12             |            |                                                                            |
    x11-misc/flatpak-xdg-utils                          | 1.0.6              | RD         | https://github.com/flatpak/flatpak-xdg-utils                               | Utilities for containerized apps to launch programs outside the container
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/vesktop-bin                                    | 1.6.8              |            | https://github.com/Vencord/Vesktop                                         | Discord Desktop with Vencord preinstalled
