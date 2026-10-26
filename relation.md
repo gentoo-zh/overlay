@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-26 16:38:36 CST)
+(The last generation time: 2026-10-26 17:34:38 CST)
 
 ### Packages
 
@@ -275,7 +275,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/groff-utf8                                   | 0-r2               |            | https://www.haible.de/bruno/packages-groff-utf8.html                       | GNU groff wrapper allowing UTF-8 input
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/gzpaste                                      | 0.1.3              |            | https://github.com/gentoo-zh/gzpaste                                       | Command-line client for the paste.gentoozh.org pastebin
+ app-text/gzpaste                                      | 0.1.4              |            | https://github.com/gentoo-zh/gzpaste                                       | Command-line client for the paste.gentoozh.org pastebin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lektra                                       | 0.6.5              |            | https://github.com/dheerajshenoy/lektra                                    | High-performance PDF reader that prioritizes screen space and control
                                                        | 0.8.0              |            |                                                                            |
