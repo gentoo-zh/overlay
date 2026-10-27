@@ -38,6 +38,7 @@ RDEPEND="
 	net-libs/gnutls
 	net-libs/libsoup:3.0
 	net-libs/webkit-gtk:4.1
+	amd64? ( net-misc/curl )
 	net-print/cups
 	sys-apps/dbus
 	sys-apps/util-linux
