@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-27 14:21:21 CST)
+(The last generation time: 2026-10-27 14:33:17 CST)
 
 ### Packages
 
@@ -214,7 +214,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/jshon                                        | 9999               |            | http://kmkeen.com/jshon/                                                   | Jshon is a JSON parser designed for maximum convenience within the shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/keyd                                         | 2.6.0              |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
+ app-misc/keyd                                         | 2.6.0-r1           |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/magpie-bin                                   | 0.1.1684           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
