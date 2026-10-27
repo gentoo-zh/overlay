@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-27 17:15:54 CST)
+(The last generation time: 2026-10-27 17:19:23 CST)
 
 ### Packages
 
@@ -662,7 +662,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/bilibili                                  | 1.19.0_p3-r1       |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/davinci-resolve                           | 21.1.1             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
+ media-video/davinci-resolve                           | 21.1.2             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/hov-qt                                    | 1.3.1              |            | https://github.com/HougeLangley/HyperOnlineVideo                           | Aggregated YouTube/Bilibili/NetEase/QQ Music client (Qt6 desktop)
                                                        | 1.3.2              |            |                                                                            |
