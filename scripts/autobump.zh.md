@@ -122,7 +122,7 @@ producer run 的分支就是这个 tag，或者它的 run name 以完整单词�
 
 ### 状态
 
-规划 shard 之前，autobump 检查每个 open nvchecker issue 的 bundle，只要该包有 `deps` 或 `bundle`，无论是否开启 `autobump`。只有 ready 的目标会分到 bump shard，那里的引擎通过 `--bundle-status` 读取快照。
+规划 shard 之前，autobump 检查每个 open nvchecker issue 的 bundle，只要该包有 `deps` 或 `bundle`，无论是否开启 `autobump`。只有 ready 的目标会分到 bump shard，那里的引擎通过 `--bundle-status` 读取快照。未开启 `autobump` 的包只会准备 bundle，issue 评论会说明 bundle 发布后需要手动 bump。
 
 * **ready**：release 已存在，且没有这个 tag 的 producer run 在排队或执行。
 * **pending**：有 producer run 在排队或执行；或者两者都没有，规划阶段已 dispatch 该 workflow。同一版本的每个 bundle 最多 dispatch 三次，指向同一版本的多个 issue 和重新执行的运行都计入这个次数。回应丢失或返回 5xx 的 dispatch 也计入，因为 GitHub 可能已经启动了 run；返回 4xx 的不计入。

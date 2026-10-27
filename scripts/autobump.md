@@ -162,7 +162,8 @@ tag, the tag without a leading `v`, or `${P}` as a whole word. A producer starte
 
 Before planning the shards, autobump checks the bundles of every open nvchecker issue whose
 package has `deps` or `bundle`, opted in or not. Only a ready target reaches a bump shard,
-where the engine reads the snapshot with `--bundle-status`.
+where the engine reads the snapshot with `--bundle-status`. A package that is not opted in only gets
+its bundle prepared: the issue comment says to bump it by hand once the bundle is released.
 
 * **ready**: the release exists and no producer run for the tag is queued or running.
 * **pending**: a producer run is queued or running, or the plan dispatched the workflow because

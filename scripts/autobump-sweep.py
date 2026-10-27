@@ -705,16 +705,21 @@ def bundle_links(settings, package, bundles):
     return " · ".join(dict.fromkeys(links))
 
 
-def bundle_status_body(settings, package, version, reason, links, *, escalate, detail=""):
+def bundle_status_body(settings, package, version, reason, links, *, escalate, detail="", opted_in=True):
+    # a package without the autobump key only gets its bundle prepared; the bump stays manual
+    manual = f"`{package}` is not opted in to autobump, so bump it by hand once the bundle is"
     if escalate:
+        next_step = ("Re-run autobump with `retry` for this issue once it is fixed." if opted_in
+                     else f"{manual} fixed.")
         return (
             f"**autobump** can't get the vendor bundle for `{package}` → `{version}`{detail}: **{reason}**. "
-            f"Needs a maintainer: {links}. Re-run autobump with `retry` for this issue once it is fixed."
+            f"Needs a maintainer: {links}. {next_step}"
             f"{run_link(settings.upstream_repo, 'log')}"
         )
+    next_step = "Will retry automatically." if opted_in else f"{manual} released."
     return (
         f"**autobump** is waiting for the vendor bundle of `{package}` → `{version}`{detail}: {reason}. "
-        f"{links}. Will retry automatically.{run_link(settings.upstream_repo)}"
+        f"{links}. {next_step}{run_link(settings.upstream_repo)}"
     )
 
 
@@ -756,14 +761,14 @@ def run_bundle_controller(settings, candidates):
         return {}, message
 
 
-def announce_bundle(settings, target, status_comment_failed):
+def announce_bundle(settings, target, status_comment_failed, opted_in):
     """Comment on what changed this run: a dispatch, or the escalation to a maintainer."""
     if not target.get("escalated_now") and not target.get("dispatched"):
         return
     package = target["package"]
     body = bundle_status_body(settings, package, target["version"], short_status_reason(target["reason"]),
                               bundle_links(settings, package, target["bundles"]),
-                              escalate=target.get("escalated_now"))
+                              escalate=target.get("escalated_now"), opted_in=opted_in)
     status_comment(target["issue"], body, comment=settings.comment, footer="",
                    upstream_repo=settings.upstream_repo, status_comment_failed=status_comment_failed)
 
@@ -792,9 +797,10 @@ def plan_issues(settings, issues, apply_run_limit):
         with_bundles = bundle_packages()
         snapshot, bundle_error = run_bundle_controller(
             settings, [c for c in candidates if c["package"] in with_bundles or c["opted_in"]])
+        opted = {c["package"] for c in candidates if c["opted_in"]}
         for target in snapshot.values():
             if target.get("issue"):
-                announce_bundle(settings, target, status_comment_failed)
+                announce_bundle(settings, target, status_comment_failed, target["package"] in opted)
 
     items = []
     planned = {}
