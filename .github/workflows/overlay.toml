@@ -2708,6 +2708,13 @@ github_account = ["microcai", "gouwazi"]
 # live package only
 #["net-wireless/linux-wifi-hotspot"]
 
+["sci-biology/fastani"]
+source = "github"
+github = "ParBLiSS/FastANI"
+use_latest_release = true
+prefix = "v"
+github_account = "peeweep"
+
 ["sci-biology/skani"]
 source = "github"
 github = "bluenote-1577/skani"
