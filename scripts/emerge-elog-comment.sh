@@ -232,7 +232,8 @@ for dir in "${targets[@]}"; do
             notices+=("slot/binding ${count}")
             fix "$atom" slot/binding "$count"
             add_notice "$atom" "$profile" "$(plural "$count" 'missing slot or binding operator')" \
-                'Add the slot or binding operator shown on the right to each dependency.' <(grep ' | ' "$dir/notices-vdb")
+                'Update each dependency as listed.' \
+                <(grep ' | ' "$dir/notices-vdb" | sed -E 's/^ *([^ |]+) +\| +\1:=$/Add := to \1/; t; s/^ *([^ |]+) +\| +([^ |]+)$/Change \1 to \2/')
         fi
     fi
     if [ -s "$dir/notices-ldflags" ]; then
