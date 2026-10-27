@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-27 14:42:07 CST)
+(The last generation time: 2026-10-27 14:59:14 CST)
 
 ### Packages
 
@@ -905,6 +905,8 @@
  net-vpn/sstp-server                                   | 0.7.2              |            | https://github.com/sorz/sstp-server/                                       | A Secure Socket Tunneling Protocol (SSTP) server implemented in Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-wireless/linux-wifi-hotspot                       | 9999               |            | https://github.com/lakinduakash/linux-wifi-hotspot                         | Linux Wifi Hotspot
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ sci-biology/fastani                                   | 1.34_p20261014     |            | https://github.com/ParBLiSS/FastANI                                        | Fast Whole-Genome Similarity (ANI) Estimation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-chemistry/vesta                                   | 3.5.8-r2           |            | https://jp-minerals.org/vesta/                                             | Visualization for Electronic and STructural Analysis
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
