@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-27 14:18:45 CST)
+(The last generation time: 2026-10-27 14:19:17 CST)
 
 ### Packages
 
@@ -217,7 +217,7 @@
  app-misc/keyd                                         | 2.6.0              |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.1564           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.1684           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1070,7 +1070,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-themes                                | 2.4.3              |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/mint-y-icons                               | 1.9.7              |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
+ x11-themes/mint-y-icons                               | 1.9.8              |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/nordic                                     | 2.2.0-r1           |            | https://github.com/EliverLara/Nordic                                       | Dark Gtk3.20+ theme created using the awesome Nord color pallete
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
