@@ -1,0 +1,11 @@
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -56,7 +56,7 @@
+ #
+ #
+ if(${BUILD_TESTING})
+-    add_subdirectory(ext/Catch2)
++    find_package(Catch2 3 REQUIRED)
+     include(CTest)
+     include(Catch)
+     add_executable(fastANITest tests/fastani_tests.cpp src/cgi/core_genome_identity.cpp)
