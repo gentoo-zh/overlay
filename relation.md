@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-26 17:55:52 CST)
+(The last generation time: 2026-10-27 14:18:14 CST)
 
 ### Packages
 
@@ -387,7 +387,7 @@
    dev-python/autopxd2                                 | 4.0.2              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
      dev-python/headerkit                              | 0.46.2             | RD         | https://github.com/axiomantic/headerkit                                    | C/C++ header analysis toolkit with pluggable backends and writers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/uv-bin                                     | 0.13.5             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
+ dev-python/uv-bin                                     | 0.13.6             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
