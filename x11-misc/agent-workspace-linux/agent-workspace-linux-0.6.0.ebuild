@@ -6,26 +6,29 @@ EAPI=8
 CRATES=""
 
 declare -A GIT_CRATES=(
-	[collections]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/collections'
-	[derive_refineable]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/refineable/derive_refineable'
-	[gpui]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui'
-	[gpui_apple]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_apple'
-	[gpui_ios]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_ios'
-	[gpui_linux]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_linux'
-	[gpui_macos]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_macos'
-	[gpui_macros]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_macros'
-	[gpui_platform]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_platform'
-	[gpui_shared_string]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_shared_string'
-	[gpui_util]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_util'
-	[gpui_web]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_web'
-	[gpui_wgpu]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_wgpu'
-	[gpui_windows]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/gpui_windows'
-	[http_client]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/http_client'
+	[collections]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/collections'
+	[cosmic-client-toolkit]='https://github.com/pop-os/cosmic-protocols;c0cff4db14c37ed954983158e4055aa94c7741d9;cosmic-protocols-%commit%/client-toolkit'
+	[cosmic-protocols]='https://github.com/pop-os/cosmic-protocols;c0cff4db14c37ed954983158e4055aa94c7741d9;cosmic-protocols-%commit%'
+	[derive_refineable]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/refineable/derive_refineable'
+	[gpui]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui'
+	[gpui_apple]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_apple'
+	[gpui_ios]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_ios'
+	[gpui_linux]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_linux'
+	[gpui_macos]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_macos'
+	[gpui_macros]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_macros'
+	[gpui_platform]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_platform'
+	[gpui_shared_string]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_shared_string'
+	[gpui_util]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_util'
+	[gpui_web]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_web'
+	[gpui_wgpu]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_wgpu'
+	[gpui_windows]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/gpui_windows'
+	[http_client]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/http_client'
 	[naga-types]='https://github.com/gfx-rs/wgpu;3b3506ea31154edc04de64debda0e780cba2639c;wgpu-%commit%/naga-types'
 	[naga]='https://github.com/gfx-rs/wgpu;3b3506ea31154edc04de64debda0e780cba2639c;wgpu-%commit%/naga'
-	[refineable]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/refineable'
-	[scheduler]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/scheduler'
-	[sum_tree]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/sum_tree'
+	[oo7]='https://github.com/zed-industries/oo7;731c1215edb6905876c6137ab300428c7b8d7c13;oo7-%commit%/client'
+	[refineable]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/refineable'
+	[scheduler]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/scheduler'
+	[sum_tree]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/sum_tree'
 	[wgpu-core-deps-apple]='https://github.com/gfx-rs/wgpu;3b3506ea31154edc04de64debda0e780cba2639c;wgpu-%commit%/wgpu-core/platform-deps/apple'
 	[wgpu-core-deps-emscripten]='https://github.com/gfx-rs/wgpu;3b3506ea31154edc04de64debda0e780cba2639c;wgpu-%commit%/wgpu-core/platform-deps/emscripten'
 	[wgpu-core-deps-linux-android-bsd]='https://github.com/gfx-rs/wgpu;3b3506ea31154edc04de64debda0e780cba2639c;wgpu-%commit%/wgpu-core/platform-deps/linux-android-bsd'
@@ -42,11 +45,11 @@ declare -A GIT_CRATES=(
 	[zed-font-kit]='https://github.com/zed-industries/font-kit;94b0f28166665e8fd2f53ff6d268a14955c82269;font-kit-%commit%'
 	[zed-scap]='https://github.com/zed-industries/scap;4afea48c3b002197176fb19cd0f9b180dd36eaac;scap-%commit%'
 	[zed-xim]='https://github.com/zed-industries/xim-rs;16f35a2c881b815a2b6cdfd6687988e84f8447d8;xim-rs-%commit%'
-	[ztracing]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/ztracing'
-	[ztracing_macro]='https://github.com/zed-industries/zed;56934ec0560bce8929025497411de7f5322fb6ca;zed-%commit%/crates/ztracing_macro'
+	[ztracing]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/ztracing'
+	[ztracing_macro]='https://github.com/zed-industries/zed;347f171a3fd00a3b672382d78348b37bd969d17c;zed-%commit%/crates/ztracing_macro'
 )
 
-# Upstream Cargo.toml requires rust-version 1.93.
+# The wgpu workspace requires rust-version 1.93.
 RUST_MIN_VER="1.93"
 
 inherit cargo optfeature
