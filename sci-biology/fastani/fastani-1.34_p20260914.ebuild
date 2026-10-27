@@ -7,7 +7,7 @@ inherit cmake
 DESCRIPTION="Fast Whole-Genome Similarity (ANI) Estimation"
 HOMEPAGE="https://github.com/ParBLiSS/FastANI"
 FASTANI_COMMIT_ID="4359b91a0fa8f7c097faf5599b12e232107b36e3"
-SRC_URI="https://github.com/ParBLiSS/FastANI/archive/${FASTANI_COMMIT_ID}.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/ParBLiSS/FastANI/archive/${FASTANI_COMMIT_ID}.tar.gz -> FastANI-${FASTANI_COMMIT_ID}.gh.tar.gz"
 
 # curl https://api.github.com/repos/ParBLiSS/FastANI/contents/ext/Catch2 | jq -r '.sha'
 CATCH2_COMMIT_ID="bcfb10e498df3e2ed8f814b3e4b689b9a85608ab"
