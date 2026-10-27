@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-27 14:59:14 CST)
+(The last generation time: 2026-10-27 15:15:41 CST)
 
 ### Packages
 
@@ -906,7 +906,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-wireless/linux-wifi-hotspot                       | 9999               |            | https://github.com/lakinduakash/linux-wifi-hotspot                         | Linux Wifi Hotspot
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-biology/fastani                                   | 1.34_p20261014     |            | https://github.com/ParBLiSS/FastANI                                        | Fast Whole-Genome Similarity (ANI) Estimation
+ sci-biology/fastani                                   | 1.34_p20260914     |            | https://github.com/ParBLiSS/FastANI                                        | Fast Whole-Genome Similarity (ANI) Estimation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-chemistry/vesta                                   | 3.5.8-r2           |            | https://jp-minerals.org/vesta/                                             | Visualization for Electronic and STructural Analysis
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
