@@ -2708,6 +2708,14 @@ github_account = ["microcai", "gouwazi"]
 # live package only
 #["net-wireless/linux-wifi-hotspot"]
 
+["sci-biology/skani"]
+source = "github"
+github = "bluenote-1577/skani"
+use_max_tag = true
+include_regex = "^v\\d+\\.\\d+\\.\\d+$"
+prefix = "v"
+github_account = "zakkaus"
+
 # this website blocked github network
 #["sci-chemistry/vesta"]
 
