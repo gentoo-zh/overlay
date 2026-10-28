@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 09:46:55 CST)
+(The last generation time: 2026-10-28 14:55:41 CST)
 
 ### Packages
 
@@ -413,7 +413,7 @@
    dev-lang/dart                                       | 3.13.7             |  D, RD     | https://dart.dev                                                           | The Dart SDK
      dev-lang/dart-bootstrap                           | 3.13.4             | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/gemini-cli                                   | 0.65.0             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
+ dev-util/gemini-cli                                   | 0.66.0             |            | https://github.com/google-gemini/gemini-cli                                | Gemini CLI - a command-line AI workflow tool by Google
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/gitea-cli                                    | 0.16.0             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -795,7 +795,7 @@
  net-misc/remmina-plugin-rustdesk                      | 1.0.0.0-r1         |            | https://www.muflone.com/remmina-plugin-rustdesk/                           | A protocol plugin for Remmina to launch a Rustdesk connection
    net-misc/rustdesk                                   | 1.5.0-r2           |  D, RD     | https://rustdesk.com/                                                      | An open-source remote desktop, and alternative to TeamViewer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/reqable                                      | 3.3.5              |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
+ net-misc/reqable                                      | 3.3.6              |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/todesk                                       | 4.9.8.0-r1         |            | https://www.todesk.com/                                                    | Remote control and team work
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
