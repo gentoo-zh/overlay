@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 16:57:20 CST)
+(The last generation time: 2026-10-28 17:00:47 CST)
 
 ### Packages
 
@@ -298,7 +298,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/date                                          | 3.0.5              |            | https://github.com/HowardHinnant/date                                      | A date and time library based on the C++11/14/17 <chrono> header
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-cpp/nameof                                        | 0.10.6             |            | https://github.com/Neargye/nameof                                          | Nameof operator for modern C++
+ dev-cpp/nameof                                        | 0.11.0             |            | https://github.com/Neargye/nameof                                          | Nameof operator for modern C++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/tgbot-cpp                                     | 1.11               |            | https://github.com/reo7sp/tgbot-cpp                                        | C++ library for Telegram bot API
                                                        | 1.13-r1            |            |                                                                            |
@@ -745,7 +745,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/apifox                                       | 2.8.52             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/baidunetdisk                                 | 8.7.0-r2           |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
+ net-misc/baidunetdisk                                 | 8.9.7              |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidupcs-go                                  | 4.0.2              |            | https://github.com/qjfoidnh/BaiduPCS-Go                                    | Terminal utility for Baidu Network Disk (Golang Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
