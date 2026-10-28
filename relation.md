@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 19:53:37 CST)
+(The last generation time: 2026-10-28 22:37:30 CST)
 
 ### Packages
 
@@ -993,6 +993,7 @@
                                                        | 6.18.58            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.12             |            |                                                                            |
+                                                       | 7.2.13             |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.114           |            |                                                                            |
                                                        | 6.18.58            |            |                                                                            |
