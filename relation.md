@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 19:18:41 CST)
+(The last generation time: 2026-10-28 19:19:20 CST)
 
 ### Packages
 
@@ -970,11 +970,12 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/dist-kernel                                   | 6.12.113-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
                                                        | 6.12.114-r100      |            |                                                                            |
-                                                       | 6.18.57-r100       |            |                                                                            |
                                                        | 6.18.58-r100       |            |                                                                            |
+                                                       | 6.18.59-r100       |            |                                                                            |
                                                        | 7.1.13-r100        |            |                                                                            |
                                                        | 7.2.11-r100        |            |                                                                            |
                                                        | 7.2.12-r100        |            |                                                                            |
+                                                       | 7.2.13-r100        |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r13              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
@@ -983,17 +984,15 @@
                                                        | 7.3.0-r3           |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel                        | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
                                                        | 6.12.114           |            |                                                                            |
-                                                       | 6.18.57            |            |                                                                            |
                                                        | 6.18.58            |            |                                                                            |
+                                                       | 6.18.59            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
-                                                       | 7.2.11             |            |                                                                            |
                                                        | 7.2.12             |            |                                                                            |
+                                                       | 7.2.13             |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.12.114           |            |                                                                            |
-                                                       | 6.18.57            |            |                                                                            |
                                                        | 6.18.58            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
-                                                       | 7.2.11             |            |                                                                            |
                                                        | 7.2.12             |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.114           |            |                                                                            |
