@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 14:55:41 CST)
+(The last generation time: 2026-10-28 14:56:22 CST)
 
 ### Packages
 
@@ -58,7 +58,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.1.20261018     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.26.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.28.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.6.0              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -223,7 +223,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.33.0             |            | https://github.com/Twigpine/openclaude                                     | Open-source coding-agent CLI for cloud and local LLM providers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.26.1             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.26.2             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.15               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -404,7 +404,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex                                        | 0.164.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/codex-bin                                    | 0.164.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
+ dev-util/codex-bin                                    | 0.165.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/deepseek-harness                             | 0.2.1_rc2          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -444,7 +444,7 @@
  dev-util/opencode-bin                                 | 1.19.4             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-desktop-bin                         | 2.1.4              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
+ dev-util/opencode-desktop-bin                         | 2.2.0              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
