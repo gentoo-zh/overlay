@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 18:26:05 CST)
+(The last generation time: 2026-10-28 19:18:41 CST)
 
 ### Packages
 
@@ -997,11 +997,11 @@
                                                        | 7.2.12             |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.114           |            |                                                                            |
-                                                       | 6.18.57            |            |                                                                            |
                                                        | 6.18.58            |            |                                                                            |
+                                                       | 6.18.59            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
-                                                       | 7.2.11             |            |                                                                            |
                                                        | 7.2.12             |            |                                                                            |
+                                                       | 7.2.13             |            |                                                                            |
                                                        | 7.3.0              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.11             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.12             |            |                                                                            |
