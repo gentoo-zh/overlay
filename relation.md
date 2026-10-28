@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 14:56:58 CST)
+(The last generation time: 2026-10-28 14:57:41 CST)
 
 ### Packages
 
@@ -217,7 +217,7 @@
  app-misc/keyd                                         | 2.6.0-r1           |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.1684           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.1823           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -430,7 +430,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kimi-code-bin                                | 2.3.3              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kiro-cli                                     | 2.34.2             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
+ dev-util/kiro-cli                                     | 2.35.1             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/maixvision                                   | 1.2.3-r1           |            | https://sipeed.com/maixvision                                              | MaixVision - AIoT development platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -466,7 +466,7 @@
  dev-util/qoderwake-bin                                | 1.2.3              |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
-                                                       | 2.53.1             |            |                                                                            |
+                                                       | 2.54.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-desktop-bin                         | 1.39.9             |            | https://reasonix.io                                                        | Reasonix desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
