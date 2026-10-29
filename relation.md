@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-28 22:38:09 CST)
+(The last generation time: 2026-10-29 14:17:49 CST)
 
 ### Packages
 
@@ -332,7 +332,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/adafruit-board-toolkit                     | 1.1.2              |            | https://github.com/adafruit/Adafruit_Board_Toolkit/                        | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/archspec                                   | 0.2.6              |            | https://github.com/archspec/archspec                                       | A library for detecting, labeling, and reasoning about microarchitectures
+ dev-python/archspec                                   | 0.2.7              |            | https://github.com/archspec/archspec                                       | A library for detecting, labeling, and reasoning about microarchitectures
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -437,14 +437,14 @@
  dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.13.2            |            |                                                                            |
+                                                       | 18.13.3            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.5.2              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-bin                                 | 1.19.4             |            | https://opencode.ai                                                        | The open source AI coding agent
+ dev-util/opencode-bin                                 | 1.19.5             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-desktop-bin                         | 2.2.0              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
+ dev-util/opencode-desktop-bin                         | 2.2.1              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -758,8 +758,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.1.0              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/flyctl-bin                                   | 0.4.123            |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
-                                                       | 0.4.82             |            |                                                                            |
+ net-misc/flyctl-bin                                   | 0.4.82             |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
+                                                       | 0.5.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
