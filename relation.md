@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-29 14:26:00 CST)
+(The last generation time: 2026-10-29 14:26:46 CST)
 
 ### Packages
 
@@ -428,7 +428,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.9.0.88839        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kimi-code-bin                                | 2.3.3              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
+ dev-util/kimi-code-bin                                | 2.4.0              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kiro-cli                                     | 2.35.1             |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1022,10 +1022,10 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.9.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/brave-bin                                  | 1.98.60            |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+ www-client/brave-bin                                  | 1.98.62            |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 155.0.8059.84_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
-                                                       | 156.0.8078.47_p1   |            |                                                                            |
+                                                       | 156.0.8078.73_p1   |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/zen-browser-bin                            | 1.23.4b            |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
