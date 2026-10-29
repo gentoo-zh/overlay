@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-29 14:51:25 CST)
+(The last generation time: 2026-10-29 14:52:10 CST)
 
 ### Packages
 
@@ -58,7 +58,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.1.20261018     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.28.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.28.1             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.6.0              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -463,7 +463,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qodercli-bin                                 | 1.1.80             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qoderwake-bin                                | 1.2.4              |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
+ dev-util/qoderwake-bin                                | 1.2.6              |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
                                                        | 2.54.0             |            |                                                                            |
@@ -756,7 +756,7 @@
  net-misc/bruno-bin                                    | 3.5.3-r1           |            | https://www.usebruno.com/                                                  | Opensource IDE For Exploring and Testing Api's
                                                        | 4.3.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/eternalterminal                              | 7.1.0              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
+ net-misc/eternalterminal                              | 7.1.1              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/flyctl-bin                                   | 0.4.82             |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
                                                        | 0.5.0              |            |                                                                            |
