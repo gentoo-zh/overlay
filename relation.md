@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-29 14:22:57 CST)
+(The last generation time: 2026-10-29 14:23:41 CST)
 
 ### Packages
 
@@ -439,7 +439,7 @@
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
                                                        | 18.13.3            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/openchamber-bin                              | 2.5.2              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
+ dev-util/openchamber-bin                              | 2.5.3              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.19.5             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 9999               |            |                                                                            |
@@ -943,7 +943,7 @@
  sys-apps/pacman-mirrorlist                            | 20251021           |            | https://archlinux.org/mirrorlist/                                          | Repository list for Archlinux's binary package manager
                                                        | 20260610           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/pnpm-bin                                     | 12.15.0            |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
+ sys-apps/pnpm-bin                                     | 12.16.1            |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
