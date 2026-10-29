@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-29 16:08:23 CST)
+(The last generation time: 2026-10-29 18:15:44 CST)
 
 ### Packages
 
@@ -21,10 +21,10 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/1password                                   | 8.12.42-r1         |            | https://1password.com                                                      | Password manager and secure wallet
    acct-group/onepassword                              | 0-r1               | BD, RD     |                                                                            | Password manager and secure wallet
-   acct-group/onepassword-mcp                          | 0                  | BD, RD     |                                                                            | Password manager and secure wallet
+   acct-group/onepassword-mcp                          | 0-r1               | BD, RD     |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/1password-cli                               | 2.41.1             |            | https://www.1password.dev/cli                                              | Command line interface for the 1Password password manager
-   acct-group/onepassword-cli                          | 0                  | BD, RD     |                                                                            | Command line interface for the 1Password password manager
+   acct-group/onepassword-cli                          | 0-r1               | BD, RD     |                                                                            | Command line interface for the 1Password password manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi                                     | 2.73.3             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
