@@ -72,10 +72,6 @@ declare -A GIT_CRATES=(
 )
 
 LLVM_COMPAT=( 19 20 21 22 )
-# have no idea why CI use rust-bin-9999, rustix broken on it
-# https://github.com/bytecodealliance/rustix/issues/1620
-# set RUST_MAX_VER to a max version now
-RUST_MAX_VER="1.95.0"
 RUST_MIN_VER="1.85.0"
 RUST_NEEDS_LLVM=1
 inherit cargo desktop llvm-r1 systemd xdg
