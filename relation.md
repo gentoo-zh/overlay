@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-30 16:08:01 CST)
+(The last generation time: 2026-10-30 16:42:05 CST)
 
 ### Packages
 
@@ -462,9 +462,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoder-bin                                    | 0.4.11             |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qodercli-bin                                 | 1.1.80             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
+ dev-util/qodercli-bin                                 | 1.1.81             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qoderwake-bin                                | 1.2.6              |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
+ dev-util/qoderwake-bin                                | 1.2.7              |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
                                                        | 2.56.0             |            |                                                                            |
