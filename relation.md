@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-30 15:32:20 CST)
+(The last generation time: 2026-10-30 15:51:59 CST)
 
 ### Packages
 
@@ -866,7 +866,7 @@
    net-proxy/qv2ray                                    | 2.7.0_p20240625-r1 | RD         | https://github.com/Qv2ray/Qv2ray                                           | Qt GUI fontend of v2ray
      dev-libs/qnodeeditor                              | 2.1.7_p20210113    |  D, RD     | https://github.com/Qv2ray/QNodeEditor                                      | A general-purpose Qt-based library aimed at graph-controlled data processing
      dev-libs/singleapplication                        | 3.5.6              |  D         | https://itay-grudev.github.io/SingleApplication/                           | Replacement of QtSingleApplication support for inter-instance communication
-     net-proxy/Xray                                    | 26.10.21           | RD         | https://xtls.github.io/                                                    | Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support
+     net-proxy/Xray                                    | 26.10.29           | RD         | https://xtls.github.io/                                                    | Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support
                                                        | 9999               |            |                                                                            |
        app-alternatives/v2ray-geoip                    | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geoip
        app-alternatives/v2ray-geosite                  | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geosite
