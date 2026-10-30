@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-30 15:51:59 CST)
+(The last generation time: 2026-10-30 15:56:44 CST)
 
 ### Packages
 
@@ -350,7 +350,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/feeluown-bilibili                          | 0.5.5              |            | https://github.com/feeluown/feeluown-bilibili                              | bilibili support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/frozendict                                 | 2.4.7              |            | https://github.com/Marco-Sulla/python-frozendict                           | A simple immutable dictionary for Python
+ dev-python/frozendict                                 | 2.5.0              |            | https://github.com/Marco-Sulla/python-frozendict                           | A simple immutable dictionary for Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/fuo-netease                                | 1.0.8              |            | https://github.com/feeluown/feeluown-netease                               | netease cloud music support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
