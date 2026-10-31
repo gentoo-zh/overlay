@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-31 16:22:30 CST)
+(The last generation time: 2026-10-31 16:23:13 CST)
 
 ### Packages
 
@@ -994,14 +994,15 @@
                                                        | 6.18.59            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.13             |            |                                                                            |
-   sys-kernel/gentoo-cjk-sources                       | 6.12.113           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
-                                                       | 6.12.114           |            |                                                                            |
-                                                       | 6.18.58            |            |                                                                            |
+   sys-kernel/gentoo-cjk-sources                       | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 6.12.115           |            |                                                                            |
                                                        | 6.18.59            |            |                                                                            |
+                                                       | 6.18.60            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
-                                                       | 7.2.12             |            |                                                                            |
                                                        | 7.2.13             |            |                                                                            |
+                                                       | 7.2.14             |            |                                                                            |
                                                        | 7.3.0              |            |                                                                            |
+                                                       | 7.3.1              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.12             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.13             |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.12             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
