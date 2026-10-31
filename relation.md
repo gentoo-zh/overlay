@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-31 16:23:13 CST)
+(The last generation time: 2026-10-31 16:42:44 CST)
 
 ### Packages
 
@@ -460,7 +460,7 @@
    dev-lang/bun-bin                                    | 1.4.2              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
                                                        | 1.4.4              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qoder-bin                                    | 0.4.11             |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
+ dev-util/qoder-bin                                    | 0.5.1              |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qodercli-bin                                 | 1.1.81             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
