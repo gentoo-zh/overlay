@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakkaus</name>
+	</maintainer>
+	<use>
+		<flag name="fonts">Install the Noto Sans TC/SC subsets doona loads when present</flag>
+		<flag name="lite">Install the doona lite edition in /usr/share/doona-lite</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">Zakkaus/doona</remote-id>
+	</upstream>
+</pkgmetadata>

@@ -2531,6 +2531,15 @@ bundle_pv = [["_rc", "rc"]]
 # upstream archived
 #["net-proxy/daed"]
 
+["net-proxy/doona"]
+source = "github"
+github = "Zakkaus/doona"
+use_max_tag = true
+prefix = "v"
+from_pattern = '^(.+)-(alpha|beta|rc)\.(\d+)$'
+to_pattern = '\1_\2\3'
+github_account = "zakkaus"
+
 ["net-proxy/flclash-bin"]
 source = "github"
 github = "chen08209/FlClash"
@@ -2538,6 +2547,17 @@ use_latest_release = true
 prefix = "v"
 github_account = ["yangmame"]
 autobump = true
+
+["net-proxy/honk"]
+source = "github"
+github = "daeuniverse/honk"
+use_max_tag = true
+include_regex = '^v\d+\.\d+\.\d+(-(alpha|beta|rc)\.\d+)?$'
+prefix = "v"
+from_pattern = '^(.+)-(alpha|beta|rc)\.(\d+)$'
+to_pattern = '\1_\2\3'
+github_account = "zakkaus"
+deps = "rust"
 
 ["net-proxy/hysteria"]
 source = "github"
