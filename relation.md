@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-30 18:45:04 CST)
+(The last generation time: 2026-10-31 14:47:29 CST)
 
 ### Packages
 
@@ -190,7 +190,7 @@
  app-misc/chatgpt-desktop                              | 26.1027.30824      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
-                                                       | 2.1.8              |            |                                                                            |
+                                                       | 2.1.9              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/claude-desktop                               | 3.6556.2           |            | https://claude.com/download                                                | Desktop application for Claude.ai
                                                        | 4.4212.0           |            |                                                                            |
@@ -445,7 +445,7 @@
                                                        | 2.2.2              |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-desktop-bin                         | 2.2.2              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
+ dev-util/opencode-desktop-bin                         | 2.2.5              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
