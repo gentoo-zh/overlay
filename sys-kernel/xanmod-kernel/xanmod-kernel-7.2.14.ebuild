@@ -15,7 +15,7 @@ inherit kernel-build toolchain-funcs llvm-r2 cjktty
 
 MY_P=linux-${PV%.*}
 # Note: to bump xanmod, check PATCHSET in sys-kernel/gentoo-kernel
-PATCHSET=linux-gentoo-patches-7.1.9
+PATCHSET=linux-gentoo-patches-7.2.13
 XV="1"
 
 SRC_URI+="
