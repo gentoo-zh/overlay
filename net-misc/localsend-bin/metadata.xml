@@ -5,6 +5,9 @@
 <email>nurali258@foxmail.com</email>
 <name>Nurali Abdukadir</name>
 </maintainer>
+<use>
+<flag name="portal">Use XDG Desktop Portal for the GTK file chooser</flag>
+</use>
 <upstream>
 <remote-id type="github">localsend/localsend</remote-id>
 </upstream>

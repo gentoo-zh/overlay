@@ -17,6 +17,7 @@ S="${WORKDIR}"
 LICENSE="Apache-2.0"
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
+IUSE="portal"
 
 RESTRICT="strip"
 
@@ -42,6 +43,7 @@ RDEPEND="
 	x11-libs/pango
 	x11-misc/xdg-user-dirs
 	x11-misc/xdg-utils
+	portal? ( sys-apps/xdg-desktop-portal )
 "
 BDEPEND="dev-util/patchelf"
 
@@ -65,7 +67,13 @@ src_install() {
 
 	newicon "${S}"/data/flutter_assets/assets/img/logo.ico localsend.ico
 
-	newmenu "${FILESDIR}"/localsend.desktop localsend.desktop
+	if use portal; then
+		sed 's|^Exec=|&env GTK_USE_PORTAL=1 |' "${FILESDIR}"/localsend.desktop \
+			> "${T}"/localsend.desktop || die
+		newmenu "${T}"/localsend.desktop localsend.desktop
+	else
+		newmenu "${FILESDIR}"/localsend.desktop localsend.desktop
+	fi
 
 	dodir /opt/bin
 	dosym ../localsend/localsend_app /opt/bin/localsend
