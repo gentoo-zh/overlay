@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-31 16:21:26 CST)
+(The last generation time: 2026-10-31 16:22:30 CST)
 
 ### Packages
 
@@ -1006,8 +1006,8 @@
                                                        | 7.2.13             |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.12             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.13             |            |                                                                            |
-   sys-kernel/xanmod-sources                           | 7.2.12             | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
-                                                       | 7.2.13             |            |                                                                            |
+   sys-kernel/xanmod-sources                           | 7.2.13             | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
+                                                       | 7.2.14             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
