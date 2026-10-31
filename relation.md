@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-31 22:07:03 CST)
+(The last generation time: 2026-10-31 22:07:47 CST)
 
 ### Packages
 
@@ -997,7 +997,6 @@
                                                        | 6.12.115           |            |                                                                            |
                                                        | 6.18.59            |            |                                                                            |
                                                        | 6.18.60            |            |                                                                            |
-                                                       | 7.1.13             |            |                                                                            |
                                                        | 7.2.13             |            |                                                                            |
                                                        | 7.2.14             |            |                                                                            |
                                                        | 7.3.0              |            |                                                                            |
