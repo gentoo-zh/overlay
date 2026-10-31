@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-31 16:55:28 CST)
+(The last generation time: 2026-10-31 20:47:57 CST)
 
 ### Packages
 
@@ -990,9 +990,12 @@
                                                        | 7.2.13             |            |                                                                            |
                                                        | 7.2.14             |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
+                                                       | 6.12.115           |            |                                                                            |
                                                        | 6.18.59            |            |                                                                            |
+                                                       | 6.18.60            |            |                                                                            |
                                                        | 7.1.13             |            |                                                                            |
                                                        | 7.2.13             |            |                                                                            |
+                                                       | 7.2.14             |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.115           |            |                                                                            |
                                                        | 6.18.59            |            |                                                                            |
