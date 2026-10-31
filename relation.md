@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-31 15:00:00 CST)
+(The last generation time: 2026-10-31 16:11:02 CST)
 
 ### Packages
 
@@ -318,7 +318,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/staticcheck                                    | 2026.2.2           |            | https://staticcheck.dev                                                    | Go static analysis, detecting bugs, performance issues, and much more
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-java/google-java-format                           | 1.37.0             |            | https://github.com/google/google-java-format                               | Reformats Java source code to comply with Google Java Style
+ dev-java/google-java-format                           | 2.0.0              |            | https://github.com/google/google-java-format                               | Reformats Java source code to comply with Google Java Style
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-java/oraclejdk-bin                                | 8.391              |            | https://www.oracle.com/java/                                               | Oracle's Java SE Development Kit
                                                        | 21.0.1-r1          |            |                                                                            |
@@ -350,7 +350,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/feeluown-bilibili                          | 0.5.5              |            | https://github.com/feeluown/feeluown-bilibili                              | bilibili support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/frozendict                                 | 2.5.0              |            | https://github.com/Marco-Sulla/python-frozendict                           | A simple immutable dictionary for Python
+ dev-python/frozendict                                 | 2.5.1              |            | https://github.com/Marco-Sulla/python-frozendict                           | A simple immutable dictionary for Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/fuo-netease                                | 1.0.8              |            | https://github.com/feeluown/feeluown-netease                               | netease cloud music support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
