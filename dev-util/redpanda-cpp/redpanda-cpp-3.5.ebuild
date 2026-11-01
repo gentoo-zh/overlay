@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-inherit xdg qmake-utils
+inherit cmake xdg
 DESCRIPTION="A lightweight yet powerful C/C++/GNU Assembly IDE"
 HOMEPAGE="http://royqh.net/redpandacpp/"
 SRC_URI="https://github.com/royqh1979/RedPanda-CPP/archive/refs/tags/v${PV}.tar.gz -> redpanda-cpp-${PV}.tar.gz"
@@ -21,15 +21,12 @@ BDEPEND="
 	dev-vcs/git
 "
 
-PATCHES=( "${FILESDIR}/${P}-fix-linux-utf8.patch" )
-
 src_configure(){
-	OPTIONS="PREFIX=/usr LIBEXECDIR=libexec XDG_ADAPTIVE_ICON=ON"
-	eqmake6 ${OPTIONS} Red_Panda_CPP.pro
+	local mycmakeargs=( -DBUILD_TESTING=OFF )
+	cmake_src_configure
 }
 
 src_install(){
-	emake INSTALL_ROOT="${ED}" install
+	cmake_src_install
 	rm -r "${ED}/usr/share/doc/RedPandaCPP" || die
-	dodoc README.md NEWS.md
 }
