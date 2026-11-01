@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-10-31 22:07:47 CST)
+(The last generation time: 2026-11-01 09:55:56 CST)
 
 ### Packages
 
@@ -980,7 +980,7 @@
    sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 6.18.55-r1         |            |                                                                            |
                                                        | 7.2.11             |            |                                                                            |
-                                                       | 7.3.0-r3           |            |                                                                            |
+                                                       | 7.3.1              |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel                        | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
                                                        | 6.12.115           |            |                                                                            |
                                                        | 6.18.59            |            |                                                                            |
