@@ -287,13 +287,18 @@ pkg_postinst() {
 	optfeature "input synthesis through uinput on Wayland" x11-misc/ydotool
 	optfeature "enabling the accessibility setting through gsettings" dev-libs/glib
 	optfeature "completion notifications" x11-libs/libnotify
+	optfeature "capturing unfocused windows in the Hyprland background mode" gui-apps/grim
 }
 
 src_test() {
-	# These bind Unix sockets under a temp dir whose name exceeds sun_path
-	# when TMPDIR is as long as portage's.
+	# Most of these bind Unix sockets under a temp dir whose name exceeds
+	# sun_path when TMPDIR is as long as portage's. The fixtures that spawn the
+	# server under a private D-Bus session fail in the build sandbox.
 	local CARGO_SKIP_TESTS=(
+		app_state_refuses_unfocused_target_before_capture
 		cosmic_focus_protocol_regressions
+		gnome_indicator_capture_regressions
+		hyprland_background_mode_never_focuses_the_target
 		diagnostics_impl::tests::ydotool_socket_check_accepts_datagram_socket
 		diagnostics_impl::tests::ydotool_socket_check_rejects_legacy_stream_socket
 		indicator::tests::capture_release_unlocks_an_inherited_descriptor
