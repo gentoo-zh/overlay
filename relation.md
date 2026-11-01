@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-01 19:24:13 CST)
+(The last generation time: 2026-11-01 19:29:17 CST)
 
 ### Packages
 
@@ -1047,7 +1047,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/agent-workspace-linux                        | 0.6.3              |            | https://github.com/agent-sh/agent-workspace-linux                          | Isolated X11 workspaces in which an agent runs and observes apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-misc/computer-use-linux                           | 0.7.33             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
+ x11-misc/computer-use-linux                           | 0.7.35             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/extramaus                                    | 3                  |            | https://aur.archlinux.org/packages/extramaus                               | workaround to always show mouse cursor under x11
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
