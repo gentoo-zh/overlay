@@ -9,12 +9,12 @@ K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
 CACHYOS_PATCHES_COMMIT="89bb22dec944d4d5b31332f2affbc740665cf0d9"
-CACHYOS_CONFIGS_COMMIT="523baf9cc1e37b7f8079064447f1418702c45154"
+CACHYOS_CONFIGS_COMMIT="66666177b78f29c32670ba4f78f882bc0b9cc03d"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="1"
+K_GENPATCHES_VER="2"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -221,6 +221,7 @@ src_prepare() {
 
 	if use bore || use rt-bore || use deckify; then
 		eapply --fuzz=0 -- "${patches_prefix}-bore.patch"
+		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-7.3.1-bore-update-protect-slice.patch"
 	elif use muqss; then
 		cp "${DISTDIR}/linux-ck-4ceaa4d07af63d9d495f4cbb570547feb39d1236-muqss.patch" "${T}/scheduler.patch" || die
 		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.3.0-muqss-rebase.patch"
