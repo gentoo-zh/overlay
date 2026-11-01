@@ -1,0 +1,19 @@
+The cachyos-7.3.1-1 tarball reads normalized_sysctl_sched_base_slice in
+update_protect_slice(), but 0001-bore-cachy.patch at kernel-patches 89bb22de
+defines it only for !CONFIG_SCHED_BORE, so BORE kernels fail to build.
+Guard it the same way the BORE patch guards set_protect_slice().
+
+--- a/kernel/sched/fair.c
++++ b/kernel/sched/fair.c
+@@ -1172,7 +1172,11 @@
+ static inline void update_protect_slice(struct cfs_rq *cfs_rq, struct sched_entity *se)
+ {
+ 	u64 vruntime = min_vruntime(se->vruntime, avg_vruntime(cfs_rq));
++#ifdef CONFIG_SCHED_BORE
++	u64 slice = sysctl_sched_base_slice;
++#else /* CONFIG_SCHED_BORE */
+ 	u64 slice = normalized_sysctl_sched_base_slice;
++#endif /* CONFIG_SCHED_BORE */
+ 	u64 vprot;
+ 
+ 	if (sched_feat(RUN_TO_PARITY))
