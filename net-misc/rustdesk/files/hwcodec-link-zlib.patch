@@ -3,8 +3,8 @@ in both vcpkg bundles shows, but hwcodec only passes -lz on x86_64. On arm64
 this leaves uncompress() unresolved when the linker pulls in libavformat's
 id3v2.o. Link zlib on all Linux targets.
 
---- a/hwcodec-778df1f99597722473b29443bac22ae6c23946fe/build.rs
-+++ b/hwcodec-778df1f99597722473b29443bac22ae6c23946fe/build.rs
+--- a/hwcodec-ec38ebaf2454269d4c5668a57e3813c6e5541be7/build.rs
++++ b/hwcodec-ec38ebaf2454269d4c5668a57e3813c6e5541be7/build.rs
 @@ -174,15 +174,10 @@
  
      fn link_os() {
