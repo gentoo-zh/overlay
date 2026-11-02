@@ -21,7 +21,7 @@ RDEPEND="
 	app-alternatives/v2ray-geosite
 "
 BDEPEND="
-	>=dev-lang/go-1.26:*
+	>=dev-lang/go-1.27:*
 	>=net-libs/nodejs-16
 	sys-apps/yarn
 "
