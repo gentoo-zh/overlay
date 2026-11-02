@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-02 16:34:24 CST)
+(The last generation time: 2026-11-02 18:49:49 CST)
 
 ### Packages
 
@@ -889,7 +889,7 @@
  net-proxy/v2rayA                                      | 2.2.7.5            |            | https://v2raya.org/                                                        | web GUI of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel
                                                        | 2.4.23             |            |                                                                            |
                                                        | 2.4.25             |            |                                                                            |
-                                                       | 2.5.10             |            |                                                                            |
+                                                       | 2.5.13             |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/yacd-meta                                   | 0.6.0-r1           |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
@@ -1047,7 +1047,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/agent-workspace-linux                        | 0.6.3              |            | https://github.com/agent-sh/agent-workspace-linux                          | Isolated X11 workspaces in which an agent runs and observes apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-misc/computer-use-linux                           | 0.7.35             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
+ x11-misc/computer-use-linux                           | 0.7.36             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/extramaus                                    | 3                  |            | https://aur.archlinux.org/packages/extramaus                               | workaround to always show mouse cursor under x11
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
