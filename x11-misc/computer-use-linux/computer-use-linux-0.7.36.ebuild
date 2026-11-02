@@ -294,6 +294,8 @@ src_test() {
 	# Most of these bind Unix sockets under a temp dir whose name exceeds
 	# sun_path when TMPDIR is as long as portage's. The fixtures that spawn the
 	# server under a private D-Bus session fail in the build sandbox.
+	# dbus-daemon refuses socket paths over 99 bytes, so the private bus of the
+	# remote_desktop portal probe test does not start under portage's TMPDIR.
 	local CARGO_SKIP_TESTS=(
 		app_state_refuses_unfocused_target_before_capture
 		cosmic_focus_protocol_regressions
@@ -311,6 +313,7 @@ src_test() {
 		indicator::tests::keycaps_mask_secret_focus_and_the_hide_text_setting
 		indicator::tests::overlays_can_answer_the_client_socket
 		indicator::tests::set_values_are_masked_even_when_the_cached_role_was_public
+		remote_desktop::tests::only_a_running_bus_can_report_the_remote_desktop_portal_missing
 		server::tests::pointer_coordinate_backend_dispatch_is_safe
 		windowing::backends::kwin::transaction_tests::duplicate_callback_path_fails_without_disturbing_its_owner
 		windowing::backends::kwin::transaction_tests::transaction_times_out_and_cleans_up_when_callback_never_arrives
