@@ -30,7 +30,7 @@ RDEPEND="
 	app-alternatives/v2ray-geosite
 "
 BDEPEND="
-	>=dev-lang/go-1.26:*
+	>=dev-lang/go-1.27:*
 "
 
 src_compile() {
