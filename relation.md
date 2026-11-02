@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-02 14:34:38 CST)
+(The last generation time: 2026-11-02 14:47:52 CST)
 
 ### Packages
 
@@ -477,7 +477,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/tailspin                                     | 7.0.0              |            | https://github.com/bensadeh/tailspin                                       | A log file highlighter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/termux-language-server                       | 0.1.13             |            | https://github.com/termux/termux-language-server                           | A language server for some specific Bash scripts
+ dev-util/termux-language-server                       | 0.1.15             |            | https://github.com/termux/termux-language-server                           | A language server for some specific Bash scripts
    dev-python/lsp-tree-sitter                          | 0.2.19             | RD         | https://github.com/neomutt/lsp-tree-sitter                                 | A library to create language servers
      dev-python/pygls                                  | 2.1.1              | RD         | https://github.com/openlawlibrary/pygls                                    | A pythonic generic language server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
