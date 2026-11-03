@@ -1993,6 +1993,8 @@ source = "github"
 github = "alexmercerind2/harmonoid-releases"
 use_latest_release = true
 prefix = "v"
+from_pattern = '^(.+)-hotfix(\d+)$'
+to_pattern = '\1_p\2'
 github_account = "flying-balloon-cat"
 
 ["media-sound/listen1_desktop-bin"]
