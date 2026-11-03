@@ -9,8 +9,9 @@ DESCRIPTION="Plays & manages your music library"
 HOMEPAGE="https://harmonoid.com/
 	https://github.com/harmonoid/harmonoid
 "
+MY_PV="${PV/_p/-hotfix}"
 BASE_URI="
-https://github.com/alexmercerind2/harmonoid-releases/releases/download/v${PV}"
+https://github.com/alexmercerind2/harmonoid-releases/releases/download/v${MY_PV}"
 SRC_URI="
 	amd64? ( ${BASE_URI}/${PN}-linux-x86_64.tar.gz -> ${P}-amd64.tar.gz )
 	arm64? ( ${BASE_URI}/${PN}-linux-aarch64.tar.gz -> ${P}-arm64.tar.gz )
@@ -26,7 +27,12 @@ QA_PREBUILT="usr/share/harmonoid/*"
 DEPEND="
 	app-accessibility/at-spi2-core:2
 	dev-libs/glib:2
-	amd64? ( media-libs/fontconfig )
+	amd64? (
+		media-libs/alsa-lib
+		media-libs/fontconfig
+		media-libs/libpulse
+		x11-libs/libX11
+	)
 	media-libs/harfbuzz
 	media-libs/libepoxy
 	x11-libs/cairo
@@ -37,6 +43,12 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_install() {
+	# The aarch64 tarball ships the x86-64 build of this library, and no
+	# aarch64 object links it.
+	if use arm64; then
+		rm usr/share/harmonoid/lib/libdiscord_partner_sdk.so || die
+	fi
+
 	insinto /usr
 	doins -r usr/*
 
