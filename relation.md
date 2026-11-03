@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-03 14:17:51 CST)
+(The last generation time: 2026-11-03 14:21:09 CST)
 
 ### Packages
 
@@ -771,8 +771,6 @@
  net-misc/lazyssh-bin                                  | 0.3.0              |            | https://github.com/Adembc/lazyssh                                          | Terminal UI for managing SSH connections
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/localsend-bin                                | 1.18.2             |            | https://localsend.org                                                      | An open-source cross-platform alternative to AirDrop
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/motrix-next-bin                              | 3.9.9              |            | https://motrix-next.pages.dev                                              | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/ntpd-rs                                      | 1.9.0-r1           |            | https://github.com/pendulum-project/ntpd-rs                                | Full-featured implementation of NTP with NTS support
    acct-group/ntpd-rs                                  | 0                  | RD         |                                                                            | Full-featured implementation of NTP with NTS support
