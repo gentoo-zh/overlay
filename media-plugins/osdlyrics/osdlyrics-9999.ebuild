@@ -26,7 +26,7 @@ REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 RDEPEND="
 	${PYTHON_DEPS}
 	x11-libs/libnotify
-	x11-libs/gtk+:2
+	x11-libs/gtk+:3[X]
 	dev-libs/glib:2
 	x11-libs/cairo
 	x11-libs/gdk-pixbuf:2
