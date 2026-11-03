@@ -58,7 +58,6 @@ KEYWORDS="~amd64 ~arm64"
 COMMON_DEPEND="
 	!net-proxy/clash-verge-rev-bin
 	dev-libs/glib:2
-	dev-libs/openssl:0/3
 	gnome-base/librsvg:2
 	net-libs/libsoup:3.0
 	net-proxy/mihomo
