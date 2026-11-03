@@ -30,7 +30,6 @@ DEPEND="
 	dev-libs/libffi
 	dev-libs/libgcrypt
 	dev-libs/libgpg-error
-	dev-libs/openssl:0/3
 	dev-libs/keybinder:3
 	dev-libs/libbsd
 	media-video/mpv:0[libmpv]
