@@ -79,6 +79,14 @@ src_install() {
 		rm "${ssh2}"/lib/protocol/crypto/build/Release/sshcrypto.node || die
 	fi
 
+	# The unpacked sharp addon links libvips-cpp, which upstream left packed inside app.asar.
+	local sharp=x64
+	use arm64 && sharp=arm64
+	local vips=( "${ED}${dest}"/resources/glm/packages/node-repl-host/node_modules/@img/sharp-libvips-linux-${sharp}/lib/libvips-cpp.so.* )
+	[[ -f ${vips[0]} ]] || die "bundled libvips-cpp not found"
+	dosym -r "${vips[0]#"${ED}"}" \
+		"${dest}/resources/app.asar.unpacked/node_modules/@img/sharp-libvips-linux-${sharp}/lib/${vips[0]##*/}"
+
 	dosym -r "${dest}"/zcode /usr/bin/zcode
 
 	local size
