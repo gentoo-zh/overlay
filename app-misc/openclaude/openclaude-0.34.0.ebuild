@@ -14,17 +14,20 @@ SRC_URI="
 "
 
 # The vendored node_modules only carries the linux-x64 native packages;
-# fetch their arm64 counterparts from the npm registry.
+# fetch their arm64 counterparts from the npm registry. An optional third
+# field gives the node_modules subdirectory of a nested copy.
 ARM64_PACKAGES=(
-	@img/sharp-libvips-linux-arm64:1.2.4
-	@img/sharp-linux-arm64:0.34.5
-	@oxc-parser/binding-linux-arm64-gnu:0.153.0
+	@img/sharp-libvips-linux-arm64:1.3.4
+	@img/sharp-linux-arm64:0.35.5
+	@oxc-parser/binding-linux-arm64-gnu:0.152.0
+	@oxc-parser/binding-linux-arm64-gnu:0.154.0:knip/node_modules
 	@oxc-resolver/binding-linux-arm64-gnu:11.24.2
 	@vscode/ripgrep-linux-arm64:1.18.0
 )
 for _p in "${ARM64_PACKAGES[@]}"; do
-	_n=${_p%:*}
-	_v=${_p##*:}
+	_n=${_p%%:*}
+	_v=${_p#*:}
+	_v=${_v%%:*}
 	_f=${_n#@}
 	SRC_URI+="
 		arm64? (
@@ -57,15 +60,15 @@ src_unpack() {
 	unpack ${P}.tgz ${P}-node_modules.tar.gz
 
 	if use arm64; then
-		local p n v f
+		local p n v d f
 		for p in "${ARM64_PACKAGES[@]}"; do
-			n=${p%:*}
-			v=${p##*:}
+			IFS=: read -r n v d <<< "${p}"
 			f=${n#@}
-			rm -rf "${S}/node_modules/${n/arm64/x64}" || die
-			mkdir -p "${S}/node_modules/${n}" || die
+			d="${S}/node_modules/${d:+${d}/}"
+			rm -rf "${d}${n/arm64/x64}" || die
+			mkdir -p "${d}${n}" || die
 			tar -xzf "${DISTDIR}/${P}-${f//\//-}-${v}.tgz" --strip-components=1 \
-				-C "${S}/node_modules/${n}" || die
+				-C "${d}${n}" || die
 		done
 	fi
 }
@@ -82,7 +85,6 @@ src_install() {
 	# If openclaude fails at runtime with EACCES, add the missing path here.
 	fperms +x "${install_dir}/bin/openclaude"
 	fperms +x "${install_dir}/node_modules/@vscode/ripgrep-linux-${arch}/bin/rg"
-	fperms +x "${install_dir}/node_modules/@anthropic-ai/sandbox-runtime/dist/vendor/seccomp/${arch}/apply-seccomp"
 	fperms +x "${install_dir}/node_modules/@anthropic-ai/sandbox-runtime/vendor/seccomp/${arch}/apply-seccomp"
 
 	dosym "../$(get_libdir)/node_modules/@twigpine/${PN}/bin/openclaude" "/usr/bin/openclaude"
