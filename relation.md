@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-03 16:54:54 CST)
+(The last generation time: 2026-11-03 16:55:46 CST)
 
 ### Packages
 
@@ -245,7 +245,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/freeoffice                                 | 1238               |            | https://www.freeoffice.com/de/                                             | A complete, free Microsoft Office-compatible alternative office suite
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/notesnook-bin                              | 3.4.11             |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
+ app-office/notesnook-bin                              | 3.4.12             |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/obsidian                                   | 1.15.0             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -494,7 +494,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/waza-bin                                     | 0.39.1             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/zcode-bin                                    | 3.16.3             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
+ dev-util/zcode-bin                                    | 3.17.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zprint-bin                                   | 1.3.0-r1           |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -620,7 +620,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-plugins/kotonoha                                | 9999               |            | https://github.com/locez/kotonoha                                          | Wayland lyrics overlay for MPRIS-compatible media players
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-plugins/osdlyrics                               | 0.5.16-r1          |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
+ media-plugins/osdlyrics                               | 0.6.0              |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-plugins/waylyrics                               | 0.3.21             |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
