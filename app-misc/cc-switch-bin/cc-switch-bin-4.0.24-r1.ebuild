@@ -31,7 +31,10 @@ RDEPEND="
 	app-arch/xz-utils
 	dev-libs/glib:2
 	dev-libs/libayatana-appindicator
-	dev-libs/openssl:0/3
+	|| (
+		dev-libs/openssl-compat:3
+		dev-libs/openssl:0/3
+	)
 	net-libs/libsoup:3.0
 	net-libs/webkit-gtk:4.1[X?,wayland?]
 	x11-libs/cairo
