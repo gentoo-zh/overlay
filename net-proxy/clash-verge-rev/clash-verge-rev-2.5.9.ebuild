@@ -103,12 +103,10 @@ src_prepare() {
 	sed -i "s|^sysproxy = { git = .*|sysproxy = { path = \"${sysproxy}\", default-features = false }|" \
 		"${WORKDIR}/${SERVICE_P}/Cargo.toml" || die
 
-	# replace upstream's muda crate substitution with ours; the tray-icon
-	# substitution is unused and would make cargo fetch its git source
+	# replace upstream's muda crate substitution with ours
 	local dep
 	dep=$(grep "^muda" "${ECARGO_HOME}"/config.toml || die)
-	sed -i -e "/\[patch\.crates-io\]/,\$s;^muda.*$;${dep};" \
-		-e "/\[patch\.crates-io\]/,\${/^tray-icon/d}" Cargo.toml || die
+	sed -i "/\[patch\.crates-io\]/,\$s;^muda.*$;${dep};" Cargo.toml || die
 }
 
 src_compile() {
