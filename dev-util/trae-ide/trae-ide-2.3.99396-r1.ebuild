@@ -32,7 +32,10 @@ RDEPEND="
 	dev-libs/libgcrypt
 	dev-libs/nspr
 	dev-libs/nss
-	dev-libs/openssl:0/3
+	|| (
+		dev-libs/openssl-compat:3
+		dev-libs/openssl:0/3
+	)
 	media-libs/alsa-lib
 	media-libs/mesa
 	net-libs/gnutls
