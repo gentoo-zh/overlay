@@ -31,7 +31,10 @@ BDEPEND="net-misc/curl"
 # X and Wayland are both in DT_NEEDED; dbus, EGL and xcb-keysyms are dlopened
 RDEPEND="
 	!x11-terms/wezterm
-	dev-libs/openssl:0/3
+	|| (
+		dev-libs/openssl-compat:3
+		dev-libs/openssl:0/3
+	)
 	dev-libs/wayland
 	media-libs/fontconfig
 	media-libs/libglvnd
