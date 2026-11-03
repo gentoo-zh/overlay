@@ -74,12 +74,8 @@ src_prepare() {
 
 	sed -i "s|^Exec=AppRun|Exec=${MY_PN}|" "${desktop}" || die
 
-	# upstream repeats the scheme handler and ships action groups it never
-	# declares, both of which desktop-file-validate rejects
-	local actions
-	actions=$(sed -nE 's/^\[Desktop Action (.+)\]$/\1;/p' "${desktop}" | tr -d '\n')
-	sed -i -e "s|^MimeType=.*|MimeType=x-scheme-handler/nn;|" \
-		-e "/^MimeType=/a Actions=${actions}" "${desktop}" || die
+	# upstream repeats the scheme handler, which desktop-file-validate rejects
+	sed -i "s|^MimeType=.*|MimeType=x-scheme-handler/nn;|" "${desktop}" || die
 }
 
 src_install() {
