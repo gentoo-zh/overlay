@@ -25,12 +25,6 @@ net-proxy/qvplugin-trojan-go
 # Removal on 2026-11-09.
 app-misc/copilot
 
-# Xianggang Wang <dev@wangxianggang.com> (2026-09-29)
-# Motrix Next is superseded by net-misc/rayburst-bin. Rayburst does not import
-# its settings, tasks or history; finish active downloads before switching.
-# Removal on 2026-10-29.
-net-misc/motrix-next-bin
-
 # Zakk <zakk@gentoozh.org> (2026-08-12)
 # This legacy release is no longer updated. arm64 and loong users should use
 # app-office/wps-office365-edu, which supports offline use.
