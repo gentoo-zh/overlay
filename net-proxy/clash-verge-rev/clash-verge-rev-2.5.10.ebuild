@@ -9,7 +9,7 @@ CRATES="
 "
 
 declare -A GIT_CRATES=(
-	[clash_verge_service_ipc]='https://github.com/clash-verge-rev/clash-verge-service-ipc;b2a7427d6681c8d3780ab83a73f4dc21da2f22d6;clash-verge-service-ipc-%commit%'
+	[clash_verge_service_ipc]='https://github.com/clash-verge-rev/clash-verge-service-ipc;3ed29700b093190b5e7addcaa892e77f172af544;clash-verge-service-ipc-%commit%'
 	[muda]='https://github.com/wonfen/muda;547de49352791653fbdfa785f20f3c7ece8468e2;muda-%commit%'
 	[sysproxy]='https://github.com/clash-verge-rev/sysproxy-rs;89ad876a0942c049ae72e1472f9fc3ed62023c5e;sysproxy-rs-%commit%'
 	[tauri-plugin-mihomo]='https://github.com/clash-verge-rev/tauri-plugin-mihomo;7a03d16f4d39b1bb885b7babe66b9e153e34b615;tauri-plugin-mihomo-%commit%'
@@ -34,7 +34,7 @@ SRC_URI="
 	${WEB_URI}/${P}/${P}-web.tar.xz
 "
 # Use macthing commit from git crates
-SERVICE_COMMIT="b2a7427d6681c8d3780ab83a73f4dc21da2f22d6"
+SERVICE_COMMIT="3ed29700b093190b5e7addcaa892e77f172af544"
 SERVICE_P="clash-verge-service-ipc-${SERVICE_COMMIT}"
 # the service pins its own sysproxy checkout, on the .git URL the app's
 # GIT_CRATES entry cannot cover
