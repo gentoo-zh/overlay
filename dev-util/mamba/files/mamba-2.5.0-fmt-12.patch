@@ -1,0 +1,109 @@
+Backport of https://github.com/mamba-org/mamba/commit/792c6efb644fa063c9c76f2d9d6bebd5589e743f
+("maint: Adapt `fmt` headers' inclusion", mamba-org/mamba#4339), which fixes the
+build with dev-libs/libfmt-12.2. The test-only hunks are left out because
+BUILD_LIBMAMBA_TESTS is OFF.
+
+diff --git a/libmamba/include/mamba/core/invoke.hpp b/libmamba/include/mamba/core/invoke.hpp
+index 05971c7..e79147f 100644
+--- a/libmamba/include/mamba/core/invoke.hpp
++++ b/libmamba/include/mamba/core/invoke.hpp
+@@ -3,7 +3,7 @@
+ 
+ #include <functional>
+ 
+-#include <fmt/core.h>  // TODO: replace by `<format>` once available on all ci compilers
++#include <fmt/format.h>  // TODO: replace by `<format>` once available on all ci compilers
+ 
+ #include "mamba/core/error_handling.hpp"
+ 
+diff --git a/libmamba/include/mamba/core/logging_tools.hpp b/libmamba/include/mamba/core/logging_tools.hpp
+index 7787da1..462f783 100644
+--- a/libmamba/include/mamba/core/logging_tools.hpp
++++ b/libmamba/include/mamba/core/logging_tools.hpp
+@@ -10,7 +10,7 @@
+ #include <iostream>
+ #include <optional>
+ 
+-#include <fmt/core.h>  // TODO: replace by `<format>` once available on all ci compilers
++#include <fmt/format.h>  // TODO: replace by `<format>` once available on all ci compilers
+ 
+ #include <mamba/core/logging.hpp>
+ #include <mamba/util/synchronized_value.hpp>
+diff --git a/libmamba/include/mamba/core/util_scope.hpp b/libmamba/include/mamba/core/util_scope.hpp
+index 5fdf305..0283ca5 100644
+--- a/libmamba/include/mamba/core/util_scope.hpp
++++ b/libmamba/include/mamba/core/util_scope.hpp
+@@ -4,7 +4,7 @@
+ 
+ #include <stdexcept>
+ 
+-#include <fmt/core.h>
++#include <fmt/format.h>
+ 
+ #include "mamba/core/logging.hpp"
+ 
+diff --git a/libmamba/src/core/env_lockfile_conda.cpp b/libmamba/src/core/env_lockfile_conda.cpp
+index 91d773e..3755f9d 100644
+--- a/libmamba/src/core/env_lockfile_conda.cpp
++++ b/libmamba/src/core/env_lockfile_conda.cpp
+@@ -4,7 +4,7 @@
+ //
+ // The full license is in the file LICENSE, distributed with this software.
+ 
+-#include <fmt/core.h>
++#include <fmt/format.h>
+ #include <yaml-cpp/yaml.h>
+ 
+ #include "mamba/core/env_lockfile.hpp"
+diff --git a/libmamba/src/core/env_lockfile_mambajs.cpp b/libmamba/src/core/env_lockfile_mambajs.cpp
+index ea41c03..b80453f 100644
+--- a/libmamba/src/core/env_lockfile_mambajs.cpp
++++ b/libmamba/src/core/env_lockfile_mambajs.cpp
+@@ -8,7 +8,7 @@
+ #include <fstream>
+ #include <ranges>
+ 
+-#include <fmt/core.h>
++#include <fmt/format.h>
+ #include <nlohmann/json.hpp>
+ 
+ #include "mamba/core/env_lockfile.hpp"
+diff --git a/libmamba/src/core/logging.cpp b/libmamba/src/core/logging.cpp
+index e03f92c..44e3e94 100644
+--- a/libmamba/src/core/logging.cpp
++++ b/libmamba/src/core/logging.cpp
+@@ -10,7 +10,7 @@
+ #include <utility>
+ #include <vector>
+ 
+-#include <fmt/core.h>  // TODO: replace by `<format>` once available on all ci compilers
++#include <fmt/format.h>  // TODO: replace by `<format>` once available on all ci compilers
+ 
+ #include <mamba/core/context.hpp>
+ #include <mamba/core/error_handling.hpp>
+diff --git a/libmamba/src/download/compression.cpp b/libmamba/src/download/compression.cpp
+index 2a4db11..7c5f427 100644
+--- a/libmamba/src/download/compression.cpp
++++ b/libmamba/src/download/compression.cpp
+@@ -4,6 +4,8 @@
+ //
+ // The full license is in the file LICENSE, distributed with this software.
+ 
++#include <fmt/format.h>
++
+ #include "mamba/core/logging.hpp"
+ #include "mamba/util/string.hpp"
+ 
+diff --git a/libmamba/src/download/curl.hpp b/libmamba/src/download/curl.hpp
+index 6c1659d..a9e4c27 100644
+--- a/libmamba/src/download/curl.hpp
++++ b/libmamba/src/download/curl.hpp
+@@ -19,7 +19,7 @@ extern "C"
+ #include <curl/curl.h>
+ }
+ 
+-#include <fmt/core.h>
++#include <fmt/format.h>
+ #include <tl/expected.hpp>
+ 
+ namespace mamba::download
