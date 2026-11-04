@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-04 16:26:27 CST)
+(The last generation time: 2026-11-04 16:28:30 CST)
 
 ### Packages
 
@@ -614,7 +614,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/tifig-bin                                   | 0.2.2-r1           |            | https://github.com/monostream/tifig                                        | Converts iOS 11 HEIC images to practical formats - Static binary
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/zw3d                                        | 2026.0.1.1         |            | https://www.zwsoft.cn/product/zw3d                                         | CAD/CAM software for 3D design and processing
+ media-gfx/zw3d                                        | 2027.0.3.0         |            | https://www.zwsoft.cn/product/zw3d/linux                                   | CAD/CAM software for 3D design and processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/zwcad                                       | 2026.26.1.3.4      |            | https://www.zwsoft.cn/product/zwcad                                        | CAD software for 2D drawing, reviewing and printing work
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
