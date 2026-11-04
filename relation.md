@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-04 21:00:54 CST)
+(The last generation time: 2026-11-04 22:26:23 CST)
 
 ### Packages
 
@@ -1003,8 +1003,8 @@
                                                        | 7.2.14             |            |                                                                            |
                                                        | 7.3.0              |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.2.13             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-                                                       | 7.2.14             |            |                                                                            |
+   sys-kernel/liquorix-sources                         | 7.2.14             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+                                                       | 7.2.15             |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.13             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.14             |            |                                                                            |
    sys-kernel/xanmod-sources                           | 7.2.13             | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
