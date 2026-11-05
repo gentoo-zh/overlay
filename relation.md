@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 01:03:18 CST)
+(The last generation time: 2026-11-06 02:42:21 CST)
 
 ### Packages
 
@@ -841,7 +841,12 @@
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
                                                        | 12.16.1            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-proxy/doona                                       | 0.1.0_rc5          |            | https://github.com/Zakkaus/doona                                           | Web UI for the daeuniverse engines
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.9.2              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-proxy/honk                                        | 0.1.0_beta5        |            | https://github.com/daeuniverse/honk                                        | Transparent proxy based on eBPF, inspired by dae and sing-box
+                                                       | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/hysteria                                    | 2.13.0             |            | https://github.com/HyNetworks/hysteria                                     | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
