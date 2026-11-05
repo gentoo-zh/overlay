@@ -17,7 +17,7 @@ case "${1:?packages, scan or stage}" in
         cat packages.txt
         ;;
     scan)
-        pmaint sync gentoo
+        pmaint sync --import-masters .
         head=$(git rev-parse HEAD)
 
         # --config no drops the exit keywords in metadata/pkgcheck.conf, so a failure means the

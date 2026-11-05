@@ -7,6 +7,12 @@ runs:
       shell: bash
       run: emerge-webrsync --no-pgp-verify
 
+    - name: install git for repo sync
+      shell: bash
+      run: |
+        getuto
+        FEATURES="getbinpkg" emerge --oneshot --quiet dev-vcs/git
+
     - name: setup repo
       shell: bash
       run: |
@@ -16,6 +22,17 @@ runs:
         location = $(realpath .)
         priority = 0
         EOF
+
+    - name: sync guru repo
+      shell: bash
+      run: |
+        cat > /etc/portage/repos.conf/guru.conf << EOF
+        [guru]
+        location = /var/db/repos/guru
+        sync-type = git
+        sync-uri = https://github.com/gentoo-mirror/guru.git
+        EOF
+        emaint sync -r guru
 
     - name: setup portage config
       shell: bash
