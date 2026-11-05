@@ -11,7 +11,7 @@ CRATES="
 	arrayvec@0.7.8
 	async-broadcast@0.7.2
 	async-channel@2.5.0
-	async-executor@1.14.0
+	async-executor@1.14.1
 	async-io@2.6.0
 	async-lock@3.4.2
 	async-process@2.5.0
@@ -237,8 +237,8 @@ CRATES="
 	zvariant_utils@3.3.1
 "
 
-# Highest rust-version among dependency crates: darling 0.24.1, image 0.25.10, rmcp 3.5.1 (1.88.0)
-RUST_MIN_VER="1.88.0"
+# Cargo.toml rust-version (File::try_lock); dependency crates need at most 1.88.0
+RUST_MIN_VER="1.89.0"
 
 inherit cargo optfeature
 
@@ -306,6 +306,8 @@ src_test() {
 		indicator::tests::capture_release_unlocks_an_inherited_descriptor
 		indicator::tests::captures_fail_when_a_running_overlay_does_not_reply
 		indicator::tests::captures_fail_while_a_stalled_overlay_cannot_be_told_to_hide
+		indicator::tests::captures_fail_when_the_capture_lock_cannot_be_taken
+		indicator::tests::captures_fail_without_a_client_socket_in_a_live_runtime
 		indicator::tests::captures_hold_the_lock_without_an_overlay
 		indicator::tests::captures_wait_only_while_the_overlay_was_on_screen
 		indicator::tests::concurrent_captures_do_not_consume_each_others_replies
@@ -315,6 +317,10 @@ src_test() {
 		indicator::tests::set_values_are_masked_even_when_the_cached_role_was_public
 		remote_desktop::tests::only_a_running_bus_can_report_the_remote_desktop_portal_missing
 		server::tests::pointer_coordinate_backend_dispatch_is_safe
+		server::tests::stale_uinput_pointer_is_replaced
+		server::tests::uinput_monitor_gap_coordinate_gets_a_note
+		server::tests::untargeted_scroll_keeps_portal_start_error
+		server::tests::x11_monitor_gap_coordinate_gets_a_note
 		windowing::backends::kwin::transaction_tests::duplicate_callback_path_fails_without_disturbing_its_owner
 		windowing::backends::kwin::transaction_tests::transaction_times_out_and_cleans_up_when_callback_never_arrives
 		windowing::backends::kwin::transaction_tests::transaction_times_out_and_cleans_up_when_load_script_never_replies
