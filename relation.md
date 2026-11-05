@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 03:03:21 CST)
+(The last generation time: 2026-11-06 07:03:26 CST)
 
 ### Packages
 
@@ -663,7 +663,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/bilibili                                  | 1.20.0_p1          |            | https://github.com/msojocs/bilibili-linux                                  | Based on the Bilibli offcial client to linux version, support roaming
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/davinci-resolve                           | 21.1.2             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
+ media-video/davinci-resolve                           | 21.2.0             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/hov-qt                                    | 1.3.1              |            | https://github.com/HougeLangley/HyperOnlineVideo                           | Aggregated YouTube/Bilibili/NetEase/QQ Music client (Qt6 desktop)
                                                        | 1.3.2              |            |                                                                            |
@@ -1051,7 +1051,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/agent-workspace-linux                        | 0.6.3              |            | https://github.com/agent-sh/agent-workspace-linux                          | Isolated X11 workspaces in which an agent runs and observes apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-misc/computer-use-linux                           | 0.7.36             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
+ x11-misc/computer-use-linux                           | 0.7.46             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/extramaus                                    | 3                  |            | https://aur.archlinux.org/packages/extramaus                               | workaround to always show mouse cursor under x11
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
