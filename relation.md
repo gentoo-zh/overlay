@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-05 18:45:43 CST)
+(The last generation time: 2026-11-06 01:03:18 CST)
 
 ### Packages
 
@@ -977,8 +977,8 @@
                                                        | 7.3.1-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r13              |            |                                                                            | Virtual for Linux kernel sources
-   sys-kernel/cachyos-sources                          | 6.18.50            | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
-                                                       | 6.18.55-r1         |            |                                                                            |
+   sys-kernel/cachyos-sources                          | 6.18.55-r1         | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
+                                                       | 6.18.60            |            |                                                                            |
                                                        | 7.2.11             |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel                        | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
