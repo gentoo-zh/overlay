@@ -724,6 +724,13 @@ filter = '.versions.Linux_deb_x64.version_number'
 prefix = "Linux-x64-deb@V"
 github_account = "gouwazi"
 
+["app-office/dux-calendar-bin"]
+source = "github"
+github = "duxlabs-dev/dux-calendar"
+use_latest_release = true
+prefix = "v"
+autobump = true
+
 ["app-office/freeoffice"]
 source = "regex"
 url = "https://www.freeoffice.com/de/support/installation/linux"
