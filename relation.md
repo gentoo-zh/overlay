@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 02:42:21 CST)
+(The last generation time: 2026-11-06 02:57:13 CST)
 
 ### Packages
 
@@ -23,7 +23,7 @@
    acct-group/onepassword                              | 0-r1               | BD, RD     |                                                                            | Password manager and secure wallet
    acct-group/onepassword-mcp                          | 0-r1               | BD, RD     |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/1password-cli                               | 2.41.1             |            | https://www.1password.dev/cli                                              | Command line interface for the 1Password password manager
+ app-admin/1password-cli                               | 2.42.0             |            | https://www.1password.dev/cli                                              | Command line interface for the 1Password password manager
    acct-group/onepassword-cli                          | 0-r1               | BD, RD     |                                                                            | Command line interface for the 1Password password manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/chezmoi                                     | 2.74.0             |            | https://www.chezmoi.io                                                     | Manage your dotfiles across multiple diverse machines, securely
@@ -843,7 +843,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/doona                                       | 0.1.0_rc5          |            | https://github.com/Zakkaus/doona                                           | Web UI for the daeuniverse engines
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/flclash-bin                                 | 0.9.2              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
+ net-proxy/flclash-bin                                 | 0.9.3              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/honk                                        | 0.1.0_beta5        |            | https://github.com/daeuniverse/honk                                        | Transparent proxy based on eBPF, inspired by dae and sing-box
                                                        | 9999               |            |                                                                            |
