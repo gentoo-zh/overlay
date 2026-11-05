@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-05 18:43:08 CST)
+(The last generation time: 2026-11-05 18:43:50 CST)
 
 ### Packages
 
@@ -428,7 +428,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.9.1.89198        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/kimi-code-bin                                | 2.4.1              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
+ dev-util/kimi-code-bin                                | 2.5.0              |            | https://github.com/MoonshotAI/kimi-code                                    | Kimi Code CLI, Moonshot AI's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/kiro-cli                                     | 3.0.0              |            | https://kiro.dev/cli/                                                      | Kiro CLI, Amazon's agentic coding assistant for the terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -492,7 +492,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vimls-go-bin                                 | 0.2.1              |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/waza-bin                                     | 0.39.1             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
+ dev-util/waza-bin                                     | 0.40.0             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zcode-bin                                    | 3.17.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -566,7 +566,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-bright                               | 26.10.22           |            | https://github.com/lxgw/LxgwBright                                         | LXGW Bright: a Ming/serif-style Chinese font by LXGW
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/lxgw-marker-gothic                        | 1.004              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
+ media-fonts/lxgw-marker-gothic                        | 1.010              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-neo-xihei                            | 1.306              |            | https://github.com/lxgw/LxgwNeoXiHei                                       | A Simplified Chinese sans-serif font derived from IPAex Gothic
                                                        | 1.308              |            |                                                                            |
