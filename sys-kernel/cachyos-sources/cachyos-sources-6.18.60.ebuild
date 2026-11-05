@@ -7,17 +7,14 @@ ETYPE="sources"
 EXTRAVERSION="-cachyos"
 K_NOSETEXTRAVERSION="1"
 
-# Pin patch, config, and downstream rebase inputs so Manifest checks cover
-# exact immutable GitHub bytes.
-CACHYOS_PATCHES_COMMIT="d5db2a953637445998d2b0e5ab52ea9c04860a24"
-CACHYOS_CONFIGS_COMMIT="fed1a01462a4a26a23acbb095ec6cd3b5c9df19c"
-CACHYOS_REBASE_COMMIT="127c70edf723c471e99963e2a61923e2025feeda"
-# Source tag is cachyos-6.18.48-2; downstream patch updates do not change CPV.
+# Pin patch and config inputs so Manifest checks cover exact upstream bytes.
+CACHYOS_PATCHES_COMMIT="f3770b16d069a1bce8dfa63841042137f8b43434"
+CACHYOS_CONFIGS_COMMIT="84d5b02e346b0900ce58c1d73bf083b937c09cbb"
 CACHYOS_PR="1"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="57"
+K_GENPATCHES_VER="68"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -29,16 +26,14 @@ UNIPATCH_EXCLUDE="10 2700"
 K_NO_VERSION_CHECK="1"
 K_SECURITY_UNSUPPORTED="1"
 
-ZFS_COMMIT="71a9f9578616a90c3c14bb59629fb4d31bfd68d1"
+ZFS_COMMIT="fb48c76e17d3e0092fbba430a9eec1960e1b9961"
 CJKTTY_PV="6.18.45"
 CKV="$(ver_cut 1-3)"
 CACHYOS_SERIES="$(ver_cut 1-2)"
 CACHYOS_PATCH_URI="https://github.com/CachyOS/kernel-patches/raw/${CACHYOS_PATCHES_COMMIT}/${CACHYOS_SERIES}"
 CACHYOS_CONFIG_URI="https://github.com/CachyOS/linux-cachyos/raw/${CACHYOS_CONFIGS_COMMIT}"
-CACHYOS_REBASE_URI="https://github.com/Szowisz/CachyOS-kernels/raw/${CACHYOS_REBASE_COMMIT}/sys-kernel/cachyos-sources/files/6.18.48-r2"
 CACHYOS_PATCH_PREFIX="cachyos-kernel-patches-${CACHYOS_PATCHES_COMMIT}-${CACHYOS_SERIES}"
 CACHYOS_CONFIG_PREFIX="linux-cachyos-lts-${CACHYOS_CONFIGS_COMMIT}"
-CACHYOS_REBASE_PREFIX="cachyos-kernels-${CACHYOS_REBASE_COMMIT}-6.18.48"
 
 inherit check-reqs kernel-2 optfeature cjktty
 
@@ -66,28 +61,34 @@ SRC_URI+="
 	${CACHYOS_CONFIG_URI}/linux-cachyos-lts/config
 		-> ${CACHYOS_CONFIG_PREFIX}-config
 	bore? (
-		${CACHYOS_REBASE_URI}/sched/0001-bore-cachy.patch
-			-> ${CACHYOS_REBASE_PREFIX}-bore.patch
+		${CACHYOS_PATCH_URI}/sched/0001-bore-cachy.patch
+			-> ${CACHYOS_PATCH_PREFIX}-bore.patch
 	)
 	bmq? (
-		${CACHYOS_REBASE_URI}/sched/0001-prjc-cachy.patch
-			-> ${CACHYOS_REBASE_PREFIX}-prjc.patch
+		${CACHYOS_PATCH_URI}/sched/0001-prjc-cachy.patch
+			-> ${CACHYOS_PATCH_PREFIX}-prjc.patch
+	)
+	pds? (
+		${CACHYOS_PATCH_URI}/sched/0001-prjc-cachy.patch
+			-> ${CACHYOS_PATCH_PREFIX}-prjc.patch
+	)
+	bmq-lfbmq? (
+		${CACHYOS_PATCH_URI}/sched/0001-prjc-cachy-lfbmq.patch
+			-> ${CACHYOS_PATCH_PREFIX}-prjc-lfbmq.patch
 	)
 	cachyos-hardened? (
-		${CACHYOS_REBASE_URI}/sched/0001-bore-cachy.patch
-			-> ${CACHYOS_REBASE_PREFIX}-bore.patch
-		${CACHYOS_REBASE_URI}/misc/0001-hardened.patch
-			-> ${CACHYOS_REBASE_PREFIX}-hardened.patch
-		${CACHYOS_REBASE_URI}/misc/0002-hardened-protected-fifos-regular-2.patch
-			-> ${CACHYOS_REBASE_PREFIX}-hardened-sysctl.patch
+		${CACHYOS_PATCH_URI}/sched/0001-bore-cachy.patch
+			-> ${CACHYOS_PATCH_PREFIX}-bore.patch
+		${CACHYOS_PATCH_URI}/misc/0001-hardened.patch
+			-> ${CACHYOS_PATCH_PREFIX}-hardened.patch
 	)
 	rt? (
 		${CACHYOS_PATCH_URI}/misc/0001-rt-i915.patch
 			-> ${CACHYOS_PATCH_PREFIX}-rt-i915.patch
 	)
 	rt-bore? (
-		${CACHYOS_REBASE_URI}/sched/0001-bore-cachy.patch
-			-> ${CACHYOS_REBASE_PREFIX}-bore.patch
+		${CACHYOS_PATCH_URI}/sched/0001-bore-cachy.patch
+			-> ${CACHYOS_PATCH_PREFIX}-bore.patch
 		${CACHYOS_PATCH_URI}/misc/0001-rt-i915.patch
 			-> ${CACHYOS_PATCH_PREFIX}-rt-i915.patch
 	)
@@ -102,7 +103,7 @@ SRC_URI+="
 LICENSE+=" kernel-builtin-zfs? ( BSD-2 CDDL GPL-3 MIT )"
 KEYWORDS="~amd64"
 IUSE+="
-	bore bmq cachyos-hardened rt rt-bore +eevdf
+	bore bmq pds bmq-lfbmq cachyos-hardened rt rt-bore +eevdf
 	kcfi cjk
 	autofdo propeller
 	llvm-lto-thin llvm-lto-full llvm-lto-thin-dist +llvm-lto-none
@@ -115,16 +116,15 @@ IUSE+="
 	+mnative mzen4
 "
 
-# OpenZFS does not support Clang CFI: https://github.com/openzfs/zfs/issues/15911
-# The linux-cachyos-lts PKGBUILD exposes BORE, BMQ, hardened, EEVDF,
-# PREEMPT_RT, and RT-BORE. Its moving 6.18 kernel-patches inputs were stale for
-# cachyos-6.18.48-2, so commit-pinned exact-version rebases preserve those
-# advertised variants without encoding downstream patch iterations in CPV.
-# The default upstream "cachyos" selector is documented as EEVDF and downloads
-# no scheduler patch; it is represented by the default eevdf USE selection.
-# Deckify, MuQSS, and BMQ-LFBMQ are absent from the current LTS PKGBUILD.
+# The release tarball contains neither BORE nor PRJC; config symbols alone
+# do not install a scheduler. Rebase the pinned scheduler patches onto the
+# stable kernel's PID lifetime and fair-scheduler backports. PRJC also follows
+# the 6.18.55 blk_plug_invalidate_ts() backport, and hardened needs a
+# check_set_canary_bulk() stub because the LTS config leaves SLAB_CANARY off.
+# LTS keeps EEVDF as its default; optional patches never affect that path.
 REQUIRED_USE+="
-	^^ ( bore bmq cachyos-hardened rt rt-bore eevdf )
+	^^ ( bore bmq pds bmq-lfbmq cachyos-hardened rt rt-bore eevdf )
+	cachyos-hardened? ( llvm-lto-none )
 	propeller? ( !llvm-lto-full !llvm-lto-none )
 	autofdo? ( || ( llvm-lto-thin llvm-lto-full llvm-lto-thin-dist ) )
 	kernel-builtin-zfs? ( !kcfi )
@@ -155,7 +155,10 @@ RDEPEND+="
 				llvm-core/lld
 			)
 			!propeller? (
-				kcfi? ( llvm-core/clang )
+				kcfi? (
+					llvm-core/clang
+					llvm-core/lld
+				)
 			)
 		)
 	)
@@ -195,7 +198,6 @@ src_unpack() {
 src_prepare() {
 	local patches_prefix="${DISTDIR}/${CACHYOS_PATCH_PREFIX}"
 	local configs_prefix="${DISTDIR}/${CACHYOS_CONFIG_PREFIX}"
-	local rebases_prefix="${DISTDIR}/${CACHYOS_REBASE_PREFIX}"
 	local march_flag march=""
 	local -a march_flags=(
 		mgeneric mgeneric-v1 mgeneric-v2 mgeneric-v3 mgeneric-v4 mnative mzen4
@@ -212,19 +214,28 @@ src_prepare() {
 	eapply "${FILESDIR}/6.19.0/misc/0002-fix-autofdo-propeller-lto-thin-dist.patch"
 
 	if use bore || use rt-bore || use cachyos-hardened; then
-		eapply --fuzz=0 -- "${rebases_prefix}-bore.patch"
-	elif use bmq; then
-		eapply --fuzz=0 -- "${rebases_prefix}-prjc.patch"
+		cp "${patches_prefix}-bore.patch" "${T}/bore.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-6.18.55-bore-rebase.patch"
+		eapply --fuzz=0 -- "${T}/bore.patch"
+	elif use bmq || use pds || use bmq-lfbmq; then
+		local prjc=prjc
+		use bmq-lfbmq && prjc=prjc-lfbmq
+		cp "${patches_prefix}-${prjc}.patch" "${T}/${prjc}.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-6.18.55-${prjc}-rebase.patch"
+		eapply --fuzz=0 -- "${T}/${prjc}.patch"
+		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-6.18.55-prjc-blk-plug.patch"
+		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-prjc-futex-schedule.patch"
+		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-6.18.55-prjc-mm-cid.patch"
 	fi
 
 	if use cachyos-hardened; then
-		eapply --fuzz=0 -- "${rebases_prefix}-hardened.patch"
-		eapply --fuzz=0 -- "${rebases_prefix}-hardened-sysctl.patch"
+		cp "${patches_prefix}-hardened.patch" "${T}/hardened.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-6.18.55-hardened-rebase.patch"
+		eapply --fuzz=0 -- "${T}/hardened.patch"
+		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-6.18.55-hardened-canary-stub.patch"
 	fi
 
-	if use rt; then
-		eapply "${patches_prefix}-rt-i915.patch"
-	elif use rt-bore; then
+	if use rt || use rt-bore; then
 		eapply "${patches_prefix}-rt-i915.patch"
 	fi
 
@@ -252,8 +263,10 @@ src_prepare() {
 
 	if use bore || use cachyos-hardened; then
 		scripts/config -e SCHED_BORE || die
-	elif use bmq; then
+	elif use bmq || use bmq-lfbmq; then
 		scripts/config -e SCHED_ALT -e SCHED_BMQ || die
+	elif use pds; then
+		scripts/config -e SCHED_ALT -d SCHED_BMQ -e SCHED_PDS || die
 	elif use rt; then
 		scripts/config -e PREEMPT_RT || die
 	elif use rt-bore; then
@@ -262,7 +275,7 @@ src_prepare() {
 
 	### Enable KCFI
 	if use kcfi; then
-		scripts/config -e ARCH_SUPPORTS_CFI_CLANG -e CFI -e CFI_CLANG -e CFI_AUTO_DEFAULT || die
+		scripts/config -e CFI -e CFI_AUTO_DEFAULT || die
 	else
 		# https://github.com/openzfs/zfs/issues/15911
 		scripts/config -d CFI -d CFI_CLANG -e CFI_PERMISSIVE || die
