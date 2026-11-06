@@ -16,7 +16,10 @@ EAPI=8
 #   https://github.com/gentoo-zh-drafts/codex/blob/crate-dist/.github/workflows/crates.yml
 # This allows anyone to review and verify the crate packaging process.
 
+# vendored openssl-0.10.75 and openssl-sys-0.9.111 don't support openssl-4
 CRATES="
+	openssl@0.10.82
+	openssl-sys@0.9.118
 "
 
 declare -A GIT_CRATES=(
@@ -134,6 +137,17 @@ src_prepare() {
 	tungstenite = { path = "$(gen_git_crate_dir tungstenite)" }
 	v8 = { path = "$(gen_git_crate_dir v8)" }
 	EOF
+
+	local crate sum
+	for crate in openssl-0.10.82 openssl-sys-0.9.118; do
+		sum=$(sha256sum "${DISTDIR}"/${crate}.crate | cut -d' ' -f1)
+		sed -i -e "/^name = \"${crate%-*}\"$/,/^checksum/{" \
+			-e "s/^version = .*/version = \"${crate##*-}\"/" \
+			-e "s/^checksum = .*/checksum = \"${sum}\"/" \
+			-e "}" Cargo.lock || die
+	done
+	# openssl-0.10.82 no longer depends on once_cell
+	sed -i -e '/^name = "openssl"$/,/^]/{/"once_cell",/d}' Cargo.lock || die
 }
 
 src_compile() {
