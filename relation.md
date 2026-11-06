@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 15:56:46 CST)
+(The last generation time: 2026-11-06 16:02:52 CST)
 
 ### Packages
 
@@ -205,8 +205,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/fast-resume                                  | 2.14.0             |            | https://github.com/angristan/fast-resume                                   | Fast fuzzy finder for coding agent session history
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/go-yq-bin                                    | 4.53.6             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
-                                                       | 4.54.1             |            |                                                                            |
+ app-misc/go-yq-bin                                    | 4.54.1             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
+                                                       | 4.54.2             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/gpick                                        | 0.4-r1             |            | https://github.com/thezbyg/gpick                                           | Advanced color picker written in C++ using GTK+ toolkit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
