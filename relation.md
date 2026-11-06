@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 15:17:21 CST)
+(The last generation time: 2026-11-06 15:22:22 CST)
 
 ### Packages
 
@@ -731,7 +731,7 @@
                                                        | 0.1.12             |            |                                                                            |
    x11-misc/flatpak-xdg-utils                          | 1.0.6              | RD         | https://github.com/flatpak/flatpak-xdg-utils                               | Utilities for containerized apps to launch programs outside the container
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/vesktop-bin                                    | 1.6.8              |            | https://github.com/Vencord/Vesktop                                         | Discord Desktop with Vencord preinstalled
+ net-im/vesktop-bin                                    | 1.6.9              |            | https://github.com/Vencord/Vesktop                                         | Discord Desktop with Vencord preinstalled
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/wechat                                         | 4.1.13.26-r1       |            | https://linux.weixin.qq.com/                                               | Weixin for Linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
