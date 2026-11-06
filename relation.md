@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 15:34:28 CST)
+(The last generation time: 2026-11-06 15:39:05 CST)
 
 ### Packages
 
@@ -223,7 +223,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.34.0             |            | https://github.com/Twigpine/openclaude                                     | Open-source coding-agent CLI for cloud and local LLM providers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.26.7             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.26.8             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.15               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
