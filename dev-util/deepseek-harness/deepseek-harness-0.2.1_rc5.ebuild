@@ -99,6 +99,11 @@ src_install() {
 
 	fperms +x "${install_dir}/lib/bin.js"
 
+	if use amd64;  then 
+		fperms +x "${install_dir}/node_modules/@vscode/ripgrep-linux-x64/bin/rg"
+		fperms +x "${install_dir}/node_modules/@deepseek-ai/node-addon-system-linux-x64/bin/landlock-run"
+	fi
+
 	dosym -r "${install_dir}/lib/bin.js" /usr/bin/dsh
 }
 
