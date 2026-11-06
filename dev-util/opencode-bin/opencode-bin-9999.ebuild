@@ -9,7 +9,6 @@ HOMEPAGE="https://opencode.ai https://github.com/anomalyco/opencode"
 GITHUB_BASE="https://github.com/anomalyco/opencode/releases/download/v${PV}"
 if [[ ${PV} == 9999 ]]; then
 	PROPERTIES+=" live"
-	GITHUB_BASE="https://github.com/anomalyco/opencode/releases/latest/download"
 else
 	SRC_URI="
 		amd64? (
@@ -27,7 +26,7 @@ else
 			elibc_musl? ( ${GITHUB_BASE}/opencode-linux-arm64-musl.tar.gz -> ${P}-arm64-musl.tar.gz )
 		)
 	"
-	KEYWORDS="~amd64 ~arm64"
+	KEYWORDS="-* ~amd64 ~arm64"
 fi
 
 S="${WORKDIR}"
@@ -35,6 +34,8 @@ LICENSE="MIT"
 SLOT="0"
 IUSE="cpu_flags_x86_avx2"
 RESTRICT="strip"
+
+RDEPEND="elibc_musl? ( sys-devel/gcc:* )"
 
 [[ ${PV} == 9999 ]] && BDEPEND+=" net-misc/curl"
 
@@ -51,9 +52,17 @@ src_unpack() {
 		[[ ${ARCH} == amd64 ]] && ! use cpu_flags_x86_avx2 && suffix+="-baseline"
 		use elibc_musl && suffix+="-musl"
 
+		# GitHub marks the 1.x line as the latest release, so ask the update
+		# API for the current 2.x version instead.
+		local latest ver
+		latest=$(curl -fsSL https://opencode.ai/update/api/latest/cli/npm) || die "Failed to query the latest version"
+		[[ ${latest} =~ \"version\":\"([^\"]+)\" ]] || die "Failed to parse the latest version"
+		ver=${BASH_REMATCH[1]}
+
 		local filename="opencode-linux-${arch}${suffix}.tar.gz"
-		einfo "Downloading opencode latest release: ${filename}"
-		curl -L -o "${WORKDIR}/${filename}" "${GITHUB_BASE}/${filename}" || die "Failed to download"
+		einfo "Downloading opencode ${ver}: ${filename}"
+		local url="https://github.com/anomalyco/opencode/releases/download/v${ver}/${filename}"
+		curl -fL -o "${WORKDIR}/${filename}" "${url}" || die "Failed to download"
 		cd "${WORKDIR}" || die
 		tar -xzf "${filename}" || die "Failed to extract"
 	else
@@ -63,4 +72,18 @@ src_unpack() {
 
 src_install() {
 	dobin opencode
+}
+
+pkg_postinst() {
+	local v
+	for v in ${REPLACING_VERSIONS}; do
+		if ver_test "${v}" -lt 2; then
+			ewarn "OpenCode 2 reads the V1 configuration in place, but V1 plugins"
+			ewarn "must be ported. Access to files outside the project no longer"
+			ewarn "asks first (external_directory); see"
+			ewarn "https://opencode.ai/v2/docs/permissions/"
+			ewarn "Migration guide: https://opencode.ai/v2/docs/migrate-v1/"
+			break
+		fi
+	done
 }
