@@ -5,7 +5,10 @@
 
 EAPI=8
 
+# vendored openssl-0.10.57 and openssl-sys-0.9.93 don't support openssl-4
 CRATES="
+	openssl@0.10.82
+	openssl-sys@0.9.118
 "
 
 inherit cargo systemd
@@ -15,6 +18,7 @@ HOMEPAGE="https://github.com/rathole-org/rathole"
 SRC_URI="
 	https://codeload.github.com/rathole-org/rathole/tar.gz/v${PV} -> ${P}.tar.gz
 	https://minio.dream-universe.org/posts/distfiles/${P}-crates.tar.xz
+	${CARGO_CRATE_URIS}
 "
 
 LICENSE="Apache-2.0"
@@ -31,6 +35,21 @@ RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
 
 PATCHES=("${FILESDIR}/${P}-fix-rust-1.80.patch")
+
+src_prepare() {
+	default
+
+	local crate sum
+	for crate in openssl-0.10.82 openssl-sys-0.9.118; do
+		sum=$(sha256sum "${DISTDIR}"/${crate}.crate | cut -d' ' -f1)
+		sed -i -e "/^name = \"${crate%-*}\"$/,/^checksum/{" \
+			-e "s/^version = .*/version = \"${crate##*-}\"/" \
+			-e "s/^checksum = .*/checksum = \"${sum}\"/" \
+			-e "}" Cargo.lock || die
+	done
+	# openssl-0.10.82 no longer depends on once_cell
+	sed -i -e '/^name = "openssl"$/,/^]/{/"once_cell",/d}' Cargo.lock || die
+}
 
 src_install(){
 	keepdir /etc/rathole
