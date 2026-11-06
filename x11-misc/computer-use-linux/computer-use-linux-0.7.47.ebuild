@@ -330,6 +330,26 @@ src_test() {
 		windowing::backends::niri::tests::socket_rejects_truncated_and_oversized_replies
 		ydotool::tests::implicit_socket_rejects_shared_tmp_and_wrong_owner
 		ydotool::tests::implicit_socket_requires_private_runtime_directory_and_socket
+		atspi_tree_impl::tests::editable_text_exact_readback_accepts_empty_whitespace_and_trailing_newline
+		atspi_tree_impl::tests::editable_text_missing_text_and_read_errors_are_structured_outcomes
+		atspi_tree_impl::tests::editable_text_negative_counts_and_stalled_readback_are_structured_outcomes
+		atspi_tree_impl::tests::editable_text_non_bmp_matching_count_does_not_accept_different_content
+		atspi_tree_impl::tests::editable_text_non_bmp_readback_supports_scalar_and_utf16_peers
+		atspi_tree_impl::tests::editable_text_normalization_mismatch_is_not_verified
+		atspi_tree_impl::tests::editable_text_readback_chunks_utf16_without_splitting_non_bmp
+		atspi_tree_impl::tests::editable_text_readback_waits_for_async_publication
+		atspi_tree_impl::tests::editable_text_rejection_and_mutation_errors_remain_errors
+		atspi_tree_impl::tests::editable_text_true_without_publication_is_mismatch_and_mutates_once
+		atspi_tree_impl::tests::indexed_actions_bound_untrusted_counts_before_reading_indices
+		atspi_tree_impl::tests::indexed_actions_time_out_the_entire_read
+		atspi_tree_impl::tests::indexed_children_resolve_webkit_names_on_the_accessibility_bus
+		atspi_tree_impl::tests::numeric_value_dispatch_remains_isolated_from_editable_text
+		atspi_tree_impl::tests::password_text_is_unverifiable_even_when_requested_text_is_bullets
+		atspi_tree_impl::tests::qt_action_names_do_not_depend_on_localized_names
+		gnome_extension::tests::system_migration_keeps_reload_warning_until_shell_changes_loaded_path
+		remote_desktop::eis_tests::gnome_fractional_pointer_reaches_full_eis_region
+		test_sockets::tests::a_private_bus_keeps_its_socket_in_its_dir_and_removes_both
+		reload_is_required_only_for_changes_gnome_shell_runs
 	)
 	cargo_src_test
 }
