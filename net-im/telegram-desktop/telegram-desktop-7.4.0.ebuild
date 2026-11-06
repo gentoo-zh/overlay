@@ -274,7 +274,7 @@ SRC_URI="
 "
 S="${WORKDIR}/${MY_P}"
 
-LICENSE="BSD GPL-3-with-openssl-exception LGPL-2+"
+LICENSE="Apache-2.0 BSD GPL-3-with-openssl-exception ISC LGPL-2+"
 LICENSE+=" MIT MPL-2.0 Unicode-3.0"
 SLOT="0"
 KEYWORDS="~amd64"
@@ -409,6 +409,8 @@ src_prepare() {
 		cmark-gfm  # Patched, not maintained by upstream anymore
 		libprisma  # Telegram-specific library, no stable releases
 		tgcalls  # Telegram-specific library, no stable releases
+		twidget  # Telegram-specific litehtml fork and renderer, no stable releases
+		widget-sandbox  # Telegram-specific library with a QuickJS fork, no stable releases
 		xdg-desktop-portal  # Only a few xml files are used with gdbus-codegen
 		MicroTeX  # Telegram-specific fork, no stable releases
 		zxcvbn  # Always bundled, see Telegram/cmake/lib_zxcvbn.cmake
