@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 16:26:01 CST)
+(The last generation time: 2026-11-06 17:05:06 CST)
 
 ### Packages
 
@@ -720,7 +720,7 @@
    dev-python/asyncpg                                  | 0.32.0             | RD         | https://pypi.org/project/asyncpg/                                          | An asyncio PostgreSQL driver
    dev-python/telethon                                 | 1.45.0             | RD         | https://codeberg.org/Lonami/Telethon                                       | Full-featured Telegram client library for Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/telegram-desktop                               | 7.3.5              |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
+ net-im/telegram-desktop                               | 7.4.0              |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.34_p260924-r2  |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
                                                        | 3.2.35_p261103     |            |                                                                            |
