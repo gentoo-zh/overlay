@@ -1302,6 +1302,13 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
+["dev-util/claude-code"]
+source = "regex"
+url = "https://downloads.claude.ai/claude-code-releases/latest"
+regex = '^([\d.]+)$'
+github_account = "zakkaus"
+autobump = true
+
 # The snapshot we carry is above upstream 2.0.1, the last release.
 #["dev-util/cmakerc"]
 
