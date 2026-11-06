@@ -3,7 +3,10 @@
 
 EAPI=8
 
+# openssl-sys before 0.9.117 does not support openssl-4
 CRATES="
+	openssl@0.10.82
+	openssl-sys@0.9.118
 "
 
 RUST_MIN_VER="1.88.0"
@@ -60,6 +63,20 @@ src_prepare() {
 
 	rm rust-toolchain.toml || die
 	sed -i '/^strip = "symbols"/d' src-tauri/Cargo.toml || die
+
+	local crate locked sum
+	for crate in openssl-0.10.82 openssl-sys-0.9.118; do
+		locked=$(sed -n "/^name = \"${crate%-*}\"$/{n;s/^version = \"\(.*\)\"$/\1/p}" \
+			src-tauri/Cargo.lock) || die
+		ver_test "${locked}" -lt "${crate##*-}" || continue
+		sum=$(sha256sum "${DISTDIR}"/${crate}.crate | cut -d' ' -f1) || die
+		sed -i -e "/^name = \"${crate%-*}\"$/,/^checksum/{" \
+			-e "s/^version = .*/version = \"${crate##*-}\"/" \
+			-e "s/^checksum = .*/checksum = \"${sum}\"/" \
+			-e "}" src-tauri/Cargo.lock || die
+	done
+	# openssl-0.10.82 no longer depends on once_cell
+	sed -i -e '/^name = "openssl"$/,/^]/{/"once_cell",/d}' src-tauri/Cargo.lock || die
 
 	# Enable tauri/custom-protocol so tauri-build picks production mode
 	# (no devUrl). Without it, the binary loads http://localhost:3000.
