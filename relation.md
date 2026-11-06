@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 02:27:40 CST)
+(The last generation time: 2026-11-07 02:44:34 CST)
 
 ### Packages
 
@@ -625,8 +625,7 @@
  media-plugins/osdlyrics                               | 0.6.0              |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-plugins/waylyrics                               | 0.3.21             |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
-                                                       | 0.4.0              |            |                                                                            |
+ media-plugins/waylyrics                               | 0.4.0              |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
                                                        | 0.4.6              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/cider                                     | 4.0.9.1            |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V4)
