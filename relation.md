@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 15:32:50 CST)
+(The last generation time: 2026-11-06 15:34:28 CST)
 
 ### Packages
 
@@ -950,7 +950,7 @@
  sys-apps/pacman-mirrorlist                            | 20251021           |            | https://archlinux.org/mirrorlist/                                          | Repository list for Archlinux's binary package manager
                                                        | 20260610           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/pnpm-bin                                     | 12.16.1            |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
+ sys-apps/pnpm-bin                                     | 12.18.0            |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/wait-online                                  | 9999               |            | https://github.com/lilydjwg/wait-online                                    | Wait until we're connected to the Internet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
