@@ -5,7 +5,10 @@
 
 EAPI=8
 
+# vendored openssl-0.10.68 and openssl-sys-0.9.104 don't support openssl-4
 CRATES="
+	openssl@0.10.82
+	openssl-sys@0.9.118
 "
 
 declare -A GIT_CRATES=(
@@ -158,6 +161,7 @@ RDEPEND="
 BDEPEND="
 	dev-lang/nasm
 	dev-lang/yasm
+	dev-libs/openssl
 	dev-build/cmake
 	dev-build/ninja
 	$(llvm_gen_dep '
@@ -180,6 +184,18 @@ pkg_setup() {
 
 src_prepare() {
 	default
+
+	local crate sum
+	for crate in openssl-0.10.82 openssl-sys-0.9.118; do
+		sum=$(sha256sum "${DISTDIR}"/${crate}.crate | cut -d' ' -f1)
+		sed -i -e "/^name = \"${crate%-*}\"$/,/^checksum/{" \
+			-e "s/^version = .*/version = \"${crate##*-}\"/" \
+			-e "s/^checksum = .*/checksum = \"${sum}\"/" \
+			-e "}" Cargo.lock || die
+	done
+	# openssl-0.10.82 no longer depends on once_cell
+	sed -i -e '/^name = "openssl"$/,/^]/{/"once_cell",/d}' Cargo.lock || die
+
 	cd "${S}"/.. || die
 	eapply "${FILESDIR}"/rust-sciter.patch
 	# FIX: hwcodec only links zlib on x86_64
