@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-06 15:22:22 CST)
+(The last generation time: 2026-11-06 15:32:50 CST)
 
 ### Packages
 
@@ -568,7 +568,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-bright                               | 26.10.22           |            | https://github.com/lxgw/LxgwBright                                         | LXGW Bright: a Ming/serif-style Chinese font by LXGW
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-fonts/lxgw-marker-gothic                        | 1.010              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
+ media-fonts/lxgw-marker-gothic                        | 1.011              |            | https://github.com/lxgw/LxgwMarkerGothic                                   | LXGW Marker Gothic: a handwritten marker-style Chinese font
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/lxgw-neo-xihei                            | 1.306              |            | https://github.com/lxgw/LxgwNeoXiHei                                       | A Simplified Chinese sans-serif font derived from IPAex Gothic
                                                        | 1.308              |            |                                                                            |
