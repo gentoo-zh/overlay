@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 17:08:00 CST)
+(The last generation time: 2026-11-07 17:08:43 CST)
 
 ### Packages
 
@@ -877,7 +877,7 @@
        app-alternatives/v2ray-geosite                  | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geosite
      net-proxy/v2ray                                   | 5.53.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
      net-proxy/v2ray-bin                               | 5.53.0             | RD         | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
-   net-proxy/trojan-go-fork                            | 2026.02.15         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
+   net-proxy/trojan-go-fork                            | 2026.11.01         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
