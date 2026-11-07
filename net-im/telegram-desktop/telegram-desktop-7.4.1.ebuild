@@ -277,7 +277,7 @@ S="${WORKDIR}/${MY_P}"
 LICENSE="Apache-2.0 BSD GPL-3-with-openssl-exception ISC LGPL-2+"
 LICENSE+=" MIT MPL-2.0 Unicode-3.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="dbus enchant +fonts screencast wayland webkit +X"
 
 CDEPEND="
