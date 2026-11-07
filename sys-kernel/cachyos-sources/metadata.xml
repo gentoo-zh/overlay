@@ -28,6 +28,7 @@
 
 		<!-- Security features -->
 		<flag name="kcfi">Enable Clang Kernel Control Flow Integrity</flag>
+		<flag name="rust">Enable Rust support (CONFIG_RUST) and the DRM panic QR code screen; requires the Rust kernel toolchain</flag>
 
 		<!-- Optimization features -->
 		<flag name="autofdo">Enable Clang AutoFDO support for profile-guided optimization</flag>

@@ -8,13 +8,13 @@ EXTRAVERSION="-cachyos"
 K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
-CACHYOS_PATCHES_COMMIT="89bb22dec944d4d5b31332f2affbc740665cf0d9"
-CACHYOS_CONFIGS_COMMIT="66666177b78f29c32670ba4f78f882bc0b9cc03d"
+CACHYOS_PATCHES_COMMIT="f0eade177f5be4a6da4846a60bb3baa985dfd839"
+CACHYOS_CONFIGS_COMMIT="6d02fae52812f9c836abffb4a5320aee9e07a294"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="2"
+K_GENPATCHES_VER="4"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -112,7 +112,7 @@ LICENSE+=" kernel-builtin-zfs? ( BSD-2 CDDL GPL-3 MIT )"
 KEYWORDS="~amd64"
 IUSE+="
 	+bore bmq pds muqss rt rt-bore eevdf
-	server deckify aufs kcfi cjk
+	server deckify aufs kcfi +rust cjk
 	+autofdo +propeller
 	+llvm-lto-thin llvm-lto-full llvm-lto-thin-dist llvm-lto-none
 	kernel-builtin-zfs
@@ -142,7 +142,12 @@ REQUIRED_USE+="
 "
 
 RDEPEND+="
-	dev-util/pahole
+	rust? (
+		>=dev-util/bindgen-0.72.1
+		|| ( >=dev-lang/rust-bin-1.85.0[rust-src] >=dev-lang/rust-1.85.0[rust-src] )
+	)
+	llvm-lto-none? ( dev-util/pahole )
+	!llvm-lto-none? ( dev-util/pahole-cachyos )
 	autofdo? ( dev-util/perf[libpfm] )
 	!llvm-lto-none? (
 		llvm-core/clang
@@ -222,9 +227,12 @@ src_prepare() {
 	# Upstream: https://git.kernel.org/broonie/sound/c/d06607bafb36
 	eapply "${FILESDIR}/cachyos-sources-7.3.0-tas2783-sdca-deps.patch"
 
+	# Point the kernel build at dev-util/pahole-cachyos (merged-CU
+	# --lang_exclude fixes for Rust + LTO + BTF).
+	eapply "${FILESDIR}/cachyos-sources-pahole-cachyos.patch"
+
 	if use bore || use rt-bore || use deckify; then
 		eapply --fuzz=0 -- "${patches_prefix}-bore.patch"
-		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-7.3.1-bore-update-protect-slice.patch"
 	elif use muqss; then
 		cp "${DISTDIR}/linux-ck-4ceaa4d07af63d9d495f4cbb570547feb39d1236-muqss.patch" "${T}/scheduler.patch" || die
 		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.3.0-muqss-rebase.patch"
@@ -342,10 +350,12 @@ src_prepare() {
 			-e LTO_NONE || die
 	fi
 
-	if use llvm-lto-none; then
+	if use rust; then
 		scripts/config --set-str DRM_PANIC_SCREEN qr_code -e DRM_PANIC_SCREEN_QR_CODE \
 			--set-str DRM_PANIC_SCREEN_QR_CODE_URL "https://panic.archlinux.org/panic_report#" \
 			--set-val DRM_PANIC_SCREEN_QR_VERSION 40 || die
+	else
+		scripts/config -d RUST || die
 	fi
 
 	if use hz-ticks-100; then

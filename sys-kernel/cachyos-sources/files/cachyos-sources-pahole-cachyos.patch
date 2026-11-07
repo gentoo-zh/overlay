@@ -1,0 +1,29 @@
+Point the kernel build at the pahole copy from dev-util/pahole-cachyos,
+which carries the merged-CU --lang_exclude fixes (lore v2 series) needed
+by Rust + LTO + BTF builds. dev-util/pahole stays untouched and both can
+be installed side by side.
+
+PAHOLE uses ?= (same style as ARCH/KBUILD_IMAGE in this Makefile), so an
+externally supplied PAHOLE — make command line or environment — always
+wins over this default. The default is an absolute path on purpose:
+kbuild resolves $(PAHOLE) once via scripts/pahole-version.sh during
+olddefconfig, and an absolute path lets external modules built against
+/usr/src/linux-* pick the same binary without any PATH tricks. If
+pahole-cachyos is removed, BTF generation silently turns off
+(pahole-version.sh prints 0); it never breaks the build.
+
+Applies to every 6.18/7.x tree shipping the standard PAHOLE line in the
+top-level Makefile (~line 539). Trees without BINDGEN right above it
+(6.12 and older) apply with a one-line offset.
+
+--- a/Makefile
++++ b/Makefile
+@@ -536,7 +536,7 @@
+ RUSTFMT		= rustfmt
+ CLIPPY_DRIVER	= clippy-driver
+ BINDGEN		= bindgen
+-PAHOLE		= pahole
++PAHOLE		?= /usr/libexec/pahole-cachyos/bin/pahole
+ RESOLVE_BTFIDS	= $(objtree)/tools/bpf/resolve_btfids/resolve_btfids
+ LEX		= flex
+ YACC		= bison
