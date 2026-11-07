@@ -1319,6 +1319,13 @@ prefix = "v"
 github_account = "gouwazi"
 autobump = true
 
+["dev-util/pahole-cachyos"]
+source = "github"
+github = "acmel/dwarves"
+use_latest_tag = true
+prefix = "v"
+github_account = "xz-dev"
+
 ["dev-util/claude-code"]
 source = "regex"
 url = "https://downloads.claude.ai/claude-code-releases/latest"

@@ -9,11 +9,11 @@ inherit cmake python-single-r1 verify-sig
 
 MY_P="dwarves-${PV}"
 
-DESCRIPTION="pahole (Poke-a-Hole) and other DWARF utilities, with the CachyOS merged-CU lang_exclude fixes needed by Rust + LTO + BTF kernels"
-HOMEPAGE="https://git.kernel.org/cgit/devel/pahole/pahole.git/"
+DESCRIPTION="pahole/DWARF utilities with CachyOS merged-CU lang_exclude fixes"
+HOMEPAGE="https://git.kernel.org/pub/scm/devel/pahole/pahole.git/"
 SRC_URI="
-	http://fedorapeople.org/~acme/dwarves/${MY_P}.tar.xz
-	verify-sig? ( http://fedorapeople.org/~acme/dwarves/${MY_P}.tar.sign )
+	https://fedorapeople.org/~acme/dwarves/${MY_P}.tar.xz
+	verify-sig? ( https://fedorapeople.org/~acme/dwarves/${MY_P}.tar.sign )
 "
 S="${WORKDIR}/${MY_P}"
 
