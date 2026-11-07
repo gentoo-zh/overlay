@@ -1,0 +1,393 @@
+Backport of the lore series "dwarf_loader: Fix --lang_exclude on merged CUs"
+(v2), rebased onto the dwarves 1.32 release tarball:
+
+  https://lore.kernel.org/dwarves/CAPLSpGbV5RTSuMZPX=UgzniPtoT7jup7pCGw_Rt2tqiejKXmng@mail.gmail.com/
+
+  dwarf_loader: Take the merged CU language from a CU that is kept
+  dwarf_loader: Load types that kept CUs use from excluded CUs
+
+Upstream (master) has unwrapped the early_cu_filter block in
+cus__merge_and_process_cu() that the 1.32 tarball still nests inside
+`if (conf->early_cu_filter)`, so hunk 11 of patch 2 is hand-adapted
+here (same lines, tarball indentation). Everything else applies with
+line offsets only. Drop this ebuild patch when the series lands in an
+upstream dwarves release.
+
+diff --git a/dwarf_loader.c b/dwarf_loader.c
+index 61ef52f..b5a1ee3 100644
+--- a/dwarf_loader.c
++++ b/dwarf_loader.c
+@@ -169,6 +169,11 @@ struct alt_pu {
+ 	bool	  hit;		/* referenced by main CUs? */
+ };
+ 
++struct excluded_cu {
++	Dwarf_Off start;
++	Dwarf_Off end;
++};
++
+ struct dwarf_cu {
+ 	struct hlist_head *hash_tags;	/* tags (functions, etc.) keyed by DWARF offset */
+ 	struct hlist_head *hash_types;	/* types keyed by DWARF offset */
+@@ -183,6 +188,10 @@ struct dwarf_cu {
+ 	uint32_t  nr_alt_pus;
+ 	uint32_t  allocated_alt_pus;
+ 	bool	  processing_alt;	/* true while processing alt-file DIEs */
++	struct excluded_cu *excluded_cus;	/* skipped by early_cu_filter when merging */
++	uint32_t  nr_excluded_cus;
++	Dwarf	  *dw;
++	struct conf_load *conf;
+ };
+ 
+ static int dwarf_cu__init(struct dwarf_cu *dcu, struct cu *cu)
+@@ -215,6 +224,8 @@ static int dwarf_cu__init(struct dwarf_cu *dcu, struct cu *cu)
+ 	dcu->alt_pus = NULL;
+ 	dcu->nr_alt_pus = 0;
+ 	dcu->allocated_alt_pus = 0;
++	dcu->excluded_cus = NULL;
++	dcu->nr_excluded_cus = 0;
+ 	/*
+ 	 * processing_alt is per-merged-CU state, not thread-safe.
+ 	 * The merged-CU path (cus__merge_and_process_cu) is
+@@ -249,6 +260,7 @@ static void dwarf_cu__delete(struct cu *cu)
+ 
+ 	zfree(&dcu->imported_units);
+ 	zfree(&dcu->alt_pus);
++	zfree(&dcu->excluded_cus);
+ 	if (dcu->alt) {
+ 		cu__free(cu, dcu->alt->hash_tags);
+ 		cu__free(cu, dcu->alt->hash_types);
+@@ -475,6 +487,8 @@ static struct dwarf_tag *__dwarf_cu__find_tag_by_ref(const struct dwarf_cu *cu,
+ 				    dtag->from_types_section.field, \
+ 				    dtag->from_alt.field)
+ 
++static struct dwarf_tag *dwarf_cu__load_excluded_type(struct dwarf_cu *dcu, Dwarf_Off ref);
++
+ /* Same as __dwarf_cu__find_tag_by_ref but for type lookups (hash_types). */
+ static struct dwarf_tag *__dwarf_cu__find_type_by_ref(struct dwarf_cu *dcu,
+ 						      const Dwarf_Off ref,
+@@ -497,6 +511,8 @@ static struct dwarf_tag *__dwarf_cu__find_type_by_ref(struct dwarf_cu *dcu,
+ 
+ 	struct dwarf_tag *dtag = hashtags__find(dcu->hash_types, ref);
+ 
++	if (dtag == NULL)
++		dtag = dwarf_cu__load_excluded_type(dcu, ref);
+ 	if (dtag)
+ 		dcu->last_type_lookup = dtag;
+ 
+@@ -3448,6 +3464,62 @@ static int die__process_unit(Dwarf_Die *die, struct cu *cu, struct conf_load *co
+ 	return 0;
+ }
+ 
++static int dwarf_cu__add_excluded_cu(struct dwarf_cu *dcu, Dwarf_Off start, Dwarf_Off end)
++{
++	struct excluded_cu *cus = realloc(dcu->excluded_cus,
++					  (dcu->nr_excluded_cus + 1) * sizeof(*cus));
++
++	if (cus == NULL)
++		return -ENOMEM;
++
++	cus[dcu->nr_excluded_cus++] = (struct excluded_cu){ .start = start, .end = end };
++	dcu->excluded_cus = cus;
++	return 0;
++}
++
++static bool dwarf_cu__in_excluded_cu(const struct dwarf_cu *dcu, Dwarf_Off offset)
++{
++	for (uint32_t i = 0; i < dcu->nr_excluded_cus; i++)
++		if (offset >= dcu->excluded_cus[i].start && offset < dcu->excluded_cus[i].end)
++			return true;
++	return false;
++}
++
++/*
++ * With LTO, LLVM emits a type such as int once, in the first CU that uses it,
++ * and other CUs refer to it with DW_FORM_ref_addr. So the CUs kept when merging
++ * can refer to types in CUs that early_cu_filter excluded. Load those types
++ * when they are looked up, and nothing else from the excluded CUs.
++ */
++static struct dwarf_tag *dwarf_cu__load_excluded_type(struct dwarf_cu *dcu, Dwarf_Off ref)
++{
++	struct tag *tag, die_tag = {};
++	uint32_t id = 0;
++	Dwarf_Die die;
++
++	if (!dwarf_cu__in_excluded_cu(dcu, ref) || dwarf_offdie(dcu->dw, ref, &die) == NULL)
++		return NULL;
++
++	/*
++	 * A using declaration can name a function, and processing a function
++	 * adds its parameters to the CU's tables, so check the tag first.
++	 */
++	die_tag.tag = dwarf_tag(&die);
++	if (!tag__is_tag_type(&die_tag))
++		return NULL;
++
++	tag = die__process_tag(&die, dcu->cu, 1, dcu->conf);
++	if (tag == NULL || tag == &unsupported_tag)
++		return NULL;
++
++	/* As in die__process_unit(). */
++	if (tag->tag != DW_TAG_unspecified_type)
++		cu__add_tag(dcu->cu, tag, &id);
++	cu__hash(dcu->cu, tag);
++	tag__dwarf(tag)->small_id = id;
++	return tag__dwarf(tag);
++}
++
+ static void ftype__recode_dwarf_types(struct tag *tag, struct cu *cu);
+ 
+ static int namespace__recode_dwarf_types(struct tag *tag, struct cu *cu)
+@@ -4161,10 +4233,10 @@ static int cu__resolve_func_ret_types_optimized(struct cu *cu, struct conf_load
+ 
+ static int cu__recode_dwarf_types_table(struct cu *cu,
+ 					struct ptr_table *pt,
+-					uint32_t i)
++					uint32_t *i)
+ {
+-	for (; i < pt->nr_entries; ++i) {
+-		struct tag *tag = pt->entries[i];
++	for (; *i < pt->nr_entries; ++*i) {
++		struct tag *tag = pt->entries[*i];
+ 
+ 		if (tag != NULL) /* void, see cu__new */
+ 			if (tag__recode_dwarf_type(tag, cu))
+@@ -4176,10 +4248,15 @@ static int cu__recode_dwarf_types_table(struct cu *cu,
+ 
+ static int cu__recode_dwarf_types(struct cu *cu)
+ {
+-	if (cu__recode_dwarf_types_table(cu, &cu->types_table, 1) ||
+-	    cu__recode_dwarf_types_table(cu, &cu->tags_table, 0) ||
+-	    cu__recode_dwarf_types_table(cu, &cu->functions_table, 0))
+-		return -1;
++	uint32_t types = 1, tags = 0, functions = 0;
++
++	/* Recoding can add tags, see dwarf_cu__load_excluded_type(). */
++	do {
++		if (cu__recode_dwarf_types_table(cu, &cu->types_table, &types) ||
++		    cu__recode_dwarf_types_table(cu, &cu->tags_table, &tags) ||
++		    cu__recode_dwarf_types_table(cu, &cu->functions_table, &functions))
++			return -1;
++	} while (types < cu->types_table.nr_entries || tags < cu->tags_table.nr_entries);
+ 	return 0;
+ }
+ 
+@@ -4991,6 +5068,7 @@ static int cus__merge_and_process_cu(struct cus *cus, struct conf_load *conf,
+ 	struct dwarf_cu *dcu = NULL;
+ 	Dwarf_Off off = 0, noff;
+ 	struct cu *cu = NULL;
++	bool kept_cu = false;
+ 	size_t cuhl;
+ 
+ 	while (dwarf_nextcu(dw, off, &noff, &cuhl, NULL, &pointer_size,
+@@ -5027,6 +5105,8 @@ static int cus__merge_and_process_cu(struct cus *cus, struct conf_load *conf,
+ 
+ 			dcu->cu = cu;
+ 			dcu->type_unit = type_dcu;
++			dcu->dw = dw;
++			dcu->conf = conf;
+ 			cu->priv = dcu;
+ 			cu->dfops = &dwarf__ops;
+ 
+@@ -5103,23 +5183,34 @@ static int cus__merge_and_process_cu(struct cus *cus, struct conf_load *conf,
+ 			cus__add(cus, cu);
+ 		}
+ 
+-		Dwarf_Die child;
+-		if (dwarf_child(cu_die, &child) == 0) {
+-			bool filtered = false;
+-
+-			if (conf->early_cu_filter) {
+-				struct cu unmerged_cu = {
+-					.name	  = attr_string(cu_die, DW_AT_name, conf),
+-					.language = attr_numeric(cu_die, DW_AT_language),
+-				};
++		bool filtered = false;
+ 
+-				filtered = conf->early_cu_filter(&unmerged_cu) == NULL;
+-			}
++		if (conf->early_cu_filter) {
++			struct cu unmerged_cu = {
++				.name	  = attr_string(cu_die, DW_AT_name, conf),
++				.language = attr_numeric(cu_die, DW_AT_language),
++			};
+ 
+-			if (!filtered && die__process_unit(&child, cu, conf, 0) != 0)
++			filtered = conf->early_cu_filter(&unmerged_cu) == NULL;
++			if (filtered && dwarf_cu__add_excluded_cu(dcu, off, noff))
+ 				goto out_abort;
+ 		}
+ 
++		/*
++		 * pahole filters the merged CU by language again, so it must
++		 * not keep the language of a CU filtered out here.
++		 */
++		if (!filtered && !kept_cu) {
++			cu->language = attr_numeric(cu_die, DW_AT_language);
++			cu->producer_clang = attr_producer_clang(cu_die);
++			kept_cu = true;
++		}
++
++		Dwarf_Die child;
++		if (!filtered && dwarf_child(cu_die, &child) == 0 &&
++		    die__process_unit(&child, cu, conf, 0) != 0)
++			goto out_abort;
++
+ 		off = noff;
+ 	}
+ 
+diff --git a/tests/lang_exclude_lto_refs.sh b/tests/lang_exclude_lto_refs.sh
+new file mode 100755
+index 0000000..56bcb7b
+--- /dev/null
++++ b/tests/lang_exclude_lto_refs.sh
+@@ -0,0 +1,76 @@
++#!/bin/sh
++# SPDX-License-Identifier: GPL-2.0-only
++#
++# Test --lang_exclude on clang LTO objects, where a kept CU refers to a type
++# in an excluded CU: LLVM emits int once, in the first CU that uses it.
++
++. "$(dirname "$0")/test_lib.sh"
++outdir=$(make_tmpdir)
++
++trap cleanup EXIT
++
++title_log "Language filtering of LTO CUs that refer to excluded CUs."
++
++for tool in clang clang++ ld.lld; do
++	if ! command -v $tool > /dev/null 2>&1; then
++		info_log "skip: $tool not available"
++		test_skip
++	fi
++done
++
++echo 'char zero_c;' > "$outdir/zero.c"
++
++cat > "$outdir/first.cpp" << 'EOF'
++struct cpp_only {
++	int	a;
++};
++
++struct cpp_only cpp_var;
++EOF
++
++cat > "$outdir/second.c" << 'EOF'
++struct c_only {
++	int	b;
++};
++
++struct c_only c_var;
++EOF
++
++obj="$outdir/lto.so"
++
++if ! clang -flto -g -c -o "$outdir/zero.o" "$outdir/zero.c" 2>/dev/null ||
++   ! clang++ -flto -g -c -o "$outdir/first.o" "$outdir/first.cpp" 2>/dev/null ||
++   ! clang -flto -g -c -o "$outdir/second.o" "$outdir/second.c" 2>/dev/null ||
++   ! clang -flto -fuse-ld=lld -shared -o "$obj" "$outdir/zero.o" \
++	"$outdir/first.o" "$outdir/second.o" 2>/dev/null; then
++	error_log "FAIL: compilation failed"
++	test_fail
++fi
++
++lang_exclude=c++,c++03,c++11,c++14
++btf="$outdir/lto.btf"
++
++check()
++{
++	if [ $1 -ne 0 ]; then
++		error_log "FAIL: $2: pahole failed"
++		test_fail
++	fi
++	if echo "$3" | grep -q "struct cpp_only"; then
++		error_log "FAIL: $2: --lang_exclude=c++ kept the C++ CU"
++		test_fail
++	fi
++	if ! echo "$3" | grep -Eq "^[[:space:]]+int[[:space:]]+b;"; then
++		error_log "FAIL: $2: c_only.b lost its type, int from the C++ CU"
++		test_fail
++	fi
++}
++
++output=$(pahole -F dwarf --lang_exclude=$lang_exclude "$obj" 2>/dev/null)
++check $? "DWARF" "$output"
++
++pahole -J --btf_encode_detached="$btf" --lang_exclude=$lang_exclude "$obj" > /dev/null 2>&1
++output=$(pahole -F btf "$btf" 2>/dev/null)
++check $? "BTF" "$output"
++
++test_pass
+diff --git a/tests/lang_exclude_merged_cu.sh b/tests/lang_exclude_merged_cu.sh
+new file mode 100755
+index 0000000..507c6ac
+--- /dev/null
++++ b/tests/lang_exclude_merged_cu.sh
+@@ -0,0 +1,67 @@
++#!/bin/sh
++# SPDX-License-Identifier: GPL-2.0-only
++#
++# Test --lang_exclude when CUs are merged, as for LTO objects: excluding the
++# language of the first CU must not drop the CUs that follow it.
++
++. "$(dirname "$0")/test_lib.sh"
++outdir=$(make_tmpdir)
++
++trap cleanup EXIT
++
++title_log "Language filtering of merged CUs."
++
++CC=${CC:-gcc}
++CXX=${CXX:-g++}
++LD=${LD:-ld}
++for tool in "$CC" "$CXX" "$LD"; do
++	if ! command -v "${tool%% *}" > /dev/null 2>&1; then
++		info_log "skip: $tool not available"
++		test_skip
++	fi
++done
++
++cat > "$outdir/first.cpp" << 'EOF'
++struct cpp_only {
++	int	a;
++};
++
++struct cpp_only cpp_var;
++EOF
++
++cat > "$outdir/second.c" << 'EOF'
++struct c_only {
++	int	b;
++};
++
++struct c_only c_var;
++EOF
++
++obj="$outdir/merged.o"
++
++if ! $CXX -g -c -o "$outdir/first.o" "$outdir/first.cpp" 2>/dev/null ||
++   ! $CC -g -c -o "$outdir/second.o" "$outdir/second.c" 2>/dev/null ||
++   ! $LD -r -o "$obj" "$outdir/first.o" "$outdir/second.o" 2>/dev/null; then
++	error_log "FAIL: compilation failed"
++	test_fail
++fi
++
++output=$(pahole --btf_features=force_cu_merging -F dwarf "$obj" 2>/dev/null)
++if ! echo "$output" | grep -q "struct cpp_only" ||
++   ! echo "$output" | grep -q "struct c_only"; then
++	error_log "FAIL: merged CU lacks types without --lang_exclude"
++	test_fail
++fi
++
++output=$(pahole --btf_features=force_cu_merging -F dwarf \
++	--lang_exclude=c++,c++03,c++11,c++14 "$obj" 2>/dev/null)
++if echo "$output" | grep -q "struct cpp_only"; then
++	error_log "FAIL: --lang_exclude=c++ kept the C++ CU"
++	test_fail
++fi
++if ! echo "$output" | grep -q "struct c_only"; then
++	error_log "FAIL: --lang_exclude=c++ dropped the C CU merged after it"
++	test_fail
++fi
++
++test_pass
