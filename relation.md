@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 12:27:32 CST)
+(The last generation time: 2026-11-07 12:28:10 CST)
 
 ### Packages
 
@@ -1013,6 +1013,7 @@
                                                        | 7.2.15             |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.13             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.14             |            |                                                                            |
+                                                       | 7.3.1              |            |                                                                            |
    sys-kernel/xanmod-sources                           | 7.2.13             | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
                                                        | 7.2.14             |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
