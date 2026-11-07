@@ -9,8 +9,7 @@ DESCRIPTION="Community managed domain list for V2Ray"
 HOMEPAGE="https://github.com/v2fly/domain-list-community"
 SRC_URI="
 	https://github.com/v2fly/domain-list-community/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/gentoo-zh-drafts/domain-list-community/releases/download/${PV}/domain-list-community-${PV}-vendor.tar.xz
-		-> ${P}-vendor.tar.xz
+	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-deps.tar.xz
 "
 
 S="${WORKDIR}/domain-list-community-${PV}"
@@ -20,7 +19,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="!dev-libs/v2ray-domain-list-community-bin"
-BDEPEND=">=dev-lang/go-1.25.12"
+BDEPEND=">=dev-lang/go-1.26.10"
 
 src_compile() {
 	ego run ./
