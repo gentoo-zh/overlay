@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 13:52:19 CST)
+(The last generation time: 2026-11-07 14:17:52 CST)
 
 ### Packages
 
@@ -974,10 +974,10 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-process/witr                                      | 0.3.4              |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/dist-kernel                                   | 6.12.114-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
-                                                       | 6.12.115-r100      |            |                                                                            |
-                                                       | 6.18.59-r100       |            |                                                                            |
+ virtual/dist-kernel                                   | 6.12.115-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 6.12.116-r100      |            |                                                                            |
                                                        | 6.18.60-r100       |            |                                                                            |
+                                                       | 6.18.62-r100       |            |                                                                            |
                                                        | 7.2.13-r100        |            |                                                                            |
                                                        | 7.2.14-r100        |            |                                                                            |
                                                        | 7.3.1-r100         |            |                                                                            |
@@ -988,17 +988,15 @@
                                                        | 6.18.60            |            |                                                                            |
                                                        | 7.2.11             |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
-   sys-kernel/gentoo-cjk-kernel                        | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
-                                                       | 6.12.115           |            |                                                                            |
-                                                       | 6.18.59            |            |                                                                            |
+   sys-kernel/gentoo-cjk-kernel                        | 6.12.115           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.12.116           |            |                                                                            |
                                                        | 6.18.60            |            |                                                                            |
+                                                       | 6.18.62            |            |                                                                            |
                                                        | 7.2.13             |            |                                                                            |
                                                        | 7.2.14             |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
                                                        | 7.3.3              |            |                                                                            |
-   sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.12.115           |            |                                                                            |
-                                                       | 6.18.59            |            |                                                                            |
+   sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.115           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.60            |            |                                                                            |
                                                        | 7.2.13             |            |                                                                            |
                                                        | 7.2.14             |            |                                                                            |
