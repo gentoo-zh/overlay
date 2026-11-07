@@ -81,7 +81,7 @@ LICENSE+="
 "
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
-# Tests fail due to ring crate conflicts with system OpenSSL
+# Tests need GStreamer 1.28 and the upstream voice runtime fixtures
 RESTRICT="test"
 
 DEPEND="dev-libs/openssl:="
