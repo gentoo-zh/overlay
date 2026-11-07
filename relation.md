@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 14:33:09 CST)
+(The last generation time: 2026-11-07 14:33:45 CST)
 
 ### Packages
 
@@ -187,7 +187,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.11.3             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/chatgpt-desktop                              | 26.1103.31037      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
+ app-misc/chatgpt-desktop                              | 26.1103.32239      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.1.10             |            |                                                                            |
@@ -464,7 +464,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoder-bin                                    | 0.5.6              |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qodercli-bin                                 | 1.1.83             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
+ dev-util/qodercli-bin                                 | 1.1.84             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoderwake-bin                                | 1.2.12             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -494,7 +494,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vimls-go-bin                                 | 0.2.1              |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/waza-bin                                     | 0.40.0             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
+ dev-util/waza-bin                                     | 0.40.1             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zcode-bin                                    | 3.17.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
