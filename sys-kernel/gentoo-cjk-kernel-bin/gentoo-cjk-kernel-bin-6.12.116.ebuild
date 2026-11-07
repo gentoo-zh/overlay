@@ -36,10 +36,18 @@ SRC_URI+="
 			https://distfiles.gentoozh.org/gentoo-cjk-kernel/amd64/$(ver_cut 1-2)/${BINPKG}.amd64.gpkg.tar
 		)
 	)
+	arm64? (
+		cjk32? (
+			https://distfiles.gentoozh.org/gentoo-cjk-kernel/arm64/$(ver_cut 1-2)/${BINPKG}.arm64.cjk32.gpkg.tar
+		)
+		!cjk32? (
+			https://distfiles.gentoozh.org/gentoo-cjk-kernel/arm64/$(ver_cut 1-2)/${BINPKG}.arm64.gpkg.tar
+		)
+	)
 "
 S=${WORKDIR}
 
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE+=" +cjk debug"
 
 PDEPEND="
