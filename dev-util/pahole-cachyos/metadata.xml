@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+  <maintainer type="person">
+    <email>xz@xzos.net</email>
+    <name>xz-dev</name>
+  </maintainer>
+  <longdescription>
+    pahole (dwarves) with the merged-compilation-unit --lang_exclude fixes
+    needed by Rust modules built with LLVM LTO and BTF, installed under
+    /usr/libexec/pahole-cachyos so it can coexist with dev-util/pahole.
+    The kernel ebuilds point the kernel build at this copy directly.
+    Upstream series: https://lore.kernel.org/dwarves/CAPLSpGbV5RTSuMZPX=UgzniPtoT7jup7pCGw_Rt2tqiejKXmng@mail.gmail.com/
+  </longdescription>
+</pkgmetadata>
