@@ -1028,6 +1028,7 @@ source = "github"
 github = "v2fly/domain-list-community"
 use_latest_release = true
 github_account = "blackteahamburger"
+deps = "golang"
 autobump = true
 
 ["dev-libs/v2ray-domain-list-community-bin"]
