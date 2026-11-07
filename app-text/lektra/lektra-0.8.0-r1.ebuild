@@ -39,7 +39,10 @@ BDEPEND="
 	dev-qt/qttools:6[linguist]
 "
 
-PATCHES=( "${FILESDIR}/${P}-build-fixes.patch" )
+PATCHES=(
+	"${FILESDIR}/${P}-build-fixes.patch"
+	"${FILESDIR}/${P}-empty-document.patch"
+)
 
 src_prepare() {
 	# The release tarball ships empty thirdparty/mupdf and thirdparty/synctex
