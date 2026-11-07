@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 17:05:49 CST)
+(The last generation time: 2026-11-07 17:08:00 CST)
 
 ### Packages
 
@@ -1004,8 +1004,6 @@
                                                        | 6.12.116           |            |                                                                            |
                                                        | 6.18.61            |            |                                                                            |
                                                        | 6.18.62            |            |                                                                            |
-                                                       | 7.2.13             |            |                                                                            |
-                                                       | 7.2.14             |            |                                                                            |
                                                        | 7.3.2              |            |                                                                            |
                                                        | 7.3.3              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.14             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
