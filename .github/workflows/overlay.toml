@@ -1023,11 +1023,19 @@ autobump = true
 # packaged from a pinned commit, no tag to compare
 #["dev-libs/qnodeeditor"]
 
-# high update frequency
-#["dev-libs/v2ray-domain-list-community"]
+["dev-libs/v2ray-domain-list-community"]
+source = "github"
+github = "v2fly/domain-list-community"
+use_latest_release = true
+github_account = "blackteahamburger"
+autobump = true
 
-# high update frequency
-#["dev-libs/v2ray-domain-list-community-bin"]
+["dev-libs/v2ray-domain-list-community-bin"]
+source = "github"
+github = "v2fly/domain-list-community"
+use_latest_release = true
+github_account = "CHN-beta"
+autobump = true
 
 ["dev-libs/v2ray-geoip"]
 source = "github"
@@ -1036,11 +1044,19 @@ use_latest_release = true
 github_account = "blackteahamburger"
 autobump = true
 
-# high update frequency
-#["dev-libs/v2ray-geoip-bin"]
+["dev-libs/v2ray-geoip-bin"]
+source = "github"
+github = "v2fly/geoip"
+use_latest_release = true
+github_account = "CHN-beta"
+autobump = true
 
-# high update frequency
-#["dev-libs/v2ray-rules-dat-bin"]
+["dev-libs/v2ray-rules-dat-bin"]
+source = "github"
+github = "Loyalsoldier/v2ray-rules-dat"
+use_latest_release = true
+github_account = "st0nie"
+autobump = true
 
 ["dev-python/adafruit-board-toolkit"]
 source = "pypi"
