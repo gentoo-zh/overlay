@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 02:44:34 CST)
+(The last generation time: 2026-11-07 12:27:32 CST)
 
 ### Packages
 
@@ -1003,18 +1003,19 @@
                                                        | 7.3.1              |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.114           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.115           |            |                                                                            |
-                                                       | 6.18.59            |            |                                                                            |
                                                        | 6.18.60            |            |                                                                            |
+                                                       | 6.18.61            |            |                                                                            |
                                                        | 7.2.13             |            |                                                                            |
                                                        | 7.2.14             |            |                                                                            |
-                                                       | 7.3.0              |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
+                                                       | 7.3.2              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.2.14             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.2.15             |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.13             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.14             |            |                                                                            |
    sys-kernel/xanmod-sources                           | 7.2.13             | RD         | https://xanmod.org                                                         | Full XanMod source, including the Gentoo patchset, cjktty and other patches
                                                        | 7.2.14             |            |                                                                            |
+                                                       | 7.3.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20260710034646     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
