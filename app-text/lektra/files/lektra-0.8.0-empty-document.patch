@@ -1,0 +1,294 @@
+Fix a crash when a document with no pages is loaded or reloaded, and leaks
+when a reload fails to open or authenticate.
+
+https://github.com/dheerajshenoy/lektra/issues/85
+https://github.com/dheerajshenoy/lektra/commit/4205f1f2e618d68bc78accdb951e6d2fb01449f7
+https://github.com/dheerajshenoy/lektra/commit/6a1d0f6e4bcf23a561f713385d08fa8d7fc404c8
+
+diff --git a/src/Model.cpp b/src/Model.cpp
+index 8bb6a42..617d135 100644
+--- a/src/Model.cpp
++++ b/src/Model.cpp
+@@ -296,6 +296,9 @@ Model::~Model() noexcept
+     m_render_cancelled.store(true);
+     waitForPendingRenders();
+ 
++    // A document still waiting for its password
++    clearPending();
++
+     if (m_filetype == FileType::DJVU)
+     {
+         cleanup_djvu();
+diff --git a/src/documentview/Layout.cpp b/src/documentview/Layout.cpp
+index fbe2445..f9df932 100644
+--- a/src/documentview/Layout.cpp
++++ b/src/documentview/Layout.cpp
+@@ -91,7 +91,7 @@ DocumentView::setLayoutMode(const LayoutMode &mode) noexcept
+     updateSceneRect();
+ 
+     // Ensure we are in valid page number
+-    m_pageno = std::clamp(m_pageno, 0, m_model->numPages() - 1);
++    m_pageno = std::clamp(m_pageno, 0, std::max(0, m_model->numPages() - 1));
+ 
+     GotoPage(m_pageno);
+ }
+@@ -113,7 +113,7 @@ DocumentView::setGridColumns(int columns) noexcept
+     invalidateVisiblePagesCache();
+     cachePageStride();
+     updateSceneRect();
+-    GotoPage(std::clamp(m_pageno, 0, m_model->numPages() - 1));
++    GotoPage(std::clamp(m_pageno, 0, std::max(0, m_model->numPages() - 1)));
+ }
+ 
+ // Rotate page clockwise
+diff --git a/src/documentview/Rendering.cpp b/src/documentview/Rendering.cpp
+index 3813054..5dad52a 100644
+--- a/src/documentview/Rendering.cpp
++++ b/src/documentview/Rendering.cpp
+@@ -139,8 +139,12 @@ DocumentView::getVisiblePages() noexcept
+ 
+     if (m_layout_mode == LayoutMode::SINGLE)
+     {
+-        m_visible_pages_cache.insert(
+-            std::clamp(m_pageno, 0, m_model->numPages() - 1));
++        auto numPages = m_model->numPages();
++        if (numPages <= 0)
++            return m_visible_pages_cache;
++
++        m_visible_pages_cache.insert(std::clamp(m_pageno, 0, numPages - 1));
++
+         m_visible_pages_dirty = false;
+         return m_visible_pages_cache;
+     }
+@@ -209,7 +213,10 @@ DocumentView::getVisiblePages() noexcept
+         // starts below its bottom.
+         const int C    = m_grid_columns;
+         const int rows = (N + C - 1) / C;
+-        auto rowEnd    = [&](int r) { return m_page_offsets[std::min((r + 1) * C, N)]; };
++        auto rowEnd    = [&](int r)
++        {
++            return m_page_offsets[std::min((r + 1) * C, N)];
++        };
+ 
+         int lo = 0, hi = rows;
+         while (lo < hi)
+@@ -671,15 +678,14 @@ DocumentView::startNextRenderJob() noexcept
+         const PageRenderKey dispatchKey = currentPageRenderKey();
+ 
+         QPointer<DocumentView> self(this);
+-        m_model->requestPageRender(
+-            job,
+-            [self, pageno, dispatchZoom, dispatchKey,
+-             cancelToken](Model::PageRenderResult result)
++        m_model->requestPageRender(job,
++                                   [self, pageno, dispatchZoom, dispatchKey,
++                                    cancelToken](Model::PageRenderResult result)
+         {
+             if (!self)
+                 return;
+ 
+-            DocumentView *view = self.data();
++            DocumentView *view   = self.data();
+             const double cbStart = rtrace::enabled() ? rtrace::nowMs() : 0.0;
+ 
+             --view->m_render_slots_used;
+@@ -819,7 +825,7 @@ DocumentView::startNextRenderJob() noexcept
+             view->traceRenderResult(pageno, "applied", cbStart, result);
+             view->startNextRenderJob();
+         },
+-            cancelToken);
++                                   cancelToken);
+     }
+ }
+ 
+@@ -856,8 +862,7 @@ void
+ DocumentView::prunePendingRenders(const PageList &visiblePages) noexcept
+ {
+     for (auto it = m_pending_renders.begin(); it != m_pending_renders.end();)
+-        it = inPageList(visiblePages, *it) ? ++it
+-                                           : m_pending_renders.erase(it);
++        it = inPageList(visiblePages, *it) ? ++it : m_pending_renders.erase(it);
+ 
+     for (auto it = m_inflight_renders.begin(); it != m_inflight_renders.end();)
+     {
+@@ -1063,7 +1068,10 @@ DocumentView::getPreloadPages(const std::set<int> &visiblePages) noexcept
+     if (visiblePages.empty())
+         return {};
+ 
+-    const int numPages     = m_model->numPages();
++    const int numPages = m_model->numPages();
++    if (numPages <= 0)
++        return {};
++
+     const int firstVisible = *visiblePages.begin();
+     const int lastVisible  = *visiblePages.rbegin();
+ 
+@@ -1375,11 +1383,18 @@ DocumentView::clearVisibleAnnotations() noexcept
+ int
+ DocumentView::pageAtAxisCoord(double coord) const noexcept
+ {
++
+     const auto it = std::upper_bound(m_page_offsets.cbegin(),
+                                      m_page_offsets.cend(), coord);
+     const int candidate
+         = static_cast<int>(std::distance(m_page_offsets.cbegin(), it) - 1);
+-    const int page = std::clamp(candidate, 0, m_model->numPages() - 1);
++
++    const int numPages = m_model->numPages();
++    if (numPages <= 0)
++        return 0;
++
++    const int page = std::clamp(candidate, 0, numPages - 1);
++
+     // The pages of a row share an offset, so the search lands on the last
+     // one; the row is represented by its first.
+     return m_layout_mode == LayoutMode::GRID ? gridRowStart(page) : page;
+@@ -1515,7 +1530,8 @@ DocumentView::requestPageRender(int pageno, bool force, bool visible) noexcept
+     // backdrop) until the button is released.
+     if (m_minimap_dragging && !force)
+     {
+-        const GraphicsImageItem *item = m_page_items_hash.value(pageno, nullptr);
++        const GraphicsImageItem *item
++            = m_page_items_hash.value(pageno, nullptr);
+         if (item && !item->isNull() && !m_placeholder_pages.contains(pageno))
+             return;
+     }
+@@ -1679,8 +1695,7 @@ DocumentView::createAndAddPlaceholderPageItem(int pageno) noexcept
+ 
+ // Puts a page item where the current layout wants it.
+ void
+-DocumentView::positionPageItem(GraphicsImageItem *pageItem,
+-                               int pageno) noexcept
++DocumentView::positionPageItem(GraphicsImageItem *pageItem, int pageno) noexcept
+ {
+     // Logical scene size of the rendered image.
+     const QSizeF logicalSize = pageSceneSize(pageno);
+@@ -1913,8 +1928,7 @@ DocumentView::gridRowStart(int pageno) const noexcept
+ int
+ DocumentView::gridRowEnd(int pageno) const noexcept
+ {
+-    return std::min(gridRowStart(pageno) + m_grid_columns,
+-                    m_model->numPages());
++    return std::min(gridRowStart(pageno) + m_grid_columns, m_model->numPages());
+ }
+ 
+ // Helper: stride (extent + spacing) of a specific page
+@@ -1936,8 +1950,8 @@ DocumentView::pageStride(int pageno) const noexcept
+     if (m_layout_mode == LayoutMode::GRID)
+     {
+         // The next row starts after the last page of this one.
+-        const int nextIdx = std::min(gridRowEnd(pageno),
+-                                     static_cast<int>(m_page_offsets.size()) - 1);
++        const int nextIdx = std::min(
++            gridRowEnd(pageno), static_cast<int>(m_page_offsets.size()) - 1);
+         return m_page_offsets[nextIdx] - m_page_offsets[pageno];
+     }
+ 
+diff --git a/src/model/Lifecycle.cpp b/src/model/Lifecycle.cpp
+index 2682cb5..2f81b28 100644
+--- a/src/model/Lifecycle.cpp
++++ b/src/model/Lifecycle.cpp
+@@ -1257,6 +1257,18 @@ Model::_continueOpen(fz_context *ctx, fz_document *doc) noexcept
+         return;
+     }
+ 
++    // A document without pages (e.g. a PDF that is still being written)
++    // cannot be shown; the rest of the view assumes at least one page.
++    if (page_count <= 0)
++    {
++        fz_warn(ctx, "Document has no pages");
++        fz_drop_document(ctx, doc);
++        fz_drop_context(ctx);
++        QMetaObject::invokeMethod(this, &Model::openFileFailed,
++                                  Qt::QueuedConnection);
++        return;
++    }
++
+     QMetaObject::invokeMethod(this, [this, ctx, doc, page_count, w, h]
+     {
+         waitForPendingRenders();
+@@ -1386,37 +1398,48 @@ Model::reloadDocument() noexcept
+     // Open the fresh document BEFORE cleanup() drops the old one.
+     // cleanup() calls fz_drop_document(m_ctx, m_doc) and nulls m_doc,
+     // so we must have the new handle ready before that happens.
+-    fz_document *new_doc = nullptr;
+-    fz_try(m_ctx)
++    //
++    // Nothing with a destructor lives inside fz_try and it is never left with
++    // a return: a MuPDF error jumps straight to fz_catch, skipping destructors
++    // (a lock_guard would stay locked) and an early return would leave the
++    // try frame on MuPDF's stack.
++    fz_document *volatile new_doc = nullptr;
++    bool needsPassword            = false;
+     {
+-        std::lock_guard<std::mutex> lock(m_doc_mutex);
+         const QByteArray filePathBytes = m_filepath.toUtf8();
+         const std::string filePathStr(filePathBytes.constData(),
+                                       filePathBytes.size());
+-        new_doc = open_document_any(m_ctx, filePathStr.c_str());
+-        if (!new_doc)
+-            return false;
++        const bool canAuth = m_config.behavior.cache_password
++                             && !m_cached_password.isEmpty();
++        const std::string cachedPassword = m_cached_password.toStdString();
+ 
+-        if (fz_needs_password(m_ctx, new_doc))
++        std::lock_guard<std::mutex> lock(m_doc_mutex);
++        fz_try(m_ctx)
+         {
+-            const bool canAuth = m_config.behavior.cache_password
+-                                 && !m_cached_password.isEmpty();
+-            const bool authed
+-                = canAuth
+-                  && fz_authenticate_password(
+-                      m_ctx, new_doc, m_cached_password.toStdString().c_str());
+-            if (!authed)
+-            {
++            new_doc = open_document_any(m_ctx, filePathStr.c_str());
++            if (new_doc && fz_needs_password(m_ctx, new_doc)
++                && !(canAuth
++                     && fz_authenticate_password(m_ctx, new_doc,
++                                                 cachedPassword.c_str())))
++                needsPassword = true;
++        }
++        fz_catch(m_ctx)
++        {
++            qWarning() << "reloadDocument: failed to open:"
++                       << fz_caught_message(m_ctx);
++            if (new_doc)
+                 fz_drop_document(m_ctx, new_doc);
+-                emit reloadPasswordRequired();
+-                return false;
+-            }
++            return false;
+         }
+     }
+-    fz_catch(m_ctx)
++
++    if (!new_doc)
++        return false;
++
++    if (needsPassword)
+     {
+-        qWarning() << "reloadDocument: failed to open:"
+-                   << fz_caught_message(m_ctx);
++        fz_drop_document(m_ctx, new_doc);
++        emit reloadPasswordRequired();
+         return false;
+     }
+ 
+@@ -1444,6 +1467,14 @@ Model::reloadDocument() noexcept
+         return false;
+     }
+ 
++    // Keep the current document if the new file has no pages yet (e.g. it is
++    // still being rewritten); the next change of the file reloads it again.
++    if (page_count <= 0)
++    {
++        fz_drop_document(m_ctx, new_doc);
++        return false;
++    }
++
+     waitForPendingRenders();
+     m_render_cancelled.store(false, std::memory_order_release);
+     cleanup_mupdf();
