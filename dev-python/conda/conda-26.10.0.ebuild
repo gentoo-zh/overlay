@@ -71,8 +71,10 @@ python_install_all() {
 	if use user ; then
 		echo "$(cat "${FILESDIR}/condarc.user")" >> "${T}/condarc" || die
 	fi
-	# conda use libmamba as default solver
-	if ! use mamba; then
+	# conda defaults to the rattler solver, which is not packaged
+	if use mamba; then
+		echo "$(cat "${FILESDIR}/condarc.libmamba")" >> "${T}/condarc" || die
+	else
 		echo "$(cat "${FILESDIR}/condarc.classic")" >> "${T}/condarc" || die
 	fi
 	insinto /etc/conda
