@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-08 14:57:58 CST)
+(The last generation time: 2026-11-08 15:02:47 CST)
 
 ### Packages
 
@@ -1021,7 +1021,7 @@
    dev-libs/v2ray-domain-list-community-bin            | 20261108011013     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
-   dev-libs/v2ray-geoip                                | 202611050539       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
+   dev-libs/v2ray-geoip                                | 202611080027       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
    dev-libs/v2ray-geoip-bin                            | 202611080027       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-apps/sillytavern                                  | 1.19.0             |            | https://docs.sillytavern.app/                                              | LLM frontend for power users: text generation, image generation and TTS
