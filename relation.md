@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-07 21:20:54 CST)
+(The last generation time: 2026-11-08 14:50:04 CST)
 
 ### Packages
 
@@ -490,7 +490,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vfox                                         | 1.0.13             |            | https://vfox.dev                                                           | A cross-platform version manager, extendable via plugins
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/vfox-bin                                     | 1.0.13             |            | https://vfox.dev/                                                          | A cross-platform version manager, extendable via plugins
+ dev-util/vfox-bin                                     | 1.1.0              |            | https://vfox.dev/                                                          | A cross-platform version manager, extendable via plugins
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vimls-go-bin                                 | 0.2.1              |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1018,7 +1018,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20261107053621     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
-   dev-libs/v2ray-domain-list-community-bin            | 20261107053621     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community-bin            | 20261108011013     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
    dev-libs/v2ray-geoip                                | 202611050539       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
