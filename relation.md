@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-08 15:10:39 CST)
+(The last generation time: 2026-11-08 15:16:49 CST)
 
 ### Packages
 
@@ -180,7 +180,7 @@
    dev-python/qasync                                   | 0.28.0             | RD         | https://github.com/CabbageDevelopment/qasync                               | Implementation of the asyncio (PEP 3156) event-loop with Qt
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch                                    | 3.20.4             |            | https://github.com/farion1231/cc-switch                                    | All-in-One Assistant for Claude Code, Codex & Gemini CLI
-                                                       | 4.0.26             |            |                                                                            |
+                                                       | 4.0.27             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.20.4-r1          |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
                                                        | 4.0.27             |            |                                                                            |
@@ -480,7 +480,7 @@
  dev-util/tailspin                                     | 7.0.0              |            | https://github.com/bensadeh/tailspin                                       | A log file highlighter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/termux-language-server                       | 0.1.15             |            | https://github.com/termux/termux-language-server                           | A language server for some specific Bash scripts
-   dev-python/lsp-tree-sitter                          | 0.2.19             | RD         | https://github.com/neomutt/lsp-tree-sitter                                 | A library to create language servers
+   dev-python/lsp-tree-sitter                          | 0.2.20             | RD         | https://github.com/neomutt/lsp-tree-sitter                                 | A library to create language servers
      dev-python/pygls                                  | 2.1.1              | RD         | https://github.com/openlawlibrary/pygls                                    | A pythonic generic language server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/trae-ide                                     | 2.3.100185         |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
@@ -502,7 +502,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/gitoxide                                      | 0.61.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/rebased-bin                                   | 1.1.23             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
+ dev-vcs/rebased-bin                                   | 1.1.24             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/sourcegit-bin                                 | 2026.21            |            | https://github.com/sourcegit-scm/sourcegit                                 | Opensource Git GUI client
                                                        | 2026.22            |            |                                                                            |
