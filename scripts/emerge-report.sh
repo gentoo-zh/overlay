@@ -66,10 +66,50 @@ elog() {
     '
 }
 
-# snapshot: the package.* configuration before the first emerge, for autounmask
+# installed: the category/pf of every installed package
+installed() (
+    cd /var/db/pkg
+    printf '%s\n' */* | sort
+)
+
+# snapshot: the package.* configuration and the installed packages before the first
+# emerge, for autounmask and the environment
 snapshot() {
     mkdir -p "$BEFORE"
     cp -a /etc/portage/package.* "$BEFORE/"
+    installed > "$BEFORE/installed"
+    date +%s > "$BEFORE/start"
+}
+
+# environment <atom>: what a rerun needs once the image tag, the Gentoo tree and the
+# binhost have moved on: the image, the tree commit, the packages this job merged and
+# emerge --info. The pull request comment keeps it after the run expires.
+environment() {
+    local cpv dir start flag iuse use flags how
+    cat /etc/gentoo-zh-ci-image 2>/dev/null || echo 'image: built before /etc/gentoo-zh-ci-image was recorded'
+    echo "gentoo: $(cat "$(portageq get_repo_path / gentoo)/metadata/timestamp.commit")"
+    echo
+    echo 'target:'
+    emerge --pretend --verbose --nodeps --oneshot "$1" 2>&1 | grep -E '^\[(ebuild|binary)'
+    echo
+    # a package built before the job started came from a binhost
+    echo 'merged by this job:'
+    start=$(cat "$BEFORE/start")
+    comm -13 "$BEFORE/installed" <(installed) | while read -r cpv; do
+        dir=/var/db/pkg/$cpv
+        how=binary
+        [ "$(cat "$dir/BUILD_TIME")" -lt "$start" ] || how=source
+        read -ra iuse < "$dir/IUSE" || true
+        use=" $(cat "$dir/USE") "
+        flags=()
+        for flag in "${iuse[@]}"; do
+            flag=${flag#[+-]}
+            [[ $use != *" $flag "* ]] || flags+=("$flag")
+        done
+        echo "$cpv $how USE=\"${flags[*]}\""
+    done
+    echo
+    emerge --info
 }
 
 # save <atom>: the step outcomes from SETUP, DEPS, OUTCOME and UNMERGE, the output
@@ -85,6 +125,8 @@ save() {
     echo "$DEPS" > "$REPORT/deps"
     echo "$OUTCOME" > "$REPORT/outcome"
     echo "$UNMERGE" > "$REPORT/unmerge"
+    # a missing record leaves a gap in the text and never fails the job
+    environment "$atom" > "$REPORT/environment" 2>&1 || true
     log=
     [ "$DEPS" != failure ] || log=/var/tmp/deps.log
     [ "$OUTCOME" != failure ] || log=/var/tmp/emerge.log

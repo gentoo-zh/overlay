@@ -37,7 +37,16 @@ jobs:
       id: image
       env:
         PROFILE: ${{ matrix.profile }}
-      run: echo "ref=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/stage3:$PROFILE" >> "$GITHUB_OUTPUT"
+      # a dated tag keeps the image a pull request ran on after the profile tag moves
+      run: |
+        ref=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/stage3:$PROFILE
+        dated=$ref-$(date -u +%Y%m%d)
+        base=$(docker buildx imagetools inspect "gentoo/stage3:$PROFILE" --format '{{.Manifest.Digest}}') || base=unknown
+        {
+          echo "tags=$ref,$dated"
+          echo "dated=$dated"
+          echo "base=$base"
+        } >> "$GITHUB_OUTPUT"
 
     - name: log in to ghcr
       uses: docker/login-action@v4
@@ -50,12 +59,16 @@ jobs:
       uses: docker/build-push-action@v7
       with:
         context: .github/stage3
-        build-args: PROFILE=${{ matrix.profile }}
+        build-args: |
+          PROFILE=${{ matrix.profile }}
+          IMAGE=${{ steps.image.outputs.dated }}
+          BASE=${{ steps.image.outputs.base }}
+          RUN=${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         push: true
         no-cache: true
         # attestation manifests are untagged and the cleanup would delete them
         provenance: false
-        tags: ${{ steps.image.outputs.ref }}
+        tags: ${{ steps.image.outputs.tags }}
 
   cleanup:
     needs: build
@@ -70,3 +83,14 @@ jobs:
         package-type: container
         delete-only-untagged-versions: true
         min-versions-to-keep: 0
+
+    # a week of dated images, one per profile a day; only after every profile built, so
+    # the newest image of each profile is among those kept
+    - name: drop superseded images
+      if: needs.build.result == 'success'
+      uses: actions/delete-package-versions@v5
+      with:
+        owner: ${{ github.repository_owner }}
+        package-name: stage3
+        package-type: container
+        min-versions-to-keep: 21

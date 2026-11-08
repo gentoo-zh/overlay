@@ -4,6 +4,7 @@
 set -euo pipefail
 MARKER='<!-- pkgcheck-report -->'
 MAX_LINES=40
+MAX_ENVIRONMENT_LINES=300
 MAX_BYTES=40000
 MAX_TABLE=20000
 artifacts_dir=${1:?artifacts-directory}
@@ -74,7 +75,7 @@ summary() {
 # add_detail <atom> <profile> <title> <file> [<build-log-url>]: a collapsed block, shared
 # by the profiles that printed the same text. The block's key is left in detail_key.
 keys=()
-declare -A detail_atom detail_title detail_text detail_profiles detail_links detail_unlinked detail_all detail_action detail_footer atom_profiles
+declare -A detail_atom detail_title detail_text detail_profiles detail_links detail_unlinked detail_all detail_action detail_footer detail_lines atom_profiles
 add_detail() {
     local text key
     text=$(sed 's/\x1b\[[0-9;]*m//g' "$4")
@@ -355,6 +356,13 @@ fix_summary() {
         done
     fi
 } > "$body_file"
+# the environment of every target follows its elog, so the size limit drops it first
+for dir in "${targets[@]}"; do
+    [ -s "$dir/environment" ] || continue
+    atom=$(field "$dir" atom)
+    add_detail "${atom#=}" "$(field "$dir" profile)" environment "$dir/environment"
+    detail_lines[$detail_key]=$MAX_ENVIRONMENT_LINES
+done
 # a package's LDFLAGS block follows its other blocks, which later profiles can add
 ordered=()
 pending=
@@ -385,6 +393,7 @@ for key in "${ordered[@]}"; do
     [ -z "$links" ] || title+=", build.log: ${links}"
     [ -z "${detail_action[$key]:-}" ] || title=":warning: ${title}"
     lines=$(wc -l <<< "$text")
+    max=${detail_lines[$key]:-$MAX_LINES}
     detail=$(
         echo
         echo "<details><summary>${title}</summary>"
@@ -394,11 +403,11 @@ for key in "${ordered[@]}"; do
             echo
         fi
         echo '``````'
-        head -n "$MAX_LINES" <<< "$text"
+        head -n "$max" <<< "$text"
         echo '``````'
-        if [ "$lines" -gt "$MAX_LINES" ]; then
+        if [ "$lines" -gt "$max" ]; then
             echo
-            echo "$(( lines - MAX_LINES )) more lines in the [run](${RUN_URL})."
+            echo "$(( lines - max )) more lines in the [run](${RUN_URL})."
         fi
         if [ -n "${detail_footer[$key]:-}" ]; then
             echo
