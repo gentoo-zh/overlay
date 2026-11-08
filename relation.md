@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-08 15:05:59 CST)
+(The last generation time: 2026-11-08 15:10:39 CST)
 
 ### Packages
 
@@ -877,7 +877,7 @@
        app-alternatives/v2ray-geosite                  | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geosite
      net-proxy/v2ray                                   | 5.53.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
      net-proxy/v2ray-bin                               | 5.53.0             | RD         | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
-   net-proxy/trojan-go-fork                            | 2026.11.01         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
+   net-proxy/trojan-go-fork                            | 2026.11.08         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1017,7 +1017,7 @@
                                                        | 7.3.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
-   dev-libs/v2ray-domain-list-community                | 20261107053621     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community                | 20261108011013     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
    dev-libs/v2ray-domain-list-community-bin            | 20261108011013     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
