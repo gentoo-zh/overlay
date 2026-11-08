@@ -11,5 +11,6 @@ RDEPEND="
 	|| (
 		~sys-kernel/gentoo-cjk-kernel-bin-${PV}
 		~sys-kernel/gentoo-cjk-kernel-${PV}
+		~sys-kernel/xanmod-kernel-${PV}
 	)
 "
