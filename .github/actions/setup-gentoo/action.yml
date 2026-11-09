@@ -35,7 +35,11 @@ runs:
         EOF
         fi
         mkdir -p /etc/portage/package.use
-        printf '%s\n' 'dev-qt/qtwebengine bindist' 'net-libs/webkit-gtk keyring' > /etc/portage/package.use/ci
+        printf '%s\n' \
+          'dev-qt/qtwebengine bindist' \
+          'net-libs/webkit-gtk keyring' \
+          'dev-lang/rust llvm_targets_BPF rust_sysroots_bpf' \
+          > /etc/portage/package.use/ci
 
     - name: setup keyring for binpkgs
       shell: bash
