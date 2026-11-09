@@ -11,7 +11,7 @@ CRATES="
 LLVM_COMPAT=( 19 20 21 22 )
 RUST_MIN_VER="1.85.0"
 RUST_NEEDS_LLVM=1
-inherit cargo desktop gnome2-utils llvm-r1 toolchain-funcs xdg
+inherit cargo desktop gnome2-utils llvm-r2 toolchain-funcs xdg
 
 DESCRIPTION="A simple Emby Client written by GTK4-RS"
 HOMEPAGE="https://github.com/tsukinaha/tsukimi"
@@ -53,7 +53,7 @@ BDEPEND="
 
 pkg_setup() {
 	if use clang && ! tc-is-clang; then
-		llvm-r1_pkg_setup
+		llvm-r2_pkg_setup
 		export CC=clang
 		export CXX=clang++
 		export AR=llvm-ar
