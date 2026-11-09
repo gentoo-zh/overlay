@@ -7,12 +7,15 @@ inherit desktop unpacker xdg
 
 DESCRIPTION="Opensource Git GUI client"
 HOMEPAGE="https://github.com/sourcegit-scm/sourcegit"
-SRC_URI="https://github.com/sourcegit-scm/sourcegit/releases/download/v${PV}/sourcegit_${PV}-1_amd64.deb"
+SRC_URI="
+	amd64? ( https://github.com/sourcegit-scm/sourcegit/releases/download/v${PV}/sourcegit_${PV}-1_amd64.deb )
+	arm64? ( https://github.com/sourcegit-scm/sourcegit/releases/download/v${PV}/sourcegit_${PV}-1_arm64.deb )
+"
 
 S="${WORKDIR}"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 RESTRICT="strip"
 
 QA_PREBUILT="
