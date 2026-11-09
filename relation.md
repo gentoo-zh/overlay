@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-09 16:02:16 CST)
+(The last generation time: 2026-11-09 16:25:33 CST)
 
 ### Packages
 
@@ -671,7 +671,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/implay                                    | 1.5.1-r1           |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/iptvnator-bin                             | 0.24.0-r1          |            | https://4gray.github.io/iptvnator/                                         | Cross-platform IPTV player application with multiple features
+ media-video/iptvnator-bin                             | 0.25.0             |            | https://4gray.github.io/iptvnator/                                         | Cross-platform IPTV player application with multiple features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/mpv-handler                               | 0.4.2              |            | https://github.com/akiirui/mpv-handler                                     | Play website videos and songs with mpv & yt-dlp
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
