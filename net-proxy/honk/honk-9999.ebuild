@@ -8,7 +8,7 @@ RUST_MIN_VER="1.98.0"
 RUST_REQ_USE="llvm_targets_BPF(+),rust_sysroots_bpf(-)"
 RUST_NEEDS_LLVM=1
 
-inherit cargo git-r3 linux-info llvm-r1 optfeature systemd
+inherit cargo git-r3 linux-info llvm-r2 optfeature systemd
 
 DESCRIPTION="Transparent proxy based on eBPF, inspired by dae and sing-box"
 HOMEPAGE="https://github.com/daeuniverse/honk"
@@ -48,7 +48,7 @@ pkg_pretend() {
 }
 
 pkg_setup() {
-	llvm-r1_pkg_setup
+	llvm-r2_pkg_setup
 	rust_pkg_setup
 }
 
