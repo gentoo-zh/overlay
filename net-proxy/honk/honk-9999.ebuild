@@ -16,14 +16,20 @@ EGIT_REPO_URI="https://github.com/daeuniverse/honk.git"
 
 LICENSE="GPL-3"
 SLOT="0"
-IUSE="+clash-api +jemalloc +native-api"
+IUSE="+clash-api +jemalloc +native-api test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	app-alternatives/v2ray-geoip
 	app-alternatives/v2ray-geosite
+	jemalloc? ( !elibc_musl? ( dev-libs/jemalloc:= ) )
+"
+DEPEND="
+	jemalloc? ( !elibc_musl? ( dev-libs/jemalloc:= ) )
 "
 BDEPEND="
 	dev-build/cmake
+	test? ( app-alternatives/v2ray-geosite )
 	$(llvm_gen_dep '
 		dev-util/bpf-linker[llvm_slot_${LLVM_SLOT}]
 		llvm-core/clang:${LLVM_SLOT}
@@ -54,11 +60,12 @@ pkg_setup() {
 
 src_unpack() {
 	git-r3_src_unpack
+
+	pushd "${S}" >/dev/null || die
 	cargo_live_src_unpack
 
 	# crates/honk-ebpf is outside the workspace and has its own Cargo.lock
 	local offline=${ECARGO_OFFLINE:-${EVCS_OFFLINE}}
-	pushd "${S}" >/dev/null || die
 	CARGO_HOME="${PORTAGE_ACTUAL_DISTDIR:-${DISTDIR}}/cargo-registry" \
 		"${CARGO}" vendor ${offline:+--offline} \
 		--sync crates/honk-ebpf/Cargo.toml "${ECARGO_VENDOR}" >/dev/null || die
@@ -86,6 +93,11 @@ src_configure() {
 
 src_compile() {
 	local -x CARGO_PROFILE_RELEASE_LTO=false
+	# Gentoo bug #927338
+	if use jemalloc && use !elibc_musl; then
+		local -x CARGO_FEATURE_UNPREFIXED_MALLOC_ON_SUPPORTED_PLATFORMS=1
+		local -x JEMALLOC_OVERRIDE="${ESYSROOT}/usr/$(get_libdir)"/libjemalloc.so
+	fi
 
 	local features=(
 		ebpf rprx
@@ -95,6 +107,14 @@ src_compile() {
 	)
 	cargo_src_compile -p honk-core --no-default-features --features "${features[*]}"
 	cargo_src_compile -p honk-tool
+}
+
+src_test() {
+	# the geosite routing tests read geosite.dat from the source root
+	ln -s "${BROOT}"/usr/share/v2ray/geosite.dat "${S}"/geosite.dat || die
+	# cargo test rebuilds honk-core with the default features, which would
+	# replace the binary src_install takes from the target directory
+	cargo_src_test --target-dir "${WORKDIR}"/test-target
 }
 
 src_install() {
