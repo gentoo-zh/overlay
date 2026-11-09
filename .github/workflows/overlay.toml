@@ -2599,7 +2599,8 @@ prefix = "v"
 from_pattern = '^(.+)-(alpha|beta|rc)\.(\d+)$'
 to_pattern = '\1_\2\3'
 github_account = "zakkaus"
-deps = "rust"
+deps = { lang = "rust", tag = "v{bundle_pv}" }
+bundle_pv = [["_alpha", "-alpha."], ["_beta", "-beta."], ["_rc", "-rc."]]
 
 ["net-proxy/hysteria"]
 source = "github"
