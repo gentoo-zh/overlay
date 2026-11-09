@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-09 16:25:33 CST)
+(The last generation time: 2026-11-09 20:00:30 CST)
 
 ### Packages
 
@@ -846,7 +846,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.9.3              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/honk                                        | 0.1.0_beta5        |            | https://github.com/daeuniverse/honk                                        | Transparent proxy based on eBPF, inspired by dae and sing-box
+ net-proxy/honk                                        | 0.1.0_beta6        |            | https://github.com/daeuniverse/honk                                        | Transparent proxy based on eBPF, inspired by dae and sing-box
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/hysteria                                    | 2.13.0             |            | https://github.com/HyNetworks/hysteria                                     | A powerful, lightning fast and censorship resistant proxy
@@ -874,7 +874,7 @@
      net-proxy/Xray                                    | 26.11.9            | RD         | https://xtls.github.io/                                                    | Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support
                                                        | 9999               |            |                                                                            |
        app-alternatives/v2ray-geoip                    | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geoip
-       app-alternatives/v2ray-geosite                  | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geosite
+       app-alternatives/v2ray-geosite                  | 0-r2               |  D, BD, RD |                                                                            | symlink for v2ray-geosite
      net-proxy/v2ray                                   | 5.53.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
      net-proxy/v2ray-bin                               | 5.53.0             | RD         | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
    net-proxy/trojan-go-fork                            | 2026.11.08         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
