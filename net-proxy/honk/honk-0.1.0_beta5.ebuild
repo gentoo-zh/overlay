@@ -81,7 +81,7 @@ RUST_MIN_VER="1.98.0"
 RUST_REQ_USE="llvm_targets_BPF(+),rust_sysroots_bpf(-)"
 RUST_NEEDS_LLVM=1
 
-inherit cargo linux-info llvm-r1 optfeature systemd
+inherit cargo linux-info llvm-r2 optfeature systemd
 
 MY_VERSION="${PV/_alpha/-alpha.}"
 MY_VERSION="${MY_VERSION/_beta/-beta.}"
@@ -138,7 +138,7 @@ pkg_pretend() {
 }
 
 pkg_setup() {
-	llvm-r1_pkg_setup
+	llvm-r2_pkg_setup
 	rust_pkg_setup
 }
 
