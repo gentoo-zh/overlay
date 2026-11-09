@@ -77,7 +77,7 @@ declare -A GIT_CRATES=(
 LLVM_COMPAT=( 19 20 21 22 )
 RUST_MIN_VER="1.85.0"
 RUST_NEEDS_LLVM=1
-inherit cargo desktop llvm-r1 systemd xdg
+inherit cargo desktop llvm-r2 systemd xdg
 
 DESCRIPTION="An open-source remote desktop, and alternative to TeamViewer"
 HOMEPAGE="https://rustdesk.com/"
@@ -178,7 +178,7 @@ PATCHES=(
 )
 
 pkg_setup() {
-	llvm-r1_pkg_setup
+	llvm-r2_pkg_setup
 	rust_pkg_setup
 }
 
