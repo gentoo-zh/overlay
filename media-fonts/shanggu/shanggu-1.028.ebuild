@@ -34,7 +34,7 @@ KEYWORDS="~amd64 ~arm64"
 IUSE="round sans +serif mono variant"
 REQUIRED_USE="|| ( round sans serif mono variant )"
 BDEPEND="
-	$(unpacker_src_uri_depends)
+	app-arch/7zip
 "
 
 FONT_CONF=( "${FILESDIR}/70-shanggu.conf" )
