@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-11 07:14:02 CST)
+(The last generation time: 2026-11-11 07:28:32 CST)
 
 ### Packages
 
@@ -290,7 +290,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/xreader                                      | 4.6.9-r1           |            | https://github.com/linuxmint/xreader                                       | Document viewer for the X-Apps project
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-vim/easymotion                                    | 3.0.1              |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
+ app-vim/easymotion                                    | 3.0.1-r1           |            | https://www.vim.org/scripts/script.php?script_id=3526                      | vim plugin: Vim motions on speed!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-vim/powerline                                     | 9999               |            | https://www.vim.org/scripts/script.php?script_id=3881                      | vim plugin: The ultimate vim statusline utility
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
