@@ -4,7 +4,7 @@
 EAPI=8
 
 KERNEL_IUSE_GENERIC_UKI=1
-CJKTTY_PV="6.12.104"
+CJKTTY_PV="6.12.117"
 
 inherit kernel-build toolchain-funcs verify-sig cjktty
 
@@ -15,7 +15,7 @@ PATCHSET=linux-gentoo-patches-6.12.97
 # forked to git.gentoo.org:fork/fedora/kernel
 CONFIG_VER=6.12.41-gentoo
 GENTOO_CONFIG_P=gentoo-kernel-config-g19
-SHA256SUM_DATE=20261030
+SHA256SUM_DATE=20261110
 DESCRIPTION="Distribution kernel with the cjktty patch for CJK text on the console"
 HOMEPAGE="
 	https://github.com/gentoo-zh/cjktty-patches
