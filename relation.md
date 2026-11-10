@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-11 07:28:32 CST)
+(The last generation time: 2026-11-11 07:45:31 CST)
 
 ### Packages
 
@@ -974,14 +974,15 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-process/witr                                      | 0.3.4              |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- virtual/dist-kernel                                   | 6.12.115-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
-                                                       | 6.12.116-r100      |            |                                                                            |
-                                                       | 6.18.60-r100       |            |                                                                            |
+ virtual/dist-kernel                                   | 6.12.116-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 6.12.117-r100      |            |                                                                            |
                                                        | 6.18.62-r100       |            |                                                                            |
+                                                       | 6.18.63-r100       |            |                                                                            |
                                                        | 7.2.13-r100        |            |                                                                            |
                                                        | 7.2.14-r100        |            |                                                                            |
                                                        | 7.3.1-r100         |            |                                                                            |
                                                        | 7.3.3-r100         |            |                                                                            |
+                                                       | 7.3.4-r100         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/linux-sources                                 | 3-r13              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.55-r1         | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
@@ -989,26 +990,20 @@
                                                        | 7.2.11             |            |                                                                            |
                                                        | 7.3.3              |            |                                                                            |
      dev-util/pahole-cachyos                           | 1.32               | RD         | https://git.kernel.org/pub/scm/devel/pahole/pahole.git/                    | pahole/DWARF utilities with CachyOS merged-CU lang_exclude fixes
-   sys-kernel/gentoo-cjk-kernel                        | 6.12.115           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
-                                                       | 6.12.116           |            |                                                                            |
-                                                       | 6.18.60            |            |                                                                            |
+   sys-kernel/gentoo-cjk-kernel                        | 6.12.116           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.12.117           |            |                                                                            |
                                                        | 6.18.62            |            |                                                                            |
-                                                       | 7.3.1              |            |                                                                            |
+                                                       | 6.18.63            |            |                                                                            |
                                                        | 7.3.3              |            |                                                                            |
-   sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.115           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
-                                                       | 6.12.116           |            |                                                                            |
-                                                       | 6.18.60            |            |                                                                            |
+                                                       | 7.3.4              |            |                                                                            |
+   sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.116           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.62            |            |                                                                            |
-                                                       | 7.3.1              |            |                                                                            |
                                                        | 7.3.3              |            |                                                                            |
-   sys-kernel/gentoo-cjk-sources                       | 6.12.115           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
-                                                       | 6.12.116           |            |                                                                            |
-                                                       | 6.18.61            |            |                                                                            |
-                                                       | 6.18.62            |            |                                                                            |
-                                                       | 7.3.2              |            |                                                                            |
-                                                       | 7.3.3              |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.2.15             | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-                                                       | 7.3.3              |            |                                                                            |
+   sys-kernel/gentoo-cjk-sources                       | 6.12.117           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 6.18.63            |            |                                                                            |
+                                                       | 7.3.4              |            |                                                                            |
+   sys-kernel/liquorix-sources                         | 7.3.3              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+                                                       | 7.3.4              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.13             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.14             |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
