@@ -1,7 +1,7 @@
 # Copyright 1999-2021 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 inherit unpacker xdg
 
 DESCRIPTION="Tencent videos"
@@ -17,7 +17,7 @@ KEYWORDS="~amd64"
 RESTRICT="strip mirror bindist"
 
 RDEPEND="
-	app-accessibility/at-spi2-core
+	app-accessibility/at-spi2-core:2
 	dev-libs/expat
 	dev-libs/glib:2
 	dev-libs/nspr
