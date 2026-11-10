@@ -589,8 +589,6 @@ prefix = "v"
 github_account = "liangyongxiang"
 autobump = true
 
-#["app-misc/copilot"]
-
 ["app-misc/crush"]
 source = "github"
 github = "charmbracelet/crush"
