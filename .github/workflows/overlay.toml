@@ -804,6 +804,13 @@ github_account = ["OriPoin", "gouwazi"]
 # live package only
 #["app-shells/oh-my-bash"]
 
+["app-shells/zsh-autosuggestions"]
+source = "github"
+github = "zsh-users/zsh-autosuggestions"
+use_latest_tag = true
+prefix = "v"
+github_account = "Zakkaus"
+
 ["app-shells/zsh-theme-powerlevel10k"]
 source = "github"
 github = "romkatv/powerlevel10k"
