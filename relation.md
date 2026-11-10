@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-10 18:30:08 CST)
+(The last generation time: 2026-11-10 18:30:46 CST)
 
 ### Packages
 
@@ -217,13 +217,13 @@
  app-misc/keyd                                         | 2.6.0-r1           |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.3371           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.3536           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/openclaude                                   | 0.35.0             |            | https://github.com/Twigpine/openclaude                                     | Open-source coding-agent CLI for cloud and local LLM providers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/qwen-code                                    | 0.27.0             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
+ app-misc/qwen-code                                    | 0.27.1             |            | https://github.com/QwenLM/qwen-code                                        | An open-source AI agent that lives in your terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/rmtrash                                      | 1.15               |            | https://github.com/PhrozenByte/rmtrash                                     | trash-put made compatible to GNUs rm and rmdir
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -328,7 +328,7 @@
  dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0-r1           |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-libs/v2ray-rules-dat-bin                          | 202611082203       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
+ dev-libs/v2ray-rules-dat-bin                          | 202611092204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/adafruit-board-toolkit                     | 1.1.2              |            | https://github.com/adafruit/Adafruit_Board_Toolkit/                        | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -456,7 +456,7 @@
  dev-util/pack-cli-bin                                 | 0.40.10            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.99.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
-                                                       | 1.5.0              |            |                                                                            |
+                                                       | 1.5.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.2              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
@@ -483,7 +483,7 @@
    dev-python/lsp-tree-sitter                          | 0.2.20             | RD         | https://github.com/neomutt/lsp-tree-sitter                                 | A library to create language servers
      dev-python/pygls                                  | 2.1.1              | RD         | https://github.com/openlawlibrary/pygls                                    | A pythonic generic language server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/trae-ide                                     | 2.3.100185         |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
+ dev-util/trae-ide                                     | 2.3.102035         |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vcpkg-tool                                   | 2026.10.29         |            | https://github.com/microsoft/vcpkg-tool                                    | Library manager for C/C++ (tool only)
    dev-util/cmakerc                                    | 2.0.1_p20230725    | BD         | https://github.com/vector-of-bool/cmrc                                     | A Resource Compiler in a Single CMake Script
