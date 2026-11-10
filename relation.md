@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-10 05:45:55 CST)
+(The last generation time: 2026-11-10 18:28:54 CST)
 
 ### Packages
 
@@ -466,7 +466,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qodercli-bin                                 | 1.1.85             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qoderwake-bin                                | 1.2.13             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
+ dev-util/qoderwake-bin                                | 1.2.14             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 1.39.7             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
                                                        | 2.58.1             |            |                                                                            |
@@ -762,7 +762,7 @@
  net-misc/eternalterminal                              | 7.1.1              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/flyctl-bin                                   | 0.4.82             |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
-                                                       | 0.5.5              |            |                                                                            |
+                                                       | 0.5.6              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
