@@ -1,7 +1,7 @@
 # Copyright 2021-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=8
 
 # This src.rpm ships an uncompressed cpio payload; declaring it silences the
 # "rpm_unpack called without supporting app-arch/rpm" QA notice and pins a
