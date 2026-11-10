@@ -1,7 +1,7 @@
 # Copyright 2021-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=9
 inherit font
 
 MY_PN="open-huninn-font"
