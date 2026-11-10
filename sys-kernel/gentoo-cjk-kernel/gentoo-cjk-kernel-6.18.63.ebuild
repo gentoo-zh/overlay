@@ -4,7 +4,7 @@
 EAPI=8
 
 KERNEL_IUSE_GENERIC_UKI=1
-CJKTTY_PV="6.18.45"
+CJKTTY_PV="6.18.63"
 
 inherit kernel-build toolchain-funcs verify-sig cjktty
 
@@ -15,7 +15,7 @@ PATCHSET=linux-gentoo-patches-6.18.42
 # forked to git.gentoo.org:fork/fedora/kernel
 CONFIG_VER=6.18.12-gentoo
 GENTOO_CONFIG_P=gentoo-kernel-config-g19
-SHA256SUM_DATE=20261030
+SHA256SUM_DATE=20261110
 # Debian kconfig commit from:
 # https://salsa.debian.org/kernel-team/linux/-/tree/debian/latest/debian/
 DEBIAN_COMMIT=b19b382f183d421a407f5d708dde1eff5009274d
