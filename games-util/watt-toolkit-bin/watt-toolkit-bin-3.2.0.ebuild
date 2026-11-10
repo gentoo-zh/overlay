@@ -15,11 +15,13 @@ SLOT="0"
 KEYWORDS="-* ~amd64"
 
 RDEPEND="
+	app-crypt/mit-krb5
+	dev-libs/icu
 	dev-libs/nss[utils]
+	dev-libs/openssl
 	media-libs/fontconfig
 	sys-auth/polkit
 	sys-libs/libcap
-	virtual/dotnet-sdk:10.0
 	x11-misc/xdg-utils
 "
 
@@ -35,6 +37,12 @@ src_install() {
 	insinto "${appdir}"
 	doins -r assemblies/* modules native
 	fperms 0755 "${appdir}/modules/Accelerator/Steam++.Accelerator"
+
+	# the app targets net11.0, which the tree does not provide
+	rm dotnet/dnx dotnet/shared/Microsoft.NETCore.App/*/libcoreclrtraceptprovider.so || die
+	doins -r dotnet
+	fperms 0755 "${appdir}/dotnet/dotnet"
+	find "${ED}${appdir}/dotnet" -name '*.so' -exec chmod 0755 {} + || die
 
 	insinto "${appdir}/script"
 	doins script/environment_check.sh
