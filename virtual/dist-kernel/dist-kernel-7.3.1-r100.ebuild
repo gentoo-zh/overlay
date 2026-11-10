@@ -5,12 +5,8 @@ EAPI=8
 
 DESCRIPTION="Virtual to depend on any Distribution Kernel"
 SLOT="0/${PVR}"
-KEYWORDS="~amd64 ~arm64"
+KEYWORDS="~amd64"
 
 RDEPEND="
-	|| (
-		~sys-kernel/gentoo-cjk-kernel-bin-${PV}
-		~sys-kernel/gentoo-cjk-kernel-${PV}
-		~sys-kernel/xanmod-kernel-${PV}
-	)
+	~sys-kernel/xanmod-kernel-${PV}
 "

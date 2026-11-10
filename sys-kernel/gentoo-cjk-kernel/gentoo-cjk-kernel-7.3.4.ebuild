@@ -4,7 +4,7 @@
 EAPI=8
 
 KERNEL_IUSE_GENERIC_UKI=1
-CJKTTY_PV="7.3"
+CJKTTY_PV="7.3.4"
 
 inherit kernel-build toolchain-funcs verify-sig cjktty
 
@@ -15,7 +15,7 @@ PATCHSET=linux-gentoo-patches-7.3.1
 # forked to git.gentoo.org:fork/fedora/kernel
 CONFIG_VER=7.3.1-gentoo
 GENTOO_CONFIG_P=gentoo-kernel-config-g19
-SHA256SUM_DATE=20261030
+SHA256SUM_DATE=20261110
 # Debian kconfig commit from:
 # https://salsa.debian.org/kernel-team/linux/-/tree/debian/latest/debian/
 DEBIAN_COMMIT=f85abf19e508fdc5e544fe34b08810c8ff064474
