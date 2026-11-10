@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-10 18:49:02 CST)
+(The last generation time: 2026-11-10 18:56:12 CST)
 
 ### Packages
 
@@ -746,7 +746,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/another-redis-desktop-manager-bin            | 1.7.4-r1           |            | https://github.com/qishibo/AnotherRedisDesktopManager                      | A faster, better and more stable Redis desktop manager [GUI client]
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/apifox                                       | 2.8.53             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
+ net-misc/apifox                                       | 2.8.54             |            | https://apifox.com/                                                        | Platform for API design, debugging, testing, and documentation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/baidunetdisk                                 | 8.9.7              |            | https://pan.baidu.com/                                                     | Baidu Net Disk is a cloud storage client (Linux Version)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
