@@ -1,7 +1,7 @@
 # Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI=7
+EAPI=9
 
 DESCRIPTION="trash-put made compatible to GNUs rm and rmdir"
 HOMEPAGE="https://github.com/PhrozenByte/rmtrash"
