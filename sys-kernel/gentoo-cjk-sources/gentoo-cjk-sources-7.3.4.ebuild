@@ -5,8 +5,8 @@ EAPI="8"
 ETYPE="sources"
 K_WANT_GENPATCHES="base extras"
 K_SECURITY_UNSUPPORTED="1"
-CJKTTY_PV="7.3"
-K_GENPATCHES_VER="4"
+CJKTTY_PV="7.3.4"
+K_GENPATCHES_VER="5"
 
 inherit check-reqs kernel-2 cjktty
 detect_version
