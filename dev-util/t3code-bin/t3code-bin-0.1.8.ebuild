@@ -28,6 +28,7 @@ RDEPEND="
 	dev-vcs/git
 	media-libs/alsa-lib
 	media-libs/mesa[gbm(+)]
+	media-libs/vulkan-loader
 	net-misc/openssh
 	net-print/cups
 	sys-apps/dbus
@@ -66,10 +67,12 @@ src_prepare() {
 	# Electron requires glibc; these musl libraries and foreign prebuilds are never loaded.
 	rm -r "${modules}"/@ff-labs/fff-bin-linux-*-musl || die
 	if use amd64; then
-		rm -r "${modules}"/@yuuang/ffi-rs-linux-x64-musl \
+		rm -r "${modules}"/@koromix/koffi-linux-x64/musl_x64 \
+			"${modules}"/@yuuang/ffi-rs-linux-x64-musl \
 			"${modules}"/node-pty/prebuilds/linux-arm64 || die
 	else
-		rm -r "${modules}"/node-pty/prebuilds/linux-x64 || die
+		rm -r "${modules}"/@koromix/koffi-linux-arm64/musl_arm64 \
+			"${modules}"/node-pty/prebuilds/linux-x64 || die
 	fi
 	# Omit Debian updater metadata and its AppArmor profile for the original /opt path.
 	rm "${app}"/resources/{app-update.yml,package-type,apparmor-profile} || die
