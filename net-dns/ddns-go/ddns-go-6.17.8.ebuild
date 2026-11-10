@@ -16,7 +16,7 @@ LICENSE="MIT BSD"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64 ~riscv"
 
-BDEPEND=">=dev-lang/go-1.25.0"
+BDEPEND=">=dev-lang/go-1.26.0"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-6.13.2-remove_update_support.patch"
