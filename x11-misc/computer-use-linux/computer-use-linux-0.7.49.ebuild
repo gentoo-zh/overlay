@@ -135,8 +135,8 @@ CRATES="
 	ref-cast-impl@1.0.25
 	ref-cast@1.0.25
 	reis@0.7.1
-	rmcp-macros@3.5.1
-	rmcp@3.5.1
+	rmcp-macros@3.9.0
+	rmcp@3.9.0
 	rustix@1.1.4
 	rustversion@1.0.22
 	schemars@1.2.1
@@ -316,9 +316,11 @@ src_test() {
 		indicator::tests::overlays_can_answer_the_client_socket
 		indicator::tests::set_values_are_masked_even_when_the_cached_role_was_public
 		remote_desktop::tests::only_a_running_bus_can_report_the_remote_desktop_portal_missing
+		server::tests::element_calls_naming_a_replaced_snapshot_send_nothing
 		server::tests::pointer_coordinate_backend_dispatch_is_safe
 		server::tests::stale_uinput_pointer_is_replaced
 		server::tests::uinput_monitor_gap_coordinate_gets_a_note
+		server::tests::uinput_scroll_sends_kernel_signed_wheel_without_ydotool
 		server::tests::untargeted_scroll_keeps_portal_start_error
 		server::tests::x11_monitor_gap_coordinate_gets_a_note
 		windowing::backends::kwin::transaction_tests::duplicate_callback_path_fails_without_disturbing_its_owner
