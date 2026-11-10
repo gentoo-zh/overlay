@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-10 19:01:42 CST)
+(The last generation time: 2026-11-10 19:45:38 CST)
 
 ### Packages
 
@@ -653,8 +653,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/splayer                                   | 3.1.1-r1           |            | https://splayer.imsyy.top/                                                 | A cross-platform music player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/spotube-bin                               | 5.1.1-r1           |            | https://github.com/KRTirtho/spotube                                        | A lightweight Spotify client using YouTube as audio source
-                                                       | 5.1.2-r1           |            |                                                                            |
+ media-sound/spotube-bin                               | 5.1.2-r1           |            | https://github.com/team-spotube/spotube                                    | A lightweight Spotify client using YouTube as audio source
+                                                       | 6.0.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/termusic                                  | 0.13.2             |            | https://github.com/tramhao/termusic                                        | Terminal Music and Podcast Player written in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
