@@ -2,6 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 
 # Zakk <zakk@gentoozh.org> (2026-11-11)
+# Live-only package with no maintainer and no reverse dependencies. It fails
+# in src_prepare because the ebuild never calls default or eapply_user, so
+# it has not been installable. Upstream has no releases and its last commit
+# was in 2024-09.
+# Removal on 2026-12-11.
+x11-wm/chamferwm
+
+# Zakk <zakk@gentoozh.org> (2026-11-11)
 # Live-only package with no maintainer and no reverse dependencies. It
 # came in with sys-cluster/apache-zookeeper in 2012, which was removed in
 # 2017. Upstream's last release was 3.1.0 in 2014 and its last code change
