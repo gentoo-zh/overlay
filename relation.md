@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-11 15:36:31 CST)
+(The last generation time: 2026-11-11 15:37:29 CST)
 
 ### Packages
 
@@ -384,7 +384,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/pyrime                                     | 0.2.4-r1           |            | https://github.com/rimeinn/pyrime                                          | rime for python
    app-i18n/librime                                    | 9999               |  D, RD     | https://rime.im/                                                           | RIME (Rime Input Method Engine) core library
-   dev-python/autopxd2                                 | 4.1.1              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
+   dev-python/autopxd2                                 | 4.2.0              | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
      dev-python/headerkit                              | 0.46.2             | RD         | https://github.com/axiomantic/headerkit                                    | C/C++ header analysis toolkit with pluggable backends and writers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/uv-bin                                     | 0.13.7             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
@@ -439,7 +439,7 @@
  dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.18.6            |            |                                                                            |
+                                                       | 18.18.8            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.7.0              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -762,7 +762,7 @@
  net-misc/eternalterminal                              | 7.1.1              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/flyctl-bin                                   | 0.4.82             |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
-                                                       | 0.5.6              |            |                                                                            |
+                                                       | 0.5.7              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
