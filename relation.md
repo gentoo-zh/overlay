@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-11 16:22:22 CST)
+(The last generation time: 2026-11-11 16:23:17 CST)
 
 ### Packages
 
@@ -719,7 +719,7 @@
    dev-python/asyncpg                                  | 0.32.0             | RD         | https://pypi.org/project/asyncpg/                                          | An asyncio PostgreSQL driver
    dev-python/telethon                                 | 1.45.0             | RD         | https://codeberg.org/Lonami/Telethon                                       | Full-featured Telegram client library for Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-im/telegram-desktop                               | 7.4.1              |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
+ net-im/telegram-desktop                               | 7.4.2              |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/tencent-qq                                     | 3.2.34_p260924-r2  |            | https://im.qq.com/index/#/linux                                            | The new version of the official linux-qq
                                                        | 3.2.35_p261103     |            |                                                                            |
@@ -924,7 +924,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/lceda                                 | 6.5.61             |            | https://lceda.cn/                                                          | LCEDA (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-electronics/lceda-pro                             | 4.1.97             |            | https://lceda.cn/                                                          | LCEDA Pro (binary package)
+ sci-electronics/lceda-pro                             | 4.1.99             |            | https://lceda.cn/                                                          | LCEDA Pro (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/openfpgaloader                        | 1.2.0-r1           |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
