@@ -26,10 +26,13 @@ RESTRICT="test"
 DEPEND="
 	dev-libs/wayland
 	media-libs/fontconfig
+	media-libs/freetype
 	media-libs/mesa
 	dev-db/sqlite:3
 	media-libs/vulkan-loader[X,wayland]
+	sys-apps/dbus
 	sys-libs/ncurses:=
+	virtual/zlib:=
 	x11-libs/libX11
 	x11-libs/libXcursor
 	x11-libs/libXfixes
@@ -39,6 +42,7 @@ DEPEND="
 	x11-libs/libxcb
 	x11-libs/libxkbcommon[X]
 	video? (
+		dev-libs/glib:2
 		media-libs/gstreamer:1.0
 		media-libs/gst-plugins-base:1.0
 	)
