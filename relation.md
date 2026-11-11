@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-11 15:54:17 CST)
+(The last generation time: 2026-11-11 16:01:56 CST)
 
 ### Packages
 
@@ -192,8 +192,8 @@
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.2.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/claude-desktop                               | 3.6556.2           |            | https://claude.com/download                                                | Desktop application for Claude.ai
-                                                       | 4.23118.1          |            |                                                                            |
+ app-misc/claude-desktop                               | 4.23118.1          |            | https://claude.com/download                                                | Desktop application for Claude.ai
+                                                       | 5.1231.2           |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.3.1              |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
