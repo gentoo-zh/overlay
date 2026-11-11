@@ -3,7 +3,7 @@
 
 EAPI=8
 
-RUST_MIN_VER="1.95.0"
+RUST_MIN_VER="1.96.0"
 
 inherit cargo desktop git-r3 toolchain-funcs xdg
 
@@ -46,10 +46,11 @@ DEPEND="
 RDEPEND="${DEPEND}"
 BDEPEND="virtual/pkgconfig"
 
-DOCS=( BUGS CONTRIBUTE README.md )
+DOCS=( README.md )
 
 src_unpack() {
 	git-r3_src_unpack
+	cd "${S}" || die
 	cargo_live_src_unpack
 }
 
@@ -108,8 +109,7 @@ src_install() {
 	insinto /usr/share/${PN}
 	doins -r etc lisp
 
-	newicon -s 128 assets/logo-128.png ${PN}.png
-	newicon -s scalable assets/window-icon.svg ${PN}.svg
+	newicon -s scalable crates/neomacs-display-runtime/assets/window-icon.svg ${PN}.svg
 	make_desktop_entry \
 		--eapi9 \
 		-n "Neomacs" \
