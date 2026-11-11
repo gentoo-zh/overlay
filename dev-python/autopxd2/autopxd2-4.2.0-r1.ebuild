@@ -24,7 +24,7 @@ KEYWORDS="~amd64 ~arm64 ~x86"
 
 RDEPEND="
 	dev-python/click[${PYTHON_USEDEP}]
-	dev-python/headerkit[${PYTHON_USEDEP}]
+	>=dev-python/headerkit-0.51.0[${PYTHON_USEDEP}]
 	llvm-core/clang
 "
 BDEPEND="
