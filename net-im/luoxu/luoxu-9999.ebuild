@@ -14,7 +14,7 @@ DESCRIPTION="A Telegram userbot to index Chinese and Japanese group contents"
 HOMEPAGE="https://github.com/lilydjwg/luoxu"
 LICENSE="GPL-3"
 SLOT="0"
-DEPEND="app-i18n/opencc:="
+DEPEND=">=app-i18n/opencc-1.4.0:="
 RDEPEND="
 	${DEPEND}
 	acct-group/luoxu
@@ -40,7 +40,7 @@ PATCHES=(
 src_unpack() {
 	git-r3_src_unpack
 	# the Rust extension lives in a subdirectory
-	local S="${S}/querytrans"
+	cd "${S}/querytrans" || die
 	cargo_live_src_unpack
 }
 
