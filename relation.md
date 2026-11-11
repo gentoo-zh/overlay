@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-11 14:57:51 CST)
+(The last generation time: 2026-11-11 15:36:31 CST)
 
 ### Packages
 
@@ -447,7 +447,7 @@
                                                        | 2.2.6              |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/opencode-desktop-bin                         | 2.2.6              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
+ dev-util/opencode-desktop-bin                         | 2.2.7              |            | https://opencode.ai                                                        | Desktop application for the OpenCode AI coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
