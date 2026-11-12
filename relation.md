@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-12 21:23:40 CST)
+(The last generation time: 2026-11-12 21:49:04 CST)
 
 ### Packages
 
@@ -632,7 +632,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/euphonica                                 | 0.99.8-r2          |            | https://github.com/htkhiem/euphonica                                       | An MPD client with delusions of grandeur, made with Rust, GTK and Libadwaita
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-sound/feeluown                                  | 5.1.2              |            | https://github.com/feeluown/FeelUOwn                                       | A user-friendly and hackable music player
+ media-sound/feeluown                                  | 5.1.3              |            | https://github.com/feeluown/FeelUOwn                                       | A user-friendly and hackable music player
    dev-python/fluent-runtime                           | 0.4.0              | RD         | https://github.com/projectfluent/python-fluent                             | Localization library for expressive translations
      dev-python/fluent-syntax                          | 0.19.0             | RD         | https://github.com/projectfluent/python-fluent                             | Parser and serializer for Fluent localization files
    dev-python/janus                                    | 2.0.0              | RD         | https://github.com/aio-libs/janus                                          | Mixed sync-async queue to interoperate between asyncio tasks and classic threads
