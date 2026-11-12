@@ -1,0 +1,67 @@
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=8
+
+DISTUTILS_USE_PEP517=scikit-build-core
+DISTUTILS_EXT=1
+PYTHON_COMPAT=( python3_{13..14} )
+# the lyrics cache is a sqlite3 database
+PYTHON_REQ_USE="sqlite"
+
+inherit desktop distutils-r1 xdg
+
+DESCRIPTION="Wayland lyrics overlay for MPRIS-compatible media players"
+HOMEPAGE="https://github.com/locez/kotonoha"
+
+if [[ "${PV}" == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/locez/kotonoha.git"
+else
+	SRC_URI="https://github.com/locez/kotonoha/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
+fi
+
+LICENSE="ISC LGPL-2.1+ MIT"
+SLOT="0"
+IUSE="embedded-lyrics"
+
+DEPEND="
+	dev-libs/wayland
+	dev-qt/qtbase:6=[gui,wayland,widgets]
+	kde-plasma/layer-shell-qt:6
+"
+RDEPEND="
+	${DEPEND}
+	dev-python/aiohttp[${PYTHON_USEDEP}]
+	dev-python/dbus-fast[${PYTHON_USEDEP}]
+	dev-python/pyqt6[gui,svg,widgets,${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
+	dev-python/qasync[${PYTHON_USEDEP}]
+	dev-qt/qtwayland:6
+	dev-qt/qtsvg:6
+	embedded-lyrics? ( media-libs/mutagen[${PYTHON_USEDEP}] )
+"
+BDEPEND="
+	dev-util/wayland-scanner
+	virtual/pkgconfig
+"
+
+EPYTEST_PLUGINS=( pytest-asyncio )
+distutils_enable_tests pytest
+
+python_configure_all() {
+	DISTUTILS_ARGS=(
+		-DKOTONOHA_INSTALL_DIR=kotonoha
+		-DKOTONOHA_INSTALL_LICENSE=OFF
+	)
+}
+
+python_install_all() {
+	distutils-r1_python_install_all
+	domenu packaging/kotonoha.desktop
+	newicon src/kotonoha/assets/icon.png kotonoha.png
+	doman packaging/kotonoha.1
+	insinto /usr/share/metainfo
+	doins packaging/dev.locez.kotonoha.metainfo.xml
+}
