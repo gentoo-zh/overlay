@@ -9,11 +9,18 @@ PYTHON_COMPAT=( python3_{13..14} )
 # the lyrics cache is a sqlite3 database
 PYTHON_REQ_USE="sqlite"
 
-inherit desktop distutils-r1 git-r3 xdg
+inherit desktop distutils-r1 xdg
 
 DESCRIPTION="Wayland lyrics overlay for MPRIS-compatible media players"
 HOMEPAGE="https://github.com/locez/kotonoha"
-EGIT_REPO_URI="https://github.com/locez/kotonoha.git"
+
+if [[ "${PV}" == 9999 ]]; then
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/locez/kotonoha.git"
+else
+	SRC_URI="https://github.com/locez/kotonoha/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
+fi
 
 LICENSE="ISC LGPL-2.1+ MIT"
 SLOT="0"
@@ -29,6 +36,7 @@ RDEPEND="
 	dev-python/aiohttp[${PYTHON_USEDEP}]
 	dev-python/dbus-fast[${PYTHON_USEDEP}]
 	dev-python/pyqt6[gui,svg,widgets,${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0[${PYTHON_USEDEP}]
 	dev-python/qasync[${PYTHON_USEDEP}]
 	dev-qt/qtwayland:6
 	dev-qt/qtsvg:6

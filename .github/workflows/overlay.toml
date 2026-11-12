@@ -1983,8 +1983,11 @@ use_latest_release = true
 prefix = "v"
 github_account = "st0nie"
 
-# live package only
-#["media-plugins/kotonoha"]
+["media-plugins/kotonoha"]
+source = "github"
+github = "locez/kotonoha"
+use_latest_release = true
+prefix = "v"
 
 ["media-plugins/osdlyrics"]
 source = "github"
