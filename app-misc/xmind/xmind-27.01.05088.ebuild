@@ -5,7 +5,7 @@ EAPI=8
 
 inherit desktop unpacker xdg
 
-DATE_VER="202611032305"
+DATE_VER="202611110807"
 DESCRIPTION="Brainstorming and Mind Mapping Software"
 HOMEPAGE="https://xmind.com"
 SRC_URI="https://dl3.xmind.app/Xmind-for-Linux-amd64bit-${PV}-${DATE_VER}.deb"
