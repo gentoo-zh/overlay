@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-12 05:57:22 CST)
+(The last generation time: 2026-11-12 13:53:38 CST)
 
 ### Packages
 
@@ -988,7 +988,7 @@
    sys-kernel/cachyos-sources                          | 6.18.55-r1         | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 6.18.60            |            |                                                                            |
                                                        | 7.2.11             |            |                                                                            |
-                                                       | 7.3.3              |            |                                                                            |
+                                                       | 7.3.4              |            |                                                                            |
      dev-util/pahole-cachyos                           | 1.32               | RD         | https://git.kernel.org/pub/scm/devel/pahole/pahole.git/                    | pahole/DWARF utilities with CachyOS merged-CU lang_exclude fixes
    sys-kernel/gentoo-cjk-kernel                        | 6.12.116           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
                                                        | 6.12.117           |            |                                                                            |
