@@ -28,7 +28,7 @@ IUSE="clang"
 REQUIRED_USE="clang? ( ${LLVM_REQUIRED_USE} )"
 
 BDEPEND="
-	>=dev-lang/dart-bootstrap-3.13.4
+	>=dev-lang/dart-bootstrap-3.14.0
 	dev-build/gn
 	dev-build/ninja
 	dev-vcs/git
@@ -45,7 +45,7 @@ QA_FLAGS_IGNORED="usr/lib/dart/bin/snapshots/.*\.snapshot"
 
 PATCHES=(
 	"${FILESDIR}/${PN}-3.10.2-fix_toolchain_prefix.patch"
-	"${FILESDIR}/${PN}-3.10.2-use_system_clang.patch"
+	"${FILESDIR}/${PN}-3.14.0-use_system_clang.patch"
 	"${FILESDIR}/${PN}-3.10.2-use_lld_when_using_clang.patch"
 	"${FILESDIR}/${PN}-3.10.2-custom_flags.patch"
 	"${FILESDIR}/${PN}-3.12.2-no-werror.patch"
@@ -83,6 +83,8 @@ src_configure() {
 	mygnargs+=( 'is_release=true' )
 	mygnargs+=( 'dart_platform_sdk=false' )
 	mygnargs+=( 'verify_sdk_hash=false' )
+	# Install the unstripped binaries and leave stripping to Portage.
+	mygnargs+=( 'stripped_binary_prefix=""' )
 	use clang && mygnargs+=( "clang_toolchain_dir=\"$(get_llvm_prefix -b)/bin\"" )
 	gn gen --args="${mygnargs[*]}" out/Release
 }
@@ -108,6 +110,10 @@ src_install() {
 	fperms +x /usr/lib/dart/bin/dartaotruntime_asan
 	fperms +x /usr/lib/dart/bin/dartaotruntime_tsan
 	use clang && fperms +x /usr/lib/dart/bin/dartaotruntime_msan
+	fperms +x /usr/lib/dart/bin/dartcliruntime
+	fperms +x /usr/lib/dart/bin/dartcliruntime_asan
+	fperms +x /usr/lib/dart/bin/dartcliruntime_tsan
+	use clang && fperms +x /usr/lib/dart/bin/dartcliruntime_msan
 	fperms +x /usr/lib/dart/bin/utils/gen_snapshot
 	fperms +x /usr/lib/dart/bin/utils/wasm-opt
 
