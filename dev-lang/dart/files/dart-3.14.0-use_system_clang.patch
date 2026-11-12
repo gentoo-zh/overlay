@@ -1,8 +1,7 @@
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index b041a075..60a9a868 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
-@@ -396,40 +396,6 @@ config("compiler") {
+@@ -448,41 +448,6 @@
      }
    }
  
@@ -17,7 +16,8 @@ index b041a075..60a9a868 100644
 -    } else if (is_linux) {
 -      toolchain_stamp_file =
 -          "//buildtools/linux-x64/clang/.versions/clang.cipd_version"
--    } else if ((is_mac || is_ios) && host_cpu == "arm64") {
+-    } else if ((is_mac || is_ios) &&
+-               (host_cpu == "arm64" || host_cpu == "arm64e")) {
 -      toolchain_stamp_file =
 -          "//buildtools/mac-arm64/clang/.versions/clang.cipd_version"
 -    } else if (is_mac || is_ios) {
@@ -28,12 +28,12 @@ index b041a075..60a9a868 100644
 -    defines = [ "TOOLCHAIN_VERSION=${toolchain_cipd_version.instance_id}" ]
 -
 -    if (is_linux) {
--      if (current_cpu == "riscv64") {
--        sysroot_stamp_file =
--            "//buildtools/sysroot/focal/.versions/sysroot.cipd_version"
--      } else {
+-      if (current_cpu == "x64") {
 -        sysroot_stamp_file =
 -            "//buildtools/sysroot/linux/.versions/sysroot.cipd_version"
+-      } else {
+-        sysroot_stamp_file =
+-            "//buildtools/sysroot/jammy/.versions/sysroot.cipd_version"
 -      }
 -      sysroot_cipd_version = read_file(sysroot_stamp_file, "json")
 -      defines += [ "SYSROOT_VERSION=${sysroot_cipd_version.instance_id}" ]
