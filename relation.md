@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-12 22:02:00 CST)
+(The last generation time: 2026-11-12 22:21:10 CST)
 
 ### Packages
 
@@ -141,7 +141,6 @@
        x11-libs/xcb-imdkit                             | 9999               |  D, RD     | https://github.com/fcitx/xcb-imdkit                                        | Input method development support for xcb
      app-i18n/rime-data                                | 9999               |  D, RD     | https://rime.im/                                                           | Data resources for Rime Input Method Engine
    app-i18n/fcitx-skk                                  | 5.1.11             | RD         | https://fcitx-im.org/                                                      | Japanese SKK input engine for Fcitx5
-                                                       | 5.1.7-r2           |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-openbangla                             | 2.0.0_p20260718    |            | https://openbangla.org/                                                    | OpenBangla Bengali (Avro Phonetic) input method engine for Fcitx5
@@ -271,15 +270,13 @@
  app-text/cajviewer                                    | 9.0-r3             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/goldendict                                   | 26.11.0            |            | https://xiaoyifang.github.io/goldendict-ng/                                | Feature-rich dictionary lookup program (qtwebengine fork)
-   app-arch/libzim                                     | 9.5.1-r1           |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
-                                                       | 9.8.2-r1           |            |                                                                            |
+   app-arch/libzim                                     | 9.8.2-r1           |  D, RD     | https://wiki.openzim.org/wiki/OpenZIM                                      | ZIM file format: an offline storage solution for content coming from the Web
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/groff-utf8                                   | 0-r2               |            | https://www.haible.de/bruno/packages-groff-utf8.html                       | GNU groff wrapper allowing UTF-8 input
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/gzpaste                                      | 0.1.4              |            | https://github.com/gentoo-zh/gzpaste                                       | Command-line client for the paste.gentoozh.org pastebin
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/lektra                                       | 0.6.5              |            | https://github.com/dheerajshenoy/lektra                                    | High-performance PDF reader that prioritizes screen space and control
-                                                       | 0.8.0-r1           |            |                                                                            |
+ app-text/lektra                                       | 0.8.0-r1           |            | https://github.com/dheerajshenoy/lektra                                    | High-performance PDF reader that prioritizes screen space and control
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/lemminx-bin                                  | 0.31.2             |            | https://github.com/eclipse-lemminx/lemminx                                 | A XML Language Server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -299,8 +296,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/nameof                                        | 0.11.0             |            | https://github.com/Neargye/nameof                                          | Nameof operator for modern C++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-cpp/tgbot-cpp                                     | 1.11               |            | https://github.com/reo7sp/tgbot-cpp                                        | C++ library for Telegram bot API
-                                                       | 1.13.1             |            |                                                                            |
+ dev-cpp/tgbot-cpp                                     | 1.13.1             |            | https://github.com/reo7sp/tgbot-cpp                                        | C++ library for Telegram bot API
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-db/pgroonga                                       | 4.1.0              |            | https://pgroonga.github.io/                                                | Full-text search extension for PostgreSQL usable with all languages
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -357,8 +353,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/fuo-ytmusic                                | 0.4.18             |            | https://github.com/feeluown/feeluown-ytmusic                               | youtube music support for feeluown
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/fusesoc                                    | 2.4.4              |            | https://github.com/olofk/fusesoc/                                          | Award-winnning package manager and build abstraction tool for HDL code
-                                                       | 2.4.7              |            |                                                                            |
+ dev-python/fusesoc                                    | 2.4.7              |            | https://github.com/olofk/fusesoc/                                          | Award-winnning package manager and build abstraction tool for HDL code
    dev-python/edalize                                  | 0.6.8              | RD         | https://github.com/olofk/edalize/                                          | Library for interfacing EDA tools
    dev-python/simplesat                                | 0.9.2-r1           | RD         | https://github.com/enthought/sat-solver                                    | Prototype for SAT-based dependency handling
      dev-python/okonomiyaki                            | 3.0.0              | RD         | https://github.com/enthought/okonomiyaki                                   | Self-contained library to deal with metadata in egg and runtime archives
@@ -409,8 +404,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/deepseek-harness                             | 0.2.2_rc1          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/fvm                                          | 4.1.4              |            | https://github.com/leoafarias/fvm                                          | Flutter Version Management
-                                                       | 4.3.2              |            |                                                                            |
+ dev-util/fvm                                          | 4.3.2              |            | https://github.com/btwld/fvm                                               | Flutter Version Management
    dev-lang/dart                                       | 3.13.7             |  D, RD     | https://dart.dev                                                           | The Dart SDK
      dev-lang/dart-bootstrap                           | 3.13.4             | BD         | https://dart.dev                                                           | Binary bootstrap package for dev-lang/dart
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -458,8 +452,7 @@
                                                        | 1.5.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
-   dev-lang/bun-bin                                    | 1.4.2              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
-                                                       | 1.4.4              |            |                                                                            |
+   dev-lang/bun-bin                                    | 1.4.4              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoder-bin                                    | 0.5.7              |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -624,8 +617,7 @@
  media-plugins/osdlyrics                               | 0.6.0              |            | https://github.com/osdlyrics/osdlyrics                                     | Standalone lyrics fetcher/displayer (windowed and OSD mode)
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-plugins/waylyrics                               | 0.4.0              |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
-                                                       | 0.4.6              |            |                                                                            |
+ media-plugins/waylyrics                               | 0.4.6              |            | https://waylyrics.github.io/waylyrics/waylyrics                            | Simple On Screen lyrics Display for linux/unix
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-sound/cider                                     | 4.0.9.1            |            | https://cider.sh/                                                          | A cross-platform Apple Music experience built on Vue.js (Proprietary V4)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -665,8 +657,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/davinci-resolve                           | 21.2.0             |            | https://www.blackmagicdesign.com/support/family/davinci-resolve-and-fusion | Professional video editing, color, effects and audio post-processing
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-video/hov-qt                                    | 1.3.1              |            | https://github.com/HougeLangley/HyperOnlineVideo                           | Aggregated YouTube/Bilibili/NetEase/QQ Music client (Qt6 desktop)
-                                                       | 1.3.2              |            |                                                                            |
+ media-video/hov-qt                                    | 1.3.2              |            | https://github.com/HougeLangley/HyperOnlineVideo                           | Aggregated YouTube/Bilibili/NetEase/QQ Music client (Qt6 desktop)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/implay                                    | 1.5.1-r1           |            | https://tsl0922.github.io/ImPlay/                                          | A Cross-Platform Desktop Media Player
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -683,15 +674,13 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-video/wiliwili                                  | 1.6.0-r1           |            | https://www.xfangfang.cn/wiliwili/                                         | 跨平台第三方B站客户端
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-analyzer/cfspeedtest-bin                          | 2.2.1              |            | https://github.com/code-inflation/cfspeedtest                              | Unofficial CLI for speed.cloudflare.com
-                                                       | 2.2.2              |            |                                                                            |
+ net-analyzer/cfspeedtest-bin                          | 2.2.2              |            | https://github.com/code-inflation/cfspeedtest                              | Unofficial CLI for speed.cloudflare.com
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/dstp                                     | 0.4.23-r1          |            | https://github.com/ycd/dstp                                                | Run common networking tests against any site
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/dstp-bin                                 | 0.4.23             |            | https://github.com/ycd/dstp                                                | Run common networking tests against any site
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-analyzer/nali                                     | 0.8.1_p20250221    |            | https://github.com/zu1k/nali                                               | An offline tool for querying IP geographic information and CDN provider
-                                                       | 0.8.1_p20260930    |            |                                                                            |
+ net-analyzer/nali                                     | 0.8.1_p20260930    |            | https://github.com/zu1k/nali                                               | An offline tool for querying IP geographic information and CDN provider
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/pwru                                     | 1.0.9              |            | https://github.com/cilium/pwru                                             | eBPF-based Linux kernel networking debugger
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -760,8 +749,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.1.1              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/flyctl-bin                                   | 0.4.82             |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
-                                                       | 0.5.8              |            |                                                                            |
+ net-misc/flyctl-bin                                   | 0.5.8              |            | https://github.com/superfly/flyctl                                         | Command line tools for fly.io services
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/geo                                          | 1.1                |            | https://github.com/MetaCubeX/geo/                                          | An easy way to manage all your Geo resources
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -831,12 +819,10 @@
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/dae                                         | 1.1.0              |            | https://github.com/daeuniverse/dae                                         | A lightweight and high-performance transparent proxy solution based on eBPF
-                                                       | 2.0.0              |            |                                                                            |
                                                        | 2.1.1              |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/daed                                        | 1.21.1             |            | https://github.com/daeuniverse/daed                                        | A Modern Dashboard For dae
-                                                       | 1.27.0-r1          |            |                                                                            |
+ net-proxy/daed                                        | 1.27.0-r1          |            | https://github.com/daeuniverse/daed                                        | A Modern Dashboard For dae
                                                        | 9999               |            |                                                                            |
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
                                                        | 12.18.0            |            |                                                                            |
@@ -882,24 +868,20 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/shadowsocks-rust                            | 1.25.0             |            | https://github.com/shadowsocks/shadowsocks-rust                            | shadowsocks is a fast tunnel proxy that helps you bypass firewalls
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/sing-box                                    | 1.12.25            |            | https://sing-box.sagernet.org/                                             | The universal proxy platform
-                                                       | 1.13.21            |            |                                                                            |
+ net-proxy/sing-box                                    | 1.13.21            |            | https://sing-box.sagernet.org/                                             | The universal proxy platform
                                                        | 1.14.4             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/sing-box-windows-bin                        | 2.4.0              |            | https://github.com/xinggaoya/sing-box-windows                              | Modern sing-box desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/smartproxy                                  | 0.9.5              |            | https://github.com/microcai/smartproxy                                     | A fast, proxy smart selector
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/v2rayA                                      | 2.2.7.5            |            | https://v2raya.org/                                                        | web GUI of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel
-                                                       | 2.4.23             |            |                                                                            |
-                                                       | 2.4.25             |            |                                                                            |
+ net-proxy/v2rayA                                      | 2.4.25             |            | https://v2raya.org/                                                        | web GUI of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel
                                                        | 2.5.14             |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/yacd-meta                                   | 0.7.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/zashboard                                   | 3.22.0             |            | https://github.com/Zephyruso/zashboard                                     | The Official Mihomo Dashboard
-                                                       | 3.30.0             |            |                                                                            |
+ net-proxy/zashboard                                   | 3.30.0             |            | https://github.com/Zephyruso/zashboard                                     | The Official Mihomo Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-vpn/easytier                                      | 2.6.4              |            | https://github.com/EasyTier/EasyTier                                       | A full meshed p2p VPN
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -929,8 +911,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/elan-bin                              | 4.2.4              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-mathematics/rstudio-desktop-bin                   | 2026.07.1_p147-r1  |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
-                                                       | 2026.10.1_p239     |            |                                                                            |
+ sci-mathematics/rstudio-desktop-bin                   | 2026.10.1_p239     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-ml/llama-cpp                                      | 0.9.0              |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
                                                        | 9999               |            |                                                                            |
@@ -945,8 +926,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/mdp                                          | 9999               |            | https://github.com/visit1985/mdp                                           | A command-line based markdown presentation tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/pacman-mirrorlist                            | 20251021           |            | https://archlinux.org/mirrorlist/                                          | Repository list for Archlinux's binary package manager
-                                                       | 20260610           |            |                                                                            |
+ sys-apps/pacman-mirrorlist                            | 20260610           |            | https://archlinux.org/mirrorlist/                                          | Repository list for Archlinux's binary package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/pnpm-bin                                     | 12.18.0            |            | https://pnpm.io                                                            | Fast, disk space efficient package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1038,8 +1018,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/darkhttpd                                 | 1.17               |            | https://unix4lyfe.org/darkhttpd/                                           | A small, static webserver
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-servers/dufs                                      | 0.46.0             |            | https://github.com/sigoden/dufs                                            | A distinctive utility file server
-                                                       | 0.47.0             |            |                                                                            |
+ www-servers/dufs                                      | 0.47.0             |            | https://github.com/sigoden/dufs                                            | A distinctive utility file server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/miniserve                                 | 0.35.0             |            | https://github.com/svenstaro/miniserve                                     | a CLI tool to serve files and dirs over HTTP
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
