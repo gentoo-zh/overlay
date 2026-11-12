@@ -34,6 +34,10 @@ QA_PREBUILT="
 	usr/lib/dart-bootstrap/bin/dartaotruntime_asan
 	usr/lib/dart-bootstrap/bin/dartaotruntime_msan
 	usr/lib/dart-bootstrap/bin/dartaotruntime_tsan
+	usr/lib/dart-bootstrap/bin/dartcliruntime
+	usr/lib/dart-bootstrap/bin/dartcliruntime_asan
+	usr/lib/dart-bootstrap/bin/dartcliruntime_msan
+	usr/lib/dart-bootstrap/bin/dartcliruntime_tsan
 	usr/lib/dart-bootstrap/bin/dartvm
 	usr/lib/dart-bootstrap/bin/snapshots/*.snapshot
 	usr/lib/dart-bootstrap/bin/utils/gen_snapshot
