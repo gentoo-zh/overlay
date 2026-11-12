@@ -1545,20 +1545,21 @@ regex = '"latest": "([\d.]+)"'
 github_account = "liangyongxiang"
 autobump = true
 
-["dev-util/reasonix-bin"]
-source = "github"
-github = "esengine/DeepSeek-Reasonix"
-use_max_release = true
-include_regex = "v\\d+\\.\\d+\\.\\d+"
-prefix = "v"
-github_account = "wgjak47"
-autobump = true
+# Upstream was archived on 2026-11-12; v2.61.0 is the last release.
+#["dev-util/reasonix-bin"]
+#source = "github"
+#github = "esengine/DeepSeek-Reasonix"
+#use_max_release = true
+#include_regex = "v\\d+\\.\\d+\\.\\d+"
+#prefix = "v"
+#github_account = "wgjak47"
+#autobump = true
 
-["dev-util/reasonix-desktop-bin"]
-source = "jq"
-url = "https://dl.reasonix.io/latest/latest.json"
-filter = '.version | ltrimstr("v")'
-autobump = true
+#["dev-util/reasonix-desktop-bin"]
+#source = "jq"
+#url = "https://dl.reasonix.io/latest/latest.json"
+#filter = '.version | ltrimstr("v")'
+#autobump = true
 
 ["dev-util/redpanda-cpp"]
 source = "github"
