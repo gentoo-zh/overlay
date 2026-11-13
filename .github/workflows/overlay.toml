@@ -1525,6 +1525,13 @@ autobump = true
 # live package only
 #["dev-util/pi-coding-agent-xz"]
 
+["dev-util/pixi-bin"]
+source = "github"
+github = "prefix-dev/pixi"
+use_latest_release = true
+prefix = "v"
+github_account = "zakkaus"
+
 ["dev-util/qoder-bin"]
 source = "regex"
 url = "https://download.qoder.com/qoder-app/releases/latest-linux.yml"
