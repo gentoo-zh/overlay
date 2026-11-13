@@ -726,8 +726,9 @@ def bundle_status_body(settings, package, version, reason, links, *, escalate, d
 def run_bundle_controller(settings, candidates):
     """The bundle controller's plan over every target with a bundle, opted in or not.
 
-    Returns ({(package, version): target}, error). error names a controller that failed: with no
-    snapshot every bundle target is held back; with one, a target it could not judge is not ready."""
+    Returns ({(package, version): target}, error, failures). error names a controller that failed: with no
+    snapshot every bundle target is held back; with one, a target it could not judge is not ready.
+    failures are the controller's `failed:` lines, which standing_escalations() tells apart."""
     targets = [
         {"issue": c["issue"], "package": c["package"], "version": c["version"],
          "retry": settings.retry and bool(settings.issues)}
@@ -754,21 +755,48 @@ def run_bundle_controller(settings, candidates):
             raise ValueError(f"not a schema {BUNDLE_SCHEMA} snapshot")
         # collect fails the run on it: an API failure that persists would otherwise stay unknown unseen
         error = f"bundles.py plan exited {status}; see the plan log" if status else None
-        return {(t["package"], t["version"]): t for t in snapshot["targets"]}, error
+        failures = [line.removeprefix("failed: ") for line in output.splitlines() if line.startswith("failed: ")]
+        return {(t["package"], t["version"]): t for t in snapshot["targets"]}, error, failures
     except (OSError, ValueError, AttributeError, KeyError, TypeError) as error:
         message = f"bundle controller failed: bundles.py plan exited {status}, {error}"
         print(f"::error title=bundles::{message}", file=sys.stderr)
-        return {}, message
+        return {}, message, []
 
 
-def announce_bundle(settings, target, status_comment_failed, opted_in):
-    """Comment on what changed this run: a dispatch, or the escalation to a maintainer."""
-    if not target.get("escalated_now") and not target.get("dispatched"):
+def standing_escalations(snapshot, failures):
+    """The escalated targets that account for every controller failure, or None if one is unaccounted for.
+
+    The controller exits 1 on every escalated bundle, every run until it is retried. Once the issue
+    carries the escalation comment a maintainer has it, so it must not turn each later run red.
+    Anything else - an unknown state, a dispatch the controller could not confirm, an owner it
+    stopped asking - is still a failure."""
+    if not failures:
+        return None
+    standing = {}
+    for failure in failures:
+        for target in snapshot.values():
+            reasons = {view["reason"] for view in target["bundles"] if view["state"] == "escalate"}
+            prefix = f"{target['package']} {target['version']}: "
+            if (target["state"] == "escalate" and target.get("issue")
+                    and failure.startswith(prefix) and failure[len(prefix):] in reasons):
+                standing[target["issue"]] = target
+                break
+        else:
+            return None
+    return list(standing.values())
+
+
+def announce_bundle(settings, target, status_comment_failed, opted_in, *, standing=False):
+    """Comment on what changed this run: a dispatch, or the escalation to a maintainer.
+
+    A standing escalation is posted again whether or not it is new: the latch outlives a comment that
+    never landed, and only a comment that did lands is a reason not to fail the run."""
+    if not (standing or target.get("escalated_now") or target.get("dispatched")):
         return
     package = target["package"]
     body = bundle_status_body(settings, package, target["version"], short_status_reason(target["reason"]),
                               bundle_links(settings, package, target["bundles"]),
-                              escalate=target.get("escalated_now"), opted_in=opted_in)
+                              escalate=standing or target.get("escalated_now"), opted_in=opted_in)
     status_comment(target["issue"], body, comment=settings.comment, footer="",
                    upstream_repo=settings.upstream_repo, status_comment_failed=status_comment_failed)
 
@@ -792,15 +820,23 @@ def plan_issues(settings, issues, apply_run_limit):
         candidates.append({"issue": issue, "package": package, "version": version, "opted_in": opted_in})
 
     status_comment_failed = set()
-    snapshot, with_bundles, bundle_error = {}, set(), None
+    snapshot, with_bundles, bundle_error, standing = {}, set(), None, []
     if settings.bundles is not None:
         with_bundles = bundle_packages()
-        snapshot, bundle_error = run_bundle_controller(
+        snapshot, bundle_error, failures = run_bundle_controller(
             settings, [c for c in candidates if c["package"] in with_bundles or c["opted_in"]])
         opted = {c["package"] for c in candidates if c["opted_in"]}
         for target in snapshot.values():
             if target.get("issue"):
                 announce_bundle(settings, target, status_comment_failed, target["package"] in opted)
+        matched = standing_escalations(snapshot, failures) if bundle_error and snapshot and settings.comment else None
+        for target in matched or []:
+            if not target.get("escalated_now"):
+                announce_bundle(settings, target, status_comment_failed, target["package"] in opted, standing=True)
+        if matched and not any(t["issue"] in status_comment_failed for t in matched):
+            bundle_error = None
+            standing = [f"#{t['issue']}  {t['package']} {t['version']}: {short_status_reason(t['reason'])}"
+                        for t in matched]
 
     items = []
     planned = {}
@@ -880,6 +916,7 @@ def plan_issues(settings, issues, apply_run_limit):
         "status_comment_failed": sorted(status_comment_failed),
         # collect fails the run on it, after the shards of every other package have run
         "bundle_error": bundle_error,
+        "standing_escalations": standing,
         "bundles_delta": settings.bundles_delta.name if settings.bundles_delta else None,
     }
 
@@ -1221,7 +1258,8 @@ def collect(settings):
         merge_lines(settings.bundles_ledger, delta.get("bundles", []))
         results.update(delta["results"])
         status_comment_failed.update(delta["status_comment_failed"])
-    print_summary(settings.collect_plan["issues"], results, status_comment_failed)
+    print_summary(settings.collect_plan["issues"], results, status_comment_failed,
+                  settings.collect_plan.get("standing_escalations", []))
     return 0
 
 
@@ -1238,13 +1276,20 @@ def restore_branch(original_branch):
         pass
 
 
-def print_summary(issues, results, status_comment_failed):
+def print_summary(issues, results, status_comment_failed, standing=()):
     # A failed status update must be visible in the run record as well as the issue log.
     print()
     print("==== sweep summary ====")
     for issue in issues:
         suffix = " (status comment not posted)" if issue in status_comment_failed else ""
         print(f"#{issue}  {results.get(issue, '?')}{suffix}")
+    if standing:
+        print("==== bundle escalations awaiting a maintainer ====")
+        print("\n".join(standing))
+        summary = os.environ.get("GITHUB_STEP_SUMMARY")
+        if summary:
+            with open(summary, "a") as f:
+                f.write("## Bundle escalations awaiting a maintainer\n\n" + "".join(f"- {line}\n" for line in standing))
 
 
 def main(argv):
