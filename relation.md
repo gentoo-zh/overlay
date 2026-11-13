@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-13 14:15:31 CST)
+(The last generation time: 2026-11-13 14:34:35 CST)
 
 ### Packages
 
@@ -912,7 +912,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/elan-bin                              | 4.2.4              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-mathematics/rstudio-desktop-bin                   | 2026.10.1_p239     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
+ sci-mathematics/rstudio-desktop-bin                   | 2026.11.0_p203     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-ml/llama-cpp                                      | 0.9.0              |            | https://github.com/ggml-org/llama.cpp                                      | LLM inference in C/C++
                                                        | 9999               |            |                                                                            |
