@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-13 13:57:27 CST)
+(The last generation time: 2026-11-13 13:58:29 CST)
 
 ### Packages
 
@@ -189,7 +189,7 @@
  app-misc/chatgpt-desktop                              | 26.1111.21308      |            | https://chatgpt.com/download/                                              | Desktop application for ChatGPT and Codex
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
-                                                       | 2.2.0              |            |                                                                            |
+                                                       | 2.2.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/claude-desktop                               | 5.11492.0          |            | https://claude.com/download                                                | Desktop application for Claude.ai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -243,7 +243,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/notesnook-bin                              | 3.4.13             |            | https://notesnook.com/                                                     | End-to-end encrypted note taking alternative to Evernote
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-office/obsidian                                   | 1.15.0             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
+ app-office/obsidian                                   | 1.15.1             |            | https://obsidian.md/                                                       | Knowledge base on top of a local folder of plain text Markdown files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-office/siyuan-bin                                 | 3.8.10             |            | https://b3log.org/siyuan/                                                  | Privacy-first, self-hosted personal knowledge management system
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
