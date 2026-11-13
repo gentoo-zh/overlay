@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-13 13:35:33 CST)
+(The last generation time: 2026-11-13 13:36:36 CST)
 
 ### Packages
 
@@ -444,9 +444,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/osc                                          | 1.28.0             |            | https://github.com/openSUSE/osc                                            | The Command Line Interface to work with an Open Build Service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pack-cli                                     | 0.40.10            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
+ dev-util/pack-cli                                     | 0.40.11            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pack-cli-bin                                 | 0.40.10            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
+ dev-util/pack-cli-bin                                 | 0.40.11            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.99.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
                                                        | 1.5.2              |            |                                                                            |
@@ -786,6 +786,7 @@
  net-misc/reqable                                      | 3.3.11             |            | https://reqable.com/en-US/                                                 | Reqable = Fiddler + Charles + Postman, 让API调试更快 🚀 更简单 👌
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/todesk                                       | 4.9.8.1            |            | https://www.todesk.com/                                                    | Remote control and team work
+                                                       | 5.2.3.0            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/tssh                                         | 0.1.27             |            | https://github.com/trzsz/trzsz-ssh                                         | SSH client with a server selection menu and trzsz file transfer
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -999,7 +1000,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20261110034535     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
-   dev-libs/v2ray-domain-list-community-bin            | 20261110034535     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community-bin            | 20261112220449     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
    dev-libs/v2ray-geoip                                | 202611080027       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
