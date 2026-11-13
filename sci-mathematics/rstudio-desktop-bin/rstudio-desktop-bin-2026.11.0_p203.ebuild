@@ -52,13 +52,11 @@ QA_PREBUILT="*"
 src_prepare() {
 	default
 
-	# The bundled Copilot language server ships native prebuilts for every
-	# platform. Keep only linux-x64 (glibc); the rest never load on amd64 and
-	# trip the unresolved-soname QA check.
+	# The bundled Copilot language server still ships policy templates for
+	# other platforms; they are never read on Linux.
 	local cop="usr/lib/rstudio/resources/app/bin/copilot-language-server-js"
 	if [[ -d ${cop} ]]; then
 		rm -r "${cop}"/policy-templates/darwin "${cop}"/policy-templates/win32 || die
-		rm -r "${cop}"/node_modules/@github/copilot-sdk-{darwin-arm64,darwin-x64,linux-arm64,win32-arm64,win32-x64} || die
 	fi
 }
 
