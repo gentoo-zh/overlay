@@ -82,3 +82,5 @@ issue entry for that bug, then point the bug link here.
 ## AI 政策
 
 可以用生成式 AI 輔助，不過佢必須遵守 [AGENTS.md](./AGENTS.md)，而且每個提交由貢獻者負責：確保 ebuild 嘅質素同驗證功能正確，ebuild 要實際做一次冒煙測試先好提交，pull request 描述要簡短、精準、專業，寫實測結果而唔係靠估。貢獻者、提交者同提交作者必須係真人，唔可以係 AI 工具或者模型身份。
+
+俾 agent 用嘅打包、更新同審查步驟喺 [gentoo-zh/skills](https://github.com/gentoo-zh/skills)，用 `npx skills add gentoo-zh/skills -g` 安裝；佢只係執行 AGENTS.md 嘅規則，唔會另立規則。

@@ -103,3 +103,8 @@ verify that it works, smoke-test it before submitting, and keep the pull request
 description short, precise and professional, written from tested results, not
 guesses. The contributor, submitter, and commit author must be a human, not an AI
 tool or model identity.
+
+Step-by-step packaging, bump and review procedures for agents live in
+[gentoo-zh/skills](https://github.com/gentoo-zh/skills); install them with
+`npx skills add gentoo-zh/skills -g`. They apply AGENTS.md and add no rules of
+their own.
