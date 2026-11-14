@@ -1,6 +1,6 @@
 ## Commit and PR Text
 
-Read with: `AGENTS.md` § Git Workflow for branch, rebase, and push; `version-bumps.md` § Keeping Old Versions for the `drop OLD` decision the subject states.
+Read with: `git-workflow.md` for branch, rebase, and push; `version-bumps.md` § Keeping Old Versions for the `drop OLD` decision the subject states.
 
 ### Subject
 
