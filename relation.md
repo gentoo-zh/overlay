@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-14 21:47:08 CST)
+(The last generation time: 2026-11-15 01:16:47 CST)
 
 ### Packages
 
@@ -702,6 +702,9 @@
  net-dns/dnsmasq-china-list                            | 9999               |            | https://github.com/felixonmars/dnsmasq-china-list                          | Chinese-specific configuration to improve your favorite DNS server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-dns/q                                             | 0.19.12            |            | https://github.com/natesales/q                                             | A tiny command line DNS client with support for UDP, TCP, DoT, DoH, DoQ and ODoH
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-im/ayugram-desktop                                | 7.2.9              |            | https://github.com/AyuGram/AyuGramDesktop                                  | Desktop Telegram client with good customization and Ghost mode
+                                                       | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/dingtalk                                       | 8.3.1.261008001-r3 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
    dev-util/execstack                                  | 0_pre20130503-r1   | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
