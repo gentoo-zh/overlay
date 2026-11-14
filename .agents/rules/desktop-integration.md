@@ -1,6 +1,6 @@
 ## Desktop Integration
 
-Read with: `prebuilt-binaries.md` when the application ships prebuilt; `AGENTS.md` § Dependencies and Revisions for the revbump a changed desktop file or icon needs.
+Read with: `prebuilt-binaries.md` when the application ships prebuilt; `dependencies.md` for the revbump a changed desktop file or icon needs.
 
 - A window gets a default icon when its Wayland `app_id` or X11 `WM_CLASS` matches no installed desktop file's basename.
 - Measure that `app_id` or `WM_CLASS` on a running instance; KWin reports it through `workspace.windowList()`. Then rename the file or add `StartupWMClass`.

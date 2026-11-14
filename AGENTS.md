@@ -6,7 +6,7 @@ This repository is a Gentoo overlay fork. Use skills and official Gentoo sources
 
 These rules are the default, not a veto. An explicit instruction from the human directing the work overrides them for that item: carry it out and record the deviation.
 
-Stop only where this file says to, or where continuing would discard work or publish something unreviewed.
+Stop only where this file or `.agents/rules/` says to, or where continuing would discard work or publish something unreviewed.
 
 Prefer the package and its history, a genuinely comparable current package, eclass and upstream source, then official Gentoo documentation and gentoo.git.
 
@@ -20,8 +20,11 @@ Repository metadata is under `metadata/` and `profiles/`. CI is under `.github/`
 
 ## Task routing
 
-Reading order: this file; then `git-workflow.md` before the first edit; then `version-bumps.md` or `new-packages.md` for the change itself; then every surface file the change touches; then `pr-text.md` before committing. Each rule file opens with a `Read with` line naming what to read next from there. These files carry repository policy that used to sit in this one.
+Reading order: this file; then `git-workflow.md` before the first edit; for any ebuild change `ebuild-construction.md` and `dependencies.md`; then `version-bumps.md` or `new-packages.md` for the change itself; then every surface file the change touches; then `qa.md` before scanning and `pr-text.md` before committing. Each rule file opens with a `Read with` line naming what to read next from there. These files carry repository policy that used to sit in this one.
 
+- Writing or editing an ebuild: `.agents/rules/ebuild-construction.md`.
+- Dependency atoms, slots, subslots, revbumps: `.agents/rules/dependencies.md`.
+- Manifest, scanning, tests, QA notices, network results, reviewing: `.agents/rules/qa.md`.
 - Version bumps and keeping old versions: `.agents/rules/version-bumps.md`.
 - New packages, `virtual/`, `overlay.toml` entries: `.agents/rules/new-packages.md`.
 - Prebuilt or bundled binaries: `.agents/rules/prebuilt-binaries.md`.
@@ -30,9 +33,9 @@ Reading order: this file; then `git-workflow.md` before the first edit; then `ve
 - Kernel packages (`sys-kernel/*-sources`, `*-kernel`, `*-kernel-bin`, `virtual/dist-kernel-*`): `.agents/rules/kernels.md`.
 - Choosing or reading an eclass: `.agents/rules/eclass-discovery.md`.
 - Branch preflight, remotes, rebasing, pushing: `.agents/rules/git-workflow.md`.
-- Commit subject and body, PR title and body: `.agents/rules/pr-text.md`.
+- Commit subject and body, PR title and body, and writing style: `.agents/rules/pr-text.md`.
 
-Runnable steps and checks for bumps, new packages and reviews: the `gentoo-zh` skill from https://github.com/gentoo-zh/skills (`npx skills add gentoo-zh/skills -g`). It applies these rules and adds none.
+Runnable steps and checks for bumps, new packages and reviews: the `gentoo-zh` skill from https://github.com/gentoo-zh/skills (`npx skills add gentoo-zh/skills -g`). It applies these rules and adds none. When it is not installed, read `.agents/skills/gentoo-zh/references/checks.md` from that repository before the first edit and run the sections your change touches.
 
 ## Git Workflow
 
@@ -58,128 +61,10 @@ Every repository modification is PR-bound unless the current request explicitly 
 - For non-trivial work, use precedent matching the source or prebuilt model, build system, eclass stack, and runtime layout. Re-verify it against the current release.
 - Before writing the fix, find how `::gentoo` or this overlay already solves the same problem and take that form. A construct with no precedent in either tree needs a stated reason.
 - Search for that precedent instead of recalling it: `grep -rl '<eclass or construct>' "$(portageq get_repo_path / gentoo)" --include='*.ebuild'` shows who uses it today, and `git log -S'<construct>' -- '*.ebuild'` in gentoo.git shows why the tree adopted or dropped it.
-- Keep release and `9999` behavior distinct. Port applicable dependency, QA, EAPI, and phase fixes to the live ebuild.
-- A live ebuild must sort above every release the package has. `9999` is lower than a date version, so a package versioned `20240203` needs `99999999`; confirm with `python3 -c 'from portage.versions import vercmp; print(vercmp("9999", "20240203"))'` before naming the file.
-- Every `${FILESDIR}` reference must name a committed file.
-- If `PATCHES` coexists with a custom `src_prepare`, call `default` or apply the patches explicitly. `eapply_user` alone does not apply `PATCHES`.
-- Keep global scope metadata-invariant and side-effect-free. Do not run external programs, emit uncaptured output, modify system state, or depend on system, profile, repository, or phase data.
-- Do not use pipes, process substitution, heredocs, or herestrings there. Bash may back the latter two with temporary files that the metadata sandbox forbids.
-- Deterministic package-manager helpers and pure shell expansion are valid in global scope. Put work requiring declared build context in phases.
-- Declare external build and test inputs through `SRC_URI`/`Manifest` or an eclass vendor mechanism. Enforce offline operation without warm caches.
-- Each USE state must control every applicable option, dependency, source selection, and install cleanup consistently. Disable automagic.
-- When a package adds, removes, or renames a local USE flag, update its `metadata.xml` flag description in the same change.
-- Prune only what `src_install` would otherwise install. Deleting a path it never reaches is dead code, as is a branch that only removes files that USE state does not install.
-- `${ED}` already carries the offset; never append `${EPREFIX}` to it. `${D}` does not carry it. Use a bare `${EPREFIX}` only in installed content read at runtime, and only where that consumer runs under Prefix.
-- Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`. Separately, `LICENSE` must list the license of every component compiled or statically linked into installed files, not only the top-level project.
-- A license absent from `::gentoo` needs its full text in `licenses/` and `RESTRICT` set from its own distribution terms. One that forbids redistribution sets both `mirror`, which covers the distfile, and `bindist`, which covers what is built from it. Add it to `profiles/license_groups` when it belongs to one of those groups; a license that fits none stays ungrouped.
-- A backport records its upstream commit, PR, or bug URL and applicable and tested versions.
-- A security fix covers every still-keyworded vulnerable branch and relevant sibling or fork. Revbump when installed content or behavior changes.
-- A package move updates `profiles/updates` atomically with every affected reference.
 
-## Dependencies and Revisions
-
-- Every atom traces to evidence here: a linked SONAME, a build-file `dependency()`, `find_package`, or `pkg-config` call, a `dlopen`ed library, or a program a phase runs.
-- A launcher or `bwrap` script's external commands outside `@system` count as that evidence: find each command's provider with `qfile` on an installed system or by searching the repository. `xdg-user-dir` belongs to `x11-misc/xdg-user-dirs`, not `x11-misc/xdg-utils`.
-- Another distro's control file is not evidence.
-- Do not declare what the environment provides: `@system` members, tools an inherited eclass pulls in, or a compiler or libc floor the profile guarantees.
-- One atom per package: fold the version bound, `SLOT`, and USE constraints into a single entry.
-- Carry the build system's own version floors into the atom, and do not invent floors it does not state. Add an upper bound only for a verified incompatibility with no available fix.
-- Before adding a slot operator (`:=` or `:slot=`), check that the provider declares a subslot. Without one it binds `slot/slot`, so consumers rebuild when the slot changes but never on an ABI break inside it.
-- Revbump when a Gentoo-side change can alter an existing installation or runtime dependency decision.
-- That includes installed output or behavior, runtime dependencies, subslot binding, and default USE changes.
-- Also revbump for an affected non-free or soon-to-be-removed license and for a non-trivial EAPI change.
-- Skip the revbump when a descriptive, copyright, keyword, message, test, build-failure, or build-dependency-relaxation change cannot leave an installed result wrong.
-- In EAPI 8+, put host tools that must execute while the package is merged, such as post-install cache generators, in `IDEPEND`.
-- For a verified direct ABI consumer, put `:=` or `:slot=` on every `DEPEND` or `RDEPEND` atom that models that linkage. Never copy it to transitive dependencies.
-- Identical prebuilt bytes cannot adapt to a new ABI. Constrain verified provider slots or versions instead of assuming a reinstall fixes them.
-- `:=` and `:slot=` are invalid in `PDEPEND` and must stay outside `|| ( )`. Inside an any-of group, list only supported providers, preferred first.
-- Before adding or retaining any dependency or alternative provider, check removal entries in both this overlay's and the main Gentoo tree's `profiles/package.mask`.
-- When a package is removed or renamed, update dependency atoms plus `elog` and `optfeature` recommendation strings.
-- A provider subslot represents an ABI that requires consumer rebuilds. Re-check SONAMEs, private-header ABI, and library renames on every bump.
-- Never derive a sibling package version from `${PV}` without verifying that it exists and resolves.
-- Never replace a `files/` input still referenced by a surviving ebuild; give its replacement a version- or revision-specific name.
-
-## Code Style
-
-- Keep code concise. Prefer clear naming, established helpers, direct control flow, and simple structure over explanatory comments or complex shell code.
-- Implement logic near the relevant code rather than adding a separate script. Use functions only when they materially reduce local complexity or duplication.
-- Keep comments only when they explain non-obvious intent, constraints, trade-offs, or workarounds that the code cannot express and a future maintainer needs to preserve.
-- Do not add comments that restate eclass-documented variable assignments, configuration, declarations, option values, function calls, commands, or standard settings.
-- Do not add comments to justify QA suppressions, including `QA_PREBUILT` and `QA_SONAME`.
-- Preserve existing useful comments unless they are outdated or incorrect.
-
-## Commands and QA
-
-- `dev-util/pkgdev` and `dev-util/pkgcheck` are required. When either is missing, stop and tell the human to `emerge` them; do not substitute `git commit`, hand-written Manifests, or a custom lint. `dev-util/github-cli` is optional: without `gh`, hand the human the compare link and let them open the PR.
-- Before treating a finding as yours, read the package's history, the previous version's result, and the pkgcheck bot's report on the PR. A finding that predates your change is pre-existing, and the completion report says so.
-- `ebuild <file> install` resolves no dependencies, so it cannot show a missing `BDEPEND`. A `fowners` to an `acct-user` in `src_install` needs that package in `BDEPEND` and in `RDEPEND`, as `acct-user.eclass` documents.
-- Iterate with the narrowest relevant package checks, and re-run the command exposing each failure.
-- Do not repeat a check that already passed on the same tree: no rebuilding what already built clean, no rerunning a scan that already passed. A rebase or a new commit makes a previous commit scan stale, and this never excuses a gate the Ebuild Policy requires.
-
-### Manifest
-
-- Run `pkgdev manifest` when distfiles change. Pass `--distdir <writable-dir>` if the system `DISTDIR` is not user-writable.
-- Before the first download of a package payload in a work item, whether a distfile, a vendor bundle, or a release asset, report the URL and the size upstream states, and wait for approval.
-
-### Scanning
-
-- Before the PR, complete required clean installs.
-- After those installs pass, scope the commit scan to this branch with an explicit merge-base range. A bare `--commits` compares against whatever `origin` points at, which need not be the base you branched from.
-
-  ```bash
-  pkgcheck scan --git-remote <canonical> --commits="$(git merge-base <canonical>/master HEAD)..HEAD" --net
-  ```
-
-- The range selects the targets. `--git-remote` sets the canonical source for the commit-only checks.
-- If cross-package noise still remains, confirm your own change with a package-scoped `pkgcheck scan <category>/<package> --net`. That is ground truth, but does not replace the commit scan.
-
-### Tests
-
-- Exercise every USE state affected by the change. Run upstream tests with `FEATURES=test` where available.
-- Tests use the build tree, not an installed or system copy. Gate and declare test-only inputs, dependencies, and resources.
-- Preserve the largest reliable subset and skip individual failures with reasons. Use `RESTRICT=test` only after proving no reliable subset can be retained, and record why.
-- Use conditional `PROPERTIES="test? ( test_network )"` only with `IUSE=test`; otherwise use `PROPERTIES="test_network"`.
-
-### QA notices
-
-- The pkgcheck bot's report on the PR names the commit and packages it scanned and the status; read it instead of guessing what CI saw.
-- Fix genuine QA defects at the root cause.
-- Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk. Before calling an emerge-on-PR elog notice benign, reproduce the exact condition that produced it, such as a `CONFIG_CHECK` warning with no kernel sources in the container or a foreign-ABI ELF skipped under `ABI_X86=64`; do not maintain a list of ignorable notices.
-- Never rewrite working behavior merely to silence a checker.
-
-### Network results
-
-- GitHub rate limits can cause false `DeadUrl` or `RedirectedUrl` results; re-verify flagged URLs.
-- A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second vantage point, such as another mirror or a fetch through a different route, before calling a URL dead.
-- CI's `pkgcheck` runs without `--net`, so no network keyword fires there.
-- A dead `HOMEPAGE` does not block installation. A dead overlay `SRC_URI` is unfetchable because overlay distfiles are not mirrored on `distfiles.gentoo.org`.
-
-### Reviewing the change
-
-- Review the staged diff and diffstat. Reject unrelated hunks, debug output, missing `files/` assets, or unintended `Manifest` entries.
-- Verify patches, substitutions, generators, and manual or glob installs against the intended release source and final files, modes, and license notices—not command exit status alone.
-
-### Stopping
+## Stopping
 
 - Stop after at most three attempts, or after the same failure repeats twice. Report the failed phase and attempts before asking how to continue.
-
-## Writing
-
-Use one standard for commit messages, PRs, comments, notes, and replies: precise, plain, and short.
-
-- Name concrete variables, phases, USE flags, `FEATURES`, eclasses, and commands, not a vague paraphrase or adjective. Use current Gentoo terminology.
-- Avoid colloquial wording, needless language mixing, unsupported absolutes, marketing, and filler.
-- Name a thing by its ecosystem's term or concrete behavior, never an ad-hoc coinage.
-- State a reason as an explicit because/so (因为…所以…) cause and effect. Never a vague linker like "correspondingly"/相应.
-- A reason is not a restatement of `name = value` metadata.
-- Chinese may use Traditional or Simplified characters. Use standard Mandarin wording readily understood across regions; avoid region-specific terms.
-- Do not set off Chinese words with full-width brackets (`「」`, `『』`); state the term plainly and use backticks only for code and literal values.
-- Write each language natively: professional but plainly worded, fluent, and causal. Stilted phrasing usually comes from translating the other language word for word—avoid it.
-
-| Reads naturally | Does not |
-| --- | --- |
-| 原生可执行文件移到各平台子包 | 拆成薄 loader |
-| 因为上游变更了 Go 模块路径，所以 `-ldflags` 中的导入路径需同步更新，否则注入的版本号不正确 | module 改名，相应更新 ldflags |
 
 ## Completion Report
 

@@ -1,6 +1,6 @@
 ## OpenRC and systemd
 
-Read with: `AGENTS.md` § Dependencies and Revisions for the revbump a changed unit or script needs; `new-packages.md` or `version-bumps.md` for the change itself.
+Read with: `dependencies.md` for the revbump a changed unit or script needs; `new-packages.md` or `version-bumps.md` for the change itself.
 
 - On OpenRC, depend on `virtual/udev` or `virtual/tmpfiles` for those helpers. Neither provider ships `systemctl` or a service manager.
 - Depend on `sys-apps/systemd` only for what `systemd-utils` does not ship, such as `systemctl` or `libsystemd`.
