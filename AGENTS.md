@@ -101,7 +101,7 @@ Treat `master` only as an upstream-sync branch.
 - When a package adds, removes, or renames a local USE flag, update its `metadata.xml` flag description in the same change.
 - Prune only what `src_install` would otherwise install. Deleting a path it never reaches is dead code, as is a branch that only removes files that USE state does not install.
 - `${ED}` already carries the offset; never append `${EPREFIX}` to it. `${D}` does not carry it. Use a bare `${EPREFIX}` only in installed content read at runtime, and only where that consumer runs under Prefix.
-- Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`.
+- Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`. Separately, `LICENSE` must list the license of every component compiled or statically linked into installed files, not only the top-level project.
 - A license absent from `::gentoo` needs its full text in `licenses/` and `RESTRICT` set from its own distribution terms. One that forbids redistribution sets both `mirror`, which covers the distfile, and `bindist`, which covers what is built from it. Add it to `profiles/license_groups` when it belongs to one of those groups; a license that fits none stays ungrouped.
 - A backport records its upstream commit, PR, or bug URL and applicable and tested versions.
 - A security fix covers every still-keyworded vulnerable branch and relevant sibling or fork. Revbump when installed content or behavior changes.
@@ -175,12 +175,13 @@ Treat `master` only as an upstream-sync branch.
 
 - The pkgcheck bot's report on the PR names the commit and packages it scanned and the status; read it instead of guessing what CI saw.
 - Fix genuine QA defects at the root cause.
-- Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk.
+- Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk. Before calling an emerge-on-PR elog notice benign, reproduce the exact condition that produced it, such as a `CONFIG_CHECK` warning with no kernel sources in the container or a foreign-ABI ELF skipped under `ABI_X86=64`; do not maintain a list of ignorable notices.
 - Never rewrite working behavior merely to silence a checker.
 
 ### Network results
 
 - GitHub rate limits can cause false `DeadUrl` or `RedirectedUrl` results; re-verify flagged URLs.
+- For `GIT_CRATES`, retain the exact `Cargo.lock` URL as required by `.agents/rules/eclass-discovery.md`; changing it to silence `RedirectedUrl` breaks cargo's offline source matching.
 - A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second vantage point, such as another mirror or a fetch through a different route, before calling a URL dead.
 - CI's `pkgcheck` runs without `--net`, so no network keyword fires there.
 - A dead `HOMEPAGE` does not block installation. A dead overlay `SRC_URI` is unfetchable because overlay distfiles are not mirrored on `distfiles.gentoo.org`.

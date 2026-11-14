@@ -2,7 +2,7 @@
 
 Read with: `pr-text.md` before committing; `prebuilt-binaries.md` when the package installs a prebuilt payload; `kernels.md` for a kernel package; `openrc-systemd.md` when a unit or init script changes; `desktop-integration.md` when a desktop file or launcher changes; `eclass-discovery.md` when the bump changes EAPI or an eclass.
 
-- Compare existing ebuilds and history with upstream notes and build metadata for dependency, toolchain, option, license, layout, and installed-file changes.
+- Compare existing ebuilds and history with upstream notes and build metadata for dependency, toolchain, option, license, layout, and installed-file changes. On every bump, re-check bundled or vendored components, including static libraries, amalgamations such as `sqlite3.c`, and header-only copies, and update `LICENSE` to match.
 - The `go.mod` `go` directive and `Cargo.toml` `rust-version` are real minimum versions, and no eclass reads them for you.
 - When one exceeds what the profile toolchain guarantees, raise the matching `>=dev-lang/go` `BDEPEND` or `RUST_MIN_VER`.
 - If the raised floor is not yet in the tree, hand over the compare link stating the PR must be opened as a draft.
@@ -12,6 +12,7 @@ Read with: `pr-text.md` before committing; `prebuilt-binaries.md` when the packa
 - A GitHub tag archive has no `.git`, so a build that derives its version with `git describe` fails or gets no usable version. Pass the version explicitly, as `sys-kernel/mkinitcpio` does for `meson.build`.
 - A `files/` copy of an upstream hook, unit, or script drifts. On every bump diff it against upstream's current file; `mkinitcpio`'s copied base hook installed `/init` without the executable bit until someone booted the image.
 - When the `::gentoo` snapshot emerge-on-PR uses does not yet carry a version the change depends on, keep the atom, open the PR as a draft, and rerun CI once that snapshot carries it.
+- For a library bump, compare the new release's dependency minimums with versions available in this overlay and `::gentoo`, and check in-overlay reverse dependencies. Because emerge-on-PR neither runs the package nor rebuilds its consumers, a passing install can leave an unmet minimum undetected.
 - When a bump exposes a defect, fix it in the existing ebuild and change only what the new release invalidates. Rewrite it only when the release leaves it unusable, and say what made it so.
 - Normalize the ebuild version by Gentoo rules. Preserve the literal upstream tag through `MY_PV` or an equivalent variable when needed.
 - Tracker output is only a hint: verify the real tag, artifact, and URL. `-rN` is a Gentoo revision; never derive upstream tags or filenames from `${PVR}` or `${PF}`.
