@@ -32,6 +32,8 @@ Reading order: this file; then `git-workflow.md` before the first edit; then `ve
 - Branch preflight, remotes, rebasing, pushing: `.agents/rules/git-workflow.md`.
 - Commit subject and body, PR title and body: `.agents/rules/pr-text.md`.
 
+Runnable steps and checks for bumps, new packages and reviews: the `gentoo-zh` skill from https://github.com/gentoo-zh/skills (`npx skills add gentoo-zh/skills -g`). It applies these rules and adds none.
+
 ## Git Workflow
 
 Every repository modification is PR-bound unless the current request explicitly says otherwise. Read-only inspection is exempt. Before the first edit, complete the preflight in `.agents/rules/git-workflow.md`, which also covers remotes, rebasing, and pushing.
