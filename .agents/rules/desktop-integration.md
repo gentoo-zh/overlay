@@ -2,9 +2,7 @@
 
 Read with: `prebuilt-binaries.md` when the application ships prebuilt; `dependencies.md` for the revbump a changed desktop file or icon needs.
 
-- A window gets a default icon when its Wayland `app_id` or X11 `WM_CLASS` matches no installed desktop file's basename.
-- Measure that `app_id` or `WM_CLASS` on a running instance; KWin reports it through `workspace.windowList()`. Then rename the file or add `StartupWMClass`.
-- Toolkits derive it differently: GTK3 sends `g_get_prgname()`, not the `GApplication` id, so `org.example.App.desktop` still reports `app`.
-- `--ozone-platform-hint=auto` and `--ozone-platform=wayland` are not interchangeable, and either can be the one that fails. Before changing an ozone switch, launch both ways and check which platform the build took.
-- A bundled Chromium silently ignores switches its version predates; confirm each one exists in the shipped binary.
-- `wayland` is a desktop-profile default, so a `wayland?`-guarded switch also reaches X11 users. Prefer a switch that resolves the platform at runtime over one that forces it.
+- Match the installed desktop basename to the measured Wayland `app_id` or X11 `WM_CLASS`, or add `StartupWMClass`; an unmatched window gets a default icon. Measure a running instance, using KWin's `workspace.windowList()` where available.
+- GTK3 uses `g_get_prgname()` for this identity rather than the `GApplication` id: `org.example.App.desktop` can report `app`.
+- Before changing ozone flags, launch with both `--ozone-platform-hint=auto` and `--ozone-platform=wayland` and verify the selected platform; either can fail. Confirm every switch exists in the bundled Chromium version, which silently ignores newer switches.
+- Because desktop profiles enable `wayland` by default, a `wayland?` switch reaches X11 users too. Prefer runtime platform selection.

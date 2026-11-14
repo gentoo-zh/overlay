@@ -2,29 +2,27 @@
 
 Read with: `AGENTS.md` § Ebuild Policy for install, keyword and precedent gates; `dependencies.md` for atoms and revbumps.
 
-- Keep release and `9999` behavior distinct. Port applicable dependency, QA, EAPI, and phase fixes to the live ebuild.
-- A live ebuild must sort above every release the package has. `9999` is lower than a date version, so a package versioned `20240203` needs `99999999`; confirm with `python3 -c 'from portage.versions import vercmp; print(vercmp("9999", "20240203"))'` before naming the file.
-- Every `${FILESDIR}` reference must name a committed file.
-- If `PATCHES` coexists with a custom `src_prepare`, call `default` or apply the patches explicitly. `eapply_user` alone does not apply `PATCHES`.
-- Keep global scope metadata-invariant and side-effect-free. Do not run external programs, emit uncaptured output, modify system state, or depend on system, profile, repository, or phase data.
-- Do not use pipes, process substitution, heredocs, or herestrings there. Bash may back the latter two with temporary files that the metadata sandbox forbids.
-- Deterministic package-manager helpers and pure shell expansion are valid in global scope. Put work requiring declared build context in phases.
-- Declare external build and test inputs through `SRC_URI`/`Manifest` or an eclass vendor mechanism. Enforce offline operation without warm caches.
-- Each USE state must control every applicable option, dependency, source selection, and install cleanup consistently. Disable automagic.
-- When a package adds, removes, or renames a local USE flag, update its `metadata.xml` flag description in the same change.
-- Prune only what `src_install` would otherwise install. Deleting a path it never reaches is dead code, as is a branch that only removes files that USE state does not install.
-- `${ED}` already carries the offset; never append `${EPREFIX}` to it. `${D}` does not carry it. Use a bare `${EPREFIX}` only in installed content read at runtime, and only where that consumer runs under Prefix.
-- Verify package and bundled-component licenses, Gentoo license names, and redistribution terms; they determine `RESTRICT=mirror` or `bindist`. Separately, `LICENSE` must list the license of every component compiled or statically linked into installed files, not only the top-level project.
-- A license absent from `::gentoo` needs its full text in `licenses/` and `RESTRICT` set from its own distribution terms. One that forbids redistribution sets both `mirror`, which covers the distfile, and `bindist`, which covers what is built from it. Add it to `profiles/license_groups` when it belongs to one of those groups; a license that fits none stays ungrouped.
-- A backport records its upstream commit, PR, or bug URL and applicable and tested versions.
-- A security fix covers every still-keyworded vulnerable branch and relevant sibling or fork. Revbump when installed content or behavior changes.
-- A package move updates `profiles/updates` atomically with every affected reference.
+- Prefer the package and its history, a comparable current package, eclass and upstream source, then official Gentoo documentation and gentoo.git. Never substitute memory or superficial similarity for evidence.
+- Preserve package-local style and user/toolchain flags. Keep patches and refactors narrow; remove forced optimization, hardening, LTO, stripping, and blanket `-Werror`. Go builds leave stripping and debug splitting to Portage: `-ldflags` carries no `-s` or `-w`, and keeps its `-X` flags.
+- Keep release and live behavior distinct; port applicable dependency, QA, EAPI, and phase fixes to the live ebuild.
+- A live version sorts above every release: date-versioned `20240203` needs `99999999`, because `9999` sorts lower. Verify ordering with Portage's `vercmp` before naming it.
+- Every `${FILESDIR}` reference names a committed file.
+- With `PATCHES` and custom `src_prepare`, call `default` or apply patches explicitly; `eapply_user` handles user patches only.
+- Global scope is metadata-invariant and side-effect-free: deterministic package-manager helpers and pure shell expansion only. External programs, uncaptured output, state changes, system/profile/repository/phase-dependent work, pipes, process substitution, heredocs, and herestrings belong in phases. Bash can back heredocs and herestrings with files forbidden by the metadata sandbox.
+- Declare external build/test inputs through `SRC_URI`/`Manifest` or an eclass vendor mechanism. Operation stays offline with cold caches.
+- Each USE state controls its options, dependencies, sources, and install cleanup consistently; disable automagic. Update `metadata.xml` descriptions when adding, removing, or renaming local USE flags.
+- Prune only paths the selected USE state would install through `src_install`; remove unreachable cleanup.
+- `${ED}` includes the Prefix offset; `${D}` excludes it. Use bare `${EPREFIX}` only in installed runtime content whose consumer runs under Prefix.
+- Verify package and bundled-component licenses, Gentoo license names, and redistribution terms. Set `RESTRICT=mirror`/`bindist` from those terms; `LICENSE` includes every component compiled or statically linked into installed files.
+- For licenses absent from `::gentoo`, add full text under `licenses/` and apply their distribution terms. A redistribution ban requires both `mirror` for distfiles and `bindist` for built output. Add fitting licenses to `profiles/license_groups`; leave others ungrouped.
+- Backports record the upstream commit, PR, or bug URL and applicable/tested versions.
+- Security fixes cover every still-keyworded vulnerable branch and relevant sibling or fork; apply `dependencies.md` for revbumps.
+- Package moves update `profiles/updates` and all affected references atomically.
 
 ### Code Style
 
-- Keep code concise. Prefer clear naming, established helpers, direct control flow, and simple structure over explanatory comments or complex shell code.
-- Implement logic near the relevant code rather than adding a separate script. Use functions only when they materially reduce local complexity or duplication.
-- Keep comments only when they explain non-obvious intent, constraints, trade-offs, or workarounds that the code cannot express and a future maintainer needs to preserve.
-- Do not add comments that restate eclass-documented variable assignments, configuration, declarations, option values, function calls, commands, or standard settings.
-- Do not add comments to justify QA suppressions, including `QA_PREBUILT` and `QA_SONAME`.
-- Preserve existing useful comments unless they are outdated or incorrect.
+- Prefer concise code, clear names, established helpers, direct control flow, and simple structure. Keep logic near its use; functions justify their cost by reducing complexity or duplication.
+- Keep useful, accurate comments explaining non-obvious intent, constraints, trade-offs, or workarounds a maintainer must preserve. Code and eclass documentation carry ordinary assignments, configuration, declarations, options, calls, commands, and standard settings. Record QA-suppression rationale in review text, outside code comments.
+- Cargo ebuilds installing ELF binaries set `QA_FLAGS_IGNORED` for those binaries; recheck when a bump adds one. Go ebuilds use go-module.eclass's existing `QA_FLAGS_IGNORED='.*'`.
+- Gate ISA-dependent binaries with `REQUIRED_USE="amd64? ( cpu_flags_x86_* )"` following `::gentoo` precedent. Retain the gate when baseline CI cannot satisfy it; CI gives the target package the runner's CPU flags.
+- Follow `skel.ebuild` variable order: `DESCRIPTION`, `HOMEPAGE`, `SRC_URI`, `S`, `LICENSE`, `SLOT`, `KEYWORDS`, `IUSE`, `REQUIRED_USE`, `RESTRICT`, then dependencies. Reordering alone needs no revbump.

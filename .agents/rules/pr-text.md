@@ -4,120 +4,79 @@ Read with: `git-workflow.md` for branch, rebase, and push; `version-bumps.md` §
 
 ### Subject
 
-- Take `pkgdev`'s final English subject verbatim as the PR title. Never translate or reword it.
-- Where a PR carries more than one commit, use the subject of the commit carrying its main change.
-- A package subject is `category/package: summary`. A bump is `category/package: add NEW`, with `, drop OLD` only when dropping.
-- A package's first commit is `category/package: new package, add NEW`. Later versions of it drop the `new package` clause.
-- A non-package change instead names an eclass (`name.eclass:`) or the affected path or filename—`profiles:`, `licenses:`, `package.mask:`, this overlay's own `AGENTS.md:`—whatever lets a reader identify what changed.
-- The subject is one unwrapped line, at most 69 characters (GLEP 66) where the prefix permits.
+- Use pkgdev's final English subject verbatim as PR title; for multiple commits, choose the main change's subject.
+- Use `category/package: summary`; bumps use `category/package: add NEW`, adding `, drop OLD` only when dropping. First package commits use `category/package: new package, add NEW`; later versions omit `new package`.
+
+```text
+category/package: new package, add NEW
+category/package: add NEW
+category/package: add NEW, drop OLD
+```
+
+- Prefix non-package subjects with the affected eclass/path/file, e.g. `name.eclass:`, `profiles:`, `licenses:`, `package.mask:`, or `AGENTS.md:`. Keep one unwrapped line, at most 69 characters where the prefix permits (GLEP 66).
 
 ### Commit body
 
-- Add a body only when the subject cannot carry the reason; use subject / blank line / body.
-- The commit body carries only the reason. Do not narrate steps, restate the diff, or report a passing build, test, or scan.
-- Do not lecture on a mechanism a Gentoo reviewer already knows; link the upstream source instead.
-- The subject already carries the package, version, and add/drop. The body repeats none of them and states each value once.
-- Do not open the body by restating the title (no `更新到 <version>` line).
-- Give each changed dependency, phase function, patch, USE flag, `RESTRICT`, or revbump its own line, applying the causality rule in § Writing below.
-- Do not invent causality the evidence lacks, or fold an unrelated fact into a parenthetical.
-- For a large rewrite or upstream restructure, name the rewritten scope instead of enumerating per change. Add a line only for an unexpected behavioral shift.
-- When upstream drove that rewrite, give one line in the form 因为上游修改了 X，所以重写 Y.
-- Put variables, atoms, commands, options, and `FEATURES` values in backticks.
+- Add a body only for rationale the subject cannot carry, separated by a blank line. State each value once; keep package/version/add-drop in the subject and routine passing results in the completion report. Do not open the body by restating the subject (no `更新到 <version>` line). Link upstream evidence for mechanisms Gentoo reviewers already know.
+- Give each changed dependency, phase, patch, USE flag, `RESTRICT`, or revbump its own evidence-backed causal line per § Writing. Keep unrelated facts separate.
+- For large rewrites or upstream restructuring, name the rewritten scope and its cause in one line; add lines only for unexpected behavior changes.
 
 ### PR body
 
-- Write the PR body in Chinese when the human directing the current work item writes in Chinese; otherwise use English. Never use both languages.
-- The PR body carries the same rationale as the commit body.
-- Do not report passing tests or which arches were tested; the checklist and CI attest those. A test earns a mention only when it forced a change.
-- A routine or behavior-neutral change needs only `Closes #N` when it closes an overlay issue.
+- Use Chinese when the directing human writes in Chinese; otherwise English. Keep one language and the commit body's rationale.
+- Keep the reason paragraph to rationale; mention tests there only when they forced a change. Record actual execution per § Opening the PR.
+- For a routine or behavior-neutral change closing an overlay issue, use `Closes #N` followed by the template.
+
+Illustrative completed templates: a routine bump, then two dependency changes. These examples assume the explicit-range scan and stated checks passed.
+
+```text
+因为上游修复了启动失败，所以更新版本。
+
+Closes #N
+
+Tested: amd64 OpenRC 和 systemd：`emerge` 安装；启动一次。
+
+- [x] `pkgcheck scan --commits=<merge-base>..HEAD --net` is clean, or the PR changes no ebuild
+- [x] AI-assisted work, if any, follows AGENTS.md and I tested its output
+```
+
+```text
+因为程序通过 `dlopen` 加载 libcurl，所以增加 `net-misc/curl` 运行依赖。
+因为程序直接链接 libfmt，所以使用 `dev-libs/libfmt:=`，使 subslot 变化触发重建。
+
+Closes #N
+
+Tested: amd64 OpenRC：`emerge` 安装；启动一次。
+
+- [x] `pkgcheck scan --commits=<merge-base>..HEAD --net` is clean, or the PR changes no ebuild
+- [x] AI-assisted work, if any, follows AGENTS.md and I tested its output
+```
 
 ### Issue references and trailers
 
-- Keep overlay GitHub issues as bare `Closes #N` in the PR body; never pass their number or URL to `pkgdev commit -b/--bug` or `-c/--closes`, or rewrite them as Gentoo Bugzilla URLs.
-- For those `pkgdev` options, a bare number means a Gentoo Bugzilla ID; a non-numeric value requires a full HTTP(S) URL. `FIXED`, `OBSOLETE`, and `PKGREMOVED` apply only to Gentoo Bugzilla bugs.
-- Let `pkgdev` generate trailers. Sign off with the contributor's real identity and email, never a GitHub noreply address such as `<id>+<user>@users.noreply.github.com`.
-- Do not add AI, generated-by, or `Co-Authored-By` attribution.
+- Place overlay issues as bare `Closes #N` on a separate line after the reason in the PR body. Never pass an overlay issue number or URL to `pkgdev commit -b/--bug` or `-c/--closes`, or rewrite it as a Bugzilla URL. For those options, bare numbers denote Gentoo Bugzilla; non-numeric values require full HTTP(S) URLs. `FIXED`, `OBSOLETE`, and `PKGREMOVED` apply only to Gentoo Bugzilla.
+- Let pkgdev generate trailers. Sign off with the contributor's real identity and email, excluding GitHub noreply addresses. Attribution is human-only, without AI, generated-by, or `Co-Authored-By` additions.
 
 ### Commits
 
-- Land each logical change as one clean squashed commit. In a multi-package PR that means one commit per package, never two packages combined.
-- Every commit stands alone and leaves the tree installable: keep an ebuild with its `Manifest`, `metadata.xml`, and any new `licenses/`, `files/`, or eclass it references in that same commit.
-- In a multi-commit PR, order commits so a shared prerequisite lands in or before the first commit that uses it: a new license, eclass, or depended-on package.
-- Commit with `pkgdev commit --scan false --signoff --gpg-sign`; if GPG is unavailable, omit `--gpg-sign`. Never use raw `git commit`.
+- Squash each logical change into one clean commit; multi-package PRs use one commit per package, except that `kernels.md` lands one kernel version's source, binary, and virtual in one commit.
+- Each commit leaves the tree installable: include its ebuild, `metadata.xml`, and referenced new `licenses/`, `files/`, or eclasses. Apply `AGENTS.md` § Git Workflow for the Manifest. Shared prerequisites land in or before their first consumer commit.
+- Never substitute `git commit` for pkgdev; use `pkgdev commit --scan false --signoff --gpg-sign`, omitting `--gpg-sign` if GPG is unavailable.
 
 ### Opening the PR
 
-- Keep the PR template: put the description above its marker, leave the checklist intact, and tick only checks that ran.
-- Before opening or updating a PR (`gh pr create`/`gh pr edit`), show the human the exact title, body, and files, and get confirmation for that specific PR.
-- A blanket or batch go-ahead is not per-PR confirmation, drafts included.
-- Open the PR yourself only for a routine bump: an ebuild rename plus `pkgdev manifest`, or a version variable such as a build id, with nothing else changed.
-- Any other change stops at the fork. Push the topic branch, hand the human the drafted subject and body with its compare link against `<canonical>/master`, and let them open the PR.
-
-  ```text
-  https://github.com/gentoo-zh/overlay/compare/master...<fork-owner>:<fork-repo>:<branch>
-  ```
-
-- Watch CI and fix failures from their logs rather than guessing.
-
-Non-version-bump commit example:
-
-```text
-category/package: short description
-
-Essential reason, only when the subject cannot carry it.
-Reference related bugs or issues when relevant.
-```
-
-Version-bump subjects (choose one):
-
-```text
-category/package: new package, add new_version
-```
-
-```text
-category/package: add new_version
-```
-
-```text
-category/package: add new_version, drop old_version
-```
-
-PR body examples—a routine bump, a single change, one change with two reasons, then several changes:
-
-```text
-Closes #<issue>
-```
-
-```text
-在 `RDEPEND` 中增加 `dev-libs/libfoo`，因为已安装的文件需要 `libfoo.so`。Closes #<issue>
-```
-
-```text
-因为测试会导入 `media-sound/feeluown`，但将它加入测试依赖会造成循环依赖；测试还需联网访问 YouTube Music API，无法在 `FEATURES=network-sandbox` 下运行，所以增加 `RESTRICT=test`。Closes #<issue>
-```
-
-```text
-上游 `FindLibCURL.cmake` 会在构建时通过 `FetchContent` 下载固定版本的 curl 头文件。Closes #<issue>
-
-1. 因为该下载会被 `FEATURES=network-sandbox` 阻止，所以改为离线提供：在 `SRC_URI` 加入该版本的 curl 头文件包，并通过 `-DFETCHCONTENT_SOURCE_DIR_LIBCURLHEADERS` 指向解包目录。
-2. 因为程序运行时通过 `dlopen` 加载 libcurl，所以 `RDEPEND` 增加 `net-misc/curl`。
-3. 因为程序直接链接 libfmt，所以将依赖改为 `dev-libs/libfmt:=`，使当前包在 libfmt 的 subslot 变化时重新构建。
-```
+- Replace the first template comment with the reason. Fill `Tested:` with the actual emerge, profiles/arches, and smoke test, or `not run: reason`. Keep both checkboxes and tick each only when its statement is true for this PR. Tick pkgcheck only after the explicit-range commit scan in `qa.md` passes, or when no ebuild changed.
+- Before `gh pr create`/`gh pr edit`, show the exact title, body, and files and obtain confirmation for that specific PR, including drafts. Batch authorization requires per-PR confirmation.
+- Open only routine bumps yourself: ebuild rename plus `pkgdev manifest`, or a version variable such as a build id, with no other change. For other changes, push the fork topic branch and hand over the drafted subject/body and canonical compare link for the human to open.
+  `https://github.com/gentoo-zh/overlay/compare/master...<fork-owner>:<fork-repo>:<branch>`
+- Watch CI and fix failures using its logs.
 
 ## Writing
 
-Use one standard for commit messages, PRs, comments, notes, and replies: precise, plain, and short.
+Use precise, plain, short prose for commits, PRs, comments, notes, and replies.
 
-- Name concrete variables, phases, USE flags, `FEATURES`, eclasses, and commands, not a vague paraphrase or adjective. Use current Gentoo terminology.
-- Avoid colloquial wording, needless language mixing, unsupported absolutes, marketing, and filler.
-- Name a thing by its ecosystem's term or concrete behavior, never an ad-hoc coinage.
-- State a reason as an explicit because/so (因为…所以…) cause and effect. Never a vague linker like "correspondingly"/相应.
-- A reason is not a restatement of `name = value` metadata.
-- Chinese may use Traditional or Simplified characters. Use standard Mandarin wording readily understood across regions; avoid region-specific terms.
-- Do not set off Chinese words with full-width brackets (`「」`, `『』`); state the term plainly and use backticks only for code and literal values.
-- Write each language natively: professional but plainly worded, fluent, and causal. Stilted phrasing usually comes from translating the other language word for word—avoid it.
-
-| Reads naturally | Does not |
-| --- | --- |
-| 原生可执行文件移到各平台子包 | 拆成薄 loader |
-| 因为上游变更了 Go 模块路径，所以 `-ldflags` 中的导入路径需同步更新，否则注入的版本号不正确 | module 改名，相应更新 ldflags |
+- Name concrete variables, phases, USE flags, `FEATURES`, eclasses, and commands. Use established technical terms and concrete behavior. Keep wording professional and factual; mix languages only where necessary; back absolute claims with evidence. Never coin an ad-hoc term.
+- State evidence-backed cause and effect explicitly with because/so (因为…所以…), never a vague linker such as correspondingly/相应. Explain the reason beyond metadata values.
+- Chinese may be Traditional or Simplified; use standard Mandarin understood across regions. Write ordinary words plainly and each language natively, professionally, and fluently.
+- Do not set off Chinese words with full-width brackets (`「」`, `『』`).
+- Put variables, atoms, commands, options, `FEATURES`, and other code/literal values in backticks.

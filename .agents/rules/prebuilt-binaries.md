@@ -1,20 +1,18 @@
 ## Bundled and Prebuilt Binaries
 
-Read with: `version-bumps.md` or `new-packages.md` for the change itself; `desktop-integration.md` for a desktop application; `openrc-systemd.md` for a service; `kernels.md` for a `-kernel-bin`.
+Read with: `version-bumps.md` or `new-packages.md` for the change; `dependencies.md` for linkage evidence; `desktop-integration.md` for desktop apps; `openrc-systemd.md` for services; `kernels.md` for `-kernel-bin`.
 
-- For each upstream binary artifact, whitelist only shipped arches (for example `KEYWORDS="-* ~amd64 ~arm64"`) and use per-arch `SRC_URI`. Do not keyword or reference unpublished artifacts.
-- Set `RESTRICT` from verified stripping and redistribution needs; `strip` and `splitdebug` are distinct.
-- `QA_PREBUILT` suppresses broad checks, including DT_NEEDED, executable-stack, textrel/W+X, flags, pre-stripped files, and SONAME.
-- Use `QA_PREBUILT` only for manually reviewed, immutable upstream blobs, scoped to exact installed paths. `RESTRICT=strip`, not `QA_PREBUILT`, prevents stripping.
-- Audit every installed object: ELF class and machine, interpreter, `NEEDED`, SONAME, RPATH, installed path, required libc/libstdc++ symbol floors, and CPU ISA baseline. Inspect each arch's archive layout and `NEEDED` separately because builds of one release can differ, including linking OpenSSL on only one arch.
-- Smoke-test amd64. If upstream ships an `arm64` artifact for the same release, add `~arm64` untested. Record the unverified arch in the completion report and fix arch-specific problems on report.
-- Depend only on what blobs actually link or invoke.
-- Set each arch's glibc floor in `RDEPEND` as `>=sys-libs/glibc-X`, using the highest `GLIBC_` symbol version from `objdump -T` on that arch's binaries. A static-PIE binary has no `GLIBC_` symbols and needs no floor. Do not use `REQUIRED_USE="elibc_glibc"` because pkgcheck reports error-level `RequiredUseUnsatisfiableInDev` on musl profiles, failing CI for a new package.
-- An unresolved `NEEDED` entry is a runtime defect even when QA is suppressed. Resolve it through a verified bundled layout or genuine system `RDEPEND`; never suppress it.
-- A private module may legitimately lack SONAME, but every unusual RPATH needs object-specific justification.
-- For source-built objects, fix the build, link, and install system first. Use `patchelf` only as an evidence-backed fallback and add it to `BDEPEND`.
-- A retained private blob may use a verified literal `'$ORIGIN/...'` RPATH.
-- Replace a bundled component with a system one only after verifying ABI, functionality, and launcher or configuration integration; otherwise stop.
-- `REQUIRES_EXCLUDE` only filters the generated `REQUIRES`; it does not make a file loadable. Use it for a `NEEDED` that the unresolved-soname QA reports as a false positive: the provider in `RDEPEND` installs the requested filename under a different SONAME (`libbz2.so.1.0` from `app-arch/bzip2`), or the entry belongs to an optional plugin the program never loads without its provider. Otherwise fix the dependency or the layout; do not patch the binary to hide it.
-- A program that checks its own hash at runtime breaks when stripped. Exclude that file with `dostrip -x <path>`, as `net-proxy/flclash-bin` does; do not set `RESTRICT=strip` for the package.
-- A prebuilt .NET payload built with `dotnet-pkg-base` needs `DOTNET_PKG_COMPAT` matching the framework its `*.runtimeconfig.json` names; `games-server/vintagestory-server` installed and then failed to start on a mismatch.
+- Whitelist published artifact arches, e.g. `KEYWORDS="-* ~amd64 ~arm64"`, with per-arch `SRC_URI`. Never keyword or reference an unpublished artifact.
+- Set `RESTRICT` from verified stripping and redistribution needs; `strip` and `splitdebug` differ.
+- Scope `QA_PREBUILT` to exact installed paths of manually reviewed, immutable blobs. It suppresses DT_NEEDED, executable-stack, textrel/W+X, flags, pre-stripped-file, and SONAME checks; `RESTRICT=strip` controls stripping.
+- Audit each installed object's ELF class/machine, interpreter, `NEEDED`, SONAME, RPATH, installed path, libc/libstdc++ floors, and CPU ISA baseline. Inspect every arch's archive layout and linkage separately; same-release builds may differ, including OpenSSL linkage.
+- Smoke-test amd64. Add untested `~arm64` when upstream ships that release's arm64 artifact; report it unverified and fix arch-specific problems on report.
+- Apply `dependencies.md` for evidence-backed dependencies and immutable-byte ABI constraints.
+- Set per-arch `RDEPEND` glibc floors as `>=sys-libs/glibc-X` from the highest binary `GLIBC_` symbol version. Static-PIE has no such symbols and needs no floor. Express glibc needs through dependencies, leaving `elibc_glibc` out of `REQUIRED_USE`: musl profiles otherwise produce error-level `RequiredUseUnsatisfiableInDev` and fail new-package CI.
+- Resolve every `NEEDED` through verified bundled layout or genuine system `RDEPEND`, including QA-suppressed objects. An unresolved entry is a runtime defect.
+- Private modules may lack SONAME; justify unusual RPATH per object. A retained private blob may use verified literal `'$ORIGIN/...'`.
+- For source-built objects, fix build/link/install behavior first. Use evidence-backed `patchelf` only as fallback, with `BDEPEND`.
+- Replace bundled components with system ones only after verifying ABI, functionality, and launcher/configuration integration; otherwise stop.
+- `REQUIRES_EXCLUDE` filters metadata only. Use it for verified unresolved-soname false positives: an `RDEPEND` provider installs the requested filename with a different SONAME (`app-arch/bzip2` provides `libbz2.so.1.0`), or an optional plugin stays unloaded without its provider. Otherwise fix the dependency or layout; never patch the binary to hide the notice.
+- Exclude runtime self-hashing files from stripping individually with `dostrip -x <path>`, as `net-proxy/flclash-bin` does; retain stripping for the rest of the package.
+- For prebuilt `dotnet-pkg-base` payloads, match `DOTNET_PKG_COMPAT` to each `*.runtimeconfig.json` framework.
