@@ -18,7 +18,7 @@ Read with: `git-workflow.md` for branch, rebase, and push; `version-bumps.md` §
 - Do not lecture on a mechanism a Gentoo reviewer already knows; link the upstream source instead.
 - The subject already carries the package, version, and add/drop. The body repeats none of them and states each value once.
 - Do not open the body by restating the title (no `更新到 <version>` line).
-- Give each changed dependency, phase function, patch, USE flag, `RESTRICT`, or revbump its own line, applying the causality rule in `AGENTS.md` § Writing.
+- Give each changed dependency, phase function, patch, USE flag, `RESTRICT`, or revbump its own line, applying the causality rule in § Writing below.
 - Do not invent causality the evidence lacks, or fold an unrelated fact into a parenthetical.
 - For a large rewrite or upstream restructure, name the rewritten scope instead of enumerating per change. Add a line only for an unexpected behavioral shift.
 - When upstream drove that rewrite, give one line in the form 因为上游修改了 X，所以重写 Y.
@@ -103,3 +103,21 @@ Closes #<issue>
 2. 因为程序运行时通过 `dlopen` 加载 libcurl，所以 `RDEPEND` 增加 `net-misc/curl`。
 3. 因为程序直接链接 libfmt，所以将依赖改为 `dev-libs/libfmt:=`，使当前包在 libfmt 的 subslot 变化时重新构建。
 ```
+
+## Writing
+
+Use one standard for commit messages, PRs, comments, notes, and replies: precise, plain, and short.
+
+- Name concrete variables, phases, USE flags, `FEATURES`, eclasses, and commands, not a vague paraphrase or adjective. Use current Gentoo terminology.
+- Avoid colloquial wording, needless language mixing, unsupported absolutes, marketing, and filler.
+- Name a thing by its ecosystem's term or concrete behavior, never an ad-hoc coinage.
+- State a reason as an explicit because/so (因为…所以…) cause and effect. Never a vague linker like "correspondingly"/相应.
+- A reason is not a restatement of `name = value` metadata.
+- Chinese may use Traditional or Simplified characters. Use standard Mandarin wording readily understood across regions; avoid region-specific terms.
+- Do not set off Chinese words with full-width brackets (`「」`, `『』`); state the term plainly and use backticks only for code and literal values.
+- Write each language natively: professional but plainly worded, fluent, and causal. Stilted phrasing usually comes from translating the other language word for word—avoid it.
+
+| Reads naturally | Does not |
+| --- | --- |
+| 原生可执行文件移到各平台子包 | 拆成薄 loader |
+| 因为上游变更了 Go 模块路径，所以 `-ldflags` 中的导入路径需同步更新，否则注入的版本号不正确 | module 改名，相应更新 ldflags |
