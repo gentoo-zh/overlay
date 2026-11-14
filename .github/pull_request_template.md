@@ -1,4 +1,4 @@
-<!-- Reason in one or two sentences: because X, Y. Put "Closes #N" on its own line when closing an issue. -->
+<!-- One line per change: because X, Y. Put "Closes #N" on its own line when closing an issue. -->
 
 <!-- Please put the pull request description above -->
 
