@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-14 20:03:04 CST)
+(The last generation time: 2026-11-14 20:32:27 CST)
 
 ### Packages
 
@@ -305,7 +305,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-embedded/at32workbench                            | 1.2.07             |            | https://www.arterytek.com/cn/support/tools.jsp                             | at32 workbench is a GUI tool for AT32 MCU startup code generation
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-games/alcom                                       | 1.1.9              |            | https://github.com/vrc-get/vrc-get                                         | A fast open-source alternative of VRChat Creator Companion (VCC)
+ dev-games/alcom                                       | 1.1.10             |            | https://github.com/vrc-get/vrc-get                                         | A fast open-source alternative of VRChat Creator Companion (VCC)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-games/unityhub                                    | 3.22.6             |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
                                                        | 4.0.0              |            |                                                                            |
