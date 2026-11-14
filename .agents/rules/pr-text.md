@@ -4,7 +4,7 @@ Read with: `git-workflow.md` for branch, rebase, and push; `version-bumps.md` §
 
 ### Subject
 
-- Use pkgdev's final English subject verbatim as PR title; for multiple commits, choose the main change's subject.
+- Use pkgdev's final English subject verbatim as PR title, never translated or reworded; for multiple commits, choose the main change's subject.
 - Use `category/package: summary`; bumps use `category/package: add NEW`, adding `, drop OLD` only when dropping. First package commits use `category/package: new package, add NEW`; later versions omit `new package`.
 
 ```text
@@ -17,7 +17,7 @@ category/package: add NEW, drop OLD
 
 ### Commit body
 
-- Add a body only for rationale the subject cannot carry, separated by a blank line. State each value once; keep package/version/add-drop in the subject and routine passing results in the completion report. Do not open the body by restating the subject (no `更新到 <version>` line). Link upstream evidence for mechanisms Gentoo reviewers already know.
+- Add a body only for rationale the subject cannot carry, separated by a blank line. Do not narrate steps or restate the diff, and do not claim a cause the evidence lacks or fold an unrelated fact into a parenthetical. State each value once; keep package/version/add-drop in the subject and routine passing results in the completion report. Do not open the body by restating the subject (no `更新到 <version>` line). Link upstream evidence for mechanisms Gentoo reviewers already know.
 - Give each changed dependency, phase, patch, USE flag, `RESTRICT`, or revbump its own evidence-backed causal line per § Writing. Keep unrelated facts separate.
 - For large rewrites or upstream restructuring, name the rewritten scope and its cause in one line; add lines only for unexpected behavior changes.
 
@@ -27,29 +27,31 @@ category/package: add NEW, drop OLD
 - Keep the reason paragraph to rationale; mention tests there only when they forced a change. Record actual execution per § Opening the PR.
 - For a routine or behavior-neutral change closing an overlay issue, use `Closes #N` followed by the template.
 
-Illustrative completed templates: a routine bump, then two dependency changes. These examples assume the explicit-range scan and stated checks passed.
+Illustrative completed bodies: a routine bump closing an issue, then two dependency changes tested by an agent. Both assume the explicit-range scan in `qa.md` passed.
 
 ```text
-因为上游修复了启动失败，所以更新版本。
-
 Closes #N
 
-Tested: amd64 OpenRC 和 systemd：`emerge` 安装；启动一次。
+<!-- Please put the pull request description above -->
 
-- [x] `pkgcheck scan --commits=<merge-base>..HEAD --net` is clean, or the PR changes no ebuild
-- [x] AI-assisted work, if any, follows AGENTS.md and I tested its output
+---
+
+Please check all the boxes that apply:
+
+- [x] I have run `pkgcheck scan --commits --net` to check for issues with my commits.
+- [x] If I used AI: it followed AGENTS.md, I checked and tested its output, and the description shows tested results, not guesses.
+
+Please note that all boxes must be checked for the pull request to be merged.
 ```
 
 ```text
 因为程序通过 `dlopen` 加载 libcurl，所以增加 `net-misc/curl` 运行依赖。
 因为程序直接链接 libfmt，所以使用 `dev-libs/libfmt:=`，使 subslot 变化触发重建。
 
-Closes #N
+测试：amd64 systemd 安装后启动一次，下载一个文件。
 
-Tested: amd64 OpenRC：`emerge` 安装；启动一次。
-
-- [x] `pkgcheck scan --commits=<merge-base>..HEAD --net` is clean, or the PR changes no ebuild
-- [x] AI-assisted work, if any, follows AGENTS.md and I tested its output
+<!-- Please put the pull request description above -->
+...
 ```
 
 ### Issue references and trailers
@@ -65,7 +67,7 @@ Tested: amd64 OpenRC：`emerge` 安装；启动一次。
 
 ### Opening the PR
 
-- Replace the first template comment with the reason. Fill `Tested:` with the actual emerge, profiles/arches, and smoke test, or `not run: reason`. Keep both checkboxes and tick each only when its statement is true for this PR. Tick pkgcheck only after the explicit-range commit scan in `qa.md` passes, or when no ebuild changed.
+- Replace the first template comment with the reason. Keep the template's checkboxes, which `scripts/pr-template.sh` requires, and tick each only when its statement is true for this PR. The AI checkbox claims tested results, so AI-assisted work states in the body the arch, profile and what ran, or that nothing ran and why. Tick pkgcheck only after the explicit-range commit scan in `qa.md` passes, or when no ebuild changed.
 - Before `gh pr create`/`gh pr edit`, show the exact title, body, and files and obtain confirmation for that specific PR, including drafts. Batch authorization requires per-PR confirmation.
 - Open only routine bumps yourself: ebuild rename plus `pkgdev manifest`, or a version variable such as a build id, with no other change. For other changes, push the fork topic branch and hand over the drafted subject/body and canonical compare link for the human to open.
   `https://github.com/gentoo-zh/overlay/compare/master...<fork-owner>:<fork-repo>:<branch>`
@@ -80,3 +82,8 @@ Use precise, plain, short prose for commits, PRs, comments, notes, and replies.
 - Chinese may be Traditional or Simplified; use standard Mandarin understood across regions. Write ordinary words plainly and each language natively, professionally, and fluently.
 - Do not set off Chinese words with full-width brackets (`「」`, `『』`).
 - Put variables, atoms, commands, options, `FEATURES`, and other code/literal values in backticks.
+
+| Reads naturally | Does not |
+| --- | --- |
+| 原生可执行文件移到各平台子包 | 拆成薄 loader |
+| 因为上游变更了 Go 模块路径，所以 `-ldflags` 中的导入路径需同步更新，否则注入的版本号不正确 | module 改名，相应更新 ldflags |

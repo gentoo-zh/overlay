@@ -1,6 +1,12 @@
-<!-- Why this change, in one or two sentences. Then what you tested. -->
+<!-- Reason in one or two sentences: because X, Y. Put "Closes #N" on its own line when closing an issue. -->
 
-Tested: <!-- e.g. clean emerge on amd64 openrc and systemd; launched once -->
+<!-- Please put the pull request description above -->
 
-- [ ] `pkgcheck scan --commits=<merge-base>..HEAD --net` is clean, or the PR changes no ebuild
-- [ ] AI-assisted work, if any, follows AGENTS.md and I tested its output
+---
+
+Please check all the boxes that apply:
+
+- [ ] I have run `pkgcheck scan --commits --net` to check for issues with my commits.
+- [ ] If I used AI: it followed AGENTS.md, I checked and tested its output, and the description shows tested results, not guesses.
+
+Please note that all boxes must be checked for the pull request to be merged.
