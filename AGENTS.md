@@ -181,7 +181,6 @@ Treat `master` only as an upstream-sync branch.
 ### Network results
 
 - GitHub rate limits can cause false `DeadUrl` or `RedirectedUrl` results; re-verify flagged URLs.
-- For `GIT_CRATES`, retain the exact `Cargo.lock` URL as required by `.agents/rules/eclass-discovery.md`; changing it to silence `RedirectedUrl` breaks cargo's offline source matching.
 - A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second vantage point, such as another mirror or a fetch through a different route, before calling a URL dead.
 - CI's `pkgcheck` runs without `--net`, so no network keyword fires there.
 - A dead `HOMEPAGE` does not block installation. A dead overlay `SRC_URI` is unfetchable because overlay distfiles are not mirrored on `distfiles.gentoo.org`.
