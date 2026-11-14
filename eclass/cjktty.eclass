@@ -23,7 +23,7 @@ esac
 # Version suffix of the kernel-specific cjktty code patch.
 [[ -n ${CJKTTY_PV} ]] || die "${ECLASS}: CJKTTY_PV must be set before inherit"
 
-_CJKTTY_FONT_PV="15.1.04"
+_CJKTTY_FONT_PV="18.0.01"
 _CJKTTY_URI="https://raw.githubusercontent.com/gentoo-zh/cjktty-patches/master"
 
 SRC_URI+="
