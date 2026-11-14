@@ -2272,6 +2272,13 @@ github = "natesales/q"
 use_latest_tag = true
 prefix = "v"
 
+["net-im/ayugram-desktop"]
+source = "github"
+github = "AyuGram/AyuGramDesktop"
+use_latest_release = true
+prefix = "v"
+github_account = "xz-dev"
+
 ["net-im/dingtalk"]
 source = "httpheader"
 url = "https://www.dingtalk.com/win/d/qd=linux_amd64"

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>xiangzhedev@gmail.com</email>
+		<name>xz-dev</name>
+	</maintainer>
+	<use>
+		<flag name="enchant">Use the <pkg>app-text/enchant</pkg> spell-checking backend instead of <pkg>app-text/hunspell</pkg></flag>
+		<flag name="fonts">Use builtin patched copy of open-sans fonts (overrides fontconfig)</flag>
+	</use>
+	<upstream>
+		<remote-id type="github">AyuGram/AyuGramDesktop</remote-id>
+		<bugs-to>https://github.com/AyuGram/AyuGramDesktop/issues</bugs-to>
+		<changelog>https://github.com/AyuGram/AyuGramDesktop/releases</changelog>
+	</upstream>
+</pkgmetadata>
