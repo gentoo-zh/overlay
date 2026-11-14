@@ -24,7 +24,7 @@ category/package: add NEW, drop OLD
 ### PR body
 
 - Use Chinese when the directing human writes in Chinese; otherwise English. Keep one language and the commit body's rationale.
-- Keep the reason paragraph to rationale; mention tests there only when they forced a change. Record actual execution per § Opening the PR.
+- An optional first line names the precedent or packaging model the change follows, e.g. the `::gentoo` ebuild a fork starts from. Then give one line per change, each with its cause; mention tests among them only when they forced a change, and record actual execution per § Opening the PR.
 - For a routine or behavior-neutral change closing an overlay issue, use `Closes #N` followed by the template.
 
 Illustrative completed bodies: a routine bump closing an issue, then two dependency changes tested by an agent. Both assume the explicit-range scan in `qa.md` passed.
@@ -78,7 +78,7 @@ Please note that all boxes must be checked for the pull request to be merged.
 Use precise, plain, short prose for commits, PRs, comments, notes, and replies.
 
 - Name concrete variables, phases, USE flags, `FEATURES`, eclasses, and commands. Use established technical terms and concrete behavior. Keep wording professional and factual; mix languages only where necessary; back absolute claims with evidence. Never coin an ad-hoc term.
-- State evidence-backed cause and effect explicitly with because/so (因为…所以…), never a vague linker such as correspondingly/相应. Explain the reason beyond metadata values.
+- State evidence-backed cause and effect explicitly, never through a vague linker such as correspondingly/相应; because/so (因为…所以…) is the usual form, and a fact that already carries its own consequence needs no forced because-clause. Explain the reason beyond metadata values.
 - Chinese may be Traditional or Simplified; use standard Mandarin understood across regions. Write ordinary words plainly and each language natively, professionally, and fluently.
 - Do not set off Chinese words with full-width brackets (`「」`, `『』`).
 - Put variables, atoms, commands, options, `FEATURES`, and other code/literal values in backticks.
