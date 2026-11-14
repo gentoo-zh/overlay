@@ -20,7 +20,7 @@ Repository metadata is under `metadata/` and `profiles/`. CI is under `.github/`
 
 ## Task routing
 
-Reading order: this file; then `version-bumps.md` or `new-packages.md` for the change itself; then every surface file the change touches; then `pr-text.md` before committing. Each rule file opens with a `Read with` line naming what to read next from there. These files carry repository policy that used to sit in this one.
+Reading order: this file; then `git-workflow.md` before the first edit; then `version-bumps.md` or `new-packages.md` for the change itself; then every surface file the change touches; then `pr-text.md` before committing. Each rule file opens with a `Read with` line naming what to read next from there. These files carry repository policy that used to sit in this one.
 
 - Version bumps and keeping old versions: `.agents/rules/version-bumps.md`.
 - New packages, `virtual/`, `overlay.toml` entries: `.agents/rules/new-packages.md`.
@@ -29,50 +29,17 @@ Reading order: this file; then `version-bumps.md` or `new-packages.md` for the c
 - Units, init scripts, service or `systemd` dependencies: `.agents/rules/openrc-systemd.md`.
 - Kernel packages (`sys-kernel/*-sources`, `*-kernel`, `*-kernel-bin`, `virtual/dist-kernel-*`): `.agents/rules/kernels.md`.
 - Choosing or reading an eclass: `.agents/rules/eclass-discovery.md`.
+- Branch preflight, remotes, rebasing, pushing: `.agents/rules/git-workflow.md`.
 - Commit subject and body, PR title and body: `.agents/rules/pr-text.md`.
 
 ## Git Workflow
 
-Every repository modification is PR-bound unless the current request explicitly says otherwise. Read-only inspection is exempt.
+Every repository modification is PR-bound unless the current request explicitly says otherwise. Read-only inspection is exempt. Before the first edit, complete the preflight in `.agents/rules/git-workflow.md`, which also covers remotes, rebasing, and pushing.
 
-Complete preflight before the first edit, and repeat it only if the state is no longer known.
-
-Treat `master` only as an upstream-sync branch.
-
-- Start with `git status --short --branch`.
-- Use one topic branch per logical PR. Create new work from local `master` freshly synced with `<canonical>/master`; prefer `category-package-version` for bumps.
-- When resuming, reuse the correct topic branch.
-- Before preparing a PR, fetch the canonical remote and rebase the topic branch onto `<canonical>/master`. A stale base makes GitHub report the PR out of date.
-- Re-fetch the canonical remote before stating that a commit or PR is merged, and before basing follow-up work on it. A stale ref reports the opposite.
-- Compare and open against `<canonical>/master`, never the personal fork's `master`. The fork lags and inflates the diff with unrelated commits.
 - One bump or one fix is one PR.
 - Packages share a PR only when they must land together: one dependency chain, a coordinated bump, or a fix that spans them. A batch of unrelated bumps never does.
 - Never split an ebuild from its `Manifest`.
-- When fresh state is needed, find an existing remote for one of these, matching the GitHub owner and repository case-insensitively.
-
-  ```text
-  git@github.com:gentoo-zh/overlay.git
-  https://github.com/gentoo-zh/overlay.git
-  git@github.com:microcai/gentoo-zh.git
-  https://github.com/microcai/gentoo-zh.git
-  ```
-
-- Support both fork clones (`origin` is personal) and direct clones (`origin` is canonical). Use the existing canonical remote, whatever its name is.
-- If neither remote exists, add `upstream` as `https://github.com/gentoo-zh/overlay.git`.
-- Fetch the canonical remote before using its state, and ensure `<canonical>/HEAD` resolves; run `git remote set-head <canonical> master` if it does not.
-- pkgcheck's git checks depend on that head independently of any explicit commit range.
-- If the fetch fails, stop and report the current URL and error; do not rewrite or bypass it.
-- Push only topic branches to an unambiguous personal fork, never `master` or the canonical remote. Use `--force-with-lease` after a rebase.
-- A missing or ambiguous personal fork blocks publishing, not local editing.
 - Preserve unrelated changes; never overwrite, revert, stage, or commit them.
-- For non-ebuild changes, check `scripts/emerge-targets.sh` `ignore_list` so paths are not interpreted as package atoms.
-- Stop before editing if any of these holds:
-
-  - The canonical remote is ambiguous.
-  - A required `master` sync fails.
-  - A branch cannot be created safely.
-  - Unrelated changes make staging ambiguous.
-  - The request spans unrelated PRs.
 
 ## Ebuild Policy
 
