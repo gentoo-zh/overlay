@@ -2214,6 +2214,14 @@ autobump = true
 # dead upstream
 #["net-analyzer/nali"]
 
+["net-analyzer/nexttrace"]
+source = "github"
+github = "nxtrace/NTrace-core"
+use_latest_release = true
+prefix = "v"
+github_account = "Puqns67"
+autobump = true
+
 # no tracking entry yet
 #["net-analyzer/pwru"]
 
