@@ -1504,6 +1504,7 @@ github = "buildpacks/pack"
 use_latest_release = true
 prefix = "v"
 github_account = "tsln1998"
+autobump = true
 
 ["dev-util/pacstrap"]
 source = "gitlab"
@@ -1537,6 +1538,7 @@ source = "regex"
 url = "https://download.qoder.com/qoder-app/releases/latest-linux.yml"
 regex = 'version: ([\d.]+)'
 github_account = "liangyongxiang"
+autobump = true
 
 ["dev-util/qodercli-bin"]
 source = "regex"
@@ -1593,6 +1595,7 @@ source = "github"
 github = "termux/termux-language-server"
 use_latest_tag = true
 github_account = "Freed-Wu"
+autobump = true
 
 ["dev-util/trae-ide"]
 source = "regex"
@@ -2043,6 +2046,7 @@ prefix = "v"
 from_pattern = '^(.+)-hotfix(\d+)$'
 to_pattern = '\1_p\2'
 github_account = "flying-balloon-cat"
+autobump = true
 
 ["media-sound/listen1_desktop-bin"]
 source = "github"
@@ -2296,6 +2300,7 @@ source = "regex"
 url = "https://github.com/peeweep/wechat-linux-watcher/raw/refs/heads/master/wechat-linux-version.txt"
 regex = '(.*)'
 github_account = "gouwazi"
+autobump = true
 
 ["net-im/wemeet"]
 source = "aur"
@@ -2425,6 +2430,7 @@ github = "localsend/localsend"
 use_latest_release = true
 prefix = "v"
 github_account = ["Nuralii1i", "gouwazi"]
+autobump = true
 
 ["net-misc/ntpd-rs"]
 source = "github"
@@ -2884,6 +2890,7 @@ github = "isd-project/isd"
 use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
+autobump = true
 
 # live package only
 #["sys-apps/mdp"]
@@ -3215,6 +3222,7 @@ github = "linuxmint/mint-themes"
 use_max_tag = true
 include_regex = "\\d+\\.\\d+\\.\\d+"
 github_account = "gouwazi"
+autobump = true
 
 ["x11-themes/mint-y-icons"]
 source = "github"
