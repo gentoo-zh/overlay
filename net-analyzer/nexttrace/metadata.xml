@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>me@puqns67.icu</email>
+		<name>Puqns67</name>
+	</maintainer>
+	<upstream>
+		<bugs-to>https://github.com/nxtrace/NTrace-core/issues</bugs-to>
+		<remote-id type="github">nxtrace/NTrace-core</remote-id>
+	</upstream>
+	<use>
+		<flag name="full">Install Full-featured build. Includes traceroute, the standalone DNS client and MTU modes, CDN speed test, IP annotation, MTR, Globalping, Fast Trace, WebUI, and deploy MCP</flag>
+		<flag name="tiny">Install Lightweight build. No DNS client, CDN speed test, IP annotation, Globalping, WebUI, MCP</flag>
+		<flag name="ntr">Install MTR-focused build. Runs MTR TUI by default. No normal traceroute mode, standalone DNS client or --mtu, CDN speed test, IP annotation, Globalping, Fast Trace, WebUI, or MCP</flag>
+	</use>
+</pkgmetadata>
