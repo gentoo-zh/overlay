@@ -2,51 +2,48 @@
 
 Read with: `AGENTS.md` § Ebuild Policy for the install gate; `pr-text.md` before committing.
 
-- `dev-util/pkgdev` and `dev-util/pkgcheck` are required. When either is missing, stop and tell the human to `emerge` them; do not substitute `git commit`, hand-written Manifests, or a custom lint. `dev-util/github-cli` is optional: without `gh`, hand the human the compare link and let them open the PR.
-- Before treating a finding as yours, read the package's history, the previous version's result, and the pkgcheck bot's report on the PR. A finding that predates your change is pre-existing, and the completion report says so.
-- `ebuild <file> install` resolves no dependencies, so it cannot show a missing `BDEPEND`. A `fowners` to an `acct-user` in `src_install` needs that package in `BDEPEND` and in `RDEPEND`, as `acct-user.eclass` documents.
-- Iterate with the narrowest relevant package checks, and re-run the command exposing each failure.
-- Do not repeat a check that already passed on the same tree: no rebuilding what already built clean, no rerunning a scan that already passed. A rebase or a new commit makes a previous commit scan stale, and this never excuses a gate the Ebuild Policy requires.
+- Require `dev-util/pkgdev` and `dev-util/pkgcheck`. If either is missing, stop and ask the human to emerge it; never substitute `git commit`, a hand-written Manifest, or a custom lint. `dev-util/github-cli` is optional: without `gh`, hand over the compare link for the human to open. Apply `pr-text.md` for commits.
+- Before attributing findings, read package history, the previous version's result, and the PR pkgcheck report's commit, packages, and status. Report pre-existing findings as such.
+- `ebuild <file> install` resolves no dependencies and cannot expose missing `BDEPEND`; apply `dependencies.md` for `fowners` inputs.
+- Iterate with the narrowest relevant checks; rerun the command exposing a failure. Reuse passes on the same tree. A rebase or new commit invalidates the commit scan; retain every gate in `AGENTS.md` § Ebuild Policy.
+
+### Install and CI
+
+- emerge-on-PR clears elog after `--onlydeps`, then fails on every `qa`, `warn`, or `error` elog from the package emerge, including dependencies built in that step. Elog from a dependency is not a defect in the change: report it and leave the ebuild unchanged.
+- After every push, emerge-on-PR installs on amd64 OpenRC and systemd, plus arm64 systemd for arm64-keyworded packages. arm64 OpenRC and other arches remain unverified; local install obligations remain in `AGENTS.md` § Ebuild Policy.
 
 ### Manifest
 
-- Run `pkgdev manifest` when distfiles change. Pass `--distdir <writable-dir>` if the system `DISTDIR` is not user-writable.
-- Before the first download of a package payload in a work item, whether a distfile, a vendor bundle, or a release asset, report the URL and the size upstream states, and wait for approval.
+- Never write a hand-made Manifest; run `pkgdev manifest` when distfiles change, with `--distdir <writable-dir>` when system `DISTDIR` is unwritable.
+- Before the first package-payload download in a work item (distfile, vendor bundle, or release asset), report its URL and upstream-stated size and wait for approval.
 
 ### Scanning
 
-- Before the PR, complete required clean installs.
-- After those installs pass, scope the commit scan to this branch with an explicit merge-base range. A bare `--commits` compares against whatever `origin` points at, which need not be the base you branched from.
+- After required installs pass, scan the explicit merge-base-to-HEAD range against `<canonical>/master` with `--net` and `--git-remote <canonical>`. The range selects targets; the remote selects commit-check provenance. Bare `--commits` uses `origin`, which may differ from the branch base.
 
   ```bash
   pkgcheck scan --git-remote <canonical> --commits="$(git merge-base <canonical>/master HEAD)..HEAD" --net
   ```
-
-- The range selects the targets. `--git-remote` sets the canonical source for the commit-only checks.
-- If cross-package noise still remains, confirm your own change with a package-scoped `pkgcheck scan <category>/<package> --net`. That is ground truth, but does not replace the commit scan.
+- Resolve cross-package noise with a package-scoped network scan as ground truth, alongside the required commit scan.
 
 ### Tests
 
-- Exercise every USE state affected by the change. Run upstream tests with `FEATURES=test` where available.
-- Tests use the build tree, not an installed or system copy. Gate and declare test-only inputs, dependencies, and resources.
-- Preserve the largest reliable subset and skip individual failures with reasons. Use `RESTRICT=test` only after proving no reliable subset can be retained, and record why.
-- Use conditional `PROPERTIES="test? ( test_network )"` only with `IUSE=test`; otherwise use `PROPERTIES="test_network"`.
+- Exercise every affected USE state; run available upstream tests with `FEATURES=test`. Tests use the build tree, with test-only inputs, dependencies, and resources declared and gated.
+- Keep the largest reliable test subset; skip individual failures with reasons. `RESTRICT=test` requires proof that no reliable subset remains and a recorded reason.
+- Use `PROPERTIES="test? ( test_network )"` only with `IUSE=test`; otherwise use `PROPERTIES="test_network"`.
 
 ### QA notices
 
-- The pkgcheck bot's report on the PR names the commit and packages it scanned and the status; read it instead of guessing what CI saw.
-- Fix genuine QA defects at the root cause.
-- Retain only a documented false positive or unavoidable notice, with its rationale and remaining risk. Before calling an emerge-on-PR elog notice benign, reproduce the exact condition that produced it, such as a `CONFIG_CHECK` warning with no kernel sources in the container or a foreign-ABI ELF skipped under `ABI_X86=64`; do not maintain a list of ignorable notices.
-- Never rewrite working behavior merely to silence a checker.
+- Fix genuine defects at their cause; preserve working behavior when a checker is wrong.
+- Retain only documented false positives or unavoidable notices, with rationale and residual risk. Reproduce each exact condition before calling an emerge-on-PR elog benign, e.g. `CONFIG_CHECK` without kernel sources or foreign-ABI ELF skipped under `ABI_X86=64`; keep no list of ignorable notices.
 
 ### Network results
 
-- GitHub rate limits can cause false `DeadUrl` or `RedirectedUrl` results; re-verify flagged URLs.
-- A network result is evidence about your host only. An edge that returns 403 here may serve the same URL elsewhere, so re-check from a second vantage point, such as another mirror or a fetch through a different route, before calling a URL dead.
-- CI's `pkgcheck` runs without `--net`, so no network keyword fires there.
-- A dead `HOMEPAGE` does not block installation. A dead overlay `SRC_URI` is unfetchable because overlay distfiles are not mirrored on `distfiles.gentoo.org`.
+- Reverify `DeadUrl`/`RedirectedUrl`, including GitHub rate limits. A result describes one host's route; verify a second mirror or route before declaring a URL dead, including HTTP 403.
+- CI pkgcheck omits `--net`, so network keywords stay untested there.
+- A dead `HOMEPAGE` leaves installation possible. A dead overlay `SRC_URI` prevents fetching because `distfiles.gentoo.org` does not mirror overlay distfiles.
 
 ### Reviewing the change
 
-- Review the staged diff and diffstat. Reject unrelated hunks, debug output, missing `files/` assets, or unintended `Manifest` entries.
-- Verify patches, substitutions, generators, and manual or glob installs against the intended release source and final files, modes, and license notices—not command exit status alone.
+- Review staged diff and diffstat for intended changes, clean output, complete `files/` assets, and intended Manifest entries. Apply `AGENTS.md` § Git Workflow for unrelated changes.
+- Verify patches, substitutions, generators, and manual/glob installs against release source and final files, modes, and license notices; require file evidence beyond exit status.
