@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<maintainer type="person">
 		<email>zakk@gentoozh.org</email>
-		<name>Zakkaus</name>
+		<name>Zakk</name>
 	</maintainer>
 	<use>
 		<flag name="cli">Install the companion Antigravity command-line interface</flag>

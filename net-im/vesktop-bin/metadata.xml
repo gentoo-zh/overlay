@@ -2,8 +2,8 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
-		<email>admin@zakk.au</email>
-		<name>zakkaus</name>
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
 	</maintainer>
 	<use>
 		<flag name="seccomp">Enable seccomp sandbox (recommended for security)</flag>

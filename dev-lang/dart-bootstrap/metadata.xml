@@ -3,7 +3,7 @@
 <pkgmetadata>
 	<maintainer type="person">
 		<email>zakk@gentoozh.org</email>
-		<name>Zakkaus</name>
+		<name>Zakk</name>
 	</maintainer>
 	<longdescription lang="en">
 		This package provides the prebuilt Dart SDK used only to bootstrap
