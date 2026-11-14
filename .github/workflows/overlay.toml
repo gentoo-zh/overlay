@@ -704,6 +704,13 @@ github_account = "Nuralii1i"
 # vendor download, no published version index
 #["app-misc/z-library"]
 
+["app-misc/zcode-switch-bin"]
+source = "github"
+github = "pjpv/zcode-switch"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+
 ["app-office/anytype-bin"]
 source = "github"
 github = "anyproto/anytype-ts"
