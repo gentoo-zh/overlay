@@ -3,8 +3,8 @@
 pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
   <maintainer type="person">
-    <name>ston</name>
-    <email>ston.jia@qq.com</email>
+    <name>Zakk</name>
+    <email>zakk@gentoozh.org</email>
   </maintainer>
   <upstream>
     <remote-id type="github">daeuniverse/dae</remote-id>

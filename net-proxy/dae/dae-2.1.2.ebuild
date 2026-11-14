@@ -9,12 +9,7 @@ _MY_PV=${PV/_rc/rc}
 
 DESCRIPTION="A lightweight and high-performance transparent proxy solution based on eBPF"
 HOMEPAGE="https://github.com/daeuniverse/dae"
-# upstream's 2.1.1 "full-src" archive no longer carries the Go module cache,
-# so the modules come from a gentoo-deps bundle instead
-SRC_URI="
-	https://github.com/daeuniverse/dae/releases/download/v${_MY_PV}/dae-full-src.zip -> ${P}.zip
-	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-deps.tar.xz
-"
+SRC_URI="https://github.com/daeuniverse/dae/releases/download/v${_MY_PV}/dae-full-src.zip -> ${P}.zip"
 
 S="${WORKDIR}"
 
@@ -30,7 +25,7 @@ DEPEND="
 RDEPEND="$DEPEND"
 BDEPEND="
 	llvm-core/clang
-	>=dev-lang/go-1.26.0
+	>=dev-lang/go-1.27.0
 "
 
 pkg_pretend() {
@@ -100,4 +95,18 @@ src_install() {
 
 	dosym -r "/usr/share/v2ray/geosite.dat" /usr/share/dae/geosite.dat
 	dosym -r "/usr/share/v2ray/geoip.dat" /usr/share/dae/geoip.dat
+}
+
+pkg_postinst() {
+	local v has_api
+	for v in ${REPLACING_VERSIONS}; do
+		ver_test "${v}" -ge 2.1.2 && has_api=1
+	done
+
+	if [[ -z ${has_api} ]]; then
+		elog "The HTTP control API is disabled by default."
+		elog "Enable it in the \`api\` section of /etc/dae/config.dae,"
+		elog "see /usr/share/dae/config.dae.example."
+		elog "A non-loopback listen address requires \`secret\`."
+	fi
 }
