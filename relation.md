@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-15 02:02:54 CST)
+(The last generation time: 2026-11-15 11:45:45 CST)
 
 ### Packages
 
@@ -688,6 +688,8 @@
  net-analyzer/dstp-bin                                 | 0.4.23             |            | https://github.com/ycd/dstp                                                | Run common networking tests against any site
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/nali                                     | 0.8.1_p20260930    |            | https://github.com/zu1k/nali                                               | An offline tool for querying IP geographic information and CDN provider
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-analyzer/nexttrace                                | 1.7.6              |            | https://www.nxtrace.org/                                                   | An open source visual routing tool that pursues light weight
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/pwru                                     | 1.0.9              |            | https://github.com/cilium/pwru                                             | eBPF-based Linux kernel networking debugger
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
