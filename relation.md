@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-15 15:00:12 CST)
+(The last generation time: 2026-11-15 15:08:04 CST)
 
 ### Packages
 
@@ -437,7 +437,7 @@
  dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.20.0            |            |                                                                            |
+                                                       | 18.20.2            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.7.1              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1012,7 +1012,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20261112220449     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
-   dev-libs/v2ray-domain-list-community-bin            | 20261112220449     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community-bin            | 20261115005626     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
    dev-libs/v2ray-geoip                                | 202611080027       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
