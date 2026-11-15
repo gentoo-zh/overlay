@@ -9,7 +9,7 @@ DESCRIPTION="Community managed domain list for V2Ray"
 HOMEPAGE="https://github.com/v2fly/domain-list-community"
 SRC_URI="
 	https://github.com/v2fly/domain-list-community/archive/refs/tags/${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-deps.tar.xz
+	https://github.com/gentoo-zh-drafts/domain-list-community/releases/download/${PV}/domain-list-community-${PV}-vendor.tar.xz
 "
 
 S="${WORKDIR}/domain-list-community-${PV}"
