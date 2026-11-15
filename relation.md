@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-15 15:48:11 CST)
+(The last generation time: 2026-11-15 15:49:05 CST)
 
 ### Packages
 
@@ -514,7 +514,7 @@
                                                        | 1.22.7             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-arcade/osu-lazer-bin                            | 2026.1005.0        |            | https://osu.ppy.sh/                                                        | A free-to-win rhythm game. Rhythm is just a click away!
-                                                       | 2026.1110.0        |            |                                                                            |
+                                                       | 2026.1114.0        |            |                                                                            |
                                                        | 2026.921.0         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-emulation/onscripter-yuri                       | 0.7.6              |            | https://github.com/YuriSizuku/OnscripterYuri                               | An enhancement ONScripter project porting to many platforms, especially web
