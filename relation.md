@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-15 15:09:01 CST)
+(The last generation time: 2026-11-15 15:46:02 CST)
 
 ### Packages
 
@@ -847,7 +847,7 @@
  net-proxy/honk                                        | 0.1.0_beta6        |            | https://github.com/daeuniverse/honk                                        | Transparent proxy based on eBPF, inspired by dae and sing-box
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/hysteria                                    | 2.13.0             |            | https://github.com/HyNetworks/hysteria                                     | A powerful, lightning fast and censorship resistant proxy
+ net-proxy/hysteria                                    | 2.14.0             |            | https://github.com/HyNetworks/hysteria                                     | A powerful, lightning fast and censorship resistant proxy
    acct-group/hysteria                                 | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
    acct-user/hysteria                                  | 0                  |  D, RD     |                                                                            | A powerful, lightning fast and censorship resistant proxy
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
