@@ -29,4 +29,6 @@ src_install() {
 	dobin tux-manager
 	domenu packaging/data/io.github.benapetr.TuxManager.desktop
 	doicon --size scalable src/tux_manager_icon.svg
+	insinto /usr/share/metainfo
+	doins packaging/data/io.github.benapetr.TuxManager.metainfo.xml
 }
