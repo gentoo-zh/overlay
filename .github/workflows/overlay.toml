@@ -518,6 +518,14 @@ github_account = "liangyongxiang"
 from_pattern = "(.*)-(.*)"
 to_pattern = '\1_p\2'
 
+["app-misc/agy-switch-bin"]
+source = "github"
+github = "anglee0323/agy-switch"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+autobump = true
+
 ["app-misc/bcompare"]
 source = "regex"
 url = "https://www.scootersoftware.com/kb/linux_install"
