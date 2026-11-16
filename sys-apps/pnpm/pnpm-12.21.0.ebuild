@@ -8,7 +8,7 @@ CRATES="
 
 NODE_SEMVER_COMMIT="3d74d6b7f4de1de2006cf2f7663aac09de65b1f6"
 DASHMAP_COMMIT="4401b5c0b2626266dd5d5a9202677bca8b53e57a"
-LIBSQL_COMMIT="e2c44e616a1f8e1ec7ceeb61138a3c2c391c35a9"
+LIBSQL_COMMIT="ab8a7516c7d32d6fdd0f68d59956c6233f9f11d4"
 declare -A GIT_CRATES=(
 	[node-semver]="https://github.com/pnpm/node-semver-rs;${NODE_SEMVER_COMMIT};node-semver-rs-%commit%"
 	[dashmap]="https://github.com/pnpm/dashmap;${DASHMAP_COMMIT};dashmap-%commit%"
