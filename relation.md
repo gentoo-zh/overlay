@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-16 18:37:53 CST)
+(The last generation time: 2026-11-16 19:15:52 CST)
 
 ### Packages
 
@@ -838,7 +838,7 @@
  net-proxy/daed                                        | 1.27.0-r1          |            | https://github.com/daeuniverse/daed                                        | A Modern Dashboard For dae
                                                        | 9999               |            |                                                                            |
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
-                                                       | 12.18.0            |            |                                                                            |
+                                                       | 12.21.0            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/doona                                       | 0.1.0_rc6          |            | https://github.com/Zakkaus/doona                                           | Web UI for the daeuniverse engines
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
