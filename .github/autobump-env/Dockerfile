@@ -15,6 +15,16 @@ RUN emerge-webrsync --no-pgp-verify \
  # Xvfb runs the GUI launch probe.
  && echo 'x11-base/xorg-server xvfb minimal -xorg' > /etc/portage/package.use/autobump-xvfb \
  && getuto \
+ # Our binhost carries webkit-gtk[keyring] for -systemd too, which the Gentoo binhost often lacks after a release.
+ && printf '[gentoo-zh-binhost]\nsync-uri = https://distfiles.gentoozh.org/binpkgs/x86-64\npriority = 2\n' \
+      > /etc/portage/binrepos.conf/gentoo-zh.conf \
+ && wget -q -O /tmp/gentoo-zh-binhost.asc https://distfiles.gentoozh.org/gentoo-zh-binhost.asc \
+ && export GNUPGHOME=/etc/portage/gnupg \
+ && gpg --import /tmp/gentoo-zh-binhost.asc \
+ && gpg --batch --yes --pinentry-mode loopback --passphrase-file "$GNUPGHOME/pass" \
+      --lsign-key 6A0726AF1476A2F382C6AC6638A0234EC16AD42E \
+ && gpg --batch --check-trustdb \
+ && unset GNUPGHOME \
  && install -dm775 -o root -g portage /var/cache/distfiles \
  # curl supplies the DeadUrl recheck (stage3 has only wget); portage-utils supplies --version smoke, iwdevtools qa-vdb.
  && emerge --quiet --getbinpkg --autounmask=y --autounmask-write=y --autounmask-continue=y \
