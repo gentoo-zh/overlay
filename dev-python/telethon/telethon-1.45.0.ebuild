@@ -13,7 +13,7 @@ HOMEPAGE="https://codeberg.org/Lonami/Telethon"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 
 RDEPEND="
 	dev-python/pyaes[${PYTHON_USEDEP}]
