@@ -1,8 +1,8 @@
-# Copyright 1999-2025 Gentoo Authors
+# Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
-DISTUTILS_USE_PEP517=setuptools
+DISTUTILS_USE_PEP517=uv-build
 PYTHON_COMPAT=( python3_{12..14} pypy3 )
 PYPI_VERIFY_REPO=https://github.com/aio-libs/janus
 
@@ -22,7 +22,6 @@ EPYTEST_IGNORE=(
 	tests/test_benchmarks.py
 )
 
-src_prepare() {
-	distutils-r1_src_prepare
-	sed -i -e '/License ::/d' -e '/^addopts = --cov/d' setup.cfg || die
+python_test() {
+	epytest -o addopts=
 }
