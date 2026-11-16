@@ -12,7 +12,7 @@ SRC_URI="https://github.com/ParBLiSS/FastANI/archive/${FASTANI_COMMIT_ID}.tar.gz
 S="${WORKDIR}/FastANI-${FASTANI_COMMIT_ID}"
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS="~amd64 ~arm64"
 IUSE="test"
 RESTRICT="!test? ( test )"
 
