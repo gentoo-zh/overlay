@@ -9,7 +9,7 @@ DESCRIPTION="A fork of trojan-go"
 HOMEPAGE="https://github.com/Potterli20/trojan-go-fork"
 SRC_URI="
 	https://github.com/Potterli20/trojan-go-fork/archive/refs/tags/V${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-deps.tar.xz
+	https://github.com/gentoo-zh-drafts/trojan-go-fork/releases/download/V${PV}/${P}-vendor.tar.xz
 "
 
 LICENSE="GPL-3"
