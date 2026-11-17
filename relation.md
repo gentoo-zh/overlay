@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-17 22:53:33 CST)
+(The last generation time: 2026-11-17 22:54:25 CST)
 
 ### Packages
 
@@ -19,7 +19,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  acct-user/sing-box                                    | 0-r1               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-admin/1password                                   | 8.12.44            |            | https://1password.com                                                      | Password manager and secure wallet
+ app-admin/1password                                   | 8.12.46            |            | https://1password.com                                                      | Password manager and secure wallet
    acct-group/onepassword                              | 0-r1               | BD, RD     |                                                                            | Password manager and secure wallet
    acct-group/onepassword-mcp                          | 0-r1               | BD, RD     |                                                                            | Password manager and secure wallet
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
