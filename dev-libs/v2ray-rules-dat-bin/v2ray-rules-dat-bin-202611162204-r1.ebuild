@@ -24,7 +24,7 @@ src_install() {
 		insinto /usr/share/geosite/
 		newins "${DISTDIR}/${P}-geosite.dat" loyalsoldier.dat
 	fi
-	if use geosite; then
+	if use geoip; then
 		insinto /usr/share/geoip/
 		newins "${DISTDIR}/${P}-geoip.dat" loyalsoldier.dat
 	fi
