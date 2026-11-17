@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-17 22:56:11 CST)
+(The last generation time: 2026-11-17 22:57:17 CST)
 
 ### Packages
 
@@ -215,7 +215,7 @@
  app-misc/keyd                                         | 2.6.0-r1           |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.4352           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.4384           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -298,7 +298,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/date                                          | 3.0.5              |            | https://github.com/HowardHinnant/date                                      | A date and time library based on the C++11/14/17 <chrono> header
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-cpp/nameof                                        | 0.11.0             |            | https://github.com/Neargye/nameof                                          | Nameof operator for modern C++
+ dev-cpp/nameof                                        | 0.12.0             |            | https://github.com/Neargye/nameof                                          | Nameof operator for modern C++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-cpp/tgbot-cpp                                     | 1.13.1             |            | https://github.com/reo7sp/tgbot-cpp                                        | C++ library for Telegram bot API
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
