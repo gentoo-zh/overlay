@@ -2758,7 +2758,6 @@ github = "Potterli20/trojan-go-fork"
 use_latest_release = true
 prefix = "V"
 github_account = "blackteahamburger"
-deps = "golang"
 autobump = true
 
 ["net-proxy/v2ray"]
