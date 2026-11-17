@@ -20,10 +20,7 @@ RESTRICT="bindist mirror strip"
 RDEPEND="
 	!games-arcade/osu-lazer
 	dev-util/lttng-ust:0/2.12
-	|| (
-		dev-libs/openssl:0/3
-		dev-libs/openssl-compat:3
-	)
+	dev-libs/openssl:0/3
 	gamemode? ( games-util/gamemode )
 	pipewire? ( media-video/pipewire[pipewire-alsa] )
 	system-ffmpeg? ( media-video/ffmpeg-compat:4 )
