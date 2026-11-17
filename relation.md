@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-17 08:43:08 CST)
+(The last generation time: 2026-11-17 16:05:39 CST)
 
 ### Packages
 
@@ -786,7 +786,7 @@
  net-misc/pcmanx-gtk2                                  | 1.3-r2             |            | https://github.com/pcman-bbs/pcmanx                                        | PCMan is a gtk+ based free BBS client
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-misc/prips                                        | 1.3.1              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
+ net-misc/prips                                        | 1.4.0              |            | https://devel.ringlet.net/sysutils/prips/                                  | print the IP addresses in a range
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/rayburst-bin                                 | 4.1.2              |            | https://github.com/AnInsomniacy/rayburst                                   | A full-featured download manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
