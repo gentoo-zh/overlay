@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-17 22:54:25 CST)
+(The last generation time: 2026-11-17 22:55:25 CST)
 
 ### Packages
 
@@ -386,7 +386,7 @@
    dev-python/autopxd2                                 | 4.2.0-r1           | BD         | https://github.com/elijahr/python-autopxd2                                 | Generate Cython pxd files from C header files
      dev-python/headerkit                              | 0.51.0             | RD         | https://github.com/axiomantic/headerkit                                    | C/C++ header analysis toolkit with pluggable backends and writers
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/uv-bin                                     | 0.13.8             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
+ dev-python/uv-bin                                     | 0.13.9             |            | https://github.com/astral-sh/uv                                            | An extremely fast Python package and project manager, written in Rust
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -894,7 +894,7 @@
                                                        | 2.5.15             |            |                                                                            |
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/yacd-meta                                   | 0.7.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
+ net-proxy/yacd-meta                                   | 0.8.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/zashboard                                   | 3.30.0             |            | https://github.com/Zephyruso/zashboard                                     | The Official Mihomo Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
