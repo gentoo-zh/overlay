@@ -58,6 +58,17 @@ RESTRICT="strip"
 
 QA_PREBUILT="*"
 
+src_prepare() {
+	default
+
+	local binding="${S}/resources/app/node_modules/sqlite3/dist/binding"
+	case ${ARCH} in
+		amd64) rm -r "${binding}"/napi-v3-linux-arm64 || die ;;
+		arm64) rm -r "${binding}"/napi-v3-linux-x64 || die ;;
+	esac
+	rm -r "${binding}"/napi-v3-linux-{loong64,sw64,sw_64} || die
+}
+
 src_install(){
 	insinto /opt/lceda-pro
 	doins -r .
