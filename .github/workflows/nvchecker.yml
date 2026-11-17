@@ -60,6 +60,9 @@ jobs:
   nvchecker:
     needs: eix
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     outputs:
       nvcmp: ${{ steps.nvchecker.outputs.nvcmp }}
     steps:
@@ -68,12 +71,13 @@ jobs:
 
     - name: install depends
       run: |
-        pip install --require-hashes -r .github/nvchecker-requirements.txt
+        pip install nvchecker jq portage
 
     - name: run nvchecker
       id: nvchecker
       env:
-        GITHUB_TOKEN: ${{ secrets.GENTOO_ZH_NVCHECKER_PAT }}
+        # pip installs unpinned packages in this job, so it gets the short-lived job token, not the PAT
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PACKAGES: ${{ needs.eix.outputs.pkgs }}
         NVCHECKER_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
