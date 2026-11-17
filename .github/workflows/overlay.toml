@@ -1048,6 +1048,9 @@ source = "github"
 github = "v2fly/domain-list-community"
 use_latest_release = true
 github_account = "blackteahamburger"
+bundle = [
+  { id = "vendor", repo = "gentoo-zh-drafts/domain-list-community", workflow = "mirror.yml", tag = "{PV}" },
+]
 autobump = true
 
 ["dev-libs/v2ray-domain-list-community-bin"]
@@ -2758,6 +2761,9 @@ github = "Potterli20/trojan-go-fork"
 use_latest_release = true
 prefix = "V"
 github_account = "blackteahamburger"
+bundle = [
+  { id = "vendor", repo = "gentoo-zh-drafts/trojan-go-fork", workflow = "mirror.yml", tag = "V{PV}" },
+]
 autobump = true
 
 ["net-proxy/v2ray"]
