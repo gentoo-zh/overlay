@@ -24,6 +24,7 @@ while IFS=$'\t' read -r file additions deletions; do
     "$ignored" && continue
 
     IFS=/ read -r category package filename <<< "$file"
+    [ -n "$filename" ] || continue
     package="$category/$package"
     if (( additions == 0 && deletions > 0 )); then
         [ -d "$package" ] || continue

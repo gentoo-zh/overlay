@@ -27,12 +27,13 @@ atom() {
 }
 
 # list <new> <level>...: one line per finding, existing ones prefixed with their level
-# and control characters turned into spaces, so a finding cannot leave its code block
+# and control characters turned into spaces and backticks into quotes, so a finding
+# cannot leave its code block
 list() {
     jq -r --argjson new "$1" '
         .[] | select(.new == $new and (.level | IN($ARGS.positional[])))
         | (if $new then "" else "\(.level): " end) + "\(.target): \(.keyword): \(.desc)"
-        | gsub("[[:cntrl:]]"; " ") | .[:300]
+        | gsub("[[:cntrl:]]"; " ") | gsub("`"; "\u0027") | .[:300]
     ' "$findings" --args "${@:2}"
 }
 
