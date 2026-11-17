@@ -1,6 +1,13 @@
 # Copyright 1999-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
+# Zakk <zakk@gentoozh.org> (2026-11-18)
+# Upstream archived daeuniverse/daed after its last push on 2026-09-24, so it
+# will get no further fixes. Its OpenRC script also logs as root into
+# /tmp/daed without checking the directory owner.
+# Removal on 2026-12-18.
+net-proxy/daed
+
 # Zakk <zakk@gentoozh.org> (2026-11-11)
 # Live-only package with no maintainer and no reverse dependencies. It fails
 # in src_prepare because the ebuild never calls default or eapply_user, so
