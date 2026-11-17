@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>tanekliang@gmail.com</email>
+		<name>Yongxiang Liang</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="codeberg">wvhulle/bootvine</remote-id>
+	</upstream>
+	<use>
+		<flag name="openrc">Build support for watching OpenRC boot jobs</flag>
+	</use>
+</pkgmetadata>
