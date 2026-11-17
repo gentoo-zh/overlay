@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-17 16:26:41 CST)
+(The last generation time: 2026-11-17 16:27:28 CST)
 
 ### Packages
 
@@ -58,7 +58,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.1.20261018     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.32.1             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.32.2             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.7.0              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -328,7 +328,7 @@
  dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0-r1           |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-libs/v2ray-rules-dat-bin                          | 202611152204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
+ dev-libs/v2ray-rules-dat-bin                          | 202611162204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/adafruit-board-toolkit                     | 1.1.2              |            | https://github.com/adafruit/Adafruit_Board_Toolkit/                        | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
