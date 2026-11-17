@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-17 00:21:54 CST)
+(The last generation time: 2026-11-17 08:43:08 CST)
 
 ### Packages
 
@@ -170,6 +170,8 @@
  app-i18n/rime-ice                                     | 9999               |            | https://github.com/iDvel/rime-ice                                          | Rime ICE - A long-term maintained simplified Chinese Rime schema
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/zh-autoconvert                               | 0.3.16_p11         |            | https://packages.debian.org/stable/source/zh-autoconvert                   | Chinese HZ/GB/BIG5/UNI/UTF7/UTF8 encodings auto-converter
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ app-misc/agy-switch-bin                               | 4.10.17            |            | https://github.com/anglee0323/agy-switch                                   | Local Antigravity account switching and usage dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/bcompare                                     | 4.4.7.28397-r1     |            | https://www.scootersoftware.com/                                           | Beyond Compare -- Compare, sync, and merge files and folders
                                                        | 5.2.8.33052        |            |                                                                            |
