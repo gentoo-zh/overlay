@@ -2920,6 +2920,14 @@ use_latest_release = true
 prefix = "v"
 github_account = "gouwazi"
 
+["sys-apps/bootvine"]
+source = "gitea"
+gitea = "wvhulle/bootvine"
+host = "codeberg.org"
+use_latest_release = true
+prefix = "v"
+github_account = "liangyongxiang"
+
 ["sys-apps/isd"]
 source = "github"
 github = "isd-project/isd"
