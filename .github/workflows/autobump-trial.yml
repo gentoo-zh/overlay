@@ -41,6 +41,10 @@ jobs:
     - name: tune portage for this runner
       run: echo "MAKEOPTS=\"\${MAKEOPTS} -j$(nproc)\"" >> /etc/portage/make.conf
 
+    # The engine needs these tokens for gh and git push; ebuild phases build unreviewed upstream code.
+    - name: keep tokens out of ebuild phases
+      run: echo 'ENV_UNSET="GH_TOKEN GITHUB_TOKEN GH_TOKEN_GENTOO_ZH GH_TOKEN_GENTOO_ZH_DRAFTS"' >> /etc/portage/make.conf
+
     - name: set git identity
       run: |
         git config --global user.name  "gentoo-zh-bot"

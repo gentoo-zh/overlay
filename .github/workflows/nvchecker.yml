@@ -68,7 +68,7 @@ jobs:
 
     - name: install depends
       run: |
-        pip install nvchecker jq portage
+        pip install --require-hashes -r .github/nvchecker-requirements.txt
 
     - name: run nvchecker
       id: nvchecker

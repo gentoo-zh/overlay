@@ -403,7 +403,7 @@ for key in "${ordered[@]}"; do
             echo
         fi
         echo '``````'
-        head -n "$max" <<< "$text"
+        head -n "$max" <<< "$text" | tr '`' "'"
         echo '``````'
         if [ "$lines" -gt "$max" ]; then
             echo
