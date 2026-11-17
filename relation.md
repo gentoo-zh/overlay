@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-17 16:27:28 CST)
+(The last generation time: 2026-11-17 16:35:48 CST)
 
 ### Packages
 
@@ -260,7 +260,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/blesh                                      | 9999               |            | https://github.com/akinomyoga/ble.sh                                       | A line editor written in pure Bash with enhanced features
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-shells/flyline-bin                                | 1.10.0             |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
+ app-shells/flyline-bin                                | 1.11.0             |            | https://github.com/HalFrgrd/flyline                                        | Modern line editor for Bash
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/gentoo-fish-completion                     | 0.0.3              |            | https://github.com/douglarek/gentoo-fish-completion                        | Gentoo specific fish completion support (ported from gentoo-zsh-completions)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
