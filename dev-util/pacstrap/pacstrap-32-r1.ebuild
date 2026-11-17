@@ -21,7 +21,7 @@ BDEPEND="
 	app-alternatives/awk
 	app-text/asciidoc
 "
-DEPEND="sys-apps/pacman"
+RDEPEND="sys-apps/pacman"
 
 src_test() {
 	emake MANS="doc/pacstrap.8" BINPROGS="pacstrap" check
