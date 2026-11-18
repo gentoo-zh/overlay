@@ -1,0 +1,23 @@
+From: gentoo-zh overlay
+Subject: [PATCH] rebase hardened memblock_free_pages context on Linux 6.18.64
+
+Linux 6.18.64 moves clear_page_tag_ref() into __free_pages_core()
+(stable commit c9f177a1e17e), so anchor the unchanged entropy addition
+on the remaining memblock_free_pages() context.
+Apply after cachyos-sources-6.18.55-hardened-rebase.patch to the temporary
+hardened.patch, not the kernel source.
+
+--- a/hardened.patch
++++ b/hardened.patch
+@@ -1733,9 +1733,9 @@
+  	}
+  }
+ @@ -2497,6 +2499,7 @@ void __init memblock_free_pages(struct page *page, unsigned long pfn,
++ 		return;
++ 	}
+  
+- 	/* pages were reserved and not allocated */
+- 	clear_page_tag_ref(page);
+ +	__gather_extra_latent_entropy(page, 1 << order);
+  	__free_pages_core(page, order, MEMINIT_EARLY);
+  }
