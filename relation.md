@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-18 18:20:28 CST)
+(The last generation time: 2026-11-18 18:21:19 CST)
 
 ### Packages
 
@@ -418,7 +418,7 @@
  dev-util/gitea-cli                                    | 0.16.0             |            | https://gitea.com/gitea/tea                                                | Command line tool to interact with Gitea
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/grok-build-bin                               | 0.2.118            |            | https://x.ai/cli                                                           | Terminal-based AI coding agent by SpaceXAI
-                                                       | 1.0.88             |            |                                                                            |
+                                                       | 1.0.89             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/herdr                                        | 0.9.5              |            | https://herdr.dev                                                          | Terminal workspace manager for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -719,7 +719,7 @@
    acct-group/luoxu                                    | 0                  | RD         |                                                                            | Group for net-im/luoxu
    acct-user/luoxu                                     | 0                  | RD         |                                                                            | User for net-im/luoxu
    dev-python/asyncpg                                  | 0.32.0             | RD         | https://pypi.org/project/asyncpg/                                          | An asyncio PostgreSQL driver
-   dev-python/telethon                                 | 1.45.0             | RD         | https://codeberg.org/Lonami/Telethon                                       | Full-featured Telegram client library for Python
+   dev-python/telethon                                 | 1.46.0             | RD         | https://codeberg.org/Lonami/Telethon                                       | Full-featured Telegram client library for Python
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/telegram-desktop                               | 7.4.4              |            | https://desktop.telegram.org                                               | Official desktop client for Telegram
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
