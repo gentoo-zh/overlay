@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-18 18:17:47 CST)
+(The last generation time: 2026-11-18 18:18:31 CST)
 
 ### Packages
 
@@ -924,7 +924,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/openfpgaloader                        | 1.2.0-r1           |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-mathematics/elan-bin                              | 4.2.4              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
+ sci-mathematics/elan-bin                              | 4.3.0              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/rstudio-desktop-bin                   | 2026.11.0_p203     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
