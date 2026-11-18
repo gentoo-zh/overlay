@@ -9,7 +9,7 @@ CHROMIUM_LANGS="af am ar bg bn ca cs da de el en-GB es es-419 et fa fi fil fr gu
 
 inherit chromium-2 desktop optfeature pax-utils xdg
 
-MY_BUILD="4665802025205760"
+MY_BUILD="4731201358004224"
 ICON_COMMIT="8182e2d354c6b096e544f24b3ea8fcfb5e73d699"
 
 DESCRIPTION="Google Antigravity multi-agent orchestration platform"
@@ -74,7 +74,6 @@ PDEPEND="
 	cli? ( >=dev-util/antigravity-cli-1 )
 	ide? ( >=app-editors/antigravity-ide-2 )
 "
-BDEPEND="dev-util/patchelf"
 
 QA_PREBUILT="*"
 
@@ -94,11 +93,6 @@ src_prepare() {
 	pushd "${PN}/locales" > /dev/null || die
 	chromium_remove_language_paks
 	popd > /dev/null || die
-
-	# Upstream builds webm_encoder against Google's internal runtime loader.
-	local interpreter
-	interpreter=$(patchelf --print-interpreter "${EPREFIX}"/bin/bash) || die
-	patchelf --set-interpreter "${interpreter}" "${PN}/resources/bin/webm_encoder" || die
 
 	# Updates are managed by Portage.
 	rm "${PN}/resources/app-update.yml" || die
