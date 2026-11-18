@@ -14,7 +14,7 @@ CACHYOS_PR="1"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="68"
+K_GENPATCHES_VER="72"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -27,7 +27,7 @@ K_NO_VERSION_CHECK="1"
 K_SECURITY_UNSUPPORTED="1"
 
 ZFS_COMMIT="fb48c76e17d3e0092fbba430a9eec1960e1b9961"
-CJKTTY_PV="6.18.45"
+CJKTTY_PV="6.18.63"
 CKV="$(ver_cut 1-3)"
 CACHYOS_SERIES="$(ver_cut 1-2)"
 CACHYOS_PATCH_URI="https://github.com/CachyOS/kernel-patches/raw/${CACHYOS_PATCHES_COMMIT}/${CACHYOS_SERIES}"
@@ -231,6 +231,7 @@ src_prepare() {
 	if use cachyos-hardened; then
 		cp "${patches_prefix}-hardened.patch" "${T}/hardened.patch" || die
 		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-6.18.55-hardened-rebase.patch"
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-6.18.64-hardened-rebase.patch"
 		eapply --fuzz=0 -- "${T}/hardened.patch"
 		eapply --fuzz=0 -- "${FILESDIR}/cachyos-sources-6.18.55-hardened-canary-stub.patch"
 	fi
