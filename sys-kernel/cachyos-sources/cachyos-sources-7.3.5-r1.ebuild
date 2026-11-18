@@ -9,12 +9,12 @@ K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
 CACHYOS_PATCHES_COMMIT="21d721415790e6717b2ece16e82e08eb98d16c00"
-CACHYOS_CONFIGS_COMMIT="8e308d0a3895dbc741381fb61b9a9a8603be793d"
+CACHYOS_CONFIGS_COMMIT="271d7782ac4854255aec73370aa0e142afb5d3ba"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
 K_WANT_GENPATCHES="base extras"
-K_GENPATCHES_VER="5"
+K_GENPATCHES_VER="6"
 
 # Exclude kernel version upgrade patches (10xx_linux-*.patch)
 # CachyOS tarball already includes the latest point release
@@ -248,7 +248,9 @@ src_prepare() {
 	if use deckify; then
 		eapply "${patches_prefix}-acpi-call.patch"
 
-		eapply --fuzz=0 -- "${patches_prefix}-handheld.patch"
+		cp "${patches_prefix}-handheld.patch" "${T}/handheld.patch" || die
+		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.3.5-handheld-rebase.patch"
+		eapply --fuzz=0 -- "${T}/handheld.patch"
 	fi
 
 	if use aufs; then
@@ -355,7 +357,10 @@ src_prepare() {
 			--set-str DRM_PANIC_SCREEN_QR_CODE_URL "https://panic.archlinux.org/panic_report#" \
 			--set-val DRM_PANIC_SCREEN_QR_VERSION 40 || die
 	else
-		scripts/config -d RUST || die
+		# Keep Binder available when the upstream Rust implementation is disabled.
+		scripts/config \
+			-d RUST -d ANDROID_BINDER_IPC_RUST \
+			-e ANDROID_BINDER_IPC -e ANDROID_BINDERFS || die
 	fi
 
 	if use hz-ticks-100; then
