@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-19 16:08:23 CST)
+(The last generation time: 2026-11-19 16:31:10 CST)
 
 ### Packages
 
@@ -407,7 +407,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex-bin                                    | 0.170.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/deepseek-harness                             | 0.2.2_rc1          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
+ dev-util/deepseek-harness                             | 0.2.2_rc5          |            | https://github.com/deepseek-ai/deepseek-harness                            | DeepSeek Harness: an agent harness by DeepSeek AI (dsh CLI)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/fvm                                          | 4.3.2              |            | https://github.com/btwld/fvm                                               | Flutter Version Management
    dev-lang/dart                                       | 3.14.0             |  D, RD     | https://dart.dev                                                           | The Dart SDK
