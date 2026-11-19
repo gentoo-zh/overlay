@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-19 15:56:32 CST)
+(The last generation time: 2026-11-19 15:57:29 CST)
 
 ### Packages
 
@@ -924,7 +924,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/openfpgaloader                        | 1.2.0-r1           |            | https://trabucayre.github.io/openFPGALoader/                               | Universal utility for programming FPGAs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-mathematics/elan-bin                              | 4.3.0              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
+ sci-mathematics/elan-bin                              | 4.4.0              |            | https://github.com/leanprover/elan                                         | Lean version manager (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-mathematics/rstudio-desktop-bin                   | 2026.11.0_p203     |            | https://posit.co/products/open-source/rstudio/                             | RStudio IDE for R (open-source desktop edition, prebuilt)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1029,7 +1029,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/adspower-global                            | 8.9.23             |            | https://www.adspower.com/                                                  | Antidetect browser for multi-account management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/brave-bin                                  | 1.99.57            |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
+ www-client/brave-bin                                  | 1.100.58           |            | https://brave.com/                                                         | Web browser that blocks ads and trackers by default
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-client/ungoogled-chromium-bin                     | 155.0.8059.84_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 156.0.8078.79_p1   |            |                                                                            |
