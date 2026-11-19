@@ -52,7 +52,7 @@ QA_PREBUILT="
 	usr/lib64/node_modules/@deepseek-ai/dsh/node_modules/*
 "
 
-RDEPEND=">=net-libs/nodejs-22.19"
+RDEPEND=">=net-libs/nodejs-24.9"
 
 src_unpack() {
 	unpack ${PN}-${MY_PV}.tgz ${PN}-${MY_PV}-node_modules.tar.xz
@@ -99,7 +99,7 @@ src_install() {
 
 	fperms +x "${install_dir}/lib/bin.js"
 
-	if use amd64;  then 
+	if use amd64; then
 		fperms +x "${install_dir}/node_modules/@vscode/ripgrep-linux-x64/bin/rg"
 		fperms +x "${install_dir}/node_modules/@deepseek-ai/node-addon-system-linux-x64/bin/landlock-run"
 	fi
