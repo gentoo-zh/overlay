@@ -1,0 +1,26 @@
+https://github.com/daeuniverse/dae/commit/192d7e1db3b2953ed6f7525ff1efdd947d6d59d4
+https://github.com/daeuniverse/dae/pull/1172
+
+clang 23 computes arg_buf + offset before the bound check, so the verifier
+rejects the cgroup socket programs with "invalid variable-offset read from
+stack" and dae fails to start. Merged after 2.1.2.
+
+diff --git a/control/kern/tproxy.c b/control/kern/tproxy.c
+index 014f0af37c..6dac4afd53 100644
+--- a/control/kern/tproxy.c
++++ b/control/kern/tproxy.c
+@@ -4235,8 +4235,12 @@ static __always_inline int get_pid_pname(struct pid_pname *pid_pname)
+ 	u8 offset = ctx.l;
+ 
+ 	for (u8 i = 0; i < TASK_COMM_LEN; i++) {
+-		if (offset + i < MAX_ARG_LEN && arg_buf[offset + i] != '\0') {
+-			pid_pname->pname[i] = arg_buf[offset + i];
++		__u32 idx = offset + i;
++
++		// Keep clang from splitting idx back into offset + i.
++		barrier_var(idx);
++		if (idx < MAX_ARG_LEN && arg_buf[idx] != '\0') {
++			pid_pname->pname[i] = arg_buf[idx];
+ 		} else {
+ 			pid_pname->pname[i] = '\0';
+ 			break;
