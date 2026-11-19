@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-19 15:58:29 CST)
+(The last generation time: 2026-11-19 15:59:18 CST)
 
 ### Packages
 
@@ -401,7 +401,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/binsider                                     | 0.3.2              |            | https://binsider.dev                                                       | Analyze ELF binaries like a boss
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/claude-code                                  | 2.1.327            |            | https://claude.com/product/claude-code                                     | Claude Code - an agentic coding tool by Anthropic
+ dev-util/claude-code                                  | 2.1.328            |            | https://claude.com/product/claude-code                                     | Claude Code - an agentic coding tool by Anthropic
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/codex                                        | 0.170.0            |            | https://github.com/openai/codex                                            | Codex CLI - OpenAI's AI-powered coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -994,8 +994,11 @@
                                                        | 7.3.4              |            |                                                                            |
                                                        | 7.3.5              |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.117           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
+                                                       | 6.12.118           |            |                                                                            |
                                                        | 6.18.63            |            |                                                                            |
+                                                       | 6.18.64            |            |                                                                            |
                                                        | 7.3.4              |            |                                                                            |
+                                                       | 7.3.5              |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.117           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.118           |            |                                                                            |
                                                        | 6.18.63            |            |                                                                            |
@@ -1019,7 +1022,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20261118003829     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
-   dev-libs/v2ray-domain-list-community-bin            | 20261118003829     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community-bin            | 20261118141523     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
    dev-libs/v2ray-geoip                                | 202611080027       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
