@@ -23,7 +23,7 @@ else
 		)
 	"
 	S="${WORKDIR}/llama.cpp-${PV}"
-	KEYWORDS="~amd64 ~riscv"
+	KEYWORDS="~amd64 ~arm64 ~riscv"
 fi
 
 LICENSE="MIT"
@@ -55,7 +55,7 @@ IUSE="openblas +openmp blis rocm cuda opencl vulkan flexiblas wmma examples rpc 
 
 REQUIRED_USE="
 	?? ( openblas blis flexiblas )
-	rocm? ( ${ROCM_REQUIRED_USE} !riscv )
+	rocm? ( ${ROCM_REQUIRED_USE} )
 	wmma? ( rocm )
 	webui? ( server )
 "
