@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-19 05:20:56 CST)
+(The last generation time: 2026-11-19 15:43:58 CST)
 
 ### Packages
 
@@ -426,7 +426,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/hunk-bin                                     | 0.25.0             |            | https://www.hunk.dev/                                                      | Review-first terminal diff viewer for agent-authored changesets
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/jcode-bin                                    | 1.0.0              |            | https://github.com/1jehuang/jcode                                          | Coding agent CLI for Claude, ChatGPT and other model providers (prebuilt binary)
+ dev-util/jcode-bin                                    | 1.0.1              |            | https://github.com/1jehuang/jcode                                          | Coding agent CLI for Claude, ChatGPT and other model providers (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/jetbrains-toolbox                            | 3.9.1.89198        |            | https://www.jetbrains.com/toolbox-app/                                     | Manage all your JetBrains Projects and Tools
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
