@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-19 15:59:18 CST)
+(The last generation time: 2026-11-19 16:00:16 CST)
 
 ### Packages
 
@@ -64,7 +64,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/appflowy-bin                              | 0.15.1             |            | https://appflowy.com/                                                      | AppFlowy is an open-source alternative to Notion
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/cursor                                    | 3.30.14            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
+ app-editors/cursor                                    | 3.31.10            |            | https://cursor.com/                                                        | Cursor App - AI-first coding environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/edit                                      | 2.0.0              |            | https://github.com/microsoft/edit                                          | Microsoft edit
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -328,7 +328,7 @@
  dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0-r1           |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-libs/v2ray-rules-dat-bin                          | 202611172204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
+ dev-libs/v2ray-rules-dat-bin                          | 202611182204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/adafruit-board-toolkit                     | 1.1.2              |            | https://github.com/adafruit/Adafruit_Board_Toolkit/                        | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -438,8 +438,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/oh-my-pi-bin                                 | 17.4.2             |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 18.22.2            |            |                                                                            |
+ dev-util/oh-my-pi-bin                                 | 18.22.2            |            | https://omp.sh                                                             | AI coding agent for the terminal
+                                                       | 19.0.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/openchamber-bin                              | 2.7.2              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1037,7 +1037,7 @@
  www-client/ungoogled-chromium-bin                     | 155.0.8059.84_p1   |            | https://ungoogled-software.github.io/                                      | Chromium without Google web services, tweaks to enhance privacy and more
                                                        | 156.0.8078.79_p1   |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- www-client/zen-browser-bin                            | 1.24.2b            |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
+ www-client/zen-browser-bin                            | 1.24.3b            |            | https://zen-browser.app/                                                   | Experience tranquillity while browsing the web without people tracking you!
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  www-servers/darkhttpd                                 | 1.17               |            | https://unix4lyfe.org/darkhttpd/                                           | A small, static webserver
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
