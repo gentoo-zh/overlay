@@ -7,8 +7,6 @@ ROCM_VERSION="6.3"
 
 inherit cmake cuda rocm linux-info toolchain-funcs
 
-TINY_LLAMAS_COMMIT="99dd1a73db5a37100bd4ae633f4cfce6560e1567"
-
 DESCRIPTION="LLM inference in C/C++"
 HOMEPAGE="https://github.com/ggml-org/llama.cpp"
 
@@ -27,13 +25,6 @@ else
 	S="${WORKDIR}/llama.cpp-${PV}"
 	KEYWORDS="~amd64 ~riscv"
 fi
-
-SRC_URI+="
-	examples? (
-		https://huggingface.co/ggml-org/tiny-llamas/resolve/${TINY_LLAMAS_COMMIT}/stories15M-q4_0.gguf
-			-> ggml-org_models_tinyllamas_stories15M-q4_0-${TINY_LLAMAS_COMMIT}.gguf
-	)
-"
 
 LICENSE="MIT"
 SLOT="0"
@@ -135,11 +126,6 @@ src_unpack() {
 src_prepare() {
 	use cuda && cuda_src_prepare
 	cmake_src_prepare
-	if use examples; then
-		mkdir -p "${BUILD_DIR}/tinyllamas" || die
-		cp "${DISTDIR}/ggml-org_models_tinyllamas_stories15M-q4_0-${TINY_LLAMAS_COMMIT}.gguf" \
-			"${BUILD_DIR}/tinyllamas/stories15M-q4_0.gguf" || die
-	fi
 }
 
 src_configure() {
@@ -149,7 +135,10 @@ src_configure() {
 			-DLLAMA_BUILD_COMMIT="$(git rev-parse HEAD)"
 		)
 	else
-		local mycmakeargs=( -DLLAMA_BUILD_NUMBER="${BUILD#b}" )
+		local mycmakeargs=(
+			-DLLAMA_BUILD_NUMBER="${BUILD#b}"
+			-DLLAMA_BUILD_IS_DEV=OFF
+		)
 	fi
 
 	mycmakeargs+=(
@@ -158,7 +147,9 @@ src_configure() {
 		-DLLAMA_BUILD_TESTS=OFF
 		-DLLAMA_BUILD_EXAMPLES="$(usex examples)"
 		-DLLAMA_BUILD_SERVER="$(usex server)"
-		-DLLAMA_BUILD_UI="$(usex webui)"
+		# Force disable local webui build and download from bucket
+		-DLLAMA_BUILD_UI=OFF
+		-DLLAMA_USE_PREBUILT_UI=OFF
 
 		-DGGML_RPC="$(usex rpc)"
 		-DGGML_OPENCL="$(usex opencl)"
