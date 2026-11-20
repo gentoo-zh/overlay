@@ -8,6 +8,7 @@ inherit cmake flag-o-matic git-r3 multiprocessing
 DESCRIPTION="RIME (Rime Input Method Engine) core library"
 HOMEPAGE="https://rime.im/ https://github.com/rime/librime"
 EGIT_REPO_URI="https://github.com/rime/librime.git"
+EGIT_SUBMODULES=( deps/spdlog )
 
 LICENSE="BSD BSD-2 Boost-1.0 MIT"
 SLOT="0/1-9999"
@@ -17,7 +18,6 @@ RESTRICT="!test? ( test )"
 
 RDEPEND="
 	app-i18n/opencc:=
-	dev-cpp/glog:=
 	dev-cpp/yaml-cpp:=
 	>=dev-libs/boost-1.74:=
 	dev-libs/leveldb:=
@@ -35,9 +35,7 @@ src_configure() {
 	# https://github.com/rime/librime/issues/954
 	filter-lto
 
-	# for glog
 	if use debug; then
-		append-cxxflags -DDCHECK_ALWAYS_ON
 		local CMAKE_BUILD_TYPE=Debug
 	else
 		append-cxxflags -DNDEBUG
