@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit desktop xdg
+inherit desktop optfeature xdg
 
 MY_PN="${PN%-bin}"
 
@@ -67,8 +67,12 @@ QA_PREBUILT="
 	opt/${PN}/chrome_crashpad_handler
 	opt/${PN}/lib*.so*
 	opt/${PN}/${MY_PN}
-	opt/${PN}/resources/opencode-cli/opencode
 	opt/${PN}/resources/ripgrep/rg
+	opt/${PN}/resources/opencode-server/assets/@yuuang/ffi-rs-linux-*/ffi-rs.linux-*.node
+	opt/${PN}/resources/opencode-server/assets/@ff-labs/fff-bin-linux-*/libfff_c.so
+	opt/${PN}/resources/opencode-server/assets/@parcel/watcher-linux-*/watcher.node
+	opt/${PN}/resources/opencode-server/assets/@opencode/pty-linux-*/bin/opencode-pty
+	opt/${PN}/resources/opencode-server/assets/@lydell/node-pty-linux-*/prebuilds/linux-*/pty.node
 	opt/${PN}/resources/app.asar.unpacked/node_modules/sherpa-onnx-linux-*/*.so
 	opt/${PN}/resources/app.asar.unpacked/node_modules/sherpa-onnx-linux-*/sherpa-onnx.node
 	opt/${PN}/resources/app.asar.unpacked/node_modules/node-pty/build/Release/pty.node
@@ -114,4 +118,9 @@ src_install() {
 		locales resources "${ED}/opt/${PN}/" || die
 	fperms 4711 /opt/${PN}/chrome-sandbox
 	dosym -r /opt/${PN}/${MY_PN} /usr/bin/${MY_PN}
+}
+
+pkg_postinst() {
+	xdg_pkg_postinst
+	optfeature "running opencode in terminals and agent shells" dev-util/opencode-bin
 }
