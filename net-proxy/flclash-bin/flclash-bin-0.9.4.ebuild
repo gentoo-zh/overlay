@@ -8,8 +8,8 @@ inherit desktop unpacker xdg
 DESCRIPTION="A multi-platform proxy client based on ClashMeta"
 HOMEPAGE="https://github.com/chen08209/FlClash"
 SRC_URI="
-	amd64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-${PV}-linux-amd64.deb )
-	arm64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-${PV}-linux-arm64.deb )
+	amd64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-dev-${PV}-linux-amd64.deb )
+	arm64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-dev-${PV}-linux-arm64.deb )
 "
 S="${WORKDIR}"
 
@@ -21,11 +21,9 @@ BDEPEND="dev-util/patchelf"
 
 RDEPEND="
 	app-accessibility/at-spi2-core:2
-	dev-libs/ayatana-ido
 	dev-libs/glib:2
-	dev-libs/libayatana-appindicator
-	dev-libs/libayatana-indicator:3
-	dev-libs/libdbusmenu
+	dev-libs/wayland
+	media-libs/fontconfig
 	media-libs/harfbuzz
 	media-libs/libepoxy
 	sys-auth/polkit
@@ -37,8 +35,11 @@ RDEPEND="
 	x11-libs/libXmu
 	x11-libs/pango
 	virtual/jdk
-	amd64? ( media-libs/fontconfig )
-	arm64? ( virtual/zlib )
+	amd64? ( >=sys-libs/glibc-2.35 )
+	arm64? (
+		>=sys-libs/glibc-2.39
+		virtual/zlib
+	)
 "
 
 QA_PRESTRIPPED="
