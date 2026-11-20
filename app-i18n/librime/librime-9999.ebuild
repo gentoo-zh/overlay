@@ -20,6 +20,7 @@ RDEPEND="
 	app-i18n/opencc:=
 	dev-cpp/yaml-cpp:=
 	>=dev-libs/boost-1.74:=
+	dev-libs/darts
 	dev-libs/leveldb:=
 	dev-libs/marisa
 "
@@ -28,6 +29,11 @@ DEPEND="${RDEPEND}
 "
 
 DOCS=( CHANGELOG.md README.md )
+
+src_prepare() {
+	rm include/darts.h || die
+	cmake_src_prepare
+}
 
 src_configure() {
 	# -Werror=odr
