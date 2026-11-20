@@ -3,6 +3,8 @@
 
 EAPI=8
 
+KERNEL_IUSE_GENERIC_UKI=1
+
 LLVM_COMPAT=(19 20 21 22)
 DESCRIPTION="XanMod kernel built with Gentoo patches and cjktty"
 HOMEPAGE="
