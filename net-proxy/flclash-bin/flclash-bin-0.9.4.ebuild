@@ -8,8 +8,8 @@ inherit desktop unpacker xdg
 DESCRIPTION="A multi-platform proxy client based on ClashMeta"
 HOMEPAGE="https://github.com/chen08209/FlClash"
 SRC_URI="
-	amd64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-dev-${PV}-linux-amd64.deb )
-	arm64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-dev-${PV}-linux-arm64.deb )
+	amd64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-${PV}-linux-amd64.deb )
+	arm64? ( https://github.com/chen08209/FlClash/releases/download/v${PV}/FlClash-${PV}-linux-arm64.deb )
 "
 S="${WORKDIR}"
 
