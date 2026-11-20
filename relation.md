@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-20 16:54:56 CST)
+(The last generation time: 2026-11-20 16:55:54 CST)
 
 ### Packages
 
@@ -268,7 +268,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-shells/zsh-autosuggestions                        | 0.7.1              |            | https://github.com/zsh-users/zsh-autosuggestions                           | Fish-like autosuggestions for zsh
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-shells/zsh-theme-powerlevel10k                    | 1.20.0             |            | https://github.com/romkatv/powerlevel10k                                   | Theme for Zsh that emphasizes speed, flexibility and out-of-the-box experience
+ app-shells/zsh-theme-powerlevel10k                    | 1.21.0             |            | https://github.com/romkatv/powerlevel10k                                   | Theme for Zsh that emphasizes speed, flexibility and out-of-the-box experience
    app-shells/gitstatus                                | 1.5.5-r1           |  D, RD     | https://github.com/romkatv/gitstatus                                       | Git status for Bash and Zsh prompt
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/cajviewer                                    | 9.0-r3             |            | https://cajviewer.cnki.net                                                 | Document Viewer for CAJ, KDH, NH, TEB and PDF format
