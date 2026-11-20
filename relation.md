@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-20 15:54:56 CST)
+(The last generation time: 2026-11-20 15:56:22 CST)
 
 ### Packages
 
@@ -215,7 +215,7 @@
  app-misc/keyd                                         | 2.6.0-r1           |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.4520           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.4585           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -467,7 +467,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qodercli-bin                                 | 1.1.92             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qoderwake-bin                                | 1.2.21             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
+ dev-util/qoderwake-bin                                | 1.2.22             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 2.61.0             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1081,7 +1081,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/kora-icon-theme                            | 2.0.6              |            | https://github.com/bikass/kora                                             | An SVG icon theme with lots of new icons for GNU/Linux operating systems
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-themes/mint-themes                                | 2.4.4              |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
+ x11-themes/mint-themes                                | 2.4.5              |            | https://github.com/linuxmint/mint-themes                                   | A collection of Linux Mint themes
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-themes/mint-y-icons                               | 1.9.8              |            | https://github.com/linuxmint/mint-y-icons/                                 | The Mint-Y icon theme, based on Paper and Moka
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
