@@ -28,12 +28,6 @@ BDEPEND="
 	>=dev-lang/go-1.27.0
 "
 
-PATCHES=(
-	# from upstream, remove when bump
-	"${FILESDIR}/${P}-clang-23-pname-bound.patch"
-	"${FILESDIR}/${P}-bpf-test-stack.patch"
-)
-
 pkg_pretend() {
 	local CONFIG_CHECK="
 		~BPF
