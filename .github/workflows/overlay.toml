@@ -1415,6 +1415,7 @@ url = "https://x.ai/cli/stable"
 regex = '^([\d.]+)$'
 github_account = "zakkaus"
 autobump = true
+autobump_static_pins = ["MY_COMMIT"]
 
 ["dev-util/herdr"]
 source = "github"
@@ -2629,8 +2630,6 @@ github = "daeuniverse/dae"
 use_latest_release = true
 prefix = "v"
 github_account = "st0nie"
-deps = { lang = "golang", tag = "v{bundle_pv}" }
-bundle_pv = [["_rc", "rc"]]
 
 # upstream archived
 #["net-proxy/daed"]
@@ -2704,6 +2703,8 @@ github = "bojieli/queqiao"
 use_latest_release = true
 prefix = "v"
 github_account = ["irort"]
+deps = { lang = "golang", vendordir = "{P}" }
+autobump = true
 
 # packaged from a pinned commit, no tag to compare
 #["net-proxy/qv2ray"]
