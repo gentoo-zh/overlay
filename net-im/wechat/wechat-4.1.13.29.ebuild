@@ -23,7 +23,7 @@ IUSE="bwrap jack"
 RESTRICT="bindist mirror strip"
 
 RDEPEND="
-	app-accessibility/at-spi2-core
+	app-accessibility/at-spi2-core:2
 	app-arch/bzip2
 	app-crypt/mit-krb5
 	dev-libs/expat
