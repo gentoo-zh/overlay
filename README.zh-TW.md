@@ -46,41 +46,7 @@ https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
 ## 貢獻
 
-**不要破壞使用者的系統。**
-
-* 我們歡迎所有人貢獻，但請提交者在提交前謹慎確認。
-* pull request 中的每個提交都要包含所需的所有修改，不要無故拆分，例如 ebuild 和它的 `Manifest` 要在同一個提交裡。
-* 每個 ebuild 修改在提交前要確保編譯正確。
-* `LICENSE` 要與上游實際授權一致。授權不在 `::gentoo` 時把全文放進 [`licenses/`](./licenses)，歸入 [`profiles/license_groups`](./profiles/license_groups) 的相應分組，並按其散布條款設定 `RESTRICT`。
-* 所有套件都需要加入 [`.github/workflows/overlay.toml`](./.github/workflows/overlay.toml)，並按照 `category/package` 的字母順序插入相應位置。如果可以自動 bump，參見 [scripts/autobump.zh.md](./scripts/autobump.zh.md)。
-* 如果套件不適合使用 nvchecker 檢查版本更新，請在對應位置加上註解並說明原因；`acct-*`、`virtual` 也要註解。
-* 在開啟 pull request 前，請先在本機執行 `pkgcheck scan --commits --net`。
-* 開 pull request 之後，請檢查並修正 pkgcheck report 和 CI 報出的錯誤，QA 提示也要處理。
-* ebuild 只使用 `~arch` keyword，不要 stable keyword。
-* CI 會在 amd64 和 arm64 上建置。如果在你沒有的架構上出現無法解決的問題，請移除那個 keyword。
-* 新增的套件請持續維護，並使用 [pull request 範本](./.github/pull_request_template.md)。
-* 不再維護自己的套件時，請在 issues 裡找新維護者，或者在 [`profiles/package.mask`](./profiles/package.mask) 裡 mask，到期後再移除。
-
-### 提交訊息
-
-建議用 `pkgdev commit` 產生提交訊息。版本升級格式如下：
-
-```
-$category/$package: add $new_version, drop $old_version
-```
-
-其他改動格式如下：
-
-```
-$category/$package: one line short description message
-
-multiple lines of description about why you change this.
-if you change to fix the bug, and if there is an GitHub
-issue entry for that bug, then point the bug link here.
-```
-
-## AI 政策
-
-可以用生成式 AI 輔助，但它必須遵守 [AGENTS.md](./AGENTS.md)，且每個提交由貢獻者負責：確保 ebuild 的品質和驗證功能正確，ebuild 要實際做一遍冒煙測試再提交，pull request 描述要簡短、精準、專業，寫實測結果而不是猜測。貢獻者、提交者與提交作者必須是人類，不能是 AI 工具或模型身分。
-
-給 agent 用的打包、更新和審查步驟在 [gentoo-zh/skills](https://github.com/gentoo-zh/skills)，用 `npx skills add gentoo-zh/skills -g` 安裝；它只執行 AGENTS.md 的規則，不另立規則。
+- [套件](./CONTRIBUTING.zh-TW.md#套件)
+- [提交](./CONTRIBUTING.zh-TW.md#提交)
+- [pull request 描述](./CONTRIBUTING.zh-TW.md#pull-request-描述)
+- [AI 政策](./CONTRIBUTING.zh-TW.md#ai-政策)

@@ -47,64 +47,7 @@ https://github.com/gentoo-zh/overlay/blob/deps-table/relation.md
 
 ## Contributions
 
-**DO NOT BREAK PEOPLE'S SYSTEM.**
-
-* Everyone is welcome to contribute, but committers should check their work
-  carefully before committing.
-* Every commit in a pull request must carry all the changes it needs; do not split a
-  change across commits without reason, e.g. an ebuild and its `Manifest` belong in
-  the same commit.
-* Every ebuild change must compile before committing.
-* `LICENSE` must match what upstream actually grants. When the license is not in
-  `::gentoo`, add its full text under [`licenses/`](./licenses), put it in the matching
-  group in [`profiles/license_groups`](./profiles/license_groups), and set `RESTRICT`
-  from its redistribution terms.
-* Every package must be added to
-  [`.github/workflows/overlay.toml`](./.github/workflows/overlay.toml), inserted in
-  alphabetical order by `category/package`. If it can be bumped automatically, see
-  [scripts/autobump.md](./scripts/autobump.md).
-* If a package is not suitable for nvchecker to check for new versions, add a comment
-  in that position explaining why; `acct-*` and `virtual` packages are commented too.
-* Run `pkgcheck scan --commits --net` locally before you open a pull request.
-* After opening the pull request, fix whatever the pkgcheck report and CI flag, QA
-  warnings included.
-* Use `~arch` keywords only, never stable keywords.
-* CI builds on amd64 and arm64. If a problem shows up on an arch you do not have and
-  you cannot solve it, remove that keyword.
-* Keep maintaining the packages you add, and use the
-  [pull request template](./.github/pull_request_template.md).
-* When you stop maintaining a package, look for a new maintainer in the issues, or
-  mask it in [`profiles/package.mask`](./profiles/package.mask) and drop it when the
-  mask expires.
-
-### Commit messages
-
-We recommend generating them with `pkgdev commit`. Version bump:
-
-```
-$category/$package: add $new_version, drop $old_version
-```
-
-Anything else:
-
-```
-$category/$package: one line short description message
-
-multiple lines of description about why you change this.
-if you change to fix the bug, and if there is an GitHub
-issue entry for that bug, then point the bug link here.
-```
-
-## AI policy
-
-Generative AI may assist, but it must follow [AGENTS.md](./AGENTS.md) and the
-contributor is responsible for every commit: ensure the quality of the ebuild and
-verify that it works, smoke-test it before submitting, and keep the pull request
-description short, precise and professional, written from tested results, not
-guesses. The contributor, submitter, and commit author must be a human, not an AI
-tool or model identity.
-
-Step-by-step packaging, bump and review procedures for agents live in
-[gentoo-zh/skills](https://github.com/gentoo-zh/skills); install them with
-`npx skills add gentoo-zh/skills -g`. They apply AGENTS.md and add no rules of
-their own.
+- [Packages](./CONTRIBUTING.en.md#packages)
+- [Commits](./CONTRIBUTING.en.md#commits)
+- [Pull request descriptions](./CONTRIBUTING.en.md#pull-request-descriptions)
+- [AI policy](./CONTRIBUTING.en.md#ai-policy)
