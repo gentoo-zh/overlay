@@ -39,7 +39,7 @@ Closes #N
 Please check all the boxes that apply:
 
 - [x] I have run `pkgcheck scan --commits --net` to check for issues with my commits.
-- [x] If I used AI: it followed AGENTS.md, I checked and tested its output, and the description shows tested results, not guesses.
+- [x] If I used AI: I understand every change, tested it and take responsibility for it; commits with AI-written changes carry `Assisted-by:`.
 
 Please note that all boxes must be checked for the pull request to be merged.
 ```
@@ -57,7 +57,7 @@ Please note that all boxes must be checked for the pull request to be merged.
 ### Issue references and trailers
 
 - Place overlay issues as bare `Closes #N` on a separate line after the reason in the PR body. Never pass an overlay issue number or URL to `pkgdev commit -b/--bug` or `-c/--closes`, or rewrite it as a Bugzilla URL. For those options, bare numbers denote Gentoo Bugzilla; non-numeric values require full HTTP(S) URLs. `FIXED`, `OBSOLETE`, and `PKGREMOVED` apply only to Gentoo Bugzilla.
-- Let pkgdev generate trailers. Sign off with the contributor's real identity and email, excluding GitHub noreply addresses. Attribution is human-only, without AI, generated-by, or `Co-Authored-By` additions.
+- Let pkgdev generate trailers. Sign off with the contributor's real identity and email, excluding GitHub noreply addresses. When AI wrote the change, add `-T Assisted-by:AGENT:MODEL` (Linux kernel format, e.g. `Assisted-by: Claude:claude-opus-5-5`). Small or mechanical changes may omit it; disclose AI use truthfully when asked. AI never opens a pull request unattended. Never add `Co-authored-by`, which CI rejects, and never credit an AI through `Signed-off-by`, generated-by lines, or session links.
 
 ### Commits
 
