@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-21 17:12:57 CST)
+(The last generation time: 2026-11-21 21:23:53 CST)
 
 ### Packages
 
@@ -483,7 +483,8 @@
    dev-python/lsp-tree-sitter                          | 0.2.20             | RD         | https://github.com/neomutt/lsp-tree-sitter                                 | A library to create language servers
      dev-python/pygls                                  | 2.1.1              | RD         | https://github.com/openlawlibrary/pygls                                    | A pythonic generic language server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/trae-ide                                     | 2.3.105403         |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
+ dev-util/trae-ide                                     | 2.3.102387         |            | https://www.trae.cn/                                                       | Trae IDE (binary package)
+                                                       | 2.3.105403         |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vcpkg-tool                                   | 2026.10.29         |            | https://github.com/microsoft/vcpkg-tool                                    | Library manager for C/C++ (tool only)
    dev-util/cmakerc                                    | 2.0.1_p20230725    | BD         | https://github.com/vector-of-bool/cmrc                                     | A Resource Compiler in a Single CMake Script
