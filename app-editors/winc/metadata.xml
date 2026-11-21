@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>vowstar@gmail.com</email>
+		<name>Huang Rui</name>
+	</maintainer>
+	<longdescription lang="en">
+		Winc is a lightweight desktop code editor written in Rust. It provides
+		multi-cursor editing, find and replace, syntax highlighting, side-by-side
+		diffs, an integrated terminal, and previews for Markdown, images, SVG,
+		PDF, Word documents, and spreadsheets.
+	</longdescription>
+	<longdescription lang="zh">
+		Winc 是一款使用 Rust 编写的轻量级桌面代码编辑器，支持多光标编辑、查找替换、
+		语法高亮、并排差异对比、内置终端，以及 Markdown、图片、SVG、PDF、Word
+		文档和电子表格预览。
+	</longdescription>
+	<upstream>
+		<remote-id type="github">DEEIX-AI/Winc</remote-id>
+		<bugs-to>https://github.com/DEEIX-AI/Winc/issues</bugs-to>
+	</upstream>
+</pkgmetadata>
