@@ -21,7 +21,7 @@ RDEPEND="
 	acct-user/${PN}
 "
 BDEPEND="${RDEPEND}
-	>=dev-lang/go-1.26.10
+	>=dev-lang/go-1.26.11
 "
 
 src_prepare() {
