@@ -14,7 +14,7 @@ Bumps the new versions nvchecker reports.
 4. Only a passing emerge opens a PR. That PR still goes through `emerge-on-pr` and
    `pkgcheck`, and a human reviews and merges it.
 
-Step 2 has three outcomes:
+Step 2 has four outcomes:
 
 * **mechanical** — version change only and emerge passed, so it opens a PR.
   The PR is a draft when the package is keyworded on an arch other than amd64 and arm64
@@ -31,6 +31,9 @@ Step 2 has three outcomes:
   a per-version vendor bundle that is not generated yet (its URL answers 404 before
   the fetch), or a heavy dependency with no binpkg on the binhost that would exceed
   the CI timeout. Retried automatically.
+* **wait** — the new source needs a Go or Rust newer than any in ::gentoo. It comments once
+  and retries on every run, outside the transient retry cap; a version still blocked after
+  14 days escalates. A newer upstream version restarts the count.
 
 ## Which packages to opt in
 

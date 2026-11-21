@@ -140,9 +140,37 @@ def matching_ledger_line(path, package, version):
     needle = f"{package} {version} "
     with path.open() as f:
         for line in f:
-            if needle in line:
+            # a blocked record is a start date, not a result
+            if needle in line and not line.startswith("blocked "):
                 return line.rstrip("\n")
     return None
+
+
+# A Go or Rust floor above every compiler ::gentoo offers needs no human until one lands, so the
+# version is retried each run outside ATTEMPTS. Its done.list record keeps the day it was first
+# seen; after BLOCKED_DAYS it escalates. A newer version has its own key and starts afresh.
+BLOCKED_DAYS = 14
+
+
+def blocked_since(path, package, version):
+    prefix = f"blocked {package} {version} "
+    with path.open() as f:
+        for line in f:
+            if line.startswith(prefix):
+                try:
+                    return datetime.date.fromisoformat(line[len(prefix):].split()[0]).isoformat()
+                except (IndexError, ValueError):
+                    continue
+    return None
+
+
+def record_blocked(settings, package, version):
+    line = f"blocked {package} {version} {today()}"
+    if settings.worker_items is not None:
+        settings.ledger_additions["done"].append(line)
+        return
+    with settings.done_ledger.open("a") as f:
+        f.write(line + "\n")
 
 
 def matching_ledger_count(path, package, version):
@@ -893,6 +921,9 @@ def plan_issues(settings, issues, apply_run_limit):
             "attempt": attempts,
             "attempts": matching_ledger_count(settings.attempts_ledger, package, version),
         }
+        since = blocked_since(settings.done_ledger, package, version)
+        if since:
+            item["blocked_since"] = since
         if bundle:
             item["bundle_observations"] = bundle["observations"]
             item["bundle_observation_limit"] = bundle["observation_limit"]
@@ -1018,16 +1049,53 @@ def record_precondition(settings, issue, package, version, footer, status_commen
     return f"done (precondition: overlay already at/ahead of {version})"
 
 
-def engine_bundle_result(text):
-    """The engine's `result:` line for a 404 judged from the bundle snapshot, or None."""
+def engine_result(text):
+    """The engine's last `result:` line as a dict, or None."""
     for line in reversed(text.split("\n")):
         if line.startswith("result: "):
             try:
                 result = json.loads(line[len("result: "):])
             except json.JSONDecodeError:
                 return None
-            return result if isinstance(result, dict) and result.get("bundle") is True else None
+            return result if isinstance(result, dict) else None
     return None
+
+
+def engine_bundle_result(text):
+    """The engine's `result:` line for a 404 judged from the bundle snapshot, or None."""
+    result = engine_result(text)
+    return result if result and result.get("bundle") is True else None
+
+
+def engine_blocked_result(text):
+    """The engine's `result:` line for a toolchain floor no compiler in ::gentoo meets yet, or None."""
+    result = engine_result(text)
+    return result if result and result.get("blocked") == "toolchain" else None
+
+
+def handle_blocked(settings, issue, package, version, since, result, footer, engine_output, status_comment_failed):
+    # retried every run and never counted in ATTEMPTS; only the first run comments
+    first = datetime.date.fromisoformat(since) if since else datetime.date.today()
+    if (datetime.date.today() - first).days >= BLOCKED_DAYS:
+        return handle_escalation(settings, issue, package, version, footer, engine_output, status_comment_failed)
+    reason = short_status_reason(result.get("reason") or last_clear_reason(engine_output) or "toolchain not in ::gentoo")
+    until = first + datetime.timedelta(days=BLOCKED_DAYS)
+    if since:
+        return f"blocked since {since}, retrying until {until}: {reason}"
+    record_blocked(settings, package, version)
+    status_comment(
+        issue,
+        (
+            f"**autobump** can't bump `{package}` → `{version}` yet: **{reason}**. "
+            f"Will retry automatically on every run; if it still can't build by {until}, "
+            f"it needs a manual bump.{run_link(settings.upstream_repo)}"
+        ),
+        comment=settings.comment,
+        footer=footer,
+        upstream_repo=settings.upstream_repo,
+        status_comment_failed=status_comment_failed,
+    )
+    return f"blocked, retrying until {until}: {reason}"
 
 
 def defer_bundle(settings, issue, package, version, result, footer, observed, limit, status_comment_failed):
@@ -1093,38 +1161,50 @@ def defer_transient(settings, issue, package, version, engine_output, footer, st
 
 
 def run_package(settings, engine, issue, package, version, args, footer, attempt, status_comment_failed,
-                bundle_observations=None, bundle_observation_limit=None):
+                bundle_observations=None, bundle_observation_limit=None, blocked=None):
     cap = run_limit(settings)
     counter = f"{attempt}/{cap}" if cap else str(attempt)
     print(f"==== #{issue} {package} -> {version} ({counter}) ====")
     # Assigned while the bump runs and kept only when a PR was opened, so the issue list shows who is on it.
-    assign_issue(settings, issue, True)
+    # A blocked retry leaves the issue alone unless it opens one: the daily run would churn its timeline.
+    if not blocked:
+        assign_issue(settings, issue, True)
     result = None
     try:
         result = bump_package(
             settings, engine, issue, package, version, args, footer, status_comment_failed,
-            bundle_observations, bundle_observation_limit,
+            bundle_observations, bundle_observation_limit, blocked,
         )
         return result
     finally:
-        if not (settings.pr and result and result.startswith("bumped")):
+        kept = settings.pr and result and result.startswith("bumped")
+        if kept and blocked:
+            assign_issue(settings, issue, True)
+        elif not kept and not blocked:
             assign_issue(settings, issue, False)
 
 
 def bump_package(settings, engine, issue, package, version, args, footer, status_comment_failed,
-                 bundle_observations, bundle_observation_limit):
-    status_comment(
-        issue,
-        f"**autobump** is bumping `{package}` → `{version}`…{run_link(settings.upstream_repo)}",
-        comment=settings.comment,
-        footer=footer,
-        upstream_repo=settings.upstream_repo,
-        status_comment_failed=status_comment_failed,
-    )
+                 bundle_observations, bundle_observation_limit, blocked=None):
+    # every outcome but another blocked one posts its own status, so a blocked retry keeps the first comment
+    if not blocked:
+        status_comment(
+            issue,
+            f"**autobump** is bumping `{package}` → `{version}`…{run_link(settings.upstream_repo)}",
+            comment=settings.comment,
+            footer=footer,
+            upstream_repo=settings.upstream_repo,
+            status_comment_failed=status_comment_failed,
+        )
     status, engine_output = run_engine(engine, issue, args, settings.pr)
     if status == 0:
         return record_bumped(settings, issue, package, version, engine_output, footer, status_comment_failed)
     if status == 3:
+        result = engine_blocked_result(engine_output)
+        if result:
+            return handle_blocked(
+                settings, issue, package, version, blocked, result, footer, engine_output, status_comment_failed
+            )
         return handle_escalation(settings, issue, package, version, footer, engine_output, status_comment_failed)
     bundle = engine_bundle_result(engine_output) if bundle_observations is not None else None
     if bundle and bundle.get("exit") == 2:
@@ -1165,7 +1245,8 @@ def run_issues(settings, issues, apply_run_limit, tools, engine):
         attempts += 1
         try:
             results[issue] = run_package(
-                settings, engine, issue, package, version, args, footer, attempts, status_comment_failed
+                settings, engine, issue, package, version, args, footer, attempts, status_comment_failed,
+                blocked=blocked_since(settings.done_ledger, package, version),
             )
         # one broken issue must not take the rest of the sweep, and the summary is the only record of a run
         except Exception as error:  # noqa: BLE001
@@ -1220,6 +1301,7 @@ def run_worker(settings):
                     status_comment_failed,
                     bundle_observations=item.get("bundle_observations"),
                     bundle_observation_limit=item.get("bundle_observation_limit"),
+                    blocked=item.get("blocked_since"),
                 )
             except Exception as error:  # noqa: BLE001
                 results[item["issue"]] = f"error ({type(error).__name__}: {error})"
