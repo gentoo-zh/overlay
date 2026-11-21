@@ -23,7 +23,7 @@ RESTRICT="bindist mirror strip"
 # - gtk+:3[X]: Ensure GTK supports X11 (required by the binary).
 # - virtual/libudev: Required by Electron for device detection.
 RDEPEND="
-	app-accessibility/at-spi2-core
+	app-accessibility/at-spi2-core:2
 	app-crypt/libsecret
 	dev-libs/expat
 	dev-libs/glib:2
