@@ -6,12 +6,7 @@
 
 # gentoo-zh
 
-Overlay for Gentoo Users.\
-gentoo-zh 是一个包容的 overlay。
-
-> [!NOTE]
-> gentoo-zh overlay 已迁移至 https://github.com/gentoo-zh/overlay 。旧的 GitHub URL 会继续重定向。如果你手动配置过 remote，可以在方便时更新。
-> 详情请参见 [MIGRATION.md](./MIGRATION.md)。
+gentoo-zh 是一个包容的 Gentoo overlay（第三方 ebuild 仓库），不独立于 Gentoo。
 
 ## 社区
 
@@ -19,7 +14,7 @@ gentoo-zh 是一个包容的 overlay。
 [![GitHub Issues](https://img.shields.io/badge/GitHub-Issues-181717?logo=github)](https://github.com/gentoo-zh/overlay/issues)
 [![Email](https://img.shields.io/badge/Email-overlay%40gentoozh.org-000000?logo=data:image/svg%2Bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIiPjxyZWN0IHg9IjIiIHk9IjQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIxNiIvPjxwYXRoIGQ9Im0yIDYgMTAgNyAxMC03Ii8%2BPC9zdmc%2B)](mailto:overlay@gentoozh.org)
 [![论坛](https://img.shields.io/badge/%E8%AE%BA%E5%9D%9B-forum.gentoozh.org-54487A?logo=discourse&logoColor=white)](https://forum.gentoozh.org/)
-[![维基](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA-Gentoo--zh-54487A?logo=gentoo&logoColor=white)](https://wiki.gentoo.org/wiki/Gentoo-zh/zh-cn)
+[![维基](https://img.shields.io/badge/%E7%BB%B4%E5%9F%BA-Gentoo--zh-54487A?logo=gentoo&logoColor=white)](https://wiki.gentoo.org/wiki/Gentoo-zh)
 [![Telegram 群组](https://img.shields.io/badge/%E7%BE%A4%E7%BB%84-gentoo__zh-26A5E4?logo=telegram&logoColor=white)](https://t.me/gentoo_zh)
 [![公告频道](https://img.shields.io/badge/%E5%85%AC%E5%91%8A-gentoocn-26A5E4?logo=telegram&logoColor=white)](https://t.me/gentoocn)
 [![Matrix](https://img.shields.io/badge/Matrix-%23gentoo--zh-000000?logo=matrix&logoColor=white)](https://matrix.to/#/%23gentoo-zh:matrix.gentoozh.org)
@@ -34,11 +29,15 @@ eselect repository enable gentoo-zh
 emaint sync
 ```
 
-中国大陆镜像加速相关与 overlay 使用方式请参考：https://gentoozh.org/overlay
+中国大陆镜像与详细配置见 [Overlay 配置](https://gentoozh.org/overlay/)。
 
 ## distfiles 与二进制包
 
-部分软件包提供 distfiles 与二进制包，每晚触发构建，配置和镜像参考：https://distfiles.gentoozh.org
+部分软件包提供 distfiles 镜像与每晚构建的二进制包：
+
+- [distfiles 配置](https://gentoozh.org/distfiles-setup/)
+- [二进制包配置](https://gentoozh.org/binpkg-setup/)
+- [二进制包签名](https://gentoozh.org/binpkg-signing/)
 
 ## 依赖关系表
 

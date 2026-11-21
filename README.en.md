@@ -6,12 +6,8 @@ English | [简体中文](./README.md) | [正體中文](./README.zh-TW.md) | [廣
 
 # gentoo-zh
 
-Overlay for Gentoo Users.\
-gentoo-zh is an inclusive overlay.
-
-> [!NOTE]
-> gentoo-zh overlay has moved to https://github.com/gentoo-zh/overlay. Old GitHub URLs continue to redirect. If you manually configured a remote, update it when convenient.
-> See [MIGRATION.md](./MIGRATION.md) for details.
+gentoo-zh is an inclusive Gentoo overlay (a third-party ebuild repository) and
+is not independent of Gentoo.
 
 ## Community
 
@@ -34,12 +30,15 @@ eselect repository enable gentoo-zh
 emaint sync
 ```
 
-Mirrors for mainland China and how to use the overlay: https://gentoozh.org/en/overlay
+Mirrors for mainland China and full setup: [Overlay setup](https://gentoozh.org/en/overlay/).
 
 ## Distfiles and binary packages
 
-Some packages come with distfiles and prebuilt binary packages, built nightly.
-Setup and mirrors: https://distfiles.gentoozh.org
+Some packages come with mirrored distfiles and binary packages built nightly:
+
+- [distfiles setup](https://gentoozh.org/en/distfiles-setup/)
+- [Binary package setup](https://gentoozh.org/en/binpkg-setup/)
+- [Binary package signatures](https://gentoozh.org/en/binpkg-signing/)
 
 ## Dependency table
 
