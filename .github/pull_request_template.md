@@ -7,6 +7,6 @@
 Please check all the boxes that apply:
 
 - [ ] I have run `pkgcheck scan --commits --net` to check for issues with my commits.
-- [ ] If I used AI: it followed AGENTS.md, I checked and tested its output, and the description shows tested results, not guesses.
+- [ ] If I used AI: I understand every change, tested it and take responsibility for it; commits with AI-written changes carry `Assisted-by:`.
 
 Please note that all boxes must be checked for the pull request to be merged.
