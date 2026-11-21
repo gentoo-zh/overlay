@@ -6,12 +6,7 @@
 
 # gentoo-zh
 
-Overlay for Gentoo Users.\
-gentoo-zh 是一個包容的 overlay。
-
-> [!NOTE]
-> gentoo-zh overlay 已遷移至 https://github.com/gentoo-zh/overlay 。舊的 GitHub URL 會繼續重新導向。如果你手動設定過 remote，可於方便時更新。
-> 詳情請參閱 [MIGRATION.md](./MIGRATION.md)。
+gentoo-zh 是一個包容的 Gentoo overlay（第三方 ebuild 儲存庫），不獨立於 Gentoo。
 
 ## 社群
 
@@ -34,11 +29,15 @@ eselect repository enable gentoo-zh
 emaint sync
 ```
 
-中國大陸鏡像加速相關與 overlay 使用方式請參考：https://gentoozh.org/zh-tw/overlay
+中國大陸鏡像與詳細設定見 [Overlay 設定](https://gentoozh.org/zh-tw/overlay/)。
 
 ## distfiles 與二進位套件
 
-部分套件提供 distfiles 與二進位套件，每晚觸發建置，設定和鏡像參考：https://distfiles.gentoozh.org
+部分套件提供 distfiles 鏡像與每晚建置的二進位套件：
+
+- [distfiles 設定](https://gentoozh.org/zh-tw/distfiles-setup/)
+- [二進位套件設定](https://gentoozh.org/zh-tw/binpkg-setup/)
+- [二進位套件簽章](https://gentoozh.org/zh-tw/binpkg-signing/)
 
 ## 相依關係表
 
