@@ -263,6 +263,15 @@ github_account = "AmarBego"
 # vendor download, no published version index
 #["app-editors/windsurf"]
 
+["app-editors/winc"]
+source = "github"
+github = "DEEIX-AI/Winc"
+use_latest_release = true
+prefix = "v"
+github_account = "vowstar"
+deps = "rust"
+autobump = true
+
 ["app-editors/xed"]
 source = "github"
 github = "linuxmint/xed"
