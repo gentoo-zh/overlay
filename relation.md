@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-21 17:03:44 CST)
+(The last generation time: 2026-11-21 17:06:19 CST)
 
 ### Packages
 
@@ -713,6 +713,7 @@
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/dingtalk                                       | 8.3.1.261008001-r3 |            | https://www.dingtalk.com                                                   | Communication platform that supports video and audio conferencing
+                                                       | 9.0.0.261118001    |            |                                                                            |
    dev-util/execstack                                  | 0_pre20130503-r1   | BD         | https://people.redhat.com/jakub/prelink/                                   | set the executable stack flag of ELF binaries and libraries
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-im/luoxu                                          | 9999               |            | https://github.com/lilydjwg/luoxu                                          | A Telegram userbot to index Chinese and Japanese group contents
