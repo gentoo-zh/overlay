@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-21 16:57:39 CST)
+(The last generation time: 2026-11-21 17:03:44 CST)
 
 ### Packages
 
@@ -193,8 +193,7 @@
  app-misc/cherry-studio-bin                            | 1.9.13             |            | https://github.com/CherryHQ/cherry-studio                                  | Cherry Studio is a desktop client that supports for multiple LLM providers
                                                        | 2.2.3              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/claude-desktop                               | 5.11492.5          |            | https://claude.com/download                                                | Desktop application for Claude.ai
-                                                       | 6.28899.2          |            |                                                                            |
+ app-misc/claude-desktop                               | 6.28899.2          |            | https://claude.com/download                                                | Desktop application for Claude.ai
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/codex-auth                                   | 0.4.0              |            | https://github.com/Loongphy/codex-auth                                     | Command-line tool for switching Codex accounts
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
