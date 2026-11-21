@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-21 17:11:12 CST)
+(The last generation time: 2026-11-21 17:12:57 CST)
 
 ### Packages
 
@@ -915,7 +915,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-chemistry/vesta                                   | 3.5.8-r2           |            | https://jp-minerals.org/vesta/                                             | Visualization for Electronic and STructural Analysis
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sci-electronics/circuitjs1-bin                        | 4.1.5.1            |            | https://www.falstad.com/circuit/                                           | Electronic Circuit Simulator in the Browser
+ sci-electronics/circuitjs1-bin                        | 5.0.5              |            | https://www.falstad.com/circuit/                                           | Electronic Circuit Simulator in the Browser
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sci-electronics/jlc-assistant-bin                     | 5.0.69             |            | https://www.jlc.com/portal/appDownloadsWithConfig.html                     | JLC Order Assistant (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
