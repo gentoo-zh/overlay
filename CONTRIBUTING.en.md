@@ -6,8 +6,8 @@ English | [简体中文](./CONTRIBUTING.md) | [正體中文](./CONTRIBUTING.zh-T
 
 # Contributing
 
-gentoo-zh is a Gentoo overlay (a third-party ebuild repository) and is not
-independent of Gentoo.
+gentoo-zh is a Gentoo overlay (a third-party ebuild repository) that depends on
+`::gentoo` (`masters = gentoo` in `metadata/layout.conf`).
 
 > [!NOTE]
 > Anyone who deliberately bypasses the rules in this file is removed from the
@@ -17,6 +17,9 @@ independent of Gentoo.
 ## Packages
 
 - Ebuilds use `~arch` keywords only.
+- Dependencies that `::gentoo` already provides are not duplicated here, and a
+  package with the same name as one in `::gentoo` is not added unless there is a
+  specific reason.
 - Every package has a `metadata.xml` that names its maintainer.
 - `LICENSE` matches the license declared by the packaged software; add licenses
   missing from `::gentoo` to `licenses/` and `profiles/license_groups`.

@@ -6,7 +6,7 @@
 
 # 贡献指南
 
-gentoo-zh 是 Gentoo 的 overlay（第三方 ebuild 仓库），不独立于 Gentoo。
+gentoo-zh 是 Gentoo 的 overlay（第三方 ebuild 仓库），依赖 `::gentoo`（`metadata/layout.conf` 中 `masters = gentoo`）。
 
 > [!NOTE]
 > 故意绕过本文规定者将被移出组织，其维护的全部软件包将被 treeclean。此规则适用于全部维护者，包括 owner 和 member。
@@ -14,6 +14,7 @@ gentoo-zh 是 Gentoo 的 overlay（第三方 ebuild 仓库），不独立于 Gen
 ## 软件包
 
 - ebuild 只使用 `~arch` 关键字；
+- `::gentoo` 已有的依赖不在本仓库重复添加；除特殊情况外，不添加与 `::gentoo` 同名的软件包；
 - 每个软件包须有 `metadata.xml`，并写明维护者；
 - `LICENSE` 须与所打包软件声明的许可证一致，`::gentoo` 没有的许可证须加入 `licenses/` 和 `profiles/license_groups`；
 - 除特殊情况外，同一软件包的改动须在同一个提交中；
@@ -141,8 +142,8 @@ Signed-off-by: A Developer <example@gentoo.org>
 
 ### 禁止
 
-- 未经贡献者逐条阅读并批准，即由工具发出的 pull request、推送或评论。
-- 根据工具输出批量发起 pull request，且未逐个构建、测试。
+- 由工具发出 pull request、推送或评论，而贡献者未逐条阅读并批准。
+- 根据工具输出批量发起 pull request，而未逐个构建和测试。
 - 隐瞒或淡化 AI 的参与程度。
 
 autobump、nvchecker 等本仓库自有的 bot 不受上述规则限制。
