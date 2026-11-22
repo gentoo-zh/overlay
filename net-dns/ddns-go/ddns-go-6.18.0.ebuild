@@ -9,7 +9,7 @@ DESCRIPTION="Automatically obtain your public IP address and set to your domain 
 HOMEPAGE="https://github.com/jeessy2/ddns-go"
 SRC_URI="
 	https://github.com/jeessy2/ddns-go/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz
-	https://github.com/gentoo-zh/gentoo-deps/releases/download/${P}/${P}-vendor.tar.xz
+	https://github.com/gentoo-zh-drafts/ddns-go/releases/download/v${PV}/${P}-vendor.tar.xz
 "
 
 LICENSE="MIT BSD"
@@ -35,7 +35,6 @@ src_install() {
 	dobin "${PN}"
 	newinitd "${FILESDIR}/${PN}.initd" "${PN}"
 	newconfd "${FILESDIR}/${PN}.confd" "${PN}"
-
 	systemd_dounit "${FILESDIR}/${PN}.service"
 	systemd_newunit "${FILESDIR}/${PN}_at.service" "${PN}@.service"
 	systemd_dounit "${FILESDIR}/${PN}-web.service"
