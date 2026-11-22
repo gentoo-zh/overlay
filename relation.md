@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-22 16:07:33 CST)
+(The last generation time: 2026-11-22 16:08:31 CST)
 
 ### Packages
 
@@ -237,7 +237,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/yazi                                         | 26.9.1             |            | https://yazi-rs.github.io                                                  | Blazing fast terminal file manager written in Rust, based on async I/O
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/zcode-switch-bin                             | 1.7.1              |            | https://github.com/pjpv/zcode-switch                                       | One-click switcher for multiple ZCode accounts with quota display
+ app-misc/zcode-switch-bin                             | 1.7.2              |            | https://github.com/pjpv/zcode-switch                                       | One-click switcher for multiple ZCode accounts with quota display
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/z-library                                    | 3.2.1              |            | https://z-lib.fm/z-access                                                  | Z-library application
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
