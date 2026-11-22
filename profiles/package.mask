@@ -24,12 +24,6 @@ x11-wm/chamferwm
 # Removal on 2026-12-11.
 net-libs/jzmq
 
-# Zakk <zakk@gentoozh.org> (2026-10-24)
-# Only net-proxy/qv2ray uses dev-libs/singleapplication, and qv2ray is
-# masked for removal.
-# Removal on 2026-11-20.
-dev-libs/singleapplication
-
 # Zakk <zakk@gentoozh.org> (2026-08-12)
 # This legacy release is no longer updated. arm64 and loong users should use
 # app-office/wps-office365-edu, which supports offline use.
