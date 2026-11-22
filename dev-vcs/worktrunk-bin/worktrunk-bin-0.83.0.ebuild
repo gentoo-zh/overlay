@@ -31,7 +31,7 @@ src_unpack() {
 
 src_install() {
 	dobin wt git-wt
-	dodoc README.md CHANGELOG.md LICENSE
+	dodoc README.md CHANGELOG.md
 
 	if ! tc-is-cross-compiler; then
 		local cmd
