@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-22 18:56:05 CST)
+(The last generation time: 2026-11-22 18:56:56 CST)
 
 ### Packages
 
@@ -330,7 +330,7 @@
  dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0-r1           |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-libs/v2ray-rules-dat-bin                          | 202611202204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
+ dev-libs/v2ray-rules-dat-bin                          | 202611212204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/adafruit-board-toolkit                     | 1.1.2              |            | https://github.com/adafruit/Adafruit_Board_Toolkit/                        | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -499,7 +499,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/waza-bin                                     | 0.42.0             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/zcode-bin                                    | 3.18.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
+ dev-util/zcode-bin                                    | 3.19.1             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zprint-bin                                   | 1.3.0-r1           |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -881,7 +881,7 @@
        app-alternatives/v2ray-geosite                  | 0-r2               |  D, BD, RD |                                                                            | symlink for v2ray-geosite
      net-proxy/v2ray                                   | 5.53.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
      net-proxy/v2ray-bin                               | 5.53.0             | RD         | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
-   net-proxy/trojan-go-fork                            | 2026.11.15         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
+   net-proxy/trojan-go-fork                            | 2026.11.22         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1025,8 +1025,8 @@
                                                        | 7.3.5              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
-   dev-libs/v2ray-domain-list-community                | 20261121064510     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
-   dev-libs/v2ray-domain-list-community-bin            | 20261121064510     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community                | 20261122062944     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community-bin            | 20261122062944     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
    dev-libs/v2ray-geoip                                | 202611080027       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
