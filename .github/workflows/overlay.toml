@@ -2719,9 +2719,6 @@ autobump = true
 #["net-proxy/qv2ray"]
 
 # no tracking entry yet
-#["net-proxy/qvplugin-trojan"]
-
-# no tracking entry yet
 #["net-proxy/qvplugin-trojan-go"]
 
 ["net-proxy/serenity"]
