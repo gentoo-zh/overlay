@@ -1049,9 +1049,6 @@ prefix = "v"
 github_account = ["microcai", "gouwazi"]
 autobump = true
 
-# packaged from a pinned commit, no tag to compare
-#["dev-libs/qnodeeditor"]
-
 ["dev-libs/v2ray-domain-list-community"]
 source = "github"
 github = "v2fly/domain-list-community"
