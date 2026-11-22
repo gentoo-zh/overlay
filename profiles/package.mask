@@ -37,7 +37,6 @@ dev-libs/singleapplication
 # fail to build on stable.
 # Removal on 2026-11-20.
 dev-libs/qnodeeditor
-net-proxy/qv2ray
 
 # Zakk <zakk@gentoozh.org> (2026-08-12)
 # This legacy release is no longer updated. arm64 and loong users should use

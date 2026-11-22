@@ -2715,9 +2715,6 @@ github_account = ["irort"]
 deps = { lang = "golang", vendordir = "{P}" }
 autobump = true
 
-# packaged from a pinned commit, no tag to compare
-#["net-proxy/qv2ray"]
-
 ["net-proxy/serenity"]
 source = "github"
 github = "SagerNet/serenity"
