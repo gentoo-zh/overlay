@@ -6,8 +6,8 @@ English | [简体中文](./README.md) | [正體中文](./README.zh-TW.md) | [廣
 
 # gentoo-zh
 
-gentoo-zh is an inclusive Gentoo overlay (a third-party ebuild repository) and
-is not independent of Gentoo.
+gentoo-zh is an inclusive Gentoo overlay (a third-party ebuild repository). It
+works only together with `::gentoo` and cannot be used on its own.
 
 ## Community
 

@@ -6,7 +6,7 @@
 
 # gentoo-zh
 
-gentoo-zh 是一個包容的 Gentoo overlay（第三方 ebuild 儲存庫），不獨立於 Gentoo。
+gentoo-zh 是一個包容的 Gentoo overlay（第三方 ebuild 儲存庫），須與 `::gentoo` 一起使用，不能單獨使用。
 
 ## 社群
 
