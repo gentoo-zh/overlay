@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-22 19:15:48 CST)
+(The last generation time: 2026-11-23 00:12:48 CST)
 
 ### Packages
 
@@ -825,6 +825,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-print/epson-inkjet-printer_201207w                | 1.0.0-r3           |            | https://openprinting.github.io/foomatic/driver/epson-201207w               | Epson printer driver (L110, L210, L300, L350, L355, L550, L555)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-proxy/Xray                                        | 26.11.9            |            | https://xtls.github.io/                                                    | Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support
+                                                       | 9999               |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/bore                                        | 0.6.0              |            | https://github.com/ekzhang/bore                                            | bore is a simple CLI tool for making tunnels to localhost
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/cgproxy                                     | 0.20-r1            |            | https://github.com/springzfx/cgproxy                                       | Transparent Proxy with cgroup v2
@@ -843,6 +846,8 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/daed                                        | 1.27.0-r1          |            | https://github.com/daeuniverse/daed                                        | A Modern Dashboard For dae
                                                        | 9999               |            |                                                                            |
+   app-alternatives/v2ray-geoip                        | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geoip
+   app-alternatives/v2ray-geosite                      | 0-r2               |  D, BD, RD |                                                                            | symlink for v2ray-geosite
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
                                                        | 12.21.0            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -865,24 +870,6 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/queqiao                                     | 0.12.2             |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/qvplugin-command                            | 3.0.0              |            | https://github.com/Qv2ray/QvPlugin-Command                                 | Plugin for Qv2ray to run any commands when something happens in Qv2ray
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/qvplugin-ss                                 | 3.0.0-r1           |            | https://github.com/Qv2ray/QvPlugin-SS                                      | Plugin for Qv2ray to support SIP003 in Qv2ray
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/qvplugin-trojan                             | 3.0.0              |            | https://github.com/Qv2ray/QvPlugin-Trojan                                  | Plugin for Qv2ray to support Trojan proxy in Qv2ray
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/qvplugin-trojan-go                          | 3.0.0              |            | https://github.com/Qv2ray/QvPlugin-Trojan-Go                               | Plugin for Qv2ray to support Trojan-Go proxy in Qv2ray
-   net-proxy/qv2ray                                    | 2.7.0_p20240625-r1 | RD         | https://github.com/Qv2ray/Qv2ray                                           | Qt GUI fontend of v2ray
-     dev-libs/qnodeeditor                              | 2.1.7_p20210113    |  D, RD     | https://github.com/Qv2ray/QNodeEditor                                      | A general-purpose Qt-based library aimed at graph-controlled data processing
-     dev-libs/singleapplication                        | 3.5.6              |  D         | https://itay-grudev.github.io/SingleApplication/                           | Replacement of QtSingleApplication support for inter-instance communication
-     net-proxy/Xray                                    | 26.11.9            | RD         | https://xtls.github.io/                                                    | Xray, Penetrates Everything. Also the best v2ray-core, with XTLS support
-                                                       | 9999               |            |                                                                            |
-       app-alternatives/v2ray-geoip                    | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geoip
-       app-alternatives/v2ray-geosite                  | 0-r2               |  D, BD, RD |                                                                            | symlink for v2ray-geosite
-     net-proxy/v2ray                                   | 5.53.0             | RD         | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
-     net-proxy/v2ray-bin                               | 5.53.0             | RD         | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
-   net-proxy/trojan-go-fork                            | 2026.11.22         | RD         | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
--------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/shadowsocks-rust                            | 1.25.0             |            | https://github.com/shadowsocks/shadowsocks-rust                            | shadowsocks is a fast tunnel proxy that helps you bypass firewalls
@@ -894,9 +881,15 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/smartproxy                                  | 0.9.5              |            | https://github.com/microcai/smartproxy                                     | A fast, proxy smart selector
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-proxy/trojan-go-fork                              | 2026.11.22         |            | https://github.com/Potterli20/trojan-go-fork                               | A fork of trojan-go
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-proxy/v2ray                                       | 5.53.0             |            | https://www.v2fly.org/                                                     | A platform for building proxies to bypass network restrictions
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/v2rayA                                      | 2.4.25             |            | https://v2raya.org/                                                        | web GUI of Project V which supports V2Ray, Xray, SS, SSR, Trojan and Pingtunnel
                                                        | 2.5.16             |            |                                                                            |
                                                        | 9999               |            |                                                                            |
+-------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
+ net-proxy/v2ray-bin                                   | 5.53.0             |            | https://www.v2fly.org                                                      | A platform for building proxies to bypass network restrictions
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/yacd-meta                                   | 0.8.0              |            | https://github.com/MetaCubeX/Yacd-meta                                     | Yet Another Clash Dashboard
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
