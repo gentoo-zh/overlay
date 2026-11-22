@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-22 16:30:00 CST)
+(The last generation time: 2026-11-22 18:13:53 CST)
 
 ### Packages
 
@@ -704,7 +704,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-analyzer/sslx-bin                                 | 0.3.1              |            | https://github.com/glincker/sslx                                           | Inspect, grade, and manage certificates and TLS from the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-dns/ddns-go                                       | 6.17.9             |            | https://github.com/jeessy2/ddns-go                                         | Automatically obtain your public IP address and set to your domain name service
+ net-dns/ddns-go                                       | 6.18.0             |            | https://github.com/jeessy2/ddns-go                                         | Automatically obtain your public IP address and set to your domain name service
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-dns/dnslookup                                     | 1.12.0             |            | https://github.com/ameshkov/dnslookup                                      | Simple command line utility to make DNS lookups to the specified server
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
