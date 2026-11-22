@@ -2718,9 +2718,6 @@ autobump = true
 # packaged from a pinned commit, no tag to compare
 #["net-proxy/qv2ray"]
 
-# no tracking entry yet
-#["net-proxy/qvplugin-trojan-go"]
-
 ["net-proxy/serenity"]
 source = "github"
 github = "SagerNet/serenity"
