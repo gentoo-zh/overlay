@@ -38,7 +38,6 @@ dev-libs/singleapplication
 # Removal on 2026-11-20.
 dev-libs/qnodeeditor
 net-proxy/qv2ray
-net-proxy/qvplugin-command
 net-proxy/qvplugin-ss
 net-proxy/qvplugin-trojan
 net-proxy/qvplugin-trojan-go

@@ -2719,9 +2719,6 @@ autobump = true
 #["net-proxy/qv2ray"]
 
 # no tracking entry yet
-#["net-proxy/qvplugin-command"]
-
-# no tracking entry yet
 #["net-proxy/qvplugin-ss"]
 
 # no tracking entry yet
