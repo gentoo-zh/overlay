@@ -30,14 +30,6 @@ net-libs/jzmq
 # Removal on 2026-11-20.
 dev-libs/singleapplication
 
-# Zakk <zakk@gentoozh.org> (2026-10-21)
-# Qv2ray has made no release since 2021, and upstream archived its plugins and
-# dev-libs/qnodeeditor, which only qv2ray uses. The stable net-libs/grpc that
-# qv2ray depends on does not support Python 3.14, so qv2ray and its plugins
-# fail to build on stable.
-# Removal on 2026-11-20.
-dev-libs/qnodeeditor
-
 # Zakk <zakk@gentoozh.org> (2026-08-12)
 # This legacy release is no longer updated. arm64 and loong users should use
 # app-office/wps-office365-edu, which supports offline use.
