@@ -24,13 +24,7 @@ LICENSE+="
 SLOT="0"
 KEYWORDS="-* ~amd64 ~arm64"
 
-RDEPEND="
-	amd64? ( >=sys-libs/glibc-2.17 )
-	arm64? (
-		dev-libs/openssl:0/3
-		>=sys-libs/glibc-2.39
-	)
-"
+RDEPEND="sys-libs/glibc"
 
 QA_PREBUILT="usr/bin/${MY_PN}"
 
