@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-22 18:57:51 CST)
+(The last generation time: 2026-11-22 19:15:48 CST)
 
 ### Packages
 
@@ -511,7 +511,7 @@
                                                        | 2026.23            |            |                                                                            |
                                                        | 2026.24            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/worktrunk-bin                                 | 0.82.0             |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
+ dev-vcs/worktrunk-bin                                 | 0.83.0             |            | https://worktrunk.dev                                                      | Git worktree management for parallel AI agent workflows (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-action/vintagestory                             | 1.19.8             |            | https://www.vintagestory.at/                                               | Uncompromising wilderness survival sandbox game (requires paid account)
                                                        | 1.20.12            |            |                                                                            |
