@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-22 18:55:11 CST)
+(The last generation time: 2026-11-22 18:56:05 CST)
 
 ### Packages
 
@@ -186,7 +186,7 @@
                                                        | 4.0.37             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.20.4-r1          |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
-                                                       | 4.0.37             |            |                                                                            |
+                                                       | 4.0.38             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.11.4             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -217,7 +217,7 @@
  app-misc/keyd                                         | 2.6.0-r1           |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.4633           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.4668           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -288,7 +288,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/readest-bin                                  | 0.12.20            |            | https://readest.com/                                                       | A modern, feature-rich ebook reader
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-text/stirling-pdf-bin                             | 3.4.0              |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
+ app-text/stirling-pdf-bin                             | 3.5.0              |            | https://www.stirling.com                                                   | Locally hosted, web-based PDF manipulation tool (Tauri desktop app)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-text/xreader                                      | 4.6.11             |            | https://github.com/linuxmint/xreader                                       | Document viewer for the X-Apps project
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -392,7 +392,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-ruby/filelock                                     | 1.1.1              |            | https://github.com/sheerun/filelock                                        | Heavily tested, but simple filelocking solution using flock command
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/antigravity-cli                              | 1.5.13             |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
+ dev-util/antigravity-cli                              | 1.5.14             |            | https://antigravity.google/product/antigravity-cli                         | Google Antigravity terminal agent (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/arch-install-scripts                         | 32                 |            | https://gitlab.archlinux.org/archlinux/arch-install-scripts                | Arch Linux install tools (pacstrap, genfstab, arch-chroot)
    dev-util/pacstrap                                   | 32-r1              | RD         | https://github.com/archlinux/arch-install-scripts                          | Pacstrap - install packages to the specified new root directorye
@@ -443,7 +443,7 @@
  dev-util/oh-my-pi-bin                                 | 18.22.2            |            | https://omp.sh                                                             | AI coding agent for the terminal
                                                        | 19.1.0             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/openchamber-bin                              | 2.7.3              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
+ dev-util/openchamber-bin                              | 2.8.0              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.19.5             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 2.3.2              |            |                                                                            |
@@ -467,7 +467,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoder-bin                                    | 0.5.17             |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qodercli-bin                                 | 1.1.94             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
+ dev-util/qodercli-bin                                 | 1.1.95             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoderwake-bin                                | 1.2.23             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -497,7 +497,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/vimls-go-bin                                 | 0.2.1              |            | https://github.com/neoclide/vimls-go                                       | Language server for Legacy Vim script and Vim9 script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/waza-bin                                     | 0.41.0             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
+ dev-util/waza-bin                                     | 0.42.0             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zcode-bin                                    | 3.18.2             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
