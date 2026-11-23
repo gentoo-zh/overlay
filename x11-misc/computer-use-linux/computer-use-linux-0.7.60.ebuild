@@ -389,6 +389,11 @@ src_test() {
 		gnome_extension::tests::system_migration_keeps_reload_warning_until_shell_changes_loaded_path
 		remote_desktop::eis_tests::gnome_fractional_pointer_reaches_full_eis_region
 		test_sockets::tests::a_private_bus_keeps_its_socket_in_its_dir_and_removes_both
+		virtual_pen::tests::kwin_emulate_tablet_blocker_reads_systemd_service_over_dbus
+		virtual_pen::tests::kwin_environ_proc_fixture_covers_hidepid_nixos_and_ppid_mismatch
+		virtual_pen::tests::kwin_environ_reads_wrapper_parent_when_kwin_is_non_dumpable
+		virtual_pen::tests::kwin_environ_refuses_non_wrapper_parent_and_reads_xwayland_child
+		background_text_and_keys_reach_an_atspi_element_without_focus
 		reload_is_required_only_for_changes_gnome_shell_runs
 	)
 	cargo_src_test
