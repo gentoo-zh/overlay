@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 07:19:22 CST)
+(The last generation time: 2026-11-24 07:24:48 CST)
 
 ### Packages
 
@@ -995,8 +995,11 @@
                                                        | 6.18.64            |            |                                                                            |
                                                        | 7.3.5              |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.118-r1        | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
+                                                       | 6.12.119           |            |                                                                            |
                                                        | 6.18.64-r1         |            |                                                                            |
+                                                       | 6.18.65            |            |                                                                            |
                                                        | 7.3.5-r1           |            |                                                                            |
+                                                       | 7.3.6              |            |                                                                            |
    sys-kernel/liquorix-sources                         | 7.3.4              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
                                                        | 7.3.5              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.13             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
