@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-23 19:23:42 CST)
+(The last generation time: 2026-11-24 07:19:22 CST)
 
 ### Packages
 
@@ -969,7 +969,9 @@
  sys-process/witr                                      | 0.3.4              |            | https://github.com/pranshuparmar/witr                                      | Trace any process, port, container, or file back to what started it
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/dist-kernel                                   | 6.12.118-r100      |            |                                                                            | Virtual to depend on any Distribution Kernel
+                                                       | 6.12.119-r100      |            |                                                                            |
                                                        | 6.18.64-r100       |            |                                                                            |
+                                                       | 6.18.65-r100       |            |                                                                            |
                                                        | 7.2.13-r100        |            |                                                                            |
                                                        | 7.2.14-r100        |            |                                                                            |
                                                        | 7.3.1-r100         |            |                                                                            |
@@ -984,8 +986,11 @@
                                                        | 7.3.5-r1           |            |                                                                            |
      dev-util/pahole-cachyos                           | 1.32               | RD         | https://git.kernel.org/pub/scm/devel/pahole/pahole.git/                    | pahole/DWARF utilities with CachyOS merged-CU lang_exclude fixes
    sys-kernel/gentoo-cjk-kernel                        | 6.12.118           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
+                                                       | 6.12.119           |            |                                                                            |
                                                        | 6.18.64            |            |                                                                            |
+                                                       | 6.18.65            |            |                                                                            |
                                                        | 7.3.5              |            |                                                                            |
+                                                       | 7.3.6              |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.118           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
                                                        | 6.18.64            |            |                                                                            |
                                                        | 7.3.5              |            |                                                                            |
