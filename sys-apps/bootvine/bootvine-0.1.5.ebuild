@@ -3,7 +3,7 @@
 
 EAPI=8
 
-RUST_MIN_VER="1.91.0"
+RUST_MIN_VER="1.95.0"
 
 inherit cargo systemd
 
@@ -15,34 +15,19 @@ SRC_URI="
 "
 
 # The mirror's tag carries the upstream tree plus its injected dist workflow; build
-# in the bootvine workspace member so the scripted-demos and xtask members are not
-# built.
+# in the bootvine workspace member so the scripted-demos member is not built.
 S="${WORKDIR}/${P}/bootvine"
 
 LICENSE="GPL-3+"
 # Dependent crate licenses
 LICENSE+="
-	Apache-2.0 ISC LGPL-2.1+ MIT Unicode-3.0 Unicode-DFS-2016
-	Unlicense WTFPL-2 ZLIB
+	Apache-2.0 CC0-1.0 ISC MIT Unicode-3.0 Unicode-DFS-2016 WTFPL-2 ZLIB
 "
 SLOT="0"
 KEYWORDS="~amd64"
 
 IUSE="+openrc systemd"
 REQUIRED_USE="|| ( systemd openrc )"
-
-# The systemd feature links libdbus and libsystemd; the openrc feature is pure Rust.
-DEPEND="
-	systemd? (
-		>=sys-apps/dbus-1.6
-		>=sys-apps/systemd-246:=
-	)
-"
-RDEPEND="${DEPEND}"
-
-BDEPEND="
-	systemd? ( virtual/pkgconfig )
-"
 
 # rustc takes LDFLAGS via cargo.eclass's RUSTFLAGS but not the full CFLAGS set,
 # so the binary would otherwise trip portage's "Files built without respecting
