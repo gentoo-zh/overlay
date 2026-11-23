@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-23 17:20:26 CST)
+(The last generation time: 2026-11-23 17:30:47 CST)
 
 ### Packages
 
@@ -934,7 +934,7 @@
    acct-group/aptly                                    | 0                  | RD         |                                                                            | A swiss army knife for Debian repository management
    acct-user/aptly                                     | 0                  | RD         |                                                                            | A swiss army knife for Debian repository management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/bootvine                                     | 0.1.4              |            | https://codeberg.org/wvhulle/bootvine                                      | Boot and shutdown progress for systemd or OpenRC, as a dependency tree
+ sys-apps/bootvine                                     | 0.1.5              |            | https://codeberg.org/wvhulle/bootvine                                      | Boot and shutdown progress for systemd or OpenRC, as a dependency tree
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/isd                                          | 0.6.3              |            | https://github.com/kainctl/isd                                             | isd (interactive systemd) — a better way to work with systemd units
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
