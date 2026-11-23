@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-23 17:31:38 CST)
+(The last generation time: 2026-11-23 18:20:13 CST)
 
 ### Packages
 
@@ -504,7 +504,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zprint-bin                                   | 1.3.0-r1           |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-vcs/gitoxide                                      | 0.61.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
+ dev-vcs/gitoxide                                      | 0.62.0             |            | https://github.com/GitoxideLabs/gitoxide                                   | A command-line application for interacting with git repositories
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-vcs/rebased-bin                                   | 1.1.24             |            | https://github.com/DetachHead/rebased                                      | Git client based on the IntelliJ platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -869,7 +869,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/proxy-server                                | 11.0.1             |            | https://github.com/jackarain/proxy                                         | Implementation of all proxy protocols using modern c++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/queqiao                                     | 0.12.2             |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
+ net-proxy/queqiao                                     | 0.13.0             |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
