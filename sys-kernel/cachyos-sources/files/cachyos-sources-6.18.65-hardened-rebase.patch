@@ -1,0 +1,20 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] rebase hardened kobject_ns.h context on Linux 6.18.65
+
+Linux 6.18.65 changes kobj_ns_type_operations::drop_ns() to take a
+struct ns_common pointer (stable commit 30f229522a99), so update the
+context of the unchanged __init kobj_ns_type_register() hunk.
+Apply after cachyos-sources-6.18.64-hardened-rebase.patch to the temporary
+hardened.patch, not the kernel source.
+
+--- a/hardened.patch
++++ b/hardened.patch
+@@ -962,7 +962,7 @@
+ --- a/include/linux/kobject_ns.h
+ +++ b/include/linux/kobject_ns.h
+ @@ -45,7 +45,7 @@ struct kobj_ns_type_operations {
+- 	void (*drop_ns)(void *);
++ 	void (*drop_ns)(struct ns_common *);
+  };
+  
+ -int kobj_ns_type_register(const struct kobj_ns_type_operations *ops);

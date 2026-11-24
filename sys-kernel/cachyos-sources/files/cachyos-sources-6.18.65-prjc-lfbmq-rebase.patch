@@ -1,0 +1,23 @@
+From: Gentoo CachyOS overlay
+Subject: [PATCH] rebase scheduler idle class context on Linux 6.18.65
+
+Linux 6.18.65 replaces the idle class switched_to() callback with
+switching_to() (stable commit 07d711b83698), so update the context of the
+unchanged CONFIG_SCHED_ALT guard around the idle scheduling class.
+Upstream: kernel-patches@4360bfe17b51d3cb47c45848244ca989522df0cf/6.18/sched/0001-prjc-cachy-lfbmq.patch
+Apply after cachyos-sources-6.18.55-prjc-lfbmq-rebase.patch to a copy of the pinned
+upstream patch, not the kernel tree.
+
+--- a/prjc-lfbmq.patch
++++ b/prjc-lfbmq.patch
+@@ -10366,8 +10366,8 @@
+  /*
+   * idle-task scheduling class.
+   */
+-@@ -539,3 +540,4 @@ DEFINE_SCHED_CLASS(idle) = {
+- 	.switched_to		= switched_to_idle,
++@@ -566,3 +567,4 @@ DEFINE_SCHED_CLASS(idle) = {
++ 	.switching_to		= switching_to_idle,
+  	.update_curr		= update_curr_idle,
+  };
+ +#endif
