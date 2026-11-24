@@ -15,7 +15,7 @@ declare -A GIT_CRATES=(
 	[libsql]="https://github.com/pnpm/libsql;${LIBSQL_COMMIT};libsql-%commit%/libsql"
 )
 
-RUST_MIN_VER="1.97.0"
+RUST_MIN_VER="1.98.0"
 
 inherit cargo wrapper
 
