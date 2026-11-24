@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-25 00:04:48 CST)
+(The last generation time: 2026-11-25 00:57:43 CST)
 
 ### Packages
 
@@ -539,7 +539,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  games-util/sgdboop                                    | 1.4.4-r2           |            | https://github.com/SteamGridDB/SGDBoop                                     | Apply SteamGridDB assets directly to your Steam library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- games-util/watt-toolkit-bin                           | 3.2.0              |            | https://steampp.net/                                                       | Multi-purpose Steam toolbox (Watt Toolkit, formerly Steam++)
+ games-util/watt-toolkit-bin                           | 3.3.0              |            | https://steampp.net/                                                       | Multi-purpose Steam toolbox (Watt Toolkit, formerly Steam++)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  gnome-extra/gnome-shell-extension-clipboard-indicator | 49                 |            | https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator       | The most popular clipboard manager for GNOME, with over 1M downloads
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
