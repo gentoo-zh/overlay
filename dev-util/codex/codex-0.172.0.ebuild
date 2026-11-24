@@ -26,7 +26,7 @@ declare -A GIT_CRATES=(
 	[crossterm]='https://github.com/openai-oss-forks/crossterm;37ca4a27a9424ec5dbe6451f48c339d7b45f8d63;crossterm-%commit%'
 	[h3]='https://github.com/hyperium/h3;e07e69412876f7e26f026bd75a48b2704d8c8283;h3-%commit%/h3'
 	[h3-quinn]='https://github.com/hyperium/h3;e07e69412876f7e26f026bd75a48b2704d8c8283;h3-%commit%/h3-quinn'
-	[mxc-sdk]='https://github.com/microsoft/mxc;b21120168d70befe12356411423266bfef168446;mxc-%commit%/src/mxc-sdk'
+	[mxc-sdk]='https://github.com/microsoft/mxc;c66201839d63cae2239db5e92f1f1d6076cf5181;mxc-%commit%/src/mxc-sdk'
 	[nucleo-matcher]='https://github.com/helix-editor/nucleo;4253de9faabb4e5c6d81d946a5e35a90f87347ee;nucleo-%commit%/matcher'
 	[nucleo]='https://github.com/helix-editor/nucleo;4253de9faabb4e5c6d81d946a5e35a90f87347ee;nucleo-%commit%'
 	[rmcp-macros]='https://github.com/modelcontextprotocol/rust-sdk;b11a40d889e022087d7f2b8cd23aa28e19ceaf5b;rust-sdk-%commit%/crates/rmcp-macros'
@@ -34,8 +34,8 @@ declare -A GIT_CRATES=(
 	[sqlx-core]='https://github.com/transact-rs/sqlx;10462fa4414c6c7f1ed1d39bb31678e3b726878c;sqlx-%commit%/sqlx-core'
 	[sqlx-sqlite]='https://github.com/transact-rs/sqlx;10462fa4414c6c7f1ed1d39bb31678e3b726878c;sqlx-%commit%/sqlx-sqlite'
 	[runfiles]='https://github.com/dzbarsky/rules_rust;b56cbaa8465e74127f1ea216f813cd377295ad81;rules_rust-%commit%/rust/runfiles'
-	[tokio-tungstenite]='https://github.com/openai-oss-forks/tokio-tungstenite;7447c427513cfe685f236e1ac0513c4ea3dd9c0b;tokio-tungstenite-%commit%'
-	[tungstenite]='https://github.com/openai-oss-forks/tungstenite-rs;bc589d684755a8c02da0fc7e58d0861cbfc306f1;tungstenite-rs-%commit%'
+	[tokio-tungstenite]='https://github.com/openai-oss-forks/tokio-tungstenite;7a920470d62138955446b64220c7609e46ad770e;tokio-tungstenite-%commit%'
+	[tungstenite]='https://github.com/openai-oss-forks/tungstenite-rs;e19950ef7828cb311e6d51a6bedcebf0192e055c;tungstenite-rs-%commit%'
 	[v8]='https://github.com/openai-oss-forks/rusty_v8;90a65f887a0c0f048f3784afbcb320b373c8a2e0;rusty_v8-%commit%'
 )
 
