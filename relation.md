@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 18:49:11 CST)
+(The last generation time: 2026-11-24 18:50:10 CST)
 
 ### Packages
 
@@ -468,7 +468,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoder-bin                                    | 0.5.17             |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qodercli-bin                                 | 1.1.95             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
+ dev-util/qodercli-bin                                 | 1.1.96             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoderwake-bin                                | 1.2.23             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1019,7 +1019,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20261122062944     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
-   dev-libs/v2ray-domain-list-community-bin            | 20261122062944     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community-bin            | 20261124090120     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
    dev-libs/v2ray-geoip                                | 202611080027       | RD         | https://github.com/v2fly/geoip                                             | GeoIP for V2Ray
