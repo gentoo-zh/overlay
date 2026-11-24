@@ -161,7 +161,8 @@ Signed-off-by: A Developer <example@gentoo.org>
 ```
 
 > [!NOTE]
-> Do not add `Co-authored-by:`; CI rejects it.
+> Do not credit AI with `Co-authored-by:`; CI rejects it.
+> Human co-authors may use `Co-authored-by:`.
 
 Disclosure is not required for:
 

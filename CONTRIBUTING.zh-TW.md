@@ -133,7 +133,8 @@ Signed-off-by: A Developer <example@gentoo.org>
 ```
 
 > [!NOTE]
-> 不得使用 `Co-authored-by:`，否則 CI 會拒絕該提交。
+> AI 協助不得以 `Co-authored-by:` 標註，否則 CI 會拒絕該提交。
+> 人類共同作者可正常使用 `Co-authored-by:`。
 
 以下情況無需聲明：
 
