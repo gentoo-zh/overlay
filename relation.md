@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 19:09:15 CST)
+(The last generation time: 2026-11-24 19:20:28 CST)
 
 ### Packages
 
@@ -501,6 +501,7 @@
  dev-util/waza-bin                                     | 0.42.0             |            | https://github.com/microsoft/waza                                          | CLI and framework for AI agent skills
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zcode-bin                                    | 3.19.1             |            | https://zcode.z.ai                                                         | ZCode - Z.ai's Agentic Development Environment for GLM (binary package)
+                                                       | 4.0.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/zprint-bin                                   | 1.3.0-r1           |            | https://github.com/kkinnear/zprint                                         | Clojure and Clojurescript source code formatter
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
