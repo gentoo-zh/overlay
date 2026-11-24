@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 21:05:50 CST)
+(The last generation time: 2026-11-24 21:19:47 CST)
 
 ### Packages
 
@@ -1018,6 +1018,7 @@
                                                        | 7.3.3              |            |                                                                            |
                                                        | 7.3.4              |            |                                                                            |
                                                        | 7.3.5              |            |                                                                            |
+                                                       | 7.3.6              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
    dev-libs/v2ray-domain-list-community                | 20261124090120     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
