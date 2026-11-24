@@ -171,10 +171,9 @@ Disclosure is not required for:
 
 ### Forbidden usage
 
-- Pull requests, pushes or comments published by a tool before the contributor
-  has reviewed and approved each one.
-- Opening pull requests in bulk from a tool's output without building and
-  testing each one.
+- Having an automated tool directly open pull requests or post comments before
+  a human contributor has confirmed a successful build, verified that the tests
+  pass and reviewed each piece of tool-generated content.
 - Hiding or understating the extent of AI involvement.
 
 This repository's own bots, such as autobump and nvchecker, are not covered by
