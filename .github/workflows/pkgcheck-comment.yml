@@ -139,7 +139,7 @@ jobs:
            \`\`\`
            \`git commit -s\` and \`pkgdev commit --signoff\` add it for you.
         3. **No merge commits**: update the branch with \`git rebase\`, not \`git merge\` or the Update branch button.
-        4. **No \`Co-authored-by\`**: mark AI help with an \`Assisted-by\` line instead.
+        4. **No AI in \`Co-authored-by\`**: mark AI help with an \`Assisted-by\` line instead.
            \`\`\`
            Assisted-by: Claude:claude-opus-5-5
            \`\`\`
