@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 07:24:48 CST)
+(The last generation time: 2026-11-24 17:06:53 CST)
 
 ### Packages
 
@@ -982,8 +982,10 @@
  virtual/linux-sources                                 | 3-r13              |            |                                                                            | Virtual for Linux kernel sources
    sys-kernel/cachyos-sources                          | 6.18.55-r1         | RD         | https://cachyos.org                                                        | Archlinux kernel based on different schedulers and performance improvements
                                                        | 6.18.64            |            |                                                                            |
+                                                       | 6.18.65            |            |                                                                            |
                                                        | 7.2.11             |            |                                                                            |
                                                        | 7.3.5-r1           |            |                                                                            |
+                                                       | 7.3.6              |            |                                                                            |
      dev-util/pahole-cachyos                           | 1.32               | RD         | https://git.kernel.org/pub/scm/devel/pahole/pahole.git/                    | pahole/DWARF utilities with CachyOS merged-CU lang_exclude fixes
    sys-kernel/gentoo-cjk-kernel                        | 6.12.118           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Distribution kernel with the cjktty patch for CJK text on the console
                                                        | 6.12.119           |            |                                                                            |
