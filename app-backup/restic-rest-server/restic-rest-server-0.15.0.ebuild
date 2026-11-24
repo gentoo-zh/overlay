@@ -18,6 +18,9 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="BSD-2"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
+
+BDEPEND=">=dev-lang/go-1.26.0"
+
 QA_PRESTRIPPED="/usr/bin/${PN}"
 
 src_compile() {
