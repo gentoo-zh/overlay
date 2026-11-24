@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 21:29:18 CST)
+(The last generation time: 2026-11-24 22:31:23 CST)
 
 ### Packages
 
@@ -852,7 +852,7 @@
    app-alternatives/v2ray-geoip                        | 0-r2               |  D, RD     |                                                                            | symlink for v2ray-geoip
    app-alternatives/v2ray-geosite                      | 0-r2               |  D, BD, RD |                                                                            | symlink for v2ray-geosite
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
-                                                       | 12.21.0            |            |                                                                            |
+                                                       | 12.23.0            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/doona                                       | 0.1.0_rc6          |            | https://github.com/Zakkaus/doona                                           | Web UI for the daeuniverse engines
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
