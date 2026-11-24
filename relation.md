@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 19:21:18 CST)
+(The last generation time: 2026-11-24 19:35:07 CST)
 
 ### Packages
 
@@ -38,7 +38,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-admin/rbw                                         | 1.15.0             |            | https://github.com/doy/rbw                                                 | Unofficial Bitwarden CLI
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-backup/restic-rest-server                         | 0.14.0             |            | https://github.com/restic/rest-server                                      | A high performance HTTP server that implements restic's REST backend API
+ app-backup/restic-rest-server                         | 0.15.0             |            | https://github.com/restic/rest-server                                      | A high performance HTTP server that implements restic's REST backend API
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-backup/snapper-gui                                | 220626-r1          |            | https://github.com/ricardomv/snapper-gui                                   | GUI for snapper, a tool for Linux filesystem snapshot management
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
