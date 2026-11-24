@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-25 00:57:43 CST)
+(The last generation time: 2026-11-25 06:44:08 CST)
 
 ### Packages
 
@@ -996,8 +996,11 @@
                                                        | 7.3.5              |            |                                                                            |
                                                        | 7.3.6              |            |                                                                            |
    sys-kernel/gentoo-cjk-kernel-bin                    | 6.12.118           | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Pre-built distribution kernel with the cjktty patch for CJK on the console
+                                                       | 6.12.119           |            |                                                                            |
                                                        | 6.18.64            |            |                                                                            |
+                                                       | 6.18.65            |            |                                                                            |
                                                        | 7.3.5              |            |                                                                            |
+                                                       | 7.3.6              |            |                                                                            |
    sys-kernel/gentoo-cjk-sources                       | 6.12.118-r1        | RD         | https://github.com/gentoo-zh/cjktty-patches                                | Gentoo kernel sources with the cjktty patch for CJK text on the console
                                                        | 6.12.119           |            |                                                                            |
                                                        | 6.18.64-r1         |            |                                                                            |
