@@ -7,12 +7,16 @@ inherit desktop fcaps optfeature xdg
 
 DESCRIPTION="Multi-purpose Steam toolbox (Watt Toolkit, formerly Steam++)"
 HOMEPAGE="https://steampp.net/ https://github.com/BeyondDimension/SteamTools"
-SRC_URI="https://github.com/BeyondDimension/SteamTools/releases/download/${PV}/Steam%2B%2B_v${PV}_linux_x64.tgz -> ${P}.tgz"
+URI_PREFIX="https://github.com/BeyondDimension/SteamTools/releases/download/${PV}"
+SRC_URI="
+	amd64? ( ${URI_PREFIX}/Steam%2B%2B_v${PV}_linux_x64_aot.tgz -> ${P}-amd64.tgz )
+	arm64? ( ${URI_PREFIX}/Steam%2B%2B_v${PV}_linux_arm64_aot.tgz -> ${P}-arm64.tgz )
+"
 S="${WORKDIR}"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="-* ~amd64"
+KEYWORDS="-* ~amd64 ~arm64"
 
 RDEPEND="
 	app-crypt/mit-krb5
@@ -21,6 +25,7 @@ RDEPEND="
 	dev-libs/openssl
 	media-libs/fontconfig
 	sys-auth/polkit
+	sys-libs/glibc
 	sys-libs/libcap
 	x11-misc/xdg-utils
 "
@@ -34,30 +39,22 @@ FILECAPS=(
 src_install() {
 	local appdir=/usr/lib/watt-toolkit
 
-	insinto "${appdir}"
-	doins -r assemblies/* modules native
-	fperms 0755 "${appdir}/modules/Accelerator/Steam++.Accelerator"
+	exeinto "${appdir}"
+	doexe Steam++ libHarfBuzzSharp.so libSkiaSharp.so libe_sqlite3.so
 
-	# the app targets net11.0, which the tree does not provide
-	rm dotnet/dnx dotnet/shared/Microsoft.NETCore.App/*/libcoreclrtraceptprovider.so || die
-	doins -r dotnet
-	fperms 0755 "${appdir}/dotnet/dotnet"
-	find "${ED}${appdir}/dotnet" -name '*.so' -exec chmod 0755 {} + || die
+	exeinto "${appdir}/modules/Accelerator"
+	doexe modules/Accelerator/Steam++.Accelerator
 
-	insinto "${appdir}/script"
-	doins script/environment_check.sh
-	fperms 0755 "${appdir}/script/environment_check.sh"
+	exeinto "${appdir}/script"
+	doexe script/environment_check.sh
 
-	# the program runs this name from its own directory, with pkexec
+	# the program runs this name from its own directory, also with pkexec
 	exeinto "${appdir}"
 	newexe "${FILESDIR}"/watt-toolkit-bin.sh Steam++.sh
 	dosym ../lib/watt-toolkit/Steam++.sh /usr/bin/watt-toolkit
 
 	newicon -s 512 Icons/Watt-Toolkit.png net.steampp.app.png
 	newmenu "${FILESDIR}"/watt-toolkit-bin.desktop net.steampp.app.desktop
-
-	# the single-file bundle is appended to this executable, strip truncates it
-	dostrip -x /usr/lib/watt-toolkit/modules/Accelerator/Steam++.Accelerator
 }
 
 pkg_postinst() {
