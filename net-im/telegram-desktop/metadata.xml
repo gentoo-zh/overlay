@@ -6,7 +6,7 @@
 		<name>Zakk</name>
 	</maintainer>
 	<use>
-		<flag name="enchant">Use the <pkg>app-text/enchant</pkg> spell-checking backend instead of <pkg>app-text/hunspell</pkg></flag>
+		<flag name="enchant">Load the <pkg>app-text/enchant</pkg> spell-checking backend at runtime in addition to <pkg>app-text/hunspell</pkg></flag>
 		<flag name="fonts">Use builtin patched copy of open-sans fonts (overrides fontconfig)</flag>
 	</use>
 	<upstream>
