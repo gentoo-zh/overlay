@@ -135,6 +135,8 @@ CRATES="
 	paste@1.0.15
 	pbkdf2@0.12.2
 	percent-encoding@2.3.2
+	phf@0.13.1
+	phf_shared@0.13.1
 	pin-project-lite@0.2.17
 	pkcs8@0.10.2
 	plain@0.2.3
@@ -158,6 +160,7 @@ CRATES="
 	scroll@0.12.0
 	scroll_derive@0.12.1
 	semver@1.0.28
+	seq-macro@0.3.6
 	serde-aux@4.7.0
 	serde-value@0.7.0
 	serde@1.0.229
@@ -169,6 +172,7 @@ CRATES="
 	shlex@2.0.1
 	signature@2.2.0
 	siphasher@1.0.3
+	siphasher@1.0.4
 	slab@0.4.12
 	smallvec@1.15.2
 	smawk@0.3.3
@@ -179,6 +183,7 @@ CRATES="
 	strsim@0.11.1
 	subtle@2.6.1
 	syn@2.0.119
+	syn@3.0.10
 	syn@3.0.3
 	synstructure@0.13.2
 	tap@1.0.1
@@ -189,6 +194,7 @@ CRATES="
 	thiserror@2.0.17
 	thiserror@2.0.20
 	tinystr@0.8.3
+	tinyvec@1.13.3
 	toml@1.1.4+spec-1.1.0
 	toml_datetime@0.6.11
 	toml_datetime@1.1.1+spec-1.1.0
@@ -201,6 +207,7 @@ CRATES="
 	topological-sort@0.2.2
 	typenum@1.20.1
 	unicode-ident@1.0.24
+	unicode-ident@1.0.27
 	unicode-linebreak@0.1.5
 	unicode-segmentation@1.13.3
 	unicode-width@0.2.2
@@ -237,6 +244,7 @@ CRATES="
 	wit-bindgen@0.57.1
 	writeable@0.6.3
 	wyz@0.5.1
+	xsum@0.1.6
 	yoke-derive@0.8.2
 	yoke@0.8.3
 	zerofrom-derive@0.1.7
@@ -261,7 +269,7 @@ MY_P="tdesktop-${PV}-full"
 # Pinned by Telegram/build/prepare/prepare.py
 TLOTTIE_COMMIT="92df98dc209bc39b1e567ec74a8c86a0af5239de"
 WALLET_ENGINE_COMMIT="e59e0d89d7ee90c388bf36e3334c5b276f396697"
-PATCHES_COMMIT="23d349a3ff09dbc1fa8127ce39ba9223de0edf21"
+PATCHES_COMMIT="8a28b8433af70771c3d101c776ad837a94bd47ec"
 SRC_URI="
 	https://github.com/telegramdesktop/tdesktop/releases/download/v${PV}/${MY_P}.tar.gz
 	https://github.com/dkaraush/tlottie/archive/${TLOTTIE_COMMIT}.tar.gz
@@ -284,7 +292,6 @@ CDEPEND="
 	!net-im/telegram-desktop-bin
 	app-arch/lz4:=
 	dev-cpp/abseil-cpp:=
-	dev-cpp/ada:=
 	dev-cpp/cld3:=
 	dev-cpp/toomanycooks
 	dev-libs/glib:2
@@ -307,14 +314,14 @@ CDEPEND="
 	virtual/minizip:=
 	x11-libs/cairo
 	x11-libs/pango
-	!enchant? ( >=app-text/hunspell-1.7:= )
-	enchant? ( app-text/enchant:= )
+	>=app-text/hunspell-1.7:=
 	webkit? ( wayland? (
 		>=dev-qt/qtdeclarative-6.11:6
 		>=dev-qt/qtwayland-6.11:6[compositor(+),qml]
 	) )
 "
 RDEPEND="${CDEPEND}
+	enchant? ( app-text/enchant:2 )
 	webkit? ( || ( net-libs/webkit-gtk:4.1 net-libs/webkit-gtk:6 ) )
 "
 DEPEND="${CDEPEND}
@@ -413,6 +420,7 @@ src_prepare() {
 		widget-sandbox  # Telegram-specific library with a QuickJS fork, no stable releases
 		xdg-desktop-portal  # Only a few xml files are used with gdbus-codegen
 		MicroTeX  # Telegram-specific fork, no stable releases
+		nova-safe  # Telegram-specific Nova JS engine fork, no stable releases
 		zxcvbn  # Always bundled, see Telegram/cmake/lib_zxcvbn.cmake
 	)
 	for x in Telegram/ThirdParty/*; do
@@ -455,6 +463,11 @@ src_prepare() {
 		|| die 'Stale cmake patch, remove me'
 	sed -e '/^cmake_minimum_required(/s/3.0/4.0/' \
 		-i Telegram/ThirdParty/cmark-gfm/CMakeLists.txt || die
+
+	# The widget helper's cargo build gets its own CARGO_HOME, which would
+	# hide the vendored crates from cargo.eclass
+	sed -e '/-DHELPER_CARGO_HOME=${widget_helper_rust_out}\/cargo)/d' \
+		-i Telegram/cmake/lib_widget_helper_rust.cmake || die
 
 	cmake_src_prepare
 }
@@ -520,14 +533,15 @@ src_configure() {
 		-DCMAKE_REQUIRE_FIND_PACKAGE_Qt6WaylandCompositor=${use_webkit_wayland}
 
 		-DDESKTOP_APP_DISABLE_QT_PLUGINS=ON
-		## Enables enchant and disables hunspell
-		-DDESKTOP_APP_USE_ENCHANT=$(usex enchant)
+		## Hunspell is always built, enchant is loaded at runtime
+		-DDESKTOP_APP_USE_HUNSPELL_ONLY=$(usex !enchant)
 		## Use system fonts instead of bundled ones
 		-DDESKTOP_APP_USE_PACKAGED_FONTS=$(usex !fonts)
 
 		-DDESKTOP_APP_TDESKTOP_RUST_LIBRARY="${rust_out}/lib/libtdesktop_rust.a"
 		-DDESKTOP_APP_TLOTTIE_INCLUDE_DIR="${rust_out}/include/tlottie"
 		-DDESKTOP_APP_WALLET_ENGINE_INCLUDE_DIR="${rust_out}/include/wallet_engine"
+		-DTDESKTOP_CARGO="${CARGO}"
 	)
 
 	if [[ -n ${MY_TDESKTOP_API_ID} && -n ${MY_TDESKTOP_API_HASH} ]]; then
