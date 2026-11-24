@@ -55,6 +55,7 @@ QA_PREBUILT="
 	opt/${PN}/libvulkan.so.1
 	opt/${PN}/resources/opencode-cli
 	opt/${PN}/resources/app.asar.unpacked/node_modules/@lydell/node-pty-linux-*/prebuilds/linux-*/pty.node
+	opt/${PN}/resources/app.asar.unpacked/node_modules/@yuuang/ffi-rs-linux-*/ffi-rs.linux-*-gnu.node
 "
 
 src_unpack() {
