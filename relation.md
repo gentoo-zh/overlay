@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-24 18:54:43 CST)
+(The last generation time: 2026-11-24 18:59:06 CST)
 
 ### Packages
 
@@ -1002,8 +1002,8 @@
                                                        | 6.18.65            |            |                                                                            |
                                                        | 7.3.5-r1           |            |                                                                            |
                                                        | 7.3.6              |            |                                                                            |
-   sys-kernel/liquorix-sources                         | 7.3.4              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
-                                                       | 7.3.5              |            |                                                                            |
+   sys-kernel/liquorix-sources                         | 7.3.5              | RD         | https://liquorix.net/                                                      | Liquorix kernel is best one for desktop, multimedia and gaming workloads
+                                                       | 7.3.6              |            |                                                                            |
    sys-kernel/xanmod-kernel                            | 7.2.13             | RD         | https://www.kernel.org/                                                    | XanMod kernel built with Gentoo patches and cjktty
                                                        | 7.2.14             |            |                                                                            |
                                                        | 7.3.1              |            |                                                                            |
