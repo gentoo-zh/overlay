@@ -13,7 +13,7 @@ HOMEPAGE="https://bambulab.com"
 
 SRC_URI="
 	amd64? (
-		https://github.com/bambulab/${MY_PN}/releases/download/v${PV}/BambuStudio_ubu24-v02.09.01.70-20261103183404.AppImage
+		https://github.com/bambulab/${MY_PN}/releases/download/v${PV}/BambuStudio_ubu24-v02.09.02.62-20261124164959.AppImage
 		-> ${P}.AppImage
 	)
 "
@@ -28,8 +28,8 @@ RDEPEND="
 	media-libs/fontconfig
 	media-libs/glew:0
 	>=media-libs/glm-0.9.9.1
-	media-libs/gst-plugins-base
-	media-libs/gstreamer
+	media-libs/gst-plugins-base:1.0
+	media-libs/gstreamer:1.0
 	media-libs/libglvnd
 	media-libs/mesa
 	net-libs/libsoup:2.4
