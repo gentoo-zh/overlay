@@ -485,6 +485,11 @@ pkg_pretend() {
 }
 
 pkg_setup() {
+	if use muqss; then
+		ewarn "USE=muqss disables sched_ext (CONFIG_SCHED_CLASS_EXT)."
+		ewarn "SCX schedulers cannot take over, even if the loader reports them as running."
+	fi
+
 	ewarn ""
 	ewarn "${PN} is *not* supported by the Gentoo Kernel Project in any way."
 	ewarn "Report ebuild and kernel problems to https://github.com/Szowisz/CachyOS-kernels."
