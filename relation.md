@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-25 19:11:16 CST)
+(The last generation time: 2026-11-25 19:18:55 CST)
 
 ### Packages
 
@@ -766,7 +766,7 @@
  net-misc/biliup-bin                                   | 1.3.4              |            | https://github.com/biliup/biliup                                           | Command line tool to record streams and upload videos to bilibili
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/bruno-bin                                    | 3.5.3-r1           |            | https://www.usebruno.com/                                                  | Opensource IDE For Exploring and Testing Api's
-                                                       | 4.3.0              |            |                                                                            |
+                                                       | 4.4.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-misc/eternalterminal                              | 7.1.1              |            | https://eternalterminal.dev/                                               | Re-connectable secure remote shell
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
