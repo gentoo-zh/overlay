@@ -428,6 +428,13 @@ github_account = "zakkaus"
 
 #["app-i18n/fcitx-openbangla"]
 
+["app-i18n/fcitx-osk"]
+source = "github"
+github = "fortime/fcitx5-osk"
+use_latest_release = true
+github_account = "zakkaus"
+deps = "rust"
+
 # develop-branch snapshot; the tagged releases still ship only the Qt5 GUI
 #["app-i18n/fcitx-qt"]
 
