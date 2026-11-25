@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-26 05:03:59 CST)
+(The last generation time: 2026-11-26 05:04:47 CST)
 
 ### Packages
 
@@ -615,7 +615,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-fonts/zhudou                                    | 2.000              |            | https://github.com/Buernia/Zhudou-Sans                                     | A font family for CJK symbols and punctuation, derived from Noto Sans
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- media-gfx/bambustudio-bin                             | 02.09.01.70        |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
+ media-gfx/bambustudio-bin                             | 02.09.02.62        |            | https://bambulab.com                                                       | Bambu Studio is a cutting-edge, feature-rich slicing software
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  media-gfx/scangearmp                                  | 2.4.10-r2          |            | https://www.canon.com                                                      | Driver and utility package for Canon scanners
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1061,7 +1061,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/agent-workspace-linux                        | 0.6.4              |            | https://github.com/agent-sh/agent-workspace-linux                          | Isolated X11 workspaces in which an agent runs and observes apps
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- x11-misc/computer-use-linux                           | 0.7.60             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
+ x11-misc/computer-use-linux                           | 0.7.62             |            | https://github.com/agent-sh/computer-use-linux                             | MCP server for agent control of a Linux desktop
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  x11-misc/extramaus                                    | 3                  |            | https://aur.archlinux.org/packages/extramaus                               | workaround to always show mouse cursor under x11
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
