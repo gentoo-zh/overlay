@@ -38,7 +38,7 @@ RDEPEND="
 "
 BDEPEND="virtual/pkgconfig"
 
-QA_FLAGS_IGNORED="usr/bin/winc usr/bin/winc-pty usr/lib/winc/*"
+QA_FLAGS_IGNORED="usr/bin/winc usr/bin/winc-pty usr/lib/winc/.*"
 
 pkg_setup() {
 	rust_pkg_setup
@@ -68,8 +68,12 @@ src_test() {
 	# These tests assume the upstream CI shell, formatter and float setup.
 	CARGO_SKIP_TESTS=(
 		a_connection_that_cannot_start_the_server_reports_why
+		app::snapshot::git::commit::sync::holding_option_turns_commit_into_commit_and_push
+		app::snapshot::git::commit::sync::the_classic_card_keeps_amend_above_the_message_and_buttons_on_the_left
 		app::snapshot::git::diff::side::each_side_of_a_diff_has_a_horizontal_scrollbar_and_the_two_move_together
 		app::snapshot::remote::a_folder_on_a_connected_host_opens_as_the_workspace
+		app::snapshot::settings::appearance::settings_font_name_is_checked_and_can_be_abandoned
+		app::snapshot::settings::long_descriptions_wrap_and_make_the_row_taller
 		app::snapshot::workspace::watch::large_files_save_in_the_background_and_skip_their_own_write
 		bash_without_a_prompt_of_its_own_gets_a_clear_one
 		python::only_valid_project_environments_are_selected_in_order
