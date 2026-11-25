@@ -8,7 +8,7 @@ EXTRAVERSION="-cachyos"
 K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
-CACHYOS_PATCHES_COMMIT="4360bfe17b51d3cb47c45848244ca989522df0cf"
+CACHYOS_PATCHES_COMMIT="0551280ade71e606d7df08ca56e4af83c0daf9e5"
 CACHYOS_CONFIGS_COMMIT="d16eb41f38a434414c4c8e9bfdc5a1c3d7c81ed5"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
@@ -239,10 +239,7 @@ src_prepare() {
 
 	if use deckify; then
 		eapply "${patches_prefix}-acpi-call.patch"
-
-		cp "${patches_prefix}-handheld.patch" "${T}/handheld.patch" || die
-		eapply --fuzz=0 -d "${T}" -- "${FILESDIR}/cachyos-sources-7.3.6-handheld-rebase.patch"
-		eapply --fuzz=0 -- "${T}/handheld.patch"
+		eapply --fuzz=0 -- "${patches_prefix}-handheld.patch"
 	fi
 
 	if use aufs; then
