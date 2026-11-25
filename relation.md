@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-25 18:58:51 CST)
+(The last generation time: 2026-11-25 19:11:16 CST)
 
 ### Packages
 
@@ -854,7 +854,7 @@
    sys-apps/pnpm                                       | 11.25.0            | BD         | https://pnpm.io                                                            | Fast, disk space efficient package manager
                                                        | 12.23.0            |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/doona                                       | 0.1.0_rc6          |            | https://github.com/Zakkaus/doona                                           | Web UI for the daeuniverse engines
+ net-proxy/doona                                       | 0.1.0_rc7          |            | https://github.com/Zakkaus/doona                                           | Web UI for the daeuniverse engines
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/flclash-bin                                 | 0.9.4              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
