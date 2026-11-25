@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-25 18:21:49 CST)
+(The last generation time: 2026-11-25 18:56:18 CST)
 
 ### Packages
 
@@ -871,7 +871,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/proxy-server                                | 11.0.1             |            | https://github.com/jackarain/proxy                                         | Implementation of all proxy protocols using modern c++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/queqiao                                     | 0.13.0             |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
+ net-proxy/queqiao                                     | 0.14.0             |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -1025,7 +1025,7 @@
                                                        | 7.3.6              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-domain-list-community                   | 0                  |            |                                                                            | Virtual for v2ray-domain-list-community
-   dev-libs/v2ray-domain-list-community                | 20261124090120     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
+   dev-libs/v2ray-domain-list-community                | 20261125080930     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
    dev-libs/v2ray-domain-list-community-bin            | 20261125080930     | RD         | https://github.com/v2fly/domain-list-community                             | Community managed domain list for V2Ray
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  virtual/v2ray-geoip                                   | 0                  |            |                                                                            | Virtual for v2ray-geoip
