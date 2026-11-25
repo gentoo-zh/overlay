@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+# Copyright 2026 Gentoo Authors
+# Distributed under the terms of the GNU General Public License v2
+
+description="Emits key events through uinput for fcitx5-osk"
+command="/usr/bin/fcitx5-osk-key-helper"
+command_background="yes"
+pidfile="/run/${RC_SVCNAME}.pid"
+
+depend() {
+	need dbus
+}

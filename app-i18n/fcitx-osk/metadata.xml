@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>zakk@gentoozh.org</email>
+		<name>Zakk</name>
+	</maintainer>
+	<longdescription>
+		Fcitx 5 Osk is an on-screen keyboard for Fcitx 5. It talks to Fcitx 5
+		over D-Bus, supports rotation-aware landscape and portrait layouts, and
+		ships fcitx5-osk-kwin-launcher so KWin can use it as its Wayland
+		virtual keyboard, including on the lock screen.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">fortime/fcitx5-osk</remote-id>
+	</upstream>
+</pkgmetadata>
