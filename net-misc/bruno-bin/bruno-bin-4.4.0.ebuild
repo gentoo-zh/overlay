@@ -45,6 +45,15 @@ RESTRICT="strip"
 
 QA_PREBUILT="opt/Bruno/*"
 
+src_prepare() {
+	default
+
+	# native-reg loads its binding only on Windows; node-pty ships both Linux arches
+	local modules=opt/Bruno/resources/app.asar.unpacked/node_modules
+	rm -r "${modules}"/native-reg/{build,prebuilds} \
+		"${modules}"/@lydell/node-pty-linux-$(usex amd64 arm64 x64) || die
+}
+
 src_install() {
 	insinto /opt/Bruno
 	doins -r "${S}"/opt/Bruno/.
