@@ -2,6 +2,10 @@
 <!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer type="person">
+		<name>hll_RGB</name>
+		<email>hll_RGB@outlook.com</email>
+	</maintainer>
+	<maintainer type="person">
 		<name>Xianggang Wang</name>
 		<email>dev@wangxianggang.com</email>
 	</maintainer>
