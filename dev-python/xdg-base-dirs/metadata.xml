@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>hll_RGB@outlook.com</email>
+		<name>hll_RGB</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="github">srstevenson/xdg-base-dirs</remote-id>
+		<remote-id type="pypi">xdg-base-dirs</remote-id>
+	</upstream>
+</pkgmetadata>

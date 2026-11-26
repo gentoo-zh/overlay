@@ -1319,6 +1319,11 @@ use_latest_release = true
 prefix = "v"
 autobump = true
 
+["dev-python/xdg-base-dirs"]
+source = "pypi"
+pypi = "xdg-base-dirs"
+github_account = "hllRGB"
+
 ["dev-ruby/filelock"]
 source = "github"
 github = "sheerun/filelock"
