@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>hll_RGB@outlook.com</email>
+		<name>hll_RGB</name>
+	</maintainer>
+	<upstream>
+		<remote-id type="pypi">textual</remote-id>
+		<remote-id type="github">Textualize/textual</remote-id>
+		<doc>https://textual.textualize.io/</doc>
+	</upstream>
+</pkgmetadata>

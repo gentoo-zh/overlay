@@ -1317,6 +1317,13 @@ source = "pypi"
 pypi = "Telethon"
 github_account = ["liangyongxiang"]
 
+["dev-python/textual"]
+source = "github"
+github = "Textualize/textual"
+use_latest_release = true
+prefix = "v"
+github_account = "hllRGB"
+
 ["dev-python/uv-bin"]
 source = "github"
 github = "astral-sh/uv"
