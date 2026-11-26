@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-26 15:43:14 CST)
+(The last generation time: 2026-11-26 20:48:03 CST)
 
 ### Packages
 
@@ -942,7 +942,10 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/bootvine                                     | 0.1.5              |            | https://codeberg.org/wvhulle/bootvine                                      | Boot and shutdown progress for systemd or OpenRC, as a dependency tree
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- sys-apps/isd                                          | 0.6.3              |            | https://github.com/kainctl/isd                                             | isd (interactive systemd) — a better way to work with systemd units
+ sys-apps/isd                                          | 0.6.3              |            | https://github.com/kainctl/isd                                             | Interactive TUI for systemd units
+   dev-python/pfzy                                     | 0.3.4              | RD         | https://github.com/kazhala/pfzy                                            | Python port of the fzy fuzzy string matching algorithm
+   dev-python/textual                                  | 8.2.8              | RD         | https://textual.textualize.io/                                             | Modern Text User Interface framework
+   dev-python/xdg-base-dirs                            | 6.1.0              | RD         | https://github.com/srstevenson/xdg-base-dirs                               | Variables defined by the XDG Base Directory Specification
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  sys-apps/mdp                                          | 9999               |            | https://github.com/visit1985/mdp                                           | A command-line based markdown presentation tool
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
