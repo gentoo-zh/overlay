@@ -3,27 +3,30 @@
 
 EAPI=8
 
-DESCRIPTION="isd (interactive systemd) — a better way to work with systemd units"
+DISTUTILS_USE_PEP517=hatchling
+PYTHON_COMPAT=(python3_{13..14})
+
+inherit distutils-r1 xdg
+
+DESCRIPTION="Interactive TUI for systemd units"
 HOMEPAGE="https://github.com/kainctl/isd"
-SRC_URI="https://github.com/kainctl/isd/releases/download/v${PV}/isd.x86_64-linux.AppImage -> ${P}.AppImage"
+SRC_URI="https://github.com/kainctl/isd/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 
-S="${WORKDIR}"
-LICENSE="GPL-3"
-
+LICENSE="GPL-3+"
 SLOT="0"
-KEYWORDS="-* ~amd64"
-
-RESTRICT="strip"
+KEYWORDS="~amd64 ~arm64"
+RESTRICT="test"
 
 RDEPEND="
+	>=dev-python/pfzy-0.3.4[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-2.10.4[${PYTHON_USEDEP}]
+	>=dev-python/pydantic-settings-2.7.0[${PYTHON_USEDEP}]
+	>=dev-python/pyyaml-6.0.1[${PYTHON_USEDEP}]
+	dev-python/rich[${PYTHON_USEDEP}]
+	>=dev-python/textual-3.0.0[${PYTHON_USEDEP}]
+	>=dev-python/xdg-base-dirs-6.0.0[${PYTHON_USEDEP}]
 	sys-apps/systemd
-	sys-fs/fuse:0
+	x11-themes/hicolor-icon-theme
 "
 
-src_unpack() {
-	cp "${DISTDIR}/${P}.AppImage" isd || die
-}
-
-src_install() {
-	dobin isd
-}
+DOCS=(README.md)
