@@ -1,9 +1,10 @@
-<!-- One line per change: because X, Y. Put "Closes #N" on its own line when closing an issue. -->
+<!-- 一行信息描述提交内容。用 [包类目/包名] 开头。例如：[dev-util/trae-ide] -->
 
-<!-- Please put the pull request description above -->
+<!-- 然后在这里描述详细的变更内容-->
 
 ---
 
+请不要删除下面的文字。在对应的【 】中写上 X 就可以。
 Please check all the boxes that apply:
 
 - [ ] I have run `pkgcheck scan --commits --net` to check for issues with my commits.
