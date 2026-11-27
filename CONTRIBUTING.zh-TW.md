@@ -9,18 +9,18 @@
 gentoo-zh 是 Gentoo 的 overlay（第三方 ebuild 儲存庫），依賴 `::gentoo`（`metadata/layout.conf` 中 `masters = gentoo`）。
 
 > [!NOTE]
-> 蓄意規避本文規定者將被移出組織，其維護的所有套件也將被 treeclean。此規則適用於所有維護者，包括 owner 和 member。
+> 蓄意規避本文規則者將被禁止提交。此規則適用於所有維護者，包括 owner 和 member。
 
 ## 套件
 
 - ebuild 只使用 `~arch` 關鍵字；
-- `::gentoo` 已有的相依套件不在本儲存庫重複新增；除特殊情況外，不新增與 `::gentoo` 同名的套件；
+- 如無特殊情況，`::gentoo` 已有的套件不在本儲存庫重複新增；
 - 每個套件須有 `metadata.xml`，並寫明維護者；
 - `LICENSE` 須與所打包軟體聲明的授權條款一致，`::gentoo` 沒有的授權條款須加入 `licenses/` 和 `profiles/license_groups`；
 - 除特殊情況外，同一套件的改動須放在同一個提交中；
 - 套件須登記到 `.github/workflows/overlay.toml`，依 `category/package` 的字母順序插入，無法由 nvchecker 追蹤的，需以註解說明原因；
 - 可自動更新版本的套件見 [scripts/autobump.zh.md](./scripts/autobump.zh.md)；
-- ebuild 提交前須進行測試；
+- 提交前請先在本機進行測試，測試通過後才可開啟 Pull Request；
 - 不再維護的套件，須先發 issue 尋找接手者。無人接手的，依據 [last rites](https://devmanual.gentoo.org/ebuild-maintenance/removal/) 流程移除：在 `profiles/package.mask` 最上方加入條目，寫明作者、電子郵件、日期（UTC）、原因和移除日期，至少 30 天後移除。範例：
 
   ```
