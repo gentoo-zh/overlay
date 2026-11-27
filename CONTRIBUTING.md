@@ -1,10 +1,15 @@
 <div align="right">
 
+[English](./CONTRIBUTING.en.md) | 简体中文 | [正體中文](./CONTRIBUTING.zh-TW.md)
+
 </div>
 
 # 贡献指南
 
 gentoo-zh 是 Gentoo 的 overlay（第三方 ebuild 仓库），依赖 `::gentoo`（`metadata/layout.conf` 中 `masters = gentoo`）。
+
+> [!NOTE]
+> 故意绕过本文规定者将被移出组织，其维护的全部软件包将被 treeclean。此规则适用于全部维护者，包括 owner 和 member。
 
 ## 软件包
 
@@ -16,7 +21,7 @@ gentoo-zh 是 Gentoo 的 overlay（第三方 ebuild 仓库），依赖 `::gentoo
 - 软件包须登记到 `.github/workflows/overlay.toml`，依 `category/package` 的字母顺序插入，不适合 nvchecker 的须注释原因；
 - 可自动更新版本的软件包见 [scripts/autobump.zh.md](./scripts/autobump.zh.md)；
 - ebuild 提交前须进行测试；
-- 不再维护的软件包，须在 issue 中寻找接手者。无人接手的且无法通过编译的，依据 [last rites](https://devmanual.gentoo.org/ebuild-maintenance/removal/) 流程移除：在 `profiles/package.mask` 顶部加入条目，写明作者、邮箱、日期（UTC）、原因和移除日期，至少 30 天后移除。范例：
+- 不再维护的软件包，须在 issue 中寻找接手者。无人接手的，依据 [last rites](https://devmanual.gentoo.org/ebuild-maintenance/removal/) 流程移除：在 `profiles/package.mask` 顶部加入条目，写明作者、邮箱、日期（UTC）、原因和移除日期，至少 30 天后移除。范例：
 
   ```
   # Zakk <zakk@gentoozh.org> (2026-11-18)
@@ -108,8 +113,12 @@ Please note that all boxes must be checked for the pull request to be merged.
 - 添加 `Signed-off-by` 前，贡献者须确认 AI 生成的部分没有复制许可证不兼容的代码；
 - AI 生成的提交信息和 pull request 描述须准确、精简、不重复，所述内容须经验证。
 
+### 声明
+
+含 AI 生成改动的提交，须在 `Signed-off-by:` 之上添加 `Assisted-by:` 行，格式同 [Linux 内核](https://docs.kernel.org/process/coding-assistants.html)，为 `Assisted-by: 工具名:模型名`。用 `pkgdev commit -T` 添加：
+
 ```
-pkgdev commit --signoff -m "fix build with GCC 16" -m "Add a missing include." -T Assisted-by:Deepseek-v4.1-Flash
+pkgdev commit --signoff -m "fix build with GCC 16" -m "Add a missing include." -T Assisted-by:Claude:claude-opus-5-5
 ```
 
 生成的提交信息：
@@ -122,6 +131,9 @@ Add a missing include.
 Assisted-by: Claude:claude-opus-5-5
 Signed-off-by: A Developer <example@gentoo.org>
 ```
+
+> [!NOTE]
+> 不得使用 `Co-authored-by:`，CI 将拒绝。
 
 以下情况无需声明：
 
@@ -140,4 +152,14 @@ autobump、nvchecker 等本仓库自有的 bot 不受上述规则限制。
 
 AI 生成的改动与其他改动适用相同的测试要求，ebuild 须经过冒烟测试。不得声称执行了实际未执行的测试。
 
+### 执行
 
+如果怀疑贡献中使用了 AI 却未声明，我们会要求说明，贡献者须如实回答；拒绝说明的，我们会关闭该 pull request 或 issue。本规则同样适用于维护者。
+
+agent 可以使用 [gentoo-zh/skills](https://github.com/gentoo-zh/skills) 打包、更新版本和审查。它只执行 AGENTS.md 的规则，不另立规则。安装命令：
+
+```
+npx skills add gentoo-zh/skills -g
+```
+
+本节参考 [OpenWrt packages 的 AI 政策](https://github.com/openwrt/packages/blob/master/CONTRIBUTING.md#ai-policy)。
