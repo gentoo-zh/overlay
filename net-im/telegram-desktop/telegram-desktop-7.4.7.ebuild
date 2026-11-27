@@ -269,7 +269,7 @@ MY_P="tdesktop-${PV}-full"
 # Pinned by Telegram/build/prepare/prepare.py
 TLOTTIE_COMMIT="92df98dc209bc39b1e567ec74a8c86a0af5239de"
 WALLET_ENGINE_COMMIT="e59e0d89d7ee90c388bf36e3334c5b276f396697"
-PATCHES_COMMIT="8a28b8433af70771c3d101c776ad837a94bd47ec"
+PATCHES_COMMIT="b6ab1d68dcb0ddff1f03628c110efc24db123c87"
 SRC_URI="
 	https://github.com/telegramdesktop/tdesktop/releases/download/v${PV}/${MY_P}.tar.gz
 	https://github.com/dkaraush/tlottie/archive/${TLOTTIE_COMMIT}.tar.gz
@@ -316,6 +316,7 @@ CDEPEND="
 	x11-libs/pango
 	>=app-text/hunspell-1.7:=
 	webkit? ( wayland? (
+		dev-libs/wayland
 		>=dev-qt/qtdeclarative-6.11:6
 		>=dev-qt/qtwayland-6.11:6[compositor(+),qml]
 	) )
