@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-27 22:30:16 CST)
+(The last generation time: 2026-11-27 22:31:13 CST)
 
 ### Packages
 
@@ -205,7 +205,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/crush-bin                                    | 0.104.0            |            | https://github.com/charmbracelet/crush                                     | AI coding agent for your terminal (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/fast-resume                                  | 2.14.5             |            | https://github.com/angristan/fast-resume                                   | Fast fuzzy finder for coding agent session history
+ app-misc/fast-resume                                  | 2.15.0             |            | https://github.com/angristan/fast-resume                                   | Fast fuzzy finder for coding agent session history
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/go-yq-bin                                    | 4.54.2             |            | https://github.com/mikefarah/yq                                            | yq is a portable command-line YAML, JSON and XML processor
                                                        | 4.54.3             |            |                                                                            |
@@ -318,7 +318,7 @@
  dev-games/unityhub                                    | 3.22.6             |            | https://docs.unity.com/en-us/hub                                           | The official unity tool for manager Unity Engines and projects
                                                        | 4.0.2              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-go/gotests                                        | 1.9.0              |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
+ dev-go/gotests                                        | 1.10.0             |            | https://github.com/cweill/gotests                                          | Automatically generate Go test boilerplate from your source code
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-go/staticcheck                                    | 2026.2.2           |            | https://staticcheck.dev                                                    | Go static analysis, detecting bugs, performance issues, and much more
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -332,11 +332,11 @@
  dev-libs/lunar-calendar                               | 3.0.1-r1           |            | https://github.com/yetist/lunar-calendar                                   | a gtk+ calendar widget for chinese lunar library
    dev-libs/lunar-date                                 | 3.2.0-r1           |  D, RD     | https://github.com/yetist/lunar-date                                       | Chinese Lunar Library
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-libs/v2ray-rules-dat-bin                          | 202611242204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
+ dev-libs/v2ray-rules-dat-bin                          | 202611262204       |            | https://github.com/Loyalsoldier/v2ray-rules-dat                            | Enhanced edition of V2Ray rules dat files
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/adafruit-board-toolkit                     | 1.1.2              |            | https://github.com/adafruit/Adafruit_Board_Toolkit/                        | CircuitPython board identification and information
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-python/archspec                                   | 0.2.7              |            | https://github.com/archspec/archspec                                       | A library for detecting, labeling, and reasoning about microarchitectures
+ dev-python/archspec                                   | 0.2.8              |            | https://github.com/archspec/archspec                                       | A library for detecting, labeling, and reasoning about microarchitectures
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-python/browser-cookie3                            | 0.20.1             |            | https://github.com/borisbabic/browser_cookie3                              | Loads cookies from your browser into a cookiejar object
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -444,9 +444,9 @@
  dev-util/obs-build                                    | 20261016           |            | https://github.com/openSUSE/obs-build                                      | OBS build script
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/oh-my-pi-bin                                 | 18.22.2            |            | https://omp.sh                                                             | AI coding agent for the terminal
-                                                       | 19.1.1             |            |                                                                            |
+                                                       | 19.2.1             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/openchamber-bin                              | 2.8.0              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
+ dev-util/openchamber-bin                              | 2.8.1              |            | https://github.com/openchamber/openchamber                                 | Desktop workspace for running and reviewing OpenCode AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/opencode-bin                                 | 1.19.5             |            | https://opencode.ai                                                        | The open source AI coding agent
                                                        | 2.4.1              |            |                                                                            |
