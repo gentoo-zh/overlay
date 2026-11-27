@@ -10,16 +10,14 @@ gentoo-zh is a Gentoo overlay (a third-party ebuild repository) that depends on
 `::gentoo` (`masters = gentoo` in `metadata/layout.conf`).
 
 > [!NOTE]
-> Anyone who deliberately bypasses the rules in this file is removed from the
-> organization, and all packages they maintain are treecleaned. This applies to
-> all maintainers, including owners and members.
+> Anyone who deliberately bypasses the rules in this file is barred from
+> committing. This applies to all maintainers, including owners and members.
 
 ## Packages
 
 - Ebuilds use `~arch` keywords only.
-- Dependencies that `::gentoo` already provides are not duplicated here, and a
-  package with the same name as one in `::gentoo` is not added unless there is a
-  specific reason.
+- Unless there is a specific reason, packages that `::gentoo` already provides
+  are not added here again.
 - Every package has a `metadata.xml` that names its maintainer.
 - `LICENSE` matches the license declared by the packaged software; add licenses
   missing from `::gentoo` to `licenses/` and `profiles/license_groups`.
@@ -30,7 +28,8 @@ gentoo-zh is a Gentoo overlay (a third-party ebuild repository) that depends on
   nvchecker cannot track.
 - For packages that can be bumped automatically, see
   [scripts/autobump.md](./scripts/autobump.md).
-- Test ebuilds before committing.
+- Test locally before committing, and open a pull request only after the tests
+  pass.
 - For a package you no longer maintain, find a new maintainer in the issues. If
   nobody takes it, remove it through
   [last rites](https://devmanual.gentoo.org/ebuild-maintenance/removal/): add an
