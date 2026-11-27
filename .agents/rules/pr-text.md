@@ -32,16 +32,20 @@ Illustrative completed bodies: a routine bump closing an issue, then two depende
 ```text
 Closes #N
 
-<!-- Please put the pull request description above -->
+<!-- Please put the pull request description above / 请把描述写在本行上方 -->
 
 ---
 
+Do not delete this template, or the pull request will be rejected.
+请勿删除本模板，否则 Pull Request 会被拒绝。
+
 Please check all the boxes that apply:
+请按情况勾选：
 
 - [x] I have run `pkgcheck scan --commits --net` to check for issues with my commits.
+  我已运行 `pkgcheck scan --commits --net` 检查本分支的提交。
 - [x] If I used AI: I understand every change, tested it and take responsibility for it; commits with AI-written changes carry `Assisted-by:`.
-
-Please note that all boxes must be checked for the pull request to be merged.
+  如果使用了 AI 辅助：我理解每一处改动，已经测试并对其负责，并且添加了 `Assisted-by:`。
 ```
 
 ```text
@@ -50,7 +54,7 @@ Please note that all boxes must be checked for the pull request to be merged.
 
 测试：amd64 systemd 安装后启动一次，下载一个文件。
 
-<!-- Please put the pull request description above -->
+<!-- Please put the pull request description above / 请把描述写在本行上方 -->
 ...
 ```
 
@@ -67,7 +71,7 @@ Please note that all boxes must be checked for the pull request to be merged.
 
 ### Opening the PR
 
-- Replace the first template comment with the reason. Keep the template's checkboxes, which `scripts/pr-template.sh` requires, and tick each only when its statement is true for this PR. The AI checkbox claims tested results, so AI-assisted work states in the body the arch, profile and what ran, or that nothing ran and why. Tick pkgcheck only after the explicit-range commit scan in `qa.md` passes, or when no ebuild changed.
+- Write the reason above the description marker. Keep the template's checkboxes, which `scripts/pr-template.sh` requires, and tick each only when its statement is true for this PR. The AI checkbox claims tested results, so AI-assisted work states in the body the arch, profile and what ran, or that nothing ran and why. Tick pkgcheck only after the explicit-range commit scan in `qa.md` passes, or when no ebuild changed.
 - Before `gh pr create`/`gh pr edit`, show the exact title, body, and files and obtain confirmation for that specific PR, including drafts. Batch authorization requires per-PR confirmation.
 - Open only routine bumps yourself: ebuild rename plus `pkgdev manifest`, or a version variable such as a build id, with no other change. For other changes, push the fork topic branch and hand over the drafted subject/body and canonical compare link for the human to open.
   `https://github.com/gentoo-zh/overlay/compare/master...<fork-owner>:<fork-repo>:<branch>`
