@@ -119,13 +119,23 @@ jobs:
       with:
         path: 'gentoo-zh'
 
+    # the app installation has its own API rate limit, which the shared GITHUB_TOKEN kept hitting
+    - name: mint app token
+      id: app-token
+      uses: actions/create-github-app-token@v3
+      with:
+        client-id: ${{ secrets.APP_CLIENT_ID }}
+        private-key: ${{ secrets.APP_PRIVATE_KEY }}
+        owner: gentoo-zh
+        repositories: overlay
+        permission-issues: write
+
     - name: update issues
       timeout-minutes: 1
       env:
         NAME: ${{ matrix.name }}
         NEWVER: ${{ matrix.newver }}
         OLDVER: ${{ matrix.oldver }}
-        # a personal token has its own API rate limit, which the shared GITHUB_TOKEN kept hitting
-        GITHUB_TOKEN: ${{ secrets.GENTOO_ZH_NVCHECKER_PAT }}
+        GITHUB_TOKEN: ${{ steps.app-token.outputs.token }}
       run: |
         go run . --file gentoo-zh/.github/workflows/overlay.toml --name "$NAME" --newver "$NEWVER" --oldver "$OLDVER"
