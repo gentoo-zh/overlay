@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-27 18:59:37 CST)
+(The last generation time: 2026-11-27 22:19:37 CST)
 
 ### Packages
 
@@ -859,7 +859,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/doona                                       | 0.1.0_rc7          |            | https://github.com/Zakkaus/doona                                           | Web UI for the daeuniverse engines
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/flclash-bin                                 | 0.9.4              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
+ net-proxy/flclash-bin                                 | 0.9.5              |            | https://github.com/chen08209/FlClash                                       | A multi-platform proxy client based on ClashMeta
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/honk                                        | 0.1.0_beta6        |            | https://github.com/daeuniverse/honk                                        | Transparent proxy based on eBPF, inspired by dae and sing-box
                                                        | 9999               |            |                                                                            |
