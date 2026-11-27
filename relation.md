@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-27 22:46:17 CST)
+(The last generation time: 2026-11-27 22:47:12 CST)
 
 ### Packages
 
@@ -466,7 +466,7 @@
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.5              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/pixi-bin                                     | 0.84.2             |            | https://pixi.prefix.dev/                                                   | A package management and workflow tool (prebuilt binary)
+ dev-util/pixi-bin                                     | 0.85.0             |            | https://pixi.prefix.dev/                                                   | A package management and workflow tool (prebuilt binary)
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoder-bin                                    | 0.5.21             |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
