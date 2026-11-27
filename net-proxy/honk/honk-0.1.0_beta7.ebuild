@@ -71,9 +71,9 @@ CRATES="
 
 declare -A GIT_CRATES=(
 	[boring-sys]='https://github.com/Glassyiris/boring-sys;3beb573b65ecaa69b7eefe3c2fecd074b97facd2;boring-sys-%commit%'
-	[quinn-proto]='https://github.com/Glassyiris/quinn;11f1de84c28305a3c98ace6d681c35219a8d1e6c;quinn-%commit%/quinn-proto'
-	[quinn-udp]='https://github.com/Glassyiris/quinn;11f1de84c28305a3c98ace6d681c35219a8d1e6c;quinn-%commit%/quinn-udp'
-	[quinn]='https://github.com/Glassyiris/quinn;11f1de84c28305a3c98ace6d681c35219a8d1e6c;quinn-%commit%/quinn'
+	[quinn-proto]='https://github.com/Glassyiris/quinn;d98acc02b8c26417a84180a366e1eb5b22af2b24;quinn-%commit%/quinn-proto'
+	[quinn-udp]='https://github.com/Glassyiris/quinn;d98acc02b8c26417a84180a366e1eb5b22af2b24;quinn-%commit%/quinn-udp'
+	[quinn]='https://github.com/Glassyiris/quinn;d98acc02b8c26417a84180a366e1eb5b22af2b24;quinn-%commit%/quinn'
 )
 
 LLVM_COMPAT=( {22..23} )
