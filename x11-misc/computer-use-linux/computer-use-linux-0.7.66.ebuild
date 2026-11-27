@@ -313,7 +313,7 @@ pkg_postinst() {
 	optfeature "input synthesis through uinput on Wayland" x11-misc/ydotool
 	optfeature "enabling the accessibility setting through gsettings" dev-libs/glib
 	optfeature "completion notifications" x11-libs/libnotify
-	optfeature "capturing unfocused windows in the Hyprland background mode" gui-apps/grim
+	optfeature "screenshots on wlr-screencopy compositors and in the Hyprland background mode" gui-apps/grim
 }
 
 src_test() {
@@ -321,7 +321,9 @@ src_test() {
 	# sun_path when TMPDIR is as long as portage's. The fixtures that spawn the
 	# server under a private D-Bus session fail in the build sandbox.
 	# dbus-daemon refuses socket paths over 99 bytes, so the private bus of the
-	# remote_desktop portal probe test does not start under portage's TMPDIR.
+	# remote_desktop portal tests do not start under portage's TMPDIR.
+	# The stalled clipboard pipe test passes alone but fails when it runs in
+	# parallel with the rest of the suite.
 	local CARGO_SKIP_TESTS=(
 		app_state_refuses_unfocused_target_before_capture
 		cosmic_focus_protocol_regressions
@@ -342,6 +344,8 @@ src_test() {
 		indicator::tests::overlays_can_answer_the_client_socket
 		indicator::tests::set_values_are_masked_even_when_the_cached_role_was_public
 		remote_desktop::tests::only_a_running_bus_can_report_the_remote_desktop_portal_missing
+		remote_desktop::tests::portal_response_codes_separate_a_cancellation_from_a_portal_that_fails
+		remote_desktop::clipboard::tests::nonblocking_read_timeout_closes_stalled_pipe_immediately
 		server::app_state_pid_scope_tests::app_state_keeps_pid_scope_when_window_lookup_fails
 		server::type_text_atspi_fallback_tests::a_two_group_keymap_refusal_types_through_atspi
 		server::tests::element_calls_naming_a_replaced_snapshot_send_nothing
