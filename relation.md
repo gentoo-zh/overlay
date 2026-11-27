@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-27 22:25:36 CST)
+(The last generation time: 2026-11-27 22:26:34 CST)
 
 ### Packages
 
@@ -461,7 +461,7 @@
  dev-util/pack-cli-bin                                 | 0.40.11            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.99.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
-                                                       | 1.6.0              |            |                                                                            |
+                                                       | 1.6.1              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.5              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
