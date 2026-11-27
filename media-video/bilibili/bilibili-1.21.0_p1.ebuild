@@ -68,7 +68,6 @@ src_install() {
 	# the arm64 deb still ships these helpers as x86-64 binaries
 	if use arm64; then
 		rm -r \
-			"${app_dir}/cursor-tool" \
 			"${app_dir}/app/node_modules/@bilibili/keep-pc-alive/build/Release/keep_pc_alive.node" \
 			"${app_dir}/app/node_modules/@nut-tree/libnut-linux" \
 			"${app_dir}/app/node_modules/clipboardy/fallbacks/linux" \
@@ -88,7 +87,7 @@ pkg_postinst() {
 	xdg_pkg_postinst
 
 	if use arm64; then
-		elog "arm64 包内的 clipboardy（xsel）、@nut-tree（libnut）、cursor-tool 是"
+		elog "arm64 包内的 clipboardy（xsel）、@nut-tree（libnut）是"
 		elog "amd64 二进制，在 arm64 上无法运行，相关功能（剪贴板、部分输入）不可用。"
 	fi
 }
