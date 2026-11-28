@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-28 16:15:35 CST)
+(The last generation time: 2026-11-28 16:16:53 CST)
 
 ### Packages
 
@@ -881,7 +881,7 @@
  net-proxy/shadowsocks-rust                            | 1.25.0             |            | https://github.com/shadowsocks/shadowsocks-rust                            | shadowsocks is a fast tunnel proxy that helps you bypass firewalls
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/sing-box                                    | 1.13.21            |            | https://sing-box.sagernet.org/                                             | The universal proxy platform
-                                                       | 1.14.5             |            |                                                                            |
+                                                       | 1.14.6             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/sing-box-windows-bin                        | 2.4.0              |            | https://github.com/xinggaoya/sing-box-windows                              | Modern sing-box desktop client
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
