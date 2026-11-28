@@ -9,7 +9,7 @@ K_NOSETEXTRAVERSION="1"
 
 # Pin patch and config inputs so Manifest checks cover exact upstream bytes.
 CACHYOS_PATCHES_COMMIT="0551280ade71e606d7df08ca56e4af83c0daf9e5"
-CACHYOS_CONFIGS_COMMIT="d16eb41f38a434414c4c8e9bfdc5a1c3d7c81ed5"
+CACHYOS_CONFIGS_COMMIT="25259ced6c7c8c68796d2a47d98cafb96ccdd603"
 CACHYOS_PR="$(( ${PR#r} + 1 ))"
 
 # Genpatches support - apply base and extras patches on top of CachyOS tarball
