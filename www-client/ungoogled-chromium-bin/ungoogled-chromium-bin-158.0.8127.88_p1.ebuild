@@ -15,23 +15,16 @@ SRC_URI_PREFIX="https://github.com/ungoogled-software/ungoogled-chromium-portabl
 
 DESCRIPTION="Chromium without Google web services, tweaks to enhance privacy and more"
 HOMEPAGE="https://ungoogled-software.github.io/ https://github.com/ungoogled-software/ungoogled-chromium"
-SRC_URI="
-	amd64? ( ${SRC_URI_PREFIX}/ungoogled-chromium-${MY_PV}-x86_64_linux.tar.xz )
-	arm64? ( ${SRC_URI_PREFIX}/ungoogled-chromium-${MY_PV}-arm64_linux.tar.xz )
-"
-
-if [[ "${ARCH}" = "arm64" ]]; then
-	S="${WORKDIR}/ungoogled-chromium-${MY_PV}-arm64_linux"
-else
-	S="${WORKDIR}/ungoogled-chromium-${MY_PV}-x86_64_linux"
-fi
+# upstream has not published an arm64 build for this release
+SRC_URI="${SRC_URI_PREFIX}/ungoogled-chromium-${MY_PV}-x86_64_linux.tar.xz"
+S="${WORKDIR}/ungoogled-chromium-${MY_PV}-x86_64_linux"
 
 LICENSE="Apache-2.0 Apache-2.0-with-LLVM-exceptions BSD BSD-2 Base64 Boost-1.0 CC-BY-3.0
 	CC-BY-4.0 Clear-BSD FFT2D FTL IJG ISC LGPL-2 LGPL-2.1 MIT MPL-1.1 MPL-2.0 Ms-PL PSF-2
 	SGI-B-2.0 SSLeay SunSoft Unicode-3.0 Unicode-DFS-2015 Unlicense UoI-NCSA ZLIB libtiff
 	openssl"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~arm64"
+KEYWORDS="-* ~amd64"
 IUSE="qt6 selinux"
 
 # The binary carries AAC, H.264 and HEVC decoders.
