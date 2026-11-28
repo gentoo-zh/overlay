@@ -15,7 +15,8 @@ S="${WORKDIR}/${MY_PN}-${PV}"
 LICENSE="GPL-3+"
 SLOT="5"
 KEYWORDS="~amd64 ~x86"
-IUSE="qt6"
+IUSE="qt6 test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
 	>=app-i18n/fcitx-5.1.22:5
@@ -39,6 +40,7 @@ CMAKE_QA_COMPAT_SKIP=1
 src_configure() {
 	local mycmakeargs=(
 		-DENABLE_QT=$(usex qt6)
+		-DENABLE_TEST=$(usex test)
 	)
 	cmake_src_configure
 }

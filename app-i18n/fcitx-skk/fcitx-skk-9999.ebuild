@@ -11,10 +11,11 @@ EGIT_REPO_URI="https://github.com/fcitx/fcitx5-skk"
 
 LICENSE="GPL-3+"
 SLOT="5"
-IUSE="qt6"
+IUSE="qt6 test"
+RESTRICT="!test? ( test )"
 
 RDEPEND="
-	>=app-i18n/fcitx-5.1.13:5
+	>=app-i18n/fcitx-5.1.22:5
 	>=app-i18n/libskk-1.1.0
 	dev-libs/glib:2
 	app-i18n/skk-jisyo
@@ -35,6 +36,7 @@ CMAKE_QA_COMPAT_SKIP=1
 src_configure() {
 	local mycmakeargs=(
 		-DENABLE_QT=$(usex qt6)
+		-DENABLE_TEST=$(usex test)
 	)
 	cmake_src_configure
 }
