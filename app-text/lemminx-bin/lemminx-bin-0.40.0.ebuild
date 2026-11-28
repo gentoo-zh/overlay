@@ -15,7 +15,7 @@ LICENSE="EPL-2.0"
 SLOT="0"
 KEYWORDS="~amd64 ~arm64"
 
-RDEPEND=">=virtual/jre-1.8:*"
+RDEPEND=">=virtual/jre-11:*"
 BDEPEND="app-arch/unzip"
 
 src_install() {
