@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-28 16:53:29 CST)
+(The last generation time: 2026-11-28 16:54:28 CST)
 
 ### Packages
 
@@ -142,7 +142,7 @@
      app-i18n/fcitx                                    | 9999               |  D, RD     | https://fcitx-im.org/                                                      | Fcitx 5 is a generic input method framework
        x11-libs/xcb-imdkit                             | 9999               |  D, RD     | https://github.com/fcitx/xcb-imdkit                                        | Input method development support for xcb
      app-i18n/rime-data                                | 9999               |  D, RD     | https://rime.im/                                                           | Data resources for Rime Input Method Engine
-   app-i18n/fcitx-skk                                  | 5.1.11             | RD         | https://fcitx-im.org/                                                      | Japanese SKK input engine for Fcitx5
+   app-i18n/fcitx-skk                                  | 5.1.12             | RD         | https://fcitx-im.org/                                                      | Japanese SKK input engine for Fcitx5
                                                        | 9999               |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-i18n/fcitx-openbangla                             | 2.0.0_p20260718    |            | https://openbangla.org/                                                    | OpenBangla Bengali (Avro Phonetic) input method engine for Fcitx5
