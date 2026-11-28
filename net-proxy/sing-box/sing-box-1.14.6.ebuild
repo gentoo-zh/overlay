@@ -42,7 +42,7 @@ RDEPEND="
 	acct-group/${PN}
 	acct-user/${PN}
 "
-BDEPEND=">=dev-lang/go-1.25.5"
+BDEPEND=">=dev-lang/go-1.26.0"
 
 src_compile() {
 	local mytags
