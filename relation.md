@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-28 16:14:34 CST)
+(The last generation time: 2026-11-28 16:15:35 CST)
 
 ### Packages
 
@@ -58,7 +58,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-dicts/fcitx-pinyin-zhwiki                         | 0.3.1.20261018     |            | https://github.com/felixonmars/fcitx5-pinyin-zhwiki                        | Fcitx 5 Pinyin Dictionary from zh.wikipedia.org
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-editors/antigravity                               | 2.35.2             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
+ app-editors/antigravity                               | 2.36.0             |            | https://antigravity.google/product/antigravity-2                           | Google Antigravity multi-agent orchestration platform
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-editors/antigravity-ide                           | 2.9.0              |            | https://antigravity.google/                                                | Google Antigravity agent-first development environment
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -188,7 +188,7 @@
                                                        | 4.0.43             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-bin                                | 3.20.4-r1          |            | https://github.com/farion1231/cc-switch                                    | All-in-one manager for Claude Code, Codex, Gemini CLI, OpenCode, and OpenClaw
-                                                       | 4.0.43             |            |                                                                            |
+                                                       | 4.0.44             |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/cc-switch-cli                                | 5.11.4             |            | https://github.com/SaladDay/cc-switch-cli                                  | All-in-One Assistant for Claude Code, Codex, Gemini, OpenCode & OpenClaw
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -219,7 +219,7 @@
  app-misc/keyd                                         | 2.6.0-r1           |            | https://github.com/rvaiya/keyd                                             | A key remapping daemon for linux
    acct-group/keyd                                     | 0                  |  D, RD     |                                                                            | A key remapping daemon for linux
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- app-misc/magpie-bin                                   | 0.1.4966           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
+ app-misc/magpie-bin                                   | 0.1.4993           |            | https://github.com/yetone/magpie                                           | Model and account manager with a local gateway for AI coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  app-misc/mdx_util                                     | 20251029-r1        |            | https://github.com/raymanzhang/mdx_util                                    | A command line tools for handling mdx related jobs
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
@@ -461,7 +461,7 @@
  dev-util/pack-cli-bin                                 | 0.40.11            |            | https://buildpacks.io                                                      | CLI for building apps using Cloud Native Buildpacks
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-bin                          | 0.99.2             |            | https://github.com/earendil-works/pi                                       | A terminal-based coding agent with multi-model support
-                                                       | 1.6.1              |            |                                                                            |
+                                                       | 1.7.0              |            |                                                                            |
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/pi-coding-agent-xz                           | 9999               |            | https://github.com/xz-dev/pi                                               | A terminal-based coding agent with multi-model support (xz-dev downstream fork)
    dev-lang/bun-bin                                    | 1.4.5              | BD         | https://bun.sh                                                             | Incredibly fast JavaScript runtime, bundler, test runner, and package manager
@@ -470,9 +470,9 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/qoder-bin                                    | 0.5.21             |            | https://qoder.com/                                                         | Qoder - agent workbench for human and AI software teams
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qodercli-bin                                 | 1.1.99             |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
+ dev-util/qodercli-bin                                 | 1.1.100            |            | https://qoder.com/cli/                                                     | Qoder CLI, Qoder's command-line coding agent
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- dev-util/qoderwake-bin                                | 1.2.26             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
+ dev-util/qoderwake-bin                                | 1.2.27             |            | https://qoder.com/                                                         | Qoder Wake, Qoder's local agent runtime for coding agents
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  dev-util/reasonix-bin                                 | 2.61.0             |            | https://github.com/esengine/DeepSeek-Reasonix                              | Cache-first DeepSeek coding agent for the terminal
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
