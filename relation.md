@@ -1,6 +1,6 @@
 - Reponame: **`gentoo-zh`**
 
-(The last generation time: 2026-11-28 16:20:00 CST)
+(The last generation time: 2026-11-28 16:20:47 CST)
 
 ### Packages
 
@@ -874,7 +874,7 @@
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/proxy-server                                | 11.0.1             |            | https://github.com/jackarain/proxy                                         | Implementation of all proxy protocols using modern c++
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
- net-proxy/queqiao                                     | 0.14.0             |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
+ net-proxy/queqiao                                     | 0.15.1             |            | https://github.com/bojieli/queqiao                                         | Self-hosted WAN optimization proxy for difficult long-haul links
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
  net-proxy/serenity                                    | 1.1.0_beta3        |            | https://serenity.sagernet.org/                                             | The configuration generator for sing-box
 -------------------------------------------------------|--------------------|------------|----------------------------------------------------------------------------|--------------------
