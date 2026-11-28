@@ -8,4 +8,4 @@ warning emitted by extra-cmake-modules (Gentoo bug #964407).
 +cmake_minimum_required(VERSION 3.16)
 
  # The Project Name
- project(fcitx5-kkc VERSION 5.1.11)
+ project(fcitx5-kkc VERSION 5.1.12)
